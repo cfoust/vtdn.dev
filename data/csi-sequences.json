@@ -45,6 +45,15 @@
           },
           "mintty": {
             "version_added": true
+          },
+          "xterm_js": {
+            "version_added": null
+          },
+          "cy": {
+            "version_added": null
+          },
+          "tmux": {
+            "version_added": null
           }
         },
         "status": {
@@ -96,6 +105,15 @@
           },
           "mintty": {
             "version_added": true
+          },
+          "xterm_js": {
+            "version_added": null
+          },
+          "cy": {
+            "version_added": null
+          },
+          "tmux": {
+            "version_added": null
           }
         },
         "status": {
@@ -149,6 +167,15 @@
           },
           "mintty": {
             "version_added": true
+          },
+          "xterm_js": {
+            "version_added": null
+          },
+          "cy": {
+            "version_added": null
+          },
+          "tmux": {
+            "version_added": null
           }
         },
         "status": {
@@ -200,6 +227,15 @@
           },
           "mintty": {
             "version_added": true
+          },
+          "xterm_js": {
+            "version_added": null
+          },
+          "cy": {
+            "version_added": null
+          },
+          "tmux": {
+            "version_added": null
           }
         },
         "status": {
@@ -251,6 +287,15 @@
           },
           "mintty": {
             "version_added": true
+          },
+          "xterm_js": {
+            "version_added": null
+          },
+          "cy": {
+            "version_added": null
+          },
+          "tmux": {
+            "version_added": null
           }
         },
         "status": {
@@ -302,6 +347,15 @@
           },
           "mintty": {
             "version_added": true
+          },
+          "xterm_js": {
+            "version_added": null
+          },
+          "cy": {
+            "version_added": null
+          },
+          "tmux": {
+            "version_added": null
           }
         },
         "status": {
@@ -353,6 +407,15 @@
           },
           "mintty": {
             "version_added": true
+          },
+          "xterm_js": {
+            "version_added": null
+          },
+          "cy": {
+            "version_added": null
+          },
+          "tmux": {
+            "version_added": null
           }
         },
         "status": {
@@ -404,6 +467,15 @@
           },
           "mintty": {
             "version_added": true
+          },
+          "xterm_js": {
+            "version_added": null
+          },
+          "cy": {
+            "version_added": null
+          },
+          "tmux": {
+            "version_added": null
           }
         },
         "status": {
@@ -455,6 +527,15 @@
           },
           "mintty": {
             "version_added": true
+          },
+          "xterm_js": {
+            "version_added": null
+          },
+          "cy": {
+            "version_added": null
+          },
+          "tmux": {
+            "version_added": null
           }
         },
         "status": {
@@ -506,6 +587,15 @@
           },
           "mintty": {
             "version_added": true
+          },
+          "xterm_js": {
+            "version_added": null
+          },
+          "cy": {
+            "version_added": null
+          },
+          "tmux": {
+            "version_added": null
           }
         },
         "status": {
@@ -557,6 +647,15 @@
           },
           "mintty": {
             "version_added": true
+          },
+          "xterm_js": {
+            "version_added": null
+          },
+          "cy": {
+            "version_added": null
+          },
+          "tmux": {
+            "version_added": null
           }
         },
         "status": {
@@ -608,6 +707,15 @@
           },
           "mintty": {
             "version_added": true
+          },
+          "xterm_js": {
+            "version_added": null
+          },
+          "cy": {
+            "version_added": null
+          },
+          "tmux": {
+            "version_added": null
           }
         },
         "status": {
@@ -659,6 +767,15 @@
           },
           "mintty": {
             "version_added": true
+          },
+          "xterm_js": {
+            "version_added": null
+          },
+          "cy": {
+            "version_added": null
+          },
+          "tmux": {
+            "version_added": null
           }
         },
         "status": {
@@ -710,6 +827,15 @@
           },
           "mintty": {
             "version_added": true
+          },
+          "xterm_js": {
+            "version_added": null
+          },
+          "cy": {
+            "version_added": null
+          },
+          "tmux": {
+            "version_added": null
           }
         },
         "status": {
@@ -761,6 +887,15 @@
           },
           "mintty": {
             "version_added": true
+          },
+          "xterm_js": {
+            "version_added": null
+          },
+          "cy": {
+            "version_added": null
+          },
+          "tmux": {
+            "version_added": null
           }
         },
         "status": {
@@ -812,6 +947,15 @@
           },
           "mintty": {
             "version_added": true
+          },
+          "xterm_js": {
+            "version_added": null
+          },
+          "cy": {
+            "version_added": null
+          },
+          "tmux": {
+            "version_added": null
           }
         },
         "status": {
@@ -863,6 +1007,15 @@
           },
           "mintty": {
             "version_added": true
+          },
+          "xterm_js": {
+            "version_added": null
+          },
+          "cy": {
+            "version_added": null
+          },
+          "tmux": {
+            "version_added": null
           }
         },
         "status": {
@@ -914,6 +1067,15 @@
           },
           "mintty": {
             "version_added": true
+          },
+          "xterm_js": {
+            "version_added": null
+          },
+          "cy": {
+            "version_added": null
+          },
+          "tmux": {
+            "version_added": null
           }
         },
         "status": {
@@ -965,6 +1127,15 @@
           },
           "mintty": {
             "version_added": true
+          },
+          "xterm_js": {
+            "version_added": null
+          },
+          "cy": {
+            "version_added": null
+          },
+          "tmux": {
+            "version_added": null
           }
         },
         "status": {
@@ -1016,6 +1187,15 @@
           },
           "mintty": {
             "version_added": true
+          },
+          "xterm_js": {
+            "version_added": null
+          },
+          "cy": {
+            "version_added": null
+          },
+          "tmux": {
+            "version_added": null
           }
         },
         "status": {
@@ -1067,6 +1247,15 @@
           },
           "mintty": {
             "version_added": true
+          },
+          "xterm_js": {
+            "version_added": null
+          },
+          "cy": {
+            "version_added": null
+          },
+          "tmux": {
+            "version_added": null
           }
         },
         "status": {
@@ -1118,6 +1307,15 @@
           },
           "mintty": {
             "version_added": true
+          },
+          "xterm_js": {
+            "version_added": null
+          },
+          "cy": {
+            "version_added": null
+          },
+          "tmux": {
+            "version_added": null
           }
         },
         "status": {
@@ -1169,6 +1367,15 @@
           },
           "mintty": {
             "version_added": true
+          },
+          "xterm_js": {
+            "version_added": null
+          },
+          "cy": {
+            "version_added": null
+          },
+          "tmux": {
+            "version_added": null
           }
         },
         "status": {
@@ -1220,6 +1427,15 @@
           },
           "mintty": {
             "version_added": true
+          },
+          "xterm_js": {
+            "version_added": null
+          },
+          "cy": {
+            "version_added": null
+          },
+          "tmux": {
+            "version_added": null
           }
         },
         "status": {
@@ -1271,6 +1487,15 @@
           },
           "mintty": {
             "version_added": true
+          },
+          "xterm_js": {
+            "version_added": null
+          },
+          "cy": {
+            "version_added": null
+          },
+          "tmux": {
+            "version_added": null
           }
         },
         "status": {
@@ -1322,6 +1547,15 @@
           },
           "mintty": {
             "version_added": true
+          },
+          "xterm_js": {
+            "version_added": null
+          },
+          "cy": {
+            "version_added": null
+          },
+          "tmux": {
+            "version_added": null
           }
         },
         "status": {
@@ -1373,6 +1607,15 @@
           },
           "mintty": {
             "version_added": true
+          },
+          "xterm_js": {
+            "version_added": null
+          },
+          "cy": {
+            "version_added": null
+          },
+          "tmux": {
+            "version_added": null
           }
         },
         "status": {
@@ -1423,6 +1666,15 @@
             "version_added": false
           },
           "mintty": {
+            "version_added": null
+          },
+          "xterm_js": {
+            "version_added": null
+          },
+          "cy": {
+            "version_added": null
+          },
+          "tmux": {
             "version_added": null
           }
         },

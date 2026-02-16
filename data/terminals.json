@@ -57,5 +57,20 @@
     "name": "mintty",
     "website": "https://mintty.github.io/",
     "repository": "https://github.com/mintty/mintty"
+  },
+  "xterm_js": {
+    "name": "xterm.js",
+    "website": "https://xtermjs.org/",
+    "repository": "https://github.com/xtermjs/xterm.js"
+  },
+  "cy": {
+    "name": "cy",
+    "website": "https://cfoust.github.io/cy/",
+    "repository": "https://github.com/cfoust/cy"
+  },
+  "tmux": {
+    "name": "tmux",
+    "website": "https://github.com/tmux/tmux",
+    "repository": "https://github.com/tmux/tmux"
   }
 }

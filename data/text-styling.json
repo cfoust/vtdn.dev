@@ -1,0 +1,155 @@
+{
+  "text_styling": {
+    "__meta": { "category": "Text Styling" },
+    "sgr_basic": {
+      "__compat": {
+        "description": "SGR basic attributes (bold, italic, underline, blink, reverse, strikethrough)",
+        "spec_url": "https://vt100.net/docs/vt510-rm/SGR.html",
+        "doc_path": "/docs/sgr-attributes",
+        "support": {
+          "xterm": { "version_added": true },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": true },
+          "iterm2": { "version_added": true },
+          "vte": { "version_added": true },
+          "windows_terminal": { "version_added": true },
+          "konsole": { "version_added": true },
+          "mintty": { "version_added": true }
+        },
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
+        }
+      }
+    },
+    "color_256": {
+      "__compat": {
+        "description": "256-color indexed (CSI 38;5;n m)",
+        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+        "doc_path": "/docs/sgr-attributes",
+        "support": {
+          "xterm": { "version_added": true },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": true },
+          "iterm2": { "version_added": true },
+          "vte": { "version_added": true },
+          "windows_terminal": { "version_added": true },
+          "konsole": { "version_added": true },
+          "mintty": { "version_added": true }
+        },
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
+      }
+    },
+    "truecolor": {
+      "__compat": {
+        "description": "24-bit truecolor (CSI 38;2;r;g;b m)",
+        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+        "doc_path": "/docs/sgr-attributes",
+        "support": {
+          "xterm": { "version_added": true },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": true },
+          "iterm2": { "version_added": true },
+          "vte": { "version_added": true },
+          "windows_terminal": { "version_added": true },
+          "konsole": { "version_added": true },
+          "mintty": { "version_added": true }
+        },
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
+      }
+    },
+    "underline_styles": {
+      "__compat": {
+        "description": "Underline styles (single, double, curly, dotted, dashed)",
+        "spec_url": "https://sw.kovidgoyal.net/kitty/underlines/",
+        "doc_path": "/docs/sgr-attributes",
+        "support": {
+          "xterm": { "version_added": false },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": true },
+          "iterm2": { "version_added": true },
+          "vte": { "version_added": true },
+          "windows_terminal": { "version_added": null },
+          "konsole": { "version_added": null },
+          "mintty": { "version_added": true }
+        },
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
+      }
+    },
+    "underline_color": {
+      "__compat": {
+        "description": "Underline color (CSI 58;2;r;g;b m)",
+        "spec_url": "https://sw.kovidgoyal.net/kitty/underlines/",
+        "doc_path": "/docs/sgr-attributes",
+        "support": {
+          "xterm": { "version_added": false },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": true },
+          "iterm2": { "version_added": true },
+          "vte": { "version_added": true },
+          "windows_terminal": { "version_added": null },
+          "konsole": { "version_added": null },
+          "mintty": { "version_added": true }
+        },
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
+      }
+    },
+    "overline": {
+      "__compat": {
+        "description": "Overline (SGR 53)",
+        "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
+        "doc_path": "/docs/sgr-attributes",
+        "support": {
+          "xterm": { "version_added": false },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": false },
+          "iterm2": { "version_added": null },
+          "vte": { "version_added": true },
+          "windows_terminal": { "version_added": null },
+          "konsole": { "version_added": null },
+          "mintty": { "version_added": true }
+        },
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,108 @@
+.wrapper {
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+.matrix {
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  width: max-content;
+  min-width: 100%;
+}
+
+.matrix th,
+.matrix td {
+  border: 1px solid var(--ifm-table-border-color);
+  padding: 0.4rem 0.6rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.featureHeader {
+  position: sticky;
+  left: 0;
+  z-index: 3;
+  background: var(--ifm-background-color);
+  text-align: left !important;
+  min-width: 280px;
+}
+
+.terminalHeader {
+  z-index: 2;
+  background: var(--ifm-background-color);
+  font-weight: 600;
+}
+
+.terminalHeader a {
+  color: var(--ifm-font-color-base);
+  text-decoration: none;
+}
+
+.terminalHeader a:hover {
+  text-decoration: underline;
+  color: var(--ifm-color-primary);
+}
+
+.categoryRow {
+  background: var(--ifm-color-emphasis-100);
+}
+
+.categoryCell {
+  font-weight: 700;
+  text-align: left !important;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--ifm-color-primary);
+}
+
+.featureCell {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background: var(--ifm-background-color);
+  text-align: left !important;
+  min-width: 280px;
+}
+
+.featureCell a {
+  color: var(--ifm-font-color-base);
+  text-decoration: none;
+}
+
+.featureCell a:hover {
+  color: var(--ifm-color-primary);
+}
+
+.yes {
+  background: var(--ifm-color-success-contrast-background);
+  color: var(--ifm-color-success-dark);
+  font-weight: 600;
+}
+
+.yesNotes {
+  background: var(--ifm-color-success-contrast-background);
+  color: var(--ifm-color-success-dark);
+  font-weight: 600;
+  cursor: help;
+  text-decoration: underline dotted;
+}
+
+.no {
+  background: var(--ifm-color-danger-contrast-background);
+  color: var(--ifm-color-danger-dark);
+  font-weight: 600;
+}
+
+.unknown {
+  background: var(--ifm-color-emphasis-100);
+  color: var(--ifm-color-emphasis-600);
+}
+
+.partial {
+  background: var(--ifm-color-warning-contrast-background);
+  color: var(--ifm-color-warning-dark);
+  font-weight: 600;
+  cursor: help;
+  text-decoration: underline dotted;
+}

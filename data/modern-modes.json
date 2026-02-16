@@ -1,0 +1,105 @@
+{
+  "modern_modes": {
+    "__meta": { "category": "Modern Modes" },
+    "synchronized_output": {
+      "__compat": {
+        "description": "Synchronized output (Mode 2026 — tear-free rendering)",
+        "spec_url": "https://gist.github.com/christianparpart/d8a62cc1ab659194337d73e399004036",
+        "doc_path": "/docs/advanced-modes",
+        "support": {
+          "xterm": { "version_added": false },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": true },
+          "iterm2": { "version_added": true },
+          "vte": { "version_added": true },
+          "windows_terminal": { "version_added": true },
+          "konsole": { "version_added": null },
+          "mintty": { "version_added": true }
+        },
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
+      }
+    },
+    "grapheme_clustering": {
+      "__compat": {
+        "description": "Grapheme clustering (Mode 2027 — UAX #29 width calculation)",
+        "spec_url": "https://unicode.org/reports/tr29/",
+        "doc_path": "/docs/advanced-modes",
+        "support": {
+          "xterm": { "version_added": false },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": false },
+          "iterm2": { "version_added": false },
+          "vte": { "version_added": false },
+          "windows_terminal": { "version_added": false },
+          "konsole": { "version_added": false },
+          "mintty": { "version_added": false }
+        },
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
+      }
+    },
+    "color_scheme_reporting": {
+      "__compat": {
+        "description": "Color scheme reporting (Mode 2031 — light/dark notifications)",
+        "spec_url": "https://contour-terminal.org/vt-extensions/color-palette-update-notifications/",
+        "doc_path": "/docs/advanced-modes",
+        "support": {
+          "xterm": { "version_added": false },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": null },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": false },
+          "iterm2": { "version_added": false },
+          "vte": { "version_added": true },
+          "windows_terminal": { "version_added": false },
+          "konsole": { "version_added": false },
+          "mintty": { "version_added": false }
+        },
+        "status": {
+          "experimental": true,
+          "standard_track": false,
+          "deprecated": false
+        }
+      }
+    },
+    "in_band_resize": {
+      "__compat": {
+        "description": "In-band resize (Mode 2048 — deterministic resize notifications)",
+        "spec_url": "https://gist.github.com/rockorager/e695f2f3a12087ddf998ef96210e5364",
+        "doc_path": "/docs/advanced-modes",
+        "support": {
+          "xterm": { "version_added": false },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": false },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": false },
+          "iterm2": { "version_added": true },
+          "vte": { "version_added": false },
+          "windows_terminal": { "version_added": false },
+          "konsole": { "version_added": false },
+          "mintty": { "version_added": false }
+        },
+        "status": {
+          "experimental": true,
+          "standard_track": false,
+          "deprecated": false
+        }
+      }
+    }
+  }
+}

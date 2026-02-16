@@ -1,0 +1,46 @@
+{
+  "xterm": {
+    "name": "xterm",
+    "website": "https://invisible-island.net/xterm/"
+  },
+  "ghostty": {
+    "name": "Ghostty",
+    "website": "https://ghostty.org/"
+  },
+  "kitty": {
+    "name": "Kitty",
+    "website": "https://sw.kovidgoyal.net/kitty/"
+  },
+  "wezterm": {
+    "name": "WezTerm",
+    "website": "https://wezfurlong.org/wezterm/"
+  },
+  "foot": {
+    "name": "foot",
+    "website": "https://codeberg.org/dnkl/foot"
+  },
+  "alacritty": {
+    "name": "Alacritty",
+    "website": "https://alacritty.org/"
+  },
+  "iterm2": {
+    "name": "iTerm2",
+    "website": "https://iterm2.com/"
+  },
+  "vte": {
+    "name": "VTE",
+    "website": "https://wiki.gnome.org/Apps/Terminal"
+  },
+  "windows_terminal": {
+    "name": "Windows Terminal",
+    "website": "https://github.com/microsoft/terminal"
+  },
+  "konsole": {
+    "name": "Konsole",
+    "website": "https://konsole.kde.org/"
+  },
+  "mintty": {
+    "name": "mintty",
+    "website": "https://mintty.github.io/"
+  }
+}

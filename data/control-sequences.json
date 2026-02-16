@@ -1,0 +1,155 @@
+{
+  "control_sequences": {
+    "__meta": { "category": "Control Sequences" },
+    "c0_c1_controls": {
+      "__compat": {
+        "description": "C0/C1 control characters (BEL, BS, HT, LF, CR, ESC, etc.)",
+        "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
+        "doc_path": "/docs/c0-c1-controls",
+        "support": {
+          "xterm": { "version_added": true },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": true },
+          "iterm2": { "version_added": true },
+          "vte": { "version_added": true },
+          "windows_terminal": { "version_added": true },
+          "konsole": { "version_added": true },
+          "mintty": { "version_added": true }
+        },
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
+        }
+      }
+    },
+    "basic_csi": {
+      "__compat": {
+        "description": "Basic CSI sequences (cursor movement, editing, erase)",
+        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+        "doc_path": "/docs/csi-sequences",
+        "support": {
+          "xterm": { "version_added": true },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": true },
+          "iterm2": { "version_added": true },
+          "vte": { "version_added": true },
+          "windows_terminal": { "version_added": true },
+          "konsole": { "version_added": true },
+          "mintty": { "version_added": true }
+        },
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
+        }
+      }
+    },
+    "scroll_margins": {
+      "__compat": {
+        "description": "Scrolling & margins (DECSTBM, DECSLRM, SU, SD)",
+        "spec_url": "https://vt100.net/docs/vt510-rm/DECSTBM.html",
+        "doc_path": "/docs/csi-sequences",
+        "support": {
+          "xterm": { "version_added": true },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": true },
+          "iterm2": { "version_added": true },
+          "vte": { "version_added": true },
+          "windows_terminal": { "version_added": true },
+          "konsole": { "version_added": true },
+          "mintty": { "version_added": true }
+        },
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
+        }
+      }
+    },
+    "rectangular_area_ops": {
+      "__compat": {
+        "description": "Rectangular area operations (DECERA, DECFRA, DECCRA)",
+        "spec_url": "https://vt100.net/docs/vt510-rm/DECERA.html",
+        "doc_path": "/docs/csi-sequences",
+        "support": {
+          "xterm": { "version_added": true },
+          "ghostty": { "version_added": null },
+          "kitty": { "version_added": null },
+          "wezterm": { "version_added": null },
+          "foot": { "version_added": null },
+          "alacritty": { "version_added": false },
+          "iterm2": { "version_added": null },
+          "vte": { "version_added": null },
+          "windows_terminal": { "version_added": null },
+          "konsole": { "version_added": null },
+          "mintty": { "version_added": true }
+        },
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
+        }
+      }
+    },
+    "cursor_style": {
+      "__compat": {
+        "description": "Cursor style (DECSCUSR — block, underline, bar)",
+        "spec_url": "https://vt100.net/docs/vt510-rm/DECSCUSR.html",
+        "doc_path": "/docs/csi-sequences",
+        "support": {
+          "xterm": { "version_added": true },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": true },
+          "iterm2": { "version_added": true },
+          "vte": { "version_added": true },
+          "windows_terminal": { "version_added": true },
+          "konsole": { "version_added": true },
+          "mintty": { "version_added": true }
+        },
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
+        }
+      }
+    },
+    "device_attributes": {
+      "__compat": {
+        "description": "Device attributes (DA1, DA2, DA3)",
+        "spec_url": "https://vt100.net/docs/vt510-rm/DA1.html",
+        "doc_path": "/docs/csi-sequences",
+        "support": {
+          "xterm": { "version_added": true },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": true },
+          "iterm2": { "version_added": true },
+          "vte": { "version_added": true },
+          "windows_terminal": { "version_added": true },
+          "konsole": { "version_added": true },
+          "mintty": { "version_added": true }
+        },
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
+        }
+      }
+    }
+  }
+}

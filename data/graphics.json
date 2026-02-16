@@ -1,0 +1,80 @@
+{
+  "graphics": {
+    "__meta": { "category": "Graphics Protocols" },
+    "sixel": {
+      "__compat": {
+        "description": "Sixel graphics (DCS P1;P2;P3 q ... ST)",
+        "spec_url": "https://vt100.net/docs/vt3xx-gp/chapter14.html",
+        "doc_path": "/docs/graphics-protocols",
+        "support": {
+          "xterm": { "version_added": true, "notes": "Requires compile flag" },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": false },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": false },
+          "iterm2": { "version_added": true },
+          "vte": { "version_added": false },
+          "windows_terminal": { "version_added": false },
+          "konsole": { "version_added": null },
+          "mintty": { "version_added": true }
+        },
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
+      }
+    },
+    "kitty_graphics": {
+      "__compat": {
+        "description": "Kitty graphics protocol (APC G ... ST)",
+        "spec_url": "https://sw.kovidgoyal.net/kitty/graphics-protocol/",
+        "doc_path": "/docs/graphics-protocols",
+        "support": {
+          "xterm": { "version_added": false },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": false },
+          "alacritty": { "version_added": false },
+          "iterm2": { "version_added": false },
+          "vte": { "version_added": false },
+          "windows_terminal": { "version_added": false },
+          "konsole": { "version_added": true },
+          "mintty": { "version_added": false }
+        },
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
+      }
+    },
+    "iterm2_inline_images": {
+      "__compat": {
+        "description": "iTerm2 inline images (OSC 1337 ; File=...)",
+        "spec_url": "https://iterm2.com/documentation-images.html",
+        "doc_path": "/docs/graphics-protocols",
+        "support": {
+          "xterm": { "version_added": false },
+          "ghostty": { "version_added": false },
+          "kitty": { "version_added": false },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": false },
+          "alacritty": { "version_added": false },
+          "iterm2": { "version_added": true },
+          "vte": { "version_added": false },
+          "windows_terminal": { "version_added": false },
+          "konsole": { "version_added": null },
+          "mintty": { "version_added": null }
+        },
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
+      }
+    }
+  }
+}

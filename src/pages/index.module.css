@@ -1,0 +1,110 @@
+.hero {
+  text-align: center;
+  padding: 3rem 2rem 1rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: var(--ifm-color-emphasis-700);
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.main {
+  padding: 0 2rem 3rem;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.legend {
+  margin-top: 1.5rem;
+}
+
+.legend h3 {
+  margin-bottom: 0.5rem;
+}
+
+.legend ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.legend li {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+}
+
+.legendYes {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 3px;
+  background: var(--ifm-color-success-contrast-background);
+  color: var(--ifm-color-success-dark);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.legendNo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 3px;
+  background: var(--ifm-color-danger-contrast-background);
+  color: var(--ifm-color-danger-dark);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.legendPartial {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 3px;
+  background: var(--ifm-color-warning-contrast-background);
+  color: var(--ifm-color-warning-dark);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.legendUnknown {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 3px;
+  background: var(--ifm-color-emphasis-100);
+  color: var(--ifm-color-emphasis-600);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.legendVersion {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.4rem;
+  height: 1.6rem;
+  border-radius: 3px;
+  background: var(--ifm-color-success-contrast-background);
+  color: var(--ifm-color-success-dark);
+  font-weight: 600;
+  font-size: 0.75rem;
+}

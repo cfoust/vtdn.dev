@@ -5,7 +5,8 @@
     },
     "mode1_decckm": {
       "__compat": {
-        "description": "Mode 1 DECCKM — application cursor keys",
+        "title": "DECCKM",
+        "description": "Mode 1 — Application cursor keys",
         "spec_url": "https://vt100.net/docs/vt510-rm/DECCKM.html",
         "doc_path": "/docs/decset-modes",
         "support": {
@@ -55,7 +56,8 @@
     },
     "mode3_deccolm": {
       "__compat": {
-        "description": "Mode 3 DECCOLM — 132/80 column switching",
+        "title": "DECCOLM",
+        "description": "Mode 3 — 132/80 column switching",
         "spec_url": "https://vt100.net/docs/vt510-rm/DECCOLM.html",
         "doc_path": "/docs/decset-modes",
         "support": {
@@ -105,7 +107,8 @@
     },
     "mode5_decscnm": {
       "__compat": {
-        "description": "Mode 5 DECSCNM — reverse video (light background)",
+        "title": "DECSCNM",
+        "description": "Mode 5 — Reverse video (light background)",
         "spec_url": "https://vt100.net/docs/vt510-rm/DECSCNM.html",
         "doc_path": "/docs/decset-modes",
         "support": {
@@ -155,7 +158,8 @@
     },
     "mode6_decom": {
       "__compat": {
-        "description": "Mode 6 DECOM — origin mode (relative to scroll region)",
+        "title": "DECOM",
+        "description": "Mode 6 — Origin mode (relative to scroll region)",
         "spec_url": "https://vt100.net/docs/vt510-rm/DECOM.html",
         "doc_path": "/docs/decset-modes",
         "support": {
@@ -205,7 +209,8 @@
     },
     "mode7_decawm": {
       "__compat": {
-        "description": "Mode 7 DECAWM — auto-wrap at end of line",
+        "title": "DECAWM",
+        "description": "Mode 7 — Auto-wrap at end of line",
         "spec_url": "https://vt100.net/docs/vt510-rm/DECAWM.html",
         "doc_path": "/docs/decset-modes",
         "support": {
@@ -255,7 +260,8 @@
     },
     "mode12_blink_cursor": {
       "__compat": {
-        "description": "Mode 12 — blinking cursor (att610)",
+        "title": "Blink cursor",
+        "description": "Mode 12 — att610 blinking cursor",
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/decset-modes",
         "support": {
@@ -305,7 +311,8 @@
     },
     "mode25_dectcem": {
       "__compat": {
-        "description": "Mode 25 DECTCEM — show/hide text cursor",
+        "title": "DECTCEM",
+        "description": "Mode 25 — Show/hide text cursor",
         "spec_url": "https://vt100.net/docs/vt510-rm/DECTCEM.html",
         "doc_path": "/docs/decset-modes",
         "support": {
@@ -355,7 +362,8 @@
     },
     "mode45_reverse_wrap": {
       "__compat": {
-        "description": "Mode 45 — reverse-wraparound (BS wraps to previous line)",
+        "title": "Reverse wrap",
+        "description": "Mode 45 — BS wraps to previous line",
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/decset-modes",
         "support": {
@@ -405,7 +413,8 @@
     },
     "mode69_declrmm": {
       "__compat": {
-        "description": "Mode 69 DECLRMM — left/right margin mode",
+        "title": "DECLRMM",
+        "description": "Mode 69 — Left/right margin mode",
         "spec_url": "https://vt100.net/docs/vt510-rm/DECLRMM.html",
         "doc_path": "/docs/decset-modes",
         "support": {
@@ -455,7 +464,8 @@
     },
     "mode80_decsdm": {
       "__compat": {
-        "description": "Mode 80 DECSDM — sixel display mode (scrolling)",
+        "title": "DECSDM",
+        "description": "Mode 80 — Sixel display mode (scrolling)",
         "spec_url": "https://vt100.net/docs/vt3xx-gp/chapter14.html",
         "doc_path": "/docs/decset-modes",
         "support": {
@@ -505,7 +515,8 @@
     },
     "mode1049_altscreen": {
       "__compat": {
-        "description": "Mode 1049 — alternate screen buffer with cursor save",
+        "title": "Alt screen",
+        "description": "Mode 1049 — Alternate screen buffer with cursor save",
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/decset-modes",
         "support": {
@@ -555,7 +566,8 @@
     },
     "mode1000_mouse_normal": {
       "__compat": {
-        "description": "Mode 1000 — normal mouse tracking (press + release)",
+        "title": "Normal mouse",
+        "description": "Mode 1000 — Press + release tracking",
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/decset-modes",
         "support": {
@@ -605,7 +617,8 @@
     },
     "mode1002_button_event": {
       "__compat": {
-        "description": "Mode 1002 — button-event mouse tracking (motion while held)",
+        "title": "Button-event mouse",
+        "description": "Mode 1002 — Motion while held tracking",
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/decset-modes",
         "support": {
@@ -655,7 +668,8 @@
     },
     "mode1003_any_event": {
       "__compat": {
-        "description": "Mode 1003 — any-event mouse tracking (all motion)",
+        "title": "Any-event mouse",
+        "description": "Mode 1003 — All motion tracking",
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/decset-modes",
         "support": {
@@ -705,7 +719,8 @@
     },
     "mode1004_focus": {
       "__compat": {
-        "description": "Mode 1004 — focus events (CSI I / CSI O)",
+        "title": "Focus events",
+        "description": "Mode 1004 — CSI I / CSI O",
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/decset-modes",
         "support": {
@@ -755,7 +770,8 @@
     },
     "mode1006_sgr_mouse": {
       "__compat": {
-        "description": "Mode 1006 — SGR mouse encoding (decimal, no coord limit)",
+        "title": "SGR mouse",
+        "description": "Mode 1006 — Decimal encoding, no coord limit",
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/decset-modes",
         "support": {
@@ -805,7 +821,8 @@
     },
     "mode1007_alt_scroll": {
       "__compat": {
-        "description": "Mode 1007 — alternate scroll (wheel sends arrows in alt screen)",
+        "title": "Alt scroll",
+        "description": "Mode 1007 — Wheel sends arrows in alt screen",
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/decset-modes",
         "support": {
@@ -855,7 +872,8 @@
     },
     "mode1016_sgr_pixel": {
       "__compat": {
-        "description": "Mode 1016 — SGR-Pixel mouse (pixel coordinates)",
+        "title": "SGR-Pixel mouse",
+        "description": "Mode 1016 — Pixel coordinates",
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/decset-modes",
         "support": {
@@ -905,7 +923,8 @@
     },
     "mode2004_bracketed_paste": {
       "__compat": {
-        "description": "Mode 2004 — bracketed paste",
+        "title": "Bracketed paste",
+        "description": "Mode 2004",
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/decset-modes",
         "support": {
@@ -955,7 +974,8 @@
     },
     "mode2026_sync_output": {
       "__compat": {
-        "description": "Mode 2026 — synchronized output (tear-free rendering)",
+        "title": "Synchronized output",
+        "description": "Mode 2026 — Tear-free rendering",
         "spec_url": "https://gist.github.com/christianparpart/d8a62cc1ab659194337d73e399004036",
         "doc_path": "/docs/advanced-modes",
         "support": {
@@ -1005,7 +1025,8 @@
     },
     "mode2027_grapheme": {
       "__compat": {
-        "description": "Mode 2027 — grapheme clustering (UAX #29)",
+        "title": "Grapheme clustering",
+        "description": "Mode 2027 — UAX #29",
         "spec_url": "https://unicode.org/reports/tr29/",
         "doc_path": "/docs/advanced-modes",
         "support": {
@@ -1055,7 +1076,8 @@
     },
     "mode2031_color_scheme": {
       "__compat": {
-        "description": "Mode 2031 — color scheme reporting (light/dark notifications)",
+        "title": "Color scheme reporting",
+        "description": "Mode 2031 — Light/dark notifications",
         "spec_url": "https://contour-terminal.org/vt-extensions/color-palette-update-notifications/",
         "doc_path": "/docs/advanced-modes",
         "support": {
@@ -1105,7 +1127,8 @@
     },
     "mode2048_in_band_resize": {
       "__compat": {
-        "description": "Mode 2048 — in-band resize (deterministic notifications)",
+        "title": "In-band resize",
+        "description": "Mode 2048 — Deterministic notifications",
         "spec_url": "https://gist.github.com/rockorager/e695f2f3a12087ddf998ef96210e5364",
         "doc_path": "/docs/advanced-modes",
         "support": {
@@ -1155,7 +1178,8 @@
     },
     "mode4_irm": {
       "__compat": {
-        "description": "ANSI Mode 4 IRM — insert/replace mode",
+        "title": "IRM",
+        "description": "ANSI Mode 4 — Insert/replace mode",
         "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/decset-modes",
         "support": {
@@ -1205,7 +1229,8 @@
     },
     "mode20_lnm": {
       "__compat": {
-        "description": "ANSI Mode 20 LNM — newline mode (LF also does CR)",
+        "title": "LNM",
+        "description": "ANSI Mode 20 — Newline mode (LF also does CR)",
         "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/decset-modes",
         "support": {

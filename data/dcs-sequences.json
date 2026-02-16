@@ -5,7 +5,8 @@
     },
     "decrqss": {
       "__compat": {
-        "description": "DECRQSS (DCS $ q) — request status string",
+        "title": "DECRQSS",
+        "description": "DCS $ q — Request status string",
         "spec_url": "https://vt100.net/docs/vt510-rm/DECRQSS.html",
         "doc_path": "/docs/dcs-sequences",
         "support": {
@@ -55,7 +56,8 @@
     },
     "xtgettcap": {
       "__compat": {
-        "description": "XTGETTCAP (DCS + q) — terminal capability query",
+        "title": "XTGETTCAP",
+        "description": "DCS + q — Terminal capability query",
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/dcs-sequences",
         "support": {
@@ -105,7 +107,8 @@
     },
     "xtversion": {
       "__compat": {
-        "description": "XTVERSION (CSI > 0 q) — terminal name/version response",
+        "title": "XTVERSION",
+        "description": "CSI > 0 q — Terminal name/version response",
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/dcs-sequences",
         "support": {
@@ -155,7 +158,8 @@
     },
     "sixel": {
       "__compat": {
-        "description": "Sixel graphics (DCS P1;P2;P3 q ... ST)",
+        "title": "Sixel graphics",
+        "description": "DCS P1;P2;P3 q ... ST",
         "spec_url": "https://vt100.net/docs/vt3xx-gp/chapter14.html",
         "doc_path": "/docs/graphics-protocols",
         "support": {
@@ -206,7 +210,8 @@
     },
     "tmux_passthrough": {
       "__compat": {
-        "description": "tmux DCS passthrough (DCS tmux; ... ST)",
+        "title": "tmux passthrough",
+        "description": "DCS tmux; ... ST",
         "spec_url": "https://github.com/tmux/tmux/wiki/FAQ",
         "doc_path": "/docs/multiplexers-shell-integration",
         "support": {

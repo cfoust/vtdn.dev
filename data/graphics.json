@@ -5,7 +5,8 @@
     },
     "sixel": {
       "__compat": {
-        "description": "Sixel graphics (DCS P1;P2;P3 q ... ST)",
+        "title": "Sixel graphics",
+        "description": "DCS P1;P2;P3 q ... ST",
         "spec_url": "https://vt100.net/docs/vt3xx-gp/chapter14.html",
         "doc_path": "/docs/graphics-protocols",
         "support": {
@@ -56,7 +57,8 @@
     },
     "kitty_graphics": {
       "__compat": {
-        "description": "Kitty graphics protocol (APC G ... ST)",
+        "title": "Kitty graphics protocol",
+        "description": "APC G ... ST",
         "spec_url": "https://sw.kovidgoyal.net/kitty/graphics-protocol/",
         "doc_path": "/docs/graphics-protocols",
         "support": {
@@ -106,7 +108,8 @@
     },
     "kitty_graphics_unicode": {
       "__compat": {
-        "description": "Kitty graphics: Unicode placeholders (U+10EEEE)",
+        "title": "Kitty graphics: Unicode placeholders",
+        "description": "U+10EEEE",
         "spec_url": "https://sw.kovidgoyal.net/kitty/graphics-protocol/#unicode-placeholders",
         "doc_path": "/docs/graphics-protocols",
         "support": {
@@ -156,7 +159,8 @@
     },
     "kitty_graphics_animation": {
       "__compat": {
-        "description": "Kitty graphics: animation support",
+        "title": "Kitty graphics: animation",
+        "description": "Animation support",
         "spec_url": "https://sw.kovidgoyal.net/kitty/graphics-protocol/#animation",
         "doc_path": "/docs/graphics-protocols",
         "support": {
@@ -206,7 +210,8 @@
     },
     "iterm2_inline_images": {
       "__compat": {
-        "description": "iTerm2 inline images (OSC 1337 ; File=...)",
+        "title": "iTerm2 inline images",
+        "description": "OSC 1337 ; File=...",
         "spec_url": "https://iterm2.com/documentation-images.html",
         "doc_path": "/docs/graphics-protocols",
         "support": {

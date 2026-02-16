@@ -5,7 +5,8 @@
     },
     "bel": {
       "__compat": {
-        "description": "BEL (0x07) — audible/visual bell",
+        "title": "BEL",
+        "description": "0x07 — Audible/visual bell",
         "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/c0-c1-controls",
         "support": {
@@ -55,7 +56,8 @@
     },
     "bs": {
       "__compat": {
-        "description": "BS (0x08) — backspace, move cursor left",
+        "title": "BS",
+        "description": "0x08 — Backspace, move cursor left",
         "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/c0-c1-controls",
         "support": {
@@ -105,7 +107,8 @@
     },
     "ht": {
       "__compat": {
-        "description": "HT (0x09) — horizontal tab",
+        "title": "HT",
+        "description": "0x09 — Horizontal tab",
         "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/c0-c1-controls",
         "support": {
@@ -155,7 +158,8 @@
     },
     "lf": {
       "__compat": {
-        "description": "LF (0x0A) — line feed",
+        "title": "LF",
+        "description": "0x0A — Line feed",
         "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/c0-c1-controls",
         "support": {
@@ -205,7 +209,8 @@
     },
     "cr": {
       "__compat": {
-        "description": "CR (0x0D) — carriage return",
+        "title": "CR",
+        "description": "0x0D — Carriage return",
         "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/c0-c1-controls",
         "support": {
@@ -255,7 +260,8 @@
     },
     "so_si": {
       "__compat": {
-        "description": "SO/SI (0x0E/0x0F) — shift out/in (G1/G0 invocation)",
+        "title": "SO/SI",
+        "description": "0x0E/0x0F — Shift out/in (G1/G0 invocation)",
         "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/c0-c1-controls",
         "support": {
@@ -305,7 +311,8 @@
     },
     "enq": {
       "__compat": {
-        "description": "ENQ (0x05) — enquiry / answerback string",
+        "title": "ENQ",
+        "description": "0x05 — Enquiry / answerback string",
         "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/c0-c1-controls",
         "support": {
@@ -355,7 +362,8 @@
     },
     "ind": {
       "__compat": {
-        "description": "IND (ESC D) — index, move cursor down one line",
+        "title": "IND",
+        "description": "ESC D — Index, move cursor down one line",
         "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/c0-c1-controls",
         "support": {
@@ -405,7 +413,8 @@
     },
     "nel": {
       "__compat": {
-        "description": "NEL (ESC E) — next line, column 1 of next line",
+        "title": "NEL",
+        "description": "ESC E — Next line, column 1 of next line",
         "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/c0-c1-controls",
         "support": {
@@ -455,7 +464,8 @@
     },
     "hts": {
       "__compat": {
-        "description": "HTS (ESC H) — set tab stop at current column",
+        "title": "HTS",
+        "description": "ESC H — Set tab stop at current column",
         "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/c0-c1-controls",
         "support": {
@@ -505,7 +515,8 @@
     },
     "ri": {
       "__compat": {
-        "description": "RI (ESC M) — reverse index, move cursor up",
+        "title": "RI",
+        "description": "ESC M — Reverse index, move cursor up",
         "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/c0-c1-controls",
         "support": {
@@ -555,7 +566,8 @@
     },
     "ss2_ss3": {
       "__compat": {
-        "description": "SS2/SS3 (ESC N / ESC O) — single shift G2/G3",
+        "title": "SS2/SS3",
+        "description": "ESC N / ESC O — Single shift G2/G3",
         "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/c0-c1-controls",
         "support": {
@@ -605,7 +617,8 @@
     },
     "decsc_decrc": {
       "__compat": {
-        "description": "DECSC/DECRC (ESC 7 / ESC 8) — save/restore cursor",
+        "title": "DECSC/DECRC",
+        "description": "ESC 7 / ESC 8 — Save/restore cursor",
         "spec_url": "https://vt100.net/docs/vt510-rm/DECSC.html",
         "doc_path": "/docs/c0-c1-controls",
         "support": {
@@ -655,7 +668,8 @@
     },
     "ris": {
       "__compat": {
-        "description": "RIS (ESC c) — full terminal reset",
+        "title": "RIS",
+        "description": "ESC c — Full terminal reset",
         "spec_url": "https://vt100.net/docs/vt510-rm/RIS.html",
         "doc_path": "/docs/c0-c1-controls",
         "support": {
@@ -705,7 +719,8 @@
     },
     "deckpam_deckpnm": {
       "__compat": {
-        "description": "DECKPAM/DECKPNM (ESC = / ESC >) — application/numeric keypad",
+        "title": "DECKPAM/DECKPNM",
+        "description": "ESC = / ESC > — Application/numeric keypad",
         "spec_url": "https://vt100.net/docs/vt510-rm/DECKPAM.html",
         "doc_path": "/docs/c0-c1-controls",
         "support": {
@@ -755,7 +770,8 @@
     },
     "decdhl_decdwl": {
       "__compat": {
-        "description": "DECDHL/DECDWL (ESC #3–6) — double-height/width lines",
+        "title": "DECDHL/DECDWL",
+        "description": "ESC #3–6 — Double-height/width lines",
         "spec_url": "https://vt100.net/docs/vt510-rm/DECDHL.html",
         "doc_path": "/docs/c0-c1-controls",
         "support": {
@@ -805,7 +821,8 @@
     },
     "decaln": {
       "__compat": {
-        "description": "DECALN (ESC #8) — screen alignment test (fill with 'E')",
+        "title": "DECALN",
+        "description": "ESC #8 — Screen alignment test (fill with 'E')",
         "spec_url": "https://vt100.net/docs/vt510-rm/DECALN.html",
         "doc_path": "/docs/c0-c1-controls",
         "support": {
@@ -855,7 +872,8 @@
     },
     "s7c1t_s8c1t": {
       "__compat": {
-        "description": "S7C1T/S8C1T (ESC SP F/G) — 7-bit/8-bit control output",
+        "title": "S7C1T/S8C1T",
+        "description": "ESC SP F/G — 7-bit/8-bit control output",
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/c0-c1-controls",
         "support": {
@@ -905,7 +923,8 @@
     },
     "locking_shifts": {
       "__compat": {
-        "description": "Locking shifts (LS2, LS3, LS1R, LS2R, LS3R)",
+        "title": "Locking shifts",
+        "description": "LS2, LS3, LS1R, LS2R, LS3R",
         "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/c0-c1-controls",
         "support": {
@@ -955,7 +974,8 @@
     },
     "utf8_select": {
       "__compat": {
-        "description": "ESC % G — select UTF-8 character set",
+        "title": "UTF-8 select",
+        "description": "ESC % G — Select UTF-8 character set",
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/c0-c1-controls",
         "support": {

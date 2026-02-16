@@ -115,7 +115,8 @@ export default function CompatibilityMatrix(): React.ReactElement {
                   return (
                     <tr key={featureId}>
                       <td className={styles.featureCell}>
-                        <Link to={compat.doc_path}>{compat.description}</Link>
+                        <Link to={compat.doc_path}>{compat.title}</Link>
+                        <span className={styles.featureDesc}>{compat.description}</span>
                       </td>
                       {terminalIds.map((termId) => (
                         <SupportCell

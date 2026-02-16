@@ -5,7 +5,8 @@
     },
     "kitty_keyboard": {
       "__compat": {
-        "description": "Kitty keyboard protocol (progressive enhancement)",
+        "title": "Kitty keyboard protocol",
+        "description": "Progressive enhancement",
         "spec_url": "https://sw.kovidgoyal.net/kitty/keyboard-protocol/",
         "doc_path": "/docs/kitty-keyboard-protocol",
         "support": {
@@ -57,7 +58,8 @@
     },
     "kitty_kb_disambiguate": {
       "__compat": {
-        "description": "Kitty keyboard: disambiguate (flag 1)",
+        "title": "Disambiguate",
+        "description": "Kitty keyboard flag 1",
         "spec_url": "https://sw.kovidgoyal.net/kitty/keyboard-protocol/",
         "doc_path": "/docs/kitty-keyboard-protocol",
         "support": {
@@ -107,7 +109,8 @@
     },
     "kitty_kb_event_types": {
       "__compat": {
-        "description": "Kitty keyboard: report event types (flag 2)",
+        "title": "Report event types",
+        "description": "Kitty keyboard flag 2",
         "spec_url": "https://sw.kovidgoyal.net/kitty/keyboard-protocol/",
         "doc_path": "/docs/kitty-keyboard-protocol",
         "support": {
@@ -157,7 +160,8 @@
     },
     "kitty_kb_alternate_keys": {
       "__compat": {
-        "description": "Kitty keyboard: report alternate keys (flag 4)",
+        "title": "Report alternate keys",
+        "description": "Kitty keyboard flag 4",
         "spec_url": "https://sw.kovidgoyal.net/kitty/keyboard-protocol/",
         "doc_path": "/docs/kitty-keyboard-protocol",
         "support": {
@@ -207,7 +211,8 @@
     },
     "kitty_kb_all_keys": {
       "__compat": {
-        "description": "Kitty keyboard: all keys as escape codes (flag 8)",
+        "title": "All keys as escape codes",
+        "description": "Kitty keyboard flag 8",
         "spec_url": "https://sw.kovidgoyal.net/kitty/keyboard-protocol/",
         "doc_path": "/docs/kitty-keyboard-protocol",
         "support": {
@@ -257,7 +262,8 @@
     },
     "kitty_kb_associated_text": {
       "__compat": {
-        "description": "Kitty keyboard: report associated text (flag 16)",
+        "title": "Report associated text",
+        "description": "Kitty keyboard flag 16",
         "spec_url": "https://sw.kovidgoyal.net/kitty/keyboard-protocol/",
         "doc_path": "/docs/kitty-keyboard-protocol",
         "support": {

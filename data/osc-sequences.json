@@ -5,7 +5,8 @@
     },
     "osc0": {
       "__compat": {
-        "description": "OSC 0 — set icon name and window title",
+        "title": "OSC 0",
+        "description": "Set icon name and window title",
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/osc-sequences",
         "support": {
@@ -55,7 +56,8 @@
     },
     "osc2": {
       "__compat": {
-        "description": "OSC 2 — set window title",
+        "title": "OSC 2",
+        "description": "Set window title",
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/osc-sequences",
         "support": {
@@ -105,7 +107,8 @@
     },
     "osc4": {
       "__compat": {
-        "description": "OSC 4 — change/query color palette entry",
+        "title": "OSC 4",
+        "description": "Change/query color palette entry",
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/osc-sequences",
         "support": {
@@ -155,7 +158,8 @@
     },
     "osc7": {
       "__compat": {
-        "description": "OSC 7 — current working directory reporting",
+        "title": "OSC 7",
+        "description": "Current working directory reporting",
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/osc-sequences",
         "support": {
@@ -205,7 +209,8 @@
     },
     "osc8": {
       "__compat": {
-        "description": "OSC 8 — hyperlinks (clickable links)",
+        "title": "OSC 8",
+        "description": "Hyperlinks (clickable links)",
         "spec_url": "https://gist.github.com/egmontkob/eb114294efbcd5adb1944c9f3cb5feda",
         "doc_path": "/docs/osc-sequences",
         "support": {
@@ -255,7 +260,8 @@
     },
     "osc9": {
       "__compat": {
-        "description": "OSC 9 — desktop notification (ConEmu/iTerm2)",
+        "title": "OSC 9",
+        "description": "Desktop notification (ConEmu/iTerm2)",
         "spec_url": "https://conemu.github.io/en/AnsiEscapeCodes.html",
         "doc_path": "/docs/osc-sequences",
         "support": {
@@ -305,7 +311,8 @@
     },
     "osc9_4": {
       "__compat": {
-        "description": "OSC 9;4 — progress reporting",
+        "title": "OSC 9;4",
+        "description": "Progress reporting",
         "spec_url": "https://learn.microsoft.com/en-us/windows/terminal/tutorials/progress-bar-sequences",
         "doc_path": "/docs/osc-sequences",
         "support": {
@@ -355,7 +362,8 @@
     },
     "osc10": {
       "__compat": {
-        "description": "OSC 10 — set/query default foreground color",
+        "title": "OSC 10",
+        "description": "Set/query default foreground color",
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/osc-sequences",
         "support": {
@@ -405,7 +413,8 @@
     },
     "osc11": {
       "__compat": {
-        "description": "OSC 11 — set/query default background color",
+        "title": "OSC 11",
+        "description": "Set/query default background color",
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/osc-sequences",
         "support": {
@@ -455,7 +464,8 @@
     },
     "osc12": {
       "__compat": {
-        "description": "OSC 12 — set/query cursor color",
+        "title": "OSC 12",
+        "description": "Set/query cursor color",
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/osc-sequences",
         "support": {
@@ -505,7 +515,8 @@
     },
     "osc22": {
       "__compat": {
-        "description": "OSC 22 — set mouse pointer cursor shape",
+        "title": "OSC 22",
+        "description": "Set mouse pointer cursor shape",
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/osc-sequences",
         "support": {
@@ -555,7 +566,8 @@
     },
     "osc52_write": {
       "__compat": {
-        "description": "OSC 52 — clipboard write (copy to clipboard)",
+        "title": "OSC 52 write",
+        "description": "Clipboard write (copy to clipboard)",
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/osc-sequences",
         "support": {
@@ -606,7 +618,8 @@
     },
     "osc52_read": {
       "__compat": {
-        "description": "OSC 52 — clipboard read (paste from clipboard)",
+        "title": "OSC 52 read",
+        "description": "Clipboard read (paste from clipboard)",
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/osc-sequences",
         "support": {
@@ -658,7 +671,8 @@
     },
     "osc104": {
       "__compat": {
-        "description": "OSC 104 — reset color palette entry",
+        "title": "OSC 104",
+        "description": "Reset color palette entry",
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/osc-sequences",
         "support": {
@@ -708,7 +722,8 @@
     },
     "osc110_112": {
       "__compat": {
-        "description": "OSC 110/111/112 — reset foreground/background/cursor color",
+        "title": "OSC 110/111/112",
+        "description": "Reset foreground/background/cursor color",
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/osc-sequences",
         "support": {
@@ -758,7 +773,8 @@
     },
     "osc133": {
       "__compat": {
-        "description": "OSC 133 — shell integration (FinalTerm semantic zones)",
+        "title": "OSC 133",
+        "description": "Shell integration (FinalTerm semantic zones)",
         "spec_url": "https://code.visualstudio.com/docs/terminal/shell-integration",
         "doc_path": "/docs/multiplexers-shell-integration",
         "support": {
@@ -808,7 +824,8 @@
     },
     "kitty_osc21": {
       "__compat": {
-        "description": "Kitty OSC 21 — color protocol (query/change by name)",
+        "title": "Kitty OSC 21",
+        "description": "Color protocol (query/change by name)",
         "spec_url": "https://sw.kovidgoyal.net/kitty/color-stack/",
         "doc_path": "/docs/osc-sequences",
         "support": {
@@ -858,7 +875,8 @@
     },
     "kitty_osc99": {
       "__compat": {
-        "description": "Kitty OSC 99 — desktop notifications (rich)",
+        "title": "Kitty OSC 99",
+        "description": "Desktop notifications (rich)",
         "spec_url": "https://sw.kovidgoyal.net/kitty/desktop-notifications/",
         "doc_path": "/docs/osc-sequences",
         "support": {
@@ -908,7 +926,8 @@
     },
     "iterm2_osc1337_file": {
       "__compat": {
-        "description": "iTerm2 OSC 1337 File — inline image display",
+        "title": "iTerm2 OSC 1337 File",
+        "description": "Inline image display",
         "spec_url": "https://iterm2.com/documentation-images.html",
         "doc_path": "/docs/osc-sequences",
         "support": {
@@ -960,7 +979,8 @@
     },
     "iterm2_osc1337_misc": {
       "__compat": {
-        "description": "iTerm2 OSC 1337 — marks, user vars, profile switching",
+        "title": "iTerm2 OSC 1337",
+        "description": "Marks, user vars, profile switching",
         "spec_url": "https://iterm2.com/3.0/documentation-escape-codes.html",
         "doc_path": "/docs/osc-sequences",
         "support": {
@@ -1012,7 +1032,8 @@
     },
     "osc777": {
       "__compat": {
-        "description": "OSC 777 — urxvt-style notification",
+        "title": "OSC 777",
+        "description": "urxvt-style notification",
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/osc-sequences",
         "support": {

@@ -1,0 +1,530 @@
+{
+  "decset_modes": {
+    "__meta": { "category": "DECSET/DECRST Modes" },
+    "mode1_decckm": {
+      "__compat": {
+        "description": "Mode 1 DECCKM — application cursor keys",
+        "spec_url": "https://vt100.net/docs/vt510-rm/DECCKM.html",
+        "doc_path": "/docs/decset-modes",
+        "support": {
+          "xterm": { "version_added": true },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": true },
+          "iterm2": { "version_added": true },
+          "vte": { "version_added": true },
+          "windows_terminal": { "version_added": true },
+          "konsole": { "version_added": true },
+          "mintty": { "version_added": true }
+        },
+        "status": { "experimental": false, "standard_track": true, "deprecated": false }
+      }
+    },
+    "mode3_deccolm": {
+      "__compat": {
+        "description": "Mode 3 DECCOLM — 132/80 column switching",
+        "spec_url": "https://vt100.net/docs/vt510-rm/DECCOLM.html",
+        "doc_path": "/docs/decset-modes",
+        "support": {
+          "xterm": { "version_added": true },
+          "ghostty": { "version_added": false },
+          "kitty": { "version_added": false },
+          "wezterm": { "version_added": null },
+          "foot": { "version_added": false },
+          "alacritty": { "version_added": false },
+          "iterm2": { "version_added": null },
+          "vte": { "version_added": true },
+          "windows_terminal": { "version_added": false },
+          "konsole": { "version_added": null },
+          "mintty": { "version_added": true }
+        },
+        "status": { "experimental": false, "standard_track": true, "deprecated": false }
+      }
+    },
+    "mode5_decscnm": {
+      "__compat": {
+        "description": "Mode 5 DECSCNM — reverse video (light background)",
+        "spec_url": "https://vt100.net/docs/vt510-rm/DECSCNM.html",
+        "doc_path": "/docs/decset-modes",
+        "support": {
+          "xterm": { "version_added": true },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": true },
+          "iterm2": { "version_added": true },
+          "vte": { "version_added": true },
+          "windows_terminal": { "version_added": true },
+          "konsole": { "version_added": true },
+          "mintty": { "version_added": true }
+        },
+        "status": { "experimental": false, "standard_track": true, "deprecated": false }
+      }
+    },
+    "mode6_decom": {
+      "__compat": {
+        "description": "Mode 6 DECOM — origin mode (relative to scroll region)",
+        "spec_url": "https://vt100.net/docs/vt510-rm/DECOM.html",
+        "doc_path": "/docs/decset-modes",
+        "support": {
+          "xterm": { "version_added": true },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": true },
+          "iterm2": { "version_added": true },
+          "vte": { "version_added": true },
+          "windows_terminal": { "version_added": true },
+          "konsole": { "version_added": true },
+          "mintty": { "version_added": true }
+        },
+        "status": { "experimental": false, "standard_track": true, "deprecated": false }
+      }
+    },
+    "mode7_decawm": {
+      "__compat": {
+        "description": "Mode 7 DECAWM — auto-wrap at end of line",
+        "spec_url": "https://vt100.net/docs/vt510-rm/DECAWM.html",
+        "doc_path": "/docs/decset-modes",
+        "support": {
+          "xterm": { "version_added": true },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": true },
+          "iterm2": { "version_added": true },
+          "vte": { "version_added": true },
+          "windows_terminal": { "version_added": true },
+          "konsole": { "version_added": true },
+          "mintty": { "version_added": true }
+        },
+        "status": { "experimental": false, "standard_track": true, "deprecated": false }
+      }
+    },
+    "mode12_blink_cursor": {
+      "__compat": {
+        "description": "Mode 12 — blinking cursor (att610)",
+        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+        "doc_path": "/docs/decset-modes",
+        "support": {
+          "xterm": { "version_added": true },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": true },
+          "iterm2": { "version_added": true },
+          "vte": { "version_added": true },
+          "windows_terminal": { "version_added": true },
+          "konsole": { "version_added": true },
+          "mintty": { "version_added": true }
+        },
+        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+      }
+    },
+    "mode25_dectcem": {
+      "__compat": {
+        "description": "Mode 25 DECTCEM — show/hide text cursor",
+        "spec_url": "https://vt100.net/docs/vt510-rm/DECTCEM.html",
+        "doc_path": "/docs/decset-modes",
+        "support": {
+          "xterm": { "version_added": true },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": true },
+          "iterm2": { "version_added": true },
+          "vte": { "version_added": true },
+          "windows_terminal": { "version_added": true },
+          "konsole": { "version_added": true },
+          "mintty": { "version_added": true }
+        },
+        "status": { "experimental": false, "standard_track": true, "deprecated": false }
+      }
+    },
+    "mode45_reverse_wrap": {
+      "__compat": {
+        "description": "Mode 45 — reverse-wraparound (BS wraps to previous line)",
+        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+        "doc_path": "/docs/decset-modes",
+        "support": {
+          "xterm": { "version_added": true },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": false },
+          "iterm2": { "version_added": true },
+          "vte": { "version_added": true },
+          "windows_terminal": { "version_added": null },
+          "konsole": { "version_added": null },
+          "mintty": { "version_added": true }
+        },
+        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+      }
+    },
+    "mode69_declrmm": {
+      "__compat": {
+        "description": "Mode 69 DECLRMM — left/right margin mode",
+        "spec_url": "https://vt100.net/docs/vt510-rm/DECLRMM.html",
+        "doc_path": "/docs/decset-modes",
+        "support": {
+          "xterm": { "version_added": true },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": false },
+          "iterm2": { "version_added": null },
+          "vte": { "version_added": true },
+          "windows_terminal": { "version_added": false },
+          "konsole": { "version_added": null },
+          "mintty": { "version_added": true }
+        },
+        "status": { "experimental": false, "standard_track": true, "deprecated": false }
+      }
+    },
+    "mode80_decsdm": {
+      "__compat": {
+        "description": "Mode 80 DECSDM — sixel display mode (scrolling)",
+        "spec_url": "https://vt100.net/docs/vt3xx-gp/chapter14.html",
+        "doc_path": "/docs/decset-modes",
+        "support": {
+          "xterm": { "version_added": true },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": false },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": false },
+          "iterm2": { "version_added": null },
+          "vte": { "version_added": false },
+          "windows_terminal": { "version_added": false },
+          "konsole": { "version_added": null },
+          "mintty": { "version_added": true }
+        },
+        "status": { "experimental": false, "standard_track": true, "deprecated": false }
+      }
+    },
+    "mode1049_altscreen": {
+      "__compat": {
+        "description": "Mode 1049 — alternate screen buffer with cursor save",
+        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+        "doc_path": "/docs/decset-modes",
+        "support": {
+          "xterm": { "version_added": true },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": true },
+          "iterm2": { "version_added": true },
+          "vte": { "version_added": true },
+          "windows_terminal": { "version_added": true },
+          "konsole": { "version_added": true },
+          "mintty": { "version_added": true }
+        },
+        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+      }
+    },
+    "mode1000_mouse_normal": {
+      "__compat": {
+        "description": "Mode 1000 — normal mouse tracking (press + release)",
+        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+        "doc_path": "/docs/decset-modes",
+        "support": {
+          "xterm": { "version_added": true },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": true },
+          "iterm2": { "version_added": true },
+          "vte": { "version_added": true },
+          "windows_terminal": { "version_added": true },
+          "konsole": { "version_added": true },
+          "mintty": { "version_added": true }
+        },
+        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+      }
+    },
+    "mode1002_button_event": {
+      "__compat": {
+        "description": "Mode 1002 — button-event mouse tracking (motion while held)",
+        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+        "doc_path": "/docs/decset-modes",
+        "support": {
+          "xterm": { "version_added": true },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": true },
+          "iterm2": { "version_added": true },
+          "vte": { "version_added": true },
+          "windows_terminal": { "version_added": true },
+          "konsole": { "version_added": true },
+          "mintty": { "version_added": true }
+        },
+        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+      }
+    },
+    "mode1003_any_event": {
+      "__compat": {
+        "description": "Mode 1003 — any-event mouse tracking (all motion)",
+        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+        "doc_path": "/docs/decset-modes",
+        "support": {
+          "xterm": { "version_added": true },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": true },
+          "iterm2": { "version_added": true },
+          "vte": { "version_added": true },
+          "windows_terminal": { "version_added": true },
+          "konsole": { "version_added": true },
+          "mintty": { "version_added": true }
+        },
+        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+      }
+    },
+    "mode1004_focus": {
+      "__compat": {
+        "description": "Mode 1004 — focus events (CSI I / CSI O)",
+        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+        "doc_path": "/docs/decset-modes",
+        "support": {
+          "xterm": { "version_added": true },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": true },
+          "iterm2": { "version_added": true },
+          "vte": { "version_added": true },
+          "windows_terminal": { "version_added": true },
+          "konsole": { "version_added": true },
+          "mintty": { "version_added": true }
+        },
+        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+      }
+    },
+    "mode1006_sgr_mouse": {
+      "__compat": {
+        "description": "Mode 1006 — SGR mouse encoding (decimal, no coord limit)",
+        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+        "doc_path": "/docs/decset-modes",
+        "support": {
+          "xterm": { "version_added": true },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": true },
+          "iterm2": { "version_added": true },
+          "vte": { "version_added": true },
+          "windows_terminal": { "version_added": true },
+          "konsole": { "version_added": true },
+          "mintty": { "version_added": true }
+        },
+        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+      }
+    },
+    "mode1007_alt_scroll": {
+      "__compat": {
+        "description": "Mode 1007 — alternate scroll (wheel sends arrows in alt screen)",
+        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+        "doc_path": "/docs/decset-modes",
+        "support": {
+          "xterm": { "version_added": true },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": true },
+          "iterm2": { "version_added": true },
+          "vte": { "version_added": true },
+          "windows_terminal": { "version_added": null },
+          "konsole": { "version_added": true },
+          "mintty": { "version_added": true }
+        },
+        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+      }
+    },
+    "mode1016_sgr_pixel": {
+      "__compat": {
+        "description": "Mode 1016 — SGR-Pixel mouse (pixel coordinates)",
+        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+        "doc_path": "/docs/decset-modes",
+        "support": {
+          "xterm": { "version_added": true },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": null },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": false },
+          "iterm2": { "version_added": null },
+          "vte": { "version_added": null },
+          "windows_terminal": { "version_added": null },
+          "konsole": { "version_added": null },
+          "mintty": { "version_added": null }
+        },
+        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+      }
+    },
+    "mode2004_bracketed_paste": {
+      "__compat": {
+        "description": "Mode 2004 — bracketed paste",
+        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+        "doc_path": "/docs/decset-modes",
+        "support": {
+          "xterm": { "version_added": true },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": true },
+          "iterm2": { "version_added": true },
+          "vte": { "version_added": true },
+          "windows_terminal": { "version_added": true },
+          "konsole": { "version_added": true },
+          "mintty": { "version_added": true }
+        },
+        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+      }
+    },
+    "mode2026_sync_output": {
+      "__compat": {
+        "description": "Mode 2026 — synchronized output (tear-free rendering)",
+        "spec_url": "https://gist.github.com/christianparpart/d8a62cc1ab659194337d73e399004036",
+        "doc_path": "/docs/advanced-modes",
+        "support": {
+          "xterm": { "version_added": false },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": true },
+          "iterm2": { "version_added": true },
+          "vte": { "version_added": true },
+          "windows_terminal": { "version_added": true },
+          "konsole": { "version_added": null },
+          "mintty": { "version_added": true }
+        },
+        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+      }
+    },
+    "mode2027_grapheme": {
+      "__compat": {
+        "description": "Mode 2027 — grapheme clustering (UAX #29)",
+        "spec_url": "https://unicode.org/reports/tr29/",
+        "doc_path": "/docs/advanced-modes",
+        "support": {
+          "xterm": { "version_added": false },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": false },
+          "iterm2": { "version_added": false },
+          "vte": { "version_added": false },
+          "windows_terminal": { "version_added": false },
+          "konsole": { "version_added": false },
+          "mintty": { "version_added": false }
+        },
+        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+      }
+    },
+    "mode2031_color_scheme": {
+      "__compat": {
+        "description": "Mode 2031 — color scheme reporting (light/dark notifications)",
+        "spec_url": "https://contour-terminal.org/vt-extensions/color-palette-update-notifications/",
+        "doc_path": "/docs/advanced-modes",
+        "support": {
+          "xterm": { "version_added": false },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": null },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": false },
+          "iterm2": { "version_added": false },
+          "vte": { "version_added": true },
+          "windows_terminal": { "version_added": false },
+          "konsole": { "version_added": false },
+          "mintty": { "version_added": false }
+        },
+        "status": { "experimental": true, "standard_track": false, "deprecated": false }
+      }
+    },
+    "mode2048_in_band_resize": {
+      "__compat": {
+        "description": "Mode 2048 — in-band resize (deterministic notifications)",
+        "spec_url": "https://gist.github.com/rockorager/e695f2f3a12087ddf998ef96210e5364",
+        "doc_path": "/docs/advanced-modes",
+        "support": {
+          "xterm": { "version_added": false },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": false },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": false },
+          "iterm2": { "version_added": true },
+          "vte": { "version_added": false },
+          "windows_terminal": { "version_added": false },
+          "konsole": { "version_added": false },
+          "mintty": { "version_added": false }
+        },
+        "status": { "experimental": true, "standard_track": false, "deprecated": false }
+      }
+    },
+    "mode4_irm": {
+      "__compat": {
+        "description": "ANSI Mode 4 IRM — insert/replace mode",
+        "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
+        "doc_path": "/docs/decset-modes",
+        "support": {
+          "xterm": { "version_added": true },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": true },
+          "iterm2": { "version_added": true },
+          "vte": { "version_added": true },
+          "windows_terminal": { "version_added": true },
+          "konsole": { "version_added": true },
+          "mintty": { "version_added": true }
+        },
+        "status": { "experimental": false, "standard_track": true, "deprecated": false }
+      }
+    },
+    "mode20_lnm": {
+      "__compat": {
+        "description": "ANSI Mode 20 LNM — newline mode (LF also does CR)",
+        "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
+        "doc_path": "/docs/decset-modes",
+        "support": {
+          "xterm": { "version_added": true },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": true },
+          "iterm2": { "version_added": true },
+          "vte": { "version_added": true },
+          "windows_terminal": { "version_added": true },
+          "konsole": { "version_added": true },
+          "mintty": { "version_added": true }
+        },
+        "status": { "experimental": false, "standard_track": true, "deprecated": false }
+      }
+    }
+  }
+}

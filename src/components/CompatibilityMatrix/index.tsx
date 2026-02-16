@@ -4,19 +4,25 @@ import styles from './styles.module.css';
 
 import terminals from '../../../data/terminals.json';
 import controlSequences from '../../../data/control-sequences.json';
+import csiSequences from '../../../data/csi-sequences.json';
 import textStyling from '../../../data/text-styling.json';
+import oscSequences from '../../../data/osc-sequences.json';
+import dcsSequences from '../../../data/dcs-sequences.json';
+import decsetModes from '../../../data/decset-modes.json';
 import keyboardInput from '../../../data/keyboard-input.json';
 import graphics from '../../../data/graphics.json';
-import modernModes from '../../../data/modern-modes.json';
-import systemIntegration from '../../../data/system-integration.json';
+import windowManipulation from '../../../data/window-manipulation.json';
 
 const categories = [
   controlSequences.control_sequences,
+  csiSequences.csi_sequences,
   textStyling.text_styling,
+  oscSequences.osc_sequences,
+  dcsSequences.dcs_sequences,
+  decsetModes.decset_modes,
   keyboardInput.keyboard_input,
   graphics.graphics,
-  modernModes.modern_modes,
-  systemIntegration.system_integration,
+  windowManipulation.window_manipulation,
 ];
 
 const terminalIds = Object.keys(terminals);

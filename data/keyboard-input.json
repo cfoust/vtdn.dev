@@ -19,111 +19,112 @@
           "konsole": { "version_added": false },
           "mintty": { "version_added": false }
         },
-        "status": {
-          "experimental": false,
-          "standard_track": false,
-          "deprecated": false
-        }
+        "status": { "experimental": false, "standard_track": false, "deprecated": false }
       }
     },
-    "bracketed_paste": {
+    "kitty_kb_disambiguate": {
       "__compat": {
-        "description": "Bracketed paste mode (Mode 2004)",
-        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
-        "doc_path": "/docs/decset-modes",
+        "description": "Kitty keyboard: disambiguate (flag 1)",
+        "spec_url": "https://sw.kovidgoyal.net/kitty/keyboard-protocol/",
+        "doc_path": "/docs/kitty-keyboard-protocol",
         "support": {
-          "xterm": { "version_added": true },
+          "xterm": { "version_added": false },
           "ghostty": { "version_added": true },
           "kitty": { "version_added": true },
           "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": true },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": true },
-          "konsole": { "version_added": true },
-          "mintty": { "version_added": true }
-        },
-        "status": {
-          "experimental": false,
-          "standard_track": false,
-          "deprecated": false
-        }
-      }
-    },
-    "focus_events": {
-      "__compat": {
-        "description": "Focus events (Mode 1004 — CSI I / CSI O)",
-        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
-        "doc_path": "/docs/decset-modes",
-        "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": true },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": true },
-          "konsole": { "version_added": true },
-          "mintty": { "version_added": true }
-        },
-        "status": {
-          "experimental": false,
-          "standard_track": false,
-          "deprecated": false
-        }
-      }
-    },
-    "sgr_mouse": {
-      "__compat": {
-        "description": "SGR mouse mode (Mode 1006 — decimal, no coord limit)",
-        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
-        "doc_path": "/docs/decset-modes",
-        "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": true },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": true },
-          "konsole": { "version_added": true },
-          "mintty": { "version_added": true }
-        },
-        "status": {
-          "experimental": false,
-          "standard_track": false,
-          "deprecated": false
-        }
-      }
-    },
-    "sgr_pixel_mouse": {
-      "__compat": {
-        "description": "SGR-Pixel mouse mode (Mode 1016 — pixel coordinates)",
-        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
-        "doc_path": "/docs/decset-modes",
-        "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": null },
           "foot": { "version_added": true },
           "alacritty": { "version_added": false },
-          "iterm2": { "version_added": null },
-          "vte": { "version_added": null },
-          "windows_terminal": { "version_added": null },
-          "konsole": { "version_added": null },
-          "mintty": { "version_added": null }
+          "iterm2": { "version_added": true },
+          "vte": { "version_added": false },
+          "windows_terminal": { "version_added": true },
+          "konsole": { "version_added": false },
+          "mintty": { "version_added": false }
         },
-        "status": {
-          "experimental": false,
-          "standard_track": false,
-          "deprecated": false
-        }
+        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+      }
+    },
+    "kitty_kb_event_types": {
+      "__compat": {
+        "description": "Kitty keyboard: report event types (flag 2)",
+        "spec_url": "https://sw.kovidgoyal.net/kitty/keyboard-protocol/",
+        "doc_path": "/docs/kitty-keyboard-protocol",
+        "support": {
+          "xterm": { "version_added": false },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": false },
+          "iterm2": { "version_added": true },
+          "vte": { "version_added": false },
+          "windows_terminal": { "version_added": true },
+          "konsole": { "version_added": false },
+          "mintty": { "version_added": false }
+        },
+        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+      }
+    },
+    "kitty_kb_alternate_keys": {
+      "__compat": {
+        "description": "Kitty keyboard: report alternate keys (flag 4)",
+        "spec_url": "https://sw.kovidgoyal.net/kitty/keyboard-protocol/",
+        "doc_path": "/docs/kitty-keyboard-protocol",
+        "support": {
+          "xterm": { "version_added": false },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": false },
+          "iterm2": { "version_added": true },
+          "vte": { "version_added": false },
+          "windows_terminal": { "version_added": null },
+          "konsole": { "version_added": false },
+          "mintty": { "version_added": false }
+        },
+        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+      }
+    },
+    "kitty_kb_all_keys": {
+      "__compat": {
+        "description": "Kitty keyboard: all keys as escape codes (flag 8)",
+        "spec_url": "https://sw.kovidgoyal.net/kitty/keyboard-protocol/",
+        "doc_path": "/docs/kitty-keyboard-protocol",
+        "support": {
+          "xterm": { "version_added": false },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": false },
+          "iterm2": { "version_added": true },
+          "vte": { "version_added": false },
+          "windows_terminal": { "version_added": null },
+          "konsole": { "version_added": false },
+          "mintty": { "version_added": false }
+        },
+        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+      }
+    },
+    "kitty_kb_associated_text": {
+      "__compat": {
+        "description": "Kitty keyboard: report associated text (flag 16)",
+        "spec_url": "https://sw.kovidgoyal.net/kitty/keyboard-protocol/",
+        "doc_path": "/docs/kitty-keyboard-protocol",
+        "support": {
+          "xterm": { "version_added": false },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": false },
+          "iterm2": { "version_added": true },
+          "vte": { "version_added": false },
+          "windows_terminal": { "version_added": null },
+          "konsole": { "version_added": false },
+          "mintty": { "version_added": false }
+        },
+        "status": { "experimental": false, "standard_track": false, "deprecated": false }
       }
     }
   }

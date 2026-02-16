@@ -1,0 +1,110 @@
+{
+  "dcs_sequences": {
+    "__meta": { "category": "DCS Sequences" },
+    "decrqss": {
+      "__compat": {
+        "description": "DECRQSS (DCS $ q) — request status string",
+        "spec_url": "https://vt100.net/docs/vt510-rm/DECRQSS.html",
+        "doc_path": "/docs/dcs-sequences",
+        "support": {
+          "xterm": { "version_added": true },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": false },
+          "iterm2": { "version_added": null },
+          "vte": { "version_added": true },
+          "windows_terminal": { "version_added": false },
+          "konsole": { "version_added": null },
+          "mintty": { "version_added": true }
+        },
+        "status": { "experimental": false, "standard_track": true, "deprecated": false }
+      }
+    },
+    "xtgettcap": {
+      "__compat": {
+        "description": "XTGETTCAP (DCS + q) — terminal capability query",
+        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+        "doc_path": "/docs/dcs-sequences",
+        "support": {
+          "xterm": { "version_added": true },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": false },
+          "iterm2": { "version_added": false },
+          "vte": { "version_added": false },
+          "windows_terminal": { "version_added": false },
+          "konsole": { "version_added": false },
+          "mintty": { "version_added": false }
+        },
+        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+      }
+    },
+    "xtversion": {
+      "__compat": {
+        "description": "XTVERSION (CSI > 0 q) — terminal name/version response",
+        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+        "doc_path": "/docs/dcs-sequences",
+        "support": {
+          "xterm": { "version_added": true },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": false },
+          "iterm2": { "version_added": false },
+          "vte": { "version_added": true },
+          "windows_terminal": { "version_added": false },
+          "konsole": { "version_added": false },
+          "mintty": { "version_added": true }
+        },
+        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+      }
+    },
+    "sixel": {
+      "__compat": {
+        "description": "Sixel graphics (DCS P1;P2;P3 q ... ST)",
+        "spec_url": "https://vt100.net/docs/vt3xx-gp/chapter14.html",
+        "doc_path": "/docs/graphics-protocols",
+        "support": {
+          "xterm": { "version_added": true, "notes": "Requires compile flag" },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": false },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": false },
+          "iterm2": { "version_added": true },
+          "vte": { "version_added": false },
+          "windows_terminal": { "version_added": false },
+          "konsole": { "version_added": null },
+          "mintty": { "version_added": true }
+        },
+        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+      }
+    },
+    "tmux_passthrough": {
+      "__compat": {
+        "description": "tmux DCS passthrough (DCS tmux; ... ST)",
+        "spec_url": "https://github.com/tmux/tmux/wiki/FAQ",
+        "doc_path": "/docs/multiplexers-shell-integration",
+        "support": {
+          "xterm": { "version_added": true },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": true },
+          "iterm2": { "version_added": true },
+          "vte": { "version_added": true },
+          "windows_terminal": { "version_added": true },
+          "konsole": { "version_added": true },
+          "mintty": { "version_added": true }
+        },
+        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+      }
+    }
+  }
+}

@@ -1,9 +1,9 @@
 {
   "text_styling": {
-    "__meta": { "category": "Text Styling" },
-    "sgr_basic": {
+    "__meta": { "category": "SGR Text Styling" },
+    "sgr_bold": {
       "__compat": {
-        "description": "SGR basic attributes (bold, italic, underline, blink, reverse, strikethrough)",
+        "description": "Bold / increased intensity (SGR 1)",
         "spec_url": "https://vt100.net/docs/vt510-rm/SGR.html",
         "doc_path": "/docs/sgr-attributes",
         "support": {
@@ -19,17 +19,13 @@
           "konsole": { "version_added": true },
           "mintty": { "version_added": true }
         },
-        "status": {
-          "experimental": false,
-          "standard_track": true,
-          "deprecated": false
-        }
+        "status": { "experimental": false, "standard_track": true, "deprecated": false }
       }
     },
-    "color_256": {
+    "sgr_dim": {
       "__compat": {
-        "description": "256-color indexed (CSI 38;5;n m)",
-        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+        "description": "Dim / faint (SGR 2)",
+        "spec_url": "https://vt100.net/docs/vt510-rm/SGR.html",
         "doc_path": "/docs/sgr-attributes",
         "support": {
           "xterm": { "version_added": true },
@@ -44,17 +40,13 @@
           "konsole": { "version_added": true },
           "mintty": { "version_added": true }
         },
-        "status": {
-          "experimental": false,
-          "standard_track": false,
-          "deprecated": false
-        }
+        "status": { "experimental": false, "standard_track": true, "deprecated": false }
       }
     },
-    "truecolor": {
+    "sgr_italic": {
       "__compat": {
-        "description": "24-bit truecolor (CSI 38;2;r;g;b m)",
-        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+        "description": "Italic (SGR 3)",
+        "spec_url": "https://vt100.net/docs/vt510-rm/SGR.html",
         "doc_path": "/docs/sgr-attributes",
         "support": {
           "xterm": { "version_added": true },
@@ -69,17 +61,139 @@
           "konsole": { "version_added": true },
           "mintty": { "version_added": true }
         },
-        "status": {
-          "experimental": false,
-          "standard_track": false,
-          "deprecated": false
-        }
+        "status": { "experimental": false, "standard_track": true, "deprecated": false }
       }
     },
-    "underline_styles": {
+    "sgr_underline": {
       "__compat": {
-        "description": "Underline styles (single, double, curly, dotted, dashed)",
-        "spec_url": "https://sw.kovidgoyal.net/kitty/underlines/",
+        "description": "Underline (SGR 4)",
+        "spec_url": "https://vt100.net/docs/vt510-rm/SGR.html",
+        "doc_path": "/docs/sgr-attributes",
+        "support": {
+          "xterm": { "version_added": true },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": true },
+          "iterm2": { "version_added": true },
+          "vte": { "version_added": true },
+          "windows_terminal": { "version_added": true },
+          "konsole": { "version_added": true },
+          "mintty": { "version_added": true }
+        },
+        "status": { "experimental": false, "standard_track": true, "deprecated": false }
+      }
+    },
+    "sgr_slow_blink": {
+      "__compat": {
+        "description": "Slow blink (SGR 5)",
+        "spec_url": "https://vt100.net/docs/vt510-rm/SGR.html",
+        "doc_path": "/docs/sgr-attributes",
+        "support": {
+          "xterm": { "version_added": true },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": false },
+          "iterm2": { "version_added": true },
+          "vte": { "version_added": true },
+          "windows_terminal": { "version_added": true },
+          "konsole": { "version_added": true },
+          "mintty": { "version_added": true }
+        },
+        "status": { "experimental": false, "standard_track": true, "deprecated": false }
+      }
+    },
+    "sgr_rapid_blink": {
+      "__compat": {
+        "description": "Rapid blink (SGR 6)",
+        "spec_url": "https://vt100.net/docs/vt510-rm/SGR.html",
+        "doc_path": "/docs/sgr-attributes",
+        "support": {
+          "xterm": { "version_added": true },
+          "ghostty": { "version_added": false },
+          "kitty": { "version_added": false },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": false },
+          "alacritty": { "version_added": false },
+          "iterm2": { "version_added": false },
+          "vte": { "version_added": true },
+          "windows_terminal": { "version_added": null },
+          "konsole": { "version_added": null },
+          "mintty": { "version_added": true }
+        },
+        "status": { "experimental": false, "standard_track": true, "deprecated": false }
+      }
+    },
+    "sgr_reverse": {
+      "__compat": {
+        "description": "Reverse / inverse video (SGR 7)",
+        "spec_url": "https://vt100.net/docs/vt510-rm/SGR.html",
+        "doc_path": "/docs/sgr-attributes",
+        "support": {
+          "xterm": { "version_added": true },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": true },
+          "iterm2": { "version_added": true },
+          "vte": { "version_added": true },
+          "windows_terminal": { "version_added": true },
+          "konsole": { "version_added": true },
+          "mintty": { "version_added": true }
+        },
+        "status": { "experimental": false, "standard_track": true, "deprecated": false }
+      }
+    },
+    "sgr_hidden": {
+      "__compat": {
+        "description": "Hidden / invisible (SGR 8)",
+        "spec_url": "https://vt100.net/docs/vt510-rm/SGR.html",
+        "doc_path": "/docs/sgr-attributes",
+        "support": {
+          "xterm": { "version_added": true },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": true },
+          "iterm2": { "version_added": true },
+          "vte": { "version_added": true },
+          "windows_terminal": { "version_added": true },
+          "konsole": { "version_added": true },
+          "mintty": { "version_added": true }
+        },
+        "status": { "experimental": false, "standard_track": true, "deprecated": false }
+      }
+    },
+    "sgr_strikethrough": {
+      "__compat": {
+        "description": "Strikethrough (SGR 9)",
+        "spec_url": "https://vt100.net/docs/vt510-rm/SGR.html",
+        "doc_path": "/docs/sgr-attributes",
+        "support": {
+          "xterm": { "version_added": true },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": true },
+          "iterm2": { "version_added": true },
+          "vte": { "version_added": true },
+          "windows_terminal": { "version_added": true },
+          "konsole": { "version_added": true },
+          "mintty": { "version_added": true }
+        },
+        "status": { "experimental": false, "standard_track": true, "deprecated": false }
+      }
+    },
+    "sgr_double_underline": {
+      "__compat": {
+        "description": "Double underline (SGR 21)",
+        "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/sgr-attributes",
         "support": {
           "xterm": { "version_added": false },
@@ -94,39 +208,10 @@
           "konsole": { "version_added": null },
           "mintty": { "version_added": true }
         },
-        "status": {
-          "experimental": false,
-          "standard_track": false,
-          "deprecated": false
-        }
+        "status": { "experimental": false, "standard_track": true, "deprecated": false }
       }
     },
-    "underline_color": {
-      "__compat": {
-        "description": "Underline color (CSI 58;2;r;g;b m)",
-        "spec_url": "https://sw.kovidgoyal.net/kitty/underlines/",
-        "doc_path": "/docs/sgr-attributes",
-        "support": {
-          "xterm": { "version_added": false },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": true },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": null },
-          "konsole": { "version_added": null },
-          "mintty": { "version_added": true }
-        },
-        "status": {
-          "experimental": false,
-          "standard_track": false,
-          "deprecated": false
-        }
-      }
-    },
-    "overline": {
+    "sgr_overline": {
       "__compat": {
         "description": "Overline (SGR 53)",
         "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
@@ -144,11 +229,196 @@
           "konsole": { "version_added": null },
           "mintty": { "version_added": true }
         },
-        "status": {
-          "experimental": false,
-          "standard_track": true,
-          "deprecated": false
-        }
+        "status": { "experimental": false, "standard_track": true, "deprecated": false }
+      }
+    },
+    "underline_curly": {
+      "__compat": {
+        "description": "Curly/wavy underline (SGR 4:3)",
+        "spec_url": "https://sw.kovidgoyal.net/kitty/underlines/",
+        "doc_path": "/docs/sgr-attributes",
+        "support": {
+          "xterm": { "version_added": false },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": true },
+          "iterm2": { "version_added": true },
+          "vte": { "version_added": true },
+          "windows_terminal": { "version_added": null },
+          "konsole": { "version_added": null },
+          "mintty": { "version_added": true }
+        },
+        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+      }
+    },
+    "underline_dotted": {
+      "__compat": {
+        "description": "Dotted underline (SGR 4:4)",
+        "spec_url": "https://sw.kovidgoyal.net/kitty/underlines/",
+        "doc_path": "/docs/sgr-attributes",
+        "support": {
+          "xterm": { "version_added": false },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": true },
+          "iterm2": { "version_added": true },
+          "vte": { "version_added": true },
+          "windows_terminal": { "version_added": null },
+          "konsole": { "version_added": null },
+          "mintty": { "version_added": true }
+        },
+        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+      }
+    },
+    "underline_dashed": {
+      "__compat": {
+        "description": "Dashed underline (SGR 4:5)",
+        "spec_url": "https://sw.kovidgoyal.net/kitty/underlines/",
+        "doc_path": "/docs/sgr-attributes",
+        "support": {
+          "xterm": { "version_added": false },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": true },
+          "iterm2": { "version_added": true },
+          "vte": { "version_added": true },
+          "windows_terminal": { "version_added": null },
+          "konsole": { "version_added": null },
+          "mintty": { "version_added": true }
+        },
+        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+      }
+    },
+    "color_standard": {
+      "__compat": {
+        "description": "Standard 8+8 ANSI colors (SGR 30–37, 40–47, 90–97, 100–107)",
+        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+        "doc_path": "/docs/sgr-attributes",
+        "support": {
+          "xterm": { "version_added": true },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": true },
+          "iterm2": { "version_added": true },
+          "vte": { "version_added": true },
+          "windows_terminal": { "version_added": true },
+          "konsole": { "version_added": true },
+          "mintty": { "version_added": true }
+        },
+        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+      }
+    },
+    "color_256": {
+      "__compat": {
+        "description": "256-color indexed (SGR 38;5;n / 48;5;n)",
+        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+        "doc_path": "/docs/sgr-attributes",
+        "support": {
+          "xterm": { "version_added": true },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": true },
+          "iterm2": { "version_added": true },
+          "vte": { "version_added": true },
+          "windows_terminal": { "version_added": true },
+          "konsole": { "version_added": true },
+          "mintty": { "version_added": true }
+        },
+        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+      }
+    },
+    "truecolor_semicolon": {
+      "__compat": {
+        "description": "24-bit truecolor, semicolons (SGR 38;2;r;g;b)",
+        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+        "doc_path": "/docs/sgr-attributes",
+        "support": {
+          "xterm": { "version_added": true },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": true },
+          "iterm2": { "version_added": true },
+          "vte": { "version_added": true },
+          "windows_terminal": { "version_added": true },
+          "konsole": { "version_added": true },
+          "mintty": { "version_added": true }
+        },
+        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+      }
+    },
+    "truecolor_colon": {
+      "__compat": {
+        "description": "24-bit truecolor, T.416 colons (SGR 38:2::r:g:b)",
+        "spec_url": "https://www.itu.int/rec/T-REC-T.416/en",
+        "doc_path": "/docs/sgr-attributes",
+        "support": {
+          "xterm": { "version_added": true },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": true },
+          "iterm2": { "version_added": true },
+          "vte": { "version_added": true },
+          "windows_terminal": { "version_added": null },
+          "konsole": { "version_added": true },
+          "mintty": { "version_added": true }
+        },
+        "status": { "experimental": false, "standard_track": true, "deprecated": false }
+      }
+    },
+    "underline_color_indexed": {
+      "__compat": {
+        "description": "Underline color, 256 indexed (SGR 58;5;n)",
+        "spec_url": "https://sw.kovidgoyal.net/kitty/underlines/",
+        "doc_path": "/docs/sgr-attributes",
+        "support": {
+          "xterm": { "version_added": false },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": true },
+          "iterm2": { "version_added": true },
+          "vte": { "version_added": true },
+          "windows_terminal": { "version_added": null },
+          "konsole": { "version_added": null },
+          "mintty": { "version_added": true }
+        },
+        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+      }
+    },
+    "underline_color_rgb": {
+      "__compat": {
+        "description": "Underline color, 24-bit RGB (SGR 58;2;r;g;b)",
+        "spec_url": "https://sw.kovidgoyal.net/kitty/underlines/",
+        "doc_path": "/docs/sgr-attributes",
+        "support": {
+          "xterm": { "version_added": false },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": true },
+          "alacritty": { "version_added": true },
+          "iterm2": { "version_added": true },
+          "vte": { "version_added": true },
+          "windows_terminal": { "version_added": null },
+          "konsole": { "version_added": null },
+          "mintty": { "version_added": true }
+        },
+        "status": { "experimental": false, "standard_track": false, "deprecated": false }
       }
     }
   }

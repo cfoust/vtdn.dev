@@ -19,11 +19,7 @@
           "konsole": { "version_added": null },
           "mintty": { "version_added": true }
         },
-        "status": {
-          "experimental": false,
-          "standard_track": false,
-          "deprecated": false
-        }
+        "status": { "experimental": false, "standard_track": false, "deprecated": false }
       }
     },
     "kitty_graphics": {
@@ -44,11 +40,49 @@
           "konsole": { "version_added": true },
           "mintty": { "version_added": false }
         },
-        "status": {
-          "experimental": false,
-          "standard_track": false,
-          "deprecated": false
-        }
+        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+      }
+    },
+    "kitty_graphics_unicode": {
+      "__compat": {
+        "description": "Kitty graphics: Unicode placeholders (U+10EEEE)",
+        "spec_url": "https://sw.kovidgoyal.net/kitty/graphics-protocol/#unicode-placeholders",
+        "doc_path": "/docs/graphics-protocols",
+        "support": {
+          "xterm": { "version_added": false },
+          "ghostty": { "version_added": true },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": true },
+          "foot": { "version_added": false },
+          "alacritty": { "version_added": false },
+          "iterm2": { "version_added": false },
+          "vte": { "version_added": false },
+          "windows_terminal": { "version_added": false },
+          "konsole": { "version_added": true },
+          "mintty": { "version_added": false }
+        },
+        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+      }
+    },
+    "kitty_graphics_animation": {
+      "__compat": {
+        "description": "Kitty graphics: animation support",
+        "spec_url": "https://sw.kovidgoyal.net/kitty/graphics-protocol/#animation",
+        "doc_path": "/docs/graphics-protocols",
+        "support": {
+          "xterm": { "version_added": false },
+          "ghostty": { "version_added": false },
+          "kitty": { "version_added": true },
+          "wezterm": { "version_added": null },
+          "foot": { "version_added": false },
+          "alacritty": { "version_added": false },
+          "iterm2": { "version_added": false },
+          "vte": { "version_added": false },
+          "windows_terminal": { "version_added": false },
+          "konsole": { "version_added": null },
+          "mintty": { "version_added": false }
+        },
+        "status": { "experimental": false, "standard_track": false, "deprecated": false }
       }
     },
     "iterm2_inline_images": {
@@ -66,14 +100,10 @@
           "iterm2": { "version_added": true },
           "vte": { "version_added": false },
           "windows_terminal": { "version_added": false },
-          "konsole": { "version_added": null },
-          "mintty": { "version_added": null }
+          "konsole": { "version_added": true, "partial_implementation": true, "notes": "Partial support" },
+          "mintty": { "version_added": true }
         },
-        "status": {
-          "experimental": false,
-          "standard_track": false,
-          "deprecated": false
-        }
+        "status": { "experimental": false, "standard_track": false, "deprecated": false }
       }
     }
   }

@@ -1,25 +1,58 @@
 {
   "keyboard_input": {
-    "__meta": { "category": "Keyboard & Input" },
+    "__meta": {
+      "category": "Keyboard & Input"
+    },
     "kitty_keyboard": {
       "__compat": {
         "description": "Kitty keyboard protocol (progressive enhancement)",
         "spec_url": "https://sw.kovidgoyal.net/kitty/keyboard-protocol/",
         "doc_path": "/docs/kitty-keyboard-protocol",
         "support": {
-          "xterm": { "version_added": false },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": false },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": false },
-          "windows_terminal": { "version_added": true, "partial_implementation": true, "notes": "Partial support" },
-          "konsole": { "version_added": false },
-          "mintty": { "version_added": false }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": false
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": false
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": false
+          },
+          "windows_terminal": {
+            "version_added": true,
+            "partial_implementation": true,
+            "notes": "Partial support"
+          },
+          "konsole": {
+            "version_added": false
+          },
+          "mintty": {
+            "version_added": false
+          }
         },
-        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     },
     "kitty_kb_disambiguate": {
@@ -28,19 +61,48 @@
         "spec_url": "https://sw.kovidgoyal.net/kitty/keyboard-protocol/",
         "doc_path": "/docs/kitty-keyboard-protocol",
         "support": {
-          "xterm": { "version_added": false },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": false },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": false },
-          "windows_terminal": { "version_added": true },
-          "konsole": { "version_added": false },
-          "mintty": { "version_added": false }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": false
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": false
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": false
+          },
+          "windows_terminal": {
+            "version_added": true
+          },
+          "konsole": {
+            "version_added": false
+          },
+          "mintty": {
+            "version_added": false
+          }
         },
-        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     },
     "kitty_kb_event_types": {
@@ -49,19 +111,48 @@
         "spec_url": "https://sw.kovidgoyal.net/kitty/keyboard-protocol/",
         "doc_path": "/docs/kitty-keyboard-protocol",
         "support": {
-          "xterm": { "version_added": false },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": false },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": false },
-          "windows_terminal": { "version_added": true },
-          "konsole": { "version_added": false },
-          "mintty": { "version_added": false }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": false
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": false
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": false
+          },
+          "windows_terminal": {
+            "version_added": true
+          },
+          "konsole": {
+            "version_added": false
+          },
+          "mintty": {
+            "version_added": false
+          }
         },
-        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     },
     "kitty_kb_alternate_keys": {
@@ -70,19 +161,48 @@
         "spec_url": "https://sw.kovidgoyal.net/kitty/keyboard-protocol/",
         "doc_path": "/docs/kitty-keyboard-protocol",
         "support": {
-          "xterm": { "version_added": false },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": false },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": false },
-          "windows_terminal": { "version_added": null },
-          "konsole": { "version_added": false },
-          "mintty": { "version_added": false }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": false
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": false
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": false
+          },
+          "windows_terminal": {
+            "version_added": null
+          },
+          "konsole": {
+            "version_added": false
+          },
+          "mintty": {
+            "version_added": false
+          }
         },
-        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     },
     "kitty_kb_all_keys": {
@@ -91,19 +211,48 @@
         "spec_url": "https://sw.kovidgoyal.net/kitty/keyboard-protocol/",
         "doc_path": "/docs/kitty-keyboard-protocol",
         "support": {
-          "xterm": { "version_added": false },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": false },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": false },
-          "windows_terminal": { "version_added": null },
-          "konsole": { "version_added": false },
-          "mintty": { "version_added": false }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": false
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": false
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": false
+          },
+          "windows_terminal": {
+            "version_added": null
+          },
+          "konsole": {
+            "version_added": false
+          },
+          "mintty": {
+            "version_added": false
+          }
         },
-        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     },
     "kitty_kb_associated_text": {
@@ -112,19 +261,48 @@
         "spec_url": "https://sw.kovidgoyal.net/kitty/keyboard-protocol/",
         "doc_path": "/docs/kitty-keyboard-protocol",
         "support": {
-          "xterm": { "version_added": false },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": false },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": false },
-          "windows_terminal": { "version_added": null },
-          "konsole": { "version_added": false },
-          "mintty": { "version_added": false }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": false
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": false
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": false
+          },
+          "windows_terminal": {
+            "version_added": null
+          },
+          "konsole": {
+            "version_added": false
+          },
+          "mintty": {
+            "version_added": false
+          }
         },
-        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     }
   }

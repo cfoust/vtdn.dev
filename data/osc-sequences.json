@@ -1,25 +1,56 @@
 {
   "osc_sequences": {
-    "__meta": { "category": "OSC Sequences" },
+    "__meta": {
+      "category": "OSC Sequences"
+    },
     "osc0": {
       "__compat": {
         "description": "OSC 0 — set icon name and window title",
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/osc-sequences",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": true },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": true },
-          "konsole": { "version_added": true },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": true
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": true
+          },
+          "konsole": {
+            "version_added": true
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     },
     "osc2": {
@@ -28,19 +59,48 @@
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/osc-sequences",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": true },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": true },
-          "konsole": { "version_added": true },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": true
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": true
+          },
+          "konsole": {
+            "version_added": true
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     },
     "osc4": {
@@ -49,19 +109,48 @@
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/osc-sequences",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": true },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": null },
-          "konsole": { "version_added": true },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": true
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": null
+          },
+          "konsole": {
+            "version_added": true
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     },
     "osc7": {
@@ -70,19 +159,48 @@
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/osc-sequences",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": true },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": true },
-          "konsole": { "version_added": true },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": true
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": true
+          },
+          "konsole": {
+            "version_added": true
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     },
     "osc8": {
@@ -91,19 +209,48 @@
         "spec_url": "https://gist.github.com/egmontkob/eb114294efbcd5adb1944c9f3cb5feda",
         "doc_path": "/docs/osc-sequences",
         "support": {
-          "xterm": { "version_added": false },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": true },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": true },
-          "konsole": { "version_added": true },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": false
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": true
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": true
+          },
+          "konsole": {
+            "version_added": true
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     },
     "osc9": {
@@ -112,19 +259,48 @@
         "spec_url": "https://conemu.github.io/en/AnsiEscapeCodes.html",
         "doc_path": "/docs/osc-sequences",
         "support": {
-          "xterm": { "version_added": false },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": false },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": false },
-          "alacritty": { "version_added": false },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": false },
-          "windows_terminal": { "version_added": true },
-          "konsole": { "version_added": false },
-          "mintty": { "version_added": false }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": false
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": false
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": false
+          },
+          "alacritty": {
+            "version_added": false
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": false
+          },
+          "windows_terminal": {
+            "version_added": true
+          },
+          "konsole": {
+            "version_added": false
+          },
+          "mintty": {
+            "version_added": false
+          }
         },
-        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     },
     "osc9_4": {
@@ -133,19 +309,48 @@
         "spec_url": "https://learn.microsoft.com/en-us/windows/terminal/tutorials/progress-bar-sequences",
         "doc_path": "/docs/osc-sequences",
         "support": {
-          "xterm": { "version_added": false },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": false },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": false },
-          "alacritty": { "version_added": false },
-          "iterm2": { "version_added": false },
-          "vte": { "version_added": false },
-          "windows_terminal": { "version_added": true },
-          "konsole": { "version_added": false },
-          "mintty": { "version_added": false }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": false
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": false
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": false
+          },
+          "alacritty": {
+            "version_added": false
+          },
+          "iterm2": {
+            "version_added": false
+          },
+          "vte": {
+            "version_added": false
+          },
+          "windows_terminal": {
+            "version_added": true
+          },
+          "konsole": {
+            "version_added": false
+          },
+          "mintty": {
+            "version_added": false
+          }
         },
-        "status": { "experimental": true, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": true,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     },
     "osc10": {
@@ -154,19 +359,48 @@
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/osc-sequences",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": true },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": null },
-          "konsole": { "version_added": true },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": true
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": null
+          },
+          "konsole": {
+            "version_added": true
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     },
     "osc11": {
@@ -175,19 +409,48 @@
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/osc-sequences",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": true },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": null },
-          "konsole": { "version_added": true },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": true
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": null
+          },
+          "konsole": {
+            "version_added": true
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     },
     "osc12": {
@@ -196,19 +459,48 @@
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/osc-sequences",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": true },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": null },
-          "konsole": { "version_added": true },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": true
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": null
+          },
+          "konsole": {
+            "version_added": true
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     },
     "osc22": {
@@ -217,19 +509,48 @@
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/osc-sequences",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": null },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": false },
-          "iterm2": { "version_added": false },
-          "vte": { "version_added": null },
-          "windows_terminal": { "version_added": false },
-          "konsole": { "version_added": null },
-          "mintty": { "version_added": null }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": null
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": false
+          },
+          "iterm2": {
+            "version_added": false
+          },
+          "vte": {
+            "version_added": null
+          },
+          "windows_terminal": {
+            "version_added": false
+          },
+          "konsole": {
+            "version_added": null
+          },
+          "mintty": {
+            "version_added": null
+          }
         },
-        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     },
     "osc52_write": {
@@ -238,19 +559,49 @@
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/osc-sequences",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": true },
-          "iterm2": { "version_added": true, "notes": "Must enable in preferences" },
-          "vte": { "version_added": false },
-          "windows_terminal": { "version_added": true },
-          "konsole": { "version_added": null },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": true
+          },
+          "iterm2": {
+            "version_added": true,
+            "notes": "Must enable in preferences"
+          },
+          "vte": {
+            "version_added": false
+          },
+          "windows_terminal": {
+            "version_added": true
+          },
+          "konsole": {
+            "version_added": null
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     },
     "osc52_read": {
@@ -259,19 +610,50 @@
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/osc-sequences",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true, "notes": "Requires configuration" },
-          "kitty": { "version_added": true, "notes": "Requires clipboard_control config" },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": true },
-          "iterm2": { "version_added": false },
-          "vte": { "version_added": false },
-          "windows_terminal": { "version_added": false },
-          "konsole": { "version_added": null },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true,
+            "notes": "Requires configuration"
+          },
+          "kitty": {
+            "version_added": true,
+            "notes": "Requires clipboard_control config"
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": true
+          },
+          "iterm2": {
+            "version_added": false
+          },
+          "vte": {
+            "version_added": false
+          },
+          "windows_terminal": {
+            "version_added": false
+          },
+          "konsole": {
+            "version_added": null
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     },
     "osc104": {
@@ -280,19 +662,48 @@
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/osc-sequences",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": true },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": null },
-          "konsole": { "version_added": true },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": true
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": null
+          },
+          "konsole": {
+            "version_added": true
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     },
     "osc110_112": {
@@ -301,19 +712,48 @@
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/osc-sequences",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": true },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": null },
-          "konsole": { "version_added": true },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": true
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": null
+          },
+          "konsole": {
+            "version_added": true
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     },
     "osc133": {
@@ -322,19 +762,48 @@
         "spec_url": "https://code.visualstudio.com/docs/terminal/shell-integration",
         "doc_path": "/docs/multiplexers-shell-integration",
         "support": {
-          "xterm": { "version_added": false },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": false },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": true },
-          "konsole": { "version_added": false },
-          "mintty": { "version_added": false }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": false
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": false
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": true
+          },
+          "konsole": {
+            "version_added": false
+          },
+          "mintty": {
+            "version_added": false
+          }
         },
-        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     },
     "kitty_osc21": {
@@ -343,19 +812,48 @@
         "spec_url": "https://sw.kovidgoyal.net/kitty/color-stack/",
         "doc_path": "/docs/osc-sequences",
         "support": {
-          "xterm": { "version_added": false },
-          "ghostty": { "version_added": null },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": null },
-          "foot": { "version_added": null },
-          "alacritty": { "version_added": false },
-          "iterm2": { "version_added": false },
-          "vte": { "version_added": false },
-          "windows_terminal": { "version_added": false },
-          "konsole": { "version_added": false },
-          "mintty": { "version_added": false }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": false
+          },
+          "ghostty": {
+            "version_added": null
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": null
+          },
+          "foot": {
+            "version_added": null
+          },
+          "alacritty": {
+            "version_added": false
+          },
+          "iterm2": {
+            "version_added": false
+          },
+          "vte": {
+            "version_added": false
+          },
+          "windows_terminal": {
+            "version_added": false
+          },
+          "konsole": {
+            "version_added": false
+          },
+          "mintty": {
+            "version_added": false
+          }
         },
-        "status": { "experimental": true, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": true,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     },
     "kitty_osc99": {
@@ -364,19 +862,48 @@
         "spec_url": "https://sw.kovidgoyal.net/kitty/desktop-notifications/",
         "doc_path": "/docs/osc-sequences",
         "support": {
-          "xterm": { "version_added": false },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": null },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": false },
-          "iterm2": { "version_added": false },
-          "vte": { "version_added": false },
-          "windows_terminal": { "version_added": false },
-          "konsole": { "version_added": false },
-          "mintty": { "version_added": false }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": false
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": null
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": false
+          },
+          "iterm2": {
+            "version_added": false
+          },
+          "vte": {
+            "version_added": false
+          },
+          "windows_terminal": {
+            "version_added": false
+          },
+          "konsole": {
+            "version_added": false
+          },
+          "mintty": {
+            "version_added": false
+          }
         },
-        "status": { "experimental": true, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": true,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     },
     "iterm2_osc1337_file": {
@@ -385,19 +912,50 @@
         "spec_url": "https://iterm2.com/documentation-images.html",
         "doc_path": "/docs/osc-sequences",
         "support": {
-          "xterm": { "version_added": false },
-          "ghostty": { "version_added": false },
-          "kitty": { "version_added": false },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": false },
-          "alacritty": { "version_added": false },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": false },
-          "windows_terminal": { "version_added": false },
-          "konsole": { "version_added": true, "partial_implementation": true, "notes": "Partial support" },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": false
+          },
+          "ghostty": {
+            "version_added": false
+          },
+          "kitty": {
+            "version_added": false
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": false
+          },
+          "alacritty": {
+            "version_added": false
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": false
+          },
+          "windows_terminal": {
+            "version_added": false
+          },
+          "konsole": {
+            "version_added": true,
+            "partial_implementation": true,
+            "notes": "Partial support"
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     },
     "iterm2_osc1337_misc": {
@@ -406,19 +964,50 @@
         "spec_url": "https://iterm2.com/3.0/documentation-escape-codes.html",
         "doc_path": "/docs/osc-sequences",
         "support": {
-          "xterm": { "version_added": false },
-          "ghostty": { "version_added": false },
-          "kitty": { "version_added": false },
-          "wezterm": { "version_added": true, "partial_implementation": true, "notes": "SetUserVar, SetMark" },
-          "foot": { "version_added": false },
-          "alacritty": { "version_added": false },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": false },
-          "windows_terminal": { "version_added": false },
-          "konsole": { "version_added": false },
-          "mintty": { "version_added": false }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": false
+          },
+          "ghostty": {
+            "version_added": false
+          },
+          "kitty": {
+            "version_added": false
+          },
+          "wezterm": {
+            "version_added": true,
+            "partial_implementation": true,
+            "notes": "SetUserVar, SetMark"
+          },
+          "foot": {
+            "version_added": false
+          },
+          "alacritty": {
+            "version_added": false
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": false
+          },
+          "windows_terminal": {
+            "version_added": false
+          },
+          "konsole": {
+            "version_added": false
+          },
+          "mintty": {
+            "version_added": false
+          }
         },
-        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     },
     "osc777": {
@@ -427,19 +1016,48 @@
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/osc-sequences",
         "support": {
-          "xterm": { "version_added": false },
-          "ghostty": { "version_added": false },
-          "kitty": { "version_added": false },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": false },
-          "iterm2": { "version_added": false },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": false },
-          "konsole": { "version_added": false },
-          "mintty": { "version_added": false }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": false
+          },
+          "ghostty": {
+            "version_added": false
+          },
+          "kitty": {
+            "version_added": false
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": false
+          },
+          "iterm2": {
+            "version_added": false
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": false
+          },
+          "konsole": {
+            "version_added": false
+          },
+          "mintty": {
+            "version_added": false
+          }
         },
-        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     }
   }

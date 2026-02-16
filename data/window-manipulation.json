@@ -1,25 +1,56 @@
 {
   "window_manipulation": {
-    "__meta": { "category": "Window Manipulation" },
+    "__meta": {
+      "category": "Window Manipulation"
+    },
     "win_iconify": {
       "__compat": {
         "description": "CSI 1/2 t — de-iconify / iconify window",
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/window-manipulation",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": false },
-          "kitty": { "version_added": false },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": false },
-          "alacritty": { "version_added": false },
-          "iterm2": { "version_added": false },
-          "vte": { "version_added": false },
-          "windows_terminal": { "version_added": false },
-          "konsole": { "version_added": null },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": false
+          },
+          "kitty": {
+            "version_added": false
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": false
+          },
+          "alacritty": {
+            "version_added": false
+          },
+          "iterm2": {
+            "version_added": false
+          },
+          "vte": {
+            "version_added": false
+          },
+          "windows_terminal": {
+            "version_added": false
+          },
+          "konsole": {
+            "version_added": null
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     },
     "win_move": {
@@ -28,19 +59,48 @@
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/window-manipulation",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": false },
-          "kitty": { "version_added": false },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": false },
-          "alacritty": { "version_added": false },
-          "iterm2": { "version_added": false },
-          "vte": { "version_added": false },
-          "windows_terminal": { "version_added": false },
-          "konsole": { "version_added": null },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": false
+          },
+          "kitty": {
+            "version_added": false
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": false
+          },
+          "alacritty": {
+            "version_added": false
+          },
+          "iterm2": {
+            "version_added": false
+          },
+          "vte": {
+            "version_added": false
+          },
+          "windows_terminal": {
+            "version_added": false
+          },
+          "konsole": {
+            "version_added": null
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     },
     "win_resize_pixels": {
@@ -49,19 +109,48 @@
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/window-manipulation",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": false },
-          "kitty": { "version_added": false },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": false },
-          "alacritty": { "version_added": false },
-          "iterm2": { "version_added": false },
-          "vte": { "version_added": false },
-          "windows_terminal": { "version_added": false },
-          "konsole": { "version_added": null },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": false
+          },
+          "kitty": {
+            "version_added": false
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": false
+          },
+          "alacritty": {
+            "version_added": false
+          },
+          "iterm2": {
+            "version_added": false
+          },
+          "vte": {
+            "version_added": false
+          },
+          "windows_terminal": {
+            "version_added": false
+          },
+          "konsole": {
+            "version_added": null
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     },
     "win_raise_lower": {
@@ -70,19 +159,48 @@
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/window-manipulation",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": false },
-          "kitty": { "version_added": false },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": false },
-          "alacritty": { "version_added": false },
-          "iterm2": { "version_added": false },
-          "vte": { "version_added": false },
-          "windows_terminal": { "version_added": false },
-          "konsole": { "version_added": null },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": false
+          },
+          "kitty": {
+            "version_added": false
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": false
+          },
+          "alacritty": {
+            "version_added": false
+          },
+          "iterm2": {
+            "version_added": false
+          },
+          "vte": {
+            "version_added": false
+          },
+          "windows_terminal": {
+            "version_added": false
+          },
+          "konsole": {
+            "version_added": null
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     },
     "win_resize_chars": {
@@ -91,19 +209,50 @@
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/window-manipulation",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": false },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true, "partial_implementation": true, "notes": "Limited" },
-          "windows_terminal": { "version_added": false },
-          "konsole": { "version_added": null },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": false
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": true,
+            "partial_implementation": true,
+            "notes": "Limited"
+          },
+          "windows_terminal": {
+            "version_added": false
+          },
+          "konsole": {
+            "version_added": null
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     },
     "win_maximize": {
@@ -112,19 +261,48 @@
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/window-manipulation",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": false },
-          "kitty": { "version_added": false },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": false },
-          "alacritty": { "version_added": false },
-          "iterm2": { "version_added": false },
-          "vte": { "version_added": false },
-          "windows_terminal": { "version_added": false },
-          "konsole": { "version_added": null },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": false
+          },
+          "kitty": {
+            "version_added": false
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": false
+          },
+          "alacritty": {
+            "version_added": false
+          },
+          "iterm2": {
+            "version_added": false
+          },
+          "vte": {
+            "version_added": false
+          },
+          "windows_terminal": {
+            "version_added": false
+          },
+          "konsole": {
+            "version_added": null
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     },
     "win_fullscreen": {
@@ -133,19 +311,48 @@
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/window-manipulation",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": false },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": false },
-          "iterm2": { "version_added": false },
-          "vte": { "version_added": false },
-          "windows_terminal": { "version_added": false },
-          "konsole": { "version_added": null },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": false
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": false
+          },
+          "iterm2": {
+            "version_added": false
+          },
+          "vte": {
+            "version_added": false
+          },
+          "windows_terminal": {
+            "version_added": false
+          },
+          "konsole": {
+            "version_added": null
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     },
     "win_state_report": {
@@ -154,19 +361,48 @@
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/window-manipulation",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": false },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": false },
-          "konsole": { "version_added": null },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": false
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": false
+          },
+          "konsole": {
+            "version_added": null
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     },
     "win_position_report": {
@@ -175,19 +411,48 @@
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/window-manipulation",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": false },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": false },
-          "konsole": { "version_added": null },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": false
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": false
+          },
+          "konsole": {
+            "version_added": null
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     },
     "win_text_area_pixels": {
@@ -196,19 +461,48 @@
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/window-manipulation",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": false },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": false },
-          "konsole": { "version_added": null },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": false
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": false
+          },
+          "konsole": {
+            "version_added": null
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     },
     "win_cell_size": {
@@ -217,19 +511,48 @@
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/window-manipulation",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": false },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": false },
-          "konsole": { "version_added": null },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": false
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": false
+          },
+          "konsole": {
+            "version_added": null
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     },
     "win_text_area_chars": {
@@ -238,19 +561,48 @@
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/window-manipulation",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": false },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": false },
-          "konsole": { "version_added": null },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": false
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": false
+          },
+          "konsole": {
+            "version_added": null
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     },
     "win_title_stack": {
@@ -259,19 +611,48 @@
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/window-manipulation",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": true },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": null },
-          "konsole": { "version_added": null },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": true
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": null
+          },
+          "konsole": {
+            "version_added": null
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     }
   }

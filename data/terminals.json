@@ -1,4 +1,8 @@
 {
+  "vt100": {
+    "name": "VT100",
+    "website": "https://vt100.net/docs/vt100-ug/"
+  },
   "xterm": {
     "name": "xterm",
     "website": "https://invisible-island.net/xterm/"

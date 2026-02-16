@@ -1,25 +1,56 @@
 {
   "control_sequences": {
-    "__meta": { "category": "C0/C1 & ESC Sequences" },
+    "__meta": {
+      "category": "C0/C1 & ESC Sequences"
+    },
     "bel": {
       "__compat": {
         "description": "BEL (0x07) — audible/visual bell",
         "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/c0-c1-controls",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": true },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": true },
-          "konsole": { "version_added": true },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": true
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": true
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": true
+          },
+          "konsole": {
+            "version_added": true
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": true, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
+        }
       }
     },
     "bs": {
@@ -28,19 +59,48 @@
         "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/c0-c1-controls",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": true },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": true },
-          "konsole": { "version_added": true },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": true
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": true
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": true
+          },
+          "konsole": {
+            "version_added": true
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": true, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
+        }
       }
     },
     "ht": {
@@ -49,19 +109,48 @@
         "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/c0-c1-controls",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": true },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": true },
-          "konsole": { "version_added": true },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": true
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": true
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": true
+          },
+          "konsole": {
+            "version_added": true
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": true, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
+        }
       }
     },
     "lf": {
@@ -70,19 +159,48 @@
         "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/c0-c1-controls",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": true },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": true },
-          "konsole": { "version_added": true },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": true
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": true
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": true
+          },
+          "konsole": {
+            "version_added": true
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": true, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
+        }
       }
     },
     "cr": {
@@ -91,19 +209,48 @@
         "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/c0-c1-controls",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": true },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": true },
-          "konsole": { "version_added": true },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": true
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": true
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": true
+          },
+          "konsole": {
+            "version_added": true
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": true, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
+        }
       }
     },
     "so_si": {
@@ -112,19 +259,48 @@
         "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/c0-c1-controls",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": true },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": null },
-          "konsole": { "version_added": true },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": true
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": true
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": null
+          },
+          "konsole": {
+            "version_added": true
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": true, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
+        }
       }
     },
     "enq": {
@@ -133,19 +309,48 @@
         "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/c0-c1-controls",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": false },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": false },
-          "konsole": { "version_added": null },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": true
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": false
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": false
+          },
+          "konsole": {
+            "version_added": null
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": true, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
+        }
       }
     },
     "ind": {
@@ -154,19 +359,48 @@
         "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/c0-c1-controls",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": true },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": true },
-          "konsole": { "version_added": true },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": true
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": true
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": true
+          },
+          "konsole": {
+            "version_added": true
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": true, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
+        }
       }
     },
     "nel": {
@@ -175,19 +409,48 @@
         "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/c0-c1-controls",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": true },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": true },
-          "konsole": { "version_added": true },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": true
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": true
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": true
+          },
+          "konsole": {
+            "version_added": true
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": true, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
+        }
       }
     },
     "hts": {
@@ -196,19 +459,48 @@
         "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/c0-c1-controls",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": true },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": true },
-          "konsole": { "version_added": true },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": true
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": true
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": true
+          },
+          "konsole": {
+            "version_added": true
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": true, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
+        }
       }
     },
     "ri": {
@@ -217,19 +509,48 @@
         "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/c0-c1-controls",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": true },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": true },
-          "konsole": { "version_added": true },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": true
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": true
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": true
+          },
+          "konsole": {
+            "version_added": true
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": true, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
+        }
       }
     },
     "ss2_ss3": {
@@ -238,19 +559,48 @@
         "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/c0-c1-controls",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": null },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": null },
-          "konsole": { "version_added": true },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": null
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": null
+          },
+          "konsole": {
+            "version_added": true
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": true, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
+        }
       }
     },
     "decsc_decrc": {
@@ -259,19 +609,48 @@
         "spec_url": "https://vt100.net/docs/vt510-rm/DECSC.html",
         "doc_path": "/docs/c0-c1-controls",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": true },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": true },
-          "konsole": { "version_added": true },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": true
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": true
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": true
+          },
+          "konsole": {
+            "version_added": true
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": true, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
+        }
       }
     },
     "ris": {
@@ -280,19 +659,48 @@
         "spec_url": "https://vt100.net/docs/vt510-rm/RIS.html",
         "doc_path": "/docs/c0-c1-controls",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": true },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": true },
-          "konsole": { "version_added": true },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": true
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": true
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": true
+          },
+          "konsole": {
+            "version_added": true
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": true, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
+        }
       }
     },
     "deckpam_deckpnm": {
@@ -301,19 +709,48 @@
         "spec_url": "https://vt100.net/docs/vt510-rm/DECKPAM.html",
         "doc_path": "/docs/c0-c1-controls",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": true },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": true },
-          "konsole": { "version_added": true },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": true
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": true
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": true
+          },
+          "konsole": {
+            "version_added": true
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": true, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
+        }
       }
     },
     "decdhl_decdwl": {
@@ -322,19 +759,48 @@
         "spec_url": "https://vt100.net/docs/vt510-rm/DECDHL.html",
         "doc_path": "/docs/c0-c1-controls",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": false },
-          "kitty": { "version_added": false },
-          "wezterm": { "version_added": false },
-          "foot": { "version_added": false },
-          "alacritty": { "version_added": false },
-          "iterm2": { "version_added": false },
-          "vte": { "version_added": false },
-          "windows_terminal": { "version_added": false },
-          "konsole": { "version_added": false },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": true
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": false
+          },
+          "kitty": {
+            "version_added": false
+          },
+          "wezterm": {
+            "version_added": false
+          },
+          "foot": {
+            "version_added": false
+          },
+          "alacritty": {
+            "version_added": false
+          },
+          "iterm2": {
+            "version_added": false
+          },
+          "vte": {
+            "version_added": false
+          },
+          "windows_terminal": {
+            "version_added": false
+          },
+          "konsole": {
+            "version_added": false
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": true, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
+        }
       }
     },
     "decaln": {
@@ -343,19 +809,48 @@
         "spec_url": "https://vt100.net/docs/vt510-rm/DECALN.html",
         "doc_path": "/docs/c0-c1-controls",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": true },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": true },
-          "konsole": { "version_added": true },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": true
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": true
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": true
+          },
+          "konsole": {
+            "version_added": true
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": true, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
+        }
       }
     },
     "s7c1t_s8c1t": {
@@ -364,19 +859,48 @@
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/c0-c1-controls",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": false },
-          "iterm2": { "version_added": null },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": false },
-          "konsole": { "version_added": null },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": false
+          },
+          "iterm2": {
+            "version_added": null
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": false
+          },
+          "konsole": {
+            "version_added": null
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": true, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
+        }
       }
     },
     "locking_shifts": {
@@ -385,19 +909,48 @@
         "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/c0-c1-controls",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": null },
-          "alacritty": { "version_added": null },
-          "iterm2": { "version_added": null },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": false },
-          "konsole": { "version_added": null },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": null
+          },
+          "alacritty": {
+            "version_added": null
+          },
+          "iterm2": {
+            "version_added": null
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": false
+          },
+          "konsole": {
+            "version_added": null
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": true, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
+        }
       }
     },
     "utf8_select": {
@@ -406,19 +959,48 @@
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/c0-c1-controls",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": true },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": true },
-          "konsole": { "version_added": true },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": true
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": true
+          },
+          "konsole": {
+            "version_added": true
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": true, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
+        }
       }
     }
   }

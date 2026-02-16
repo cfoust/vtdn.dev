@@ -1,25 +1,56 @@
 {
   "decset_modes": {
-    "__meta": { "category": "DECSET/DECRST Modes" },
+    "__meta": {
+      "category": "DECSET/DECRST Modes"
+    },
     "mode1_decckm": {
       "__compat": {
         "description": "Mode 1 DECCKM — application cursor keys",
         "spec_url": "https://vt100.net/docs/vt510-rm/DECCKM.html",
         "doc_path": "/docs/decset-modes",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": true },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": true },
-          "konsole": { "version_added": true },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": true
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": true
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": true
+          },
+          "konsole": {
+            "version_added": true
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": true, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
+        }
       }
     },
     "mode3_deccolm": {
@@ -28,19 +59,48 @@
         "spec_url": "https://vt100.net/docs/vt510-rm/DECCOLM.html",
         "doc_path": "/docs/decset-modes",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": false },
-          "kitty": { "version_added": false },
-          "wezterm": { "version_added": null },
-          "foot": { "version_added": false },
-          "alacritty": { "version_added": false },
-          "iterm2": { "version_added": null },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": false },
-          "konsole": { "version_added": null },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": true
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": false
+          },
+          "kitty": {
+            "version_added": false
+          },
+          "wezterm": {
+            "version_added": null
+          },
+          "foot": {
+            "version_added": false
+          },
+          "alacritty": {
+            "version_added": false
+          },
+          "iterm2": {
+            "version_added": null
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": false
+          },
+          "konsole": {
+            "version_added": null
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": true, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
+        }
       }
     },
     "mode5_decscnm": {
@@ -49,19 +109,48 @@
         "spec_url": "https://vt100.net/docs/vt510-rm/DECSCNM.html",
         "doc_path": "/docs/decset-modes",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": true },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": true },
-          "konsole": { "version_added": true },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": true
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": true
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": true
+          },
+          "konsole": {
+            "version_added": true
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": true, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
+        }
       }
     },
     "mode6_decom": {
@@ -70,19 +159,48 @@
         "spec_url": "https://vt100.net/docs/vt510-rm/DECOM.html",
         "doc_path": "/docs/decset-modes",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": true },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": true },
-          "konsole": { "version_added": true },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": true
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": true
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": true
+          },
+          "konsole": {
+            "version_added": true
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": true, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
+        }
       }
     },
     "mode7_decawm": {
@@ -91,19 +209,48 @@
         "spec_url": "https://vt100.net/docs/vt510-rm/DECAWM.html",
         "doc_path": "/docs/decset-modes",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": true },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": true },
-          "konsole": { "version_added": true },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": true
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": true
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": true
+          },
+          "konsole": {
+            "version_added": true
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": true, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
+        }
       }
     },
     "mode12_blink_cursor": {
@@ -112,19 +259,48 @@
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/decset-modes",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": true },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": true },
-          "konsole": { "version_added": true },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": true
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": true
+          },
+          "konsole": {
+            "version_added": true
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     },
     "mode25_dectcem": {
@@ -133,19 +309,48 @@
         "spec_url": "https://vt100.net/docs/vt510-rm/DECTCEM.html",
         "doc_path": "/docs/decset-modes",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": true },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": true },
-          "konsole": { "version_added": true },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": true
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": true
+          },
+          "konsole": {
+            "version_added": true
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": true, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
+        }
       }
     },
     "mode45_reverse_wrap": {
@@ -154,19 +359,48 @@
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/decset-modes",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": false },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": null },
-          "konsole": { "version_added": null },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": false
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": null
+          },
+          "konsole": {
+            "version_added": null
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     },
     "mode69_declrmm": {
@@ -175,19 +409,48 @@
         "spec_url": "https://vt100.net/docs/vt510-rm/DECLRMM.html",
         "doc_path": "/docs/decset-modes",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": false },
-          "iterm2": { "version_added": null },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": false },
-          "konsole": { "version_added": null },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": false
+          },
+          "iterm2": {
+            "version_added": null
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": false
+          },
+          "konsole": {
+            "version_added": null
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": true, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
+        }
       }
     },
     "mode80_decsdm": {
@@ -196,19 +459,48 @@
         "spec_url": "https://vt100.net/docs/vt3xx-gp/chapter14.html",
         "doc_path": "/docs/decset-modes",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": false },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": false },
-          "iterm2": { "version_added": null },
-          "vte": { "version_added": false },
-          "windows_terminal": { "version_added": false },
-          "konsole": { "version_added": null },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": false
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": false
+          },
+          "iterm2": {
+            "version_added": null
+          },
+          "vte": {
+            "version_added": false
+          },
+          "windows_terminal": {
+            "version_added": false
+          },
+          "konsole": {
+            "version_added": null
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": true, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
+        }
       }
     },
     "mode1049_altscreen": {
@@ -217,19 +509,48 @@
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/decset-modes",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": true },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": true },
-          "konsole": { "version_added": true },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": true
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": true
+          },
+          "konsole": {
+            "version_added": true
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     },
     "mode1000_mouse_normal": {
@@ -238,19 +559,48 @@
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/decset-modes",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": true },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": true },
-          "konsole": { "version_added": true },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": true
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": true
+          },
+          "konsole": {
+            "version_added": true
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     },
     "mode1002_button_event": {
@@ -259,19 +609,48 @@
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/decset-modes",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": true },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": true },
-          "konsole": { "version_added": true },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": true
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": true
+          },
+          "konsole": {
+            "version_added": true
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     },
     "mode1003_any_event": {
@@ -280,19 +659,48 @@
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/decset-modes",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": true },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": true },
-          "konsole": { "version_added": true },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": true
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": true
+          },
+          "konsole": {
+            "version_added": true
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     },
     "mode1004_focus": {
@@ -301,19 +709,48 @@
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/decset-modes",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": true },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": true },
-          "konsole": { "version_added": true },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": true
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": true
+          },
+          "konsole": {
+            "version_added": true
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     },
     "mode1006_sgr_mouse": {
@@ -322,19 +759,48 @@
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/decset-modes",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": true },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": true },
-          "konsole": { "version_added": true },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": true
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": true
+          },
+          "konsole": {
+            "version_added": true
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     },
     "mode1007_alt_scroll": {
@@ -343,19 +809,48 @@
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/decset-modes",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": true },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": null },
-          "konsole": { "version_added": true },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": true
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": null
+          },
+          "konsole": {
+            "version_added": true
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     },
     "mode1016_sgr_pixel": {
@@ -364,19 +859,48 @@
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/decset-modes",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": null },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": false },
-          "iterm2": { "version_added": null },
-          "vte": { "version_added": null },
-          "windows_terminal": { "version_added": null },
-          "konsole": { "version_added": null },
-          "mintty": { "version_added": null }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": null
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": false
+          },
+          "iterm2": {
+            "version_added": null
+          },
+          "vte": {
+            "version_added": null
+          },
+          "windows_terminal": {
+            "version_added": null
+          },
+          "konsole": {
+            "version_added": null
+          },
+          "mintty": {
+            "version_added": null
+          }
         },
-        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     },
     "mode2004_bracketed_paste": {
@@ -385,19 +909,48 @@
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/decset-modes",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": true },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": true },
-          "konsole": { "version_added": true },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": true
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": true
+          },
+          "konsole": {
+            "version_added": true
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     },
     "mode2026_sync_output": {
@@ -406,19 +959,48 @@
         "spec_url": "https://gist.github.com/christianparpart/d8a62cc1ab659194337d73e399004036",
         "doc_path": "/docs/advanced-modes",
         "support": {
-          "xterm": { "version_added": false },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": true },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": true },
-          "konsole": { "version_added": null },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": false
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": true
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": true
+          },
+          "konsole": {
+            "version_added": null
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     },
     "mode2027_grapheme": {
@@ -427,19 +1009,48 @@
         "spec_url": "https://unicode.org/reports/tr29/",
         "doc_path": "/docs/advanced-modes",
         "support": {
-          "xterm": { "version_added": false },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": false },
-          "iterm2": { "version_added": false },
-          "vte": { "version_added": false },
-          "windows_terminal": { "version_added": false },
-          "konsole": { "version_added": false },
-          "mintty": { "version_added": false }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": false
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": false
+          },
+          "iterm2": {
+            "version_added": false
+          },
+          "vte": {
+            "version_added": false
+          },
+          "windows_terminal": {
+            "version_added": false
+          },
+          "konsole": {
+            "version_added": false
+          },
+          "mintty": {
+            "version_added": false
+          }
         },
-        "status": { "experimental": false, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     },
     "mode2031_color_scheme": {
@@ -448,19 +1059,48 @@
         "spec_url": "https://contour-terminal.org/vt-extensions/color-palette-update-notifications/",
         "doc_path": "/docs/advanced-modes",
         "support": {
-          "xterm": { "version_added": false },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": null },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": false },
-          "iterm2": { "version_added": false },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": false },
-          "konsole": { "version_added": false },
-          "mintty": { "version_added": false }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": false
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": null
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": false
+          },
+          "iterm2": {
+            "version_added": false
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": false
+          },
+          "konsole": {
+            "version_added": false
+          },
+          "mintty": {
+            "version_added": false
+          }
         },
-        "status": { "experimental": true, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": true,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     },
     "mode2048_in_band_resize": {
@@ -469,19 +1109,48 @@
         "spec_url": "https://gist.github.com/rockorager/e695f2f3a12087ddf998ef96210e5364",
         "doc_path": "/docs/advanced-modes",
         "support": {
-          "xterm": { "version_added": false },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": false },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": false },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": false },
-          "windows_terminal": { "version_added": false },
-          "konsole": { "version_added": false },
-          "mintty": { "version_added": false }
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": false
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": false
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": false
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": false
+          },
+          "windows_terminal": {
+            "version_added": false
+          },
+          "konsole": {
+            "version_added": false
+          },
+          "mintty": {
+            "version_added": false
+          }
         },
-        "status": { "experimental": true, "standard_track": false, "deprecated": false }
+        "status": {
+          "experimental": true,
+          "standard_track": false,
+          "deprecated": false
+        }
       }
     },
     "mode4_irm": {
@@ -490,19 +1159,48 @@
         "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/decset-modes",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": true },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": true },
-          "konsole": { "version_added": true },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": true
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": true
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": true
+          },
+          "konsole": {
+            "version_added": true
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": true, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
+        }
       }
     },
     "mode20_lnm": {
@@ -511,19 +1209,48 @@
         "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/decset-modes",
         "support": {
-          "xterm": { "version_added": true },
-          "ghostty": { "version_added": true },
-          "kitty": { "version_added": true },
-          "wezterm": { "version_added": true },
-          "foot": { "version_added": true },
-          "alacritty": { "version_added": true },
-          "iterm2": { "version_added": true },
-          "vte": { "version_added": true },
-          "windows_terminal": { "version_added": true },
-          "konsole": { "version_added": true },
-          "mintty": { "version_added": true }
+          "vt100": {
+            "version_added": true
+          },
+          "xterm": {
+            "version_added": true
+          },
+          "ghostty": {
+            "version_added": true
+          },
+          "kitty": {
+            "version_added": true
+          },
+          "wezterm": {
+            "version_added": true
+          },
+          "foot": {
+            "version_added": true
+          },
+          "alacritty": {
+            "version_added": true
+          },
+          "iterm2": {
+            "version_added": true
+          },
+          "vte": {
+            "version_added": true
+          },
+          "windows_terminal": {
+            "version_added": true
+          },
+          "konsole": {
+            "version_added": true
+          },
+          "mintty": {
+            "version_added": true
+          }
         },
-        "status": { "experimental": false, "standard_track": true, "deprecated": false }
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
+        }
       }
     }
   }

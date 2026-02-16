@@ -27,6 +27,31 @@ const categories = [
 
 const terminalIds = Object.keys(terminals);
 
+const icons: Record<string, React.ReactNode> = {
+  alacritty: (
+    <svg viewBox="0 0 64 64" fill="currentColor" className={styles.terminalIcon}>
+      <path d="M27.09 2.86h9.82L58.64 56.79H49.52L32 15.6 14.48 56.79H5.36Z"/>
+      <path d="M27.57 38.79 32 28.05l4.43 10.74 1.39 3.37C34.09 53.67 34.09 53.67 32 63.72c-2.09-10.04-2.09-10.04-5.83-21.55z"/>
+    </svg>
+  ),
+  foot: (
+    <svg viewBox="20 18 34 56" fill="currentColor" className={styles.terminalIcon}>
+      <path d="M35.15 31.54a18 18 0 0 0-2.33-.43c-3.52-.34-4.66-.03-6.43 1.76-2.44 2.44-1.94 5.92 1.26 8.9 6.93 6.45 7.04 10.78.41 15.66-2.73 2.01-4.7 6.73-3.86 9.16 1.07 3.11 5.15 4.3 8.71 2.55 3.34-1.65 7.12-7.28 9.71-13.02.21-.56.42-1.13.62-1.71a51 51 0 0 0 1.5-5.3c1.21-5.39.91-9.59-.85-12.11-1.1-1.58-5.19-3.6-8.73-4.5z"/>
+      <ellipse cx="30.16" cy="25.86" rx="3.27" ry="3.86"/>
+      <ellipse cx="36.43" cy="27.14" rx="2.14" ry="2.57"/>
+      <ellipse cx="41.14" cy="29.48" rx="1.71" ry="1.95"/>
+      <ellipse cx="44.89" cy="32.1" rx="1.39" ry="1.53"/>
+      <ellipse cx="46.86" cy="35.29" rx="1.14" ry="1.29"/>
+    </svg>
+  ),
+  windows_terminal: (
+    <svg viewBox="0 0 16 16" fill="currentColor" className={styles.terminalIcon}>
+      <path d="M2.15 3.65a.5.5 0 0 1 .7 0l4.5 4.5a.5.5 0 0 1 0 .7l-4.5 4.5a.5.5 0 0 1-.7-.7L6.3 8.5 2.15 4.35a.5.5 0 0 1 0-.7z"/>
+      <rect x="8" y="12" width="6" height="1.5" rx=".5"/>
+    </svg>
+  ),
+};
+
 type SupportEntry = {
   version_added: string | boolean | null;
   partial_implementation?: boolean;
@@ -88,6 +113,7 @@ export default function CompatibilityMatrix(): React.ReactElement {
                   href={terminals[id].website}
                   target="_blank"
                   rel="noopener noreferrer">
+                  {icons[id] || <span className={styles.terminalIconSpacer} />}
                   {terminals[id].name}
                 </a>
               </th>

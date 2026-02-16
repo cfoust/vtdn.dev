@@ -51,6 +51,15 @@
   color: var(--ifm-color-primary);
 }
 
+.terminalIcon,
+.terminalIconSpacer {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  transform: rotate(180deg);
+  margin-bottom: 0.3rem;
+}
+
 .categoryRow {
   background: var(--ifm-color-emphasis-100);
 }

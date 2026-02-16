@@ -5,46 +5,57 @@
   },
   "xterm": {
     "name": "xterm",
-    "website": "https://invisible-island.net/xterm/"
+    "website": "https://invisible-island.net/xterm/",
+    "repository": "https://github.com/ThomasDickey/xterm-snapshots"
   },
   "ghostty": {
     "name": "Ghostty",
-    "website": "https://ghostty.org/"
+    "website": "https://ghostty.org/",
+    "repository": "https://github.com/ghostty-org/ghostty"
   },
   "kitty": {
     "name": "Kitty",
-    "website": "https://sw.kovidgoyal.net/kitty/"
+    "website": "https://sw.kovidgoyal.net/kitty/",
+    "repository": "https://github.com/kovidgoyal/kitty"
   },
   "wezterm": {
     "name": "WezTerm",
-    "website": "https://wezfurlong.org/wezterm/"
+    "website": "https://wezfurlong.org/wezterm/",
+    "repository": "https://github.com/wez/wezterm"
   },
   "foot": {
     "name": "foot",
-    "website": "https://codeberg.org/dnkl/foot"
+    "website": "https://codeberg.org/dnkl/foot",
+    "repository": "https://codeberg.org/dnkl/foot"
   },
   "alacritty": {
     "name": "Alacritty",
-    "website": "https://alacritty.org/"
+    "website": "https://alacritty.org/",
+    "repository": "https://github.com/alacritty/alacritty"
   },
   "iterm2": {
     "name": "iTerm2",
-    "website": "https://iterm2.com/"
+    "website": "https://iterm2.com/",
+    "repository": "https://github.com/gnachman/iTerm2"
   },
   "vte": {
     "name": "VTE",
-    "website": "https://wiki.gnome.org/Apps/Terminal"
+    "website": "https://wiki.gnome.org/Apps/Terminal",
+    "repository": "https://gitlab.gnome.org/GNOME/vte"
   },
   "windows_terminal": {
     "name": "Windows Terminal",
-    "website": "https://github.com/microsoft/terminal"
+    "website": "https://github.com/microsoft/terminal",
+    "repository": "https://github.com/microsoft/terminal"
   },
   "konsole": {
     "name": "Konsole",
-    "website": "https://konsole.kde.org/"
+    "website": "https://konsole.kde.org/",
+    "repository": "https://invent.kde.org/utilities/konsole"
   },
   "mintty": {
     "name": "mintty",
-    "website": "https://mintty.github.io/"
+    "website": "https://mintty.github.io/",
+    "repository": "https://github.com/mintty/mintty"
   }
 }

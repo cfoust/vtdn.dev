@@ -101,10 +101,28 @@ function SupportCell({support}: {support: SupportEntry}) {
 }
 
 export default function CompatibilityMatrix(): React.ReactElement {
+  const wrapperRef = React.useRef<HTMLDivElement>(null);
+  const theadRef = React.useRef<HTMLTableSectionElement>(null);
+
+  React.useEffect(() => {
+    const wrapper = wrapperRef.current;
+    const thead = theadRef.current;
+    if (!wrapper || !thead) return;
+
+    const update = () => {
+      wrapper.style.setProperty('--header-height', `${thead.offsetHeight}px`);
+    };
+    update();
+
+    const observer = new ResizeObserver(update);
+    observer.observe(thead);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className={styles.wrapper}>
+    <div ref={wrapperRef} className={styles.wrapper}>
       <table className={styles.matrix}>
-        <thead>
+        <thead ref={theadRef}>
           <tr>
             <th className={styles.featureHeader}>Feature</th>
             {terminalIds.map((id) => (

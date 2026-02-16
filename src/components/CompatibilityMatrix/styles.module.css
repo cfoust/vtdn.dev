@@ -31,11 +31,19 @@
   z-index: 2;
   background: var(--ifm-background-color);
   font-weight: 600;
+  vertical-align: bottom;
+  padding: 0.4rem 0.2rem !important;
+  width: 36px;
+  min-width: 36px;
 }
 
 .terminalHeader a {
   color: var(--ifm-font-color-base);
   text-decoration: none;
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  display: inline-block;
+  white-space: nowrap;
 }
 
 .terminalHeader a:hover {

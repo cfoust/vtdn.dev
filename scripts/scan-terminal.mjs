@@ -226,7 +226,7 @@ To determine when support was added, use git log and git tag to find the earlies
 For each feature, determine:
 - "supported": true if clearly implemented, false if explicitly ignored/rejected or no evidence, null if uncertain
 - "partial": true only if partially implemented (e.g. some sub-features missing)
-- "version": the earliest release tag containing the implementation, otherwise null
+- "version": the earliest release tag (e.g. "v1.2.0") containing the implementation, or null if unknown. Must be a single semver-style tag string or null — never return a list, description, or boolean
 - "notes": brief note only if notable (e.g. "Requires compile flag"), otherwise null`;
 }
 

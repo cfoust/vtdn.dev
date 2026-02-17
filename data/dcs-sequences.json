@@ -81,7 +81,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "3.6",
+            "notes": "Only supports cursor style query (SP q)",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -163,7 +165,8 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -245,7 +248,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "3.2",
+            "notes": "Responds to CSI > q primary device attributes",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -328,7 +333,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "3.4",
+            "notes": "Requires ENABLE_SIXEL compile flag",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -407,7 +414,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "3.3",
+            "notes": "Requires allow-passthrough option enabled",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {

@@ -76,7 +76,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "0.8",
+            "notes": "Requires allow-set-title option",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -157,7 +159,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "0.8",
+            "notes": "Requires allow-set-title option",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -239,7 +243,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "3.3",
+            "notes": "Set and query palette entries",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -322,7 +328,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "3.1",
+            "notes": "VTE extension for working directory",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -404,7 +412,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "3.4",
+            "notes": "Hyperlinks support",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -489,7 +499,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": false,
+            "notes": "ConEmu notifications not implemented",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -573,7 +585,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Progress reporting not implemented",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -655,7 +669,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "2.6",
+            "notes": "Set/query default foreground color",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -737,7 +753,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "2.6",
+            "notes": "Set/query default background color",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -820,7 +838,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "3.3",
+            "notes": "Set/query cursor color",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -903,7 +923,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Mouse pointer cursor shape not implemented",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -988,7 +1010,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "2.4",
+            "notes": "Clipboard write support",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -1074,7 +1098,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "2.9",
+            "notes": "Requires get-clipboard option enabled",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -1151,7 +1177,8 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "2.4",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -1236,7 +1263,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "3.2",
+            "notes": "Supports OSC 110, 111, 112",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -1319,7 +1348,8 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "3.4",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -1397,7 +1427,8 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -1478,7 +1509,8 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -1560,7 +1592,8 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -1645,7 +1678,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": false,
+            "notes": "DSR 1337 was removed in 3.2, replaced by CSI > q",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -1726,7 +1761,8 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {

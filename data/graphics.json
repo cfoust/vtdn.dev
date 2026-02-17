@@ -75,7 +75,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "3.4",
+            "notes": "Requires ENABLE_SIXEL compile flag",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -157,7 +159,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": false,
+            "notes": "APC strings parsed but only used for window titles, not graphics",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -237,7 +241,8 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -317,7 +322,8 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -401,7 +407,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No OSC 1337 File= support found",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {

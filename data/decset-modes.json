@@ -75,7 +75,8 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "0.8",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -159,7 +160,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "1.7",
+            "notes": "Side-effect only: clears screen",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -241,7 +244,8 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -324,7 +328,8 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "2.9",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -407,7 +412,8 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "1.8",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -492,7 +498,8 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "3.6",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -569,7 +576,8 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "0.8",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -645,7 +653,8 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -722,7 +731,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": false,
+            "notes": "DECSLRM (set left/right margins) is used for output to terminals but mode 69 is not accepted as input",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -802,7 +813,8 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -882,7 +894,8 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "1.7",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -959,7 +972,8 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "1.7",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -1036,7 +1050,8 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "1.7",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -1113,7 +1128,8 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "1.7",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -1191,7 +1207,8 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "1.8",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -1268,7 +1285,8 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "1.8",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -1347,7 +1365,8 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -1425,7 +1444,8 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -1503,7 +1523,8 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "1.7",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -1583,7 +1604,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Added after 3.6a, will be in next release",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -1663,7 +1686,8 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -1738,7 +1762,8 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "3.6",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -1813,7 +1838,8 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -1891,7 +1917,8 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "0.8",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -1969,7 +1996,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": false,
+            "notes": "MODE_CRLF flag exists internally but mode 20 is not accepted via SM/RM",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {

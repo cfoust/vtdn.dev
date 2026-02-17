@@ -72,7 +72,8 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "0.8",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -151,7 +152,8 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "0.8",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -230,7 +232,8 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "0.8",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -309,7 +312,8 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "0.8",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -393,7 +397,8 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "0.8",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -479,7 +484,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "0.8",
+            "notes": "Treated identically to slow blink (SGR 5)",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -558,7 +565,8 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "0.8",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -638,7 +646,8 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "0.8",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -717,7 +726,8 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "2.4",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -796,7 +806,8 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "2.9",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -876,7 +887,8 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "3.0",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -960,7 +972,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "2.9",
+            "notes": "SGR 4:3 supported via colon-separated parameters",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -1042,7 +1056,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "2.9",
+            "notes": "SGR 4:4 - Requires Smulx capability",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -1124,7 +1140,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "2.9",
+            "notes": "SGR 4:5 - Requires Smulx capability",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -1206,7 +1224,8 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "0.8",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -1288,7 +1307,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "0.8",
+            "notes": "SGR 38;5;n and 48;5;n",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -1370,7 +1391,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "2.2",
+            "notes": "SGR 38;2;r;g;b and 48;2;r;g;b",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -1453,7 +1476,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "2.7",
+            "notes": "SGR 38:2::r:g:b - ISO colon-separated format",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -1535,7 +1560,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "3.0a",
+            "notes": "SGR 58;5;n - Requires Setulc capability",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -1617,7 +1644,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "3.0a",
+            "notes": "SGR 58;2;r;g;b - Requires Setulc capability",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {

@@ -75,7 +75,10 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "3.2",
+            "partial_implementation": true,
+            "notes": "Supports extended keys protocol (CSI 27;mods;key~ and CSI key;mods u) similar to Kitty. Initial support in 3.2, revamped in 3.5 to support both mode 1 and mode 2",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -157,7 +160,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": false,
+            "notes": "tmux uses xterm modifyOtherKeys, not kitty keyboard protocol",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -239,7 +244,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": false,
+            "notes": "tmux uses xterm modifyOtherKeys, not kitty keyboard protocol",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -321,7 +328,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": false,
+            "notes": "tmux uses xterm modifyOtherKeys, not kitty keyboard protocol",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -403,7 +412,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": false,
+            "notes": "tmux uses xterm modifyOtherKeys, not kitty keyboard protocol",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -485,7 +496,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": false,
+            "notes": "tmux uses xterm modifyOtherKeys, not kitty keyboard protocol",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {

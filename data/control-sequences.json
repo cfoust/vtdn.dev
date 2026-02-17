@@ -75,7 +75,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "0.8",
+            "notes": "Triggers window bell alert via alerts_queue()",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -155,7 +157,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "0.8",
+            "notes": "Implemented via screen_write_backspace()",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -235,7 +239,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "0.8",
+            "notes": "Moves cursor to next tab stop, respects tab array",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -315,7 +321,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "0.8",
+            "notes": "Also handles VT and FF; respects CRLF mode",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -395,7 +403,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "0.8",
+            "notes": "Implemented via screen_write_carriagereturn()",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -480,7 +490,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "0.8",
+            "notes": "Charset shift implementation for G0/G1 ACS",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -564,7 +576,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": false,
+            "notes": "ENQ (0x05) is ignored, in range 0x00-0x06 with NULL handler",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -644,7 +658,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "1.3",
+            "notes": "Index: move cursor down one line",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -724,7 +740,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "0.9",
+            "notes": "Next line: CR followed by LF",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -804,7 +822,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "1.3",
+            "notes": "Set tab stop at current column",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -884,7 +904,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "1.3",
+            "notes": "Reverse index via screen_write_reverseindex()",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -968,7 +990,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": false,
+            "notes": "ESC N and ESC O not in escape table",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -1048,7 +1072,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "1.3",
+            "notes": "Save/restore cursor via input_save_state/input_restore_state",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -1128,7 +1154,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "1.3",
+            "notes": "Full terminal reset including palette and screen",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -1208,7 +1236,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "1.3",
+            "notes": "Application/numeric keypad mode toggle",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -1293,7 +1323,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": false,
+            "notes": "ESC #3-6 sequences not implemented",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -1374,7 +1406,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "1.3",
+            "notes": "Screen alignment test via screen_write_alignmenttest()",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -1460,7 +1494,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Parser is 7-bit only, ESC SP F/G not implemented",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -1548,7 +1584,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": false,
+            "notes": "LS2/LS3/LS1R/LS2R/LS3R not implemented",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -1632,7 +1670,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": false,
+            "notes": "ESC % G not needed; tmux uses UTF-8 internally",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {

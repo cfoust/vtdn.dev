@@ -78,7 +78,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Sequence parsed but ignored (case 1/2 in winops)",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -164,7 +166,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Sequence parsed but ignored (case 3 in winops)",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -249,7 +253,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Sequence parsed but ignored (case 4 in winops)",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -335,7 +341,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Sequence parsed but ignored (case 5/6 in winops)",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -420,7 +428,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Sequence parsed but ignored (case 8 in winops)",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -507,7 +517,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Sequence parsed but ignored (case 9 in winops)",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -594,7 +606,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Sequence parsed but ignored (case 10 in winops)",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -680,7 +694,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Sequence parsed but ignored (case 11 in winops)",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -766,7 +782,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Sequence parsed but ignored (case 13 in winops)",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -851,7 +869,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "1.9",
+            "notes": "Reports text area in pixels (CSI 14 t)",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -936,7 +956,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "3.4",
+            "notes": "Reports cell size in pixels via w->xpixel and w->ypixel",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -1019,7 +1041,8 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "1.9",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {
@@ -1107,7 +1130,9 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": null
+            "version_added": "2.7",
+            "notes": "Supports both CSI 22 t (push) and CSI 23 t (pop)",
+            "last_scanned": "2026-02-17"
           }
         },
         "status": {

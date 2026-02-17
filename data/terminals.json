@@ -41,7 +41,7 @@
   "vte": {
     "name": "VTE",
     "website": "https://wiki.gnome.org/Apps/Terminal",
-    "repository": "https://gitlab.gnome.org/GNOME/vte"
+    "repository": "https://github.com/GNOME/vte"
   },
   "windows_terminal": {
     "name": "Windows Terminal",

@@ -201,8 +201,42 @@ function buildBatchSchema(batch) {
   });
 }
 
+// Gather context about the repo's codebase structure once, before batching
+function gatherRepoContext(repoPath, terminalName) {
+  console.log("Gathering codebase context...");
+
+  const prompt = `You are analyzing the source code of the terminal emulator "${terminalName}".
+
+Identify the key files and code locations relevant to terminal escape sequence and control code handling. Specifically find:
+- Where escape sequences are parsed (the parser/state machine)
+- Where CSI, OSC, DCS, and other sequence types are dispatched and handled
+- Where terminal modes (e.g. DECSET/DECRST) are processed
+- Where keyboard input encoding happens
+- Where graphics protocols (e.g. Sixel, iTerm2 inline images) are handled, if present
+- Where window manipulation sequences are handled, if present
+
+Also run "git tag" and list the available version tags.
+
+Provide a concise map: for each area, give the file path(s) and a brief note about what they contain. Keep the output compact — just file paths and one-line descriptions.`;
+
+  try {
+    const raw = execFileSync("claude", ["-p", prompt], {
+      cwd: repoPath,
+      encoding: "utf-8",
+      timeout: timeoutMs,
+      maxBuffer: 10 * 1024 * 1024,
+    });
+    console.log("Context gathered successfully.");
+    return raw.trim();
+  } catch (e) {
+    const reason = e.killed ? "timeout" : e.message;
+    console.error(`Warning: context gathering failed (${reason}), proceeding without context`);
+    return null;
+  }
+}
+
 // Build the prompt for a batch of features
-function buildBatchPrompt(terminalName, batch) {
+function buildBatchPrompt(terminalName, batch, repoContext) {
   const featureList = batch
     .map((f) => {
       let line = `- ${f.featureId}: ${f.title} — ${f.description}`;
@@ -211,17 +245,29 @@ function buildBatchPrompt(terminalName, batch) {
     })
     .join("\n");
 
-  return `You are analyzing the source code of the terminal emulator "${terminalName}" to determine whether it supports specific terminal features.
+  let contextSection = "";
+  if (repoContext) {
+    contextSection = `
+Here is a pre-gathered map of the codebase showing where terminal features are implemented:
 
+${repoContext}
+
+Use this as a starting point — go directly to the relevant files rather than searching broadly.
+
+`;
+  }
+
+  return `You are analyzing the source code of the terminal emulator "${terminalName}" to determine whether it supports specific terminal features.
+${contextSection}
 Features to check:
 ${featureList}
 
-Search the codebase for evidence that each feature is implemented. Look for:
+Look in the relevant source files for evidence that each feature is implemented. Look for:
 - Direct handling of the escape sequences or control codes described
 - References to feature names or mnemonics
 - Parser/handler code that processes these sequences
 
-To determine when support was added, use git log and git tag to find the earliest version that includes the implementation. Run "git tag" to list available tags, then use "git log --all --oneline -- <file>" on relevant files and cross-reference with tags. You only need to do this once and can reuse the tag list across features.
+To determine when support was added, use git log and git tag to find the earliest version that includes the implementation. Cross-reference relevant file history with tags. If the version tags were provided above, reuse them rather than running "git tag" again.
 
 For each feature, determine:
 - "supported": true if clearly implemented, false if explicitly ignored/rejected or no evidence, null if uncertain
@@ -283,6 +329,7 @@ if (values["dry-run"]) {
 }
 
 const repoPath = ensureRepo(terminalId, terminal.repository);
+const repoContext = gatherRepoContext(repoPath, terminal.name);
 
 const resultsByFile = new Map();
 let scanned = 0;
@@ -296,7 +343,7 @@ for (let i = 0; i < features.length; i += batchSize) {
     `\nBatch ${batchNum}/${totalBatches} (${batch.length} features)...`,
   );
 
-  const prompt = buildBatchPrompt(terminal.name, batch);
+  const prompt = buildBatchPrompt(terminal.name, batch, repoContext);
   const schema = buildBatchSchema(batch);
 
   let results;

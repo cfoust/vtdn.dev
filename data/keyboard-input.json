@@ -14,40 +14,61 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Full progressive enhancement support",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Requires enable_kitty_keyboard config option",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": "1.10.2",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": "v0.13.0",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "notes": "Full progressive enhancement with CSI u, push/pop stack",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Mode 2017 defined but not implemented",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Full implementation added in commit c81c66b (Feb 17, 2026). Includes Set/Query/Push/Pop operations at adaptDispatch.cpp:2073-2100",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Win32-input-mode (9001) supported instead",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": false,
+            "partial_implementation": true,
+            "notes": "Only modifyOtherKeys (xterm) is implemented; kitty keyboard protocol (CSI = u) sequences not found",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Requires vtExtensions.kittyKeyboard option, added after 6.0.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": "v1.11.0",
@@ -75,40 +96,61 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "notes": "Flag bit 0 (disambiguate) in Kitty keyboard protocol",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": "0.20.0",
+            "notes": "Flag 1 in keyboard protocol",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": "20220624-141144-bd1b7c5d",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": "1.10.2",
+            "notes": "Flag 1 (KITTY_KBD_DISAMBIGUATE)",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": "v0.13.0",
+            "notes": "DISAMBIGUATE_ESC_CODES flag at term/mod.rs:75",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "notes": "Flag 1 in VT100TerminalKeyReportingFlagsDisambiguateEscape",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Mode 2017 exists but keyboard encoding doesn't implement Kitty protocol flags",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented in commit c81c66b (2026-02-16). Flag value 1 << 0 (DisambiguateEscapeCodes) in terminalInput.hpp:55",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No Kitty keyboard protocol; only win32-input-mode (CSI ? 9001 h)",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "6.0.0",
+            "notes": "Kitty keyboard protocol flag 1 (DISAMBIGUATE_ESCAPE_CODES). Requires vtExtensions.kittyKeyboard option enabled.",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": "v1.9.0",
@@ -136,40 +178,61 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "notes": "Flag bit 1 (report_events) in Kitty keyboard protocol",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": "0.20.0",
+            "notes": "Flag 2 in keyboard protocol",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": "20220624-141144-bd1b7c5d",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": "1.10.3",
+            "notes": "Flag 2 (KITTY_KBD_REPORT_EVENT)",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": "v0.13.0",
+            "notes": "REPORT_EVENT_TYPES flag at term/mod.rs:76",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "notes": "Flag 2 in VT100TerminalKeyReportingFlagsReportAllEventTypes",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Mode 2017 exists but keyboard encoding doesn't implement Kitty protocol flags",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented in commit c81c66b (2026-02-16). Flag value 1 << 1 (ReportEventTypes) in terminalInput.hpp:56",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No Kitty keyboard protocol; only win32-input-mode (CSI ? 9001 h)",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "6.0.0",
+            "notes": "Kitty keyboard protocol flag 2 (REPORT_EVENT_TYPES). Requires vtExtensions.kittyKeyboard option enabled.",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": "v1.9.0",
@@ -197,40 +260,61 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "notes": "Flag bit 2 (report_alternates) in Kitty keyboard protocol",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": "0.20.0",
+            "notes": "Flag 4 in keyboard protocol",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": "20220624-141144-bd1b7c5d",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": "1.10.3",
+            "notes": "Flag 4 (KITTY_KBD_REPORT_ALTERNATE)",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": "v0.13.0",
+            "notes": "REPORT_ALTERNATE_KEYS flag at term/mod.rs:77",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "notes": "Flag 4 in VT100TerminalKeyReportingFlagsReportAlternateKeys",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Mode 2017 exists but keyboard encoding doesn't implement Kitty protocol flags",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented in commit c81c66b (2026-02-16). Flag value 1 << 2 (ReportAlternateKeys) in terminalInput.hpp:57",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No Kitty keyboard protocol; only win32-input-mode (CSI ? 9001 h)",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "6.0.0",
+            "notes": "Kitty keyboard protocol flag 4 (REPORT_ALTERNATE_KEYS). Requires vtExtensions.kittyKeyboard option enabled.",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": "v1.9.0",
@@ -258,40 +342,61 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "notes": "Flag bit 3 (report_all) in Kitty keyboard protocol",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": "0.20.0",
+            "notes": "Flag 8 in keyboard protocol",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": "20220624-141144-bd1b7c5d",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": "1.10.3",
+            "notes": "Flag 8 (KITTY_KBD_REPORT_ALL)",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": "v0.13.0",
+            "notes": "REPORT_ALL_KEYS_AS_ESC flag at term/mod.rs:78",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "notes": "Flag 8 in VT100TerminalKeyReportingFlagsReportAllKeysAsEscapeCodes",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Mode 2017 exists but keyboard encoding doesn't implement Kitty protocol flags",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented in commit c81c66b (2026-02-16). Flag value 1 << 3 (ReportAllKeysAsEscapeCodes) in terminalInput.hpp:58",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No Kitty keyboard protocol; only win32-input-mode (CSI ? 9001 h)",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "6.0.0",
+            "notes": "Kitty keyboard protocol flag 8 (REPORT_ALL_KEYS_AS_ESCAPE_CODES). Requires vtExtensions.kittyKeyboard option enabled.",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": "v1.9.0",
@@ -319,40 +424,61 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "notes": "Flag bit 4 (report_associated) in Kitty keyboard protocol",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": "0.20.0",
+            "notes": "Flag 16 in keyboard protocol",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": "20220624-141144-bd1b7c5d",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": "1.10.3",
+            "notes": "Flag 16 (KITTY_KBD_REPORT_ASSOCIATED)",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": "v0.13.0",
+            "notes": "REPORT_ASSOCIATED_TEXT flag at term/mod.rs:79",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "notes": "Flag 16 in VT100TerminalKeyReportingFlagsReportAssociatedText",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Mode 2017 exists but keyboard encoding doesn't implement Kitty protocol flags",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented in commit c81c66b (2026-02-16). Flag value 1 << 4 (ReportAssociatedText) in terminalInput.hpp:59",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No Kitty keyboard protocol; only win32-input-mode (CSI ? 9001 h)",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "6.0.0",
+            "notes": "Kitty keyboard protocol flag 16 (REPORT_ASSOCIATED_TEXT). Requires vtExtensions.kittyKeyboard option enabled.",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": "v1.9.0",

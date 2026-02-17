@@ -14,40 +14,61 @@
             "version_added": true
           },
           "xterm": {
-            "version_added": null
+            "version_added": "xterm-1",
+            "notes": "DECCKM (mode 1) - Application cursor keys",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Application cursor keys mode",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Application cursor keys mode",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Application cursor keys mode",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Application cursor keys mode via cursorMode property",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "DEC_APPLICATION_CURSOR_KEYS mode",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Application cursor keys mode (DECCKM) fully supported",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "DECCKM (Mode 1) implemented at src/termout.c:2376-2377",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "0.10",
+            "notes": "Application Cursor Keys",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": true,
@@ -75,40 +96,62 @@
             "version_added": true
           },
           "xterm": {
-            "version_added": null
+            "version_added": "xterm-1",
+            "notes": "DECCOLM (mode 3) - 132/80 column switching. Requires c132 resource and allowWindowOps",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "notes": "132/80 column switching",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "132/80 column switching",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Reported as not supported; clears grid but doesn't change width",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "132/80 column switching, requires allowColumnMode enabled",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "DEC_132_COLUMN mode; controlled by XTERM_DECCOLM flag",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Requires XTERM_EnableDECCOLMSupport mode 40 to be enabled",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "80/132 column switching supported with MODE_Allow132Columns guard",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "DECCOLM (Mode 3) implemented at src/termout.c:2397-2409. Can be disabled via mode 40",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "0.10",
+            "notes": "Requires windowOptions.setWinLines enabled",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -137,40 +180,61 @@
             "version_added": true
           },
           "xterm": {
-            "version_added": null
+            "version_added": "xterm-1",
+            "notes": "DECSCNM (mode 5) - Reverse video",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "notes": "Reverse video mode",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Reverse video mode",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Reverse video mode",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Reverse video mode via reverseVideo property",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "DEC_REVERSE_IMAGE mode",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Reverse video mode (MODE_Screen) for light backgrounds",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "DECSCNM (Mode 5) reverse video implemented at src/termout.c:2410-2414",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Explicitly marked as unimplemented",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": true,
@@ -198,40 +262,62 @@
             "version_added": true
           },
           "xterm": {
-            "version_added": null
+            "version_added": "xterm-1",
+            "notes": "DECOM (mode 6) - Origin mode (relative to scroll region)",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "notes": "Origin mode",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": "20200202-181957-765184e5",
+            "notes": "Origin mode (relative to scroll region)",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Origin mode (relative to scroll region)",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Origin mode implemented",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Origin mode for cursor positioning relative to scroll region",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "DEC_ORIGIN mode",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Origin mode for relative positioning within scroll region",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "DECOM (Mode 6) origin mode implemented at src/termout.c:2415-2420",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "0.10",
+            "notes": "Origin mode",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": true,
@@ -259,40 +345,62 @@
             "version_added": true
           },
           "xterm": {
-            "version_added": null
+            "version_added": "xterm-1",
+            "notes": "DECAWM (mode 7) - Auto-wrap at end of line",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "notes": "Auto-wrap mode, enabled by default",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": "20200202-181957-765184e5",
+            "notes": "Auto-wrap at end of line",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Auto-wrap mode",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Line wrap mode",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Auto-wrap mode via wraparoundMode property",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "DEC_AUTOWRAP mode",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Auto-wrap at end of line (MODE_Wrap)",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "DECAWM (Mode 7) auto-wrap implemented at src/termout.c:2421-2424",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "0.10",
+            "notes": "Auto-wrap mode",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": true,
@@ -320,40 +428,63 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": "xterm-88",
+            "notes": "Mode 12 - att610 blinking cursor. Requires OPT_BLINK_CURS compile option",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "notes": "Cursor blinking mode",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Mode 12 controls cursor blinking",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": "20191229-193639-e7aa2f3",
+            "notes": "Blinking cursor (DECSCUSR and StartBlinkingCursor mode 12)",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Cursor blinking mode",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Blinking cursor mode",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Cursor blink control via blinkingCursor property",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "XTERM_ATT610_BLINK mode",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Mode 12 (att610 cursor blink) escape sequences are explicitly ignored; cursor blinking is controlled via profile settings",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Mode 12 blinking cursor implemented at src/termout.c:2433-2436",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "0.10",
+            "notes": "Requires quirks.allowSetCursorBlink enabled",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -382,40 +513,56 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "VT200 feature, implemented early in xterm history",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "DECTCEM_TextCursorEnableMode at adaptDispatch.cpp:1808-1810",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "MODE_Cursor (mode 25) controls cursor visibility",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at src/termout.c:2442",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "0.10",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": true,
@@ -443,40 +590,55 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": "380",
+            "notes": "Original mode 45 implemented in patch 380, extended mode 1045 in patch 383",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No implementation found in codebase",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at src/termout.c:2425",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "4.6.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -504,40 +666,56 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": "279",
+            "notes": "VT420 feature, requires vtXX_level >= 4",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "notes": "Requires VT400 emulation level or higher",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "DECLRMM_LeftRightMarginMode at adaptDispatch.cpp:1827-1836",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at src/termout.c:2471",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -565,40 +743,59 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": "294",
+            "notes": "Requires OPT_SIXEL_GRAPHICS compile flag",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No Sixel support found in codebase",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Sixel graphics not supported",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": "1.7.0",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Requires Sixel support",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "DECSDM_SixelDisplayMode at adaptDispatch.cpp:1837-1843",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Controls Sixel scrolling mode via m_SixelScrolling flag",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at src/termout.c:2483",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -626,40 +823,59 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Alternate screen with cursor save/restore",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": "1.7.0",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "notes": "Can be disabled via disableSmcupRmcup setting",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ASB_AlternateScreenBuffer at adaptDispatch.cpp:1873-1875",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Combines cursor save, clear screen, and alternate buffer",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at src/termout.c:2539; can be disabled via config",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "1.0.0",
+            "partial_implementation": true,
+            "notes": "Does not clear alternate buffer on switch",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": true,
@@ -687,40 +903,56 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "X10 and VT200 mouse modes",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "VT200_MOUSE_MODE at adaptDispatch.cpp:1847-1849",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "MODE_Mouse1000 for basic press/release tracking",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at src/termout.c:2487",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "0.3",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": true,
@@ -748,40 +980,56 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Button-event mouse tracking",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "BUTTON_EVENT_MOUSE_MODE at adaptDispatch.cpp:1850-1852",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "MODE_Mouse1002 for drag tracking",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at src/termout.c:2490",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "0.3",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": true,
@@ -809,40 +1057,56 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Any-event mouse tracking",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ANY_EVENT_MOUSE_MODE at adaptDispatch.cpp:1853-1855",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "MODE_Mouse1003 for all motion tracking",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at src/termout.c:2493",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "0.3",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": true,
@@ -870,40 +1134,57 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Requires OPT_FOCUS_EVENT compile flag (enabled by default)",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "notes": "Requires focus reporting to be allowed by delegate",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "FOCUS_EVENT_MODE at adaptDispatch.cpp:1862-1869",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Uses _reportFocusEvents flag, sends CSI I/O sequences",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at src/termout.c:2496",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "4.15.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": true,
@@ -931,40 +1212,56 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR extended mouse coordinates",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR_EXTENDED_MODE at adaptDispatch.cpp:1859-1861",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "MODE_Mouse1006 for SGR extended coordinates",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at src/termout.c:2501",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "2.0.1",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": true,
@@ -992,40 +1289,58 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Alternate scroll mode",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": "v0.4.0",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "notes": "Can be restricted by delegate",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ALTERNATE_SCROLL at adaptDispatch.cpp:1870-1872",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "MODE_Mouse1007 for alternate scroll mode",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at src/termout.c:2587",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "3.3.0",
+            "notes": "Implemented in viewport, not as explicit mode toggle",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -1053,40 +1368,57 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR pixel-position mouse mode",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Mode defined but not implemented",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No implementation found in codebase",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "MODE_Mouse1016 for pixel coordinates",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at src/termout.c:2504",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "5.0.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -1114,40 +1446,57 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": "238",
+            "notes": "Requires OPT_PASTE64 compile flag (enabled by default)",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "notes": "Can be disabled via allowPasteBracketing setting",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "XTERM_BracketedPasteMode at adaptDispatch.cpp:1876-1878",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "MODE_BracketedPaste implemented",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at src/termout.c:2557",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "3.0.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": "v1.10.0",
@@ -1175,40 +1524,59 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented as PENDING_UPDATE mode",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Handled in mux layer",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": "1.9.0",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Acknowledged but no-op per code",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Commented TODO in vteseq.cc:9820",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SO_SynchronizedOutput at adaptDispatch.cpp:1879-1885",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "MODE_SynchronizedUpdate implemented",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at src/termout.c:2622",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "6.0.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": "v1.11.0",
@@ -1236,40 +1604,59 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Always active, not toggleable via mode",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Permanently enabled",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": "1.16.0",
+            "notes": "Requires compile flag",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Mode defined but not implemented",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "GCM_GraphemeClusterMode at adaptDispatch.cpp:1886-1887, reported as permanently enabled/disabled at adaptDispatch.cpp:2027-2029",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Mode 2027 is used for emoji width mode, not grapheme clustering; comment at src/termout.c:2628 says '2027 is dropped'",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Grapheme clustering exists internally but no mode toggle",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -1297,40 +1684,54 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": "1.23.0",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No implementation found in codebase",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Added after 6.0.0, not yet in a release tag",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -1358,40 +1759,54 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": "1.19.0",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Mode defined but not implemented",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No implementation found in codebase",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -1419,40 +1834,56 @@
             "version_added": true
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ANSI insert/replace mode",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "IRM_InsertReplaceMode at adaptDispatch.cpp:1762-1764",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "MODE_Insert implemented in Screen class",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at src/termout.c:2636",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "5.0.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -1481,40 +1912,57 @@
             "version_added": true
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ANSI line feed/newline mode",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Explicitly not supported per source comment",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "LNM_LineFeedNewLineMode at adaptDispatch.cpp:1765-1773",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "MODE_NewLine controls LF behavior (also performs CR)",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at src/termout.c:2645",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "5.0.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": true,

@@ -14,40 +14,62 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "OSC 0 sets both icon name and window title (OSC_IconBoth in misc.c:3480)",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Sets both icon and window title",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "OSC 0 SetIconNameAndWindowTitle - see wezterm-escape-parser/src/osc.rs:34,306,458",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Sets icon and window title, osc.c:1299-1301",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "partial_implementation": true,
+            "notes": "Icon names not supported per escape_support.md:95",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "OSC 0 (XTERM_SET_WINDOW_AND_ICON_TITLE) handled in vteseq.cc",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SetIconAndWindowTitle case in ActionOscDispatch, calls SetWindowTitle",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "IconNameAndWindowTitle enum value 0 in src/session/Session.h:412",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at termout.c:4686, sets window title (ignores icon title)",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "0.3",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": true,
@@ -75,40 +97,60 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "OSC 2 sets window title only (OSC_TitleOnly in misc.c:3482)",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "OSC 2 SetWindowTitle - see wezterm-escape-parser/src/osc.rs:35,307,460",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Sets window title, osc.c:1306-1308",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Listed as IMPLEMENTED in escape_support.md:97",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "OSC 2 (XTERM_SET_WINDOW_TITLE) handled in vteseq.cc",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SetWindowTitle case in ActionOscDispatch",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "WindowTitle enum value 2 in src/session/Session.h:414",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at termout.c:4686, sets window title",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "0.3",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": true,
@@ -136,40 +178,61 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "OSC 4 changes/queries ANSI color palette entries (OSC_SetAnsiColor in misc.c:3484)",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Change/query color palette entry",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "OSC 4 ChangeColorNumber with query support - see wezterm-escape-parser/src/osc.rs:46,201-224,364,462",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Query/change palette entry, osc.c:1310-1370",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Listed as IMPLEMENTED in escape_support.md:98",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "OSC 4 (XTERM_SET_COLOR) handled in vteseq.cc",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SetColor case with SetColorTableEntry/RequestColorTableEntry support",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ReportColors enum value 4 in src/Vt102Emulation.h:190, handled in src/Vt102Emulation.cpp:1200-1222",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at termout.c:4687, change/query color palette entries",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "4.10.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": true,
@@ -197,40 +260,62 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No evidence in documentation or source code",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "CWD reporting for shell integration",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "OSC 7 CurrentWorkingDirectory - see wezterm-escape-parser/src/osc.rs:49,351,466",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Current working directory via URI, osc.c:1372-1375, 457-476",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Not listed in escape_support.md OSC section",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "OSC 7 (VTECWD) handled in vteseq.cc for CWD reporting",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Not in OscActionCodes enum; falls through to default case (ignored)",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "CurrentDirectory enum value 7 in src/session/Session.h:415",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at termout.c:4734-4765, current working directory reporting",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Not implemented",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": "v0.11.0",
@@ -258,40 +343,61 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No evidence in documentation or source code",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Hyperlinks with full id and url support",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "OSC 8 SetHyperlink - see wezterm-escape-parser/src/osc.rs:39,316,468",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Hyperlinks with id parameter, osc.c:1377-1379, 479-536",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Hyperlinks - set_hyperlink in term/mod.rs:1874",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "OSC 8 (VTEHYPER) handled in vteseq.cc for hyperlinks",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Hyperlink case via AddHyperlink/EndHyperlink with _ParseHyperlink",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Hyperlinks handled via URL_LINK in src/Vt102Emulation.cpp:654-656, urlExtractor in src/Vt102Emulation.cpp:1147-1154",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at termout.c:4873-4881, hyperlinks (clickable links)",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "5.0.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -319,40 +425,64 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No evidence in documentation or source code",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "partial_implementation": true,
+            "notes": "Supports legacy iTerm2 OSC 9 notifications",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "OSC 9 SystemNotification (ConEmu/iTerm2) - see wezterm-escape-parser/src/osc.rs:43,318-350,470",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "iTerm2/urxvt notify extension, osc.c:1381-1396, 538-590",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Not listed in escape_support.md OSC section",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "notes": "ConEmu/iTerm2 desktop notification",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": false,
+            "notes": "OSC 9 basic notification not implemented, only 9;4 for progress",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ConEmuAction case; handles OSC 9;4 (progress), 9;9 (CWD), 9;12 (mark)",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": false,
+            "notes": "ConEmu OSC 9 recognized but only OSC 9;4 (progress) is implemented in src/Vt102Emulation.cpp:1821-1855; simple notification form not implemented",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Not implemented (ConEmu/iTerm2 desktop notification)",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Not implemented",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -380,40 +510,63 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No evidence in documentation or source code",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "OSC 9;4 progress reporting explicitly discarded per changelog",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "OSC 9;4 ConEmuProgress for progress reporting - see wezterm-escape-parser/src/osc.rs:52,319-347,608-612",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": false,
+            "notes": "ConEmu/Windows Terminal progress explicitly ignored in osc.c:1389",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Not listed in escape_support.md OSC section",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Not found in codebase",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "OSC 9;4 progress reporting handled via conemu_extension",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "DoConEmuAction subParam 4 calls SetTaskbarProgress for progress reporting",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ConEmu OSC 9;4 progress reporting in src/Vt102Emulation.cpp:1825-1851",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at termout.c:5149-5220, progress reporting (OSC 9;4)",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "6.0.0",
+            "notes": "Requires addon-progress",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -441,40 +594,61 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "OSC 10 changes VT100 text foreground color (OSC_TEXT_FG=10 in ptyx.h:1018)",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Set/query foreground color via set_dynamic_color",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "OSC 10 TextForegroundColor with query support - see wezterm-escape-parser/src/osc.rs:60,234-253,381-392,471",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Query/set foreground color, osc.c:1398-1458",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Listed as IMPLEMENTED in escape_support.md:100",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "OSC 10 (XTERM_SET_COLOR_TEXT_FG) handled in vteseq.cc",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SetForegroundColor case via SetXtermColorResource/RequestXtermColorResource",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "TextColor enum value 10 in src/session/Session.h:416, reportForegroundColor in src/session/Session.cpp:986",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at termout.c:4700, set/query default foreground color",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "4.16.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": true,
@@ -502,40 +676,61 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "OSC 11 changes VT100 text background color (OSC_TEXT_BG=11 in ptyx.h:1019)",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Set/query background color via set_dynamic_color",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "OSC 11 TextBackgroundColor with query support - see wezterm-escape-parser/src/osc.rs:61,234-253,381-392,472",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Query/set background color with alpha, osc.c:1398-1478",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Listed as IMPLEMENTED in escape_support.md:101",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "OSC 11 (XTERM_SET_COLOR_TEXT_BG) handled in vteseq.cc",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SetBackgroundColor case via SetXtermColorResource/RequestXtermColorResource",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "BackgroundColor enum value 11 in src/session/Session.h:417, reportBackgroundColor in src/session/Session.cpp:991",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at termout.c:4701-4719, set/query default background color (also supports background images)",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "4.16.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": true,
@@ -563,40 +758,61 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "OSC 12 changes text cursor color (OSC_TEXT_CURSOR=12 in ptyx.h:1020)",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Set/query cursor color via set_dynamic_color",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "OSC 12 TextCursorColor with query support - see wezterm-escape-parser/src/osc.rs:62,234-253,381-392,473",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Query/set cursor color, osc.c:1398-1484",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Listed as IMPLEMENTED in escape_support.md:102",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "OSC 12 (XTERM_SET_COLOR_CURSOR_BG) handled in vteseq.cc",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SetCursorColor case via SetXtermColorResource/RequestXtermColorResource",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "CursorColor enum value 12 in src/Vt102Emulation.h:191, handled in src/Vt102Emulation.cpp:1157-1166",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at termout.c:4720, set/query cursor color",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "4.16.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -625,40 +841,62 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "OSC 22 changes pointer cursor shape via pointerShape resource (OSC_SetupPointer=22 in misc.c:3487)",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Mouse pointer shape via set_dynamic_color",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": false,
+            "notes": "OSC 22 (mouse pointer cursor shape) not found in codebase",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Set mouse cursor shape, osc.c:1498-1500",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Not listed in escape_support.md OSC section",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": false,
+            "notes": "OSC 22 listed as unsupported in vteseq.cc case statement",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Not in OscActionCodes enum; no mouse pointer shape handling found",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "PointerShape enum value 22 in src/Vt102Emulation.h:192",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at termout.c:4864-4867, set mouse pointer cursor style",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Not implemented",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -686,40 +924,63 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "OSC 52 manipulates selection data (clipboard). Requires OPT_PASTE64 compile flag and allowWindowOps resource (OSC_SelectionData=52 in misc.c:3496)",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Clipboard write with extended OSC 5522 support",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "OSC 52 ManipulateSelectionData for clipboard write - see wezterm-escape-parser/src/osc.rs:42,170-183,317,484",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Clipboard write with security config, osc.c:27-107",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "partial_implementation": true,
+            "notes": "Only clipboard and primary selection per escape_support.md:104",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": false,
+            "notes": "OSC 52 listed as unsupported in vteseq.cc case statement",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SetClipboard case via _GetOscSetClipboard; write-only (query ignored)",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Clipboard enum value 52 in src/Vt102Emulation.h:193, write (copy) in src/Vt102Emulation.cpp:1276-1283",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at termout.c:4556-4617, clipboard write via OSC 52 (requires AllowSetSelection config option)",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "6.0.0",
+            "notes": "Requires addon-clipboard",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": "v1.7.0",
@@ -748,40 +1009,64 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": "xterm-268",
+            "notes": "OSC 52 with '?' parameter for reading selection. Requires allowWindowOps resource",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "notes": "Query with '?' is supported",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": "0.10.0",
+            "notes": "Uses OSC 5522 for reading, standard OSC 52 for writing",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": false,
+            "notes": "OSC 52 write (SetSelection) is supported, but QuerySelection is parsed but not handled (empty handler at performer.rs:788)",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": "1.5.0",
+            "notes": "Requires security.osc52 config option set to enabled or paste-enabled",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": "v0.4.0",
+            "notes": "Disabled by default; requires terminal.osc52 config",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Query support implemented - OSC 52 with ? parameter triggers terminalReportPasteboard callback",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": false,
+            "notes": "OSC 52 is recognized but falls through to default case (ignored)",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": false,
+            "notes": "OSC 52 write is supported, but query (read) is parsed and ignored",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": false,
+            "notes": "OSC 52 write (copy to clipboard) is supported, but OSC 52 read (query clipboard) is not implemented",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "OSC 52 read (?) is implemented at src/termout.c:4577-4594. Requires cfg.allow_paste_selection",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "6.0.0",
+            "notes": "Requires @xterm/addon-clipboard addon",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -810,40 +1095,56 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": "xterm-88",
+            "notes": "Reset color palette entry (OSC 104)",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": "20200202-181957-765184e5",
+            "notes": "Reset color palette entries",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": "1.4.0",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Handled via XTERMCC_RESET_COLOR token type",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "OSC 104 palette reset implemented at src/termout.c:4698",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "4.16.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": "v0.11.0",
@@ -871,40 +1172,64 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": "xterm-88",
+            "notes": "OSC 110/111/112 reset foreground/background/cursor color",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "notes": "OSC 110, 111, 112 all supported",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Supports OSC 110, 111, 112, 117, 119",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": "20220626-201802-61a01c91",
+            "notes": "OSC 110-119 reset dynamic colors including foreground (110), background (111), and cursor (112)",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": "1.4.0",
+            "notes": "Supports OSC 110, 111, 112, 117, 119",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "OSC 110, 111, 112 all implemented",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "OSC 110, 111, 112 reset foreground/background/cursor colors via XTERMCC_RESET_VT100_TEXT_*_COLOR tokens",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "OSC 110, 111, 112 all implemented",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "OSC 110, 111, 112, 117 for resetting foreground, background, cursor, and highlight colors",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "OSC 110 (reset fg), 111 (reset bg), and 112 (reset cursor color) are all supported",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "OSC 110/111/112 color resets implemented at src/termout.c:4726-4728",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "4.16.0",
+            "notes": "Includes OSC 110, 111, and 112",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -932,40 +1257,62 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Shell integration (FinalTerm semantic zones) not implemented",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "notes": "Shell integration semantic prompts",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": "0.24.0",
+            "notes": "Part of shell integration feature",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": "20210203-095643-70a364eb",
+            "notes": "FinalTerm semantic zones for shell integration",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "FinalTerm semantic zones (FTCS_PROMPT, FTCS_COMMAND_START, FTCS_COMMAND_EXECUTED, FTCS_COMMAND_FINISHED)",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "FinalTerm shell integration via XTERMCC_FINAL_TERM token",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Full iTerm2 shell integration support (A/B/C/D/L modes)",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Supports FinalTerm sequences A, B, C, D for shell integration",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Fully supports FinalTerm semantic prompts with REPL mode tracking for prompt (A/N/P), input (B), output (C), and completion (D)",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No implementation found for OSC 133 shell integration",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": "v1.10.0",
@@ -993,40 +1340,57 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Kitty color protocol not implemented",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "notes": "Kitty color protocol",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": "0.36.0",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No evidence of OSC 21 support in code",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No OSC 21 color query protocol implementation found",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No implementation found for Kitty OSC 21 color protocol",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -1054,40 +1418,60 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Kitty desktop notifications not implemented",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Not implemented, OSC 9 is used for desktop notifications",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Rich desktop notifications with icons, buttons, etc.",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No evidence of Kitty OSC 99 support",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": "1.18.0",
+            "notes": "Rich desktop notifications with full Kitty protocol support",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No Kitty OSC 99 desktop notification support found",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Rich desktop notifications with buttons, urgency levels, and focus conditions",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No implementation found for Kitty OSC 99 desktop notifications",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -1115,40 +1499,61 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": false,
+            "notes": "iTerm2 inline images not implemented",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "File command not implemented",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Uses kitty graphics protocol instead",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": "20210203-095643-70a364eb",
+            "notes": "iTerm2 inline image protocol via OSC 1337 File",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Inline images via OSC 1337 File= handled through XTERMCC_MULTITOKEN_HEADER_SET_KVP",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": false,
+            "notes": "OSC 1337 recognized but falls through to default case (ignored)",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Supports inline images and media playback via File= protocol with ReportCellSize query",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "iTerm2 OSC 1337 File inline images implemented at src/termout.c:4950-5096",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "5.3.0",
+            "notes": "Requires @xterm/addon-image addon",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -1176,40 +1581,64 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": false,
+            "notes": "iTerm2 proprietary extensions not implemented",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "partial_implementation": true,
+            "notes": "Only Copy and CurrentDir implemented",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Supports SetMark, SetUserVar, CurrentDir, SetProfile, Copy, and other iTerm2 features",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "OSC 1337 for marks, user vars, profile switching via XTERMCC_SET_KVP token",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": false,
+            "notes": "OSC 1337 recognized but falls through to default case (ignored)",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "partial_implementation": true,
+            "notes": "Only SetMark is implemented",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Only File= is implemented; marks (SetMark), user vars (SetUserVar), and profile switching are not supported",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "partial_implementation": true,
+            "notes": "Only Capabilities query (src/termout.c:4959) is implemented. SetMark, SetUserVar, CurrentDir, etc. not found",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Only File protocol supported via addon",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -1237,40 +1666,60 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": false,
+            "notes": "urxvt-style notifications not implemented",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "notes": "urxvt-style notifications",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": "0.23.0",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": "20210314-114017-04b7cedd",
+            "notes": "urxvt-style notifications (RxvtExtension)",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": "1.6.0",
+            "notes": "urxvt-style notifications, specifically the 'notify' command",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "OSC 9 notifications via ITERM_USER_NOTIFICATION token (urxvt-compatible)",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Requires enable-legacy-osc777 property; translates to termprops",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Supports urxvt-style notifications and container detection (toolbox/distrobox push/pop)",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No implementation found for OSC 777 urxvt notifications",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,

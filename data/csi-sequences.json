@@ -14,40 +14,61 @@
             "version_added": true
           },
           "xterm": {
-            "version_added": null
+            "version_added": "xterm-406",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "CUU/CUD/CUF/CUB (CSI A/B/C/D) fully implemented in vt-parser.c:1193-1203",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "CUU (Up), CUD (Down), CUF (Right), CUB (Left) implemented in wezterm-escape-parser/src/csi.rs as Cursor::Up/Down/Right/Left and handled in term/src/terminalstate/mod.rs:2347+",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "CUU (A), CUD (B/e), CUF (C/a), CUB (D) handled at csi.c:890-906",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": "0.1.0",
+            "notes": "Implemented via move_up/move_down/move_forward/move_backward methods",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "VT100CSI_CUU/CUD/CUF/CUB tokens parsed and executed via terminalCursorUp/Down/Left/Right",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Fully implemented in vteseq.cc as CUU/CUD/CUF/CUB handlers",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented in ITermDispatch.hpp:41-44 as CursorUp, CursorDown, CursorForward, CursorBackward. Constrained by margins per VT510 spec.",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "CUU (A), CUD (B), CUF (C), CUB (D) implemented at src/Vt102Emulation.cpp:2124-2127",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "CUU (CSI A) at line 3128-3129, CUD (CSI B) at line 3132-3133, CUF (CSI C) at line 3149-3150, CUB (CSI D) at line 3151-3160",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "2.3.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": "v0.1.0",
@@ -75,40 +96,61 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": "xterm-406",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "CNL/CPL (CSI E/F) fully implemented in vt-parser.c:1204-1207",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "CNL (NextLine) and CPL (PrecedingLine) implemented as Cursor::NextLine and Cursor::PrecedingLine",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "CNL (E) at csi.c:908-912, CPL (F) at csi.c:914-918",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": "0.2.1",
+            "notes": "Added in version 0.2.1 per changelog",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "VT100CSI_CNL/CPL tokens parsed and executed via terminalCursorDown/Up with andToStartOfLine:YES",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Fully implemented in vteseq.cc as CNL/CPL handlers",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented in ITermDispatch.hpp:45-46 as CursorNextLine and CursorPrevLine",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "CNL (E), CPL (F) implemented at src/Vt102Emulation.cpp:2128-2129",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "CNL (CSI E) at line 3161-3162, CPL (CSI F) at line 3163-3164",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "2.3.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": "v0.1.0",
@@ -138,40 +180,61 @@
             "notes": "CUP only (CHA is ECMA-48)"
           },
           "xterm": {
-            "version_added": null
+            "version_added": "xterm-406",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "CHA/CUP (CSI G/H) and HPA (CSI `) fully implemented in vt-parser.c:1208-1219",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "CHA (CharacterAbsolute) and CUP (Position) implemented as Cursor::CharacterAbsolute and Cursor::Position",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "CHA (G/`) at csi.c:946-952, CUP (H/f) at csi.c:954-962",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": "0.1.0",
+            "notes": "Implemented via goto/goto_line/goto_col methods",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ANSICSI_CHA and VT100CSI_CUP tokens parsed and executed via terminalSetCursorX and terminalMoveCursorToX:y:",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Fully implemented in vteseq.cc as CHA/CUP handlers",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "CHA at ITermDispatch.hpp:47, CUP at line 51. Both absolute positioning methods implemented.",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "CHA (G), CUP (H) implemented at src/Vt102Emulation.cpp:2130-2131",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "CHA (CSI G) and HPA (CSI `) at line 3165-3170, CUP/HVP (CSI H/f) at line 3175-3178",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "2.3.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": "v0.1.0",
@@ -199,40 +262,61 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": "xterm-406",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "CHT/CBT (CSI I/Z) fully implemented in vt-parser.c:1213-1216",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "CHT (ForwardTabulation) and CBT (BackwardTabulation) implemented as Cursor::ForwardTabulation and Cursor::BackwardTabulation",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "CHT (I) at csi.c:1172-1189, CBT (Z) at csi.c:1191-1204",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": "0.15.0",
+            "notes": "CHT added in 0.15.0, CBT existed earlier (bug fix in 0.7.0)",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "VT100CSI_CHT and ANSICSI_CBT tokens parsed and executed via terminalAppendTabAtCursor and terminalBackTab",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Fully implemented in vteseq.cc as CHT/CBT handlers",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented in ITermDispatch.hpp:85-86 as ForwardTab (CHT) and BackwardsTab (CBT)",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "CHT (I), CBT (Z) implemented at src/Vt102Emulation.cpp:2132,2139",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "CHT (CSI I) at line 3179-3181, CBT (CSI Z) at line 3465-3473",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "2.3.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": "v0.1.0",
@@ -260,40 +344,61 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": "xterm-406",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "VPA/HPA (CSI d/`) fully implemented in vt-parser.c:1208-1212",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "VPA (LinePositionAbsolute) and HPA (CharacterPositionAbsolute) implemented as Cursor::LinePositionAbsolute and Cursor::CharacterPositionAbsolute",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "VPA (d) at csi.c:878-884, HPA (G/`) at csi.c:946-952",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": "0.1.0",
+            "notes": "Supported via goto_line and goto_col methods",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ANSICSI_VPA and ANSICSI_CHA tokens parsed and executed via terminalSetCursorY and terminalSetCursorX",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Fully implemented in vteseq.cc as VPA/HPA handlers",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "VPA at ITermDispatch.hpp:48, HPA/CHA at line 47. Both absolute positioning methods implemented.",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "VPA (d), HPA (`) implemented at src/Vt102Emulation.cpp:2148,2122",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "VPA (CSI d) at line 3171-3174, HPA (CSI `) at line 3165-3170",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "2.3.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": "v0.1.0",
@@ -321,40 +426,64 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": "xterm-406",
+            "notes": "Only available when DECLRMM disabled",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "notes": "Both ANSI.SYS (CSI s/u) and DEC (ESC 7/8) variants",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SCP/RCP (CSI s/u) ANSI.SYS style implemented in vt-parser.c:1258-1305",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SCP/RCP (ANSI.SYS style) implemented as Cursor::SaveCursor and Cursor::RestoreCursor, with ambiguity resolution for DECSLRM",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SCP (s) at csi.c:1250-1252, RCP (u) at csi.c:1254-1256",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": "0.1.0",
+            "notes": "Implemented via save_cursor_position/restore_cursor_position",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ANSICSI_SCP/RCP and VT100CSI_DECSC/DECRC tokens handled via saveCursor/restoreCursor",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented as SCOSC/SCORC for CSI s/u compatibility (not the ECMA-48 SCP)",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ANSI.SYS cursor restore (CSI u) implemented at OutputStateMachineEngine.cpp:546 as ANSISYSRC_CursorRestore. Note: CSI s can be ANSISYSSC or DECSLRM depending on DECLRMM mode.",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ANSI.SYS style CSI s/u save/restore cursor at src/Vt102Emulation.cpp:2031-2032",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SCOSC/SCORC (CSI s/u) at lines 3401-3404, uses save_cursor/restore_cursor functions",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "2.3.0",
+            "notes": "CSI s/u (ANSI.SYS style) and ESC 7/8 (DEC style) both supported",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": "v0.1.0",
@@ -382,40 +511,61 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": "xterm-406",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ICH/DCH/ECH (CSI @/P/X) fully implemented in vt-parser.c:1188-1247",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ICH (InsertCharacter), DCH (DeleteCharacter), ECH (EraseCharacter) implemented as Edit::InsertCharacter/DeleteCharacter/EraseCharacter",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ICH (@) at csi.c:1116-1142, DCH (P) at csi.c:1087-1114, ECH (X) at csi.c:1158-1170",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": "0.1.0",
+            "notes": "Implemented via insert_blank/delete_chars/erase_chars methods",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "VT100CSI_ICH, XTERMCC_DELCH, and ANSICSI_ECH tokens parsed and executed via terminalInsertEmptyCharsAtCursor, terminalDeleteCharactersAtCursor, and terminalEraseCharactersAfterCursor",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Fully implemented in vteseq.cc as ICH/DCH/ECH handlers",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ICH at ITermDispatch.hpp:54, DCH at line 55, ECH at line 100. All three character edit operations implemented.",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ICH (@), DCH (P), ECH (X) implemented at src/Vt102Emulation.cpp:2123,2135,2138",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ICH (CSI @) at line 3237-3238, DCH (CSI P) at line 3239-3240, ECH (CSI X) at line 3204-3220",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "2.3.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": "v0.1.0",
@@ -443,40 +593,61 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": "xterm-406",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "IL/DL (CSI L/M) fully implemented in vt-parser.c:1224-1227",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "IL (InsertLine) and DL (DeleteLine) implemented as Edit::InsertLine and Edit::DeleteLine",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "IL (L) at csi.c:1047-1065, DL (M) at csi.c:1067-1085",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": "0.1.0",
+            "notes": "Implemented via insert_blank_lines/delete_lines methods",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "XTERMCC_INSLN and XTERMCC_DELLN tokens parsed and executed via terminalInsertBlankLinesAfterCursor and terminalDeleteLinesAtCursor",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Fully implemented in vteseq.cc as IL/DL handlers",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented in ITermDispatch.hpp:64-65 as InsertLine and DeleteLine",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "IL (L), DL (M) implemented at src/Vt102Emulation.cpp:2133-2134",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "IL (CSI L) at line 3221-3228, DL (CSI M) at line 3229-3236",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "2.3.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": "v0.1.0",
@@ -504,40 +675,61 @@
             "version_added": true
           },
           "xterm": {
-            "version_added": null
+            "version_added": "xterm-406",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ED (CSI J) with modes 0/1/2/22 fully implemented in screen.c:2470-2532",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ED with parameters 0, 1, 2 implemented as EraseInDisplay::{EraseToEndOfDisplay, EraseToStartOfDisplay, EraseDisplay}",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ED (J) modes 0, 1, 2 at csi.c:964-1005",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": "0.1.0",
+            "notes": "Implemented via clear_screen with modes Above/Below/All",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "VT100CSI_ED token parsed with parameter handling for modes 0, 1, 2 via terminalEraseInDisplayBeforeCursor:afterCursor:",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Fully implemented in vteseq.cc, supports modes 0, 1, 2",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented in ITermDispatch.hpp:98 as EraseInDisplay with support for modes 0, 1, and 2",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ED with parameters 0, 1, 2 implemented at src/Vt102Emulation.cpp:2020-2022",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ED (CSI J) at line 3182-3192, supports parameters 0 (below), 1 (above), 2 (all)",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "2.3.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": "v0.1.0",
@@ -565,40 +757,62 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": "xterm-406",
+            "notes": "Requires eraseSavedLines resource enabled",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ED 3 (CSI 3 J) erases scrollback, implemented in screen.c:2529-2530",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ED 3 (erase scrollback) implemented as EraseInDisplay::EraseScrollback",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ED 3 (erase scrollback) at csi.c:994-998",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": "0.1.0",
+            "notes": "Supported via ClearMode::Saved for erasing scrollback",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ED 3 (erase scrollback) handled in VT100CSI_ED case with parameter 3 via terminalClearScrollbackBuffer",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented in erase_in_display() as case 3, calls drop_scrollback()",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Scrollback erase implemented via EraseType::Scrollback at DispatchTypes.hpp:372 and handled in adaptDispatch.cpp:742",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ED 3 (CSI 3 J) clears history at src/Vt102Emulation.cpp:2023",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ED 3 (CSI 3 J) at line 3183-3187, clears scrollback buffer",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "2.5.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -627,40 +841,61 @@
             "version_added": true
           },
           "xterm": {
-            "version_added": null
+            "version_added": "xterm-406",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "EL (CSI K) with modes 0/1/2 fully implemented in screen.c:2380-2421",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "EL implemented as Edit::EraseInLine with EraseInLine::{EraseToEndOfLine, EraseToStartOfLine, EraseLine}",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "EL (K) modes 0, 1, 2 at csi.c:1007-1045",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": "0.1.0",
+            "notes": "Implemented via clear_line method",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "VT100CSI_EL token parsed with parameter handling for modes 0, 1, 2 via terminalEraseLineBeforeCursor:afterCursor:",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Fully implemented in vteseq.cc, supports modes 0, 1, 2",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented in ITermDispatch.hpp:99 as EraseInLine",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "EL with parameters 0, 1, 2 implemented at src/Vt102Emulation.cpp:2017-2019",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "EL (CSI K) at line 3198-3203, supports parameters 0, 1, 2",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "2.3.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": "v0.1.0",
@@ -688,40 +923,64 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": "xterm-406",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "notes": "Protected mode support via CSI ? J/K",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "DECSED/DECSEL (CSI ? J/K) not supported. Private parameter parsed but DECSCA (character protection) not implemented",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": false,
+            "notes": "DECSED/DECSEL not implemented. SelectiveErase is advertised in device attributes but no CSI ? J/K sequences found",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": false,
+            "notes": "CSI ? J/K not implemented in csi.c:1469-1623",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No evidence of selective erase implementation",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "VT100CSI_DECSED and VT100CSI_DECSEL tokens parsed and executed via terminalSelectiveEraseInDisplay and terminalSelectiveEraseInLine",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "partial_implementation": true,
+            "notes": "Implemented but protected attribute not supported, behaves like ED/EL",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "DECSED at ITermDispatch.hpp:101, DECSEL at line 102. Both selective erase operations respect DECSCA protection.",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No DECSED/DECSEL implementation found; selective erase not supported",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "DECSED (CSI ? J) at line 3182, DECSEL (CSI ? K) at line 3198, respects ATTR_PROTECTED attribute",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "5.0.0",
+            "notes": "Requires DECSCA to set protection attribute",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -749,40 +1008,62 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": "xterm-406",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "REP (CSI b) fully implemented in vt-parser.c:1191-1192",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "REP implemented as Edit::Repeat in wezterm-escape-parser/src/csi.rs:1230 and term/src/terminalstate/mod.rs:2259",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "REP (b) at csi.c:794-820",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": "0.6.0",
+            "notes": "Bug fix in 0.7.0 indicates implementation before then",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "VT100CSI_REP token parsed and executed via terminalRepeatPreviousCharacter",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Fully implemented in vteseq.cc as REP handler",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Handled directly in OutputStateMachineEngine.cpp:577. Repeats last printable character.",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "REP (b) implemented at src/Vt102Emulation.cpp:2146",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "REP (CSI b) at line 3119-3127, repeats preceding graphic character",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "4.0.0",
+            "notes": "Extended to support repeating grapheme clusters",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -810,40 +1091,61 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": "xterm-406",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SU/SD (CSI S/T) fully implemented in vt-parser.c:1360-1369",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SU (ScrollUp) and SD (ScrollDown) implemented as Edit::ScrollUp and Edit::ScrollDown",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SU (S) at csi.c:1144-1149, SD (T) at csi.c:1151-1156",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": "0.1.0",
+            "notes": "Implemented via scroll_up/scroll_down methods",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "XTERMCC_SU and XTERMCC_SD tokens parsed and executed via terminalScrollUp and terminalScrollDown",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Fully implemented in vteseq.cc as SU/SD handlers",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented in ITermDispatch.hpp:56-57 as ScrollUp and ScrollDown",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SU (S), SD (T) implemented at src/Vt102Emulation.cpp:2136-2137",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SU (CSI S) at line 3435-3437, SD (CSI T) at line 3438-3443",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "2.3.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": "v0.1.0",
@@ -871,40 +1173,61 @@
             "version_added": true
           },
           "xterm": {
-            "version_added": null
+            "version_added": "xterm-406",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "DECSTBM (CSI r) fully implemented in vt-parser.c:1327-1329, screen.c:2836-2851",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "DECSTBM implemented as Cursor::SetTopAndBottomMargins",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "DECSTBM (r) at csi.c:1232-1248",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": "0.1.0",
+            "notes": "Implemented via set_scrolling_region method",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "VT100CSI_DECSTBM token parsed and executed with top/bottom margin setting via terminalSetScrollRegionTop:bottom:",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Fully implemented in vteseq.cc as DECSTBM handler",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented in ITermDispatch.hpp:74 as SetTopBottomScrollingMargins (DECSTBM)",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "DECSTBM (CSI r) sets top/bottom margins at src/Vt102Emulation.cpp:2156",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "DECSTBM (CSI r) at line 3380-3389, sets top and bottom scroll margins",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "2.3.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": "v0.1.0",
@@ -932,40 +1255,64 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": "xterm-406",
+            "notes": "Requires DECLRMM mode enabled",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "notes": "Requires mode 69 to be enabled",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "DECSLRM (CSI s) not supported. CSI s only handles save cursor (ANSI.SYS) and save modes",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "DECSLRM implemented as Cursor::SetLeftAndRightMargins. Requires Mode 69 (DECLRMM) to be set. CSI s is ambiguous with save cursor",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Not implemented; CSI s is used for save cursor instead",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No evidence of left/right margin support",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "VT100CSI_DECSLRM token parsed and executed via terminalSetLeftMargin:rightMargin:, requires Mode 69 enabled",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Requires Mode 69 (DECLRMM) to be set, conflicts with SCOSC on CSI s",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Requires Mode 69 (DECLRMM). Implemented in ITermDispatch.hpp:75 as SetLeftRightScrollingMargins. CSI s is interpreted as DECSLRM when DECLRMM is enabled, otherwise as ANSISYSSC.",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No left/right margin support found; only top/bottom margins implemented",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "DECSLRM (CSI s) at line 3391-3400, requires Mode 69 (lrmargmode)",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Not implemented; CSI s is used for ANSI save cursor instead",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -993,40 +1340,61 @@
             "version_added": true
           },
           "xterm": {
-            "version_added": null
+            "version_added": "xterm-406",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "TBC (CSI g) fully implemented in vt-parser.c:1250-1251",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "TBC implemented as Cursor::TabulationClear with TabulationClear enum supporting all modes",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "TBC (g) modes 0, 3 at csi.c:920-943",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": "0.1.0",
+            "notes": "Implemented via clear_tabs method",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "VT100CSI_TBC token parsed with parameter handling for modes 0 and 3 via terminalSetTabStopAtCursor and terminalRemoveTabStops",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Fully implemented in vteseq.cc, supports modes 0, 2, 3, 5",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented in ITermDispatch.hpp:87 as TabClear. Supports clearing current column (0) and all columns (3).",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "TBC (g) with parameters 0, 3 implemented at src/Vt102Emulation.cpp:2024-2025",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "TBC (CSI g) at line 3365-3372, parameter 0 clears current tab, parameter 3 clears all tabs",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "2.3.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": "v0.1.0",
@@ -1054,40 +1422,61 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": "xterm-406",
+            "notes": "Requires OPT_DEC_RECTOPS (enabled by default)",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "DECERA (CSI $ z) not implemented",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "DECERA ($ z) at csi.c:2097-2116",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No evidence of rectangular erase implementation",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "VT100CSI_DECERA token parsed and executed via executeDECERA, requires vtLevel >= 400",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Fully implemented in vteseq.cc as DECERA handler",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented in ITermDispatch.hpp:108 as EraseRectangularArea",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No DECERA (CSI $ z) handler found; $ intermediate not processed",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "DECERA (CSI $ z) at line 3654-3657, erases rectangular area",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -1115,40 +1504,61 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": "xterm-406",
+            "notes": "Requires OPT_DEC_RECTOPS (enabled by default)",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "DECFRA (CSI $ x) not implemented. CSI x only handles DECSACE (CSI * x)",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "DECFRA ($ x) at csi.c:2072-2095",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No evidence of rectangular fill implementation",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "VT100CSI_DECFRA token parsed and executed via executeDECFRA, requires vtLevel >= 400",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Fully implemented with VTE extension for Unicode beyond BMP",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented in ITermDispatch.hpp:107 as FillRectangularArea",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No DECFRA (CSI $ x) handler found; $ intermediate not processed",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "DECFRA (CSI $ x) at line 3650-3653, fills rectangular area",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -1176,40 +1586,61 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": "xterm-406",
+            "notes": "Requires OPT_DEC_RECTOPS (enabled by default)",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "DECCRA (CSI $ v) not implemented",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "DECCRA ($ v) at csi.c:1999-2070",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No evidence of rectangular copy implementation",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "VT100CSI_DECCRA token parsed and executed via executeDECCRA, requires vtLevel >= 400",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Fully implemented in vteseq.cc as DECCRA handler",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented in ITermDispatch.hpp:106 as CopyRectangularArea",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No DECCRA (CSI $ v) handler found; $ intermediate not processed",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "DECCRA (CSI $ v) at line 3643-3649, copies rectangular area",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -1237,40 +1668,59 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": "xterm-282",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Supports cursor shapes: block, underline, beam",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": "20191229-193639-e7aa2f3",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at csi.c:1798-1832, supports all cursor styles",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": "v0.7.0",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Cursor style control fully implemented via VT100CSI_DECSCUSR (CSI SP q). Supports blinking/steady block, underline, and vertical bar cursors (params 0-6).",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Supports 6 cursor styles: blinking/steady block, underline, and I-beam",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Full support for all cursor styles (block, underline, bar) with blinking/steady variants",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Supports block, underline, and bar cursor styles with blink control via CSI Ps SP q",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at src/termout.c:3517-3523. Supports cursor style (block/underline/bar) and blink control.",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "2.3.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": "v0.1.0",
@@ -1299,40 +1749,63 @@
             "version_added": true
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "VT100 feature, supported since earliest versions",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "notes": "DSR 5n and CPR 6n supported",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Supports DSR 5 (device status) and DSR 6 (cursor position)",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "DSR (CSI 5n) and CPR (CSI 6n) both supported",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at csi.c:1429-1448, supports both DSR (CSI 5n) and CPR (CSI 6n)",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "CSI 5n and CSI 6n supported",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Device status report (DSR) and cursor position report (CPR) fully implemented via VT100CSI_DSR token. Handles CSI 5n (status) and CSI 6n (cursor position).",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Supports DSR parameter 5 (operating status) and 6 (cursor position report)",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Supports DSR 5n (operating status) and DSR 6n (cursor position report)",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "CSI 5n reports device status (ready), CSI 6n reports cursor position via CSI r ; c R",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at src/termout.c:3535-3541. Supports both DSR 5n (status) and 6n (cursor position report).",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "2.3.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": "v0.1.0",
@@ -1361,40 +1834,64 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "VT330+ feature, requires terminal ID >= 330",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Extended cursor position report (CSI ? 6n) not implemented; only standard CPR (CSI 6n) is supported",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "DSR 6 with private parameter (?)",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Only standard CPR is implemented, not DECXCPR",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Only standard CPR is implemented, not extended DECXCPR",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Only standard CPR (CSI 6n) supported, not extended",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Extended cursor position report implemented in reportActivePositionWithX:Y:withQuestion:vt330OrLater. Requires VT330+ emulation level (iTermEmulationLevel300).",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Extended cursor position report, always reports page 1",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Extended CPR includes page number in response",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No implementation found for extended cursor position report (CSI ? 6 n)",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at src/termout.c:3544-3547. Returns cursor position with ? prefix.",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "2.3.0",
+            "notes": "Reports as CSI ? y ; x R",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -1422,40 +1919,62 @@
             "version_added": true
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "VT100 feature, supported since earliest versions",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Responds with callback to on_da1",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "RequestPrimaryDeviceAttributes returns VT500 with capabilities",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at csi.c:822-875, reports as VT220 with sixel and color support",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Reports VT102 (ESC [?6c)",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Primary device attributes (DA1) fully implemented with VT100CSI_DA token type. Reports various capabilities based on terminal type and emulation level.",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Supports VT520 level with 132-column mode, sixel graphics (conditional), horizontal scrolling, color text, and rectangular editing",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Reports conformance level 61 with extensions 4,6,7,14,21,22,23,24,28,32,42,52",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Reports VT220 with capabilities via CSI ? 62 ; 1 ; 4 c",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented in write_primary_da() at src/termout.c:880. Reports different DA strings based on terminal type configuration (vt100-vt500).",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "2.3.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": "v0.1.0",
@@ -1484,40 +2003,61 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "VT220+ feature, extended to VT100 in xterm",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Responds with >1;PRIMARY_VERSION;SECONDARY_VERSION c",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "RequestSecondaryDeviceAttributes returns VT220 with version 277",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at csi.c:1627-1667, reports VT220 with version number",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": "v0.6.0",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Secondary device attributes (DA2) fully implemented with VT100CSI_DA2 token type. Reports terminal version via reportSecondaryDeviceAttribute method.",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Reports as VT100-ish (level 1) or VT525 (level 5) depending on build configuration",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Reports VT100 terminal type (0) with version 10 (1.0)",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Reports secondary attributes via CSI > 1 ; 115 ; 0 c",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at src/termout.c:3137-3143. Reports terminal ID 77 (mintty), decimal version, and Unicode version.",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "2.3.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -1545,40 +2085,61 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "VT400+ feature for Terminal Unit ID",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "RequestTertiaryDeviceAttributes returns DCS format",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at csi.c:1854-1872, responds with 'FOOT' as unit ID",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Tertiary device attributes (DA3) implemented with VT100CSI_DA3 token type. Requires VT level 400+ (iTermEmulationLevel400).",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Reports terminal ID as '~VTE' encoded in hexadecimal",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Reports terminal ID as 00000000",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Reports tertiary attributes with '~KDE' identifier via DCS ! | 7E4B4445 ST",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No implementation found for CSI = c (tertiary device attributes).",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Not implemented",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -1606,40 +2167,63 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": "xterm-262",
+            "notes": "VT300+ feature",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Supports querying known terminal modes",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": "20220319-142410-0fcdea07",
+            "notes": "Fixed flushing in version 20220408-101518-b908e2dd",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at csi.c:2203-2219 and csi.c:629-673",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": "v0.13.0",
+            "partial_implementation": true,
+            "notes": "Only standard modes (4, 20) and some private modes supported",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Request mode implemented for both ANSI (VT100CSI_DECRQM_ANSI) and DEC private modes (VT100CSI_DECRQM_DEC) via CSI $ p and CSI ? $ p sequences.",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Supports both ECMA and DEC mode queries",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Supports extensive mode reporting including IRM, LNM, DECCKM, DECCOLM, DECSCNM, and many others",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No implementation found for DECRQM (CSI ? Ps $ p)",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at src/termout.c:3329-3335. Handles both ANSI and DEC private mode queries.",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "5.0.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -1667,40 +2251,61 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": "xterm-385",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Color palette stack operations not implemented",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented via CSI # p and CSI # Q",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at csi.c:2124-2196, supports both XTPUSHCOLORS and XTPOPCOLORS",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Color palette stack push/pop implemented via XTERMCC_XTPUSHCOLORS and XTERMCC_XTPOPCOLORS tokens (CSI # P and CSI # Q).",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Defined in parser but implementation is empty stub",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No evidence of XTPUSHCOLORS/XTPOPCOLORS implementation found",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No implementation found for XTPUSHCOLORS/XTPOPCOLORS (CSI # p/q)",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at src/termout.c:3319-3325. Supports XTPUSHCOLORS (CSI # P), XTPOPCOLORS (CSI # Q), and XTREPORTCOLORS (CSI # R).",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Tests marked as skipped with TODO",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,

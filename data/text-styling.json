@@ -14,40 +14,58 @@
             "version_added": true
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "VT100 feature, supported since earliest versions",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at csi.c:92",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Bold attribute (SGR 1) fully supported via VT100CHARATTR_BOLD in VT100GraphicRendition structure.",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 1 sets intense attribute",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 1 sets RE_BOLD rendition flag",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at src/termout.c:2113. Sets ATTR_BOLD flag.",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "2.3.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": "v0.1.0",
@@ -75,40 +93,58 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ECMA-48 2nd edition feature, requires OPT_WIDE_ATTRS",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at csi.c:93",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Dim/faint attribute (SGR 2) fully supported via VT100CHARATTR_FAINT in VT100GraphicRendition structure.",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 2 sets faint attribute",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 2 sets RE_FAINT rendition flag",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at src/termout.c:2114. Sets ATTR_DIM flag.",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "3.0.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -136,40 +172,58 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ECMA-48 2nd edition feature, requires OPT_WIDE_ATTRS",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at csi.c:94",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Italic attribute (SGR 3) fully supported via VT100CHARATTR_ITALIC in VT100GraphicRendition structure.",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 3 sets italic attribute",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 3 sets RE_ITALIC rendition flag",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at src/termout.c:2121. Sets ATTR_ITALIC flag.",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "3.13.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": "v0.1.0",
@@ -197,40 +251,58 @@
             "version_added": true
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "VT100 feature, supported since earliest versions",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at csi.c:95-123, supports extended underline styles via SGR 4:n",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Underline (SGR 4) fully supported with multiple styles via sub-parameters including single, double, curly, dotted, and dashed.",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 4 sets singly underlined style",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 4 sets RE_UNDERLINE, supports subparameters for different underline styles",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at src/termout.c:2122-2124. Sets ATTR_UNDER flag.",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "2.3.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": "v0.1.0",
@@ -258,40 +330,63 @@
             "version_added": true
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "VT100 feature, both SGR 5 and 6 map to BLINK",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "partial_implementation": true,
+            "notes": "Both slow and rapid blink map to same blink attribute",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 5 sets blink attribute",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at csi.c:125",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Slow blink (SGR 5) supported via VT100CHARATTR_BLINK. iTerm2 does not distinguish between slow and rapid blink rates.",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Both slow and rapid blink map to same blink attribute",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 5 sets blinking attribute",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 5 sets RE_BLINK rendition flag",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at src/termout.c:2146. Sets ATTR_BLINK flag.",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "2.3.0",
+            "notes": "Both slow and rapid blink map to same flag",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": "v0.1.0",
@@ -319,40 +414,64 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Treated same as slow blink, both map to BLINK",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "partial_implementation": true,
+            "notes": "Both slow and rapid blink map to same blink attribute",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "SGR 6 not implemented, treated same as SGR 5",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Explicitly logged as ignored at csi.c:126",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "partial_implementation": true,
+            "notes": "Rapid blink (SGR 6) treated the same as slow blink (SGR 5). No distinction made between blink rates.",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Both slow and rapid blink map to same blink attribute",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 6 treated as alias of slow blink (SGR 5)",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No separate rapid blink; SGR 6 not implemented, only SGR 5 (slow blink)",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at src/termout.c:2147. Sets ATTR_BLINK2 flag.",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Not implemented; SGR 5 slow blink is used instead",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": "v0.1.0",
@@ -381,40 +500,58 @@
             "version_added": true
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "VT100 feature, supported since earliest versions",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at csi.c:127",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Reverse video (SGR 7) fully supported via VT100CHARATTR_REVERSE in VT100GraphicRendition structure.",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 7 sets reverse video attribute",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 7 sets RE_REVERSE rendition flag",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at src/termout.c:2148. Sets ATTR_REVERSE flag.",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "2.3.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": "v0.1.0",
@@ -442,40 +579,59 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ECMA-48 2nd/VT300 feature",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "SGR 8 not implemented",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented as 'conceal' at csi.c:128",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Hidden/invisible text (SGR 8) fully supported via VT100CHARATTR_INVISIBLE in VT100GraphicRendition structure.",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 8 sets invisible attribute",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 8 sets RE_CONCEAL rendition flag",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at src/termout.c:2149. Sets ATTR_INVISIBLE flag.",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "2.3.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -503,40 +659,58 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ECMA-48 3rd edition feature, requires OPT_WIDE_ATTRS",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at csi.c:129",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Strikethrough (SGR 9) fully supported via VT100CHARATTR_STRIKETHROUGH in VT100GraphicRendition structure.",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 9 sets crossed-out attribute",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 9 sets RE_STRIKEOUT rendition flag",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at src/termout.c:2156. Sets ATTR_STRIKEOUT flag.",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "4.14.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": "v0.6.0",
@@ -564,40 +738,58 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ECMA-48 3rd edition feature, requires OPT_WIDE_ATTRS",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at csi.c:131-136",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": "v0.6.0",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Double underline (SGR 21) fully supported via VT100CHARATTR_DOUBLE_UNDERLINE and VT100UnderlineStyleDouble.",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 21 sets doubly underlined style",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 21 sets RE_UNDERLINE_DOUBLE",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at src/termout.c:2182-2184. Sets ATTR_DOUBLYUND flag. Also available via SGR 4:2 subparameter at src/termout.c:2133-2135.",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "4.10.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -625,40 +817,59 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Not implemented in xterm",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "SGR 53 not implemented",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No case for SGR 53 found in code",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Overline (SGR 53) not implemented for text rendering. Code 53 is used for DSR locator status reporting, not overline.",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 53 sets overlined attribute",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 53 sets RE_OVERLINE rendition flag",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at src/termout.c:2202. Sets ATTR_OVERL flag.",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "5.2.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -686,40 +897,63 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Not implemented in xterm",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "notes": "Supports curly, dotted, and dashed underline styles via SGR 4:3, 4:4, 4:5",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Supports SGR 4:3 via sub-parameter groups",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": "20210203-095643-70a364eb",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at csi.c:112 via SGR 4:3, part of extended underline styles",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Undercurl supported via SGR 4:3",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Curly/wavy underline (SGR 4:3) fully supported via VT100UnderlineStyleCurly with sub-parameter syntax in VT100GraphicRendition.",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Supports underline styles 0-5: none, single, double, curly, dotted, dashed via SGR 4:n subparameters",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 4:3 sets curly underline style via sub-parameters",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 4:3 sets RE_UNDERLINE_CURL via subparameter handling",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at src/termout.c:2136-2138. Uses SGR 4:3 subparameter to set ATTR_CURLYUND flag.",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "4.10.0",
+            "notes": "Via SGR 4:3 subparameter",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -747,40 +981,60 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No evidence of SGR 4:4 support. Only basic underline (SGR 4) and double underline (SGR 21) are implemented",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.1.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": "v0.24.2",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented via SGR 4:4 - see wezterm-escape-parser/src/csi.rs:2664",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 4:4, enum UNDERLINE_DOTTED in terminal.h:113, csi.c:102-119",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 4:4 - DOTTED_UNDERLINE flag defined in cell.rs:31",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 4:4 supported via subparameter handling in sgr.hh",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 4:4 - DottedUnderlined (value 4) in UnderlineStyle enum",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "RE_UNDERLINE_DOT (value 4) handled via SGR 4:4 in src/Vt102Emulation.cpp:596,2040",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 4:4 implemented at termout.c:2139-2141, mapped to ATTR_BROKENUND, rendered as PS_DOT",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "4.6.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -809,40 +1063,60 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No evidence of SGR 4:5 support. Only basic underline (SGR 4) and double underline (SGR 21) are implemented",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.1.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": "v0.24.2",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented via SGR 4:5 - see wezterm-escape-parser/src/csi.rs:2667",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 4:5, enum UNDERLINE_DASHED in terminal.h:114, csi.c:102-119",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 4:5 - DASHED_UNDERLINE flag defined in cell.rs:32",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 4:5 supported via subparameter handling in sgr.hh",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 4:5 - DashedUnderlined (value 5) in UnderlineStyle enum",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "RE_UNDERLINE_DASH (value 5) handled via SGR 4:5 in src/Vt102Emulation.cpp:596,2040",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 4:5 implemented at termout.c:2142-2144, mapped to ATTR_BROKENUND | ATTR_DOUBLYUND, rendered as PS_DASH",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "4.6.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -871,40 +1145,61 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 30-37, 40-47 documented as VT100. SGR 90-97, 100-107 require OPT_AIX_COLORS compile flag",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Present since early versions",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Full support for SGR 30-37, 40-47, 90-97, 100-107 - see wezterm-escape-parser/src/csi.rs:2775-2950",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 30-37, 40-47, 90-97, 100-107 in csi.c:153-311",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 30-37, 40-47, 90-97, 100-107 listed in escape_support.md",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 30-37, 40-47, 90-97, 100-107 all handled in parser-sgr.hh",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 30-37, 40-47, 90-97, 100-107 fully implemented in adaptDispatchGraphics.cpp",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Full support for SGR 30-37, 40-47, 90-97, 100-107 in src/Vt102Emulation.cpp:2064-2110",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 30-37, 40-47, 90-97, 100-107 fully implemented at termout.c:2195-2265",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "0.3",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": true,
@@ -932,40 +1227,61 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 38;5;n / 48;5;n supported when compiled with 256-color support",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Present since early versions",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented via SGR 38;5;n / 48;5;n with both semicolon and colon separators - see wezterm-escape-parser/src/csi.rs:2552-2567",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 38;5;n and 48;5;n handled in csi.c:173-180",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 38;5;n / 48;5;n - parameter 38/48 supported per docs",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 38;5;n and 48;5;n supported in collect_sgr_color function",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 38;5;n and 48;5;n via SetIndexedForeground256/SetIndexedBackground256",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 38;5;n / 48;5;n / 58;5;n handled in src/Vt102Emulation.cpp:597-605",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 38;5;n and 48;5;n fully implemented at termout.c:2208-2271",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "3.13.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": true,
@@ -993,40 +1309,61 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 38;2;r;g;b supported for compatibility with KDE konsole. Requires OPT_DIRECT_COLOR for true 24-bit, otherwise uses closest palette match",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Present since early versions",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented via SGR 38;2;r;g;b - see wezterm-escape-parser/src/csi.rs:2524-2535",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 38;2;r;g;b handled in csi.c:182-192",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 38;2;r;g;b - parsed by vte crate v0.15.0",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 38;2;r;g;b supported in collect_sgr_color semicolon branch",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 38;2;r;g;b handled in _SetRgbColorsHelper via GraphicsOptions::RGBColorOrFaint",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 38;2;r;g;b / 48;2;r;g;b / 58;2;r;g;b in src/Vt102Emulation.cpp:575-582",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 38;2;r;g;b and 48;2;r;g;b fully implemented at termout.c:2214-2222 and 2273-2285",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "0.3",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": true,
@@ -1054,40 +1391,61 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 38:2::r:g:b (ISO-8613-6 standard format) supported. Requires OPT_DIRECT_COLOR for true 24-bit, otherwise uses closest palette match",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ITU T.416 format with colon separators",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented via SGR 38:2::r:g:b with optional colorspace parameter - see wezterm-escape-parser/src/csi.rs:2488-2522",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 38:2::r:g:b with/without color space, csi.c:203-231",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": null,
+            "notes": "SGR 38:2::r:g:b - vte crate support unclear",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 38:2::r:g:b supported in collect_sgr_color colon branch",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 38:2::r:g:b with subparams via _SetRgbColorsHelperFromSubParams",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 38:2::r:g:b / 48:2::r:g:b / 58:2::r:g:b with optional color space ID in src/Vt102Emulation.cpp:583-594",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 38:2::r:g:b and 48:2::r:g:b implemented at termout.c:2224-2239 and 2287-2314 (ISO/IEC 8613-6 T.416 format with colon separators)",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "4.0.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -1116,40 +1474,61 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No evidence of SGR 58;5;n support in source code or documentation",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 58;5;n supported",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented via SGR 58;5;n and 58:5:n - see wezterm-escape-parser/src/csi.rs:2752-2753",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 58;5;n handled in csi.c:194-201",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 58;5;n - parameter 58 explicitly listed in escape_support.md",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 58;5;n supported via DECO_SPEC in collect_sgr_color",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 58;5;n via UnderlineColor (58) with 256-color index support",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 58;5;n handled in src/Vt102Emulation.cpp:602-605, stored via setULColor in src/Screen.cpp:1726",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 58:5:n implemented at termout.c:2319-2324 using colon-separated sub-parameters (ISO/IEC 8613-6 format)",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "4.6.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -1177,40 +1556,61 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No evidence of SGR 58;2;r;g;b support in source code or documentation",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 58;2;r;g;b supported",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented via SGR 58;2;r;g;b and 58:2:r:g:b - see wezterm-escape-parser/src/csi.rs:2752-2753",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 58;2;r;g;b and 58:2 handled in csi.c:168-256",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 58;2;r;g;b - parameter 58 explicitly listed",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 58;2;r;g;b supported via DECO_SPEC in collect_sgr_color",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 58;2;r;g;b via UnderlineColor (58) with RGB color support",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 58;2;r;g;b handled in src/Vt102Emulation.cpp:575-594, stored via setULColor",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SGR 58:2:r:g:b implemented at termout.c:2325-2333 using colon-separated sub-parameters (ISO/IEC 8613-6 format)",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "4.6.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,

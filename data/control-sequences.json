@@ -14,40 +14,60 @@
             "version_added": true
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented in charproc.c:3685. Visual/audible bell via Bell() function",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "notes": "Handled in stream.zig:767 as C0.BEL (0x07)",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Handled in performer.rs:451 via ControlCode::Bell, triggers Alert::Bell",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented in vt.c:131-133, calls term_bell()",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Handler bell() at term/mod.rs:1437 sends Event::Bell",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Handled via WarningBell() dispatch method in OutputStateMachineEngine.cpp:56-57",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Emits bell signal",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Handled in do_ctrl() at src/termout.c:1689",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "2.3.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": "v0.1.0",
@@ -76,40 +96,59 @@
             "version_added": true
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented in charproc.c:3701. Moves cursor left via CursorBack()",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "notes": "Handled in stream.zig:768 as C0.BS (0x08)",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Handled in performer.rs:414 via ControlCode::Backspace, implements reverse-wraparound mode",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented in vt.c:136-166 with reverse wrap support",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Handler backspace() at term/mod.rs:1398",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Handled via CursorBackward(1) dispatch in OutputStateMachineEngine.cpp:59-60",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Handled in do_ctrl() at src/termout.c:1691",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "2.3.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": "v0.1.0",
@@ -137,40 +176,59 @@
             "version_added": true
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented in charproc.c:3763. Horizontal tab via TabToNextStop()",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "notes": "Handled in stream.zig:769 as C0.HT (0x09)",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Handled in performer.rs:447 via ControlCode::HorizontalTab, calls c0_horizontal_tab()",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented in vt.c:169-224",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Handler put_tab() at term/mod.rs:1366, respects tab stops",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Handled via ForwardTab(1) dispatch in OutputStateMachineEngine.cpp:62-63",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Handled in do_ctrl() at src/termout.c:1693",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "2.3.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": "v0.1.0",
@@ -198,40 +256,59 @@
             "version_added": true
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented in charproc.c:3732 as CASE_VMOT. Handles LF, VT, and FF",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "notes": "LF, VT, and FF all trigger linefeed in stream.zig:770",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Handled in performer.rs:380 via ControlCode::LineFeed, also handles VerticalTab and FormFeed identically",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented in vt.c:227-234, also handles VT and FF",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Handler linefeed() at term/mod.rs:1423",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "LF, FF, and VT are identical in function (OutputStateMachineEngine.cpp:68-72)",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Handled in do_ctrl() at src/termout.c:1705-1708",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "2.3.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": "v0.1.0",
@@ -259,40 +336,59 @@
             "version_added": true
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented in charproc.c:3706 via CarriageReturn()",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "notes": "Handled in stream.zig:771 as C0.CR (0x0D)",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Handled in performer.rs:402 via ControlCode::CarriageReturn, respects left/right margins",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented in vt.c:236-238",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Handler carriage_return() at term/mod.rs:1412",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Handled via CarriageReturn() dispatch in OutputStateMachineEngine.cpp:65-66",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Handled in do_ctrl() at src/termout.c:1703",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "2.3.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": "v0.1.0",
@@ -320,40 +416,63 @@
             "version_added": true
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented in charproc.c:3768-3780. SO/SI switch curgl between G0/G1",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "notes": "SO/SI handled in stream.zig:772-773, invoke G1/G0 charsets",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Handled in performer.rs:466-470 via ControlCode::ShiftOut/ShiftIn, controls G0/G1 charset selection for DEC line drawing",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented in vt.c:241-255, selects G0/G1 character sets",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "partial_implementation": true,
+            "notes": "Charset switching supported via configure_charset/set_active_charset, but only charsets B and 0 supported per escape_support.md",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "partial_implementation": true,
+            "notes": "Implemented as LS1/LS0. Only G1 character set mapping is functional",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SI (0x0F) calls LockingShift(0), SO (0x0E) calls LockingShift(1) in OutputStateMachineEngine.cpp:74-78",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "G1/G0 charset invocation",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SO (Shift Out/LS1) at src/termout.c:1715, SI (Shift In/LS0) at src/termout.c:1720",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "2.3.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -382,40 +501,62 @@
             "version_added": true
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented in charproc.c:3674. Returns answerback string",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "notes": "Handled in stream.zig:766 as C0.ENQ (0x05)",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Handled in performer.rs:473 via ControlCode::Enquiry, responds with configurable answerback string",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No implementation found in action_execute()",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No evidence of ENQ/answerback implementation found",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Recognized but no-op for security reasons",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Handled via EnquireAnswerback() dispatch in OutputStateMachineEngine.cpp:53-54",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Calls reportAnswerBack()",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Handled in do_ctrl() at src/termout.c:1709-1714, sends answerback string",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Not implemented, no handler registered",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -444,40 +585,59 @@
             "version_added": true
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented in charproc.c:5423 via xtermIndex()",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "notes": "ESC D handled in stream.zig:2172-2178",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Handled in performer.rs:449 via ControlCode::IND and esc.rs:31 as EscCode::Index",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented in vt.c:500-501 as ESC D",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ESC D listed as IMPLEMENTED in docs/escape_support.md",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ESC D dispatches LineFeed(WithoutReturn) in OutputStateMachineEngine.cpp:220-221",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Handled in do_esc() at src/termout.c:1960-1961",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "3.5.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": "v0.1.0",
@@ -505,40 +665,59 @@
             "version_added": true
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented in charproc.c:5442. Combines Index + CarriageReturn",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "notes": "ESC E handled in stream.zig:2182-2188",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Handled in performer.rs:450 via ControlCode::NEL and esc.rs:33 as EscCode::NextLine",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented in vt.c:504-506 as ESC E",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ESC E listed as IMPLEMENTED in docs/escape_support.md; handler newline() at term/mod.rs:1470",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ESC E dispatches LineFeed(WithReturn) in OutputStateMachineEngine.cpp:217-218",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Handled in do_esc() at src/termout.c:1962-1966",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "3.5.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": "v0.1.0",
@@ -566,40 +745,59 @@
             "version_added": true
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented in charproc.c:5449 via TabSet()",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "notes": "ESC H handled in stream.zig:2192-2198",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Handled in performer.rs:448 via ControlCode::HTS and esc.rs:37 as EscCode::HorizontalTabSet",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented in vt.c:509-510 as ESC H, tab_set() at vt.c:444-462",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ESC H listed as IMPLEMENTED in docs/escape_support.md; handler set_horizontal_tabstop() at term/mod.rs:1479",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ESC H dispatches HorizontalTabSet() in OutputStateMachineEngine.cpp:226-227",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Handled in do_esc() at src/termout.c:1982-1983",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "3.5.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": "v0.1.0",
@@ -627,40 +825,59 @@
             "version_added": true
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented in charproc.c:5468 via RevIndex()",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "notes": "ESC M handled in stream.zig:2202-2211",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Handled in performer.rs:458 via ControlCode::RI and esc.rs:40 as EscCode::ReverseIndex",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented in vt.c:513-514 as ESC M",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ESC M listed as IMPLEMENTED in docs/escape_support.md; handler reverse_index() at term/mod.rs:1861",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ESC M dispatches ReverseLineFeed() in OutputStateMachineEngine.cpp:223-224",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Handled in do_esc() at src/termout.c:1967-1972",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "3.5.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": "v0.1.0",
@@ -688,40 +905,62 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented in charproc.c:5474-5486. Requires vtXX_level > 1 (VT220+)",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "notes": "ESC N and ESC O handled in stream.zig:2215-2239, single shift G2/G3",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Defined in esc.rs:42-43 as EscCode::SingleShiftG2/G3 (ESC N/O)",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented in vt.c:517-525 as ESC N/O",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No SS2/SS3 single shift support found; not in escape_support.md",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Explicitly marked as VT100_NOTSUPPORT",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ESC N dispatches SingleShift(2), ESC O dispatches SingleShift(3) in OutputStateMachineEngine.cpp:235-239",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No handlers for ESC N/O sequences",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "SS2 at src/termout.c:2049-2050, SS3 at src/termout.c:2051-2052",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": false,
+            "notes": "SS2/SS3 used in keyboard output encoding but not handled as input",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -750,40 +989,59 @@
             "version_added": true
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented in charproc.c:4902-4920 via CursorSave/CursorRestore",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "notes": "ESC 7 and ESC 8 handled in stream.zig:2134-2151",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Handled in performer.rs:632-633 via EscCode::DecSaveCursorPosition (ESC 7) and DecRestoreCursorPosition (ESC 8)",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented in vt.c:472-477 as ESC 7/8",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ESC 7/8 listed as IMPLEMENTED in docs/escape_support.md; handlers save_cursor_position() at term/mod.rs:1619 and restore_cursor_position() at term/mod.rs:1626",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ESC 7 calls CursorSaveState(), ESC 8 calls CursorRestoreState() in OutputStateMachineEngine.cpp:202-206",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "DECSC (ESC 7) at src/termout.c:1952-1953, DECRC (ESC 8) at src/termout.c:1954-1955",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "3.5.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": "v0.1.0",
@@ -811,40 +1069,59 @@
             "version_added": true
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented in charproc.c:6142 via VTReset()",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "notes": "ESC c handled in stream.zig:2260-2265",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Handled in performer.rs:679 via EscCode::FullReset (ESC c), performs comprehensive terminal reset",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented in vt.c:480-481 as ESC c",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Handler reset_state() at term/mod.rs:1835",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ESC c dispatches HardReset() in OutputStateMachineEngine.cpp:232-233",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Handled in do_esc() at src/termout.c:1975-1981",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "3.5.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": "v0.1.0",
@@ -872,40 +1149,59 @@
             "version_added": true
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented in charproc.c:4922-4933. Sets/clears MODE_DECKPAM",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "notes": "ESC = and ESC > handled in stream.zig:2339-2353",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Handled in performer.rs:602-608 via EscCode::DecApplicationKeyPad (ESC =) and DecNormalKeyPad (ESC >)",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented in vt.c:531-536 as ESC =/>",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ESC =/> listed as IMPLEMENTED in docs/escape_support.md; handlers set_keypad_application_mode() at term/mod.rs:2180 and unset_keypad_application_mode() at term/mod.rs:2186",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ESC = sets keypad application mode, ESC > sets numeric mode in OutputStateMachineEngine.cpp:211-215",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "DECKPAM (ESC =) at src/termout.c:1956-1957, DECKPNM (ESC >) at src/termout.c:1958-1959",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "3.5.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": "v0.1.0",
@@ -933,40 +1229,63 @@
             "version_added": true
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented in charproc.c:3782-3798 via xterm_DECDHL/DECDWL/DECSWL",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No implementation found for ESC #3-6 double-height/width line sequences",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Handled in performer.rs:635-649 via EscCode::DecDoubleHeight* and DecDoubleWidth* (ESC #3-6)",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No implementation found for ESC #3-6",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No double-height/double-width line support found",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "partial_implementation": true,
+            "notes": "Sequences recognized but ignored (no-op)",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Not implemented, marked as 'not worth implementing'",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ESC #3-6 dispatch SetLineRendition() with DoubleHeightTop/Bottom/DoubleWidth in OutputStateMachineEngine.cpp:274-284",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "DECDHL top/bottom at src/termout.c:2010-2019, DECDWL at src/termout.c:2023-2027",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Not implemented",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -995,40 +1314,59 @@
             "version_added": true
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented in charproc.c:4833. Fills screen with 'E' characters",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "notes": "ESC #8 handled in stream.zig:2157-2159",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Handled in performer.rs:652 via EscCode::DecScreenAlignmentDisplay (ESC #8), fills screen with 'E'",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented in vt.c:575-585 as ESC #8",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ESC # 8 listed as IMPLEMENTED in docs/escape_support.md; handler decaln() at term/mod.rs:1141 fills screen with 'E'",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ESC #8 dispatches ScreenAlignmentPattern() in OutputStateMachineEngine.cpp:286-287",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Handled in do_esc() at src/termout.c:1989-2009",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "4.0.0",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -1057,40 +1395,64 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented in charproc.c:6121-6135. Requires vtXX_level >= 2",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No implementation found for ESC SP F/G 7-bit/8-bit control mode selection. C1 controls are processed as ESC + (c-0x40) in stream.zig:748-756, but mode switching not implemented",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Sequences recognized but ignored - Kitty only supports C0 controls",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No evidence found in code for ESC SP F/G sequences",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": false,
+            "notes": "8-bit C1 controls not supported per vt.c:753 and doc/foot-ctlseqs.7.scd",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No 7-bit/8-bit C1 control mode switching found",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Explicitly marked as VT100_NOTSUPPORT",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Recognized in ACS handler but implementation is commented out",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ESC SP F/G dispatch SendC1Controls(false/true) in OutputStateMachineEngine.cpp:259-263",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No handlers for ESC SP F/G",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No handler found for ESC SP F or ESC SP G in do_esc() switch statement",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Not implemented",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -1119,40 +1481,66 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented in charproc.c:6167-6200. Requires ansi_level > 2",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "notes": "LS2, LS3 (ESC n, ESC o) and LS1R, LS2R, LS3R (ESC ~, ESC }, ESC |) handled in stream.zig:2269-2335",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Only SO/SI (shift out/in) supported; no evidence of LS2, LS3, LS1R, LS2R, LS3R",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": "1.8.0",
+            "partial_implementation": true,
+            "notes": "LS2 and LS3 supported (vt.c:485-497), LS1R/LS2R/LS3R not implemented",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No locking shift (LS2/LS3/LS1R/LS2R/LS3R) support found",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": false,
+            "notes": "LS2, LS3, LS1R, LS2R, LS3R not implemented",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "partial_implementation": true,
+            "notes": "LS2, LS3, LS1R, LS2R, LS3R handlers exist but are mostly non-functional (code commented out)",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "LS2, LS3 (ESC n/o) and LS1R, LS2R, LS3R (ESC ~/-/_) dispatch LockingShift/LockingShiftRight in OutputStateMachineEngine.cpp:241-254",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "partial_implementation": true,
+            "notes": "LS2/LS3 via ESC n/o; LS1R/LS2R/LS3R not found",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "LS2 at src/termout.c:2034, LS3 at src/termout.c:2037, LS1R at src/termout.c:2040, LS2R at src/termout.c:2043, LS3R at src/termout.c:2046",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "3.5.0",
+            "notes": "LS2, LS3, LS1R, LS2R, LS3R supported via setgLevel",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -1181,40 +1569,62 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented in charproc.c:6223. Controlled by wideChars resource and utf8_always setting",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No implementation found for ESC % G UTF-8 selection. Terminal uses UTF-8 by default but doesn't explicitly handle this sequence",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Sequence recognized but ignored - Kitty is always UTF-8",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No evidence found for ESC % G sequence; WezTerm only supports UTF-8 (per performer.rs:460 comment)",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No handling for ESC % G found; foot only supports UTF-8 mode",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No ESC % G charset selection found; UTF-8 is default and only encoding",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Handled by DOCS command which is not implemented",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ESC % G handled via DesignateCodingSystem() in OutputStateMachineEngine.cpp:295",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "ESC % G (and ESC % 8) at src/termout.c:2028-2030 enables UTF-8",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "3.5.0",
+            "notes": "ESC % @ and ESC % G both select default charset",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,

@@ -14,40 +14,61 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": "xterm-294",
+            "notes": "Requires --enable-sixel-graphics compile flag",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": "20200620-160318-e00b076c",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": "1.2.0",
+            "notes": "Full sixel support with DCS implementation",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Not implemented",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "notes": "DCS_SIXEL token, VT100SixelParser",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Requires WITH_SIXEL compile flag",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Full implementation with SixelParser class. DCS sequence handler in adaptDispatch.cpp",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "MODE_Sixel with processSixel implementation",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Full Sixel graphics support via DCS",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "0.1.1",
+            "notes": "Requires @xterm/addon-image addon. Supported since initial addon release.",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -75,40 +96,61 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Not implemented - APC sequences ignored",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": "0.19.3",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": "20220101-133340-7edc5b5a",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": false,
+            "notes": "APC sequences are ignored (state_sos_pm_apc_string only ignores)",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Not implemented",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "notes": "APC G protocol via KittyImageCommand",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": false,
+            "notes": "APC sequences are parsed but no Kitty graphics protocol handler exists",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No APC G handler found. Only Sixel graphics are implemented",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "APC G protocol with image cache support",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "APC sequences (including Kitty graphics) are explicitly ignored",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "0.9.0",
+            "notes": "Requires @xterm/addon-image addon. Added in addon version 0.9.0 (unreleased, currently in development).",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -136,40 +178,59 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "notes": "Unicode placeholder U+10EEEE with diacritic encoding for row/col",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": "0.28.0",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No Unicode placeholder U+10EEEE support found",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Not implemented",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "notes": "Unicode placeholder U+10EEEE supported",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Kitty graphics protocol not implemented",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No evidence of U+10EEEE unicode placeholder handling",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": null,
+            "notes": "Kitty graphics protocol is implemented via addon, but Unicode placeholder support is uncertain from source inspection.",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -197,40 +258,59 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Explicitly listed as unimplemented in TODO comments",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": "0.20.0",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": "20220101-133340-7edc5b5a",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No Kitty graphics protocol support",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Not implemented",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "notes": "Animation frames and control supported",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Kitty graphics protocol not implemented",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No animation frame parameters handled",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": false,
+            "notes": "The README explicitly states 'No animation support' for image formats.",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -258,40 +338,63 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Not implemented - APC sequences ignored",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "OSC 1337 File= command is parsed but marked as unimplemented",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "OSC 1337 is handled for notifications, not iTerm2 images",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": "20191124-233250-cb9fd7d",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No OSC 1337 image support found",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Not implemented",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "notes": "OSC 1337;File= protocol",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": false,
+            "notes": "OSC 1337 is parsed but not implemented - falls through to default case with no action",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": false,
+            "notes": "OSC 1337 implemented only for SetMark action, not File= inline images",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "OSC 1337 File protocol implemented",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "OSC 1337 File protocol implemented",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "0.4.0",
+            "notes": "Requires @xterm/addon-image addon. Added in addon version 0.4.0.",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,

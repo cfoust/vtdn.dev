@@ -14,40 +14,63 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": "xterm-93",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "CSI 1/2 t not implemented",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "CSI 1/2 t not supported",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Parsed but explicitly ignored",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": false,
+            "notes": "CSI 1/2 t logs unimplemented warning",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Rejected per escape_support.md:81-82",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "notes": "CSI 1 t and CSI 2 t",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Updates internal state flag m_xterm_wm_iconified",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "CSI 1/2 t handled via WindowManipulationType::IconifyWindow and DeIconifyWindow in adaptDispatch.cpp:3442-3446",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": false,
+            "notes": "CSI 1 t / 2 t not implemented",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "CSI 1/2 t implemented",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "4.4.0",
+            "notes": "CSI 1/2 t. Requires windowOptions.restoreWin/minimizeWin enabled.",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -76,40 +99,64 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": "xterm-93",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "CSI 3;x;y t not implemented",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "CSI 3 t not supported",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Parsed but handled as unimplemented",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": false,
+            "notes": "CSI 3 t logs unimplemented warning",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Rejected per escape_support.md:81-82",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "notes": "CSI 3;x;y t via XTERMCC_WINDOWPOS",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "partial_implementation": true,
+            "notes": "Parsed but implementation is no-op",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": false,
+            "notes": "CSI 3;x;y t not in WindowManipulationType enum (DispatchTypes.hpp:584-594)",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": false,
+            "notes": "CSI 3 t not implemented",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "CSI 3;x;y t implemented",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "4.4.0",
+            "notes": "CSI 3;x;y t. Requires windowOptions.setWinPosition enabled.",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -138,40 +185,63 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": "xterm-93",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "CSI 4;h;w t not implemented",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "CSI 4 t explicitly rejected",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Parsed but not allowed for security",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": false,
+            "notes": "CSI 4 t logs unimplemented warning",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Rejected per escape_support.md:81-82",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "notes": "CSI 4;h;w t via XTERMCC_WINDOWSIZE_PIXEL",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Converts pixels to cells and emits resize-window signal",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": false,
+            "notes": "CSI 4;h;w t not in WindowManipulationType enum",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": false,
+            "notes": "CSI 4 t not implemented",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "CSI 4;h;w t implemented",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "4.4.0",
+            "notes": "CSI 4;h;w t. Requires windowOptions.setWinSizePixels enabled.",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -200,40 +270,64 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": "xterm-93",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "CSI 5/6 t not implemented",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "CSI 5/6 t not supported",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Parsed but handled as unimplemented",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": false,
+            "notes": "CSI 5/6 t logs unimplemented warning",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Rejected per escape_support.md:81-82",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "notes": "CSI 5 t and CSI 6 t",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "partial_implementation": true,
+            "notes": "Parsed but implementation is stub - breaks without action",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": false,
+            "notes": "CSI 5/6 t not in WindowManipulationType enum",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": false,
+            "notes": "CSI 5 t / 6 t not implemented",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "CSI 5/6 t implemented",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "4.4.0",
+            "notes": "CSI 5/6 t. Requires windowOptions.raiseWin/lowerWin enabled.",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -262,40 +356,63 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": "xterm-93",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "CSI 8;rows;cols t not implemented",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "CSI 8 t explicitly rejected",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Parsed but not allowed for security",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": false,
+            "notes": "CSI 8 t logs unimplemented warning",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Rejected per escape_support.md:81-82",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "notes": "CSI 8;rows;cols t via XTERMCC_WINDOWSIZE",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Emits resize-window signal",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "CSI 8;rows;cols t via WindowManipulationType::ResizeWindowInCharacters in adaptDispatch.cpp:3451",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "CSI 8;rows;cols t emits imageResizeRequest",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "CSI 8;rows;cols t implemented",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "4.4.0",
+            "notes": "CSI 8;rows;cols t. Requires windowOptions.setWinSizeChars enabled.",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -324,40 +441,65 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": "xterm-93",
+            "notes": "Requires --enable-maximize compile flag (default on)",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "CSI 9;Ps t not implemented",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "CSI 9 t not supported",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Parsed but handled as unimplemented",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": false,
+            "notes": "CSI 9 t logs unimplemented warning",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Rejected per escape_support.md:81-82",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": false,
+            "notes": "CSI 9;Ps t not implemented",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "partial_implementation": true,
+            "notes": "Parsed with parameters but implementation is stub - breaks without action",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": false,
+            "notes": "CSI 9;Ps t not in WindowManipulationType enum",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": false,
+            "notes": "CSI 9 t not implemented; UI has maximize but no escape sequence",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "CSI 9;0/1/2/3 t implemented",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "4.4.0",
+            "notes": "CSI 9;Ps t. Requires windowOptions.maximizeWin enabled.",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -386,40 +528,65 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": "xterm-93",
+            "notes": "Requires --enable-maximize compile flag (default on)",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "CSI 10;Ps t not implemented",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "CSI 10 t not supported",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Parsed but handled as unimplemented",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": false,
+            "notes": "CSI 10 t logs unimplemented warning",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Rejected per escape_support.md:81-82",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": false,
+            "notes": "CSI 10;Ps t not implemented",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "partial_implementation": true,
+            "notes": "Parsed but implementation is stub - breaks without action",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": false,
+            "notes": "CSI 10;Ps t not in WindowManipulationType enum",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": false,
+            "notes": "CSI 10 t not implemented",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "CSI 10;0/1/2 t implemented",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "4.4.0",
+            "notes": "CSI 10;Ps t. Requires windowOptions.fullscreenWin enabled.",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -448,40 +615,64 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": "xterm-93",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "CSI 11 t not implemented",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "CSI 11 t not supported",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Parsed but handled as unimplemented",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "partial_implementation": true,
+            "notes": "CSI 11 t always reports not-iconified - doesn't know actual state",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Rejected per escape_support.md:81-82",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "notes": "CSI 11 t via XTERMCC_REPORT_WIN_STATE",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Reports iconified state from internal flag",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": false,
+            "notes": "CSI 11 t not in WindowManipulationType enum",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": false,
+            "notes": "CSI 11 t not implemented",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "CSI 11 t implemented",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "4.4.0",
+            "notes": "CSI 11 t. Requires windowOptions.getWinState enabled.",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -510,40 +701,64 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": "xterm-93",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "CSI 13 t not implemented",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "CSI 13 t not supported",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Parsed but handled as unimplemented",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "partial_implementation": true,
+            "notes": "CSI 13 t always reports (0,0) - doesn't know actual position",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Rejected per escape_support.md:81-82",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "notes": "CSI 13 t via XTERMCC_REPORT_WIN_POS",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Replies with fixed origin 0,0",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": false,
+            "notes": "CSI 13 t not in WindowManipulationType enum",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": false,
+            "notes": "CSI 13 t not implemented",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "CSI 13 t implemented",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "4.4.0",
+            "notes": "CSI 13 t. Requires windowOptions.getWinPosition enabled.",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -572,40 +787,63 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": "xterm-93",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "notes": "CSI 14 t reports text area size in pixels",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "CSI 14/16/18 t handled via screen_report_size",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Reports text area size in pixels",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "CSI 14 t reports text area/window size in pixels",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Rejected per escape_support.md:81-82",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": "v20260216-nightly",
+            "notes": "CSI 14 t via XTERMCC_REPORT_WIN_PIX_SIZE",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Reports calculated text area size in pixels",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "CSI 14 t via WindowManipulationType::ReportTextSizeInPixels in adaptDispatch.cpp:3457. Reports virtual pixel size for Sixel",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "CSI 14 t implemented as reportPixelSize",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "CSI 14 t implemented",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "4.4.0",
+            "notes": "CSI 14 t. Requires windowOptions.getWinSizePixels enabled.",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -634,40 +872,63 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": "xterm-406",
+            "notes": "Requires OPT_MAXIMIZE compile flag (enabled by default)",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Reports cell size in pixels via CSI 6;height;width t",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Fully implemented in term/src/terminalstate/mod.rs:2035-2045",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at csi.c:1347-1354, reports cell height and width in pixels",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Explicitly rejected - CSI 16 t not in supported list (escape_support.md line 81-82)",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Not implemented. Parser explicitly marks Ps=16 as VT100_NOTSUPPORT. Delegate method terminalCellSizeInPoints exists but is not connected to this sequence.",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": false,
+            "notes": "CSI 16 t not implemented; VTE skips from operation 14 to 18 in XTERM_WM enum",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented as ReportCharacterCellSize in WindowManipulationType enum (value 16)",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Reports cell size in pixels via CSI 6 t response",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Reports cell dimensions via CSI 16 t, implemented in src/termout.c:3045",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "4.4.0",
+            "notes": "Requires windowOptions.getCellSizePixels to be enabled",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -696,40 +957,61 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": "xterm-406",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Reports text area size in characters via CSI 8;height;width t",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Fully implemented in term/src/terminalstate/mod.rs:2025-2033",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented at csi.c:1356-1362, reports terminal rows and columns",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented via text_area_size_chars() at term/mod.rs:2268, responds with CSI 8 t",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Returns CSI 8;height;widtht format. See VT100Terminal.m:2767-2774",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented as ReportTextSizeInCharacters in WindowManipulationType enum (value 18)",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Reports terminal size in characters via CSI 8 t response",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Reports terminal size in characters via CSI 18 t, implemented in src/termout.c:3046",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "4.4.0",
+            "notes": "Requires windowOptions.getWinSizeChars to be enabled",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -758,40 +1040,66 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": "xterm-406",
+            "notes": "Requires OPT_TITLE_MODES compile flag (enabled by default)",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "notes": "Only supports window title (params[1] = 0 or 2), not icon title",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Push/pop window title stack with maxlen=10",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Parser recognizes sequences but handler is empty (no-op) at term/src/terminalstate/mod.rs:2090-2095",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": true,
+            "partial_implementation": true,
+            "notes": "Implemented at csi.c:1392-1413, only handles title (param 0 or 2), ignores icon label (param 1)",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Implemented via push_title()/pop_title() at term/mod.rs:2235,2249. Max stack depth: 4096 (TITLE_STACK_MAX_DEPTH)",
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Both push (CSI 22 t) and pop (CSI 23 t) implemented with parameter support: 0=both, 1=icon, 2=window. See VT100Terminal.m:2793-2819",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "partial_implementation": true,
+            "notes": "Only supports window title (CSI 22;0 t / CSI 22;2 t); icon title stack (CSI 22;1 t) not implemented. Max stack depth: 8",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Not present in WindowManipulationType enum; only values 1,2,7,8,14,16,18 are supported",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Explicitly ignored with comment in code (src/Vt102Emulation.cpp:2014-2015)",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Full push/pop stack for window titles via CSI 22/23 t, implemented in src/termout.c:3059-3064 with stack management in src/winmain.c:1439-1464",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "4.4.0",
+            "notes": "Requires windowOptions.pushTitle and windowOptions.popTitle to be enabled",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,

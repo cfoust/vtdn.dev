@@ -14,40 +14,66 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": "xterm-170",
+            "notes": "DCS $ q - Request Status String (DECRQSS) for VT420+ queries",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "notes": "Request status string (SGR, DECSCUSR, DECSTBM, DECSLRM)",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "DCS $ q implementation",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "partial_implementation": true,
+            "notes": "Partial support for DECSCL, DECSTBM, DECSLRM; other requests return invalid response",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": "1.11.0",
+            "partial_implementation": true,
+            "notes": "Supports DECSTBM, SGR, and DECSCUSR queries only",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "DCS $ q request status string via DCS_DECRQSS token",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "partial_implementation": true,
+            "notes": "Supports DECSACE, DECSCUSR, DECSGR, DECSTBM, DECSLPP, DECSLRM, SGR; rejects many others",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Supports querying SGR, DECSTBM, DECSLRM, DECSCUSR, DECSCA, DECSACE, and DECAC settings",
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "DECRQSS (DCS $ q) implemented at src/termout.c:4235-4358 for SGR, margins, cursor style, etc.",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "5.0.0",
+            "partial_implementation": true,
+            "notes": "Partial: SGR, DECSTBM, DECSCUSR, DECSCA, DECSCL",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -76,40 +102,60 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": "xterm-253",
+            "notes": "DCS + q - Terminal capability query (XTGETTCAP). Requires allowTcapOps resource",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "notes": "Terminal capability query",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "DCS + q implementation",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "DCS + q terminal capability query",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": "1.11.0",
+            "notes": "Builtin terminfo capability queries",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "DCS + q termcap query via DCS_REQUEST_TERMCAP_TERMINFO token",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "XTGETTCAP (DCS + q) detected in src/child.c:378 but specific handler details not fully traced",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Explicitly marked as unsupported",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -138,40 +184,61 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": "xterm-230",
+            "notes": "CSI > 0 q - Report xterm name and version (XTVERSION)",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "notes": "CSI > q",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": "0.21.2",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Terminal version response supported",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": "1.7.0",
+            "notes": "Replies with DCS>|foot(major.minor.patch)ST",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "CSI > 0 q terminal version query supported",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Mentioned in terminfo but no handler found in code",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Responds to CSI > q with terminal identification",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "XTVERSION (CSI > q) implemented at src/termout.c:3144-3146",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": true,
+            "notes": "In master, not yet released",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -199,40 +266,62 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": "xterm-294",
+            "notes": "Sixel graphics (DCS Pn ; Pn ; Pn q). Requires compile-time --enable-sixel-graphics",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Not implemented",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Uses kitty graphics protocol instead",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": "20200620-160318-e00b076c",
+            "notes": "Sixel graphics protocol",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": "1.4.0",
+            "notes": "Requires tweak.sixel config option enabled",
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Sixel graphics via DCS_SIXEL token and VT100SixelParser, requires VT level >= 300",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Requires compile flag WITH_SIXEL",
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Full sixel graphics implementation with color management and scrolling control",
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "Sixel graphics fully implemented at src/termout.c:4092-4214 with dedicated parser in src/sixel.c",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": "5.3.0",
+            "notes": "Requires @xterm/addon-image addon",
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,
@@ -260,40 +349,58 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": null
+            "version_added": false,
+            "notes": "tmux passthrough (DCS tmux;...) not implemented",
+            "last_scanned": "2026-02-17"
           },
           "ghostty": {
-            "version_added": null
+            "version_added": "v1.0.0",
+            "notes": "Tmux control mode (DCS 1000p), requires compile flag",
+            "last_scanned": "2026-02-17"
           },
           "kitty": {
-            "version_added": null
+            "version_added": true,
+            "notes": "DCS tmux; ... ST wrapping for graphics",
+            "last_scanned": "2026-02-17"
           },
           "wezterm": {
-            "version_added": null
+            "version_added": true,
+            "notes": "DCS tmux; ... ST passthrough (TmuxEvents)",
+            "last_scanned": "2026-02-17"
           },
           "foot": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "alacritty": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": null
+            "version_added": true,
+            "notes": "DCS tmux; ... ST passthrough via DCS_TMUX_HOOK and VT100TmuxParser",
+            "last_scanned": "2026-02-17"
           },
           "vte": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "windows_terminal": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "konsole": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "mintty": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No implementation found for tmux DCS passthrough protocol",
+            "last_scanned": "2026-02-17"
           },
           "xterm_js": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "cy": {
             "version_added": false,

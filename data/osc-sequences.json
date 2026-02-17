@@ -79,6 +79,42 @@
             "version_added": "0.8",
             "notes": "Requires allow-set-title option",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "WhenTitle callback handler in Terminal.cpp:42",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": true,
+            "notes": "Sets both icon and window title (terminal.c:3203-3214)",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "notes": "Sets both icon and window title",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-2_9_1",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "rxvt-unicode-2.0",
+            "notes": "Sets both icon name and window title",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.4",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -162,6 +198,40 @@
             "version_added": "0.8",
             "notes": "Requires allow-set-title option",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "WhenTitle callback handler in Terminal.cpp:42",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": true,
+            "notes": "Sets window title (terminal.c:3215-3224)",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-2_9_1",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "rxvt-unicode-2.0",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.4",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -246,6 +316,45 @@
             "version_added": "3.3",
             "notes": "Set and query palette entries",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "DynamicColors() enabled in Terminal.cpp:36",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": true,
+            "partial_implementation": true,
+            "notes": "Query only (OSC 4;n;?) supported; setting colors not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.2.0.171_rc2",
+            "notes": "Change/query color palette entries",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-2_9_1",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "notes": "Acknowledged but not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "rxvt-unicode-2.0",
+            "notes": "Supports querying and setting palette colors",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.8.5",
+            "notes": "Supports both set and query operations",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -331,6 +440,41 @@
             "version_added": "3.1",
             "notes": "VTE extension for working directory",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "WhenDirectoryChange callback added in commit 3d1c706",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "notes": "Not implemented in do_osc function",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.1",
+            "notes": "Current working directory reporting",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -415,6 +559,41 @@
             "version_added": "3.4",
             "notes": "Hyperlinks support",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "Hyperlinks() enabled in Terminal.cpp:36, WhenLink callback in Terminal.cpp:43",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "notes": "Not implemented in do_osc function",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "notes": "Hyperlinks with optional parameters",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v1.3.0",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -502,6 +681,42 @@
             "version_added": false,
             "notes": "ConEmu notifications not implemented",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "Desktop notifications via WhenMessage callback added in commit 4a78353",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "notes": "Not implemented in do_osc function",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.6.2.8008",
+            "notes": "ConEmu-style notification and progress (OSC 9;4 included)",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "notes": "OSC 777 used instead for notifications",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -588,6 +803,41 @@
             "version_added": false,
             "notes": "Progress reporting not implemented",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.6",
+            "notes": "Progress reporting via WhenProgress callback added in commit 2d4399a",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "notes": "Not implemented in do_osc function",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.6.2.8008",
+            "notes": "Progress reporting via OSC 9;4 (ConEmu format)",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -672,6 +922,43 @@
             "version_added": "2.6",
             "notes": "Set/query default foreground color",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "DynamicColors() enabled in Terminal.cpp:36",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "notes": "Not implemented in do_osc function",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "notes": "Set/query default foreground color",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-3_0_7",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v1.5.0",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "rxvt-unicode-7.0",
+            "notes": "Supports querying and setting default foreground color",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.8.5",
+            "notes": "Supports both set and query operations",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -756,6 +1043,43 @@
             "version_added": "2.6",
             "notes": "Set/query default background color",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "DynamicColors() enabled in Terminal.cpp:36",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "notes": "Not implemented in do_osc function",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "notes": "Set/query default background color",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-3_0_7",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v1.5.0",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.7.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "rxvt-unicode-7.0",
+            "notes": "Supports querying and setting default background color",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.8.5",
+            "notes": "Supports both set and query operations",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -841,6 +1165,43 @@
             "version_added": "3.3",
             "notes": "Set/query cursor color",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "DynamicColors() enabled in Terminal.cpp:36",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "notes": "Not implemented in do_osc function",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "notes": "Set/query cursor color",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-3_0_7",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v1.5.0",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "rxvt-unicode-2.0",
+            "notes": "Compile flag NO_CURSORCOLOR can disable",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.8.5",
+            "notes": "Supports both set and query operations",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -926,6 +1287,42 @@
             "version_added": false,
             "notes": "Mouse pointer cursor shape not implemented",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "Not confirmed in Bobcat code; depends on TerminalCtrl library implementation",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "notes": "Not implemented in do_osc function",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": false,
+            "notes": "Not implemented - no OSC 22 handler found",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "notes": "Only OSC 13/14 for pointer fg/bg colors, not OSC 22",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1013,6 +1410,45 @@
             "version_added": "2.4",
             "notes": "Clipboard write support",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "PermitClipboardWrite() in Terminal.cpp:348",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "notes": "Not implemented in do_osc function",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "notes": "Clipboard write/copy operations",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-3_0_9",
+            "notes": "Requires user permission via allow_osc52 option",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v1.14.0",
+            "notes": "Requires selection_escapes config enabled",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "notes": "Not implemented; clipboard handled via X11 selections",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.8",
+            "notes": "Requires allowwindowops enabled",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1101,6 +1537,46 @@
             "version_added": "2.9",
             "notes": "Requires get-clipboard option enabled",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "Configurable via PermitClipboardRead() profile setting",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "notes": "OSC 52 write (copy to clipboard) is supported, but OSC 52 read (query clipboard) is not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": false,
+            "notes": "OSC 52 clipboard write is supported (v0.1.0), but reading/querying clipboard is explicitly not supported (comment in code: 'Only setting clipboard contents is supported, not reading')",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": false,
+            "notes": "OSC 52 only supports writing (set_selection), not reading clipboard content",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v1.14.0",
+            "notes": "Requires selection_escapes config option enabled",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "notes": "OSC 52 for clipboard operations is not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "notes": "Available via Perl extension (clipboard-osc), not built into core",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "notes": "Only writes to clipboard (OSC 52 set), does not respond with clipboard content for read operations",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1179,6 +1655,42 @@
           "tmux": {
             "version_added": "2.4",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "Core parsing in TerminalCtrl library (external), not verified in Bobcat repo",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "notes": "Not found in do_osc handler; only Linux palette sequences (OSC P/R) and OSC 4 query are implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "notes": "OSC 104 RCOLPAL (reset color palette) is implemented in Functions.h line 647 and handled in Screen.cpp line 4027",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "3.6.2",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "notes": "OSC 39/49 (restoreFG/restoreBG) provide similar functionality but not standard OSC 104",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.8.3",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1266,6 +1778,44 @@
             "version_added": "3.2",
             "notes": "Supports OSC 110, 111, 112",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "Core parsing in TerminalCtrl library (external), not verified in Bobcat repo",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "notes": "OSC 110 (RCOLORFG), 111 (RCOLORBG), and 112 (RCOLORCURSOR) are all implemented in Functions.h lines 642-643,641 and handled in Screen.cpp lines 4046-4048",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": false,
+            "notes": "Code is present but commented out with #if 0",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "notes": "Recognized but no implementation, only debug logging",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "7.0",
+            "partial_implementation": true,
+            "notes": "OSC 39/49 reset fg/bg colors but not standard OSC 110/111/112 format",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.9.3",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1350,6 +1900,41 @@
           "tmux": {
             "version_added": "3.4",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.5",
+            "partial_implementation": true,
+            "notes": "OSC 7 working directory tracking implemented (WhenDirectoryChange callback), but not full FinalTerm semantic zones",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "notes": "OSC 133 shell integration (SEMA) is implemented in Functions.h line 648, handled via processShellIntegration() in Screen.cpp line 4057, supporting prompt markers (A, B, C, D)",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1429,6 +2014,41 @@
           "tmux": {
             "version_added": false,
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "Core parsing in TerminalCtrl library (external), not verified in Bobcat repo",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": false,
+            "notes": "No evidence of Kitty OSC 21 color stack protocol implementation found in codebase",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": false,
+            "notes": "OSC 21 exists but for Eterm compatibility, not Kitty color protocol",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1511,6 +2131,41 @@
           "tmux": {
             "version_added": false,
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.4",
+            "partial_implementation": true,
+            "notes": "OSC 9;2 desktop notifications supported (OnNotification callback), Kitty OSC 99 not explicitly confirmed",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "notes": "Kitty OSC 99 desktop notifications (DESKTOPNOTIFY) implemented in Functions.h line 657 and Screen.cpp line 4055, uses D-Bus backend",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1594,6 +2249,41 @@
           "tmux": {
             "version_added": false,
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "iTerm2 inline image protocol supported via InlineImages() feature",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": false,
+            "notes": "No iTerm2 OSC 1337 File protocol implementation found. Only Sixel (DCS DECSIXEL) graphics format is supported",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "3.9.1",
+            "notes": "Requires compile flag SUPPORT_ITERM2_OSC1337",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1681,6 +2371,42 @@
             "version_added": false,
             "notes": "DSR 1337 was removed in 3.2, replaced by CSI > q",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "Core parsing in TerminalCtrl library (external), not verified in Bobcat repo",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": false,
+            "notes": "No iTerm2 OSC 1337 proprietary features (marks, user vars, profile switching) found. Uses standard OSC 133 for shell integration instead",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "3.9.1",
+            "partial_implementation": true,
+            "notes": "Only SetMark is supported; other features like user vars and profile switching are not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1763,6 +2489,42 @@
           "tmux": {
             "version_added": false,
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "Core parsing in TerminalCtrl library (external), not verified in Bobcat repo",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "notes": "OSC 777 urxvt-style notifications (NOTIFY) implemented in Functions.h line 638 and Screen.cpp lines 4054,3056-3066, expects format 'notify;title;message'",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.8.0",
+            "notes": "Desktop notifications via notify; command",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "6.3",
+            "notes": "URxvt_perl - for Perl extensions with 'extension-name;' format",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {

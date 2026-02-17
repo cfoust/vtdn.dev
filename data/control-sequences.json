@@ -78,6 +78,41 @@
             "version_added": "0.8",
             "notes": "Triggers window bell alert via alerts_queue()",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "Handled via WhenBell callback, audible bell implemented in Terminal.cpp:991",
+            "last_scanned": "2026-02-17"
+          },
+          "putty": {
+            "version_added": "0.45",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "notes": "Implemented in executeControlCode; calls Terminal::bell()",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-0_2_1",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "notes": "Implemented in Special() function at src/ansi.c:691",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "rxvt-unicode-1.2",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.6",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -160,6 +195,41 @@
             "version_added": "0.8",
             "notes": "Implemented via screen_write_backspace()",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "Basic C0 control, handled in TerminalCtrl library",
+            "last_scanned": "2026-02-17"
+          },
+          "putty": {
+            "version_added": "0.45",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "notes": "Implemented in executeControlCode; calls backspace()",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-0_2_1",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "notes": "Implemented in Special() function at src/ansi.c:678",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "rxvt-unicode-1.2",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.6",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -242,6 +312,41 @@
             "version_added": "0.8",
             "notes": "Moves cursor to next tab stop, respects tab array",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "Tab stops referenced in termios config (Terminal.cpp:78-91)",
+            "last_scanned": "2026-02-17"
+          },
+          "putty": {
+            "version_added": "0.45",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "notes": "Implemented in executeControlCode; calls moveCursorToNextTab()",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-0_2_1",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "notes": "Implemented in Special() function at src/ansi.c:694",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "rxvt-unicode-1.2",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.6",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -324,6 +429,41 @@
             "version_added": "0.8",
             "notes": "Also handles VT and FF; respects CRLF mode",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "Basic C0 control, handled in TerminalCtrl library",
+            "last_scanned": "2026-02-17"
+          },
+          "putty": {
+            "version_added": "0.45",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "notes": "Implemented in executeControlCode; calls linefeed()",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-0_2_1",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "notes": "Implemented in Special() function at src/ansi.c:684-689",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "rxvt-unicode-1.2",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.6",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -406,6 +546,41 @@
             "version_added": "0.8",
             "notes": "Implemented via screen_write_carriagereturn()",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "Basic C0 control, handled in TerminalCtrl library",
+            "last_scanned": "2026-02-17"
+          },
+          "putty": {
+            "version_added": "0.45",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "notes": "Implemented in executeControlCode; calls moveCursorToBeginOfLine()",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-0_2_1",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "notes": "Implemented in Special() function at src/ansi.c:681",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "rxvt-unicode-1.2",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.6",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -493,6 +668,44 @@
             "version_added": "0.8",
             "notes": "Charset shift implementation for G0/G1 ACS",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "Character set handling in TerminalCtrl, UTF-8 mode configurable",
+            "last_scanned": "2026-02-17"
+          },
+          "putty": {
+            "version_added": "0.45",
+            "notes": "Implemented as LS1/LS0 for G1/G0 charset selection",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.3.10",
+            "notes": "SO (0x0E) and SI (0x0F) implemented as LS1/LS0; invokes G1/G0 charset into GL",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-0_2_1",
+            "notes": "SO/SI handled natively; ISO-2022 encodings delegated to mef library",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "notes": "SO/SI (Shift Out/In) implemented in Special() at src/ansi.c:697-702",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "rxvt-unicode-1.2",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.5",
+            "notes": "Charset switching added in 0.5, control codes in 0.6",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -579,6 +792,45 @@
             "version_added": false,
             "notes": "ENQ (0x05) is ignored, in range 0x00-0x06 with NULL handler",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "AnswerBackMessage configurable in profiles (Terminal.cpp:370)",
+            "last_scanned": "2026-02-17"
+          },
+          "putty": {
+            "version_added": "0.45",
+            "notes": "Sends configurable answerback string",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": false,
+            "notes": "ENQ (0x05) not handled; no answerback functionality found",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": false,
+            "notes": "No ENQ/answerback implementation found",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "notes": "Not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "notes": "ENQ (0x05) is not handled as answerback; only used in OSC strings",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "rxvt-unicode-1.2",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "notes": "Explicitly ignored (st.c:2246)",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -661,6 +913,41 @@
             "version_added": "1.3",
             "notes": "Index: move cursor down one line",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "Standard ESC sequence, handled in TerminalCtrl library",
+            "last_scanned": "2026-02-17"
+          },
+          "putty": {
+            "version_added": "0.45",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "notes": "ESC D implemented in processSequence; calls index()",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-0_2_1",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "notes": "IND (ESC D) implemented in DoESC() at src/ansi.c:715",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "rxvt-unicode-1.2",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.4",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -743,6 +1030,41 @@
             "version_added": "0.9",
             "notes": "Next line: CR followed by LF",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "Standard ESC sequence, handled in TerminalCtrl library",
+            "last_scanned": "2026-02-17"
+          },
+          "putty": {
+            "version_added": "0.45",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "notes": "ESC E implemented in processSequence; calls moveCursorToNextLine()",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-0_2_1",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "notes": "NEL (ESC E) implemented in DoESC() at src/ansi.c:712",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "rxvt-unicode-1.2",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.4",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -825,6 +1147,42 @@
             "version_added": "1.3",
             "notes": "Set tab stop at current column",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "Tab stop control, handled in TerminalCtrl library",
+            "last_scanned": "2026-02-17"
+          },
+          "putty": {
+            "version_added": "0.45",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "notes": "ESC H implemented in processSequence; calls horizontalTabSet()",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-0_2_1",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v1.0.0",
+            "notes": "Accepted but not functional before v1.0.0",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "notes": "HTS (ESC H) implemented in DoESC() at src/ansi.c:721",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "rxvt-unicode-1.2",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.4",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -907,6 +1265,41 @@
             "version_added": "1.3",
             "notes": "Reverse index via screen_write_reverseindex()",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "Reverse index, handled in TerminalCtrl library",
+            "last_scanned": "2026-02-17"
+          },
+          "putty": {
+            "version_added": "0.45",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "notes": "ESC M implemented in processSequence; calls reverseIndex()",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-0_2_1",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "notes": "RI (ESC M) implemented in DoESC() at src/ansi.c:718",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "rxvt-unicode-1.2",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.4",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -993,6 +1386,46 @@
             "version_added": false,
             "notes": "ESC N and ESC O not in escape table",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "Single shift sequences, handled in TerminalCtrl library",
+            "last_scanned": "2026-02-17"
+          },
+          "putty": {
+            "version_added": false,
+            "notes": "ESC N and ESC O not implemented in escape sequence handler",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "notes": "ESC N (SS2) and ESC O (SS3) implemented; single shift G2/G3 charsets",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-0_2_1",
+            "notes": "Delegated to mef library for ISO-2022 encodings",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "notes": "Commented out, not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "notes": "SS2 (ESC N) and SS3 (ESC O) implemented in DoESC() at src/ansi.c:776-788",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "notes": "Explicitly commented out in code",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "notes": "Marked TODO in st.c:2272-2273",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1075,6 +1508,41 @@
             "version_added": "1.3",
             "notes": "Save/restore cursor via input_save_state/input_restore_state",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "Save/restore cursor, TerminalCtrl has high DEC VT compatibility",
+            "last_scanned": "2026-02-17"
+          },
+          "putty": {
+            "version_added": "0.45",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "notes": "ESC 7 (DECSC) and ESC 8 (DECRC) save/restore cursor state",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-0_2_1",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "notes": "DECSC (ESC 7) and DECRC (ESC 8) at src/ansi.c:727-731",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "rxvt-unicode-1.2",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.4",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1157,6 +1625,41 @@
             "version_added": "1.3",
             "notes": "Full terminal reset including palette and screen",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "HardReset() and SoftReset() methods in Terminal.cpp confirm support",
+            "last_scanned": "2026-02-17"
+          },
+          "putty": {
+            "version_added": "0.45",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "notes": "ESC c (RIS) implemented; calls Terminal::hardReset()",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-0_2_1",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "notes": "RIS (ESC c) implemented in DoESC() at src/ansi.c:733",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "rxvt-unicode-1.2",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.4",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1239,6 +1742,41 @@
             "version_added": "1.3",
             "notes": "Application/numeric keypad mode toggle",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "PCStyleFunctionKeys() toggle (Terminal.cpp:355) indicates keypad mode support",
+            "last_scanned": "2026-02-17"
+          },
+          "putty": {
+            "version_added": "0.45",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "notes": "ESC = (DECKPAM) and ESC > (DECKPNM) control keypad mode",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-0_2_1",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "notes": "DECKPAM (ESC =) and DECKPNM (ESC >) at src/ansi.c:748-759",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "rxvt-unicode-1.2",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.4",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1326,6 +1864,44 @@
             "version_added": false,
             "notes": "ESC #3-6 sequences not implemented",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "Double-width/height line attributes, TerminalCtrl DEC compatibility",
+            "last_scanned": "2026-02-17"
+          },
+          "putty": {
+            "version_added": "0.45",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.6.1",
+            "notes": "ESC # 3/4/6 for double-height/width lines; configureCurrentLineSize()",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-0_2_1",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "notes": "Only DECALN (ESC # 8) implemented; ESC # 3-6 consumed but ignored",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "notes": "Only ESC # 8 (DECALN) is handled; ESC # 3-6 not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "notes": "Only DECALN (ESC # 8) handled; ESC # 3-6 ignored",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "notes": "Not implemented in tdectest",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1409,6 +1985,41 @@
             "version_added": "1.3",
             "notes": "Screen alignment test via screen_write_alignmenttest()",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "Screen alignment test, standard DEC feature in TerminalCtrl",
+            "last_scanned": "2026-02-17"
+          },
+          "putty": {
+            "version_added": "0.45",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "notes": "ESC # 8 (DECALN) implemented; fills screen with 'E' characters",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-0_2_1",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "notes": "DECALN (ESC # 8) implemented in DoESC() at src/ansi.c:797",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "rxvt-unicode-1.2",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.6",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1497,6 +2108,44 @@
             "version_added": false,
             "notes": "Parser is 7-bit only, ESC SP F/G not implemented",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "7-bit/8-bit control mode, TerminalCtrl xterm compatibility",
+            "last_scanned": "2026-02-17"
+          },
+          "putty": {
+            "version_added": false,
+            "notes": "No ESC SP F/G sequences implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": false,
+            "notes": "ControlTransmissionMode enum exists but ESC SP F/G sequences not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-0_2_1",
+            "notes": "ESC SP F/G recognized but 7-bit/8-bit control output not explicitly implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "notes": "Not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "notes": "ESC SP F/G not handled; Screen uses c1 command for C1 reception only",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1587,6 +2236,49 @@
             "version_added": false,
             "notes": "LS2/LS3/LS1R/LS2R/LS3R not implemented",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "Locking shift sequences, part of TerminalCtrl character set handling",
+            "last_scanned": "2026-02-17"
+          },
+          "putty": {
+            "version_added": "0.45",
+            "partial_implementation": true,
+            "notes": "Only LS0/LS1 (SO/SI) supported; LS2, LS3, LS1R, LS2R, LS3R not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": false,
+            "notes": "LS2, LS3, LS1R, LS2R, LS3R not found; only LS0/LS1 (SI/SO) supported",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-0_2_1",
+            "notes": "Delegated to mef library for ISO-2022 encodings",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "notes": "Not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "notes": "LS2/LS3/LS1R/LS2R/LS3R implemented in DoESC() at src/ansi.c:760-775",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "rxvt-unicode-1.2",
+            "partial_implementation": true,
+            "notes": "Only LS2/LS3 (ESC n/o); LS1R/LS2R/LS3R not supported",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.6",
+            "partial_implementation": true,
+            "notes": "Only LS2/LS3 implemented, not LS1R/LS2R/LS3R",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1673,6 +2365,45 @@
             "version_added": false,
             "notes": "ESC % G not needed; tmux uses UTF-8 internally",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "SetCharset() and IsUtf8Mode() methods confirm UTF-8 support (Terminal.cpp:470)",
+            "last_scanned": "2026-02-17"
+          },
+          "putty": {
+            "version_added": "0.52",
+            "notes": "ESC % G and ESC % @ for UTF-8 mode selection",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": false,
+            "notes": "ESC % G (UTF-8 select) not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": false,
+            "notes": "No ESC % G implementation found; UTF-8 handled via encoding system",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "notes": "Not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "notes": "ESC % G not implemented; UTF-8 set via encoding command only",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "notes": "Native UTF-8 support but no ESC % G/@ sequences",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.8",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {

@@ -74,6 +74,42 @@
           "tmux": {
             "version_added": "0.8",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "Standard SGR attribute; profile config includes IntensifyBoldText option",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": "0.43",
+            "notes": "SGR 1 sets ATTR_BOLD at terminal.c:4642-4645",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": true,
+            "notes": "Supported since early versions",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "notes": "SGR 1 mapped to A_BD attribute at src/ansi.c:1703",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "1.2",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.1",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -154,6 +190,45 @@
           "tmux": {
             "version_added": "0.8",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "Standard SGR attribute; likely supported given VT compatibility",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": "0.71",
+            "notes": "SGR 2 sets ATTR_DIM at terminal.c:4646-4649",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-3_3_7",
+            "notes": "SGR 2 sets is_bold=0, not a separate dim state",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.1.0",
+            "notes": "Stored as faint attribute",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "notes": "SGR 2 mapped to A_DI attribute at src/ansi.c:1703",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "notes": "Commented out in code with '//case 2: // low intensity'",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.6",
+            "notes": "Implemented as ATTR_FAINT with dimmed color rendering",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -234,6 +309,42 @@
           "tmux": {
             "version_added": "0.8",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "Standard SGR attribute; likely supported given VT compatibility",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "notes": "SGR 3 not implemented; no ATTR_ITALIC attribute exists",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-3_3_7",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.5.0.0",
+            "notes": "SGR 3 mapped to A_IT attribute at src/ansi.c:1703",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "6.1",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.4",
+            "notes": "In 0.3 mapped to standout, proper implementation in 0.4",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -314,6 +425,42 @@
           "tmux": {
             "version_added": "0.8",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "Standard SGR attribute; underline cursor style supported",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": "0.43",
+            "notes": "SGR 4 sets ATTR_UNDER at terminal.c:4652-4655",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": true,
+            "notes": "Supported since early versions",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "notes": "SGR 4 mapped to A_US attribute at src/ansi.c:1703",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "1.2",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.1",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -399,6 +546,45 @@
           "tmux": {
             "version_added": "0.8",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "Profile includes BlinkingText and BlinkInterval options; blink supported",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": "0.43",
+            "notes": "SGR 5 sets ATTR_BLINK at terminal.c:4656-4659",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-3_3_7",
+            "notes": "SGR 5 and 6 both enable blinking",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.1.0",
+            "notes": "Stored but not rendered; comment indicates no intent to support",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "notes": "SGR 5 mapped to A_BL attribute at src/ansi.c:1703",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "1.2",
+            "notes": "Both slow (SGR 5) and rapid (SGR 6) blink map to same RS_Blink",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.4",
+            "notes": "Implemented as ATTR_BLINK; no distinction from rapid",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -487,6 +673,45 @@
             "version_added": "0.8",
             "notes": "Treated identically to slow blink (SGR 5)",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "Profile includes BlinkingText and BlinkInterval options; blink supported",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": "0.43",
+            "notes": "SGR 6 implemented as SCO light background mode at terminal.c:4660-4665",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.3.2.202",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-3_3_7",
+            "notes": "SGR 6 treated same as SGR 5",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.1.0",
+            "notes": "Stored but not rendered; comment indicates no intent to support",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "notes": "SGR 6 not supported (rendlist[6] = 0 at src/ansi.c:1703)",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "1.2",
+            "notes": "Both slow (SGR 5) and rapid (SGR 6) blink map to same RS_Blink",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.4",
+            "notes": "SGR 6 falls through to same as slow blink (SGR 5)",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -567,6 +792,43 @@
           "tmux": {
             "version_added": "0.8",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "Standard SGR attribute; likely supported given VT compatibility",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": "0.43",
+            "notes": "SGR 7 sets ATTR_REVERSE at terminal.c:4666-4668",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": true,
+            "notes": "Supported since early versions",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.1.0",
+            "notes": "Stored as inverse attribute",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "notes": "SGR 7 mapped to A_RV attribute at src/ansi.c:1703",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "1.2",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.1",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -648,6 +910,44 @@
           "tmux": {
             "version_added": "0.8",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "Cannot verify invisible text support without inspecting TerminalCtrl library",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "notes": "SGR 8 recognized in comments but not implemented (terminal.c:4618-4619)",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-3_8_2",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.1.0",
+            "notes": "Stored as invisible attribute",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "notes": "SGR 8 not supported (rendlist[8] = 0 at src/ansi.c:1703)",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "notes": "Code comment says '// invisible. NYI' (Not Yet Implemented)",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.6",
+            "notes": "Implemented as ATTR_INVISIBLE",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -728,6 +1028,44 @@
           "tmux": {
             "version_added": "2.4",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "Cannot verify strikethrough support without inspecting TerminalCtrl library",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": "0.75",
+            "notes": "SGR 9 sets ATTR_STRIKE at terminal.c:4669-4671",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-3_3_7",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.1.0",
+            "notes": "Stored as strike attribute",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "notes": "SGR 9 not supported (rendlist[9] = 0 at src/ansi.c:1703)",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "notes": "Commented out in code with '//case 9: // crossed out'",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.6",
+            "notes": "Implemented as ATTR_STRUCK",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -808,6 +1146,44 @@
           "tmux": {
             "version_added": "2.9",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "Cannot verify double underline support without inspecting TerminalCtrl library",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "notes": "SGR 21 falls through to SGR 4 (single underline) at terminal.c:4650-4655",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-3_3_7",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "notes": "SGR 21 resets bold instead of double underline",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "notes": "SGR 21 not supported (rendlist[21] = 0 at src/ansi.c:1704)",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "notes": "Case 21 only disables bold, comment mentions 'sometimes doubly underlined' but not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "notes": "SGR 21 maps to bold-off, not double underline",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -889,6 +1265,43 @@
           "tmux": {
             "version_added": "3.0",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "Cannot verify overline support without inspecting TerminalCtrl library",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "notes": "SGR 53 not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-3_9_1",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v1.10.0",
+            "partial_implementation": true,
+            "notes": "Stored but not yet rendered; marked as TODO in code",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "notes": "SGR 53 not implemented (rendlist only covers SGR 0-27)",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -975,6 +1388,45 @@
             "version_added": "2.9",
             "notes": "SGR 4:3 supported via colon-separated parameters",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "Cannot verify curly underline support without inspecting TerminalCtrl library",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "notes": "Extended underline styles (SGR 4:3) not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "notes": "Supports SGR 4:3 subparameter syntax",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": false,
+            "notes": "Only single and double underlines supported, no curly/wavy variant",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "notes": "No support for SGR 4:3 colon syntax for underline styles",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "notes": "SGR 4:3 colon syntax not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "notes": "SGR 4:3 not supported; colon separators parsed but no sub-parameters",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1059,6 +1511,44 @@
             "version_added": "2.9",
             "notes": "SGR 4:4 - Requires Smulx capability",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "Not confirmed in Bobcat code; depends on TerminalCtrl library implementation",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "notes": "Only basic underline (SGR 4) supported; no colon-based subparameters",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.3.6.240",
+            "notes": "SGR 4:4 implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": false,
+            "notes": "Only single and double underline styles are implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "notes": "Only basic underline (SGR 4) supported, no style variants",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "notes": "Only basic underline (SGR 4) is supported",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1143,6 +1633,44 @@
             "version_added": "2.9",
             "notes": "SGR 4:5 - Requires Smulx capability",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "Not confirmed in Bobcat code; depends on TerminalCtrl library implementation",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "notes": "Only basic underline (SGR 4) supported; no colon-based subparameters",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.3.6.240",
+            "notes": "SGR 4:5 implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": false,
+            "notes": "Only single and double underline styles are implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "notes": "Only basic underline (SGR 4) supported, no style variants",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "notes": "Only basic underline (SGR 4) is supported",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1226,6 +1754,41 @@
           "tmux": {
             "version_added": "0.8",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "Standard ANSI colors supported via xterm compatibility",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": "0.43",
+            "notes": "SGR 30-37, 40-47, 90-97, 100-107 fully supported since initial release",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-2_9_1",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "notes": "Requires COLOR compile flag",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "rxvt-unicode-1.2",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.4",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1310,6 +1873,42 @@
             "version_added": "0.8",
             "notes": "SGR 38;5;n and 48;5;n",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "TERM=xterm-256color set in Profile.cpp:75",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": "0.58",
+            "notes": "SGR 38;5;n and 48;5;n implemented in commit e4e10e49",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "notes": "SGR 38;5;n and 48;5;n",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-3_1_6",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "notes": "Requires COLOR and COLORS256 compile flags",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "rxvt-unicode-9.09",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.5",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1394,6 +1993,42 @@
             "version_added": "2.2",
             "notes": "SGR 38;2;r;g;b and 48;2;r;g;b",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "COLORTERM=truecolor advertised in Profile.cpp:76",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": "0.71",
+            "notes": "SGR 38;2;r;g;b implemented in commit a4cbd3df",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "notes": "SGR 38;2;r;g;b and 48;2;r;g;b",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-3_1_6",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v1.4.0",
+            "notes": "Approximated to 256-color palette",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.5.0.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "rxvt-unicode-9.25",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.5",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1479,6 +2114,46 @@
             "version_added": "2.7",
             "notes": "SGR 38:2::r:g:b - ISO colon-separated format",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "ITU-T.416 format not confirmed; depends on TerminalCtrl library",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "notes": "CSI parser only handles semicolons, not colons as separators",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "notes": "SGR 38:2::r:g:b and 48:2::r:g:b - T.416 format",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": false,
+            "notes": "Parser only handles semicolon separators, not colons",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v1.4.0",
+            "notes": "Approximated to 256-color palette",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "notes": "Only semicolon syntax (38;2;r;g;b) supported",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.9.3",
+            "partial_implementation": true,
+            "notes": "Supports 38;2;r:g:b hybrid format but not T.416 38:2::r:g:b format",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1563,6 +2238,42 @@
             "version_added": "3.0a",
             "notes": "SGR 58;5;n - Requires Setulc capability",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "Kitty extension not confirmed; depends on TerminalCtrl library",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "notes": "SGR 58 not implemented; no underline color support",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.3.6.240",
+            "notes": "SGR 58;5;n and 58:5:n",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "notes": "SGR 58 sequences are eaten but not applied (st.c:1436-1441)",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1647,6 +2358,42 @@
             "version_added": "3.0a",
             "notes": "SGR 58;2;r;g;b - Requires Setulc capability",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "Kitty extension not confirmed; depends on TerminalCtrl library",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "notes": "SGR 58 not implemented; no underline color support",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.3.6.240",
+            "notes": "SGR 58;2;r;g;b and 58:2::r:g:b",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "notes": "SGR 58 sequences are eaten but not applied (st.c:1436-1441)",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {

@@ -72,5 +72,45 @@
     "name": "tmux",
     "website": "https://github.com/tmux/tmux",
     "repository": "https://github.com/tmux/tmux"
+  },
+  "putty": {
+    "name": "PuTTY",
+    "website": "https://www.chiark.greenend.org.uk/~sgtatham/putty/",
+    "repository": "https://git.tartarus.org/simon/putty.git"
+  },
+  "rxvt_unicode": {
+    "name": "rxvt-unicode",
+    "website": "http://software.schmorp.de/pkg/rxvt-unicode.html",
+    "repository": "https://github.com/exg/rxvt-unicode"
+  },
+  "screen": {
+    "name": "GNU Screen",
+    "website": "https://www.gnu.org/software/screen/",
+    "repository": "https://git.savannah.gnu.org/git/screen.git"
+  },
+  "st": {
+    "name": "st",
+    "website": "https://st.suckless.org/",
+    "repository": "https://git.suckless.org/st"
+  },
+  "contour": {
+    "name": "contour",
+    "website": "https://contour-terminal.org/",
+    "repository": "https://github.com/contour-terminal/contour"
+  },
+  "bobcat": {
+    "name": "Bobcat",
+    "website": "https://github.com/ismail-yilmaz/Bobcat",
+    "repository": "https://github.com/ismail-yilmaz/Bobcat"
+  },
+  "mlterm": {
+    "name": "mlterm",
+    "website": "https://mlterm.sourceforge.net/",
+    "repository": "https://github.com/arakiken/mlterm"
+  },
+  "terminology": {
+    "name": "terminology",
+    "website": "https://www.enlightenment.org/about-terminology",
+    "repository": "https://github.com/borisfaure/terminology"
   }
 }

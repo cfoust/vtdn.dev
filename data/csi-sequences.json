@@ -78,6 +78,40 @@
             "version_added": "1.6",
             "notes": "CUU (CSI A), CUD (CSI B), CUF (CSI C), CUB (CSI D) all implemented",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "Basic cursor movement sequences - standard in VT100+ emulation, supported via TerminalCtrl library",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": "0.45",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-2_9_0",
+            "notes": "Implemented at vt_parser.c:5566-5597",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "1.2",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.1",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -162,6 +196,40 @@
             "version_added": "1.6",
             "notes": "CNL (CSI E) and CPL (CSI F) both implemented",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "Standard ECMA-48 cursor positioning, supported via TerminalCtrl library",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": "0.45",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-2_9_0",
+            "notes": "Implemented at vt_parser.c:5598-5615",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v1.4.0",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "1.2",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.1",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -248,6 +316,40 @@
             "version_added": "1.6",
             "notes": "CHA (CSI G) and CUP (CSI H) both supported",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "Absolute cursor positioning - standard VT100+ feature, supported via TerminalCtrl library",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": "0.45",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-2_9_0",
+            "notes": "Implemented at vt_parser.c:5616-5638",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "1.2",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.1",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -332,6 +434,42 @@
             "version_added": "1.6",
             "notes": "CHT not found in code; CBT (CSI Z) implemented",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "Tab movement sequences - standard ECMA-48 feature, supported via TerminalCtrl library",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": "0.45",
+            "partial_implementation": true,
+            "notes": "CBT (CSI Z) supported, CHT (CSI I) not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-2_9_0",
+            "notes": "Implemented at vt_parser.c:5639-5772",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "1.2",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.1",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -416,6 +554,41 @@
             "version_added": "2.9",
             "notes": "VPA (CSI d) in 1.6; HPA with backtick (CSI `) added in 2.9",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "Position absolute sequences - standard ECMA-48 feature, supported via TerminalCtrl library",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": "0.45",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-2_9_0",
+            "notes": "VPA at vt_parser.c:5794-5801, HPA at vt_parser.c:5616-5626",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.1.0",
+            "notes": "HPA is handled via CHA handler",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "1.2",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.1",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -503,6 +676,44 @@
             "version_added": "1.6",
             "notes": "SCP (CSI s) and RCP (CSI u) for ANSI.SYS-style cursor save/restore",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "ANSI.SYS-style cursor save/restore - commonly supported in xterm-compatible emulators, via TerminalCtrl library",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": "0.45",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "notes": "ANSI.SYS style via SCOSC (CSI s) and ANSISYSSC (CSI u)",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-2_9_0",
+            "notes": "ANSI.SYS style (CSI s/u) at vt_parser.c:5879-5890,5972-5975; Also supports DEC style (ESC 7/8)",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.1.0",
+            "notes": "Implemented as CSI s/u (SCOSC/SCORC)",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "1.2",
+            "notes": "Uses CSI s/u (ANSI.SYS), not DEC DECSC/DECRC",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.1",
+            "notes": "ANSI.SYS variant using CSI s/u, not DEC DECSC/DECRC (ESC 7/8)",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -587,6 +798,40 @@
             "version_added": "1.8",
             "notes": "ICH (CSI @), DCH (CSI P) in 1.6; ECH (CSI X) added in 1.8",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "Character insert/delete/erase - standard VT102+ feature, supported via TerminalCtrl library",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": "0.45",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-2_9_0",
+            "notes": "ICH at vt_parser.c:5557-5565, DCH at 5701-5708, ECH at 5753-5760",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "1.2",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.1",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -671,6 +916,40 @@
             "version_added": "1.6",
             "notes": "IL (CSI L) and DL (CSI M) both implemented",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "Line insert/delete - standard VT102+ feature, supported via TerminalCtrl library",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": "0.45",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-2_9_0",
+            "notes": "IL at vt_parser.c:5685-5692, DL at 5693-5700",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "1.2",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.1",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -755,6 +1034,41 @@
             "version_added": "1.6",
             "notes": "ED (CSI J) with parameters 0, 1, 2 all implemented",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "Erase in display - standard VT100+ feature, supported via TerminalCtrl library",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": "0.45",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-2_9_0",
+            "notes": "Implemented at vt_parser.c:5651-5674",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "notes": "Supports modes 0, 1, 2 only",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "1.2",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.1",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -841,6 +1155,44 @@
             "version_added": "1.7",
             "notes": "ED 3 (CSI 3 J) clears scrollback history",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "Scrollback erase - xterm extension, supported via TerminalCtrl library's xterm compatibility",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": "0.59",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.2.0.171_rc2",
+            "notes": "Clears scrollback buffer via _grid.clearHistory()",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-2_9_0",
+            "notes": "Clears scrollback by resetting log size at vt_parser.c:5663-5673",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v1.0.0",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "notes": "CSI J explicitly rejects parameter > 2",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "notes": "Only modes 0, 1, 2 supported; mode 3 not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "notes": "CSI 3 J not implemented; ED only handles parameters 0, 1, and 2",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -925,6 +1277,40 @@
             "version_added": "1.6",
             "notes": "EL (CSI K) with parameters 0, 1, 2 all implemented",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "Erase in line - standard VT100+ feature, supported via TerminalCtrl library",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": "0.45",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-2_9_0",
+            "notes": "Implemented at vt_parser.c:5675-5684",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "1.2",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.1",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1012,6 +1398,45 @@
             "version_added": false,
             "notes": "Not implemented; DECSCA protection attribute not supported",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "Selective erase sequences - DEC VT220+ feature, support uncertain without access to TerminalCtrl source",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.3.5.238",
+            "notes": "Includes DECSERA support",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-3_0_7",
+            "notes": "Added in commit c45216f1 (2017-06-21); DECSED at vt_parser.c:4976-4998, DECSEL at 4999-5013",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "notes": "Explicitly unsupported, falls back to ED/EL",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "notes": "CSI ? only handles h/l modes, not J/K",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "notes": "Selective erase not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "notes": "CSI ? J/K not implemented; ED/EL do not check private flag",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1097,6 +1522,42 @@
             "version_added": "2.6",
             "notes": "REP (CSI b) repeats previous graphic character",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "Repeat character - ECMA-48 feature, supported via TerminalCtrl library",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": "0.71",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.3.0.198",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-2_9_0",
+            "notes": "Implemented at vt_parser.c:5773-5789",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v1.4.0",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "notes": "No case 'b' handler in DoCSI",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "notes": "CSI_REP defined but no handler implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.8.4",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1181,6 +1642,41 @@
             "version_added": "3.0a",
             "notes": "SU (CSI S) added in 2.4; SD (CSI T) added in 3.0a",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "Scroll up/down - standard ECMA-48 feature, supported via TerminalCtrl library",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": "0.45",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-2_9_0",
+            "notes": "SU at vt_parser.c:5709-5716, SD at 5717-5724",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "notes": "Handles CSI S/T/^ for scrolling",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "1.2",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.1",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1265,6 +1761,40 @@
             "version_added": "1.6",
             "notes": "DECSTBM (CSI r) implemented for top/bottom margins",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "Scrolling region (top/bottom margins) - standard VT100+ feature, supported via TerminalCtrl library",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": "0.45",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-2_9_0",
+            "notes": "Implemented at vt_parser.c:5866-5878",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "1.2",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.1",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1352,6 +1882,45 @@
             "version_added": false,
             "notes": "Not implemented for input; CSI s maps to SCP instead; margins feature used only for output",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "Left/right margins - DEC VT420+ feature requiring DECSET 69, support uncertain without access to TerminalCtrl source",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "notes": "Requires DECMode::LeftRightMargin to be enabled",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-2_9_0",
+            "notes": "Implemented at vt_parser.c:5879-5890; Requires Mode 69 (DECLRMM) to be enabled",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v1.1.0",
+            "notes": "Requires Mode 69 (lr_margins)",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "notes": "Left/right margins not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "notes": "Left/right margins not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "notes": "CSI ? r goes to unknown handler; left/right margins not implemented",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1436,6 +2005,41 @@
             "version_added": "1.6",
             "notes": "TBC (CSI g) clears tab stops; parameters 0 and 3 supported",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "Tab clear - standard VT100+ feature, supported via TerminalCtrl library",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": "0.45",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-2_9_0",
+            "notes": "Implemented at vt_parser.c:5802-5809",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "1.2",
+            "notes": "Supports modes 0, 3, 5",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.3",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1520,6 +2124,43 @@
             "version_added": false,
             "notes": "Not implemented for input; used only for output to terminal",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "Rectangular erase - DEC VT420+ feature, support uncertain without access to TerminalCtrl source",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.2.0.171_rc2",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-3_1_6",
+            "notes": "Added in commit d9d04d24 (2012-12-02); Implemented at vt_parser.c:5256-5259",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v1.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "notes": "No $ intermediate handler in DoCSI",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "notes": "DEC rectangular area operations not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "notes": "CSI $ z not implemented; no rectangular area operations",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1604,6 +2245,43 @@
             "version_added": false,
             "notes": "Not implemented for input; used only for output to terminal",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "Rectangular fill - DEC VT420+ feature, support uncertain without access to TerminalCtrl source",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.2.0.171_rc2",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-3_1_3",
+            "notes": "Added in commit 04fe42c0 (2014-06-06); Implemented at vt_parser.c:5280-5285",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v1.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "notes": "No $ intermediate handler in DoCSI",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "notes": "DEC rectangular area operations not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "notes": "CSI $ x not implemented; no rectangular area operations",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1688,6 +2366,43 @@
             "version_added": false,
             "notes": "Not implemented for input; used only for output to terminal",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "Rectangular copy - DEC VT420+ feature, support uncertain without access to TerminalCtrl source",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.2.0.171_rc2",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-3_1_6",
+            "notes": "Added in commit d9d04d24 (2012-12-02); Implemented at vt_parser.c:5267-5279",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v1.4.0",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "notes": "No $ intermediate handler in DoCSI",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "notes": "DEC rectangular area operations not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "notes": "CSI $ v not implemented; no rectangular area operations",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1770,6 +2485,42 @@
           "tmux": {
             "version_added": "1.7",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "Cursor styles (block, beam, underline) explicitly supported via BlockCursor/BeamCursor/UnderlineCursor methods",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "notes": "No implementation found in escape sequence parser",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-3_8_2",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v1.10.0",
+            "notes": "Full support for block, underline, and bar cursor shapes",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.5.0.0",
+            "notes": "CSI Ps SP q implemented at src/ansi.c:1065",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "9.19",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.6",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1857,6 +2608,44 @@
             "version_added": "1.3",
             "notes": "Both DSR 5n (status) and DSR 6n (cursor position) supported",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "Standard VT/xterm sequence, highly likely implemented given high VT compatibility claim",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": "0.43",
+            "notes": "DSR (CSI 5n and CSI 6n) implemented at terminal.c:4516-4527",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": true,
+            "notes": "CSI 5n and CSI 6n supported since early versions",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.1.0",
+            "notes": "Supports DSR 5n (status) and 6n (cursor position report)",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "notes": "CSI 5n and CSI 6n implemented at src/ansi.c:1036-1039",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "1.2",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.5",
+            "notes": "DSR 5n (OK) added in 0.9.1, DSR 6n (CPR) in 0.5",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1944,6 +2733,45 @@
             "version_added": false,
             "notes": "CSI ? 6n not handled; only standard DSR 6n (CPR) is supported",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "Cannot verify implementation in TerminalCtrl library without direct inspection",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "notes": "Extended cursor position report (CSI ? 6n) not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.3.0.198",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": true,
+            "notes": "CSI ? 6n supported, returns page info",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v1.10.0",
+            "notes": "Extended cursor position report (CSI ? 6n) returns page number",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "notes": "CSI ? 6n not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "notes": "Only standard CPR (CSI 6n) supported, not extended DECXCPR (CSI ? 6n)",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "notes": "CSI ? 6 n not handled; only standard CPR supported",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -2030,6 +2858,45 @@
             "version_added": "1.3",
             "notes": "Responds with VT220 attributes; Sixel support (4) included if compiled with ENABLE_SIXEL",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "Primary DA is fundamental VT sequence, highly likely implemented given compatibility claims",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": "0.43",
+            "notes": "Primary DA (CSI c) returns VT102 response at terminal.c:4509-4515",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": true,
+            "notes": "Supported since early versions, customizable via primary_da config",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.4.0",
+            "notes": "Reports VT510 with sixel, selective erase, color support",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "notes": "CSI c reports VT100 with parameters 1;2 at src/ansi.c:1041-1043",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "1.2",
+            "notes": "Reports VT100_ANS: ESC[?1;2c",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.3",
+            "notes": "Responds with VT102 identity (vtiden configurable)",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -2114,6 +2981,45 @@
             "version_added": "1.3",
             "notes": "Responds with terminal type 84 (tmux)",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "Secondary DA is fundamental VT sequence, highly likely implemented given compatibility claims",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": "0.52",
+            "notes": "Secondary DA (CSI > c) reports xterm version 136 at terminal.c:4387-4394",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": true,
+            "notes": "Supported since early versions, customizable via secondary_da config",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.4.0",
+            "notes": "Reports as VT510 terminal (61)",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "notes": "CSI > c reports terminal type 83 (ASCII 'S') at src/ansi.c:1194-1196",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "1.2",
+            "notes": "Reports CSI > 85;95;0c where 85='U' for urxvt",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "notes": "CSI > c not handled; only ? prefix supported in parser",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -2198,6 +3104,45 @@
             "version_added": false,
             "notes": "CSI = c not implemented in parser",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "Tertiary DA is less common; cannot verify without inspecting TerminalCtrl library",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "notes": "Tertiary DA (CSI = c) not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "notes": "Returns hardcoded unit ID C0000000",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-3_6_2",
+            "notes": "Returns DCS ! | 000000 ST",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v1.10.0",
+            "notes": "Reports device ID as ~~TY in hex",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "notes": "CSI = c not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "notes": "CSI = c not handled; only ? prefix supported in parser",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -2285,6 +3230,44 @@
             "partial_implementation": true,
             "notes": "Supports only specific modes: ?12 (cursor blink), ?2004 (bracketed paste), ?1004 (focus), ?1006 (SGR mouse), 2031 (theme)",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "Cannot verify DECRQM implementation without inspecting TerminalCtrl library",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "notes": "Request mode (CSI ? Ps $ p) not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.2.0.171_rc2",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-3_8_2",
+            "notes": "Supports both CSI ? Ps $ p and CSI Ps $ p",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "notes": "No implementation found for CSI ? Ps $ p",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "notes": "CSI ? Ps $ p not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "9.25",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "notes": "CSI ? Ps $ p not implemented",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -2369,6 +3352,43 @@
             "version_added": false,
             "notes": "Color palette stack not implemented; only title stack available",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": false,
+            "notes": "No evidence found; DynamicColors supported but not color stack operations",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "notes": "Color palette stack (CSI # p/q) not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.3.2.202",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": false,
+            "notes": "CSI # p/q not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "notes": "No implementation found for color palette stack operations",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "notes": "CSI # p/q not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {

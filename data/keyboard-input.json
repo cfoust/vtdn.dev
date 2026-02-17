@@ -79,6 +79,41 @@
             "partial_implementation": true,
             "notes": "Supports extended keys protocol (CSI 27;mods;key~ and CSI key;mods u) similar to Kitty. Initial support in 3.2, revamped in 3.5 to support both mode 1 and mode 2",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "Keyboard handling in external TerminalCtrl library, not visible in Bobcat codebase",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.4.0.6245",
+            "notes": "Implemented via CSIUENTER/CSIUQUERY/CSIUENHCE/CSIULEAVE at Functions.h:541-543, handled in Screen.cpp:3990-4016",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": false,
+            "notes": "Not implemented; uses standard xterm modifyOtherKeys mode only",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -163,6 +198,45 @@
             "version_added": false,
             "notes": "tmux uses xterm modifyOtherKeys, not kitty keyboard protocol",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": false,
+            "notes": "No evidence of Kitty keyboard protocol support found",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "notes": "Kitty keyboard protocol not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.4.0.6245",
+            "notes": "Flag 1: DisambiguateEscapeCodes in ExtendedKeyboardInputGenerator",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": false,
+            "notes": "No implementation of Kitty keyboard protocol found",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "notes": "Kitty keyboard protocol not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "notes": "No Kitty keyboard protocol support",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "notes": "Kitty keyboard protocol not implemented",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -247,6 +321,44 @@
             "version_added": false,
             "notes": "tmux uses xterm modifyOtherKeys, not kitty keyboard protocol",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "notes": "Kitty keyboard protocol not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.4.0.6245",
+            "notes": "Flag 2: ReportEventTypes for press/repeat/release",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": false,
+            "notes": "No implementation of Kitty keyboard protocol found",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "notes": "Kitty keyboard protocol not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "notes": "No Kitty keyboard protocol support",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "notes": "Kitty keyboard protocol not implemented",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -331,6 +443,44 @@
             "version_added": false,
             "notes": "tmux uses xterm modifyOtherKeys, not kitty keyboard protocol",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "notes": "Kitty keyboard protocol not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.4.0.6245",
+            "notes": "Flag 4: ReportAlternateKeys with shifted/physical key encoding",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": false,
+            "notes": "No implementation of Kitty keyboard protocol found",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "notes": "Kitty keyboard protocol not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "notes": "No Kitty keyboard protocol support",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "notes": "Kitty keyboard protocol not implemented",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -415,6 +565,44 @@
             "version_added": false,
             "notes": "tmux uses xterm modifyOtherKeys, not kitty keyboard protocol",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "notes": "Kitty keyboard protocol not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.4.0.6245",
+            "notes": "Flag 8: ReportAllKeysAsEscapeCodes including modifier keys",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": false,
+            "notes": "No implementation of Kitty keyboard protocol found",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "notes": "Kitty keyboard protocol not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "notes": "No Kitty keyboard protocol support",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "notes": "Kitty keyboard protocol not implemented",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -499,6 +687,44 @@
             "version_added": false,
             "notes": "tmux uses xterm modifyOtherKeys, not kitty keyboard protocol",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "notes": "Kitty keyboard protocol not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.4.0.6245",
+            "notes": "Flag 16: ReportAssociatedText in KeyboardEventFlags",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": false,
+            "notes": "No implementation of Kitty keyboard protocol found",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "notes": "Kitty keyboard protocol not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "notes": "No Kitty keyboard protocol support",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "notes": "Kitty keyboard protocol not implemented",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {

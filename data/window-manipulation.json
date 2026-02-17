@@ -81,6 +81,44 @@
             "version_added": false,
             "notes": "Sequence parsed but ignored (case 1/2 in winops)",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "WindowOps enabled but actual CSI t handling is in TerminalCtrl library",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": "0.75",
+            "notes": "CSI 1/2 t supported (de-iconify/iconify) at terminal.c:4855-4863",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": false,
+            "notes": "Not implemented in WINDOWMANIP handler",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-3_8_0",
+            "notes": "Reports always non-iconified (CSI 1 t)",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "notes": "CSI 1/2 t not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "1.2",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "notes": "No CSI t window manipulation sequences implemented",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -169,6 +207,44 @@
             "version_added": false,
             "notes": "Sequence parsed but ignored (case 3 in winops)",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "WindowOps enabled but actual CSI t handling is in TerminalCtrl library",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": "0.75",
+            "notes": "CSI 3 t supported at terminal.c:4865-4875",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": false,
+            "notes": "Not implemented in WINDOWMANIP handler",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-3_8_0",
+            "notes": "Reports fixed position 0,0 (CSI 3 t)",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "notes": "CSI 3;x;y t not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "1.2",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "notes": "No CSI t window manipulation sequences implemented",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -256,6 +332,44 @@
             "version_added": false,
             "notes": "Sequence parsed but ignored (case 4 in winops)",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "WindowOps enabled but actual CSI t handling is in TerminalCtrl library",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "notes": "CSI 4 t recognized but not implemented (terminal.c:4877-4882: 'resizing code isn't healthy enough')",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "notes": "CSI 4;h;w t implemented in WINDOWMANIP (case 4)",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-3_8_0",
+            "notes": "CSI 4 t supported",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "notes": "CSI 4;h;w t not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "1.2",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "notes": "No CSI t window manipulation sequences implemented",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -344,6 +458,44 @@
             "version_added": false,
             "notes": "Sequence parsed but ignored (case 5/6 in winops)",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "WindowOps enabled but actual CSI t handling is in TerminalCtrl library",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": "0.75",
+            "notes": "CSI 5/6 t supported (raise/lower) at terminal.c:4883-4894",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": false,
+            "notes": "Not implemented in WINDOWMANIP handler",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": false,
+            "notes": "CSI 5/6 t not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "notes": "CSI 5/6 t not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "1.2",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "notes": "No CSI t window manipulation sequences implemented",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -431,6 +583,45 @@
             "version_added": false,
             "notes": "Sequence parsed but ignored (case 8 in winops)",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "WhenSetSize callback handles resize requests",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": "0.75",
+            "notes": "CSI 8 t supported at terminal.c:4899-4908",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "notes": "CSI 8;rows;cols t implemented in WINDOWMANIP (case 8)",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-3_8_0",
+            "notes": "CSI 8 t supported",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v1.10.0",
+            "notes": "CSI 8;rows;cols t",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "notes": "CSI 8;rows;cols t implemented at src/ansi.c:966",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "1.2",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "notes": "No CSI t window manipulation sequences implemented",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -520,6 +711,45 @@
             "version_added": false,
             "notes": "Sequence parsed but ignored (case 9 in winops)",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "WhenWindowMaximize callback implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": "0.75",
+            "notes": "CSI 9 t supported at terminal.c:4910-4916",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": false,
+            "notes": "Not implemented in WINDOWMANIP handler",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-3_9_1",
+            "notes": "CSI 9 t supported",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "notes": "CSI 9;Ps t not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "notes": "Marked NYI in source (case 9)",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "notes": "No CSI t window manipulation sequences implemented",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -609,6 +839,45 @@
             "version_added": false,
             "notes": "Sequence parsed but ignored (case 10 in winops)",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "WhenWindowFullScreen callback implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "notes": "CSI 10 t not implemented; switch statement has cases 1-9, 11, 13-14, 18, 20-21 only",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": false,
+            "notes": "Not implemented in WINDOWMANIP handler",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": false,
+            "notes": "CSI 10 t explicitly not supported (comment in code)",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "notes": "CSI 10;Ps t not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "notes": "Not implemented in process_window_ops",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "notes": "No CSI t window manipulation sequences implemented",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -697,6 +966,44 @@
             "version_added": false,
             "notes": "Sequence parsed but ignored (case 11 in winops)",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "WindowOps enabled but reports handled in TerminalCtrl library",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": "0.75",
+            "notes": "CSI 11 t supported at terminal.c:4918-4922",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": false,
+            "notes": "Not implemented in WINDOWMANIP handler",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-3_8_0",
+            "notes": "CSI 11 t reports always non-iconified",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "notes": "CSI 11 t reports iconified/not at src/ansi.c:976",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "1.2",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "notes": "No CSI t window manipulation sequences implemented",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -785,6 +1092,44 @@
             "version_added": false,
             "notes": "Sequence parsed but ignored (case 13 in winops)",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "WindowOps enabled but reports handled in TerminalCtrl library",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": "0.75",
+            "notes": "CSI 13 t supported at terminal.c:4924-4930",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": false,
+            "notes": "Not implemented in WINDOWMANIP handler",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-3_8_0",
+            "notes": "CSI 13 t reports fixed 0,0",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "notes": "CSI 13 t not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "1.2",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "notes": "No CSI t window manipulation sequences implemented",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -872,6 +1217,44 @@
             "version_added": "1.9",
             "notes": "Reports text area in pixels (CSI 14 t)",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "WindowOps enabled but reports handled in TerminalCtrl library",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": "0.75",
+            "notes": "CSI 14 t supported at terminal.c:4932-4938",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "notes": "CSI 14 t and CSI 14;2 t implemented (cases 14, 16, 18, 19)",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-3_8_0",
+            "notes": "CSI 14 t supported",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "notes": "CSI 14 t not implemented; CSI 18 t reports chars not pixels",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "1.2",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "notes": "No CSI t window manipulation sequences implemented",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -959,6 +1342,42 @@
             "version_added": "3.4",
             "notes": "Reports cell size in pixels via w->xpixel and w->ypixel",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "WindowOps() enabled since 0.9.0. WindowReports setting (default: true) likely controls this, but actual implementation is in external TerminalCtrl library. Cannot confirm from Bobcat source code alone.",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "notes": "Not implemented; CSI t handler only includes cases 1-21 (excluding 10,12,15,16,17)",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-3_8_6",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "notes": "CSI 16 t not implemented; only CSI 7/8/11/18/21 t are handled",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "notes": "Not implemented; fwidth/fheight available internally but no CSI 16 t handler",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1043,6 +1462,41 @@
           "tmux": {
             "version_added": "1.9",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "WindowOps() enabled since 0.9.0. WindowReports setting (default: true) likely controls this, but actual implementation is in external TerminalCtrl library. Cannot confirm from Bobcat source code alone.",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": "0.52",
+            "notes": "Implemented at terminal.c:4940-4946, reports text area size in characters via CSI 8;rows;cols t",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.2.0.171_rc2",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-3_8_4",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.5.0.0",
+            "notes": "Reports window size in characters via CSI 18 t",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "1.2",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1133,6 +1587,44 @@
             "version_added": "2.7",
             "notes": "Supports both CSI 22 t (push) and CSI 23 t (pop)",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "WindowOps() enabled since 0.9.0. WindowActions setting (default: false) likely controls this, but actual implementation is in external TerminalCtrl library. No explicit title stack callbacks found in Bobcat source.",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "notes": "Not implemented; no case 22 or 23 handlers in window manipulation code",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "3.9.2",
+            "partial_implementation": true,
+            "notes": "When icon and window titles are pushed together (ps[1]=0), popping either one doesn't pop the other as xterm does. See XtermWinopsTests in esctest.",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v1.7.0",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "notes": "CSI 22/23 t not implemented; no title stack functionality",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "notes": "Not implemented; no CSI 22/23 t handlers for push/pop title stack",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {

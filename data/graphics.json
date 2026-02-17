@@ -78,6 +78,46 @@
             "version_added": "3.4",
             "notes": "Requires ENABLE_SIXEL compile flag",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "Implemented via TerminalCtrl library",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "notes": "DCS sequences recognized but explicitly ignored (terminal.c:3244-3246)",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "notes": "Full implementation with SixelParser and SixelImageBuilder",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-3_3_5",
+            "notes": "Full sixel support including animation",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "notes": "Stub handler only; not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "notes": "DCS sequences pass through without Sixel interpretation",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "notes": "DCS handler discards all sequences",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "notes": "DCS sequences recognized but not processed",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -162,6 +202,45 @@
             "version_added": false,
             "notes": "APC strings parsed but only used for window titles, not graphics",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": false,
+            "notes": "No APC G sequences found",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "notes": "APC sequences recognized but explicitly ignored (terminal.c:3244-3246)",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": false,
+            "notes": "APC parsing exists but no Kitty graphics implementation",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": false,
+            "notes": "APC sequences parsed but no Kitty graphics implementation",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "notes": "APC only handles status strings, not graphics",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "notes": "No APC sequence handler",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "notes": "APC sequences recognized but not processed",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -243,6 +322,42 @@
           "tmux": {
             "version_added": false,
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "notes": "Graphics protocol not supported",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "notes": "Kitty graphics protocol not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "notes": "No graphics protocol support",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "notes": "No Unicode placeholder handling for graphics",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -324,6 +439,42 @@
           "tmux": {
             "version_added": false,
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "notes": "Graphics protocol not supported",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "notes": "Kitty graphics protocol not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "notes": "No graphics protocol support",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "notes": "No graphics protocol support",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -410,6 +561,45 @@
             "version_added": false,
             "notes": "No OSC 1337 File= support found",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "Explicitly documented alongside Sixel and Jexer",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "notes": "OSC 1337 not handled; only OSC 0, 1, 2, 4, 21 are processed",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": false,
+            "notes": "No OSC 1337 handling found in codebase",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-3_3_4",
+            "notes": "OSC 1337 File= supported",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "notes": "OSC 1337 not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "notes": "No OSC 1337 handler found",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "notes": "OSC 1337 not handled. APC sequences recognized but not processed",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {

@@ -77,6 +77,44 @@
           "tmux": {
             "version_added": "0.8",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "Core parsing in TerminalCtrl library (external), not verified in Bobcat repo",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": "0.45",
+            "notes": "Application cursor keys mode implemented at terminal.c:3060-3062",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "notes": "DECCKM (mode 1 - application cursor keys) implemented as DECMode::UseApplicationCursorKeys in primitives.h line 613, set via Terminal.cpp line 2488",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": true,
+            "notes": "Fundamental VT100 mode, present since early versions",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "notes": "Application cursor keys mode (src/ansi.c:1077-1082)",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "1.2",
+            "notes": "PrivMode_aplCUR - Application cursor keys",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.1",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -163,6 +201,47 @@
             "version_added": "1.7",
             "notes": "Side-effect only: clears screen",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "Core parsing in TerminalCtrl library (external), not verified in Bobcat repo",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": "0.45",
+            "notes": "132/80 column switching at terminal.c:3073-3082; can be disabled via no_remote_resize config",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "notes": "DECCOLM (mode 3 - 132/80 column switching) implemented as DECMode::Columns132 in primitives.h line 615, requires AllowColumns80to132 mode enabled (line 685)",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": true,
+            "notes": "Requires ALLOW_DECCOLM flag to be enabled",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.1.0",
+            "partial_implementation": true,
+            "notes": "Requires SUPPORT_80_132_COLUMNS compile flag",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "notes": "132/80 column mode switching (src/ansi.c:1095-1101)",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "1.2",
+            "notes": "PrivMode_132 - 132/80 column switching",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "notes": "Explicitly marked as IGNORED in st.c:1501",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -246,6 +325,44 @@
           "tmux": {
             "version_added": false,
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "Core parsing in TerminalCtrl library (external), not verified in Bobcat repo",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": "0.45",
+            "notes": "Reverse video mode at terminal.c:3083-3099; includes visual bell support",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "notes": "DECSCNM (mode 5 - reverse video) implemented as DECMode::ReverseVideo in primitives.h line 617, used in Terminal.cpp lines 482, 686",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": true,
+            "notes": "Fundamental VT100 mode, present since early versions",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "notes": "Reverse video mode (src/ansi.c:1103-1107)",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "1.2",
+            "notes": "PrivMode_rVideo - Reverse video",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.2",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -330,6 +447,44 @@
           "tmux": {
             "version_added": "2.9",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "Core parsing in TerminalCtrl library (external), not verified in Bobcat repo",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": "0.45",
+            "notes": "DEC origin mode at terminal.c:3100-3102",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "notes": "DECOM (mode 6 - origin mode) implemented as DECMode::Origin in primitives.h lines 663-663 with full documentation, set via Terminal.cpp line 2484, affects cursor positioning relative to margins",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": true,
+            "notes": "Fundamental VT100 mode, present since early versions",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "notes": "Origin mode (src/ansi.c:1108-1115)",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "1.2",
+            "notes": "PrivMode_relOrigin - Origin mode",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.4",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -414,6 +569,44 @@
           "tmux": {
             "version_added": "1.8",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "Core parsing in TerminalCtrl library (external), not verified in Bobcat repo",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": "0.45",
+            "notes": "Auto-wrap mode at terminal.c:3103-3107",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "notes": "DECAWM (mode 7 - auto wrap) implemented as DECMode::AutoWrap in primitives.h lines 676-676, set via Terminal.cpp line 2486, checked in Screen.cpp line 387",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": true,
+            "notes": "Fundamental VT100 mode, present since early versions",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "notes": "Auto-wrap mode (src/ansi.c:1116-1118)",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "1.2",
+            "notes": "PrivMode_Autowrap - Auto-wrap",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.1",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -500,6 +693,46 @@
           "tmux": {
             "version_added": "3.6",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "Core parsing in TerminalCtrl library (external), not verified in Bobcat repo",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "notes": "Mode 12 (SRM echo mode) exists at terminal.c:3175-3177 but is for echo, not cursor blink; no att610 cursor blink mode found",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "notes": "ATT610 blinking cursor (mode 12) implemented as DECMode::BlinkingCursor in primitives.h line 682, mapped in mode conversion functions at lines 819 and 869",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "3.8.2",
+            "notes": "att610 style cursor blinking mode",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "notes": "Recognized but marked as TODO/ignored",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "notes": "Mode 12 is commented out in src/ansi.c:1688",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "9.21",
+            "notes": "PrivMode_BlinkingCursor",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "notes": "Explicitly marked as IGNORED in st.c:1507",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -578,6 +811,43 @@
           "tmux": {
             "version_added": "0.8",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "Mode handling in external TerminalCtrl library, not visible in Bobcat codebase",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": "0.49",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.3.10.257",
+            "notes": "Implemented as DECMode::VisibleCursor at primitives.h:683, handled in Terminal.cpp:2394",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-0_2_1",
+            "notes": "Present since initial public release",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.9.0",
+            "notes": "Uses termstate.hide_cursor flag",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "notes": "Present since at least v.4.0.2 (2005)",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "1.2",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.1",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -655,6 +925,43 @@
           "tmux": {
             "version_added": false,
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "ReverseWrap() method called in Terminal.cpp:356, present since earliest tag",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": false,
+            "notes": "Explicitly marked as TODO at primitives.h:879",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": false,
+            "notes": "Permanently reset (never enabled) according to get_vtmode()",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "notes": "Marked as TODO at line 414 in termptyesc.c",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "notes": "Commented as 'margin bell NYI' in source",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -734,6 +1041,41 @@
             "version_added": false,
             "notes": "DECSLRM (set left/right margins) is used for output to terminals but mode 69 is not accepted as input",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "Mode handling in external TerminalCtrl library, not visible in Bobcat codebase",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.3.0.198",
+            "notes": "Implemented as DECMode::LeftRightMargin at primitives.h:679, handled in Terminal.cpp:2283-2298",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-3_8_6",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v1.1.0",
+            "notes": "Uses termstate.lr_margins flag",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -815,6 +1157,43 @@
           "tmux": {
             "version_added": false,
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "Mode handling in external TerminalCtrl library, not visible in Bobcat codebase",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "notes": "No Sixel support",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.6.2.8008",
+            "notes": "Implemented as DECMode::NoSixelScrolling at primitives.h:690",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-3_8_4",
+            "notes": "Controls sixel scrolling behavior",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "notes": "No Sixel support",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -896,6 +1275,44 @@
           "tmux": {
             "version_added": "1.7",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "Mode handling in external TerminalCtrl library, not visible in Bobcat codebase",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": "0.54",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.3.0.198",
+            "notes": "Implemented as DECMode::ExtendedAltScreen at primitives.h:626, handled in Terminal.cpp:2414",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-0_2_1",
+            "notes": "Present since initial public release",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.9.0",
+            "notes": "Handles cursor save/restore and screen clearing",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "notes": "Modes 47, 1047, 1049 supported; underlying functions present since v.4.0.2",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "9.06",
+            "notes": "Fully implemented with cursor save/restore",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.3",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -974,6 +1391,43 @@
           "tmux": {
             "version_added": "1.7",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "Mouse support claimed in README but implementation in external TerminalCtrl library",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": "0.52",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.3.0.198",
+            "notes": "Implemented as DECMode::MouseProtocolNormalTracking, handled in Terminal.cpp:2396",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-0_2_1",
+            "notes": "Present since initial public release",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.2.0",
+            "notes": "Sets mouse_mode to MOUSE_NORMAL",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "notes": "Present since at least v.4.0.2 (2005)",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "1.2",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.3",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1052,6 +1506,43 @@
           "tmux": {
             "version_added": "1.7",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "Mouse support claimed in README but implementation in external TerminalCtrl library",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": "0.52",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.3.0.198",
+            "notes": "Implemented as DECMode::MouseProtocolButtonTracking, handled in Terminal.cpp:2402",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-0_2_1",
+            "notes": "Present since initial public release",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.2.0",
+            "notes": "Sets mouse_mode to MOUSE_NORMAL_BTN_MOVE",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "notes": "Present since at least v.4.0.2 (2005)",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "8.4",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.4",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1130,6 +1621,43 @@
           "tmux": {
             "version_added": "1.7",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "Mouse support claimed in README but implementation in external TerminalCtrl library",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": "0.52",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.3.0.198",
+            "notes": "Implemented as DECMode::MouseProtocolAnyEventTracking, handled in Terminal.cpp:2405",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-0_2_1",
+            "notes": "Present since initial public release",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.2.0",
+            "notes": "Sets mouse_mode to MOUSE_NORMAL_ALL_MOVE",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "notes": "Present since at least v.4.0.2 (2005)",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "8.4",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.5",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1209,6 +1737,43 @@
           "tmux": {
             "version_added": "1.8",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "Mode handling in external TerminalCtrl library, not visible in Bobcat codebase",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "notes": "Focus tracking exists but no CSI I/O reporting",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.3.10.257",
+            "notes": "Implemented as DECMode::FocusTracking at primitives.h:689, handled in Terminal.cpp:2392",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-3_8_2",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v1.11.0",
+            "notes": "Uses focus_reporting flag and termpty_focus_report function",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "9.25",
+            "notes": "Requires ENABLE_FRILLS (default on)",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.5",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1287,6 +1852,43 @@
           "tmux": {
             "version_added": "1.8",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "Mouse support claimed in README but implementation in external TerminalCtrl library",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": "0.63",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.3.0.198",
+            "notes": "Implemented as DECMode::MouseSGR at primitives.h:698, handled in Terminal.cpp:2367",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-3_1_2",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.2.0",
+            "notes": "Sets mouse_ext to MOUSE_EXT_SGR",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.7.0",
+            "notes": "Added in commit 40819ff (2018)",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "9.25",
+            "notes": "Requires ENABLE_FRILLS (default on)",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.4",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1367,6 +1969,41 @@
           "tmux": {
             "version_added": false,
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "AlternateScroll() method called in Terminal.cpp:363, present since earliest tag",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.3.0.198",
+            "notes": "Implemented as DECMode::MouseAlternateScroll at primitives.h:707, handled in Terminal.cpp:2386",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": false,
+            "notes": "Permanently set (always enabled) according to get_vtmode()",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1446,6 +2083,41 @@
           "tmux": {
             "version_added": false,
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "Mode handling in external TerminalCtrl library, not visible in Bobcat codebase",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.3.0.198",
+            "notes": "Implemented as DECMode::MouseSGRPixels at primitives.h:704, handled in Terminal.cpp:2380",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": true,
+            "notes": "Added after rel-3_9_4 but not yet in a release",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1525,6 +2197,43 @@
           "tmux": {
             "version_added": "1.7",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "Mode handling in external TerminalCtrl library, not visible in Bobcat codebase",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": "0.72",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.3.10.257",
+            "notes": "Implemented as DECMode::BracketedPaste at primitives.h:688, handled in Terminal.cpp:2366",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-3_8_2",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.5.0",
+            "notes": "Uses bracketed_paste flag",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.3.0",
+            "notes": "Added in commit c389013 (2013)",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "9.01",
+            "notes": "Requires ENABLE_FRILLS (default on)",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.5",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1607,6 +2316,40 @@
             "version_added": true,
             "notes": "Added after 3.6a, will be in next release",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "Mode handling in external TerminalCtrl library, not visible in Bobcat codebase",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.3.0.198",
+            "notes": "Implemented as DECMode::BatchedRendering at primitives.h:713, handled in Terminal.cpp:2330",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1688,6 +2431,40 @@
           "tmux": {
             "version_added": false,
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "Mode handling in external TerminalCtrl library, not visible in Bobcat codebase",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.3.4.223",
+            "notes": "Implemented as DECMode::Unicode at primitives.h:716",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1764,6 +2541,40 @@
           "tmux": {
             "version_added": "3.6",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "Mode handling in external TerminalCtrl library, not visible in Bobcat codebase",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.4.0.6245",
+            "notes": "Implemented as DECMode::ReportColorPaletteUpdated at primitives.h:733",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1840,6 +2651,40 @@
           "tmux": {
             "version_added": false,
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "Mode handling in external TerminalCtrl library, not visible in Bobcat codebase",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": false,
+            "notes": "No evidence found in codebase",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1919,6 +2764,44 @@
           "tmux": {
             "version_added": "0.8",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "Mode handling in external TerminalCtrl library, not visible in Bobcat codebase",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": "0.45",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.3.0.198",
+            "notes": "Implemented as AnsiMode::Insert at primitives.h:606, handled in Terminal.cpp:2251",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-0_2_1",
+            "notes": "Present since initial public release",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.1.0",
+            "notes": "Uses termstate.insert flag",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "notes": "Present since at least v.4.0.2 (2005)",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "1.2",
+            "notes": "Insert/Replace mode via scr_insert_mode",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.1",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1999,6 +2882,44 @@
             "version_added": false,
             "notes": "MODE_CRLF flag exists internally but mode 20 is not accepted via SM/RM",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "Mode handling in external TerminalCtrl library, not visible in Bobcat codebase",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": "0.50",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.3.0.198",
+            "notes": "Implemented as AnsiMode::AutomaticNewLine at primitives.h:608, handled in Terminal.cpp:2251",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-3_8_3",
+            "notes": "Added with VTMODE_20 and auto_cr support",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.4.0",
+            "notes": "Uses termstate.crlf flag",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "notes": "Present since at least v.4.0.2 (2005)",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "3.7",
+            "notes": "Newline mode via PrivMode_LFNL",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.1",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {

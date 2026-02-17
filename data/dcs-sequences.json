@@ -84,6 +84,47 @@
             "version_added": "3.6",
             "notes": "Only supports cursor style query (SP q)",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "Core parsing in TerminalCtrl library (external), not verified in Bobcat repo",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "notes": "DCS sequences are recognized but only accumulated and ignored per terminal.c:3243-3246",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "notes": "DECRQSS (DCS $ q - Request Status String) implemented in Functions.h line 622, handled via hookDECRQSS in Screen.cpp line 4062, supports SGR, DECSTBM, DECSLRM, DECSCUSR, etc.",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "3.7.2",
+            "partial_implementation": true,
+            "notes": "Supports some parameters like DECSTGLT, DECSCPP, DECSLPP, DECSNLS, DECAC, DECATC, and SGR",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.1.0",
+            "partial_implementation": true,
+            "notes": "Only DECSCL supported, SGR and DECSTBM marked TODO",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "notes": "DCS sequences explicitly not implemented (discarded)",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "notes": "DCS sequences are parsed but not handled (case 'P' returns immediately in strhandle)",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -167,6 +208,44 @@
           "tmux": {
             "version_added": false,
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "Core parsing in TerminalCtrl library (external), not verified in Bobcat repo",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "notes": "No XTGETTCAP (DCS + q) implementation found",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "notes": "XTGETTCAP (DCS + q - Terminal capability query) implemented in Functions.h line 625 and handled via hookXTGETTCAP in Screen.cpp line 4063",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "3.4.2",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "notes": "Recognized but marked as unhandled TODO",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "notes": "DCS sequences explicitly not implemented (discarded)",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "notes": "DCS sequences are not handled",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -251,6 +330,44 @@
             "version_added": "3.2",
             "notes": "Responds to CSI > q primary device attributes",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "Core parsing in TerminalCtrl library (external), not verified in Bobcat repo",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "notes": "XTVERSION (CSI > 0 q) implemented in Functions.h line 618 and Screen.cpp line 3947-3949, returns terminal name and version",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "3.9.2",
+            "notes": "Responds with 'DCS>|mlterm(version)ST'",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.1.0",
+            "notes": "Reports as VT420 with version 337",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "notes": "Only DA1 (CSI c) is supported, not DA2 (CSI > c)",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "1.2",
+            "notes": "Via CSI > c (secondary DA) - reports 'U' for urxvt with version info",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -336,6 +453,41 @@
             "version_added": "3.4",
             "notes": "Requires ENABLE_SIXEL compile flag",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "Sixel graphics supported via InlineImages() feature",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "notes": "Sixel graphics (DCS DECSIXEL) fully implemented via SixelParser.h/cpp, Functions.h line 623, Screen.cpp line 4060, with color palette support",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "3.3.5",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "notes": "Graphics attributes recognized but marked TODO",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -417,6 +569,42 @@
             "version_added": "3.3",
             "notes": "Requires allow-passthrough option enabled",
             "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": null,
+            "notes": "Core parsing in TerminalCtrl library (external), not verified in Bobcat repo",
+            "last_scanned": "2026-02-18"
+          },
+          "putty": {
+            "version_added": false,
+            "notes": "DCS sequences are recognized but ignored; no tmux-specific handling found",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": false,
+            "notes": "No tmux DCS passthrough protocol implementation found in codebase",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "notes": "DCS sequences are not handled",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {

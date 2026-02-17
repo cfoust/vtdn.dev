@@ -50,7 +50,9 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": "v0.1.0",
+            "notes": "Handler present but no actual bell output",
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -110,7 +112,8 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -170,7 +173,8 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -230,7 +234,8 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -290,7 +295,8 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -350,7 +356,9 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Not handled in Execute function",
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -410,7 +418,9 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": false,
+            "notes": "No handler for 0x05",
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -470,7 +480,8 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -530,7 +541,8 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -590,7 +602,8 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -650,7 +663,8 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -710,7 +724,9 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": false,
+            "notes": "ESC N/O not in EscDispatch",
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -770,7 +786,8 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -830,7 +847,8 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -890,7 +908,8 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -950,7 +969,9 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": false,
+            "notes": "ESC # sequences not handled",
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -1010,7 +1031,9 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": false,
+            "notes": "ESC # 8 not implemented",
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -1070,7 +1093,9 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": false,
+            "notes": "ESC SP F/G not in EscDispatch",
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -1130,7 +1155,9 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": false,
+            "notes": "LS2/LS3/LS1R/LS2R/LS3R not found",
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -1190,7 +1217,9 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": false,
+            "notes": "ESC % G not in EscDispatch",
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null

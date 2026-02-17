@@ -50,7 +50,8 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -110,7 +111,9 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Explicitly ignored",
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -170,7 +173,8 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -230,7 +234,8 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -290,7 +295,8 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -350,7 +356,9 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Explicitly ignored",
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -410,7 +418,8 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -470,7 +479,8 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -530,7 +540,8 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -590,7 +601,8 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -650,7 +662,8 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -710,7 +723,8 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -770,7 +784,8 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -830,7 +845,8 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -890,7 +906,8 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -950,7 +967,8 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -1010,7 +1028,8 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -1070,7 +1089,8 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -1130,7 +1150,8 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": "v1.10.0",
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -1190,7 +1211,8 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": "v1.11.0",
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -1250,7 +1272,8 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -1310,7 +1333,8 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -1370,7 +1394,8 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -1430,7 +1455,9 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Mode tracked but logged as not implemented",
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -1490,7 +1517,8 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null

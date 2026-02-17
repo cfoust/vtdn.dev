@@ -50,7 +50,8 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -110,7 +111,8 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -170,7 +172,8 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -230,7 +233,8 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -290,7 +294,8 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -350,7 +355,9 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": "v0.1.0",
+            "notes": "Treated same as slow blink (SGR 5)",
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -410,7 +417,8 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -470,7 +478,8 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -530,7 +539,8 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": "v0.6.0",
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -590,7 +600,8 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -650,7 +661,8 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -710,7 +722,8 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -770,7 +783,9 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Only basic underline (SGR 4) is supported",
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -830,7 +845,9 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Only basic underline (SGR 4) is supported",
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -890,7 +907,8 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -950,7 +968,8 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -1010,7 +1029,8 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": true,
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -1070,7 +1090,9 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Only semicolon format (38;2;r;g;b) is supported",
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -1130,7 +1152,8 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -1190,7 +1213,8 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null

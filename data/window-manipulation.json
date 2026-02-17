@@ -50,7 +50,9 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Explicitly ignored",
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -110,7 +112,9 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Explicitly ignored",
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -170,7 +174,9 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Explicitly ignored",
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -230,7 +236,9 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Explicitly ignored",
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -292,7 +300,9 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Explicitly ignored",
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -352,7 +362,9 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Explicitly ignored",
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -412,7 +424,9 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Explicitly ignored",
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -472,7 +486,9 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Explicitly ignored",
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -532,7 +548,9 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Explicitly ignored",
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -592,7 +610,9 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": false,
+            "notes": "Explicitly ignored",
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -652,7 +672,9 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": false,
+            "notes": "CSI t (XTWINOPS) explicitly ignored since v0.1.0",
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -712,7 +734,9 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": false,
+            "notes": "CSI t (XTWINOPS) explicitly ignored since v0.1.0",
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -772,7 +796,9 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": false,
+            "notes": "CSI t (XTWINOPS) explicitly ignored since v0.1.0",
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null

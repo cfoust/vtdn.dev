@@ -50,7 +50,9 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": false,
+            "notes": "DCS Hook/Put/Unhook are empty stubs",
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -110,7 +112,9 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": false,
+            "notes": "DCS not implemented",
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -170,7 +174,8 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -231,7 +236,8 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null
@@ -291,7 +297,8 @@
             "version_added": null
           },
           "cy": {
-            "version_added": null
+            "version_added": false,
+            "last_scanned": "2026-02-17"
           },
           "tmux": {
             "version_added": null

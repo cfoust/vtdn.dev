@@ -69,15 +69,7 @@ function SupportCell({support}: {support: SupportEntry}) {
     );
   }
 
-  if (typeof version_added === 'string') {
-    return (
-      <td className={styles.yes} title={notes}>
-        {version_added}
-      </td>
-    );
-  }
-
-  if (version_added === true) {
+  if (version_added === true || typeof version_added === 'string') {
     return (
       <td className={notes ? styles.yesNotes : styles.yes} title={notes}>
         &#x2713;

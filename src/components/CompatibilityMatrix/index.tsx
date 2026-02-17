@@ -27,6 +27,24 @@ const categories = [
 
 const terminalIds = Object.keys(terminals);
 
+// Build group header spans: consecutive terminals with the same group get merged
+function buildGroupHeaders(): Array<{label: string | null; span: number}> {
+  const headers: Array<{label: string | null; span: number}> = [];
+  for (const id of terminalIds) {
+    const group = (terminals[id] as any).group || null;
+    const last = headers[headers.length - 1];
+    if (last && last.label === group) {
+      last.span++;
+    } else {
+      headers.push({label: group, span: 1});
+    }
+  }
+  return headers;
+}
+
+const groupHeaders = buildGroupHeaders();
+const hasGroups = groupHeaders.some((h) => h.label !== null);
+
 const icons: Record<string, React.ReactNode> = {
   alacritty: (
     <svg viewBox="0 0 64 64" fill="currentColor" className={styles.terminalIcon}>
@@ -95,14 +113,19 @@ function SupportCell({support}: {support: SupportEntry}) {
 export default function CompatibilityMatrix(): React.ReactElement {
   const wrapperRef = React.useRef<HTMLDivElement>(null);
   const theadRef = React.useRef<HTMLTableSectionElement>(null);
+  const groupRowRef = React.useRef<HTMLTableRowElement>(null);
 
   React.useEffect(() => {
     const wrapper = wrapperRef.current;
     const thead = theadRef.current;
+    const groupRow = groupRowRef.current;
     if (!wrapper || !thead) return;
 
     const update = () => {
       wrapper.style.setProperty('--header-height', `${thead.offsetHeight}px`);
+      if (groupRow) {
+        wrapper.style.setProperty('--group-row-height', `${groupRow.offsetHeight}px`);
+      }
     };
     update();
 
@@ -115,8 +138,24 @@ export default function CompatibilityMatrix(): React.ReactElement {
     <div ref={wrapperRef} className={styles.wrapper}>
       <table className={styles.matrix}>
         <thead ref={theadRef}>
+          {hasGroups && (
+            <tr ref={groupRowRef} className={styles.groupRow}>
+              <th className={styles.featureHeader} />
+              {groupHeaders.map((h, i) =>
+                h.label ? (
+                  <th key={i} colSpan={h.span} className={styles.groupHeader}>
+                    {h.label}
+                  </th>
+                ) : (
+                  Array.from({length: h.span}, (_, j) => (
+                    <th key={`${i}-${j}`} className={styles.groupHeaderEmpty} />
+                  ))
+                ),
+              )}
+            </tr>
+          )}
           <tr>
-            <th className={styles.featureHeader}>Feature</th>
+            <th className={`${styles.featureHeader} ${styles.featureHeaderNames}`}>Feature</th>
             {terminalIds.map((id) => (
               <th key={id} className={styles.terminalHeader}>
                 <a

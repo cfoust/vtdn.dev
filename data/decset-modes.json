@@ -14,37 +14,37 @@
             "version_added": true
           },
           "xterm": {
-            "version_added": true
+            "version_added": null
           },
           "ghostty": {
-            "version_added": true
+            "version_added": null
           },
           "kitty": {
-            "version_added": true
+            "version_added": null
           },
           "wezterm": {
-            "version_added": true
+            "version_added": null
           },
           "foot": {
-            "version_added": true
+            "version_added": null
           },
           "alacritty": {
-            "version_added": true
+            "version_added": null
           },
           "iterm2": {
-            "version_added": true
+            "version_added": null
           },
           "vte": {
-            "version_added": true
+            "version_added": null
           },
           "windows_terminal": {
-            "version_added": true
+            "version_added": null
           },
           "konsole": {
-            "version_added": true
+            "version_added": null
           },
           "mintty": {
-            "version_added": true
+            "version_added": null
           },
           "xterm_js": {
             "version_added": null
@@ -75,37 +75,37 @@
             "version_added": true
           },
           "xterm": {
-            "version_added": true
+            "version_added": null
           },
           "ghostty": {
-            "version_added": false
+            "version_added": null
           },
           "kitty": {
-            "version_added": false
+            "version_added": null
           },
           "wezterm": {
             "version_added": null
           },
           "foot": {
-            "version_added": false
+            "version_added": null
           },
           "alacritty": {
-            "version_added": false
+            "version_added": null
           },
           "iterm2": {
             "version_added": null
           },
           "vte": {
-            "version_added": true
+            "version_added": null
           },
           "windows_terminal": {
-            "version_added": false
+            "version_added": null
           },
           "konsole": {
             "version_added": null
           },
           "mintty": {
-            "version_added": true
+            "version_added": null
           },
           "xterm_js": {
             "version_added": null
@@ -137,37 +137,37 @@
             "version_added": true
           },
           "xterm": {
-            "version_added": true
+            "version_added": null
           },
           "ghostty": {
-            "version_added": true
+            "version_added": null
           },
           "kitty": {
-            "version_added": true
+            "version_added": null
           },
           "wezterm": {
-            "version_added": true
+            "version_added": null
           },
           "foot": {
-            "version_added": true
+            "version_added": null
           },
           "alacritty": {
-            "version_added": true
+            "version_added": null
           },
           "iterm2": {
-            "version_added": true
+            "version_added": null
           },
           "vte": {
-            "version_added": true
+            "version_added": null
           },
           "windows_terminal": {
-            "version_added": true
+            "version_added": null
           },
           "konsole": {
-            "version_added": true
+            "version_added": null
           },
           "mintty": {
-            "version_added": true
+            "version_added": null
           },
           "xterm_js": {
             "version_added": null
@@ -198,37 +198,37 @@
             "version_added": true
           },
           "xterm": {
-            "version_added": true
+            "version_added": null
           },
           "ghostty": {
-            "version_added": true
+            "version_added": null
           },
           "kitty": {
-            "version_added": true
+            "version_added": null
           },
           "wezterm": {
-            "version_added": true
+            "version_added": null
           },
           "foot": {
-            "version_added": true
+            "version_added": null
           },
           "alacritty": {
-            "version_added": true
+            "version_added": null
           },
           "iterm2": {
-            "version_added": true
+            "version_added": null
           },
           "vte": {
-            "version_added": true
+            "version_added": null
           },
           "windows_terminal": {
-            "version_added": true
+            "version_added": null
           },
           "konsole": {
-            "version_added": true
+            "version_added": null
           },
           "mintty": {
-            "version_added": true
+            "version_added": null
           },
           "xterm_js": {
             "version_added": null
@@ -259,37 +259,37 @@
             "version_added": true
           },
           "xterm": {
-            "version_added": true
+            "version_added": null
           },
           "ghostty": {
-            "version_added": true
+            "version_added": null
           },
           "kitty": {
-            "version_added": true
+            "version_added": null
           },
           "wezterm": {
-            "version_added": true
+            "version_added": null
           },
           "foot": {
-            "version_added": true
+            "version_added": null
           },
           "alacritty": {
-            "version_added": true
+            "version_added": null
           },
           "iterm2": {
-            "version_added": true
+            "version_added": null
           },
           "vte": {
-            "version_added": true
+            "version_added": null
           },
           "windows_terminal": {
-            "version_added": true
+            "version_added": null
           },
           "konsole": {
-            "version_added": true
+            "version_added": null
           },
           "mintty": {
-            "version_added": true
+            "version_added": null
           },
           "xterm_js": {
             "version_added": null
@@ -320,37 +320,37 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": true
+            "version_added": null
           },
           "ghostty": {
-            "version_added": true
+            "version_added": null
           },
           "kitty": {
-            "version_added": true
+            "version_added": null
           },
           "wezterm": {
-            "version_added": true
+            "version_added": null
           },
           "foot": {
-            "version_added": true
+            "version_added": null
           },
           "alacritty": {
-            "version_added": true
+            "version_added": null
           },
           "iterm2": {
-            "version_added": true
+            "version_added": null
           },
           "vte": {
-            "version_added": true
+            "version_added": null
           },
           "windows_terminal": {
-            "version_added": true
+            "version_added": null
           },
           "konsole": {
-            "version_added": true
+            "version_added": null
           },
           "mintty": {
-            "version_added": true
+            "version_added": null
           },
           "xterm_js": {
             "version_added": null
@@ -382,37 +382,37 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": true
+            "version_added": null
           },
           "ghostty": {
-            "version_added": true
+            "version_added": null
           },
           "kitty": {
-            "version_added": true
+            "version_added": null
           },
           "wezterm": {
-            "version_added": true
+            "version_added": null
           },
           "foot": {
-            "version_added": true
+            "version_added": null
           },
           "alacritty": {
-            "version_added": true
+            "version_added": null
           },
           "iterm2": {
-            "version_added": true
+            "version_added": null
           },
           "vte": {
-            "version_added": true
+            "version_added": null
           },
           "windows_terminal": {
-            "version_added": true
+            "version_added": null
           },
           "konsole": {
-            "version_added": true
+            "version_added": null
           },
           "mintty": {
-            "version_added": true
+            "version_added": null
           },
           "xterm_js": {
             "version_added": null
@@ -443,28 +443,28 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": true
+            "version_added": null
           },
           "ghostty": {
-            "version_added": true
+            "version_added": null
           },
           "kitty": {
-            "version_added": true
+            "version_added": null
           },
           "wezterm": {
-            "version_added": true
+            "version_added": null
           },
           "foot": {
-            "version_added": true
+            "version_added": null
           },
           "alacritty": {
-            "version_added": false
+            "version_added": null
           },
           "iterm2": {
-            "version_added": true
+            "version_added": null
           },
           "vte": {
-            "version_added": true
+            "version_added": null
           },
           "windows_terminal": {
             "version_added": null
@@ -473,7 +473,7 @@
             "version_added": null
           },
           "mintty": {
-            "version_added": true
+            "version_added": null
           },
           "xterm_js": {
             "version_added": null
@@ -504,37 +504,37 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": true
+            "version_added": null
           },
           "ghostty": {
-            "version_added": true
+            "version_added": null
           },
           "kitty": {
-            "version_added": true
+            "version_added": null
           },
           "wezterm": {
-            "version_added": true
+            "version_added": null
           },
           "foot": {
-            "version_added": true
+            "version_added": null
           },
           "alacritty": {
-            "version_added": false
+            "version_added": null
           },
           "iterm2": {
             "version_added": null
           },
           "vte": {
-            "version_added": true
+            "version_added": null
           },
           "windows_terminal": {
-            "version_added": false
+            "version_added": null
           },
           "konsole": {
             "version_added": null
           },
           "mintty": {
-            "version_added": true
+            "version_added": null
           },
           "xterm_js": {
             "version_added": null
@@ -565,37 +565,37 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": true
+            "version_added": null
           },
           "ghostty": {
-            "version_added": true
+            "version_added": null
           },
           "kitty": {
-            "version_added": false
+            "version_added": null
           },
           "wezterm": {
-            "version_added": true
+            "version_added": null
           },
           "foot": {
-            "version_added": true
+            "version_added": null
           },
           "alacritty": {
-            "version_added": false
+            "version_added": null
           },
           "iterm2": {
             "version_added": null
           },
           "vte": {
-            "version_added": false
+            "version_added": null
           },
           "windows_terminal": {
-            "version_added": false
+            "version_added": null
           },
           "konsole": {
             "version_added": null
           },
           "mintty": {
-            "version_added": true
+            "version_added": null
           },
           "xterm_js": {
             "version_added": null
@@ -626,37 +626,37 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": true
+            "version_added": null
           },
           "ghostty": {
-            "version_added": true
+            "version_added": null
           },
           "kitty": {
-            "version_added": true
+            "version_added": null
           },
           "wezterm": {
-            "version_added": true
+            "version_added": null
           },
           "foot": {
-            "version_added": true
+            "version_added": null
           },
           "alacritty": {
-            "version_added": true
+            "version_added": null
           },
           "iterm2": {
-            "version_added": true
+            "version_added": null
           },
           "vte": {
-            "version_added": true
+            "version_added": null
           },
           "windows_terminal": {
-            "version_added": true
+            "version_added": null
           },
           "konsole": {
-            "version_added": true
+            "version_added": null
           },
           "mintty": {
-            "version_added": true
+            "version_added": null
           },
           "xterm_js": {
             "version_added": null
@@ -687,37 +687,37 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": true
+            "version_added": null
           },
           "ghostty": {
-            "version_added": true
+            "version_added": null
           },
           "kitty": {
-            "version_added": true
+            "version_added": null
           },
           "wezterm": {
-            "version_added": true
+            "version_added": null
           },
           "foot": {
-            "version_added": true
+            "version_added": null
           },
           "alacritty": {
-            "version_added": true
+            "version_added": null
           },
           "iterm2": {
-            "version_added": true
+            "version_added": null
           },
           "vte": {
-            "version_added": true
+            "version_added": null
           },
           "windows_terminal": {
-            "version_added": true
+            "version_added": null
           },
           "konsole": {
-            "version_added": true
+            "version_added": null
           },
           "mintty": {
-            "version_added": true
+            "version_added": null
           },
           "xterm_js": {
             "version_added": null
@@ -748,37 +748,37 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": true
+            "version_added": null
           },
           "ghostty": {
-            "version_added": true
+            "version_added": null
           },
           "kitty": {
-            "version_added": true
+            "version_added": null
           },
           "wezterm": {
-            "version_added": true
+            "version_added": null
           },
           "foot": {
-            "version_added": true
+            "version_added": null
           },
           "alacritty": {
-            "version_added": true
+            "version_added": null
           },
           "iterm2": {
-            "version_added": true
+            "version_added": null
           },
           "vte": {
-            "version_added": true
+            "version_added": null
           },
           "windows_terminal": {
-            "version_added": true
+            "version_added": null
           },
           "konsole": {
-            "version_added": true
+            "version_added": null
           },
           "mintty": {
-            "version_added": true
+            "version_added": null
           },
           "xterm_js": {
             "version_added": null
@@ -809,37 +809,37 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": true
+            "version_added": null
           },
           "ghostty": {
-            "version_added": true
+            "version_added": null
           },
           "kitty": {
-            "version_added": true
+            "version_added": null
           },
           "wezterm": {
-            "version_added": true
+            "version_added": null
           },
           "foot": {
-            "version_added": true
+            "version_added": null
           },
           "alacritty": {
-            "version_added": true
+            "version_added": null
           },
           "iterm2": {
-            "version_added": true
+            "version_added": null
           },
           "vte": {
-            "version_added": true
+            "version_added": null
           },
           "windows_terminal": {
-            "version_added": true
+            "version_added": null
           },
           "konsole": {
-            "version_added": true
+            "version_added": null
           },
           "mintty": {
-            "version_added": true
+            "version_added": null
           },
           "xterm_js": {
             "version_added": null
@@ -870,37 +870,37 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": true
+            "version_added": null
           },
           "ghostty": {
-            "version_added": true
+            "version_added": null
           },
           "kitty": {
-            "version_added": true
+            "version_added": null
           },
           "wezterm": {
-            "version_added": true
+            "version_added": null
           },
           "foot": {
-            "version_added": true
+            "version_added": null
           },
           "alacritty": {
-            "version_added": true
+            "version_added": null
           },
           "iterm2": {
-            "version_added": true
+            "version_added": null
           },
           "vte": {
-            "version_added": true
+            "version_added": null
           },
           "windows_terminal": {
-            "version_added": true
+            "version_added": null
           },
           "konsole": {
-            "version_added": true
+            "version_added": null
           },
           "mintty": {
-            "version_added": true
+            "version_added": null
           },
           "xterm_js": {
             "version_added": null
@@ -931,37 +931,37 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": true
+            "version_added": null
           },
           "ghostty": {
-            "version_added": true
+            "version_added": null
           },
           "kitty": {
-            "version_added": true
+            "version_added": null
           },
           "wezterm": {
-            "version_added": true
+            "version_added": null
           },
           "foot": {
-            "version_added": true
+            "version_added": null
           },
           "alacritty": {
-            "version_added": true
+            "version_added": null
           },
           "iterm2": {
-            "version_added": true
+            "version_added": null
           },
           "vte": {
-            "version_added": true
+            "version_added": null
           },
           "windows_terminal": {
-            "version_added": true
+            "version_added": null
           },
           "konsole": {
-            "version_added": true
+            "version_added": null
           },
           "mintty": {
-            "version_added": true
+            "version_added": null
           },
           "xterm_js": {
             "version_added": null
@@ -992,37 +992,37 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": true
+            "version_added": null
           },
           "ghostty": {
-            "version_added": true
+            "version_added": null
           },
           "kitty": {
-            "version_added": true
+            "version_added": null
           },
           "wezterm": {
-            "version_added": true
+            "version_added": null
           },
           "foot": {
-            "version_added": true
+            "version_added": null
           },
           "alacritty": {
-            "version_added": true
+            "version_added": null
           },
           "iterm2": {
-            "version_added": true
+            "version_added": null
           },
           "vte": {
-            "version_added": true
+            "version_added": null
           },
           "windows_terminal": {
             "version_added": null
           },
           "konsole": {
-            "version_added": true
+            "version_added": null
           },
           "mintty": {
-            "version_added": true
+            "version_added": null
           },
           "xterm_js": {
             "version_added": null
@@ -1053,22 +1053,22 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": true
+            "version_added": null
           },
           "ghostty": {
-            "version_added": true
+            "version_added": null
           },
           "kitty": {
-            "version_added": true
+            "version_added": null
           },
           "wezterm": {
             "version_added": null
           },
           "foot": {
-            "version_added": true
+            "version_added": null
           },
           "alacritty": {
-            "version_added": false
+            "version_added": null
           },
           "iterm2": {
             "version_added": null
@@ -1114,37 +1114,37 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": true
+            "version_added": null
           },
           "ghostty": {
-            "version_added": true
+            "version_added": null
           },
           "kitty": {
-            "version_added": true
+            "version_added": null
           },
           "wezterm": {
-            "version_added": true
+            "version_added": null
           },
           "foot": {
-            "version_added": true
+            "version_added": null
           },
           "alacritty": {
-            "version_added": true
+            "version_added": null
           },
           "iterm2": {
-            "version_added": true
+            "version_added": null
           },
           "vte": {
-            "version_added": true
+            "version_added": null
           },
           "windows_terminal": {
-            "version_added": true
+            "version_added": null
           },
           "konsole": {
-            "version_added": true
+            "version_added": null
           },
           "mintty": {
-            "version_added": true
+            "version_added": null
           },
           "xterm_js": {
             "version_added": null
@@ -1175,37 +1175,37 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": false
+            "version_added": null
           },
           "ghostty": {
-            "version_added": true
+            "version_added": null
           },
           "kitty": {
-            "version_added": true
+            "version_added": null
           },
           "wezterm": {
-            "version_added": true
+            "version_added": null
           },
           "foot": {
-            "version_added": true
+            "version_added": null
           },
           "alacritty": {
-            "version_added": true
+            "version_added": null
           },
           "iterm2": {
-            "version_added": true
+            "version_added": null
           },
           "vte": {
-            "version_added": true
+            "version_added": null
           },
           "windows_terminal": {
-            "version_added": true
+            "version_added": null
           },
           "konsole": {
             "version_added": null
           },
           "mintty": {
-            "version_added": true
+            "version_added": null
           },
           "xterm_js": {
             "version_added": null
@@ -1236,37 +1236,37 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": false
+            "version_added": null
           },
           "ghostty": {
-            "version_added": true
+            "version_added": null
           },
           "kitty": {
-            "version_added": true
+            "version_added": null
           },
           "wezterm": {
-            "version_added": true
+            "version_added": null
           },
           "foot": {
-            "version_added": true
+            "version_added": null
           },
           "alacritty": {
-            "version_added": false
+            "version_added": null
           },
           "iterm2": {
-            "version_added": false
+            "version_added": null
           },
           "vte": {
-            "version_added": false
+            "version_added": null
           },
           "windows_terminal": {
-            "version_added": false
+            "version_added": null
           },
           "konsole": {
-            "version_added": false
+            "version_added": null
           },
           "mintty": {
-            "version_added": false
+            "version_added": null
           },
           "xterm_js": {
             "version_added": null
@@ -1297,37 +1297,37 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": false
+            "version_added": null
           },
           "ghostty": {
-            "version_added": true
+            "version_added": null
           },
           "kitty": {
-            "version_added": true
+            "version_added": null
           },
           "wezterm": {
             "version_added": null
           },
           "foot": {
-            "version_added": true
+            "version_added": null
           },
           "alacritty": {
-            "version_added": false
+            "version_added": null
           },
           "iterm2": {
-            "version_added": false
+            "version_added": null
           },
           "vte": {
-            "version_added": true
+            "version_added": null
           },
           "windows_terminal": {
-            "version_added": false
+            "version_added": null
           },
           "konsole": {
-            "version_added": false
+            "version_added": null
           },
           "mintty": {
-            "version_added": false
+            "version_added": null
           },
           "xterm_js": {
             "version_added": null
@@ -1358,37 +1358,37 @@
             "version_added": false
           },
           "xterm": {
-            "version_added": false
+            "version_added": null
           },
           "ghostty": {
-            "version_added": true
+            "version_added": null
           },
           "kitty": {
-            "version_added": true
+            "version_added": null
           },
           "wezterm": {
-            "version_added": false
+            "version_added": null
           },
           "foot": {
-            "version_added": true
+            "version_added": null
           },
           "alacritty": {
-            "version_added": false
+            "version_added": null
           },
           "iterm2": {
-            "version_added": true
+            "version_added": null
           },
           "vte": {
-            "version_added": false
+            "version_added": null
           },
           "windows_terminal": {
-            "version_added": false
+            "version_added": null
           },
           "konsole": {
-            "version_added": false
+            "version_added": null
           },
           "mintty": {
-            "version_added": false
+            "version_added": null
           },
           "xterm_js": {
             "version_added": null
@@ -1419,37 +1419,37 @@
             "version_added": true
           },
           "xterm": {
-            "version_added": true
+            "version_added": null
           },
           "ghostty": {
-            "version_added": true
+            "version_added": null
           },
           "kitty": {
-            "version_added": true
+            "version_added": null
           },
           "wezterm": {
-            "version_added": true
+            "version_added": null
           },
           "foot": {
-            "version_added": true
+            "version_added": null
           },
           "alacritty": {
-            "version_added": true
+            "version_added": null
           },
           "iterm2": {
-            "version_added": true
+            "version_added": null
           },
           "vte": {
-            "version_added": true
+            "version_added": null
           },
           "windows_terminal": {
-            "version_added": true
+            "version_added": null
           },
           "konsole": {
-            "version_added": true
+            "version_added": null
           },
           "mintty": {
-            "version_added": true
+            "version_added": null
           },
           "xterm_js": {
             "version_added": null
@@ -1481,37 +1481,37 @@
             "version_added": true
           },
           "xterm": {
-            "version_added": true
+            "version_added": null
           },
           "ghostty": {
-            "version_added": true
+            "version_added": null
           },
           "kitty": {
-            "version_added": true
+            "version_added": null
           },
           "wezterm": {
-            "version_added": true
+            "version_added": null
           },
           "foot": {
-            "version_added": true
+            "version_added": null
           },
           "alacritty": {
-            "version_added": true
+            "version_added": null
           },
           "iterm2": {
-            "version_added": true
+            "version_added": null
           },
           "vte": {
-            "version_added": true
+            "version_added": null
           },
           "windows_terminal": {
-            "version_added": true
+            "version_added": null
           },
           "konsole": {
-            "version_added": true
+            "version_added": null
           },
           "mintty": {
-            "version_added": true
+            "version_added": null
           },
           "xterm_js": {
             "version_added": null

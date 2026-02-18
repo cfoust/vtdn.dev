@@ -208,11 +208,10 @@ export default function CompatibilityMatrix(): React.ReactElement {
             return (
               <React.Fragment key={meta.category}>
                 <tr className={styles.categoryRow}>
-                  <td
-                    colSpan={terminalIds.length + 2}
-                    className={styles.categoryCell}>
+                  <td className={styles.categoryCell}>
                     {meta.category}
                   </td>
+                  <td colSpan={terminalIds.length + 1} className={styles.categoryFill} />
                 </tr>
                 {features.map(([featureId, feature]) => {
                   const compat = (feature as any).__compat;

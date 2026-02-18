@@ -127,6 +127,11 @@
   letter-spacing: 0.02em;
   text-transform: uppercase;
   color: var(--ifm-color-primary);
+  white-space: nowrap;
+}
+
+.categoryFill {
+  background: var(--ifm-color-emphasis-100);
 }
 
 .featureCell {

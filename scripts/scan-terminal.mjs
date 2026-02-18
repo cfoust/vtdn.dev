@@ -90,17 +90,9 @@ if (!terminal.repository) {
   process.exit(1);
 }
 
-// Convert repository URL to git@gh: SSH format for GitHub repos
-function toSshUrl(url) {
-  const gh = url.match(/^https:\/\/github\.com\/(.+?)(?:\.git)?$/);
-  if (gh) return `git@gh:${gh[1]}.git`;
-  return url;
-}
-
 // Clone or update the repository
 function ensureRepo(terminalId, repoUrl) {
   const repoPath = resolve(reposDir, terminalId);
-  const sshUrl = toSshUrl(repoUrl);
 
   if (existsSync(repoPath)) {
     console.log(`Updating ${repoPath}...`);
@@ -114,11 +106,11 @@ function ensureRepo(terminalId, repoUrl) {
       process.exit(1);
     }
   } else {
-    console.log(`Cloning ${sshUrl} into ${repoPath}...`);
+    console.log(`Cloning ${repoUrl} into ${repoPath}...`);
     try {
-      execFileSync("git", ["clone", sshUrl, repoPath], { stdio: "inherit" });
+      execFileSync("git", ["clone", repoUrl, repoPath], { stdio: "inherit" });
     } catch (e) {
-      console.error(`Error: git clone failed for ${sshUrl}`);
+      console.error(`Error: git clone failed for ${repoUrl}`);
       process.exit(1);
     }
   }

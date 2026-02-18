@@ -112,6 +112,19 @@
           "st": {
             "version_added": "0.1",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.1.0-alpha",
+            "notes": "CUF also supports alternative form CSI a, CUD also supports alternative form CSI e",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.3",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -229,6 +242,18 @@
           },
           "st": {
             "version_added": "0.1",
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.9.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.3",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
             "last_scanned": "2026-02-18"
           }
         },
@@ -350,6 +375,19 @@
           "st": {
             "version_added": "0.1",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.1.0-alpha",
+            "notes": "CHA (CSI G) added in v0.1.0-alpha, CUP (CSI H) added in v0.1.0-alpha, alternative form (CSI f) added in v0.6.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.3",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -470,6 +508,18 @@
           "st": {
             "version_added": "0.1",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.9.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.3",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -588,6 +638,19 @@
           },
           "st": {
             "version_added": "0.1",
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.9.0",
+            "notes": "VPA (CSI d) added in v0.1.0-alpha, HPA (CSI `) added in v0.9.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.3",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
             "last_scanned": "2026-02-18"
           }
         },
@@ -714,6 +777,21 @@
             "version_added": "0.1",
             "notes": "ANSI.SYS variant using CSI s/u, not DEC DECSC/DECRC (ESC 7/8)",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.10.0",
+            "notes": "ANSI.SYS variant (CSI s/u), not DEC variant (ESC 7/8)",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.3",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
+            "partial_implementation": true,
+            "notes": "CSI s (save) supported, but CSI u (restore) not implemented. Use ESC 7/ESC 8 instead.",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -831,6 +909,19 @@
           },
           "st": {
             "version_added": "0.1",
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.10.0",
+            "notes": "ICH added in v0.10.0, DCH and ECH present since v0.1.0-alpha",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.3",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
             "last_scanned": "2026-02-18"
           }
         },
@@ -950,6 +1041,18 @@
           "st": {
             "version_added": "0.1",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.1.0-alpha",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.3",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1068,6 +1171,18 @@
           },
           "st": {
             "version_added": "0.1",
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.1.0-alpha",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.3",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
             "last_scanned": "2026-02-18"
           }
         },
@@ -1193,6 +1308,18 @@
             "version_added": false,
             "notes": "CSI 3 J not implemented; ED only handles parameters 0, 1, and 2",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.10.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.3",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1310,6 +1437,18 @@
           },
           "st": {
             "version_added": "0.1",
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.1.0-alpha",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.3",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
             "last_scanned": "2026-02-18"
           }
         },
@@ -1437,6 +1576,19 @@
             "version_added": false,
             "notes": "CSI ? J/K not implemented; ED/EL do not check private flag",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": false,
+            "notes": "No evidence of selective erase implementation (CSI ? J/K)",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1558,6 +1710,18 @@
           "st": {
             "version_added": "0.8.4",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.9.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.3",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1677,6 +1841,18 @@
           "st": {
             "version_added": "0.1",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.1.0-alpha",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.3",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1794,6 +1970,18 @@
           },
           "st": {
             "version_added": "0.1",
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.1.0-alpha",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.3",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
             "last_scanned": "2026-02-18"
           }
         },
@@ -1921,6 +2109,20 @@
             "version_added": false,
             "notes": "CSI ? r goes to unknown handler; left/right margins not implemented",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": false,
+            "notes": "Left/right margins not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
+            "notes": "Requires Mode 69 (ModeLeftRightMargin) to be set",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -2039,6 +2241,19 @@
           },
           "st": {
             "version_added": "0.3",
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.10.0",
+            "notes": "Supports TBC 0 (clear current tabstop) and TBC 3 (clear all tabstops)",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.3",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
             "last_scanned": "2026-02-18"
           }
         },
@@ -2161,6 +2376,19 @@
             "version_added": false,
             "notes": "CSI $ z not implemented; no rectangular area operations",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": false,
+            "notes": "Rectangular area operations not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -2281,6 +2509,19 @@
           "st": {
             "version_added": false,
             "notes": "CSI $ x not implemented; no rectangular area operations",
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": false,
+            "notes": "Rectangular area operations not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": false,
             "last_scanned": "2026-02-18"
           }
         },
@@ -2403,6 +2644,19 @@
             "version_added": false,
             "notes": "CSI $ v not implemented; no rectangular area operations",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": false,
+            "notes": "Rectangular area operations not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -2520,6 +2774,19 @@
           },
           "st": {
             "version_added": "0.6",
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.12.0",
+            "notes": "Supports all cursor styles: block, underline, and bar (steady and blinking)",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.6",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
             "last_scanned": "2026-02-18"
           }
         },
@@ -2645,6 +2912,19 @@
           "st": {
             "version_added": "0.5",
             "notes": "DSR 5n (OK) added in 0.9.1, DSR 6n (CPR) in 0.5",
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.12.0",
+            "notes": "Supports both DSR (CSI 5n) status report and CPR (CSI 6n) cursor position report",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.3",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
             "last_scanned": "2026-02-18"
           }
         },
@@ -2772,6 +3052,19 @@
             "version_added": false,
             "notes": "CSI ? 6 n not handled; only standard CPR supported",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "notes": "Extended cursor position report (CSI ? 6n) is not implemented; only standard CPR (CSI 6n) is supported",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -2897,6 +3190,21 @@
             "version_added": "0.3",
             "notes": "Responds with VT102 identity (vtiden configurable)",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.12.0",
+            "notes": "Reports VT220 with Sixel support (ESC[?62;4c)",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.3",
+            "notes": "Reports VT220 with ANSI color, VT320 rectangles, and user windows",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
+            "notes": "Reports VT220 with 132 columns, selective erase, national replacement charset, technical characters, windowing capability, and ANSI color",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -3020,6 +3328,20 @@
             "version_added": false,
             "notes": "CSI > c not handled; only ? prefix supported in parser",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.12.0",
+            "notes": "Reports secondary device attributes with version number",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.3",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
+            "notes": "Reports VT220 version 1.0",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -3142,6 +3464,19 @@
           "st": {
             "version_added": false,
             "notes": "CSI = c not handled; only ? prefix supported in parser",
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "notes": "Tertiary device attributes (CSI = c) are not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": false,
             "last_scanned": "2026-02-18"
           }
         },
@@ -3268,6 +3603,21 @@
             "version_added": false,
             "notes": "CSI ? Ps $ p not implemented",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.12.0",
+            "partial_implementation": true,
+            "notes": "Only responds to mode 2026 (synchronized output) via CSI ? 2026 $ p; does not support general mode queries",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.1.13",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
+            "notes": "Supports both ANSI and DEC mode queries",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -3387,6 +3737,18 @@
             "last_scanned": "2026-02-18"
           },
           "st": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
             "version_added": false,
             "last_scanned": "2026-02-18"
           }

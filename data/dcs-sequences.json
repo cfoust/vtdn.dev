@@ -125,6 +125,19 @@
             "version_added": false,
             "notes": "DCS sequences are parsed but not handled (case 'P' returns immediately in strhandle)",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "notes": "Not implemented - terminal reports as VT220 to avoid DECRQSS expectations (vttest fix in v0.31.4)",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -245,6 +258,20 @@
           "st": {
             "version_added": false,
             "notes": "DCS sequences are not handled",
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "notes": "No XTGETTCAP (DCS + q) support found",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.2.20",
+            "notes": "Only one capability per request is supported",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": false,
             "last_scanned": "2026-02-18"
           }
         },
@@ -368,6 +395,20 @@
           "st": {
             "version_added": false,
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.31.0",
+            "notes": "Returns 'Zellij(version)' in response to CSI > 0 q - implemented in sixel support PR",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.2.33",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": false,
+            "notes": "Only CSI > c (DA2) is implemented, not CSI > 0 q (XTVERSION)",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -488,6 +529,21 @@
           "st": {
             "version_added": false,
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.31.0",
+            "notes": "Full sixel support added in feat(terminal): sixel support PR",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.1.12",
+            "notes": "Experimental support in v0.1.11, initial support in v0.1.12",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.6.0",
+            "notes": "Full sixel parsing with passthrough support",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -604,6 +660,19 @@
           "st": {
             "version_added": false,
             "notes": "DCS sequences are not handled",
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "notes": "No tmux passthrough (DCS tmux;) support found",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": false,
             "last_scanned": "2026-02-18"
           }
         },

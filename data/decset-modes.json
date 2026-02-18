@@ -115,6 +115,18 @@
           "st": {
             "version_added": "0.1",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.31.2",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": null
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
+            "notes": "Application cursor keys mode",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -242,6 +254,19 @@
             "version_added": false,
             "notes": "Explicitly marked as IGNORED in st.c:1501",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.31.2",
+            "partial_implementation": true,
+            "notes": "Only side effects implemented (clear screen, reset cursor), not actual column switching",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": null
+          },
+          "tuios": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -362,6 +387,17 @@
           },
           "st": {
             "version_added": "0.2",
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": null
+          },
+          "tuios": {
+            "version_added": false,
             "last_scanned": "2026-02-18"
           }
         },
@@ -485,6 +521,18 @@
           "st": {
             "version_added": "0.4",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.31.2",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": null
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
+            "notes": "Origin mode (ModeOrigin)",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -606,6 +654,18 @@
           },
           "st": {
             "version_added": "0.1",
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.31.2",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": null
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
+            "notes": "Auto-wrap mode (ModeAutoWrap)",
             "last_scanned": "2026-02-18"
           }
         },
@@ -733,6 +793,17 @@
             "version_added": false,
             "notes": "Explicitly marked as IGNORED in st.c:1507",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": null
+          },
+          "tuios": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -848,6 +919,18 @@
           "st": {
             "version_added": "0.1",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.31.2",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.1.13",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -960,6 +1043,18 @@
             "last_scanned": "2026-02-18"
           },
           "st": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
             "version_added": false,
             "last_scanned": "2026-02-18"
           }
@@ -1075,6 +1170,19 @@
           },
           "st": {
             "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": false,
+            "notes": "Mentioned in comments as 'resets DECLRMM to unavailable' but not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
             "last_scanned": "2026-02-18"
           }
         },
@@ -1192,6 +1300,19 @@
             "last_scanned": "2026-02-18"
           },
           "st": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.31.2",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.1.13",
+            "notes": "Handled as PrivateMode::Unknown(80) for Sixel display mode",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
             "version_added": false,
             "last_scanned": "2026-02-18"
           }
@@ -1313,6 +1434,18 @@
           "st": {
             "version_added": "0.3",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.31.2",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.1.13",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1427,6 +1560,18 @@
           },
           "st": {
             "version_added": "0.3",
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.31.2",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.1.13",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
             "last_scanned": "2026-02-18"
           }
         },
@@ -1543,6 +1688,18 @@
           "st": {
             "version_added": "0.4",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.31.2",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.1.13",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1657,6 +1814,18 @@
           },
           "st": {
             "version_added": "0.5",
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.31.2",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.1.13",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
             "last_scanned": "2026-02-18"
           }
         },
@@ -1774,6 +1943,18 @@
           "st": {
             "version_added": "0.5",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.33.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.1.13",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1888,6 +2069,18 @@
           },
           "st": {
             "version_added": "0.4",
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.31.2",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.1.13",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
             "last_scanned": "2026-02-18"
           }
         },
@@ -2004,6 +2197,18 @@
           "st": {
             "version_added": false,
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.1.13",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -2116,6 +2321,18 @@
             "last_scanned": "2026-02-18"
           },
           "st": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
             "version_added": false,
             "last_scanned": "2026-02-18"
           }
@@ -2234,6 +2451,18 @@
           "st": {
             "version_added": "0.5",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.31.2",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.1.13",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -2348,6 +2577,18 @@
             "last_scanned": "2026-02-18"
           },
           "st": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.40.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.1.13",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
             "version_added": false,
             "last_scanned": "2026-02-18"
           }
@@ -2465,6 +2706,19 @@
           "st": {
             "version_added": false,
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "notes": "Code comment at grid.rs:1489 explicitly mentions that grapheme segmentation is broken",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -2573,6 +2827,18 @@
             "last_scanned": "2026-02-18"
           },
           "st": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
             "version_added": false,
             "last_scanned": "2026-02-18"
           }
@@ -2684,6 +2950,18 @@
           },
           "st": {
             "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.5.0",
             "last_scanned": "2026-02-18"
           }
         },
@@ -2802,6 +3080,19 @@
           "st": {
             "version_added": "0.1",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.12.0",
+            "notes": "Handled in grid.rs:3016-3120 via CSI 4 h/l",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.1.13",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -2919,6 +3210,19 @@
           },
           "st": {
             "version_added": "0.1",
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.31.4",
+            "notes": "Handled in grid.rs:3019-3123, converts CR to CRLF when enabled",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.1.13",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
             "last_scanned": "2026-02-18"
           }
         },

@@ -118,6 +118,12 @@
     "repository": "https://github.com/borisfaure/terminology",
     "group": "Terminal Emulators"
   },
+  "rio": {
+    "name": "Rio",
+    "website": "https://raphamorim.io/rio/",
+    "repository": "https://github.com/raphamorim/rio",
+    "group": "Terminal Emulators"
+  },
   "tmux": {
     "name": "tmux",
     "website": "https://github.com/tmux/tmux",
@@ -134,6 +140,18 @@
     "name": "cy",
     "website": "https://cfoust.github.io/cy/",
     "repository": "https://github.com/cfoust/cy",
+    "group": "Multiplexers"
+  },
+  "zellij": {
+    "name": "Zellij",
+    "website": "https://zellij.dev/",
+    "repository": "https://github.com/zellij-org/zellij",
+    "group": "Multiplexers"
+  },
+  "tuios": {
+    "name": "tuios",
+    "website": "https://github.com/Gaurav-Gosain/tuios",
+    "repository": "https://github.com/Gaurav-Gosain/tuios",
     "group": "Multiplexers"
   }
 }

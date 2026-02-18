@@ -110,6 +110,18 @@
           "st": {
             "version_added": "0.1",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.12.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.3",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -229,6 +241,18 @@
             "version_added": "0.6",
             "notes": "Implemented as ATTR_FAINT with dimmed color rendering",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.12.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.3",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -345,6 +369,18 @@
             "version_added": "0.4",
             "notes": "In 0.3 mapped to standout, proper implementation in 0.4",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.12.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.3",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -460,6 +496,18 @@
           },
           "st": {
             "version_added": "0.1",
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.12.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.3",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
             "last_scanned": "2026-02-18"
           }
         },
@@ -584,6 +632,18 @@
           "st": {
             "version_added": "0.4",
             "notes": "Implemented as ATTR_BLINK; no distinction from rapid",
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.12.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.3",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
             "last_scanned": "2026-02-18"
           }
         },
@@ -712,6 +772,18 @@
             "version_added": "0.4",
             "notes": "SGR 6 falls through to same as slow blink (SGR 5)",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.12.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.3",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -828,6 +900,18 @@
           },
           "st": {
             "version_added": "0.1",
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.12.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.3",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
             "last_scanned": "2026-02-18"
           }
         },
@@ -948,6 +1032,18 @@
             "version_added": "0.6",
             "notes": "Implemented as ATTR_INVISIBLE",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.12.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.3",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1065,6 +1161,18 @@
           "st": {
             "version_added": "0.6",
             "notes": "Implemented as ATTR_STRUCK",
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.12.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.3",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
             "last_scanned": "2026-02-18"
           }
         },
@@ -1184,6 +1292,19 @@
             "version_added": false,
             "notes": "SGR 21 maps to bold-off, not double underline",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "notes": "SGR 21 is used to reset bold, not for double underline. Double underline is available via SGR 4:2 as part of styled underlines (v0.39.0+)",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.3",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.5.0",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1300,6 +1421,19 @@
             "last_scanned": "2026-02-18"
           },
           "st": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": false,
+            "notes": "No Overline variant in Attr enum",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
             "version_added": false,
             "last_scanned": "2026-02-18"
           }
@@ -1427,6 +1561,19 @@
             "version_added": false,
             "notes": "SGR 4:3 not supported; colon separators parsed but no sub-parameters",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.39.0",
+            "notes": "Implemented as part of styled underlines feature (SGR 4:3)",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.3",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.5.0",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1548,6 +1695,18 @@
           "st": {
             "version_added": false,
             "notes": "Only basic underline (SGR 4) is supported",
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.39.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.3",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.2.0",
             "last_scanned": "2026-02-18"
           }
         },
@@ -1671,6 +1830,18 @@
             "version_added": false,
             "notes": "Only basic underline (SGR 4) is supported",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.39.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.3",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.2.0",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1788,6 +1959,18 @@
           },
           "st": {
             "version_added": "0.4",
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.12.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.3",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
             "last_scanned": "2026-02-18"
           }
         },
@@ -1909,6 +2092,18 @@
           "st": {
             "version_added": "0.5",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.12.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.3",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -2028,6 +2223,18 @@
           },
           "st": {
             "version_added": "0.5",
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.12.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.3",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
             "last_scanned": "2026-02-18"
           }
         },
@@ -2154,6 +2361,18 @@
             "partial_implementation": true,
             "notes": "Supports 38;2;r:g:b hybrid format but not T.416 38:2::r:g:b format",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.12.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.3",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -2274,6 +2493,18 @@
             "version_added": false,
             "notes": "SGR 58 sequences are eaten but not applied (st.c:1436-1441)",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.39.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.3",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.2.0",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -2393,6 +2624,18 @@
           "st": {
             "version_added": false,
             "notes": "SGR 58 sequences are eaten but not applied (st.c:1436-1441)",
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.39.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.3",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.2.0",
             "last_scanned": "2026-02-18"
           }
         },

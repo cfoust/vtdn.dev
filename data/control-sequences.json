@@ -113,6 +113,18 @@
           "st": {
             "version_added": "0.6",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.24.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.28",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -229,6 +241,18 @@
           },
           "st": {
             "version_added": "0.6",
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.5.0-beta",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.28",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
             "last_scanned": "2026-02-18"
           }
         },
@@ -347,6 +371,18 @@
           "st": {
             "version_added": "0.6",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.5.0-beta",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.28",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -464,6 +500,18 @@
           "st": {
             "version_added": "0.6",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.5.0-beta",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.28",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -580,6 +628,18 @@
           },
           "st": {
             "version_added": "0.6",
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.5.0-beta",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.28",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
             "last_scanned": "2026-02-18"
           }
         },
@@ -706,6 +766,19 @@
             "version_added": "0.5",
             "notes": "Charset switching added in 0.5, control codes in 0.6",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.7.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.28",
+            "notes": "Shifts between G0 and G1 character sets",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -831,6 +904,19 @@
             "version_added": false,
             "notes": "Explicitly ignored (st.c:2246)",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": false,
+            "notes": "Control code defined but not handled in execute()",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -948,6 +1034,18 @@
           "st": {
             "version_added": "0.4",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.7.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.28",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1064,6 +1162,18 @@
           },
           "st": {
             "version_added": "0.4",
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.7.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.28",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": false,
             "last_scanned": "2026-02-18"
           }
         },
@@ -1183,6 +1293,18 @@
           "st": {
             "version_added": "0.4",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.7.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.28",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1299,6 +1421,18 @@
           },
           "st": {
             "version_added": "0.4",
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.5.0-beta",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.28",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
             "last_scanned": "2026-02-18"
           }
         },
@@ -1426,6 +1560,19 @@
             "version_added": false,
             "notes": "Marked TODO in st.c:2272-2273",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": false,
+            "notes": "No ESC N or ESC O handling found",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1542,6 +1689,18 @@
           },
           "st": {
             "version_added": "0.4",
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.7.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.28",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
             "last_scanned": "2026-02-18"
           }
         },
@@ -1660,6 +1819,18 @@
           "st": {
             "version_added": "0.4",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.5.0-beta",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.28",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1776,6 +1947,18 @@
           },
           "st": {
             "version_added": "0.4",
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.28",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
             "last_scanned": "2026-02-18"
           }
         },
@@ -1902,6 +2085,19 @@
             "version_added": false,
             "notes": "Not implemented in tdectest",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": false,
+            "notes": "No ESC # 3-6 handling found",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -2019,6 +2215,19 @@
           },
           "st": {
             "version_added": "0.6",
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.7.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.28",
+            "notes": "Fills screen with 'E' characters",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": false,
             "last_scanned": "2026-02-18"
           }
         },
@@ -2144,6 +2353,19 @@
             "last_scanned": "2026-02-18"
           },
           "st": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": false,
+            "notes": "No ESC SP F/G handling found",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
             "version_added": false,
             "last_scanned": "2026-02-18"
           }
@@ -2279,6 +2501,19 @@
             "partial_implementation": true,
             "notes": "Only LS2/LS3 implemented, not LS1R/LS2R/LS3R",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": false,
+            "notes": "LS2/LS3/LS1R/LS2R/LS3R not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -2403,6 +2638,19 @@
           },
           "st": {
             "version_added": "0.8",
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": false,
+            "notes": "No ESC % G handling found",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": false,
             "last_scanned": "2026-02-18"
           }
         },

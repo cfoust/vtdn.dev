@@ -118,6 +118,18 @@
             "version_added": false,
             "notes": "DCS sequences recognized but not processed",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.31.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.1.13",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.6.0",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -241,6 +253,19 @@
             "version_added": false,
             "notes": "APC sequences recognized but not processed",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": false,
+            "notes": "Implementation exists in development branch (zero-dot-three) but not yet released",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.6.0",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -358,6 +383,20 @@
             "version_added": false,
             "notes": "No Unicode placeholder handling for graphics",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": false,
+            "notes": "Implementation exists in development branch but not yet released",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": false,
+            "notes": "U+10EEEE unicode placeholders not implemented",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -474,6 +513,21 @@
           "st": {
             "version_added": false,
             "notes": "No graphics protocol support",
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": null,
+            "notes": "Unable to determine from source code review",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.6.0",
+            "partial_implementation": true,
+            "notes": "Animation commands acknowledged but not yet implemented",
             "last_scanned": "2026-02-18"
           }
         },
@@ -599,6 +653,19 @@
           "st": {
             "version_added": false,
             "notes": "OSC 1337 not handled. APC sequences recognized but not processed",
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.1.13",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": false,
+            "notes": "OSC 1337 handler not implemented",
             "last_scanned": "2026-02-18"
           }
         },

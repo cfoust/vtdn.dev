@@ -115,6 +115,18 @@
           "st": {
             "version_added": "0.4",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.12.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.28",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -231,6 +243,18 @@
           },
           "st": {
             "version_added": "0.4",
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.12.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.28",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
             "last_scanned": "2026-02-18"
           }
         },
@@ -355,6 +379,19 @@
             "version_added": "0.8.5",
             "notes": "Supports both set and query operations",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.16.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.28",
+            "notes": "Supports both changing and querying with '?' for palette indices",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -475,6 +512,19 @@
           "st": {
             "version_added": false,
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.2.3",
+            "notes": "Parses file:// URL and extracts path for current working directory",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -593,6 +643,19 @@
           },
           "st": {
             "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.21.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.28",
+            "notes": "Supports id parameter for linking related hyperlinks",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
             "last_scanned": "2026-02-18"
           }
         },
@@ -717,6 +780,18 @@
           "st": {
             "version_added": false,
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -836,6 +911,18 @@
             "last_scanned": "2026-02-18"
           },
           "st": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
             "version_added": false,
             "last_scanned": "2026-02-18"
           }
@@ -959,6 +1046,21 @@
             "version_added": "0.8.5",
             "notes": "Supports both set and query operations",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.12.0",
+            "partial_implementation": true,
+            "notes": "Query only, setting not supported",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.28",
+            "notes": "Supports both setting and querying with '?'",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1079,6 +1181,21 @@
           "st": {
             "version_added": "0.8.5",
             "notes": "Supports both set and query operations",
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.12.0",
+            "partial_implementation": true,
+            "notes": "Query only, setting not supported",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.28",
+            "notes": "Supports both setting and querying with '?'",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
             "last_scanned": "2026-02-18"
           }
         },
@@ -1202,6 +1319,20 @@
             "version_added": "0.8.5",
             "notes": "Supports both set and query operations",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "notes": "Explicitly unimplemented in code",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.28",
+            "notes": "Supports both setting and querying with '?'",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1321,6 +1452,19 @@
             "last_scanned": "2026-02-18"
           },
           "st": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.17",
+            "notes": "Sets mouse pointer cursor shape using CursorIcon enum",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
             "version_added": false,
             "last_scanned": "2026-02-18"
           }
@@ -1448,6 +1592,18 @@
           "st": {
             "version_added": "0.8",
             "notes": "Requires allowwindowops enabled",
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.31.2",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.3",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": false,
             "last_scanned": "2026-02-18"
           }
         },
@@ -1577,6 +1733,21 @@
             "version_added": false,
             "notes": "Only writes to clipboard (OSC 52 set), does not respond with clipboard content for read operations",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "notes": "OSC 52 write (copy to clipboard) is supported, but read (paste from clipboard with '?') is explicitly not implemented - see grid.rs:2784-2786",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.28",
+            "notes": "Triggered by OSC 52 with '?' parameter",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": false,
+            "notes": "Uses Bubbletea's tea.ReadClipboard API which sends OSC 52 queries, but the VT emulator itself doesn't implement OSC 52 read handling",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1690,6 +1861,20 @@
           },
           "st": {
             "version_added": "0.8.3",
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.16.0",
+            "notes": "Supports both resetting individual color indices and all colors when no parameters given",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.28",
+            "notes": "Resets all 256 colors when no parameter given, or specific indices when provided",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": false,
             "last_scanned": "2026-02-18"
           }
         },
@@ -1816,6 +2001,21 @@
           "st": {
             "version_added": "0.9.3",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "notes": "OSC 110/111/112 are explicitly marked as unimplemented (grid.rs:2828-2841)",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.28",
+            "notes": "OSC 110, 111, and 112 all supported for resetting foreground, background, and cursor colors",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
+            "notes": "OSC 110/111/112 reset foreground/background/cursor colors",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1935,6 +2135,20 @@
           "st": {
             "version_added": false,
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "notes": "No OSC 133 shell integration support found",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": false,
+            "notes": "Shell integration markers are documented as not implemented (commented out in docs)",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -2047,6 +2261,19 @@
             "last_scanned": "2026-02-18"
           },
           "st": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "notes": "No Kitty OSC 21 color protocol support found",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
             "version_added": false,
             "last_scanned": "2026-02-18"
           }
@@ -2166,6 +2393,19 @@
           "st": {
             "version_added": false,
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "notes": "No Kitty OSC 99 notification support found",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -2282,6 +2522,19 @@
             "last_scanned": "2026-02-18"
           },
           "st": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "notes": "No iTerm2 OSC 1337 File inline image support found",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.28",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
             "version_added": false,
             "last_scanned": "2026-02-18"
           }
@@ -2407,6 +2660,20 @@
           "st": {
             "version_added": false,
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "notes": "No iTerm2 OSC 1337 marks/user vars support found",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": false,
+            "notes": "Only inline image display (File=) is implemented; marks, user vars, and profile switching are not supported",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -2523,6 +2790,19 @@
             "last_scanned": "2026-02-18"
           },
           "st": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "notes": "No OSC 777 notification support found",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
             "version_added": false,
             "last_scanned": "2026-02-18"
           }

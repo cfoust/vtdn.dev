@@ -119,6 +119,19 @@
             "version_added": false,
             "notes": "No CSI t window manipulation sequences implemented",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": false,
+            "notes": "CSI 1/2 t not handled",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -245,6 +258,19 @@
             "version_added": false,
             "notes": "No CSI t window manipulation sequences implemented",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": false,
+            "notes": "CSI 3 t not handled",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -369,6 +395,19 @@
           "st": {
             "version_added": false,
             "notes": "No CSI t window manipulation sequences implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": false,
+            "notes": "CSI 4 t not handled",
             "last_scanned": "2026-02-18"
           }
         },
@@ -496,6 +535,19 @@
             "version_added": false,
             "notes": "No CSI t window manipulation sequences implemented",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": false,
+            "notes": "CSI 5/6 t not handled",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -621,6 +673,19 @@
           "st": {
             "version_added": false,
             "notes": "No CSI t window manipulation sequences implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": false,
+            "notes": "CSI 8 t not handled",
             "last_scanned": "2026-02-18"
           }
         },
@@ -750,6 +815,19 @@
             "version_added": false,
             "notes": "No CSI t window manipulation sequences implemented",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": false,
+            "notes": "CSI 9 t not handled",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -878,6 +956,19 @@
             "version_added": false,
             "notes": "No CSI t window manipulation sequences implemented",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": false,
+            "notes": "CSI 10 t not handled",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1003,6 +1094,19 @@
           "st": {
             "version_added": false,
             "notes": "No CSI t window manipulation sequences implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": false,
+            "notes": "CSI 11 t not handled",
             "last_scanned": "2026-02-18"
           }
         },
@@ -1130,6 +1234,19 @@
             "version_added": false,
             "notes": "No CSI t window manipulation sequences implemented",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": false,
+            "notes": "CSI 13 t not handled",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1255,6 +1372,20 @@
             "version_added": false,
             "notes": "No CSI t window manipulation sequences implemented",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.24.0",
+            "notes": "CSI 14 t and CSI 16 t (character cell size report)",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.3",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.2.2",
+            "notes": "CSI 14 t, 16 t, and 18 t supported",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1378,6 +1509,18 @@
           "st": {
             "version_added": false,
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.28.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.1.11",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.2.2",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -1496,6 +1639,18 @@
           },
           "st": {
             "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.10.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.28",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.2.2",
             "last_scanned": "2026-02-18"
           }
         },
@@ -1624,6 +1779,19 @@
           },
           "st": {
             "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.16.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.28",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": false,
+            "notes": "Only CSI 14/16/18 t are implemented in XTWINOPS handler",
             "last_scanned": "2026-02-18"
           }
         },

@@ -114,6 +114,19 @@
           "st": {
             "version_added": false,
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": null
+          },
+          "rio": {
+            "version_added": true,
+            "notes": "Implemented in commit 426e37d936 (2025-08-19) but not yet in any released version. Available only in 'nightly' tag. Supports CSI u sequences with progressive enhancement flags.",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": false,
+            "notes": "TODO comment in internal/vt/key.go:32 explicitly states 'TODO: Support Kitty, CSI u, and XTerm modifyOtherKeys'",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -237,6 +250,21 @@
             "version_added": false,
             "notes": "Kitty keyboard protocol not implemented",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "notes": "Zellij only supports basic Kitty keyboard protocol enable/disable, not individual flags",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": false,
+            "notes": "Implementation exists but not yet in a released version tag",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": false,
+            "notes": "TODO comment indicates Kitty keyboard protocol not yet implemented",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -358,6 +386,21 @@
           "st": {
             "version_added": false,
             "notes": "Kitty keyboard protocol not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "notes": "Zellij only supports basic Kitty keyboard protocol enable/disable, not individual flags",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": false,
+            "notes": "Implementation exists but not yet in a released version tag",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": false,
+            "notes": "TODO comment indicates Kitty keyboard protocol not yet implemented",
             "last_scanned": "2026-02-18"
           }
         },
@@ -481,6 +524,21 @@
             "version_added": false,
             "notes": "Kitty keyboard protocol not implemented",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "notes": "Zellij only supports basic Kitty keyboard protocol enable/disable, not individual flags",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": false,
+            "notes": "Implementation exists but not yet in a released version tag",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": false,
+            "notes": "TODO comment indicates Kitty keyboard protocol not yet implemented",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -603,6 +661,21 @@
             "version_added": false,
             "notes": "Kitty keyboard protocol not implemented",
             "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "notes": "Zellij only supports basic Kitty keyboard protocol enable/disable, not individual flags",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": false,
+            "notes": "Implementation exists but not yet in a released version tag",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": false,
+            "notes": "TODO comment indicates Kitty keyboard protocol not yet implemented",
+            "last_scanned": "2026-02-18"
           }
         },
         "status": {
@@ -724,6 +797,21 @@
           "st": {
             "version_added": false,
             "notes": "Kitty keyboard protocol not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "notes": "Zellij only supports basic Kitty keyboard protocol enable/disable, not individual flags",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": false,
+            "notes": "Implementation exists but not yet in a released version tag",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": false,
+            "notes": "TODO comment indicates Kitty keyboard protocol not yet implemented",
             "last_scanned": "2026-02-18"
           }
         },

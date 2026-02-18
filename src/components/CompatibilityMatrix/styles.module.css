@@ -237,3 +237,117 @@
   color: var(--ifm-color-emphasis-800);
   font-variant-numeric: tabular-nums;
 }
+
+/* Card view (mobile) */
+
+.cardView {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    display: none;
+  }
+
+  .cardView {
+    display: block;
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    padding: 0.75rem;
+    background: var(--ifm-background-surface-color);
+  }
+}
+
+.cardCategoryTitle {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ifm-color-primary);
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+  padding: 1.25rem 0 0.25rem;
+  border-bottom: 2px solid var(--ifm-color-primary);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--ifm-background-surface-color);
+}
+
+.cardCategoryTitle:first-child {
+  padding-top: 0;
+}
+
+.card {
+  border: 1px solid var(--ifm-table-border-color);
+  border-radius: 6px;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  background: var(--ifm-background-surface-color);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.cardTitle {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--ifm-font-color-base);
+  text-decoration: none;
+}
+
+.cardTitle:hover {
+  color: var(--ifm-color-primary);
+}
+
+.cardCount {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-600);
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+}
+
+.cardDesc {
+  font-size: 0.78rem;
+  color: var(--ifm-color-emphasis-600);
+  margin: 0.2rem 0 0;
+  line-height: 1.3;
+}
+
+.cardSupport {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.78rem;
+  margin-top: 0.5rem;
+}
+
+.cardGroup {
+  display: flex;
+  gap: 0.4rem;
+  line-height: 1.4;
+}
+
+.cardGroupIcon {
+  flex-shrink: 0;
+  font-weight: 700;
+  width: 1rem;
+  text-align: center;
+}
+
+.cardYes {
+  color: var(--ifm-color-success-dark);
+}
+
+.cardPartial {
+  color: var(--ifm-color-warning-dark);
+}
+
+.cardNo {
+  color: var(--ifm-color-danger-dark);
+}

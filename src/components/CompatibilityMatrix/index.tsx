@@ -25,7 +25,25 @@ const categories = [
   windowManipulation.window_manipulation,
 ];
 
-const terminalIds = Object.keys(terminals);
+// Sort terminals alphabetically by name within each group, preserving group order
+const terminalIds = (() => {
+  const ids = Object.keys(terminals);
+  const groups: string[][] = [];
+  for (const id of ids) {
+    const group = (terminals[id] as any).group || null;
+    const last = groups[groups.length - 1];
+    if (last && (terminals[last[0]] as any).group === group) {
+      last.push(id);
+    } else {
+      groups.push([id]);
+    }
+  }
+  return groups.flatMap((g) =>
+    g.sort((a, b) =>
+      (terminals[a] as any).name.localeCompare((terminals[b] as any).name, undefined, {sensitivity: 'base'}),
+    ),
+  );
+})();
 
 // Build group header spans: consecutive terminals with the same group get merged
 function buildGroupHeaders(): Array<{label: string | null; span: number}> {
@@ -129,6 +147,67 @@ function SupportCell({support}: {support: SupportEntry}) {
   );
 }
 
+function classifySupport(support: SupportEntry) {
+  if (support.partial_implementation) return 'partial';
+  if (support.version_added === true || typeof support.version_added === 'string') return 'yes';
+  if (support.version_added === false) return 'no';
+  return 'unknown';
+}
+
+function FeatureCard({featureId, feature}: {featureId: string; feature: any}) {
+  const compat = feature.__compat;
+  const groups: Record<string, Array<{name: string; notes?: string}>> = {
+    yes: [],
+    partial: [],
+    no: [],
+    unknown: [],
+  };
+
+  for (const termId of terminalIds) {
+    const support = compat.support[termId];
+    const kind = classifySupport(support);
+    groups[kind].push({name: (terminals[termId] as any).name, notes: support.notes});
+  }
+
+  const supportedCount = groups.yes.length + groups.partial.length;
+
+  return (
+    <div className={styles.card}>
+      <div className={styles.cardHeader}>
+        <Link to={compat.doc_path} className={styles.cardTitle}>
+          {compat.title}
+        </Link>
+        <span className={styles.cardCount}>
+          {supportedCount}/{terminalIds.length}
+        </span>
+      </div>
+      {compat.description && (
+        <p className={styles.cardDesc}>{compat.description}</p>
+      )}
+      <div className={styles.cardSupport}>
+        {groups.yes.length > 0 && (
+          <div className={styles.cardGroup}>
+            <span className={`${styles.cardGroupIcon} ${styles.cardYes}`}>&#x2713;</span>
+            <span>{groups.yes.map((t) => t.name).join(', ')}</span>
+          </div>
+        )}
+        {groups.partial.length > 0 && (
+          <div className={styles.cardGroup}>
+            <span className={`${styles.cardGroupIcon} ${styles.cardPartial}`}>~</span>
+            <span>{groups.partial.map((t) => t.name).join(', ')}</span>
+          </div>
+        )}
+        {groups.no.length > 0 && (
+          <div className={styles.cardGroup}>
+            <span className={`${styles.cardGroupIcon} ${styles.cardNo}`}>&#x2717;</span>
+            <span>{groups.no.map((t) => t.name).join(', ')}</span>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
 export default function CompatibilityMatrix(): React.ReactElement {
   const wrapperRef = React.useRef<HTMLDivElement>(null);
   const theadRef = React.useRef<HTMLTableSectionElement>(null);
@@ -154,90 +233,108 @@ export default function CompatibilityMatrix(): React.ReactElement {
   }, []);
 
   return (
-    <div ref={wrapperRef} className={styles.wrapper}>
-      <table className={styles.matrix}>
-        <thead ref={theadRef}>
-          {hasGroups && (
-            <tr ref={groupRowRef} className={styles.groupRow}>
-              <th className={styles.featureHeader} colSpan={2} />
-              {groupHeaders.map((h, i) =>
-                h.label ? (
-                  <th key={i} colSpan={h.span} className={styles.groupHeader}>
-                    {h.label}
-                  </th>
-                ) : (
-                  Array.from({length: h.span}, (_, j) => (
-                    <th key={`${i}-${j}`} className={styles.groupHeaderEmpty} />
-                  ))
-                ),
-              )}
+    <>
+      <div ref={wrapperRef} className={styles.wrapper}>
+        <table className={styles.matrix}>
+          <thead ref={theadRef}>
+            {hasGroups && (
+              <tr ref={groupRowRef} className={styles.groupRow}>
+                <th className={styles.featureHeader} colSpan={2} />
+                {groupHeaders.map((h, i) =>
+                  h.label ? (
+                    <th key={i} colSpan={h.span} className={styles.groupHeader}>
+                      {h.label}
+                    </th>
+                  ) : (
+                    Array.from({length: h.span}, (_, j) => (
+                      <th key={`${i}-${j}`} className={styles.groupHeaderEmpty} />
+                    ))
+                  ),
+                )}
+              </tr>
+            )}
+            <tr>
+              <th className={`${styles.featureHeader} ${styles.featureHeaderNames}`}>Feature</th>
+              <th className={`${styles.countHeader} ${styles.featureHeaderNames}`}></th>
+              {terminalIds.map((id) => (
+                <th key={id} className={styles.terminalHeader}>
+                  <a
+                    href={terminals[id].website}
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    {icons[id] || <span className={styles.terminalIconSpacer} />}
+                    {terminals[id].name}
+                  </a>
+                </th>
+              ))}
             </tr>
-          )}
-          <tr>
-            <th className={`${styles.featureHeader} ${styles.featureHeaderNames}`}>Feature</th>
-            <th className={`${styles.countHeader} ${styles.featureHeaderNames}`}></th>
-            {terminalIds.map((id) => (
-              <th key={id} className={styles.terminalHeader}>
-                <a
-                  href={terminals[id].website}
-                  target="_blank"
-                  rel="noopener noreferrer">
-                  {icons[id] || <span className={styles.terminalIconSpacer} />}
-                  {terminals[id].name}
-                </a>
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          <tr className={styles.summaryRow}>
-            <td className={styles.featureCell}>Features supported</td>
-            <td className={styles.countCell}></td>
-            {terminalIds.map((id) => (
-              <td key={id} className={styles.summaryCell}>
-                {terminalCounts[id]}
-              </td>
-            ))}
-          </tr>
-          {categories.map((category) => {
-            const meta = category.__meta;
-            const features = Object.entries(category).filter(
-              ([key]) => key !== '__meta',
-            );
+          </thead>
+          <tbody>
+            <tr className={styles.summaryRow}>
+              <td className={styles.featureCell}>Features supported</td>
+              <td className={styles.countCell}></td>
+              {terminalIds.map((id) => (
+                <td key={id} className={styles.summaryCell}>
+                  {terminalCounts[id]}
+                </td>
+              ))}
+            </tr>
+            {categories.map((category) => {
+              const meta = category.__meta;
+              const features = Object.entries(category).filter(
+                ([key]) => key !== '__meta',
+              );
 
-            return (
-              <React.Fragment key={meta.category}>
-                <tr className={styles.categoryRow}>
-                  <td className={styles.categoryCell}>
-                    {meta.category}
-                  </td>
-                  <td colSpan={terminalIds.length + 1} className={styles.categoryFill} />
-                </tr>
-                {features.map(([featureId, feature]) => {
-                  const compat = (feature as any).__compat;
-                  return (
-                    <tr key={featureId}>
-                      <td className={styles.featureCell}>
-                        <Link to={compat.doc_path}>{compat.title}</Link>
-                        <span className={styles.featureDesc}>{compat.description}</span>
-                      </td>
-                      <td className={styles.countCell}>
-                        {terminalIds.filter((id) => isSupported(compat.support[id])).length}
-                      </td>
-                      {terminalIds.map((termId) => (
-                        <SupportCell
-                          key={termId}
-                          support={compat.support[termId]}
-                        />
-                      ))}
-                    </tr>
-                  );
-                })}
-              </React.Fragment>
-            );
-          })}
-        </tbody>
-      </table>
-    </div>
+              return (
+                <React.Fragment key={meta.category}>
+                  <tr className={styles.categoryRow}>
+                    <td className={styles.categoryCell}>
+                      {meta.category}
+                    </td>
+                    <td colSpan={terminalIds.length + 1} className={styles.categoryFill} />
+                  </tr>
+                  {features.map(([featureId, feature]) => {
+                    const compat = (feature as any).__compat;
+                    return (
+                      <tr key={featureId}>
+                        <td className={styles.featureCell}>
+                          <Link to={compat.doc_path}>{compat.title}</Link>
+                          <span className={styles.featureDesc}>{compat.description}</span>
+                        </td>
+                        <td className={styles.countCell}>
+                          {terminalIds.filter((id) => isSupported(compat.support[id])).length}
+                        </td>
+                        {terminalIds.map((termId) => (
+                          <SupportCell
+                            key={termId}
+                            support={compat.support[termId]}
+                          />
+                        ))}
+                      </tr>
+                    );
+                  })}
+                </React.Fragment>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+      <div className={styles.cardView}>
+        {categories.map((category) => {
+          const meta = category.__meta;
+          const features = Object.entries(category).filter(
+            ([key]) => key !== '__meta',
+          );
+          return (
+            <div key={meta.category}>
+              <h2 className={styles.cardCategoryTitle}>{meta.category}</h2>
+              {features.map(([featureId, feature]) => (
+                <FeatureCard key={featureId} featureId={featureId} feature={feature} />
+              ))}
+            </div>
+          );
+        })}
+      </div>
+    </>
   );
 }

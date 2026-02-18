@@ -1,7 +1,7 @@
 .wrapper {
   overflow: auto;
-  margin: 1.5rem 0;
-  max-height: 80vh;
+  flex: 1;
+  min-height: 0;
 }
 
 .matrix {

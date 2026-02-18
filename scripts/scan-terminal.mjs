@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { readFileSync, writeFileSync, existsSync } from "fs";
+import { readFileSync, writeFileSync, existsSync, mkdirSync } from "fs";
 import { resolve, dirname, basename } from "path";
 import { fileURLToPath } from "url";
 import { parseArgs } from "util";
@@ -8,6 +8,7 @@ import { execFileSync } from "child_process";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const dataDir = resolve(__dirname, "..", "data");
 const reposDir = resolve(__dirname, "..", "repos");
+const summariesDir = resolve(__dirname, "..", "summaries");
 
 const dataFiles = [
   "control-sequences.json",
@@ -26,9 +27,10 @@ const { values } = parseArgs({
     id: { type: "string" },
     category: { type: "string", multiple: true },
     feature: { type: "string", multiple: true },
-    "batch-size": { type: "string", default: "20" },
     timeout: { type: "string", default: "600" },
     "dry-run": { type: "boolean", default: false },
+    "regenerate-summary": { type: "boolean", default: false },
+    "summary-only": { type: "boolean", default: false },
     help: { type: "boolean", short: "h" },
   },
 });
@@ -44,15 +46,20 @@ Options:
                          (e.g. --category csi-sequences --category graphics)
   --feature <id>         Filter to specific feature ID(s), repeatable
                          (e.g. --feature bel --feature sixel)
-  --batch-size <n>       Features per Claude invocation (default: 20)
   --timeout <seconds>    Timeout per batch invocation (default: 600)
   --dry-run              Print what would be scanned without invoking Claude
+  --regenerate-summary   Force regeneration of the codebase summary
+  --summary-only         Only generate/regenerate the summary, don't scan
   -h, --help             Show usage
+
+Summaries are cached in summaries/<id>.txt and reused across runs.
 
 Examples:
   node scripts/scan-terminal.mjs --id cy --dry-run
-  node scripts/scan-terminal.mjs --id cy --category graphics --dry-run
-  node scripts/scan-terminal.mjs --id cy --feature bel`);
+  node scripts/scan-terminal.mjs --id cy --category graphics
+  node scripts/scan-terminal.mjs --id cy --feature bel
+  node scripts/scan-terminal.mjs --id cy --summary-only
+  node scripts/scan-terminal.mjs --id cy --regenerate-summary`);
   process.exit(0);
 }
 
@@ -63,7 +70,6 @@ if (!values.id) {
 
 const terminalId = values.id;
 const timeoutMs = Number(values.timeout) * 1000;
-const batchSize = Number(values["batch-size"]);
 const terminals = JSON.parse(
   readFileSync(resolve(dataDir, "terminals.json"), "utf-8"),
 );
@@ -174,6 +180,18 @@ function collectFeatures(categoryFilters, featureFilters) {
   return features;
 }
 
+// Group features by category file
+function groupByCategory(features) {
+  const groups = new Map();
+  for (const f of features) {
+    if (!groups.has(f.file)) {
+      groups.set(f.file, []);
+    }
+    groups.get(f.file).push(f);
+  }
+  return groups;
+}
+
 // Build a JSON schema with explicit properties for each feature ID in the batch
 function buildBatchSchema(batch) {
   const featureSchema = {
@@ -201,8 +219,16 @@ function buildBatchSchema(batch) {
   });
 }
 
-// Gather context about the repo's codebase structure once, before batching
-function gatherRepoContext(repoPath, terminalName) {
+// Gather or load cached context about the repo's codebase structure
+function getRepoContext(repoPath, terminalId, terminalName, forceRegenerate) {
+  mkdirSync(summariesDir, { recursive: true });
+  const summaryPath = resolve(summariesDir, `${terminalId}.md`);
+
+  if (!forceRegenerate && existsSync(summaryPath)) {
+    console.log(`Loading cached summary from summaries/${terminalId}.txt`);
+    return readFileSync(summaryPath, "utf-8").trim();
+  }
+
   console.log("Gathering codebase context...");
 
   const prompt = `You are analyzing the source code of the terminal emulator "${terminalName}".
@@ -226,8 +252,10 @@ Provide a concise map: for each area, give the file path(s) and a brief note abo
       timeout: timeoutMs,
       maxBuffer: 10 * 1024 * 1024,
     });
-    console.log("Context gathered successfully.");
-    return raw.trim();
+    const summary = raw.trim();
+    writeFileSync(summaryPath, summary + "\n");
+    console.log(`Summary saved to summaries/${terminalId}.txt`);
+    return summary;
   } catch (e) {
     const reason = e.killed ? "timeout" : e.message;
     console.error(`Warning: context gathering failed (${reason}), proceeding without context`);
@@ -305,6 +333,20 @@ function toSupportEntry(result) {
 }
 
 // Main
+const repoPath = ensureRepo(terminalId, terminal.repository);
+const forceRegenerate = values["regenerate-summary"] || values["summary-only"];
+const repoContext = getRepoContext(repoPath, terminalId, terminal.name, forceRegenerate);
+
+if (values["summary-only"]) {
+  if (repoContext) {
+    console.log("Summary generated. Done.");
+  } else {
+    console.error("Failed to generate summary.");
+    process.exit(1);
+  }
+  process.exit(0);
+}
+
 const features = collectFeatures(values.category, values.feature);
 
 if (features.length === 0) {
@@ -316,31 +358,31 @@ if (features.length === 0) {
   process.exit(1);
 }
 
+const categoryGroups = groupByCategory(features);
+const totalBatches = categoryGroups.size;
+
 console.log(
-  `Scanning ${features.length} feature(s) for terminal '${terminalId}' (${terminal.name}) in batches of ${batchSize}`,
+  `Scanning ${features.length} feature(s) for terminal '${terminalId}' (${terminal.name}) in ${totalBatches} category batch(es)`,
 );
 
 if (values["dry-run"]) {
   for (const f of features) {
     console.log(`  [${f.categoryName}] ${f.featureId}: ${f.title}`);
   }
-  console.log(`\n${features.length} feature(s) would be scanned.`);
+  console.log(`\n${features.length} feature(s) would be scanned in ${totalBatches} batch(es).`);
   process.exit(0);
 }
 
-const repoPath = ensureRepo(terminalId, terminal.repository);
-const repoContext = gatherRepoContext(repoPath, terminal.name);
-
 const resultsByFile = new Map();
 let scanned = 0;
+let batchNum = 0;
 
-for (let i = 0; i < features.length; i += batchSize) {
-  const batch = features.slice(i, i + batchSize);
-  const batchNum = Math.floor(i / batchSize) + 1;
-  const totalBatches = Math.ceil(features.length / batchSize);
+for (const [file, batch] of categoryGroups) {
+  batchNum++;
+  const categoryName = basename(file, ".json");
 
   console.log(
-    `\nBatch ${batchNum}/${totalBatches} (${batch.length} features)...`,
+    `\nBatch ${batchNum}/${totalBatches}: ${categoryName} (${batch.length} features)...`,
   );
 
   const prompt = buildBatchPrompt(terminal.name, batch, repoContext);
@@ -362,12 +404,12 @@ for (let i = 0; i < features.length; i += batchSize) {
     const envelope = JSON.parse(raw);
     results = envelope.structured_output;
     if (!results || typeof results !== "object") {
-      console.error(`  Batch ${batchNum}: no structured output, skipping`);
+      console.error(`  ${categoryName}: no structured output, skipping`);
       continue;
     }
   } catch (e) {
     const reason = e.killed ? "timeout" : e.message;
-    console.error(`  Batch ${batchNum}: error (${reason}), skipping`);
+    console.error(`  ${categoryName}: error (${reason}), skipping`);
     continue;
   }
 

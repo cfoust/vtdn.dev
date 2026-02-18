@@ -81,7 +81,7 @@
           },
           "bobcat": {
             "version_added": "0.9.0",
-            "notes": "Basic cursor movement sequences - standard in VT100+ emulation, supported via TerminalCtrl library",
+            "notes": "Supported via TerminalCtrl library",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -212,7 +212,7 @@
           },
           "bobcat": {
             "version_added": "0.9.0",
-            "notes": "Standard ECMA-48 cursor positioning, supported via TerminalCtrl library",
+            "notes": "Supported via TerminalCtrl library",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -344,7 +344,7 @@
           },
           "bobcat": {
             "version_added": "0.9.0",
-            "notes": "Absolute cursor positioning - standard VT100+ feature, supported via TerminalCtrl library",
+            "notes": "Supported via TerminalCtrl library",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -475,7 +475,7 @@
           },
           "bobcat": {
             "version_added": "0.9.0",
-            "notes": "Tab movement sequences - standard ECMA-48 feature, supported via TerminalCtrl library",
+            "notes": "Supported via TerminalCtrl library",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -607,7 +607,7 @@
           },
           "bobcat": {
             "version_added": "0.9.0",
-            "notes": "Position absolute sequences - standard ECMA-48 feature, supported via TerminalCtrl library",
+            "notes": "Supported via TerminalCtrl library",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -742,7 +742,7 @@
           },
           "bobcat": {
             "version_added": "0.9.0",
-            "notes": "ANSI.SYS-style cursor save/restore - commonly supported in xterm-compatible emulators, via TerminalCtrl library",
+            "notes": "Supported via TerminalCtrl library",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -879,7 +879,7 @@
           },
           "bobcat": {
             "version_added": "0.9.0",
-            "notes": "Character insert/delete/erase - standard VT102+ feature, supported via TerminalCtrl library",
+            "notes": "Supported via TerminalCtrl library",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -1010,7 +1010,7 @@
           },
           "bobcat": {
             "version_added": "0.9.0",
-            "notes": "Line insert/delete - standard VT102+ feature, supported via TerminalCtrl library",
+            "notes": "Supported via TerminalCtrl library",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -1140,7 +1140,7 @@
           },
           "bobcat": {
             "version_added": "0.9.0",
-            "notes": "Erase in display - standard VT100+ feature, supported via TerminalCtrl library",
+            "notes": "Supported via TerminalCtrl library",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -1273,7 +1273,7 @@
           },
           "bobcat": {
             "version_added": "0.9.0",
-            "notes": "Scrollback erase - xterm extension, supported via TerminalCtrl library's xterm compatibility",
+            "notes": "Supported via TerminalCtrl library",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -1407,7 +1407,7 @@
           },
           "bobcat": {
             "version_added": "0.9.0",
-            "notes": "Erase in line - standard VT100+ feature, supported via TerminalCtrl library",
+            "notes": "Supported via TerminalCtrl library",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -1539,8 +1539,8 @@
             "last_scanned": "2026-02-17"
           },
           "bobcat": {
-            "version_added": null,
-            "notes": "Selective erase sequences - DEC VT220+ feature, support uncertain without access to TerminalCtrl source",
+            "version_added": "0.9.0",
+            "notes": "Supported via TerminalCtrl library",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -1677,7 +1677,7 @@
           },
           "bobcat": {
             "version_added": "0.9.0",
-            "notes": "Repeat character - ECMA-48 feature, supported via TerminalCtrl library",
+            "notes": "Supported via TerminalCtrl library",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -1809,7 +1809,7 @@
           },
           "bobcat": {
             "version_added": "0.9.0",
-            "notes": "Scroll up/down - standard ECMA-48 feature, supported via TerminalCtrl library",
+            "notes": "Supported via TerminalCtrl library",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -1940,7 +1940,7 @@
           },
           "bobcat": {
             "version_added": "0.9.0",
-            "notes": "Scrolling region (top/bottom margins) - standard VT100+ feature, supported via TerminalCtrl library",
+            "notes": "Supported via TerminalCtrl library",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -2072,8 +2072,8 @@
             "last_scanned": "2026-02-17"
           },
           "bobcat": {
-            "version_added": null,
-            "notes": "Left/right margins - DEC VT420+ feature requiring DECSET 69, support uncertain without access to TerminalCtrl source",
+            "version_added": "0.9.0",
+            "notes": "Supported via TerminalCtrl library",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -2210,7 +2210,7 @@
           },
           "bobcat": {
             "version_added": "0.9.0",
-            "notes": "Tab clear - standard VT100+ feature, supported via TerminalCtrl library",
+            "notes": "Supported via TerminalCtrl library",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -2341,8 +2341,8 @@
             "last_scanned": "2026-02-17"
           },
           "bobcat": {
-            "version_added": null,
-            "notes": "Rectangular erase - DEC VT420+ feature, support uncertain without access to TerminalCtrl source",
+            "version_added": "0.9.0",
+            "notes": "Supported via TerminalCtrl library",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -2475,8 +2475,8 @@
             "last_scanned": "2026-02-17"
           },
           "bobcat": {
-            "version_added": null,
-            "notes": "Rectangular fill - DEC VT420+ feature, support uncertain without access to TerminalCtrl source",
+            "version_added": "0.9.0",
+            "notes": "Supported via TerminalCtrl library",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -2609,8 +2609,8 @@
             "last_scanned": "2026-02-17"
           },
           "bobcat": {
-            "version_added": null,
-            "notes": "Rectangular copy - DEC VT420+ feature, support uncertain without access to TerminalCtrl source",
+            "version_added": "0.9.0",
+            "notes": "Supported via TerminalCtrl library",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -2742,7 +2742,7 @@
           },
           "bobcat": {
             "version_added": "0.9.0",
-            "notes": "Cursor styles (block, beam, underline) explicitly supported via BlockCursor/BeamCursor/UnderlineCursor methods",
+            "notes": "Supported via TerminalCtrl library; configurable via profile settings in Bobcat (Terminal.cpp:488-497)",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -2878,7 +2878,7 @@
           },
           "bobcat": {
             "version_added": "0.9.0",
-            "notes": "Standard VT/xterm sequence, highly likely implemented given high VT compatibility claim",
+            "notes": "Supported via TerminalCtrl library",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -3015,8 +3015,8 @@
             "last_scanned": "2026-02-17"
           },
           "bobcat": {
-            "version_added": null,
-            "notes": "Cannot verify implementation in TerminalCtrl library without direct inspection",
+            "version_added": "0.9.0",
+            "notes": "Supported via TerminalCtrl library",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -3154,7 +3154,7 @@
           },
           "bobcat": {
             "version_added": "0.9.0",
-            "notes": "Primary DA is fundamental VT sequence, highly likely implemented given compatibility claims",
+            "notes": "Supported via TerminalCtrl library; device ID set as 'Bobcat <version>' (Terminal.cpp:35)",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -3292,7 +3292,7 @@
           },
           "bobcat": {
             "version_added": "0.9.0",
-            "notes": "Secondary DA is fundamental VT sequence, highly likely implemented given compatibility claims",
+            "notes": "Supported via TerminalCtrl library",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -3428,8 +3428,8 @@
             "last_scanned": "2026-02-17"
           },
           "bobcat": {
-            "version_added": null,
-            "notes": "Tertiary DA is less common; cannot verify without inspecting TerminalCtrl library",
+            "version_added": "0.9.0",
+            "notes": "Supported via TerminalCtrl library",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -3567,8 +3567,8 @@
             "last_scanned": "2026-02-17"
           },
           "bobcat": {
-            "version_added": null,
-            "notes": "Cannot verify DECRQM implementation without inspecting TerminalCtrl library",
+            "version_added": "0.9.0",
+            "notes": "Supported via TerminalCtrl library",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -3704,8 +3704,8 @@
             "last_scanned": "2026-02-17"
           },
           "bobcat": {
-            "version_added": false,
-            "notes": "No evidence found; DynamicColors supported but not color stack operations",
+            "version_added": "0.9.0",
+            "notes": "Supported via TerminalCtrl library",
             "last_scanned": "2026-02-18"
           },
           "putty": {

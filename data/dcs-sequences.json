@@ -87,7 +87,7 @@
           },
           "bobcat": {
             "version_added": null,
-            "notes": "Core parsing in TerminalCtrl library (external), not verified in Bobcat repo",
+            "notes": "Bobcat is built on TerminalCtrl library which handles all escape sequence parsing. No evidence found in Bobcat's code, but this may be implemented in the external TerminalCtrl dependency.",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -224,7 +224,7 @@
           },
           "bobcat": {
             "version_added": null,
-            "notes": "Core parsing in TerminalCtrl library (external), not verified in Bobcat repo",
+            "notes": "Bobcat is built on TerminalCtrl library which handles all escape sequence parsing. No evidence found in Bobcat's code, but this may be implemented in the external TerminalCtrl dependency.",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -359,8 +359,8 @@
             "last_scanned": "2026-02-17"
           },
           "bobcat": {
-            "version_added": null,
-            "notes": "Core parsing in TerminalCtrl library (external), not verified in Bobcat repo",
+            "version_added": "0.9.0",
+            "notes": "SetDeviceId() sets terminal name/version response. Added in commit 0eac0f8 (2025-01-15) for 'Extended device attributes (CSI q <) response'.",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -497,7 +497,7 @@
           },
           "bobcat": {
             "version_added": "0.9.0",
-            "notes": "Sixel graphics supported via InlineImages() feature",
+            "notes": "InlineImages() enables Sixel, iTerm2, and Jexer graphics protocols. Present since initial commit (b893b96). Implemented via TerminalCtrl library.",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -627,8 +627,8 @@
             "last_scanned": "2026-02-17"
           },
           "bobcat": {
-            "version_added": null,
-            "notes": "Core parsing in TerminalCtrl library (external), not verified in Bobcat repo",
+            "version_added": false,
+            "notes": "No evidence of tmux passthrough (DCS tmux; ... ST) implementation found in Bobcat or commit history.",
             "last_scanned": "2026-02-18"
           },
           "putty": {

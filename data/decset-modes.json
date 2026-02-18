@@ -79,8 +79,8 @@
             "last_scanned": "2026-02-17"
           },
           "bobcat": {
-            "version_added": null,
-            "notes": "Core parsing in TerminalCtrl library (external), not verified in Bobcat repo",
+            "version_added": "0.9.0",
+            "notes": "Implemented in TerminalCtrl library. Configurable via PCStyleFunctionKeys setting.",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -216,7 +216,7 @@
           },
           "bobcat": {
             "version_added": null,
-            "notes": "Core parsing in TerminalCtrl library (external), not verified in Bobcat repo",
+            "notes": "Not explicitly configured in Bobcat. TerminalCtrl may support this, but cannot confirm from Bobcat's code.",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -353,7 +353,7 @@
           },
           "bobcat": {
             "version_added": null,
-            "notes": "Core parsing in TerminalCtrl library (external), not verified in Bobcat repo",
+            "notes": "Not explicitly configured in Bobcat. TerminalCtrl may support this, but cannot confirm from Bobcat's code.",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -486,7 +486,7 @@
           },
           "bobcat": {
             "version_added": null,
-            "notes": "Core parsing in TerminalCtrl library (external), not verified in Bobcat repo",
+            "notes": "Not explicitly configured in Bobcat. TerminalCtrl may support this, but cannot confirm from Bobcat's code.",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -620,7 +620,7 @@
           },
           "bobcat": {
             "version_added": null,
-            "notes": "Core parsing in TerminalCtrl library (external), not verified in Bobcat repo",
+            "notes": "Not explicitly configured in Bobcat. TerminalCtrl may support this, but cannot confirm from Bobcat's code.",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -755,8 +755,8 @@
             "last_scanned": "2026-02-17"
           },
           "bobcat": {
-            "version_added": null,
-            "notes": "Core parsing in TerminalCtrl library (external), not verified in Bobcat repo",
+            "version_added": "0.9.0",
+            "notes": "Implemented in TerminalCtrl library. Configurable via BlinkingCursor setting.",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -885,7 +885,7 @@
           },
           "bobcat": {
             "version_added": null,
-            "notes": "Mode handling in external TerminalCtrl library, not visible in Bobcat codebase",
+            "notes": "Cursor visibility is supported (cursor styles are configurable), but cannot confirm DECTCEM sequence support from Bobcat's code.",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -1011,7 +1011,7 @@
           },
           "bobcat": {
             "version_added": "0.9.0",
-            "notes": "ReverseWrap() method called in Terminal.cpp:356, present since earliest tag",
+            "notes": "Implemented in TerminalCtrl library. Configurable via ReverseWrap setting.",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -1139,7 +1139,7 @@
           },
           "bobcat": {
             "version_added": null,
-            "notes": "Mode handling in external TerminalCtrl library, not visible in Bobcat codebase",
+            "notes": "Not explicitly configured in Bobcat. TerminalCtrl may support this, but cannot confirm from Bobcat's code.",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -1267,8 +1267,8 @@
             "last_scanned": "2026-02-17"
           },
           "bobcat": {
-            "version_added": null,
-            "notes": "Mode handling in external TerminalCtrl library, not visible in Bobcat codebase",
+            "version_added": "0.9.0",
+            "notes": "Sixel support confirmed via InlineImages setting, which enables Sixel and iTerm2 image protocols.",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -1398,8 +1398,8 @@
             "last_scanned": "2026-02-17"
           },
           "bobcat": {
-            "version_added": null,
-            "notes": "Mode handling in external TerminalCtrl library, not visible in Bobcat codebase",
+            "version_added": "0.9.0",
+            "notes": "Implemented in TerminalCtrl library. Alternate screen buffer is supported via History/scrollback configuration.",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -1526,8 +1526,8 @@
             "last_scanned": "2026-02-17"
           },
           "bobcat": {
-            "version_added": null,
-            "notes": "Mouse support claimed in README but implementation in external TerminalCtrl library",
+            "version_added": "0.9.0",
+            "notes": "Implemented in TerminalCtrl library. README states 'Full Mouse & Keyboard Support across all major protocols'.",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -1653,8 +1653,8 @@
             "last_scanned": "2026-02-17"
           },
           "bobcat": {
-            "version_added": null,
-            "notes": "Mouse support claimed in README but implementation in external TerminalCtrl library",
+            "version_added": "0.9.0",
+            "notes": "Implemented in TerminalCtrl library. README states 'Full Mouse & Keyboard Support across all major protocols'.",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -1780,8 +1780,8 @@
             "last_scanned": "2026-02-17"
           },
           "bobcat": {
-            "version_added": null,
-            "notes": "Mouse support claimed in README but implementation in external TerminalCtrl library",
+            "version_added": "0.9.0",
+            "notes": "Implemented in TerminalCtrl library. README states 'Full Mouse & Keyboard Support across all major protocols'.",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -1909,7 +1909,7 @@
           },
           "bobcat": {
             "version_added": null,
-            "notes": "Mode handling in external TerminalCtrl library, not visible in Bobcat codebase",
+            "notes": "Not explicitly configured in Bobcat. TerminalCtrl may support this, but cannot confirm from Bobcat's code.",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -2035,8 +2035,8 @@
             "last_scanned": "2026-02-17"
           },
           "bobcat": {
-            "version_added": null,
-            "notes": "Mouse support claimed in README but implementation in external TerminalCtrl library",
+            "version_added": "0.9.0",
+            "notes": "Implemented in TerminalCtrl library. README states 'Full Mouse & Keyboard Support across all major protocols'.",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -2165,7 +2165,7 @@
           },
           "bobcat": {
             "version_added": "0.9.0",
-            "notes": "AlternateScroll() method called in Terminal.cpp:363, present since earliest tag",
+            "notes": "Implemented in TerminalCtrl library. Configurable via AlternateScroll setting.",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -2291,7 +2291,7 @@
           },
           "bobcat": {
             "version_added": null,
-            "notes": "Mode handling in external TerminalCtrl library, not visible in Bobcat codebase",
+            "notes": "Not explicitly configured in Bobcat. TerminalCtrl may support this, but cannot confirm from Bobcat's code.",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -2417,7 +2417,7 @@
           },
           "bobcat": {
             "version_added": null,
-            "notes": "Mode handling in external TerminalCtrl library, not visible in Bobcat codebase",
+            "notes": "Not explicitly configured in Bobcat. TerminalCtrl may support this, but cannot confirm from Bobcat's code.",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -2548,7 +2548,7 @@
           },
           "bobcat": {
             "version_added": null,
-            "notes": "Mode handling in external TerminalCtrl library, not visible in Bobcat codebase",
+            "notes": "Not explicitly configured in Bobcat. TerminalCtrl may support this, but cannot confirm from Bobcat's code.",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -2675,7 +2675,7 @@
           },
           "bobcat": {
             "version_added": null,
-            "notes": "Mode handling in external TerminalCtrl library, not visible in Bobcat codebase",
+            "notes": "Not explicitly configured in Bobcat. TerminalCtrl may support this, but cannot confirm from Bobcat's code.",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -2798,7 +2798,7 @@
           },
           "bobcat": {
             "version_added": null,
-            "notes": "Mode handling in external TerminalCtrl library, not visible in Bobcat codebase",
+            "notes": "Not explicitly configured in Bobcat. TerminalCtrl may support this, but cannot confirm from Bobcat's code.",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -2920,7 +2920,7 @@
           },
           "bobcat": {
             "version_added": null,
-            "notes": "Mode handling in external TerminalCtrl library, not visible in Bobcat codebase",
+            "notes": "Not explicitly configured in Bobcat. TerminalCtrl may support this, but cannot confirm from Bobcat's code.",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -3045,7 +3045,7 @@
           },
           "bobcat": {
             "version_added": null,
-            "notes": "Mode handling in external TerminalCtrl library, not visible in Bobcat codebase",
+            "notes": "Not explicitly configured in Bobcat. TerminalCtrl may support this, but cannot confirm from Bobcat's code.",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -3176,7 +3176,7 @@
           },
           "bobcat": {
             "version_added": null,
-            "notes": "Mode handling in external TerminalCtrl library, not visible in Bobcat codebase",
+            "notes": "Not explicitly configured in Bobcat. TerminalCtrl may support this, but cannot confirm from Bobcat's code.",
             "last_scanned": "2026-02-18"
           },
           "putty": {

@@ -76,8 +76,8 @@
             "last_scanned": "2026-02-17"
           },
           "bobcat": {
-            "version_added": "0.9.0",
-            "notes": "Standard SGR attribute; profile config includes IntensifyBoldText option",
+            "version_added": null,
+            "notes": "Implemented in external TerminalCtrl library, not in Bobcat source code",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -204,8 +204,8 @@
             "last_scanned": "2026-02-17"
           },
           "bobcat": {
-            "version_added": "0.9.0",
-            "notes": "Standard SGR attribute; likely supported given VT compatibility",
+            "version_added": null,
+            "notes": "Implemented in external TerminalCtrl library, not in Bobcat source code",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -335,8 +335,8 @@
             "last_scanned": "2026-02-17"
           },
           "bobcat": {
-            "version_added": "0.9.0",
-            "notes": "Standard SGR attribute; likely supported given VT compatibility",
+            "version_added": null,
+            "notes": "Implemented in external TerminalCtrl library, not in Bobcat source code",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -463,8 +463,8 @@
             "last_scanned": "2026-02-17"
           },
           "bobcat": {
-            "version_added": "0.9.0",
-            "notes": "Standard SGR attribute; underline cursor style supported",
+            "version_added": null,
+            "notes": "Implemented in external TerminalCtrl library, not in Bobcat source code",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -596,8 +596,8 @@
             "last_scanned": "2026-02-17"
           },
           "bobcat": {
-            "version_added": "0.9.0",
-            "notes": "Profile includes BlinkingText and BlinkInterval options; blink supported",
+            "version_added": null,
+            "notes": "Implemented in external TerminalCtrl library, not in Bobcat source code",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -735,8 +735,8 @@
             "last_scanned": "2026-02-17"
           },
           "bobcat": {
-            "version_added": "0.9.0",
-            "notes": "Profile includes BlinkingText and BlinkInterval options; blink supported",
+            "version_added": null,
+            "notes": "Implemented in external TerminalCtrl library, not in Bobcat source code",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -866,8 +866,8 @@
             "last_scanned": "2026-02-17"
           },
           "bobcat": {
-            "version_added": "0.9.0",
-            "notes": "Standard SGR attribute; likely supported given VT compatibility",
+            "version_added": null,
+            "notes": "Implemented in external TerminalCtrl library, not in Bobcat source code",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -997,7 +997,7 @@
           },
           "bobcat": {
             "version_added": null,
-            "notes": "Cannot verify invisible text support without inspecting TerminalCtrl library",
+            "notes": "Implemented in external TerminalCtrl library, not in Bobcat source code",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -1127,7 +1127,7 @@
           },
           "bobcat": {
             "version_added": null,
-            "notes": "Cannot verify strikethrough support without inspecting TerminalCtrl library",
+            "notes": "Implemented in external TerminalCtrl library, not in Bobcat source code",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -1257,7 +1257,7 @@
           },
           "bobcat": {
             "version_added": null,
-            "notes": "Cannot verify double underline support without inspecting TerminalCtrl library",
+            "notes": "Implemented in external TerminalCtrl library, not in Bobcat source code",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -1389,7 +1389,7 @@
           },
           "bobcat": {
             "version_added": null,
-            "notes": "Cannot verify overline support without inspecting TerminalCtrl library",
+            "notes": "Implemented in external TerminalCtrl library, not in Bobcat source code",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -1525,7 +1525,7 @@
           },
           "bobcat": {
             "version_added": null,
-            "notes": "Cannot verify curly underline support without inspecting TerminalCtrl library",
+            "notes": "Implemented in external TerminalCtrl library, not in Bobcat source code",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -1661,7 +1661,7 @@
           },
           "bobcat": {
             "version_added": null,
-            "notes": "Not confirmed in Bobcat code; depends on TerminalCtrl library implementation",
+            "notes": "Implemented in external TerminalCtrl library, not in Bobcat source code",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -1795,7 +1795,7 @@
           },
           "bobcat": {
             "version_added": null,
-            "notes": "Not confirmed in Bobcat code; depends on TerminalCtrl library implementation",
+            "notes": "Implemented in external TerminalCtrl library, not in Bobcat source code",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -1927,8 +1927,8 @@
             "last_scanned": "2026-02-17"
           },
           "bobcat": {
-            "version_added": "0.9.0",
-            "notes": "Standard ANSI colors supported via xterm compatibility",
+            "version_added": null,
+            "notes": "Implemented in external TerminalCtrl library, not in Bobcat source code",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -2058,8 +2058,8 @@
             "last_scanned": "2026-02-17"
           },
           "bobcat": {
-            "version_added": "0.9.0",
-            "notes": "TERM=xterm-256color set in Profile.cpp:75",
+            "version_added": null,
+            "notes": "Implemented in external TerminalCtrl library, not in Bobcat source code",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -2190,8 +2190,8 @@
             "last_scanned": "2026-02-17"
           },
           "bobcat": {
-            "version_added": "0.9.0",
-            "notes": "COLORTERM=truecolor advertised in Profile.cpp:76",
+            "version_added": null,
+            "notes": "Implemented in external TerminalCtrl library, not in Bobcat source code",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -2324,7 +2324,7 @@
           },
           "bobcat": {
             "version_added": null,
-            "notes": "ITU-T.416 format not confirmed; depends on TerminalCtrl library",
+            "notes": "Implemented in external TerminalCtrl library, not in Bobcat source code",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -2460,7 +2460,7 @@
           },
           "bobcat": {
             "version_added": null,
-            "notes": "Kitty extension not confirmed; depends on TerminalCtrl library",
+            "notes": "Implemented in external TerminalCtrl library, not in Bobcat source code",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -2592,7 +2592,7 @@
           },
           "bobcat": {
             "version_added": null,
-            "notes": "Kitty extension not confirmed; depends on TerminalCtrl library",
+            "notes": "Implemented in external TerminalCtrl library, not in Bobcat source code",
             "last_scanned": "2026-02-18"
           },
           "putty": {

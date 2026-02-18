@@ -82,7 +82,7 @@
           },
           "bobcat": {
             "version_added": "0.9.0",
-            "notes": "WhenTitle callback handler in Terminal.cpp:42",
+            "notes": "WhenTitle callback set up from initial release",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -213,7 +213,7 @@
           },
           "bobcat": {
             "version_added": "0.9.0",
-            "notes": "WhenTitle callback handler in Terminal.cpp:42",
+            "notes": "WhenTitle callback set up from initial release",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -342,8 +342,8 @@
             "last_scanned": "2026-02-17"
           },
           "bobcat": {
-            "version_added": "0.9.0",
-            "notes": "DynamicColors() enabled in Terminal.cpp:36",
+            "version_added": null,
+            "notes": "Would be handled by underlying TerminalCtrl library, not directly in Bobcat code",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -480,7 +480,7 @@
           },
           "bobcat": {
             "version_added": "0.9.0",
-            "notes": "WhenDirectoryChange callback added in commit 3d1c706",
+            "notes": "WhenDirectoryChange callback for shell integration added in commit 3d1c706",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -612,7 +612,7 @@
           },
           "bobcat": {
             "version_added": "0.9.0",
-            "notes": "Hyperlinks() enabled in Terminal.cpp:36, WhenLink callback in Terminal.cpp:43",
+            "notes": "WhenLink callback and Hyperlinks() enabled from initial release",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -747,7 +747,7 @@
           },
           "bobcat": {
             "version_added": "0.9.0",
-            "notes": "Desktop notifications via WhenMessage callback added in commit 4a78353",
+            "notes": "WhenMessage callback for desktop notifications added in commit 4a78353",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -881,7 +881,7 @@
           },
           "bobcat": {
             "version_added": "0.9.6",
-            "notes": "Progress reporting via WhenProgress callback added in commit 2d4399a",
+            "notes": "WhenProgress callback added in commit 2d4399a",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -1011,8 +1011,8 @@
             "last_scanned": "2026-02-17"
           },
           "bobcat": {
-            "version_added": "0.9.0",
-            "notes": "DynamicColors() enabled in Terminal.cpp:36",
+            "version_added": null,
+            "notes": "DynamicColors() enabled from v0.9.0, but actual OSC 10/11/12 handling is in TerminalCtrl library",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -1147,8 +1147,8 @@
             "last_scanned": "2026-02-17"
           },
           "bobcat": {
-            "version_added": "0.9.0",
-            "notes": "DynamicColors() enabled in Terminal.cpp:36",
+            "version_added": null,
+            "notes": "DynamicColors() enabled from v0.9.0, but actual OSC 10/11/12 handling is in TerminalCtrl library",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -1284,8 +1284,8 @@
             "last_scanned": "2026-02-17"
           },
           "bobcat": {
-            "version_added": "0.9.0",
-            "notes": "DynamicColors() enabled in Terminal.cpp:36",
+            "version_added": null,
+            "notes": "DynamicColors() enabled from v0.9.0, but actual OSC 10/11/12 handling is in TerminalCtrl library",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -1421,7 +1421,7 @@
           },
           "bobcat": {
             "version_added": null,
-            "notes": "Not confirmed in Bobcat code; depends on TerminalCtrl library implementation",
+            "notes": "Would be handled by underlying TerminalCtrl library, not directly in Bobcat code",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -1556,8 +1556,8 @@
             "last_scanned": "2026-02-17"
           },
           "bobcat": {
-            "version_added": "0.9.0",
-            "notes": "PermitClipboardWrite() in Terminal.cpp:348",
+            "version_added": null,
+            "notes": "PermitClipboardWrite() option exists, but actual OSC 52 handling is in TerminalCtrl library",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -1695,8 +1695,8 @@
             "last_scanned": "2026-02-17"
           },
           "bobcat": {
-            "version_added": "0.9.0",
-            "notes": "Configurable via PermitClipboardRead() profile setting",
+            "version_added": null,
+            "notes": "PermitClipboardRead() option exists, but actual OSC 52 handling is in TerminalCtrl library",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -1829,7 +1829,7 @@
           },
           "bobcat": {
             "version_added": null,
-            "notes": "Core parsing in TerminalCtrl library (external), not verified in Bobcat repo",
+            "notes": "Would be handled by underlying TerminalCtrl library, not directly in Bobcat code",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -1966,7 +1966,7 @@
           },
           "bobcat": {
             "version_added": null,
-            "notes": "Core parsing in TerminalCtrl library (external), not verified in Bobcat repo",
+            "notes": "Would be handled by underlying TerminalCtrl library, not directly in Bobcat code",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -2102,9 +2102,8 @@
             "last_scanned": "2026-02-17"
           },
           "bobcat": {
-            "version_added": "0.9.5",
-            "partial_implementation": true,
-            "notes": "OSC 7 working directory tracking implemented (WhenDirectoryChange callback), but not full FinalTerm semantic zones",
+            "version_added": null,
+            "notes": "Would be handled by underlying TerminalCtrl library, not directly in Bobcat code",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -2231,7 +2230,7 @@
           },
           "bobcat": {
             "version_added": null,
-            "notes": "Core parsing in TerminalCtrl library (external), not verified in Bobcat repo",
+            "notes": "Would be handled by underlying TerminalCtrl library, not directly in Bobcat code",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -2360,9 +2359,8 @@
             "last_scanned": "2026-02-17"
           },
           "bobcat": {
-            "version_added": "0.9.4",
-            "partial_implementation": true,
-            "notes": "OSC 9;2 desktop notifications supported (OnNotification callback), Kitty OSC 99 not explicitly confirmed",
+            "version_added": null,
+            "notes": "Would be handled by underlying TerminalCtrl library, not directly in Bobcat code",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -2492,7 +2490,7 @@
           },
           "bobcat": {
             "version_added": "0.9.0",
-            "notes": "iTerm2 inline image protocol supported via InlineImages() feature",
+            "notes": "InlineImages() enabled from initial release, relies on TerminalCtrl library implementation",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -2627,7 +2625,7 @@
           },
           "bobcat": {
             "version_added": null,
-            "notes": "Core parsing in TerminalCtrl library (external), not verified in Bobcat repo",
+            "notes": "Would be handled by underlying TerminalCtrl library, not directly in Bobcat code",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -2759,7 +2757,7 @@
           },
           "bobcat": {
             "version_added": null,
-            "notes": "Core parsing in TerminalCtrl library (external), not verified in Bobcat repo",
+            "notes": "Would be handled by underlying TerminalCtrl library, not directly in Bobcat code",
             "last_scanned": "2026-02-18"
           },
           "putty": {

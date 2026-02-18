@@ -81,8 +81,8 @@
             "last_scanned": "2026-02-17"
           },
           "bobcat": {
-            "version_added": null,
-            "notes": "Keyboard handling in external TerminalCtrl library, not visible in Bobcat codebase",
+            "version_added": false,
+            "notes": "No evidence of Kitty keyboard protocol implementation found in Bobcat codebase. Keyboard handling is delegated to TerminalCtrl library with only basic VT/PC function key styles supported.",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -214,7 +214,6 @@
           },
           "bobcat": {
             "version_added": false,
-            "notes": "No evidence of Kitty keyboard protocol support found",
             "last_scanned": "2026-02-18"
           },
           "putty": {

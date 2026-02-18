@@ -83,8 +83,8 @@
             "last_scanned": "2026-02-17"
           },
           "bobcat": {
-            "version_added": null,
-            "notes": "WindowOps enabled but actual CSI t handling is in TerminalCtrl library",
+            "version_added": "0.9.0",
+            "notes": "Handled via WhenWindowMinimize callback; requires WindowActions enabled in profile",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -222,8 +222,8 @@
             "last_scanned": "2026-02-17"
           },
           "bobcat": {
-            "version_added": null,
-            "notes": "WindowOps enabled but actual CSI t handling is in TerminalCtrl library",
+            "version_added": "0.9.0",
+            "notes": "Handled via WhenWindowGeometryChange callback; requires WindowActions enabled in profile",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -360,8 +360,8 @@
             "last_scanned": "2026-02-17"
           },
           "bobcat": {
-            "version_added": null,
-            "notes": "WindowOps enabled but actual CSI t handling is in TerminalCtrl library",
+            "version_added": "0.9.0",
+            "notes": "Handled via WhenWindowGeometryChange callback; requires WindowActions enabled in profile",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -499,8 +499,8 @@
             "last_scanned": "2026-02-17"
           },
           "bobcat": {
-            "version_added": null,
-            "notes": "WindowOps enabled but actual CSI t handling is in TerminalCtrl library",
+            "version_added": "0.9.0",
+            "notes": "Handled via WhenWindowGeometryChange callback; requires WindowActions enabled in profile",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -638,7 +638,7 @@
           },
           "bobcat": {
             "version_added": "0.9.0",
-            "notes": "WhenSetSize callback handles resize requests",
+            "notes": "Handled via WhenSetSize callback; requires WindowActions enabled in profile",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -779,7 +779,7 @@
           },
           "bobcat": {
             "version_added": "0.9.0",
-            "notes": "WhenWindowMaximize callback implemented",
+            "notes": "Handled via WhenWindowMaximize callback; requires WindowActions enabled in profile",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -920,7 +920,7 @@
           },
           "bobcat": {
             "version_added": "0.9.0",
-            "notes": "WhenWindowFullScreen callback implemented",
+            "notes": "Handled via WhenWindowFullScreen callback; requires WindowActions enabled in profile",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -1059,8 +1059,8 @@
             "last_scanned": "2026-02-17"
           },
           "bobcat": {
-            "version_added": null,
-            "notes": "WindowOps enabled but reports handled in TerminalCtrl library",
+            "version_added": "0.9.0",
+            "notes": "Requires WindowReports enabled in profile",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -1198,8 +1198,8 @@
             "last_scanned": "2026-02-17"
           },
           "bobcat": {
-            "version_added": null,
-            "notes": "WindowOps enabled but reports handled in TerminalCtrl library",
+            "version_added": "0.9.0",
+            "notes": "Requires WindowReports enabled in profile",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -1336,8 +1336,8 @@
             "last_scanned": "2026-02-17"
           },
           "bobcat": {
-            "version_added": null,
-            "notes": "WindowOps enabled but reports handled in TerminalCtrl library",
+            "version_added": "0.9.0",
+            "notes": "Requires WindowReports enabled in profile",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -1475,8 +1475,8 @@
             "last_scanned": "2026-02-17"
           },
           "bobcat": {
-            "version_added": null,
-            "notes": "WindowOps() enabled since 0.9.0. WindowReports setting (default: true) likely controls this, but actual implementation is in external TerminalCtrl library. Cannot confirm from Bobcat source code alone.",
+            "version_added": "0.9.0",
+            "notes": "Requires WindowReports enabled in profile",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -1607,8 +1607,8 @@
             "last_scanned": "2026-02-17"
           },
           "bobcat": {
-            "version_added": null,
-            "notes": "WindowOps() enabled since 0.9.0. WindowReports setting (default: true) likely controls this, but actual implementation is in external TerminalCtrl library. Cannot confirm from Bobcat source code alone.",
+            "version_added": "0.9.0",
+            "notes": "Requires WindowReports enabled in profile",
             "last_scanned": "2026-02-18"
           },
           "putty": {
@@ -1744,8 +1744,8 @@
             "last_scanned": "2026-02-17"
           },
           "bobcat": {
-            "version_added": null,
-            "notes": "WindowOps() enabled since 0.9.0. WindowActions setting (default: false) likely controls this, but actual implementation is in external TerminalCtrl library. No explicit title stack callbacks found in Bobcat source.",
+            "version_added": "0.9.0",
+            "notes": "Handled by TerminalCtrl library",
             "last_scanned": "2026-02-18"
           },
           "putty": {

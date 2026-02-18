@@ -76,6 +76,25 @@ type SupportEntry = {
   notes?: string;
 };
 
+function isSupported(support: SupportEntry): boolean {
+  if (support.partial_implementation) return true;
+  return support.version_added === true || typeof support.version_added === 'string';
+}
+
+const terminalCounts: Record<string, number> = {};
+for (const id of terminalIds) terminalCounts[id] = 0;
+for (const category of categories) {
+  for (const [key, feature] of Object.entries(category)) {
+    if (key === '__meta') continue;
+    const compat = (feature as any).__compat;
+    for (const termId of terminalIds) {
+      if (isSupported(compat.support[termId])) {
+        terminalCounts[termId]++;
+      }
+    }
+  }
+}
+
 function SupportCell({support}: {support: SupportEntry}) {
   const {version_added, partial_implementation, notes} = support;
 
@@ -140,7 +159,7 @@ export default function CompatibilityMatrix(): React.ReactElement {
         <thead ref={theadRef}>
           {hasGroups && (
             <tr ref={groupRowRef} className={styles.groupRow}>
-              <th className={styles.featureHeader} />
+              <th className={styles.featureHeader} colSpan={2} />
               {groupHeaders.map((h, i) =>
                 h.label ? (
                   <th key={i} colSpan={h.span} className={styles.groupHeader}>
@@ -156,6 +175,7 @@ export default function CompatibilityMatrix(): React.ReactElement {
           )}
           <tr>
             <th className={`${styles.featureHeader} ${styles.featureHeaderNames}`}>Feature</th>
+            <th className={`${styles.countHeader} ${styles.featureHeaderNames}`}></th>
             {terminalIds.map((id) => (
               <th key={id} className={styles.terminalHeader}>
                 <a
@@ -170,6 +190,15 @@ export default function CompatibilityMatrix(): React.ReactElement {
           </tr>
         </thead>
         <tbody>
+          <tr className={styles.summaryRow}>
+            <td className={styles.featureCell}>Features supported</td>
+            <td className={styles.countCell}></td>
+            {terminalIds.map((id) => (
+              <td key={id} className={styles.summaryCell}>
+                {terminalCounts[id]}
+              </td>
+            ))}
+          </tr>
           {categories.map((category) => {
             const meta = category.__meta;
             const features = Object.entries(category).filter(
@@ -180,7 +209,7 @@ export default function CompatibilityMatrix(): React.ReactElement {
               <React.Fragment key={meta.category}>
                 <tr className={styles.categoryRow}>
                   <td
-                    colSpan={terminalIds.length + 1}
+                    colSpan={terminalIds.length + 2}
                     className={styles.categoryCell}>
                     {meta.category}
                   </td>
@@ -192,6 +221,9 @@ export default function CompatibilityMatrix(): React.ReactElement {
                       <td className={styles.featureCell}>
                         <Link to={compat.doc_path}>{compat.title}</Link>
                         <span className={styles.featureDesc}>{compat.description}</span>
+                      </td>
+                      <td className={styles.countCell}>
+                        {terminalIds.filter((id) => isSupported(compat.support[id])).length}
                       </td>
                       {terminalIds.map((termId) => (
                         <SupportCell

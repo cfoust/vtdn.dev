@@ -50,27 +50,13 @@ function generateMdx(featureId, compat, dataFileBasename) {
   const dirName = DATA_TO_DIR[dataFileBasename];
   const docPath = `/docs/${dirName}/${slug}`;
 
-  const specUrl = compat.spec_url;
-  const specRefs = compat.spec_refs;
-
-  let specsJsx = '';
-  if (specRefs && specRefs.length > 0) {
-    const entries = specRefs
-      .map(
-        (s) =>
-          `  { name: "${s.name}", url: "${s.url}"${s.section ? `, section: "${s.section}"` : ''} }`,
-      )
-      .join(',\n');
-    specsJsx = `<SpecificationsTable specs={[\n${entries},\n]} />`;
-  } else if (specUrl) {
-    specsJsx = `<SpecificationsTable specs={[\n  { name: "Specification", url: "${specUrl}" },\n]} />`;
-  }
-
   const lines = [
     '---',
     `title: "${compat.title}"`,
     `sidebar_label: "${compat.title}"`,
     `description: "${(compat.description || '').replace(/"/g, '\\"')}"`,
+    `feature_id: "${featureId}"`,
+    `data_file: "${dataFileBasename}"`,
     '---',
     '',
     '<StatusBadges status={{ standard_track: true }} />',
@@ -87,18 +73,15 @@ function generateMdx(featureId, compat, dataFileBasename) {
     '',
     'Documentation coming soon.',
     '',
-  ];
-
-  if (specsJsx) {
-    lines.push('## Specifications', '', specsJsx, '');
-  }
-
-  lines.push(
+    '## Specifications',
+    '',
+    '<SpecificationsTable />',
+    '',
     '## Terminal support',
     '',
-    `<FeatureCompatTable featureId="${featureId}" dataFile="${dataFileBasename}" />`,
+    '<FeatureCompatTable />',
     '',
-  );
+  ];
 
   return {content: lines.join('\n'), docPath, slug};
 }

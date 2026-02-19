@@ -7,7 +7,6 @@
       "__compat": {
         "title": "CUU/CUD/CUF/CUB",
         "description": "CSI A/B/C/D — Cursor up/down/forward/back",
-        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/csi/cuu-cud-cuf-cub",
         "support": {
           "vt100": {
@@ -131,14 +130,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "XTerm ctlseqs",
+            "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html"
+          }
+        ]
       }
     },
     "cnl_cpl": {
       "__compat": {
         "title": "CNL/CPL",
         "description": "CSI E/F — Cursor next/preceding line",
-        "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/csi/cnl-cpl",
         "support": {
           "vt100": {
@@ -261,14 +265,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "ECMA-48",
+            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/"
+          }
+        ]
       }
     },
     "cha_cup": {
       "__compat": {
         "title": "CHA/CUP",
         "description": "CSI G / CSI H — Absolute cursor positioning",
-        "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/csi/cha-cup",
         "support": {
           "vt100": {
@@ -394,14 +403,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "ECMA-48",
+            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/"
+          }
+        ]
       }
     },
     "cht_cbt": {
       "__compat": {
         "title": "CHT/CBT",
         "description": "CSI I / CSI Z — Cursor forward/backward tab",
-        "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/csi/cht-cbt",
         "support": {
           "vt100": {
@@ -526,14 +540,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "ECMA-48",
+            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/"
+          }
+        ]
       }
     },
     "vpa_hpa": {
       "__compat": {
         "title": "VPA/HPA",
         "description": "CSI d / CSI ` — Vertical/horizontal position absolute",
-        "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/csi/vpa-hpa",
         "support": {
           "vt100": {
@@ -658,14 +677,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "ECMA-48",
+            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/"
+          }
+        ]
       }
     },
     "scp_rcp": {
       "__compat": {
         "title": "SCP/RCP",
         "description": "CSI s / CSI u — Save/restore cursor (ANSI.SYS)",
-        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/csi/scp-rcp",
         "support": {
           "vt100": {
@@ -798,14 +822,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "XTerm ctlseqs",
+            "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html"
+          }
+        ]
       }
     },
     "ich_dch_ech": {
       "__compat": {
         "title": "ICH/DCH/ECH",
         "description": "CSI @/P/X — Insert/delete/erase characters",
-        "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/csi/ich-dch-ech",
         "support": {
           "vt100": {
@@ -929,14 +958,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "ECMA-48",
+            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/"
+          }
+        ]
       }
     },
     "il_dl": {
       "__compat": {
         "title": "IL/DL",
         "description": "CSI L/M — Insert/delete lines",
-        "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/csi/il-dl",
         "support": {
           "vt100": {
@@ -1059,14 +1093,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "ECMA-48",
+            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/"
+          }
+        ]
       }
     },
     "ed": {
       "__compat": {
         "title": "ED",
         "description": "CSI J — Erase in display (0=below, 1=above, 2=all)",
-        "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/csi/ed",
         "support": {
           "vt100": {
@@ -1190,14 +1229,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "ECMA-48",
+            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/"
+          }
+        ]
       }
     },
     "ed3": {
       "__compat": {
         "title": "ED 3",
         "description": "CSI 3 J — Erase scrollback buffer",
-        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/csi/ed3",
         "support": {
           "vt100": {
@@ -1326,14 +1370,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "XTerm ctlseqs",
+            "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html"
+          }
+        ]
       }
     },
     "el": {
       "__compat": {
         "title": "EL",
         "description": "CSI K — Erase in line",
-        "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/csi/el",
         "support": {
           "vt100": {
@@ -1456,14 +1505,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "ECMA-48",
+            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/"
+          }
+        ]
       }
     },
     "decsed_decsel": {
       "__compat": {
         "title": "DECSED/DECSEL",
         "description": "CSI ? J/K — Selective erase (respects DECSCA)",
-        "spec_url": "https://vt100.net/docs/vt510-rm/DECSED.html",
         "doc_path": "/docs/csi/decsed-decsel",
         "support": {
           "vt100": {
@@ -1595,14 +1649,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "VT510 Reference",
+            "url": "https://vt100.net/docs/vt510-rm/DECSED.html"
+          }
+        ]
       }
     },
     "rep": {
       "__compat": {
         "title": "REP",
         "description": "CSI b — Repeat preceding graphic character",
-        "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/csi/rep",
         "support": {
           "vt100": {
@@ -1728,14 +1787,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "ECMA-48",
+            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/"
+          }
+        ]
       }
     },
     "su_sd": {
       "__compat": {
         "title": "SU/SD",
         "description": "CSI S/T — Scroll up/down",
-        "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/csi/su-sd",
         "support": {
           "vt100": {
@@ -1859,14 +1923,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "ECMA-48",
+            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/"
+          }
+        ]
       }
     },
     "decstbm": {
       "__compat": {
         "title": "DECSTBM",
         "description": "CSI r — Set top and bottom margins",
-        "spec_url": "https://vt100.net/docs/vt510-rm/DECSTBM.html",
         "doc_path": "/docs/csi/decstbm",
         "support": {
           "vt100": {
@@ -1989,14 +2058,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "VT510 Reference",
+            "url": "https://vt100.net/docs/vt510-rm/DECSTBM.html"
+          }
+        ]
       }
     },
     "decslrm": {
       "__compat": {
         "title": "DECSLRM",
         "description": "CSI s — Set left and right margins (requires Mode 69)",
-        "spec_url": "https://vt100.net/docs/vt510-rm/DECSLRM.html",
         "doc_path": "/docs/csi/decslrm",
         "support": {
           "vt100": {
@@ -2129,14 +2203,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "VT510 Reference",
+            "url": "https://vt100.net/docs/vt510-rm/DECSLRM.html"
+          }
+        ]
       }
     },
     "tbc": {
       "__compat": {
         "title": "TBC",
         "description": "CSI g — Tab clear",
-        "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/csi/tbc",
         "support": {
           "vt100": {
@@ -2261,14 +2340,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "ECMA-48",
+            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/"
+          }
+        ]
       }
     },
     "decera": {
       "__compat": {
         "title": "DECERA",
         "description": "CSI $ z — Erase rectangular area",
-        "spec_url": "https://vt100.net/docs/vt510-rm/DECERA.html",
         "doc_path": "/docs/csi/decera",
         "support": {
           "vt100": {
@@ -2395,14 +2479,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "VT510 Reference",
+            "url": "https://vt100.net/docs/vt510-rm/DECERA.html"
+          }
+        ]
       }
     },
     "decfra": {
       "__compat": {
         "title": "DECFRA",
         "description": "CSI $ x — Fill rectangular area",
-        "spec_url": "https://vt100.net/docs/vt510-rm/DECFRA.html",
         "doc_path": "/docs/csi/decfra",
         "support": {
           "vt100": {
@@ -2529,14 +2618,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "VT510 Reference",
+            "url": "https://vt100.net/docs/vt510-rm/DECFRA.html"
+          }
+        ]
       }
     },
     "deccra": {
       "__compat": {
         "title": "DECCRA",
         "description": "CSI $ v — Copy rectangular area",
-        "spec_url": "https://vt100.net/docs/vt510-rm/DECCRA.html",
         "doc_path": "/docs/csi/deccra",
         "support": {
           "vt100": {
@@ -2663,14 +2757,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "VT510 Reference",
+            "url": "https://vt100.net/docs/vt510-rm/DECCRA.html"
+          }
+        ]
       }
     },
     "decscusr": {
       "__compat": {
         "title": "DECSCUSR",
         "description": "CSI Ps SP q — Cursor style (block/underline/bar)",
-        "spec_url": "https://vt100.net/docs/vt510-rm/DECSCUSR.html",
         "doc_path": "/docs/csi/decscusr",
         "support": {
           "vt100": {
@@ -2794,14 +2893,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "VT510 Reference",
+            "url": "https://vt100.net/docs/vt510-rm/DECSCUSR.html"
+          }
+        ]
       }
     },
     "dsr_cpr": {
       "__compat": {
         "title": "DSR/CPR",
         "description": "CSI 5n / CSI 6n — Device status / cursor position report",
-        "spec_url": "https://vt100.net/docs/vt510-rm/DSR-CPR.html",
         "doc_path": "/docs/csi/dsr-cpr",
         "support": {
           "vt100": {
@@ -2932,14 +3036,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "VT510 Reference",
+            "url": "https://vt100.net/docs/vt510-rm/DSR-CPR.html"
+          }
+        ]
       }
     },
     "decxcpr": {
       "__compat": {
         "title": "DECXCPR",
         "description": "CSI ? 6n — Extended cursor position report",
-        "spec_url": "https://vt100.net/docs/vt510-rm/DECXCPR.html",
         "doc_path": "/docs/csi/decxcpr",
         "support": {
           "vt100": {
@@ -3071,14 +3180,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "VT510 Reference",
+            "url": "https://vt100.net/docs/vt510-rm/DECXCPR.html"
+          }
+        ]
       }
     },
     "da1": {
       "__compat": {
         "title": "DA1",
         "description": "CSI c — Primary device attributes",
-        "spec_url": "https://vt100.net/docs/vt510-rm/DA1.html",
         "doc_path": "/docs/csi/da1",
         "support": {
           "vt100": {
@@ -3211,14 +3325,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "VT510 Reference",
+            "url": "https://vt100.net/docs/vt510-rm/DA1.html"
+          }
+        ]
       }
     },
     "da2": {
       "__compat": {
         "title": "DA2",
         "description": "CSI > c — Secondary device attributes",
-        "spec_url": "https://vt100.net/docs/vt510-rm/DA2.html",
         "doc_path": "/docs/csi/da2",
         "support": {
           "vt100": {
@@ -3348,14 +3467,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "VT510 Reference",
+            "url": "https://vt100.net/docs/vt510-rm/DA2.html"
+          }
+        ]
       }
     },
     "da3": {
       "__compat": {
         "title": "DA3",
         "description": "CSI = c — Tertiary device attributes",
-        "spec_url": "https://vt100.net/docs/vt510-rm/DA3.html",
         "doc_path": "/docs/csi/da3",
         "support": {
           "vt100": {
@@ -3484,14 +3608,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "VT510 Reference",
+            "url": "https://vt100.net/docs/vt510-rm/DA3.html"
+          }
+        ]
       }
     },
     "decrqm": {
       "__compat": {
         "title": "DECRQM",
         "description": "CSI ? Ps $ p — Request mode value",
-        "spec_url": "https://vt100.net/docs/vt510-rm/DECRQM.html",
         "doc_path": "/docs/csi/decrqm",
         "support": {
           "vt100": {
@@ -3624,14 +3753,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "VT510 Reference",
+            "url": "https://vt100.net/docs/vt510-rm/DECRQM.html"
+          }
+        ]
       }
     },
     "xtpushcolors": {
       "__compat": {
         "title": "XTPUSHCOLORS/XTPOPCOLORS",
         "description": "CSI # p/q — Color palette stack",
-        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/csi/xtpushcolors",
         "support": {
           "vt100": {
@@ -3757,7 +3891,13 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "XTerm ctlseqs",
+            "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html"
+          }
+        ]
       }
     }
   }

@@ -7,7 +7,6 @@
       "__compat": {
         "title": "Sixel graphics",
         "description": "DCS P1;P2;P3 q ... ST",
-        "spec_url": "https://vt100.net/docs/vt3xx-gp/chapter14.html",
         "doc_path": "/docs/graphics/sixel",
         "support": {
           "vt100": {
@@ -136,14 +135,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "VT330/VT340 Reference",
+            "url": "https://vt100.net/docs/vt3xx-gp/chapter14.html"
+          }
+        ]
       }
     },
     "kitty_graphics": {
       "__compat": {
         "title": "Kitty graphics protocol",
         "description": "APC G ... ST",
-        "spec_url": "https://sw.kovidgoyal.net/kitty/graphics-protocol/",
         "doc_path": "/docs/graphics/kitty-graphics",
         "support": {
           "vt100": {
@@ -272,14 +276,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "Kitty Graphics Protocol",
+            "url": "https://sw.kovidgoyal.net/kitty/graphics-protocol/"
+          }
+        ]
       }
     },
     "kitty_graphics_unicode": {
       "__compat": {
         "title": "Kitty graphics: Unicode placeholders",
         "description": "U+10EEEE",
-        "spec_url": "https://sw.kovidgoyal.net/kitty/graphics-protocol/#unicode-placeholders",
         "doc_path": "/docs/graphics/kitty-graphics-unicode",
         "support": {
           "vt100": {
@@ -403,14 +412,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "Kitty Graphics Protocol",
+            "url": "https://sw.kovidgoyal.net/kitty/graphics-protocol/#unicode-placeholders"
+          }
+        ]
       }
     },
     "kitty_graphics_animation": {
       "__compat": {
         "title": "Kitty graphics: animation",
         "description": "Animation support",
-        "spec_url": "https://sw.kovidgoyal.net/kitty/graphics-protocol/#animation",
         "doc_path": "/docs/graphics/kitty-graphics-animation",
         "support": {
           "vt100": {
@@ -535,14 +549,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "Kitty Graphics Protocol",
+            "url": "https://sw.kovidgoyal.net/kitty/graphics-protocol/#animation"
+          }
+        ]
       }
     },
     "iterm2_inline_images": {
       "__compat": {
         "title": "iTerm2 inline images",
         "description": "OSC 1337 ; File=...",
-        "spec_url": "https://iterm2.com/documentation-images.html",
         "doc_path": "/docs/graphics/iterm2-inline-images",
         "support": {
           "vt100": {
@@ -673,7 +692,13 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "iTerm2 Image Protocol",
+            "url": "https://iterm2.com/documentation-images.html"
+          }
+        ]
       }
     }
   }

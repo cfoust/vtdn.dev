@@ -7,7 +7,6 @@
       "__compat": {
         "title": "Bold",
         "description": "SGR 1 — Increased intensity",
-        "spec_url": "https://vt100.net/docs/vt510-rm/SGR.html",
         "doc_path": "/docs/sgr/sgr-bold",
         "support": {
           "vt100": {
@@ -128,14 +127,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "VT510 Reference",
+            "url": "https://vt100.net/docs/vt510-rm/SGR.html"
+          }
+        ]
       }
     },
     "sgr_dim": {
       "__compat": {
         "title": "Dim",
         "description": "SGR 2 — Faint",
-        "spec_url": "https://vt100.net/docs/vt510-rm/SGR.html",
         "doc_path": "/docs/sgr/sgr-dim",
         "support": {
           "vt100": {
@@ -259,14 +263,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "VT510 Reference",
+            "url": "https://vt100.net/docs/vt510-rm/SGR.html"
+          }
+        ]
       }
     },
     "sgr_italic": {
       "__compat": {
         "title": "Italic",
         "description": "SGR 3",
-        "spec_url": "https://vt100.net/docs/vt510-rm/SGR.html",
         "doc_path": "/docs/sgr/sgr-italic",
         "support": {
           "vt100": {
@@ -387,14 +396,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "VT510 Reference",
+            "url": "https://vt100.net/docs/vt510-rm/SGR.html"
+          }
+        ]
       }
     },
     "sgr_underline": {
       "__compat": {
         "title": "Underline",
         "description": "SGR 4",
-        "spec_url": "https://vt100.net/docs/vt510-rm/SGR.html",
         "doc_path": "/docs/sgr/sgr-underline",
         "support": {
           "vt100": {
@@ -515,14 +529,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "VT510 Reference",
+            "url": "https://vt100.net/docs/vt510-rm/SGR.html"
+          }
+        ]
       }
     },
     "sgr_slow_blink": {
       "__compat": {
         "title": "Slow blink",
         "description": "SGR 5",
-        "spec_url": "https://vt100.net/docs/vt510-rm/SGR.html",
         "doc_path": "/docs/sgr/sgr-slow-blink",
         "support": {
           "vt100": {
@@ -651,14 +670,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "VT510 Reference",
+            "url": "https://vt100.net/docs/vt510-rm/SGR.html"
+          }
+        ]
       }
     },
     "sgr_rapid_blink": {
       "__compat": {
         "title": "Rapid blink",
         "description": "SGR 6",
-        "spec_url": "https://vt100.net/docs/vt510-rm/SGR.html",
         "doc_path": "/docs/sgr/sgr-rapid-blink",
         "support": {
           "vt100": {
@@ -790,14 +814,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "VT510 Reference",
+            "url": "https://vt100.net/docs/vt510-rm/SGR.html"
+          }
+        ]
       }
     },
     "sgr_reverse": {
       "__compat": {
         "title": "Reverse video",
         "description": "SGR 7 — Inverse video",
-        "spec_url": "https://vt100.net/docs/vt510-rm/SGR.html",
         "doc_path": "/docs/sgr/sgr-reverse",
         "support": {
           "vt100": {
@@ -919,14 +948,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "VT510 Reference",
+            "url": "https://vt100.net/docs/vt510-rm/SGR.html"
+          }
+        ]
       }
     },
     "sgr_hidden": {
       "__compat": {
         "title": "Hidden",
         "description": "SGR 8 — Invisible",
-        "spec_url": "https://vt100.net/docs/vt510-rm/SGR.html",
         "doc_path": "/docs/sgr/sgr-hidden",
         "support": {
           "vt100": {
@@ -1050,14 +1084,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "VT510 Reference",
+            "url": "https://vt100.net/docs/vt510-rm/SGR.html"
+          }
+        ]
       }
     },
     "sgr_strikethrough": {
       "__compat": {
         "title": "Strikethrough",
         "description": "SGR 9",
-        "spec_url": "https://vt100.net/docs/vt510-rm/SGR.html",
         "doc_path": "/docs/sgr/sgr-strikethrough",
         "support": {
           "vt100": {
@@ -1180,14 +1219,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "VT510 Reference",
+            "url": "https://vt100.net/docs/vt510-rm/SGR.html"
+          }
+        ]
       }
     },
     "sgr_double_underline": {
       "__compat": {
         "title": "Double underline",
         "description": "SGR 21",
-        "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/sgr/sgr-double-underline",
         "support": {
           "vt100": {
@@ -1311,14 +1355,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "ECMA-48",
+            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/"
+          }
+        ]
       }
     },
     "sgr_overline": {
       "__compat": {
         "title": "Overline",
         "description": "SGR 53",
-        "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/sgr/sgr-overline",
         "support": {
           "vt100": {
@@ -1442,14 +1491,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "ECMA-48",
+            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/"
+          }
+        ]
       }
     },
     "underline_curly": {
       "__compat": {
         "title": "Curly underline",
         "description": "SGR 4:3 — Wavy underline",
-        "spec_url": "https://sw.kovidgoyal.net/kitty/underlines/",
         "doc_path": "/docs/sgr/underline-curly",
         "support": {
           "vt100": {
@@ -1580,14 +1634,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "Kitty Underlines Extension",
+            "url": "https://sw.kovidgoyal.net/kitty/underlines/"
+          }
+        ]
       }
     },
     "underline_dotted": {
       "__compat": {
         "title": "Dotted underline",
         "description": "SGR 4:4",
-        "spec_url": "https://sw.kovidgoyal.net/kitty/underlines/",
         "doc_path": "/docs/sgr/underline-dotted",
         "support": {
           "vt100": {
@@ -1714,14 +1773,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "Kitty Underlines Extension",
+            "url": "https://sw.kovidgoyal.net/kitty/underlines/"
+          }
+        ]
       }
     },
     "underline_dashed": {
       "__compat": {
         "title": "Dashed underline",
         "description": "SGR 4:5",
-        "spec_url": "https://sw.kovidgoyal.net/kitty/underlines/",
         "doc_path": "/docs/sgr/underline-dashed",
         "support": {
           "vt100": {
@@ -1848,14 +1912,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "Kitty Underlines Extension",
+            "url": "https://sw.kovidgoyal.net/kitty/underlines/"
+          }
+        ]
       }
     },
     "color_standard": {
       "__compat": {
         "title": "Standard ANSI colors",
         "description": "SGR 30–37, 40–47, 90–97, 100–107 — 8+8 colors",
-        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/sgr/color-standard",
         "support": {
           "vt100": {
@@ -1978,14 +2047,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "XTerm ctlseqs",
+            "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html"
+          }
+        ]
       }
     },
     "color_256": {
       "__compat": {
         "title": "256-color indexed",
         "description": "SGR 38;5;n / 48;5;n",
-        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/sgr/color-256",
         "support": {
           "vt100": {
@@ -2110,14 +2184,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "XTerm ctlseqs",
+            "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html"
+          }
+        ]
       }
     },
     "truecolor_semicolon": {
       "__compat": {
         "title": "24-bit truecolor (semicolons)",
         "description": "SGR 38;2;r;g;b",
-        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/sgr/truecolor-semicolon",
         "support": {
           "vt100": {
@@ -2242,14 +2321,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "XTerm ctlseqs",
+            "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html"
+          }
+        ]
       }
     },
     "truecolor_colon": {
       "__compat": {
         "title": "24-bit truecolor (colons)",
         "description": "SGR 38:2::r:g:b — T.416 standard",
-        "spec_url": "https://www.itu.int/rec/T-REC-T.416/en",
         "doc_path": "/docs/sgr/truecolor-colon",
         "support": {
           "vt100": {
@@ -2379,14 +2463,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "ITU-T T.416",
+            "url": "https://www.itu.int/rec/T-REC-T.416/en"
+          }
+        ]
       }
     },
     "underline_color_indexed": {
       "__compat": {
         "title": "Underline color (indexed)",
         "description": "SGR 58;5;n — 256-color",
-        "spec_url": "https://sw.kovidgoyal.net/kitty/underlines/",
         "doc_path": "/docs/sgr/underline-color-indexed",
         "support": {
           "vt100": {
@@ -2511,14 +2600,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "Kitty Underlines Extension",
+            "url": "https://sw.kovidgoyal.net/kitty/underlines/"
+          }
+        ]
       }
     },
     "underline_color_rgb": {
       "__compat": {
         "title": "Underline color (RGB)",
         "description": "SGR 58;2;r;g;b — 24-bit",
-        "spec_url": "https://sw.kovidgoyal.net/kitty/underlines/",
         "doc_path": "/docs/sgr/underline-color-rgb",
         "support": {
           "vt100": {
@@ -2643,7 +2737,13 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "Kitty Underlines Extension",
+            "url": "https://sw.kovidgoyal.net/kitty/underlines/"
+          }
+        ]
       }
     }
   }

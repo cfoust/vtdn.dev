@@ -163,7 +163,7 @@ function collectFeatures(categoryFilters, featureFilters) {
           categoryName,
           title: compat.title,
           description: compat.description,
-          specUrl: compat.spec_url,
+          specRefs: compat.spec_refs,
         });
       }
     }
@@ -260,7 +260,7 @@ function buildBatchPrompt(terminalName, batch, repoContext) {
   const featureList = batch
     .map((f) => {
       let line = `- ${f.featureId}: ${f.title} — ${f.description}`;
-      if (f.specUrl) line += ` (spec: ${f.specUrl})`;
+      if (f.specRefs?.length) line += ` (spec: ${f.specRefs.map((s) => s.url).join(', ')})`;
       return line;
     })
     .join("\n");

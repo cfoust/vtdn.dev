@@ -7,7 +7,6 @@
       "__compat": {
         "title": "DECRQSS",
         "description": "DCS $ q — Request status string",
-        "spec_url": "https://vt100.net/docs/vt510-rm/DECRQSS.html",
         "doc_path": "/docs/dcs/decrqss",
         "support": {
           "vt100": {
@@ -144,14 +143,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "VT510 Reference",
+            "url": "https://vt100.net/docs/vt510-rm/DECRQSS.html"
+          }
+        ]
       }
     },
     "xtgettcap": {
       "__compat": {
         "title": "XTGETTCAP",
         "description": "DCS + q — Terminal capability query",
-        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/dcs/xtgettcap",
         "support": {
           "vt100": {
@@ -279,14 +283,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "XTerm ctlseqs",
+            "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html"
+          }
+        ]
       }
     },
     "xtversion": {
       "__compat": {
         "title": "XTVERSION",
         "description": "CSI > 0 q — Terminal name/version response",
-        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/dcs/xtversion",
         "support": {
           "vt100": {
@@ -415,14 +424,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "XTerm ctlseqs",
+            "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html"
+          }
+        ]
       }
     },
     "sixel": {
       "__compat": {
         "title": "Sixel graphics",
         "description": "DCS P1;P2;P3 q ... ST",
-        "spec_url": "https://vt100.net/docs/vt3xx-gp/chapter14.html",
         "doc_path": "/docs/dcs/sixel",
         "support": {
           "vt100": {
@@ -550,14 +564,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "VT330/VT340 Reference",
+            "url": "https://vt100.net/docs/vt3xx-gp/chapter14.html"
+          }
+        ]
       }
     },
     "tmux_passthrough": {
       "__compat": {
         "title": "tmux passthrough",
         "description": "DCS tmux; ... ST",
-        "spec_url": "https://github.com/tmux/tmux/wiki/FAQ",
         "doc_path": "/docs/dcs/tmux-passthrough",
         "support": {
           "vt100": {
@@ -680,7 +699,13 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "tmux FAQ",
+            "url": "https://github.com/tmux/tmux/wiki/FAQ"
+          }
+        ]
       }
     }
   }

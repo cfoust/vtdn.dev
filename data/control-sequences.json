@@ -7,7 +7,6 @@
       "__compat": {
         "title": "BEL",
         "description": "0x07 — Audible/visual bell",
-        "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/c0-c1/bel",
         "support": {
           "vt100": {
@@ -131,14 +130,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "ECMA-48",
+            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/"
+          }
+        ]
       }
     },
     "bs": {
       "__compat": {
         "title": "BS",
         "description": "0x08 — Backspace, move cursor left",
-        "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/c0-c1/bs",
         "support": {
           "vt100": {
@@ -260,14 +264,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "ECMA-48",
+            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/"
+          }
+        ]
       }
     },
     "ht": {
       "__compat": {
         "title": "HT",
         "description": "0x09 — Horizontal tab",
-        "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/c0-c1/ht",
         "support": {
           "vt100": {
@@ -389,14 +398,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "ECMA-48",
+            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/"
+          }
+        ]
       }
     },
     "lf": {
       "__compat": {
         "title": "LF",
         "description": "0x0A — Line feed",
-        "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/c0-c1/lf",
         "support": {
           "vt100": {
@@ -518,14 +532,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "ECMA-48",
+            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/"
+          }
+        ]
       }
     },
     "cr": {
       "__compat": {
         "title": "CR",
         "description": "0x0D — Carriage return",
-        "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/c0-c1/cr",
         "support": {
           "vt100": {
@@ -647,14 +666,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "ECMA-48",
+            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/"
+          }
+        ]
       }
     },
     "so_si": {
       "__compat": {
         "title": "SO/SI",
         "description": "0x0E/0x0F — Shift out/in (G1/G0 invocation)",
-        "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/c0-c1/so-si",
         "support": {
           "vt100": {
@@ -785,14 +809,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "ECMA-48",
+            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/"
+          }
+        ]
       }
     },
     "enq": {
       "__compat": {
         "title": "ENQ",
         "description": "0x05 — Enquiry / answerback string",
-        "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/c0-c1/enq",
         "support": {
           "vt100": {
@@ -923,14 +952,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "ECMA-48",
+            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/"
+          }
+        ]
       }
     },
     "ind": {
       "__compat": {
         "title": "IND",
         "description": "ESC D — Index, move cursor down one line",
-        "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/c0-c1/ind",
         "support": {
           "vt100": {
@@ -1052,14 +1086,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "ECMA-48",
+            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/"
+          }
+        ]
       }
     },
     "nel": {
       "__compat": {
         "title": "NEL",
         "description": "ESC E — Next line, column 1 of next line",
-        "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/c0-c1/nel",
         "support": {
           "vt100": {
@@ -1181,14 +1220,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "ECMA-48",
+            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/"
+          }
+        ]
       }
     },
     "hts": {
       "__compat": {
         "title": "HTS",
         "description": "ESC H — Set tab stop at current column",
-        "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/c0-c1/hts",
         "support": {
           "vt100": {
@@ -1311,14 +1355,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "ECMA-48",
+            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/"
+          }
+        ]
       }
     },
     "ri": {
       "__compat": {
         "title": "RI",
         "description": "ESC M — Reverse index, move cursor up",
-        "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/c0-c1/ri",
         "support": {
           "vt100": {
@@ -1440,14 +1489,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "ECMA-48",
+            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/"
+          }
+        ]
       }
     },
     "ss2_ss3": {
       "__compat": {
         "title": "SS2/SS3",
         "description": "ESC N / ESC O — Single shift G2/G3",
-        "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/c0-c1/ss2-ss3",
         "support": {
           "vt100": {
@@ -1579,14 +1633,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "ECMA-48",
+            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/"
+          }
+        ]
       }
     },
     "decsc_decrc": {
       "__compat": {
         "title": "DECSC/DECRC",
         "description": "ESC 7 / ESC 8 — Save/restore cursor",
-        "spec_url": "https://vt100.net/docs/vt510-rm/DECSC.html",
         "doc_path": "/docs/c0-c1/decsc-decrc",
         "support": {
           "vt100": {
@@ -1708,14 +1767,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "VT510 Reference",
+            "url": "https://vt100.net/docs/vt510-rm/DECSC.html"
+          }
+        ]
       }
     },
     "ris": {
       "__compat": {
         "title": "RIS",
         "description": "ESC c — Full terminal reset",
-        "spec_url": "https://vt100.net/docs/vt510-rm/RIS.html",
         "doc_path": "/docs/c0-c1/ris",
         "support": {
           "vt100": {
@@ -1837,14 +1901,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "VT510 Reference",
+            "url": "https://vt100.net/docs/vt510-rm/RIS.html"
+          }
+        ]
       }
     },
     "deckpam_deckpnm": {
       "__compat": {
         "title": "DECKPAM/DECKPNM",
         "description": "ESC = / ESC > — Application/numeric keypad",
-        "spec_url": "https://vt100.net/docs/vt510-rm/DECKPAM.html",
         "doc_path": "/docs/c0-c1/deckpam-deckpnm",
         "support": {
           "vt100": {
@@ -1966,14 +2035,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "VT510 Reference",
+            "url": "https://vt100.net/docs/vt510-rm/DECKPAM.html"
+          }
+        ]
       }
     },
     "decdhl_decdwl": {
       "__compat": {
         "title": "DECDHL/DECDWL",
         "description": "ESC #3–6 — Double-height/width lines",
-        "spec_url": "https://vt100.net/docs/vt510-rm/DECDHL.html",
         "doc_path": "/docs/c0-c1/decdhl-decdwl",
         "support": {
           "vt100": {
@@ -2104,14 +2178,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "VT510 Reference",
+            "url": "https://vt100.net/docs/vt510-rm/DECDHL.html"
+          }
+        ]
       }
     },
     "decaln": {
       "__compat": {
         "title": "DECALN",
         "description": "ESC #8 — Screen alignment test (fill with 'E')",
-        "spec_url": "https://vt100.net/docs/vt510-rm/DECALN.html",
         "doc_path": "/docs/c0-c1/decaln",
         "support": {
           "vt100": {
@@ -2235,14 +2314,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "VT510 Reference",
+            "url": "https://vt100.net/docs/vt510-rm/DECALN.html"
+          }
+        ]
       }
     },
     "s7c1t_s8c1t": {
       "__compat": {
         "title": "S7C1T/S8C1T",
         "description": "ESC SP F/G — 7-bit/8-bit control output",
-        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/c0-c1/s7c1t-s8c1t",
         "support": {
           "vt100": {
@@ -2374,14 +2458,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "XTerm ctlseqs",
+            "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html"
+          }
+        ]
       }
     },
     "locking_shifts": {
       "__compat": {
         "title": "Locking shifts",
         "description": "LS2, LS3, LS1R, LS2R, LS3R",
-        "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/c0-c1/locking-shifts",
         "support": {
           "vt100": {
@@ -2520,14 +2609,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "ECMA-48",
+            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/"
+          }
+        ]
       }
     },
     "utf8_select": {
       "__compat": {
         "title": "UTF-8 select",
         "description": "ESC % G — Select UTF-8 character set",
-        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/c0-c1/utf8-select",
         "support": {
           "vt100": {
@@ -2658,7 +2752,13 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "XTerm ctlseqs",
+            "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html"
+          }
+        ]
       }
     }
   }

@@ -7,7 +7,6 @@
       "__compat": {
         "title": "OSC 0",
         "description": "Set icon name and window title",
-        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/osc/osc0",
         "support": {
           "vt100": {
@@ -133,14 +132,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "XTerm ctlseqs",
+            "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html"
+          }
+        ]
       }
     },
     "osc2": {
       "__compat": {
         "title": "OSC 2",
         "description": "Set window title",
-        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/osc/osc2",
         "support": {
           "vt100": {
@@ -262,14 +266,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "XTerm ctlseqs",
+            "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html"
+          }
+        ]
       }
     },
     "osc4": {
       "__compat": {
         "title": "OSC 4",
         "description": "Change/query color palette entry",
-        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/osc/osc4",
         "support": {
           "vt100": {
@@ -398,14 +407,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "XTerm ctlseqs",
+            "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html"
+          }
+        ]
       }
     },
     "osc7": {
       "__compat": {
         "title": "OSC 7",
         "description": "Current working directory reporting",
-        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/osc/osc7",
         "support": {
           "vt100": {
@@ -531,14 +545,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "XTerm ctlseqs",
+            "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html"
+          }
+        ]
       }
     },
     "osc8": {
       "__compat": {
         "title": "OSC 8",
         "description": "Hyperlinks (clickable links)",
-        "spec_url": "https://gist.github.com/egmontkob/eb114294efbcd5adb1944c9f3cb5feda",
         "doc_path": "/docs/osc/osc8",
         "support": {
           "vt100": {
@@ -663,14 +682,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "Hyperlinks in Terminals",
+            "url": "https://gist.github.com/egmontkob/eb114294efbcd5adb1944c9f3cb5feda"
+          }
+        ]
       }
     },
     "osc9": {
       "__compat": {
         "title": "OSC 9",
         "description": "Desktop notification (ConEmu/iTerm2)",
-        "spec_url": "https://conemu.github.io/en/AnsiEscapeCodes.html",
         "doc_path": "/docs/osc/osc9",
         "support": {
           "vt100": {
@@ -798,14 +822,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "ConEmu ANSI Codes",
+            "url": "https://conemu.github.io/en/AnsiEscapeCodes.html"
+          }
+        ]
       }
     },
     "osc9_4": {
       "__compat": {
         "title": "OSC 9;4",
         "description": "Progress reporting",
-        "spec_url": "https://learn.microsoft.com/en-us/windows/terminal/tutorials/progress-bar-sequences",
         "doc_path": "/docs/osc/osc9-4",
         "support": {
           "vt100": {
@@ -931,14 +960,19 @@
           "experimental": true,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "Windows Terminal Progress Bar",
+            "url": "https://learn.microsoft.com/en-us/windows/terminal/tutorials/progress-bar-sequences"
+          }
+        ]
       }
     },
     "osc10": {
       "__compat": {
         "title": "OSC 10",
         "description": "Set/query default foreground color",
-        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/osc/osc10",
         "support": {
           "vt100": {
@@ -1067,14 +1101,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "XTerm ctlseqs",
+            "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html"
+          }
+        ]
       }
     },
     "osc11": {
       "__compat": {
         "title": "OSC 11",
         "description": "Set/query default background color",
-        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/osc/osc11",
         "support": {
           "vt100": {
@@ -1203,14 +1242,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "XTerm ctlseqs",
+            "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html"
+          }
+        ]
       }
     },
     "osc12": {
       "__compat": {
         "title": "OSC 12",
         "description": "Set/query cursor color",
-        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/osc/osc12",
         "support": {
           "vt100": {
@@ -1339,14 +1383,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "XTerm ctlseqs",
+            "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html"
+          }
+        ]
       }
     },
     "osc22": {
       "__compat": {
         "title": "OSC 22",
         "description": "Set mouse pointer cursor shape",
-        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/osc/osc22",
         "support": {
           "vt100": {
@@ -1473,14 +1522,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "XTerm ctlseqs",
+            "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html"
+          }
+        ]
       }
     },
     "osc52_write": {
       "__compat": {
         "title": "OSC 52 write",
         "description": "Clipboard write (copy to clipboard)",
-        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/osc/osc52-write",
         "support": {
           "vt100": {
@@ -1611,14 +1665,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "XTerm ctlseqs",
+            "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html"
+          }
+        ]
       }
     },
     "osc52_read": {
       "__compat": {
         "title": "OSC 52 read",
         "description": "Clipboard read (paste from clipboard)",
-        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/osc/osc52-read",
         "support": {
           "vt100": {
@@ -1754,14 +1813,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "XTerm ctlseqs",
+            "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html"
+          }
+        ]
       }
     },
     "osc104": {
       "__compat": {
         "title": "OSC 104",
         "description": "Reset color palette entry",
-        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/osc/osc104",
         "support": {
           "vt100": {
@@ -1882,14 +1946,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "XTerm ctlseqs",
+            "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html"
+          }
+        ]
       }
     },
     "osc110_112": {
       "__compat": {
         "title": "OSC 110/111/112",
         "description": "Reset foreground/background/cursor color",
-        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/osc/osc110-112",
         "support": {
           "vt100": {
@@ -2022,14 +2091,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "XTerm ctlseqs",
+            "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html"
+          }
+        ]
       }
     },
     "osc133": {
       "__compat": {
         "title": "OSC 133",
         "description": "Shell integration (FinalTerm semantic zones)",
-        "spec_url": "https://code.visualstudio.com/docs/terminal/shell-integration",
         "doc_path": "/docs/osc/osc133",
         "support": {
           "vt100": {
@@ -2154,14 +2228,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "VS Code Shell Integration",
+            "url": "https://code.visualstudio.com/docs/terminal/shell-integration"
+          }
+        ]
       }
     },
     "kitty_osc21": {
       "__compat": {
         "title": "Kitty OSC 21",
         "description": "Color protocol (query/change by name)",
-        "spec_url": "https://sw.kovidgoyal.net/kitty/color-stack/",
         "doc_path": "/docs/osc/kitty-osc21",
         "support": {
           "vt100": {
@@ -2281,14 +2360,19 @@
           "experimental": true,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "Kitty Color Stack",
+            "url": "https://sw.kovidgoyal.net/kitty/color-stack/"
+          }
+        ]
       }
     },
     "kitty_osc99": {
       "__compat": {
         "title": "Kitty OSC 99",
         "description": "Desktop notifications (rich)",
-        "spec_url": "https://sw.kovidgoyal.net/kitty/desktop-notifications/",
         "doc_path": "/docs/osc/kitty-osc99",
         "support": {
           "vt100": {
@@ -2410,14 +2494,19 @@
           "experimental": true,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "Kitty Desktop Notifications",
+            "url": "https://sw.kovidgoyal.net/kitty/desktop-notifications/"
+          }
+        ]
       }
     },
     "iterm2_osc1337_file": {
       "__compat": {
         "title": "iTerm2 OSC 1337 File",
         "description": "Inline image display",
-        "spec_url": "https://iterm2.com/documentation-images.html",
         "doc_path": "/docs/osc/iterm2-osc1337-file",
         "support": {
           "vt100": {
@@ -2541,14 +2630,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "iTerm2 Image Protocol",
+            "url": "https://iterm2.com/documentation-images.html"
+          }
+        ]
       }
     },
     "iterm2_osc1337_misc": {
       "__compat": {
         "title": "iTerm2 OSC 1337",
         "description": "Marks, user vars, profile switching",
-        "spec_url": "https://iterm2.com/3.0/documentation-escape-codes.html",
         "doc_path": "/docs/osc/iterm2-osc1337-misc",
         "support": {
           "vt100": {
@@ -2678,14 +2772,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "iTerm2 Escape Codes",
+            "url": "https://iterm2.com/3.0/documentation-escape-codes.html"
+          }
+        ]
       }
     },
     "osc777": {
       "__compat": {
         "title": "OSC 777",
         "description": "urxvt-style notification",
-        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/osc/osc777",
         "support": {
           "vt100": {
@@ -2809,7 +2908,13 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "XTerm ctlseqs",
+            "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html"
+          }
+        ]
       }
     }
   }

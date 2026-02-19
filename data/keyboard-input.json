@@ -7,7 +7,6 @@
       "__compat": {
         "title": "Kitty keyboard protocol",
         "description": "Progressive enhancement",
-        "spec_url": "https://sw.kovidgoyal.net/kitty/keyboard-protocol/",
         "doc_path": "/docs/keyboard/kitty-keyboard",
         "support": {
           "vt100": {
@@ -133,14 +132,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "Kitty Keyboard Protocol",
+            "url": "https://sw.kovidgoyal.net/kitty/keyboard-protocol/"
+          }
+        ]
       }
     },
     "kitty_kb_disambiguate": {
       "__compat": {
         "title": "Disambiguate",
         "description": "Kitty keyboard flag 1",
-        "spec_url": "https://sw.kovidgoyal.net/kitty/keyboard-protocol/",
         "doc_path": "/docs/keyboard/kitty-kb-disambiguate",
         "support": {
           "vt100": {
@@ -270,14 +274,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "Kitty Keyboard Protocol",
+            "url": "https://sw.kovidgoyal.net/kitty/keyboard-protocol/"
+          }
+        ]
       }
     },
     "kitty_kb_event_types": {
       "__compat": {
         "title": "Report event types",
         "description": "Kitty keyboard flag 2",
-        "spec_url": "https://sw.kovidgoyal.net/kitty/keyboard-protocol/",
         "doc_path": "/docs/keyboard/kitty-kb-event-types",
         "support": {
           "vt100": {
@@ -407,14 +416,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "Kitty Keyboard Protocol",
+            "url": "https://sw.kovidgoyal.net/kitty/keyboard-protocol/"
+          }
+        ]
       }
     },
     "kitty_kb_alternate_keys": {
       "__compat": {
         "title": "Report alternate keys",
         "description": "Kitty keyboard flag 4",
-        "spec_url": "https://sw.kovidgoyal.net/kitty/keyboard-protocol/",
         "doc_path": "/docs/keyboard/kitty-kb-alternate-keys",
         "support": {
           "vt100": {
@@ -544,14 +558,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "Kitty Keyboard Protocol",
+            "url": "https://sw.kovidgoyal.net/kitty/keyboard-protocol/"
+          }
+        ]
       }
     },
     "kitty_kb_all_keys": {
       "__compat": {
         "title": "All keys as escape codes",
         "description": "Kitty keyboard flag 8",
-        "spec_url": "https://sw.kovidgoyal.net/kitty/keyboard-protocol/",
         "doc_path": "/docs/keyboard/kitty-kb-all-keys",
         "support": {
           "vt100": {
@@ -681,14 +700,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "Kitty Keyboard Protocol",
+            "url": "https://sw.kovidgoyal.net/kitty/keyboard-protocol/"
+          }
+        ]
       }
     },
     "kitty_kb_associated_text": {
       "__compat": {
         "title": "Report associated text",
         "description": "Kitty keyboard flag 16",
-        "spec_url": "https://sw.kovidgoyal.net/kitty/keyboard-protocol/",
         "doc_path": "/docs/keyboard/kitty-kb-associated-text",
         "support": {
           "vt100": {
@@ -818,7 +842,13 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "Kitty Keyboard Protocol",
+            "url": "https://sw.kovidgoyal.net/kitty/keyboard-protocol/"
+          }
+        ]
       }
     }
   }

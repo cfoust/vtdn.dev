@@ -7,7 +7,6 @@
       "__compat": {
         "title": "DECCKM",
         "description": "Mode 1 — Application cursor keys",
-        "spec_url": "https://vt100.net/docs/vt510-rm/DECCKM.html",
         "doc_path": "/docs/decset/mode1-decckm",
         "support": {
           "vt100": {
@@ -133,14 +132,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "VT510 Reference",
+            "url": "https://vt100.net/docs/vt510-rm/DECCKM.html"
+          }
+        ]
       }
     },
     "mode3_deccolm": {
       "__compat": {
         "title": "DECCOLM",
         "description": "Mode 3 — 132/80 column switching",
-        "spec_url": "https://vt100.net/docs/vt510-rm/DECCOLM.html",
         "doc_path": "/docs/decset/mode3-deccolm",
         "support": {
           "vt100": {
@@ -273,14 +277,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "VT510 Reference",
+            "url": "https://vt100.net/docs/vt510-rm/DECCOLM.html"
+          }
+        ]
       }
     },
     "mode5_decscnm": {
       "__compat": {
         "title": "DECSCNM",
         "description": "Mode 5 — Reverse video (light background)",
-        "spec_url": "https://vt100.net/docs/vt510-rm/DECSCNM.html",
         "doc_path": "/docs/decset/mode5-decscnm",
         "support": {
           "vt100": {
@@ -405,14 +414,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "VT510 Reference",
+            "url": "https://vt100.net/docs/vt510-rm/DECSCNM.html"
+          }
+        ]
       }
     },
     "mode6_decom": {
       "__compat": {
         "title": "DECOM",
         "description": "Mode 6 — Origin mode (relative to scroll region)",
-        "spec_url": "https://vt100.net/docs/vt510-rm/DECOM.html",
         "doc_path": "/docs/decset/mode6-decom",
         "support": {
           "vt100": {
@@ -539,14 +553,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "VT510 Reference",
+            "url": "https://vt100.net/docs/vt510-rm/DECOM.html"
+          }
+        ]
       }
     },
     "mode7_decawm": {
       "__compat": {
         "title": "DECAWM",
         "description": "Mode 7 — Auto-wrap at end of line",
-        "spec_url": "https://vt100.net/docs/vt510-rm/DECAWM.html",
         "doc_path": "/docs/decset/mode7-decawm",
         "support": {
           "vt100": {
@@ -673,14 +692,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "VT510 Reference",
+            "url": "https://vt100.net/docs/vt510-rm/DECAWM.html"
+          }
+        ]
       }
     },
     "mode12_blink_cursor": {
       "__compat": {
         "title": "Blink cursor",
         "description": "Mode 12 — att610 blinking cursor",
-        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/decset/mode12-blink-cursor",
         "support": {
           "vt100": {
@@ -810,14 +834,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "XTerm ctlseqs",
+            "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html"
+          }
+        ]
       }
     },
     "mode25_dectcem": {
       "__compat": {
         "title": "DECTCEM",
         "description": "Mode 25 — Show/hide text cursor",
-        "spec_url": "https://vt100.net/docs/vt510-rm/DECTCEM.html",
         "doc_path": "/docs/decset/mode25-dectcem",
         "support": {
           "vt100": {
@@ -937,14 +966,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "VT510 Reference",
+            "url": "https://vt100.net/docs/vt510-rm/DECTCEM.html"
+          }
+        ]
       }
     },
     "mode45_reverse_wrap": {
       "__compat": {
         "title": "Reverse wrap",
         "description": "Mode 45 — BS wraps to previous line",
-        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/decset/mode45-reverse-wrap",
         "support": {
           "vt100": {
@@ -1063,14 +1097,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "XTerm ctlseqs",
+            "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html"
+          }
+        ]
       }
     },
     "mode69_declrmm": {
       "__compat": {
         "title": "DECLRMM",
         "description": "Mode 69 — Left/right margin mode",
-        "spec_url": "https://vt100.net/docs/vt510-rm/DECLRMM.html",
         "doc_path": "/docs/decset/mode69-declrmm",
         "support": {
           "vt100": {
@@ -1190,14 +1229,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "VT510 Reference",
+            "url": "https://vt100.net/docs/vt510-rm/DECLRMM.html"
+          }
+        ]
       }
     },
     "mode80_decsdm": {
       "__compat": {
         "title": "DECSDM",
         "description": "Mode 80 — Sixel display mode (scrolling)",
-        "spec_url": "https://vt100.net/docs/vt3xx-gp/chapter14.html",
         "doc_path": "/docs/decset/mode80-decsdm",
         "support": {
           "vt100": {
@@ -1321,14 +1365,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "VT330/VT340 Reference",
+            "url": "https://vt100.net/docs/vt3xx-gp/chapter14.html"
+          }
+        ]
       }
     },
     "mode1049_altscreen": {
       "__compat": {
         "title": "Alt screen",
         "description": "Mode 1049 — Alternate screen buffer with cursor save",
-        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/decset/mode1049-altscreen",
         "support": {
           "vt100": {
@@ -1452,14 +1501,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "XTerm ctlseqs",
+            "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html"
+          }
+        ]
       }
     },
     "mode1000_mouse_normal": {
       "__compat": {
         "title": "Normal mouse",
         "description": "Mode 1000 — Press + release tracking",
-        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/decset/mode1000-mouse-normal",
         "support": {
           "vt100": {
@@ -1579,14 +1633,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "XTerm ctlseqs",
+            "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html"
+          }
+        ]
       }
     },
     "mode1002_button_event": {
       "__compat": {
         "title": "Button-event mouse",
         "description": "Mode 1002 — Motion while held tracking",
-        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/decset/mode1002-button-event",
         "support": {
           "vt100": {
@@ -1706,14 +1765,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "XTerm ctlseqs",
+            "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html"
+          }
+        ]
       }
     },
     "mode1003_any_event": {
       "__compat": {
         "title": "Any-event mouse",
         "description": "Mode 1003 — All motion tracking",
-        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/decset/mode1003-any-event",
         "support": {
           "vt100": {
@@ -1833,14 +1897,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "XTerm ctlseqs",
+            "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html"
+          }
+        ]
       }
     },
     "mode1004_focus": {
       "__compat": {
         "title": "Focus events",
         "description": "Mode 1004 — CSI I / CSI O",
-        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/decset/mode1004-focus",
         "support": {
           "vt100": {
@@ -1961,14 +2030,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "XTerm ctlseqs",
+            "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html"
+          }
+        ]
       }
     },
     "mode1006_sgr_mouse": {
       "__compat": {
         "title": "SGR mouse",
         "description": "Mode 1006 — Decimal encoding, no coord limit",
-        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/decset/mode1006-sgr-mouse",
         "support": {
           "vt100": {
@@ -2088,14 +2162,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "XTerm ctlseqs",
+            "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html"
+          }
+        ]
       }
     },
     "mode1007_alt_scroll": {
       "__compat": {
         "title": "Alt scroll",
         "description": "Mode 1007 — Wheel sends arrows in alt screen",
-        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/decset/mode1007-alt-scroll",
         "support": {
           "vt100": {
@@ -2215,14 +2294,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "XTerm ctlseqs",
+            "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html"
+          }
+        ]
       }
     },
     "mode1016_sgr_pixel": {
       "__compat": {
         "title": "SGR-Pixel mouse",
         "description": "Mode 1016 — Pixel coordinates",
-        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/decset/mode1016-sgr-pixel",
         "support": {
           "vt100": {
@@ -2341,14 +2425,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "XTerm ctlseqs",
+            "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html"
+          }
+        ]
       }
     },
     "mode2004_bracketed_paste": {
       "__compat": {
         "title": "Bracketed paste",
         "description": "Mode 2004",
-        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/decset/mode2004-bracketed-paste",
         "support": {
           "vt100": {
@@ -2469,14 +2558,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "XTerm ctlseqs",
+            "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html"
+          }
+        ]
       }
     },
     "mode2026_sync_output": {
       "__compat": {
         "title": "Synchronized output",
         "description": "Mode 2026 — Tear-free rendering",
-        "spec_url": "https://gist.github.com/christianparpart/d8a62cc1ab659194337d73e399004036",
         "doc_path": "/docs/decset/mode2026-sync-output",
         "support": {
           "vt100": {
@@ -2597,14 +2691,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "Synchronized Output",
+            "url": "https://gist.github.com/christianparpart/d8a62cc1ab659194337d73e399004036"
+          }
+        ]
       }
     },
     "mode2027_grapheme": {
       "__compat": {
         "title": "Grapheme clustering",
         "description": "Mode 2027 — UAX #29",
-        "spec_url": "https://unicode.org/reports/tr29/",
         "doc_path": "/docs/decset/mode2027-grapheme",
         "support": {
           "vt100": {
@@ -2725,14 +2824,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "Unicode UAX #29",
+            "url": "https://unicode.org/reports/tr29/"
+          }
+        ]
       }
     },
     "mode2031_color_scheme": {
       "__compat": {
         "title": "Color scheme reporting",
         "description": "Mode 2031 — Light/dark notifications",
-        "spec_url": "https://contour-terminal.org/vt-extensions/color-palette-update-notifications/",
         "doc_path": "/docs/decset/mode2031-color-scheme",
         "support": {
           "vt100": {
@@ -2847,14 +2951,19 @@
           "experimental": true,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "Contour Color Scheme Reporting",
+            "url": "https://contour-terminal.org/vt-extensions/color-palette-update-notifications/"
+          }
+        ]
       }
     },
     "mode2048_in_band_resize": {
       "__compat": {
         "title": "In-band resize",
         "description": "Mode 2048 — Deterministic notifications",
-        "spec_url": "https://gist.github.com/rockorager/e695f2f3a12087ddf998ef96210e5364",
         "doc_path": "/docs/decset/mode2048-in-band-resize",
         "support": {
           "vt100": {
@@ -2969,14 +3078,19 @@
           "experimental": true,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "In-Band Resize",
+            "url": "https://gist.github.com/rockorager/e695f2f3a12087ddf998ef96210e5364"
+          }
+        ]
       }
     },
     "mode4_irm": {
       "__compat": {
         "title": "IRM",
         "description": "ANSI Mode 4 — Insert/replace mode",
-        "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/decset/mode4-irm",
         "support": {
           "vt100": {
@@ -3099,14 +3213,19 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "ECMA-48",
+            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/"
+          }
+        ]
       }
     },
     "mode20_lnm": {
       "__compat": {
         "title": "LNM",
         "description": "ANSI Mode 20 — Newline mode (LF also does CR)",
-        "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
         "doc_path": "/docs/decset/mode20-lnm",
         "support": {
           "vt100": {
@@ -3230,7 +3349,13 @@
           "experimental": false,
           "standard_track": true,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "ECMA-48",
+            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/"
+          }
+        ]
       }
     }
   }

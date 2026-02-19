@@ -1,4 +1,5 @@
 import React from 'react';
+import {useDoc} from '@docusaurus/plugin-content-docs/client';
 import styles from './styles.module.css';
 import {
   terminals,
@@ -33,12 +34,20 @@ export default function FeatureCompatTable({
   featureId,
   dataFile,
 }: {
-  featureId: string;
-  dataFile: string;
+  featureId?: string;
+  dataFile?: string;
 }) {
-  const feature = getFeature(dataFile, featureId);
+  const {frontMatter} = useDoc();
+  const resolvedFeatureId = featureId ?? (frontMatter as any).feature_id;
+  const resolvedDataFile = dataFile ?? (frontMatter as any).data_file;
+
+  if (!resolvedFeatureId || !resolvedDataFile) {
+    return <p>Missing <code>feature_id</code> or <code>data_file</code> in front matter.</p>;
+  }
+
+  const feature = getFeature(resolvedDataFile, resolvedFeatureId);
   if (!feature) {
-    return <p>Feature <code>{featureId}</code> not found in <code>{dataFile}</code>.</p>;
+    return <p>Feature <code>{resolvedFeatureId}</code> not found in <code>{resolvedDataFile}</code>.</p>;
   }
 
   const {support} = feature.__compat;

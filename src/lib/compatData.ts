@@ -16,10 +16,16 @@ export type SupportEntry = {
   last_scanned?: string;
 };
 
+export type SpecRef = {
+  name: string;
+  url: string;
+  section?: string;
+};
+
 export type CompatEntry = {
   title: string;
   description: string;
-  spec_url?: string;
+  spec_refs?: SpecRef[];
   doc_path: string;
   support: Record<string, SupportEntry>;
 };

@@ -36,7 +36,7 @@ Each feature entry follows this structure:
     "__compat": {
       "title": "...",
       "description": "...",
-      "spec_url": "...",
+      "spec_refs": [{ "name": "ECMA-48", "url": "...", "section": "§8.3.22" }],
       "doc_path": "/docs/...",
       "support": {
         "terminal_id": { "version_added": true|false|null|"v1.0.0" }

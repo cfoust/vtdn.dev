@@ -7,7 +7,6 @@
       "__compat": {
         "title": "Iconify",
         "description": "CSI 1/2 t — De-iconify / iconify window",
-        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/window/win-iconify",
         "support": {
           "vt100": {
@@ -138,14 +137,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "XTerm ctlseqs",
+            "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html"
+          }
+        ]
       }
     },
     "win_move": {
       "__compat": {
         "title": "Move window",
         "description": "CSI 3;x;y t — Move to pixel position",
-        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/window/win-move",
         "support": {
           "vt100": {
@@ -277,14 +281,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "XTerm ctlseqs",
+            "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html"
+          }
+        ]
       }
     },
     "win_resize_pixels": {
       "__compat": {
         "title": "Resize (pixels)",
         "description": "CSI 4;h;w t — Resize window to pixels",
-        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/window/win-resize-pixels",
         "support": {
           "vt100": {
@@ -415,14 +424,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "XTerm ctlseqs",
+            "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html"
+          }
+        ]
       }
     },
     "win_raise_lower": {
       "__compat": {
         "title": "Raise/lower",
         "description": "CSI 5/6 t — Raise / lower window",
-        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/window/win-raise-lower",
         "support": {
           "vt100": {
@@ -554,14 +568,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "XTerm ctlseqs",
+            "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html"
+          }
+        ]
       }
     },
     "win_resize_chars": {
       "__compat": {
         "title": "Resize (chars)",
         "description": "CSI 8;rows;cols t — Resize text area to characters",
-        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/window/win-resize-chars",
         "support": {
           "vt100": {
@@ -693,14 +712,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "XTerm ctlseqs",
+            "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html"
+          }
+        ]
       }
     },
     "win_maximize": {
       "__compat": {
         "title": "Maximize",
         "description": "CSI 9;Ps t — Maximize / restore window",
-        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/window/win-maximize",
         "support": {
           "vt100": {
@@ -834,14 +858,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "XTerm ctlseqs",
+            "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html"
+          }
+        ]
       }
     },
     "win_fullscreen": {
       "__compat": {
         "title": "Fullscreen",
         "description": "CSI 10;Ps t — Enter/exit/toggle fullscreen",
-        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/window/win-fullscreen",
         "support": {
           "vt100": {
@@ -975,14 +1004,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "XTerm ctlseqs",
+            "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html"
+          }
+        ]
       }
     },
     "win_state_report": {
       "__compat": {
         "title": "State report",
         "description": "CSI 11 t — Window state report",
-        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/window/win-state-report",
         "support": {
           "vt100": {
@@ -1114,14 +1148,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "XTerm ctlseqs",
+            "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html"
+          }
+        ]
       }
     },
     "win_position_report": {
       "__compat": {
         "title": "Position report",
         "description": "CSI 13 t — Window position (pixels)",
-        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/window/win-position-report",
         "support": {
           "vt100": {
@@ -1253,14 +1292,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "XTerm ctlseqs",
+            "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html"
+          }
+        ]
       }
     },
     "win_text_area_pixels": {
       "__compat": {
         "title": "Text area (pixels)",
         "description": "CSI 14 t — Text area size in pixels",
-        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/window/win-text-area-pixels",
         "support": {
           "vt100": {
@@ -1392,14 +1436,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "XTerm ctlseqs",
+            "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html"
+          }
+        ]
       }
     },
     "win_cell_size": {
       "__compat": {
         "title": "Cell size",
         "description": "CSI 16 t — Cell size in pixels",
-        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/window/win-cell-size",
         "support": {
           "vt100": {
@@ -1527,14 +1576,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "XTerm ctlseqs",
+            "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html"
+          }
+        ]
       }
     },
     "win_text_area_chars": {
       "__compat": {
         "title": "Text area (chars)",
         "description": "CSI 18 t — Text area size in characters",
-        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/window/win-text-area-chars",
         "support": {
           "vt100": {
@@ -1658,14 +1712,19 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "XTerm ctlseqs",
+            "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html"
+          }
+        ]
       }
     },
     "win_title_stack": {
       "__compat": {
         "title": "Title stack",
         "description": "CSI 22/23 t — Push/pop window title stack",
-        "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
         "doc_path": "/docs/window/win-title-stack",
         "support": {
           "vt100": {
@@ -1799,7 +1858,13 @@
           "experimental": false,
           "standard_track": false,
           "deprecated": false
-        }
+        },
+        "spec_refs": [
+          {
+            "name": "XTerm ctlseqs",
+            "url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html"
+          }
+        ]
       }
     }
   }

@@ -36,6 +36,8 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
+          editUrl: 'https://github.com/cfoust/vtdn.dev/edit/main/',
+          showLastUpdateTime: true,
         },
         blog: false,
         theme: {

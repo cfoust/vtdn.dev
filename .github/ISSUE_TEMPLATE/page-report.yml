@@ -1,0 +1,46 @@
+name: "Report a problem with this page"
+description: Report an issue with a documentation page on vtdn.dev.
+labels: ["page report", "needs triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### Before you start
+
+        **Want to fix this page yourself?** This content is open source!
+        Go back and use the *View this page on GitHub* link to edit the content directly.
+
+        ---
+  - type: input
+    id: page-url
+    attributes:
+      label: Page URL
+      description: Set automatically from the page link. Do not modify.
+    validations:
+      required: true
+  - type: input
+    id: section
+    attributes:
+      label: What specific section or headline is this issue about?
+  - type: textarea
+    id: problem
+    attributes:
+      label: What information was incorrect, unhelpful, or incomplete?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect to see?
+    validations:
+      required: true
+  - type: textarea
+    id: references
+    attributes:
+      label: Do you have any supporting links, references, or citations?
+      description: Link to specifications, terminal documentation, or other information that helps confirm your issue.
+  - type: textarea
+    id: more-info
+    attributes:
+      label: Do you have anything more you want to share?
+      description: For example, screenshots, or terminal source code.

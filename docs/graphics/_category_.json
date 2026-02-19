@@ -1,0 +1,8 @@
+{
+  "label": "Graphics Protocols",
+  "position": 8,
+  "link": {
+    "type": "generated-index",
+    "description": "Terminal graphics and image display protocols."
+  }
+}

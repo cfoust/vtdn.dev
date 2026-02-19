@@ -1,0 +1,8 @@
+{
+  "label": "SGR Text Styling",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "Select Graphic Rendition (SGR) attributes for text styling."
+  }
+}

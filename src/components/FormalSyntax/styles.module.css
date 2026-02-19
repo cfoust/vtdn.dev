@@ -1,0 +1,25 @@
+.container {
+  border: 1px solid var(--ifm-table-border-color);
+  border-radius: var(--ifm-code-border-radius);
+  margin-bottom: var(--ifm-spacing-vertical);
+  overflow: hidden;
+}
+
+.header {
+  background: var(--ifm-color-emphasis-200);
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.grammar {
+  margin: 0;
+  padding: 0.8rem;
+  background: var(--ifm-code-background);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  overflow-x: auto;
+}

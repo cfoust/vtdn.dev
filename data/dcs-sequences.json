@@ -8,7 +8,7 @@
         "title": "DECRQSS",
         "description": "DCS $ q — Request status string",
         "spec_url": "https://vt100.net/docs/vt510-rm/DECRQSS.html",
-        "doc_path": "/docs/dcs-sequences",
+        "doc_path": "/docs/dcs/decrqss",
         "support": {
           "vt100": {
             "version_added": false
@@ -152,7 +152,7 @@
         "title": "XTGETTCAP",
         "description": "DCS + q — Terminal capability query",
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
-        "doc_path": "/docs/dcs-sequences",
+        "doc_path": "/docs/dcs/xtgettcap",
         "support": {
           "vt100": {
             "version_added": false
@@ -287,7 +287,7 @@
         "title": "XTVERSION",
         "description": "CSI > 0 q — Terminal name/version response",
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
-        "doc_path": "/docs/dcs-sequences",
+        "doc_path": "/docs/dcs/xtversion",
         "support": {
           "vt100": {
             "version_added": false
@@ -423,7 +423,7 @@
         "title": "Sixel graphics",
         "description": "DCS P1;P2;P3 q ... ST",
         "spec_url": "https://vt100.net/docs/vt3xx-gp/chapter14.html",
-        "doc_path": "/docs/graphics-protocols",
+        "doc_path": "/docs/dcs/sixel",
         "support": {
           "vt100": {
             "version_added": false
@@ -558,7 +558,7 @@
         "title": "tmux passthrough",
         "description": "DCS tmux; ... ST",
         "spec_url": "https://github.com/tmux/tmux/wiki/FAQ",
-        "doc_path": "/docs/multiplexers-shell-integration",
+        "doc_path": "/docs/dcs/tmux-passthrough",
         "support": {
           "vt100": {
             "version_added": false

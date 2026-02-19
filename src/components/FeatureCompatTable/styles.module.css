@@ -1,0 +1,49 @@
+.table {
+  width: 100%;
+  font-size: 0.85rem;
+}
+
+.groupRow {
+  background: var(--ifm-color-emphasis-100);
+}
+
+.groupCell {
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.supportCell {
+  text-align: center;
+  width: 70px;
+  font-weight: 600;
+}
+
+.versionCell {
+  white-space: nowrap;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.8rem;
+}
+
+.notesCell {
+  font-size: 0.8rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.yes {
+  color: var(--ifm-color-success-dark);
+}
+
+.partial {
+  color: var(--ifm-color-warning-dark);
+}
+
+.no {
+  color: var(--ifm-color-danger-dark);
+}
+
+.unknown {
+  color: var(--ifm-color-emphasis-500);
+}

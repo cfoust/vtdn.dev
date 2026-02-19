@@ -8,7 +8,7 @@
         "title": "Bold",
         "description": "SGR 1 — Increased intensity",
         "spec_url": "https://vt100.net/docs/vt510-rm/SGR.html",
-        "doc_path": "/docs/sgr-attributes",
+        "doc_path": "/docs/sgr/sgr-bold",
         "support": {
           "vt100": {
             "version_added": true
@@ -136,7 +136,7 @@
         "title": "Dim",
         "description": "SGR 2 — Faint",
         "spec_url": "https://vt100.net/docs/vt510-rm/SGR.html",
-        "doc_path": "/docs/sgr-attributes",
+        "doc_path": "/docs/sgr/sgr-dim",
         "support": {
           "vt100": {
             "version_added": false
@@ -267,7 +267,7 @@
         "title": "Italic",
         "description": "SGR 3",
         "spec_url": "https://vt100.net/docs/vt510-rm/SGR.html",
-        "doc_path": "/docs/sgr-attributes",
+        "doc_path": "/docs/sgr/sgr-italic",
         "support": {
           "vt100": {
             "version_added": false
@@ -395,7 +395,7 @@
         "title": "Underline",
         "description": "SGR 4",
         "spec_url": "https://vt100.net/docs/vt510-rm/SGR.html",
-        "doc_path": "/docs/sgr-attributes",
+        "doc_path": "/docs/sgr/sgr-underline",
         "support": {
           "vt100": {
             "version_added": true
@@ -523,7 +523,7 @@
         "title": "Slow blink",
         "description": "SGR 5",
         "spec_url": "https://vt100.net/docs/vt510-rm/SGR.html",
-        "doc_path": "/docs/sgr-attributes",
+        "doc_path": "/docs/sgr/sgr-slow-blink",
         "support": {
           "vt100": {
             "version_added": true
@@ -659,7 +659,7 @@
         "title": "Rapid blink",
         "description": "SGR 6",
         "spec_url": "https://vt100.net/docs/vt510-rm/SGR.html",
-        "doc_path": "/docs/sgr-attributes",
+        "doc_path": "/docs/sgr/sgr-rapid-blink",
         "support": {
           "vt100": {
             "version_added": false
@@ -798,7 +798,7 @@
         "title": "Reverse video",
         "description": "SGR 7 — Inverse video",
         "spec_url": "https://vt100.net/docs/vt510-rm/SGR.html",
-        "doc_path": "/docs/sgr-attributes",
+        "doc_path": "/docs/sgr/sgr-reverse",
         "support": {
           "vt100": {
             "version_added": true
@@ -927,7 +927,7 @@
         "title": "Hidden",
         "description": "SGR 8 — Invisible",
         "spec_url": "https://vt100.net/docs/vt510-rm/SGR.html",
-        "doc_path": "/docs/sgr-attributes",
+        "doc_path": "/docs/sgr/sgr-hidden",
         "support": {
           "vt100": {
             "version_added": false
@@ -1058,7 +1058,7 @@
         "title": "Strikethrough",
         "description": "SGR 9",
         "spec_url": "https://vt100.net/docs/vt510-rm/SGR.html",
-        "doc_path": "/docs/sgr-attributes",
+        "doc_path": "/docs/sgr/sgr-strikethrough",
         "support": {
           "vt100": {
             "version_added": false
@@ -1188,7 +1188,7 @@
         "title": "Double underline",
         "description": "SGR 21",
         "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
-        "doc_path": "/docs/sgr-attributes",
+        "doc_path": "/docs/sgr/sgr-double-underline",
         "support": {
           "vt100": {
             "version_added": false
@@ -1319,7 +1319,7 @@
         "title": "Overline",
         "description": "SGR 53",
         "spec_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
-        "doc_path": "/docs/sgr-attributes",
+        "doc_path": "/docs/sgr/sgr-overline",
         "support": {
           "vt100": {
             "version_added": false
@@ -1450,7 +1450,7 @@
         "title": "Curly underline",
         "description": "SGR 4:3 — Wavy underline",
         "spec_url": "https://sw.kovidgoyal.net/kitty/underlines/",
-        "doc_path": "/docs/sgr-attributes",
+        "doc_path": "/docs/sgr/underline-curly",
         "support": {
           "vt100": {
             "version_added": false
@@ -1588,7 +1588,7 @@
         "title": "Dotted underline",
         "description": "SGR 4:4",
         "spec_url": "https://sw.kovidgoyal.net/kitty/underlines/",
-        "doc_path": "/docs/sgr-attributes",
+        "doc_path": "/docs/sgr/underline-dotted",
         "support": {
           "vt100": {
             "version_added": false
@@ -1722,7 +1722,7 @@
         "title": "Dashed underline",
         "description": "SGR 4:5",
         "spec_url": "https://sw.kovidgoyal.net/kitty/underlines/",
-        "doc_path": "/docs/sgr-attributes",
+        "doc_path": "/docs/sgr/underline-dashed",
         "support": {
           "vt100": {
             "version_added": false
@@ -1856,7 +1856,7 @@
         "title": "Standard ANSI colors",
         "description": "SGR 30–37, 40–47, 90–97, 100–107 — 8+8 colors",
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
-        "doc_path": "/docs/sgr-attributes",
+        "doc_path": "/docs/sgr/color-standard",
         "support": {
           "vt100": {
             "version_added": false
@@ -1986,7 +1986,7 @@
         "title": "256-color indexed",
         "description": "SGR 38;5;n / 48;5;n",
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
-        "doc_path": "/docs/sgr-attributes",
+        "doc_path": "/docs/sgr/color-256",
         "support": {
           "vt100": {
             "version_added": false
@@ -2118,7 +2118,7 @@
         "title": "24-bit truecolor (semicolons)",
         "description": "SGR 38;2;r;g;b",
         "spec_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
-        "doc_path": "/docs/sgr-attributes",
+        "doc_path": "/docs/sgr/truecolor-semicolon",
         "support": {
           "vt100": {
             "version_added": false
@@ -2250,7 +2250,7 @@
         "title": "24-bit truecolor (colons)",
         "description": "SGR 38:2::r:g:b — T.416 standard",
         "spec_url": "https://www.itu.int/rec/T-REC-T.416/en",
-        "doc_path": "/docs/sgr-attributes",
+        "doc_path": "/docs/sgr/truecolor-colon",
         "support": {
           "vt100": {
             "version_added": false
@@ -2387,7 +2387,7 @@
         "title": "Underline color (indexed)",
         "description": "SGR 58;5;n — 256-color",
         "spec_url": "https://sw.kovidgoyal.net/kitty/underlines/",
-        "doc_path": "/docs/sgr-attributes",
+        "doc_path": "/docs/sgr/underline-color-indexed",
         "support": {
           "vt100": {
             "version_added": false
@@ -2519,7 +2519,7 @@
         "title": "Underline color (RGB)",
         "description": "SGR 58;2;r;g;b — 24-bit",
         "spec_url": "https://sw.kovidgoyal.net/kitty/underlines/",
-        "doc_path": "/docs/sgr-attributes",
+        "doc_path": "/docs/sgr/underline-color-rgb",
         "support": {
           "vt100": {
             "version_added": false

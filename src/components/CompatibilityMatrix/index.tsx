@@ -1,64 +1,15 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
 import styles from './styles.module.css';
-
-import terminals from '../../../data/terminals.json';
-import controlSequences from '../../../data/control-sequences.json';
-import csiSequences from '../../../data/csi-sequences.json';
-import textStyling from '../../../data/text-styling.json';
-import oscSequences from '../../../data/osc-sequences.json';
-import dcsSequences from '../../../data/dcs-sequences.json';
-import decsetModes from '../../../data/decset-modes.json';
-import keyboardInput from '../../../data/keyboard-input.json';
-import graphics from '../../../data/graphics.json';
-import windowManipulation from '../../../data/window-manipulation.json';
-
-const categories = [
-  controlSequences.control_sequences,
-  csiSequences.csi_sequences,
-  textStyling.text_styling,
-  oscSequences.osc_sequences,
-  dcsSequences.dcs_sequences,
-  decsetModes.decset_modes,
-  keyboardInput.keyboard_input,
-  graphics.graphics,
-  windowManipulation.window_manipulation,
-];
-
-// Sort terminals alphabetically by name within each group, preserving group order
-const terminalIds = (() => {
-  const ids = Object.keys(terminals);
-  const groups: string[][] = [];
-  for (const id of ids) {
-    const group = (terminals[id] as any).group || null;
-    const last = groups[groups.length - 1];
-    if (last && (terminals[last[0]] as any).group === group) {
-      last.push(id);
-    } else {
-      groups.push([id]);
-    }
-  }
-  return groups.flatMap((g) =>
-    g.sort((a, b) =>
-      (terminals[a] as any).name.localeCompare((terminals[b] as any).name, undefined, {sensitivity: 'base'}),
-    ),
-  );
-})();
-
-// Build group header spans: consecutive terminals with the same group get merged
-function buildGroupHeaders(): Array<{label: string | null; span: number}> {
-  const headers: Array<{label: string | null; span: number}> = [];
-  for (const id of terminalIds) {
-    const group = (terminals[id] as any).group || null;
-    const last = headers[headers.length - 1];
-    if (last && last.label === group) {
-      last.span++;
-    } else {
-      headers.push({label: group, span: 1});
-    }
-  }
-  return headers;
-}
+import {
+  terminals,
+  categories,
+  terminalIds,
+  buildGroupHeaders,
+  classifySupport,
+  isSupported,
+  type SupportEntry,
+} from '../../lib/compatData';
 
 const groupHeaders = buildGroupHeaders();
 const hasGroups = groupHeaders.some((h) => h.label !== null);
@@ -87,17 +38,6 @@ const icons: Record<string, React.ReactNode> = {
     </svg>
   ),
 };
-
-type SupportEntry = {
-  version_added: string | boolean | null;
-  partial_implementation?: boolean;
-  notes?: string;
-};
-
-function isSupported(support: SupportEntry): boolean {
-  if (support.partial_implementation) return true;
-  return support.version_added === true || typeof support.version_added === 'string';
-}
 
 const terminalCounts: Record<string, number> = {};
 for (const id of terminalIds) terminalCounts[id] = 0;
@@ -145,13 +85,6 @@ function SupportCell({support}: {support: SupportEntry}) {
       ?
     </td>
   );
-}
-
-function classifySupport(support: SupportEntry) {
-  if (support.partial_implementation) return 'partial';
-  if (support.version_added === true || typeof support.version_added === 'string') return 'yes';
-  if (support.version_added === false) return 'no';
-  return 'unknown';
 }
 
 function FeatureCard({featureId, feature}: {featureId: string; feature: any}) {

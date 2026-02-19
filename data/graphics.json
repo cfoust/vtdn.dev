@@ -8,7 +8,7 @@
         "title": "Sixel graphics",
         "description": "DCS P1;P2;P3 q ... ST",
         "spec_url": "https://vt100.net/docs/vt3xx-gp/chapter14.html",
-        "doc_path": "/docs/graphics-protocols",
+        "doc_path": "/docs/graphics/sixel",
         "support": {
           "vt100": {
             "version_added": false
@@ -144,7 +144,7 @@
         "title": "Kitty graphics protocol",
         "description": "APC G ... ST",
         "spec_url": "https://sw.kovidgoyal.net/kitty/graphics-protocol/",
-        "doc_path": "/docs/graphics-protocols",
+        "doc_path": "/docs/graphics/kitty-graphics",
         "support": {
           "vt100": {
             "version_added": false
@@ -280,7 +280,7 @@
         "title": "Kitty graphics: Unicode placeholders",
         "description": "U+10EEEE",
         "spec_url": "https://sw.kovidgoyal.net/kitty/graphics-protocol/#unicode-placeholders",
-        "doc_path": "/docs/graphics-protocols",
+        "doc_path": "/docs/graphics/kitty-graphics-unicode",
         "support": {
           "vt100": {
             "version_added": false
@@ -411,7 +411,7 @@
         "title": "Kitty graphics: animation",
         "description": "Animation support",
         "spec_url": "https://sw.kovidgoyal.net/kitty/graphics-protocol/#animation",
-        "doc_path": "/docs/graphics-protocols",
+        "doc_path": "/docs/graphics/kitty-graphics-animation",
         "support": {
           "vt100": {
             "version_added": false
@@ -543,7 +543,7 @@
         "title": "iTerm2 inline images",
         "description": "OSC 1337 ; File=...",
         "spec_url": "https://iterm2.com/documentation-images.html",
-        "doc_path": "/docs/graphics-protocols",
+        "doc_path": "/docs/graphics/iterm2-inline-images",
         "support": {
           "vt100": {
             "version_added": false

@@ -1,0 +1,8 @@
+{
+  "label": "DCS Sequences",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "Device Control String (DCS) sequences."
+  }
+}

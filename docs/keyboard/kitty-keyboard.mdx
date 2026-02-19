@@ -136,10 +136,214 @@ printf '\e[?u'
 
 <FeatureCompatTable />
 
-## See also
+---
 
-- [Disambiguate](/docs/keyboard/kitty-kb-disambiguate) -- Flag 1: disambiguate escape codes
-- [Report Event Types](/docs/keyboard/kitty-kb-event-types) -- Flag 2: key press, repeat, and release events
-- [Report Alternate Keys](/docs/keyboard/kitty-kb-alternate-keys) -- Flag 4: shifted and base layout keys
-- [All Keys as Escape Codes](/docs/keyboard/kitty-kb-all-keys) -- Flag 8: all keys reported as CSI u
-- [Report Associated Text](/docs/keyboard/kitty-kb-associated-text) -- Flag 16: include generated text
+## Flag 1: Disambiguate escape codes {#disambiguate}
+
+**Disambiguate** (flag 1) is the most fundamental enhancement. When enabled, keys that would normally produce ambiguous byte sequences instead send unambiguous CSI-based escape codes, eliminating the conflicts between control codes, modifier combinations, and special keys that have plagued terminal input for decades.
+
+In legacy terminal input, many distinct key presses produce identical byte sequences:
+
+| Key press | Legacy byte(s) | Conflict |
+|-----------|----------------|----------|
+| Enter | `0x0d` | Same as Ctrl+M |
+| Tab | `0x09` | Same as Ctrl+I |
+| Backspace | `0x7f` or `0x08` | Same as Ctrl+? or Ctrl+H |
+| Escape | `0x1b` | Same as Alt+[ prefix |
+| Ctrl+[ | `0x1b` | Same as Escape |
+
+With disambiguate mode enabled, these keys send CSI u sequences based on their Unicode codepoints instead:
+
+| Key press | Disambiguated sequence | Codepoint |
+|-----------|----------------------|-----------|
+| Enter | `CSI 13 u` | U+000D |
+| Tab | `CSI 9 u` | U+0009 |
+| Backspace | `CSI 127 u` | U+007F |
+| Escape | `CSI 27 u` | U+001B |
+
+When modifiers are held, the modifier bitmask (plus 1) is included as a second parameter. For example, Ctrl+Enter sends `CSI 13 ; 5 u` (modifier bitmask 4 for Ctrl, plus 1 = 5).
+
+Plain printable characters without modifiers (other than Shift) are still sent as their literal UTF-8 encoding. This flag only changes the encoding of keys that would otherwise be ambiguous.
+
+Disambiguate mode specifically targets:
+
+- **Functional keys** that traditionally send C0 control codes: Enter, Tab, Backspace, Escape
+- **Modified key combinations** where Ctrl or Alt would create ambiguous sequences (e.g., Ctrl+A normally sends `0x01`, but with this flag sends `CSI 97 ; 5 u`)
+- **Keys that conflict** with CSI/SS3 sequences: function keys, arrow keys, Home, End, etc., get standardized CSI u encoding when combined with modifiers
+
+```bash
+# Enable disambiguate mode
+printf '\e[>1u'
+
+# Now pressing Enter produces: ESC [ 1 3 u
+# Instead of: 0x0d
+
+# Pressing Ctrl+Enter produces: ESC [ 1 3 ; 5 u
+# (13 = Enter codepoint, 5 = Ctrl modifier + 1)
+
+# Pressing Shift+Tab produces: ESC [ 9 ; 2 u
+# (9 = Tab codepoint, 2 = Shift modifier + 1)
+
+# Regular typing (e.g., 'a') is unchanged: sends 0x61
+
+# Restore previous mode
+printf '\e[<u'
+```
+
+---
+
+## Flag 2: Report event types {#event-types}
+
+**Report event types** (flag 2) extends the protocol to report key release and repeat events in addition to the default key press events. The event type is encoded as a suffix on the modifier parameter, enabling applications to track the full lifecycle of each key press.
+
+| Value | Type | Description |
+|-------|------|-------------|
+| `1` | Press | Key was pressed down (default, may be omitted) |
+| `2` | Repeat | Key is held down and auto-repeating |
+| `3` | Release | Key was released |
+
+Legacy terminal input only reports key press events. There is no mechanism to detect when a key is released or when an auto-repeat event occurs. This limits applications that need to track key state, such as games or applications that want to implement key-up triggered actions.
+
+When flag 2 is enabled, the terminal appends an event type indicator to the modifier value using a colon separator. The format is `modifiers:event_type`. For press events, the event type of `1` may be omitted since it is the default. For a release event with no modifiers, the sequence would be `CSI number ; 1:3 u` (modifier value 1 meaning no modifiers, event type 3 for release).
+
+Flag 2 is typically combined with flag 1 (disambiguate). When combined with flag 8 (all keys as escape codes), every key including plain printable characters will report press, repeat, and release events.
+
+```bash
+# Enable disambiguate + event types (flags 1|2 = 3)
+printf '\e[>3u'
+
+# Pressing and releasing Enter produces:
+#   Press:   ESC [ 1 3 u           (event type 1 omitted)
+#   Release: ESC [ 1 3 ; 1 : 3 u  (modifier=1, event=release)
+
+# Holding 'a' with Ctrl produces:
+#   Press:   ESC [ 9 7 ; 5 u         (Ctrl press, event type omitted)
+#   Repeat:  ESC [ 9 7 ; 5 : 2 u     (Ctrl repeat)
+#   Release: ESC [ 9 7 ; 5 : 3 u     (Ctrl release)
+
+# Restore previous mode
+printf '\e[<u'
+```
+
+---
+
+## Flag 4: Report alternate keys {#alternate-keys}
+
+**Report alternate keys** (flag 4) includes the shifted key value and the base layout key value in key event reports. This allows applications to understand both the physical key pressed and the character it would produce under the current keyboard layout and shift state.
+
+| Field | Description |
+|-------|-------------|
+| `unicode` | The effective key codepoint for the current keyboard layout and modifier state |
+| `shifted` | The codepoint that would be produced if Shift were held (omitted if same as `unicode`) |
+| `base` | The codepoint of the key on the base (e.g., US English) keyboard layout (omitted if same as `unicode`) |
+
+On most keyboard layouts, a physical key can produce different characters depending on modifiers and the active layout. Without this flag, applications only receive the final resolved character and cannot determine which physical key was pressed or what the shifted variant would be.
+
+When flag 4 is enabled, the terminal includes up to two additional codepoints in the key event, separated by colons after the primary key code. If a field is not applicable or is the same as the primary key code, it is left empty (but the colon separator is still present if a subsequent field is needed).
+
+Use cases include games (bind movement to WASD physical key positions regardless of keyboard layout), keyboard shortcuts (define Ctrl+Z as "Ctrl + the key at the Z position" on any layout), and international input.
+
+```bash
+# Enable disambiguate + alternate keys (flags 1|4 = 5)
+printf '\e[>5u'
+
+# On a US layout, pressing Shift+2 (which produces '@'):
+#   ESC [ 6 4 : : 5 0 ; 2 u
+#   64 = '@' (effective), shifted omitted, 50 = '2' (base), modifier 2 = Shift
+
+# On a German layout, pressing the key at the 'z' position
+# (which produces 'y' on German QWERTZ):
+#   ESC [ 1 2 1 : : 1 2 2 u
+#   121 = 'y' (effective on German), base 122 = 'z' (US layout)
+
+# Restore previous mode
+printf '\e[<u'
+```
+
+---
+
+## Flag 8: All keys as escape codes {#all-keys}
+
+**All keys as escape codes** (flag 8) makes every key event -- including plain, unmodified printable characters -- report as a CSI u escape sequence. Without this flag, unmodified printable keys (like typing `a` or `5`) are still sent as their literal UTF-8 byte, even when other enhancement flags are active.
+
+With flags 1 (disambiguate) alone, pressing a plain letter key like `a` still sends the byte `0x61` directly. The disambiguate flag only changes encoding for keys that are otherwise ambiguous. However, some applications need to treat every key event uniformly. Games, screen readers, and input method editors may benefit from a consistent event format for all keys.
+
+Flag 8 implies the behavior of flag 1 (disambiguate). When combined with flag 2 (event types), every key including printable characters will report press, repeat, and release events.
+
+:::note
+Enabling flag 8 significantly increases the volume of escape sequence data sent to the application. Each key press that previously sent a single byte now sends a multi-byte escape sequence. Applications should only enable this flag when they genuinely need uniform event handling for all keys.
+:::
+
+```bash
+# Enable all keys as escape codes (flags 1|8 = 9)
+printf '\e[>9u'
+
+# Pressing 'a' produces: ESC [ 9 7 u
+# (97 is the Unicode codepoint for 'a')
+
+# Pressing 'A' (Shift+a) produces: ESC [ 9 7 ; 2 u
+# (97 = 'a', modifier 2 = Shift)
+
+# Pressing Space produces: ESC [ 3 2 u
+# (32 is the Unicode codepoint for space)
+
+# Enable all keys + event types (flags 1|2|8 = 11)
+printf '\e[>11u'
+
+# Pressing and releasing 'a':
+#   Press:   ESC [ 9 7 u
+#   Release: ESC [ 9 7 ; 1 : 3 u
+
+# Restore previous mode
+printf '\e[<u'
+```
+
+---
+
+## Flag 16: Report associated text {#associated-text}
+
+**Report associated text** (flag 16) includes the text that would have been generated by a key event in the escape sequence itself. The text is encoded as a colon-separated list of Unicode codepoints appended as a third parameter to the key event.
+
+When other flags are active, the key event reports the physical key that was pressed (as a Unicode codepoint), but not necessarily the text that the key press would generate. In most cases these are the same, but they can differ:
+
+- **Dead keys and compose sequences**: Pressing a dead key followed by `e` produces an accented character. The key events report the individual key presses, but the associated text reports the composed result.
+- **Input method editors (IMEs)**: An IME may consume multiple key presses and produce a single composed character or string.
+- **Shift and layout transformations**: Pressing Shift+2 on a US layout produces `@`. The key code reports `2` (the physical key), but the associated text reports `@`.
+
+| Scenario | Key code | Associated text |
+|----------|----------|----------------|
+| Shift+2 on US layout | `50` (digit 2) | `64` (@ symbol) |
+| Compose sequence result | Last key in sequence | Composed character |
+| IME output | Last key pressed | Full composed string |
+| Function key (F1) | `57344` | (omitted, no text generated) |
+
+Flag 16 is typically combined with flags 1 and 8 to get associated text for all key events. The combination of all flags (`CSI > 31 u`) provides the most complete keyboard reporting available.
+
+The associated text field occupies the third parameter position. If event types (flag 2) are active, the modifier parameter carries both the modifier bitmask and the event type (`modifiers:event_type`), followed by the text field:
+
+```
+CSI key_code ; modifiers:event_type ; text u
+```
+
+```bash
+# Enable all enhancements (flags 1|2|4|8|16 = 31)
+printf '\e[>31u'
+
+# Pressing 'a' produces:
+#   ESC [ 9 7 ; 1 ; 9 7 u
+#   key=97 ('a'), modifiers=1 (none), text=97 ('a')
+
+# Pressing Shift+2 on US layout (produces '@'):
+#   ESC [ 5 0 ; 2 ; 6 4 u
+#   key=50 ('2'), modifiers=2 (Shift), text=64 ('@')
+
+# Pressing a dead key sequence (e.g., compose ' then e = e-acute):
+#   First key (dead accent): ESC [ 39 ; 1 u
+#   (no associated text -- dead key does not generate text alone)
+#   Second key (e): ESC [ 1 0 1 ; 1 ; 2 3 3 u
+#   key=101 ('e'), text=233 (U+00E9 'e-acute')
+
+# Restore previous mode
+printf '\e[<u'
+```
+

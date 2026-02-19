@@ -289,7 +289,7 @@
       "__compat": {
         "title": "Kitty graphics: Unicode placeholders",
         "description": "U+10EEEE",
-        "doc_path": "/docs/graphics/kitty-graphics-unicode",
+        "doc_path": "/docs/graphics/kitty-graphics#unicode-placeholders",
         "support": {
           "vt100": {
             "version_added": false
@@ -425,7 +425,7 @@
       "__compat": {
         "title": "Kitty graphics: animation",
         "description": "Animation support",
-        "doc_path": "/docs/graphics/kitty-graphics-animation",
+        "doc_path": "/docs/graphics/kitty-graphics#animation",
         "support": {
           "vt100": {
             "version_added": false

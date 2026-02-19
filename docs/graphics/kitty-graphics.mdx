@@ -54,7 +54,7 @@ digit          = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
 | `p` | Display | Display a previously transmitted image by its ID |
 | `q` | Query | Test whether the terminal supports the protocol |
 | `d` | Delete | Remove images from the terminal's memory or screen |
-| `f` | Frame | Animation frame control (see [animation](/docs/graphics/kitty-graphics-animation)) |
+| `f` | Frame | Animation frame control (see [animation](#animation)) |
 
 **Transmission keys:**
 
@@ -171,7 +171,195 @@ printf '\e_Gm=0;...remaining-base64...\e\\'
 
 ## See also
 
-- [Kitty graphics: Unicode placeholders](/docs/graphics/kitty-graphics-unicode) -- Place images at cell positions using Unicode characters
-- [Kitty graphics: animation](/docs/graphics/kitty-graphics-animation) -- Frame-based animation extension
 - [Sixel graphics](/docs/graphics/sixel) -- Legacy bitmap graphics protocol
 - [iTerm2 inline images](/docs/graphics/iterm2-inline-images) -- Alternative inline image protocol
+
+---
+
+## Unicode placeholders {#unicode-placeholders}
+
+<StatusBadges status={{ experimental: true }} />
+
+**Unicode placeholders** allow applications to place images at specific cell positions by emitting a special Unicode character (U+10EEEE) into the terminal's text grid. The terminal replaces these placeholder characters with the corresponding region of a previously transmitted image.
+
+### Placeholder syntax
+
+```
+U+10EEEE [+ diacritics]      Unicode placeholder character
+```
+
+<FormalSyntax grammar={`
+placeholder     = 0x10EEEE, [ row-diacritic ], [ col-diacritic ] ;
+row-diacritic   = ? U+0305 to U+0CF4 ? ;        (* diacritic encoding the row index *)
+col-diacritic   = ? U+0305 to U+0CF4 ? ;        (* diacritic encoding the column index *)
+`} />
+
+Placeholder characters use **combining diacritical marks** to encode positioning information. Each diacritic maps to a numeric index representing the row or column of the image tile that should be rendered in that cell.
+
+| Component | Description |
+|-----------|-------------|
+| U+10EEEE | The placeholder base character (Private Use Area, Plane 16) |
+| Row diacritic | Combining character encoding the image row index (0-based) |
+| Column diacritic | Combining character encoding the image column index (0-based) |
+
+The diacritic-to-index mapping uses a predefined table of combining Unicode characters starting from U+0305. The first diacritic (U+0305) represents index 0, the next represents index 1, and so on.
+
+The image ID is communicated by setting the **foreground color** of the placeholder cell to the image ID value. The placement ID can be specified through additional attributes.
+
+### How placeholders work
+
+Standard Kitty graphics commands display images at the current cursor position or at absolute coordinates, which works well for full-screen applications but creates problems for text-mode programs that rely on the terminal's text reflow, scrolling, and cursor movement. Unicode placeholders solve this by embedding image references directly into the text stream.
+
+When the terminal encounters U+10EEEE in its text grid, it looks up the associated image ID (encoded in the cell's foreground color) and renders the appropriate tile of that image in place of the character. The row and column diacritics tell the terminal which portion of the image to show in each cell.
+
+1. **Transmit the image** using the standard Kitty graphics protocol (`a=t` or `a=T`), assigning it an image ID.
+2. **Emit placeholder characters** into the terminal at the desired cell positions. Set the foreground color to the image ID, and use diacritics to specify which tile of the image each cell should display.
+3. The terminal **replaces** the placeholder characters with the corresponding image regions during rendering.
+
+This approach preserves text-grid semantics. Placeholders reflow with surrounding text when the terminal is resized, scroll naturally with the screen buffer, and can be overwritten like any other character.
+
+:::note
+Unicode placeholders require the image to be transmitted first via the Kitty graphics protocol. The placeholder character alone does not contain any image data -- it only references a previously uploaded image by ID.
+:::
+
+```bash
+# Step 1: Transmit a 2-cell-wide, 1-cell-tall image with ID 42
+printf '\e_Ga=t,i=42,f=100;iVBORw0KGgoAAAANSUhEUg...\e\\'
+
+# Step 2: Place the image using Unicode placeholders
+# Set foreground color to image ID 42 via SGR 38;5;42,
+# then emit U+10EEEE with row=0,col=0 diacritic and row=0,col=1 diacritic
+printf '\e[38;5;42m\U0010EEEE\u0305\u0305\U0010EEEE\u0305\u0306\e[39m'
+
+# Step 3: Display the placement
+printf '\e_Ga=p,i=42,U=1\e\\'
+```
+
+### Terminal support — Unicode placeholders
+
+<FeatureCompatTable featureId="kitty_graphics_unicode" dataFile="graphics" />
+
+---
+
+## Animation {#animation}
+
+<StatusBadges status={{ experimental: true }} />
+
+**Animation** extends the Kitty graphics protocol with frame-based animation support. Applications can define multiple frames for an image, control inter-frame timing, and specify how frames are composited together.
+
+### Animation syntax
+
+```
+APC G a=f,... ; payload ST      Animation frame command
+APC G a=a,... ST                Animation control command
+```
+
+<FormalSyntax grammar={`
+animation-frame   = 0x1b, "_G", frame-data, [ ";", payload ], ( 0x1b, "\\\\" ) ;
+animation-control = 0x1b, "_G", control-data, ( 0x1b, "\\\\" ) ;
+frame-data        = "a=f", { ",", key-value } ;
+control-data      = "a=a", { ",", key-value } ;
+key-value         = key, "=", value ;
+key               = letter, { letter } ;
+value             = char, { char } ;
+payload           = base64-char, { base64-char } ;
+base64-char       = "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J"
+                  | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T"
+                  | "U" | "V" | "W" | "X" | "Y" | "Z"
+                  | "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j"
+                  | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t"
+                  | "u" | "v" | "w" | "x" | "y" | "z"
+                  | "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+                  | "+" | "/" | "=" ;
+letter            = "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j"
+                  | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t"
+                  | "u" | "v" | "w" | "x" | "y" | "z" ;
+char              = letter | digit ;
+digit             = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+`} />
+
+**Frame editing keys (when `a=f`):**
+
+| Key | Description | Default |
+|-----|-------------|---------|
+| `i` | Image ID to add frames to | (required) |
+| `r` | Frame number to edit or create | Append new frame |
+| `x` | X offset of the frame data within the image canvas | `0` |
+| `y` | Y offset of the frame data within the image canvas | `0` |
+| `c` | Composition mode for this frame (see below) | `0` |
+| `z` | Gap in milliseconds before showing the next frame | `0` (use previous gap) |
+| `f` | Pixel format (`24` for RGB, `32` for RGBA, `100` for PNG) | `32` |
+| `s` | Frame data width in pixels | Image width |
+| `v` | Frame data height in pixels | Image height |
+
+**Composition modes (`c`):**
+
+| Value | Mode | Description |
+|-------|------|-------------|
+| `0` | Overwrite | The frame data completely replaces the canvas at the specified offset |
+| `1` | Blend (alpha composite) | The frame data is alpha-composited over the existing canvas content |
+
+**Animation control keys (when `a=a`):**
+
+| Key | Description | Values |
+|-----|-------------|--------|
+| `i` | Image ID to control | (required) |
+| `s` | Animation state | `1` (stop), `2` (run/loop), `3` (run once and show last frame) |
+| `r` | Frame to jump to | Frame number (1-based) |
+| `z` | Default gap in milliseconds | Integer |
+| `v` | Number of loops | `0` (infinite), or a positive integer |
+
+### Frame model
+
+An animated image is a single image ID with multiple **frames**. The first frame is the base image transmitted with the standard `a=t` or `a=T` action. Additional frames are added using the `a=f` action.
+
+Each frame consists of pixel data that is drawn onto the image canvas at a specified offset (`x`, `y`). The **composition mode** determines how the new frame data interacts with the existing canvas:
+
+- **Overwrite** (`c=0`): The frame's pixels replace the corresponding region of the canvas.
+- **Blend** (`c=1`): The frame's pixels are alpha-composited over the canvas, allowing partial updates where only changed regions are sent.
+
+### Timing and playback
+
+The **gap** (`z`) specifies the delay in milliseconds before advancing to the next frame. Each frame can have its own gap value, or a default can be set via the animation control command. A gap of `0` means the frame inherits the previously set gap value.
+
+After all frames are defined, the animation can be controlled using the `a=a` action:
+
+- Set `s=2` to start looping the animation
+- Set `s=3` to play through once and stop on the last frame
+- Set `s=1` to stop the animation
+- Set `r=N` to jump to a specific frame
+- Set `v=N` to limit the number of loops
+
+:::note
+Animations consume terminal resources proportional to the number and size of frames. Applications should delete animated images when they are no longer needed using the standard Kitty graphics delete command (`a=d`).
+:::
+
+```bash
+# Step 1: Transmit the base image (frame 1) with ID 7
+printf '\e_Ga=T,i=7,f=32,s=100,v=100;...base64-frame1...\e\\'
+
+# Step 2: Add frame 2 with a 100ms gap
+printf '\e_Ga=f,i=7,z=100,f=32,s=100,v=100;...base64-frame2...\e\\'
+
+# Step 3: Add frame 3 with a 100ms gap, using alpha blending
+printf '\e_Ga=f,i=7,z=100,c=1,f=32,s=100,v=100;...base64-frame3...\e\\'
+
+# Start the animation (loop forever)
+printf '\e_Ga=a,i=7,s=2\e\\'
+
+# Play the animation once
+printf '\e_Ga=a,i=7,s=3\e\\'
+
+# Stop the animation
+printf '\e_Ga=a,i=7,s=1\e\\'
+
+# Jump to frame 2 and set gap to 200ms
+printf '\e_Ga=a,i=7,r=2,z=200\e\\'
+
+# Loop 3 times then stop
+printf '\e_Ga=a,i=7,s=2,v=3\e\\'
+```
+
+### Terminal support — Animation
+
+<FeatureCompatTable featureId="kitty_graphics_animation" dataFile="graphics" />

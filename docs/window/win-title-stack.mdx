@@ -6,19 +6,68 @@ feature_id: "win_title_stack"
 data_file: "window-manipulation"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-CSI 22/23 t — Push/pop window title stack
+<StatusBadges status={{ experimental: true }} />
+
+**Title Stack** provides XTerm window manipulation sequences for pushing and popping window and icon titles on a stack, allowing applications to save and restore the terminal's title.
 
 ## Syntax
 
 ```
-TODO: Add syntax for Title stack
+CSI 22 ; Ps t     Push title to stack
+CSI 23 ; Ps t     Pop title from stack
 ```
+
+<FormalSyntax grammar={`
+push_title = 0x1b, "[", "2", "2", ";", Ps, "t" ;
+pop_title  = 0x1b, "[", "2", "3", ";", Ps, "t" ;
+Ps         = "0" | "1" | "2" ;
+`} />
+
+### Parameters
+
+| Value | Description |
+|-------|-------------|
+| `0` | Push or pop both the icon title and the window title |
+| `1` | Push or pop the icon title only |
+| `2` | Push or pop the window title only |
 
 ## Description
 
-Documentation coming soon.
+These sequences manage a stack of window and icon titles, allowing applications to save the current title before changing it and restore the original title afterward. They are part of the XTerm `CSI Ps ; Ps ; Ps t` window manipulation family.
+
+- **`CSI 22 ; Ps t`** (Push) — Saves the current title(s) onto an internal stack. The title can then be changed freely using [OSC 0](/docs/osc/osc0) or [OSC 2](/docs/osc/osc2), knowing it can be restored later.
+- **`CSI 23 ; Ps t`** (Pop) — Restores the most recently pushed title(s) from the stack and sets them as the current title(s). If the stack is empty, the operation has no effect.
+
+The `Ps` parameter controls which titles are affected:
+
+| `Ps` | Push behavior | Pop behavior |
+|------|---------------|--------------|
+| `0` | Saves both the icon and window title | Restores both titles |
+| `1` | Saves the icon title only | Restores the icon title only |
+| `2` | Saves the window title only | Restores the window title only |
+
+The title stack is particularly useful for applications that temporarily change the terminal title (for example, to display a filename or status) and need to restore the user's original title upon exit. Using the stack avoids the need for the application to query and store the original title itself.
+
+The stack operates in a last-in, first-out (LIFO) manner. Multiple push operations can be performed before popping, and each pop restores the most recently pushed value.
+
+## Examples
+
+```bash
+# Save both titles, change title, then restore
+printf '\e[22;0t'              # Push current titles
+printf '\e]2;My Application\a' # Set new window title
+# ... application runs ...
+printf '\e[23;0t'              # Restore original titles
+
+# Save only the window title
+printf '\e[22;2t'              # Push window title
+printf '\e]2;Working...\a'     # Set temporary title
+printf '\e[23;2t'              # Restore window title
+```
 
 ## Specifications
 
@@ -27,3 +76,9 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [OSC 0 — Set Icon Name and Window Title](/docs/osc/osc0) — Set both icon and window title
+- [OSC 2 — Set Window Title](/docs/osc/osc2) — Set the window title
+- [Iconify](/docs/window/win-iconify) — Minimize or restore the window

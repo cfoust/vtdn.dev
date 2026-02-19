@@ -6,19 +6,62 @@ feature_id: "win_cell_size"
 data_file: "window-manipulation"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-CSI 16 t — Cell size in pixels
+<StatusBadges status={{ experimental: true }} />
+
+**Cell Size** is an XTerm window manipulation sequence that queries the pixel dimensions of an individual character cell in the terminal.
 
 ## Syntax
 
 ```
-TODO: Add syntax for Cell size
+CSI 16 t                       Request cell size in pixels
+CSI 6 ; height ; width t       Response: cell pixel dimensions
 ```
+
+<FormalSyntax grammar={`
+(* Request *)
+cell_size_request  = 0x1b, "[", "1", "6", "t" ;
+
+(* Response *)
+cell_size_response = 0x1b, "[", "6", ";", Pn, ";", Pn, "t" ;
+Pn                 = digit, { digit } ;
+digit              = "0" | "1" | "2" | "3" | "4"
+                   | "5" | "6" | "7" | "8" | "9" ;
+`} />
+
+### Response
+
+| Field | Description |
+|-------|-------------|
+| `height` | Height of a single character cell in pixels |
+| `width` | Width of a single character cell in pixels |
 
 ## Description
 
-Documentation coming soon.
+This sequence queries the terminal for the pixel dimensions of a single character cell. It is part of the XTerm `CSI Ps ; Ps ; Ps t` window manipulation family.
+
+When the terminal receives `CSI 16 t`, it responds with `CSI 6 ; height ; width t` where `height` and `width` are the pixel dimensions of a single character cell. The cell size is determined by the current font and its rendering configuration.
+
+Typical cell sizes for common monospace fonts are in the range of 7-10 pixels wide by 14-20 pixels tall, though high-DPI displays and font scaling can produce larger values.
+
+The cell size report is particularly useful for:
+
+- **Graphics protocols**: Applications that render inline graphics (such as [Sixel](/docs/graphics/sixel) or [Kitty Graphics](/docs/graphics/kitty-graphics)) need the cell size to correctly scale images to align with the character grid.
+- **Size calculations**: Dividing the [Text Area Size (pixels)](/docs/window/win-text-area-pixels) by the cell size yields the text area dimensions in characters.
+- **Mouse position mapping**: Converting pixel-based mouse coordinates to character cell positions.
+
+## Examples
+
+```bash
+# Query cell size
+printf '\e[16t'
+
+# Read the response
+printf '\e[16t'; read -st 1 -d t response; echo "$response"
+```
 
 ## Specifications
 
@@ -27,3 +70,10 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [Text Area Size (pixels)](/docs/window/win-text-area-pixels) — Query text area pixel dimensions
+- [Text Area Size (chars)](/docs/window/win-text-area-chars) — Query text area character dimensions
+- [Resize (pixels)](/docs/window/win-resize-pixels) — Resize to specific pixel dimensions
+- [Resize (chars)](/docs/window/win-resize-chars) — Resize to specific character dimensions

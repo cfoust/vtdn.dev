@@ -6,19 +6,92 @@ feature_id: "xtgettcap"
 data_file: "dcs-sequences"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-DCS + q — Terminal capability query
+<StatusBadges status={{ experimental: true }} />
+
+**XTGETTCAP** (XTerm Get Termcap/Terminfo) is a DCS sequence that queries the terminal for the value of termcap or terminfo capabilities by name. Capability names are hex-encoded in the request, and the terminal responds with the corresponding value.
 
 ## Syntax
 
 ```
-TODO: Add syntax for XTGETTCAP
+DCS + q hex-name ST              XTGETTCAP request
+DCS Ps + r hex-name = value ST   XTGETTCAP response
 ```
+
+<FormalSyntax grammar={`
+(* Request — one or more hex-encoded capability names, separated by ";" *)
+XTGETTCAP-request  = 0x1b, "P", "+", "q", hex-name, { ";", hex-name }, 0x1b, "\\\\" ;
+hex-name = hex-pair, { hex-pair } ;
+hex-pair = hex-digit, hex-digit ;
+
+(* Response — one per requested name *)
+XTGETTCAP-response = 0x1b, "P", Ps, "+", "r", hex-name, [ "=", hex-value ], 0x1b, "\\\\" ;
+Ps = "0" | "1" ;                     (* 0 = invalid/unknown, 1 = valid *)
+hex-value = hex-pair, { hex-pair } ;
+hex-digit = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7"
+          | "8" | "9" | "a" | "b" | "c" | "d" | "e" | "f"
+          | "A" | "B" | "C" | "D" | "E" | "F" ;
+`} />
+
+### Parameters
+
+| Parameter | Description |
+|-----------|-------------|
+| `hex-name` (request) | The termcap/terminfo capability name, hex-encoded (each ASCII byte as two hex digits) |
+| `Ps` (response) | `1` if the capability is known, `0` if not recognized |
+| `hex-value` (response) | The capability value, hex-encoded |
+
+### Response
+
+The terminal sends one response per queried capability name. If the capability is recognized, `Ps = 1` and the value follows after `=`. If not recognized, `Ps = 0` and no value is included.
+
+Multiple capabilities can be queried in a single request by separating the hex-encoded names with `;`. The terminal may respond with multiple DCS responses or a single combined response depending on the implementation.
 
 ## Description
 
-Documentation coming soon.
+XTGETTCAP was introduced in XTerm (patch 253) to allow applications to query termcap and terminfo capabilities directly from the terminal, rather than relying on the system's terminfo database. This is particularly useful in environments where the terminfo entry may be missing, outdated, or incorrect.
+
+Capability names must be hex-encoded before sending. For example, to query the `TN` (terminal name) capability, you encode `TN` as `544E` (0x54 = `T`, 0x4E = `N`).
+
+### Common capability names
+
+| Capability | Hex encoding | Description |
+|-----------|-------------|-------------|
+| `TN` | `544E` | Terminal name |
+| `Co` | `436F` | Maximum number of colors |
+| `RGB` | `524742` | Direct color support |
+| `cols` | `636F6C73` | Number of columns |
+| `lines` | `6C696E6573` | Number of lines |
+
+### XTerm-specific extensions
+
+Some terminals extend XTGETTCAP to support querying non-standard capabilities. For example, Kitty and foot use it to report capabilities like `RGB` for direct color support. The `allowTcapOps` resource in XTerm must be enabled for this feature to function.
+
+### Encoding example
+
+To query the `Co` (colors) capability:
+1. Encode `Co` as hex: `C` = 0x43, `o` = 0x6F, giving `436F`
+2. Send: `DCS + q 436F ST`
+3. Receive: `DCS 1 + r 436F = 323536 ST` (value `256` hex-encoded)
+
+## Examples
+
+```bash
+# Query terminal name (TN = 0x54 0x4E)
+printf '\eP+q544E\e\\'
+
+# Query max colors (Co = 0x43 0x6F)
+printf '\eP+q436F\e\\'
+
+# Query RGB support (RGB = 0x52 0x47 0x42)
+printf '\eP+q524742\e\\'
+
+# Query multiple capabilities in one request
+printf '\eP+q544E;436F;524742\e\\'
+```
 
 ## Specifications
 
@@ -27,3 +100,10 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [DECRQSS — Request Selection or Setting](/docs/dcs/decrqss) — Query terminal settings via DCS
+- [DA1 — Primary Device Attributes](/docs/csi/da1) — Query terminal identity and features
+- [DA2 — Secondary Device Attributes](/docs/csi/da2) — Query terminal version
+- [XTVERSION — Terminal Version](/docs/dcs/xtversion) — Query terminal name and version

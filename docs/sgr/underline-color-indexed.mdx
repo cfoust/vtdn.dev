@@ -6,19 +6,52 @@ feature_id: "underline_color_indexed"
 data_file: "text-styling"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-SGR 58;5;n — 256-color
+<StatusBadges status={{ experimental: true }} />
+
+**Underline color (indexed)** uses SGR 58;5 to set the underline color to a 256-color palette index, independently of the foreground color.
 
 ## Syntax
 
 ```
-TODO: Add syntax for Underline color (indexed)
+CSI 58;5;n m    SGR — Set underline color to indexed color n
+CSI 59 m        SGR — Reset underline color to default
 ```
+
+<FormalSyntax grammar={`
+SGR-underline-color-idx = 0x1b, "[", "58", ";", "5", ";", n, "m" ;
+SGR-underline-default   = 0x1b, "[", "59", "m" ;
+n                       = digit, { digit } ;       (* 0-255 *)
+digit                   = "0" | "1" | "2" | "3" | "4"
+                        | "5" | "6" | "7" | "8" | "9" ;
+`} />
+
+### Parameters
+
+| Parameter | Description |
+|-----------|-------------|
+| `n` | Color index (0-255), same palette as SGR 38;5 |
 
 ## Description
 
-Documentation coming soon.
+SGR 58 sets the underline color using the same mechanism as SGR 38 (foreground color), but applied to the underline decoration instead. The `;5;n` sub-parameters select indexed color mode with index `n`.
+
+SGR 59 resets the underline color to the default (which is typically the foreground color).
+
+This feature is defined in ITU-T T.416 and was popularized by the Kitty terminal. It allows underline decorations (straight, double, curly, dotted, dashed) to be colored independently of the text, which is useful for diagnostic indicators and code annotations.
+
+## Examples
+
+```bash
+# Red curly underline on normal text
+printf '\e[4:3;58;5;9mError here\e[0m\n'
+
+# Yellow underline with white text
+printf '\e[4;37;58;5;11mWarning\e[0m\n'
+```
 
 ## Specifications
 
@@ -27,3 +60,9 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [Underline color (RGB)](/docs/sgr/underline-color-rgb) — Set underline color via RGB
+- [Underline — SGR 4](/docs/sgr/sgr-underline) — Enable underline
+- [Curly underline — SGR 4:3](/docs/sgr/underline-curly) — Wavy underline style

@@ -6,19 +6,54 @@ feature_id: "vpa_hpa"
 data_file: "csi-sequences"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-CSI d / CSI ` — Vertical/horizontal position absolute
+**VPA** (Line Position Absolute) and **HPA** (Character Position Absolute) are CSI sequences that set the cursor's row or column independently without affecting the other coordinate.
 
 ## Syntax
 
 ```
-TODO: Add syntax for VPA/HPA
+CSI Pn d      VPA — Line Position Absolute (set row)
+CSI Pn `      HPA — Character Position Absolute (set column)
 ```
+
+<FormalSyntax grammar={`
+VPA = 0x1b, "[", [ Pn ], "d" ;
+HPA = 0x1b, "[", [ Pn ], 0x60 ;         (* 0x60 = backtick *)
+Pn  = digit, { digit } ;                (* default: 1 *)
+digit = "0" | "1" | "2" | "3" | "4"
+      | "5" | "6" | "7" | "8" | "9" ;
+`} />
+
+### Parameters
+
+| Parameter | Description | Default |
+|-----------|-------------|---------|
+| `Pn` | Line (VPA) or column (HPA) number | 1 |
 
 ## Description
 
-Documentation coming soon.
+Per ECMA-48 §8.3.158 (VPA) and §8.3.57 (HPA):
+
+- **VPA** (`CSI Pn d`) — Moves the cursor to line `Pn` without changing the column. This is the vertical equivalent of CHA.
+- **HPA** (`CSI Pn \``) — Moves the cursor to character position `Pn` without changing the row. Functionally identical to CHA (`CSI Pn G`).
+
+Positions are 1-based. Values exceeding the screen dimensions are clamped.
+
+:::note
+HPA and CHA are functionally equivalent in practice — both set the column. The distinction in ECMA-48 is that HPA operates on the data component while CHA operates on the presentation component, but this difference is not meaningful in modern terminal emulators.
+:::
+
+## Examples
+
+```bash
+printf '\e[5d'       # Move to row 5, keep current column
+printf '\e[10`'      # Move to column 10, keep current row
+```
 
 ## Specifications
 
@@ -27,3 +62,8 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [CHA/CUP — Absolute Cursor Positioning](/docs/csi/cha-cup) — CHA (column) and CUP (row+column)
+- [CUU/CUD/CUF/CUB — Relative Cursor Movement](/docs/csi/cuu-cud-cuf-cub) — Relative movement

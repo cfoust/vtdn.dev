@@ -6,19 +6,52 @@ feature_id: "osc2"
 data_file: "osc-sequences"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-Set window title
+<StatusBadges status={{ experimental: true }} />
+
+**OSC 2** sets the window title of the terminal without modifying the icon name. In practice, most modern terminals treat this identically to OSC 0 since the icon name distinction is largely obsolete.
 
 ## Syntax
 
 ```
-TODO: Add syntax for OSC 2
+OSC 2 ; Pt BEL
+OSC 2 ; Pt ST
 ```
+
+<FormalSyntax grammar={`
+OSC2 = 0x1b, "]", "2", ";", text, ( 0x07 | 0x1b, "\\\\" ) ;
+text = character, { character } ;
+`} />
+
+### Parameters
+
+| Parameter | Description | Default |
+|-----------|-------------|---------|
+| `Pt` | The text string to use as the window title | (none) |
 
 ## Description
 
-Documentation coming soon.
+Per the XTerm control sequences documentation, OSC 2 changes the window title to the string `Pt`. Unlike OSC 0, it does not affect the icon name (the label shown when the window is iconified in X11).
+
+In modern terminal emulators, the distinction between icon name and window title is mostly irrelevant. The icon name was meaningful in classic X11 window managers where minimized windows displayed a small icon with a text label. Today, most desktop environments do not expose separate icon names, making OSC 2 and OSC 0 functionally equivalent in nearly all cases.
+
+The text parameter `Pt` is terminated by either BEL (0x07) or ST (String Terminator, ESC \).
+
+## Examples
+
+```bash
+# Set window title to "Editor"
+printf '\e]2;Editor\a'
+
+# Set window title using ST terminator
+printf '\e]2;Editor\e\\'
+
+# Display hostname in title bar
+printf '\e]2;%s@%s\a' "$USER" "$HOSTNAME"
+```
 
 ## Specifications
 
@@ -27,3 +60,7 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [OSC 0 — Set Icon Name and Window Title](/docs/osc/osc0) — Sets both icon name and window title simultaneously

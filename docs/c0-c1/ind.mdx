@@ -6,19 +6,36 @@ feature_id: "ind"
 data_file: "control-sequences"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-ESC D — Index, move cursor down one line
+**IND** (Index) is an escape sequence that moves the cursor down one line in the same column, scrolling the screen up if the cursor is at the bottom margin of the scrolling region.
 
 ## Syntax
 
 ```
-TODO: Add syntax for IND
+ESC D         IND — Index (7-bit)
+0x84          IND — Index (8-bit C1)
 ```
 
 ## Description
 
-Documentation coming soon.
+Per the VT510 manual, IND moves the cursor down one line in the same column position. If the cursor is at the bottom margin of the scrolling region (set by DECSTBM), the screen scrolls up: the line at the top margin is lost, all lines move up one position, and a new blank line appears at the bottom margin.
+
+If the cursor is below the scrolling region's bottom margin, IND moves the cursor down one line without scrolling. If the cursor is already on the last line of the display, IND has no effect.
+
+### Comparison with LF
+
+IND behaves identically to LF in the default LNM (Line Feed/New Line Mode) reset state, except that LF's behavior can change depending on the LNM setting. IND always moves down one line in the same column regardless of mode.
+
+## Examples
+
+```bash
+printf '\eD'     # Move cursor down one line (scroll if at bottom margin)
+```
 
 ## Specifications
 
@@ -27,3 +44,9 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [RI — Reverse Index](/docs/c0-c1/ri) — Move cursor up one line (the inverse of IND)
+- [LF — Line Feed](/docs/c0-c1/lf) — Similar downward movement
+- [DECSTBM — Set Top and Bottom Margins](/docs/csi/decstbm) — Defines the scrolling region

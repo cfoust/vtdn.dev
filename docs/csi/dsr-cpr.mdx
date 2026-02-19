@@ -6,19 +6,72 @@ feature_id: "dsr_cpr"
 data_file: "csi-sequences"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-CSI 5n / CSI 6n — Device status / cursor position report
+**DSR** (Device Status Report) and **CPR** (Active Position Report) are CSI sequences used to query the terminal's status and cursor position.
 
 ## Syntax
 
 ```
-TODO: Add syntax for DSR/CPR
+CSI Ps n       DSR — Device Status Report (request)
+CSI Pn ; Pn R  CPR — Active Position Report (response)
 ```
+
+<FormalSyntax grammar={`
+(* Status query *)
+DSR-status   = 0x1b, "[", "5", "n" ;
+
+(* Cursor position query *)
+DSR-position = 0x1b, "[", "6", "n" ;
+
+(* Cursor position response *)
+CPR          = 0x1b, "[", Pn, ";", Pn, "R" ;
+Pn           = digit, { digit } ;
+digit        = "0" | "1" | "2" | "3" | "4"
+             | "5" | "6" | "7" | "8" | "9" ;
+`} />
+
+### Parameters (Request)
+
+| Value | Description |
+|-------|-------------|
+| `5` | Request device status |
+| `6` | Request cursor position (CPR) |
+
+### Response
+
+**DSR 5 (Status Report):**
+
+The terminal responds with `CSI 0 n` to indicate "ready, no malfunction detected." Per ECMA-48 §8.3.35, other status codes (1-4) indicate busy or malfunction states, but modern terminals always report status 0.
+
+**DSR 6 (Cursor Position Report):**
+
+The terminal responds with `CSI Pr ; Pc R` where `Pr` is the current row and `Pc` is the current column. Positions are 1-based. If DECOM (origin mode) is set, the reported row is relative to the top margin.
 
 ## Description
 
-Documentation coming soon.
+Per ECMA-48 §8.3.35, DSR is used either to report the status of the sending device or to request a status report from the receiving device. Parameter value 5 requests a general status report; parameter value 6 requests an Active Position Report (CPR).
+
+Per ECMA-48 §8.3.14, CPR reports the active position as row and column numbers. The response is sent from terminal to host on the input stream.
+
+DSR/CPR is one of the most fundamental query/response sequences and has been supported since the original VT100. Applications use it for terminal capability detection, screen size measurement, and synchronization.
+
+## Examples
+
+```bash
+# Query device status (response: ESC [ 0 n)
+printf '\e[5n'
+
+# Query cursor position (response: ESC [ Pr ; Pc R)
+printf '\e[6n'
+
+# Read the CPR response
+printf '\e[6n'; read -sdR response; echo "$response"
+```
 
 ## Specifications
 
@@ -27,3 +80,8 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [DECXCPR — Extended Cursor Position Report](/docs/csi/decxcpr) — DEC extended version with page number
+- [CUP — Cursor Position](/docs/csi/cha-cup) — Set cursor position

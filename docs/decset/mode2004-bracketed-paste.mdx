@@ -6,19 +6,89 @@ feature_id: "mode2004_bracketed_paste"
 data_file: "decset-modes"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-Mode 2004
+<StatusBadges status={{ experimental: true }} />
+
+**Bracketed Paste** (Mode 2004) is a DECSET/DECRST mode that causes the terminal to wrap pasted text with start and end marker sequences, allowing applications to distinguish typed input from pasted text.
 
 ## Syntax
 
 ```
-TODO: Add syntax for Bracketed paste
+CSI ? 2004 h    DECSET — Enable bracketed paste mode
+CSI ? 2004 l    DECRST — Disable bracketed paste mode
 ```
+
+<FormalSyntax grammar={`
+DECSET-mode2004 = 0x1b, "[", "?", "2", "0", "0", "4", "h" ;
+DECRST-mode2004 = 0x1b, "[", "?", "2", "0", "0", "4", "l" ;
+`} />
 
 ## Description
 
-Documentation coming soon.
+Mode 2004 is an XTerm extension that provides a mechanism for applications to detect when text is being pasted from the clipboard rather than typed by the user.
+
+- **Set** — Pasted text is bracketed with start and end markers.
+- **Reset** — Pasted text is delivered as-is, indistinguishable from typed input. This is the default.
+
+### Bracket sequences
+
+When Mode 2004 is enabled and the user pastes text, the terminal wraps the pasted content:
+
+| Sequence | Hex bytes | Meaning |
+|----------|-----------|---------|
+| `CSI 200 ~` | `1b 5b 32 30 30 7e` | Start of pasted text |
+| `CSI 201 ~` | `1b 5b 32 30 31 7e` | End of pasted text |
+
+The pasted text appears between these markers:
+
+```
+\e[200~<pasted text>\e[201~
+```
+
+### Security: paste injection prevention
+
+Without bracketed paste, a malicious clipboard payload can inject arbitrary commands. For example, pasting the following into a shell would execute the command immediately:
+
+```
+ls\nrm -rf /\n
+```
+
+With bracketed paste enabled, the shell (or application) receives the start marker, recognizes the content as pasted, and can treat it as literal text rather than executing embedded newlines as command separators.
+
+This is one of the most important security features in modern terminal emulators and is widely supported by shells (bash, zsh, fish) and editors (vim, neovim).
+
+### Shell integration
+
+Modern shells handle bracketed paste natively:
+
+- **Bash** (5.1+) — Enabled by default in readline
+- **Zsh** — Enabled by default via the `bracketed-paste-magic` widget
+- **Fish** — Enabled by default
+
+When these shells detect the paste brackets, they insert the pasted text into the editing buffer without executing it, allowing the user to review the content before pressing Enter.
+
+:::note
+Applications must strip or filter the bracket sequences from the pasted content. If the start/end markers appear in the pasted text itself, they should be sanitized to prevent bracket escape attacks.
+:::
+
+## Examples
+
+```bash
+printf '\e[?2004h'   # Enable bracketed paste mode
+printf '\e[?2004l'   # Disable bracketed paste mode
+
+# When the user pastes "hello world", the application receives:
+#   \e[200~hello world\e[201~
+
+# A simple read loop that detects paste brackets:
+printf '\e[?2004h'
+# Read input and look for \e[200~ to detect paste start
+# Look for \e[201~ to detect paste end
+printf '\e[?2004l'
+```
 
 ## Specifications
 
@@ -27,3 +97,8 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [Focus Events — Mode 1004](/docs/decset/mode1004-focus) — Another input event reporting mode
+- [Alt Screen — Mode 1049](/docs/decset/mode1049-altscreen) — Full-screen application support

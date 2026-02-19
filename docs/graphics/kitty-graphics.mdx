@@ -6,19 +6,159 @@ feature_id: "kitty_graphics"
 data_file: "graphics"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-APC G ... ST
+<StatusBadges status={{ experimental: true }} />
+
+**Kitty graphics protocol** is a modern terminal graphics protocol that transmits images using base64-encoded data within APC (Application Program Command) sequences. It supports multiple image formats, random-access placement, chunked transfers, and persistent image storage by ID.
 
 ## Syntax
 
 ```
-TODO: Add syntax for Kitty graphics protocol
+APC G key=value,key=value ; payload ST      Kitty graphics command
+```
+
+<FormalSyntax grammar={`
+kitty-graphics = 0x1b, "_G", control-data, [ ";", payload ], ( 0x1b, "\\\\" ) ;
+control-data   = key-value, { ",", key-value } ;
+key-value      = key, "=", value ;
+key            = letter, { letter } ;
+value          = char, { char } ;
+payload        = base64-char, { base64-char } ;
+base64-char    = "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J"
+               | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T"
+               | "U" | "V" | "W" | "X" | "Y" | "Z"
+               | "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j"
+               | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t"
+               | "u" | "v" | "w" | "x" | "y" | "z"
+               | "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+               | "+" | "/" | "=" ;
+letter         = "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j"
+               | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t"
+               | "u" | "v" | "w" | "x" | "y" | "z" ;
+char           = letter | digit ;
+digit          = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+`} />
+
+### Parameters
+
+**Action keys (`a`):**
+
+| Value | Action | Description |
+|-------|--------|-------------|
+| `t` | Transmit | Upload image data to the terminal without displaying it |
+| `T` | Transmit + Display | Upload and immediately display the image |
+| `p` | Display | Display a previously transmitted image by its ID |
+| `q` | Query | Test whether the terminal supports the protocol |
+| `d` | Delete | Remove images from the terminal's memory or screen |
+| `f` | Frame | Animation frame control (see [animation](/docs/graphics/kitty-graphics-animation)) |
+
+**Transmission keys:**
+
+| Key | Description | Values |
+|-----|-------------|--------|
+| `f` | Pixel format | `24` (RGB), `32` (RGBA), `100` (PNG) |
+| `t` | Transmission medium | `d` (direct/inline), `f` (file path), `t` (temp file), `s` (shared memory) |
+| `s` | Image width in pixels | Integer |
+| `v` | Image height in pixels | Integer |
+| `S` | Total data size in bytes | Integer |
+| `m` | Chunked transfer flag | `0` (last chunk or no chunking), `1` (more chunks follow) |
+| `o` | Compression | `z` (zlib-compressed payload) |
+
+**Image identification keys:**
+
+| Key | Description |
+|-----|-------------|
+| `i` | Image ID (32-bit unsigned integer) |
+| `I` | Image number (client-side identifier for deduplication) |
+
+**Display/placement keys:**
+
+| Key | Description |
+|-----|-------------|
+| `p` | Placement ID |
+| `x` | X offset within the image (source region left) |
+| `y` | Y offset within the image (source region top) |
+| `w` | Source region width (0 = full width) |
+| `h` | Source region height (0 = full height) |
+| `c` | Display width in terminal columns |
+| `r` | Display height in terminal rows |
+| `X` | Horizontal pixel offset within the cell |
+| `Y` | Vertical pixel offset within the cell |
+| `z` | Z-index for layering |
+| `C` | Cursor movement policy: `0` (move cursor) or `1` (do not move cursor) |
+
+**Delete keys (when `a=d`):**
+
+| Value of `d` | Description |
+|--------------|-------------|
+| `a` or `A` | Delete all images (visible only / all) |
+| `i` or `I` | Delete by image ID (visible only / all placements) |
+| `p` or `P` | Delete by placement ID |
+| `c` or `C` | Delete by column |
+| `r` or `R` | Delete by row |
+| `x` or `X` | Delete by column range |
+| `y` or `Y` | Delete by row range |
+| `z` or `Z` | Delete by z-index |
+
+### Response
+
+When querying (`a=q`) or when a transmission error occurs, the terminal responds with:
+
+```
+APC G i=<id> ; OK ST          Success
+APC G i=<id> ; <error> ST     Failure
 ```
 
 ## Description
 
-Documentation coming soon.
+The Kitty graphics protocol, introduced by the Kitty terminal emulator, provides a full-featured system for displaying images in the terminal. Unlike Sixel, which encodes pixel data character-by-character, the Kitty protocol transmits complete image files (PNG, raw RGB, or raw RGBA) as base64-encoded payloads.
+
+The protocol separates image **transmission** from image **display**. An application can upload an image once and display it multiple times at different positions and sizes. Images are identified by a numeric ID (`i` key), which allows persistent storage and later recall.
+
+### Chunked transfers
+
+Large images can be split across multiple APC sequences using the `m` (more) key. Set `m=1` on every chunk except the last, which uses `m=0` (or omits `m`). This avoids overwhelming the terminal's input parser with extremely long sequences.
+
+### Image placement
+
+When displaying an image, the application can specify which portion of the source image to show (using `x`, `y`, `w`, `h`) and how many terminal cells it should occupy (using `c`, `r`). The terminal scales the image to fit the requested cell dimensions.
+
+### Query mode
+
+Applications can detect protocol support by sending a query command. A supporting terminal will respond with an OK message; a non-supporting terminal will silently ignore the APC sequence.
+
+:::note
+The Kitty graphics protocol uses APC (`ESC _`) as the introducer rather than the more common CSI or OSC. Some terminal multiplexers strip or ignore APC sequences, which can prevent the protocol from working through tmux or screen.
+:::
+
+## Examples
+
+```bash
+# Query protocol support (transmit a 1x1 PNG and check for response)
+printf '\e_Gi=31,s=1,v=1,a=q,t=d,f=24;AAAA\e\\'
+
+# Transmit and display a small 2x2 red PNG image inline
+printf '\e_Gf=100,a=T;iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAIAAAD91JpzAAAADklEQVQI12P4z8BQDwAEgAF/QualzQAAAABJRU5ErkJggg==\e\\'
+
+# Transmit image with ID 1 without displaying
+printf '\e_Ga=t,i=1,f=100;iVBORw0KGgoAAAANSUhEUg...\e\\'
+
+# Display previously transmitted image ID 1
+printf '\e_Ga=p,i=1\e\\'
+
+# Display image ID 1 scaled to 10 columns by 5 rows
+printf '\e_Ga=p,i=1,c=10,r=5\e\\'
+
+# Delete all visible images
+printf '\e_Ga=d,d=a\e\\'
+
+# Chunked transfer (two chunks)
+printf '\e_Gf=100,a=T,m=1;iVBORw0KGgoAAAAN...\e\\'
+printf '\e_Gm=0;...remaining-base64...\e\\'
+```
 
 ## Specifications
 
@@ -27,3 +167,10 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [Kitty graphics: Unicode placeholders](/docs/graphics/kitty-graphics-unicode) -- Place images at cell positions using Unicode characters
+- [Kitty graphics: animation](/docs/graphics/kitty-graphics-animation) -- Frame-based animation extension
+- [Sixel graphics](/docs/graphics/sixel) -- Legacy bitmap graphics protocol
+- [iTerm2 inline images](/docs/graphics/iterm2-inline-images) -- Alternative inline image protocol

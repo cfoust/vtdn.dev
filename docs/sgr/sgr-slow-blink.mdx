@@ -6,19 +6,39 @@ feature_id: "sgr_slow_blink"
 data_file: "text-styling"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-SGR 5
+**Slow blink** (SGR 5) is an SGR attribute that causes text to blink at a slow rate.
 
 ## Syntax
 
 ```
-TODO: Add syntax for Slow blink
+CSI 5 m     SGR 5 — Slow blink
+CSI 25 m    SGR 25 — Not blinking (steady)
 ```
+
+<FormalSyntax grammar={`
+SGR-slow-blink = 0x1b, "[", "5", "m" ;
+SGR-steady     = 0x1b, "[", "25", "m" ;
+`} />
 
 ## Description
 
-Documentation coming soon.
+Per ECMA-48 §8.3.117, SGR parameter 5 selects "slowly blinking (less than 150 per minute)." The text alternates between visible and hidden (or between foreground and background) at a rate below 150 cycles per minute (less than 2.5 Hz).
+
+Blinking is reset by SGR 25 or SGR 0. SGR 25 cancels both slow blink (SGR 5) and rapid blink (SGR 6).
+
+Many modern terminals do not implement blinking at all, treating SGR 5 as a no-op. Some terminals support it but allow users to disable it in preferences. A few terminals (notably XTerm) support blink when configured to do so.
+
+## Examples
+
+```bash
+printf '\e[5mBlinking text\e[25m Steady text\n'
+```
 
 ## Specifications
 
@@ -27,3 +47,7 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [Rapid blink — SGR 6](/docs/sgr/sgr-rapid-blink) — Faster blink rate

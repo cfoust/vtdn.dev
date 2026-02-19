@@ -6,19 +6,76 @@ feature_id: "xtversion"
 data_file: "dcs-sequences"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-CSI > 0 q — Terminal name/version response
+<StatusBadges status={{ experimental: true }} />
+
+**XTVERSION** is an XTerm extension that queries the terminal for its name and version string. The request is a CSI sequence, but the response is a DCS string, making this a hybrid sequence that spans both CSI and DCS categories.
 
 ## Syntax
 
 ```
-TODO: Add syntax for XTVERSION
+CSI > 0 q            XTVERSION request
+DCS > | text ST      XTVERSION response
 ```
+
+<FormalSyntax grammar={`
+(* Request *)
+XTVERSION-request  = 0x1b, "[", ">", [ "0" ], "q" ;
+
+(* Response *)
+XTVERSION-response = 0x1b, "P", ">", "|", text, 0x1b, "\\\\" ;
+text = printable-char, { printable-char } ;
+printable-char = ? any printable ASCII character (0x20..0x7E) ? ;
+`} />
+
+### Response
+
+The terminal responds with a DCS string containing a free-form text identifier. The format varies by terminal:
+
+| Terminal | Example response |
+|----------|-----------------|
+| XTerm | `DCS > \| XTerm(370) ST` |
+| foot | `DCS > \| foot(1.16.2) ST` |
+| Kitty | `DCS > \| kitty(0.26.5) ST` |
+| WezTerm | `DCS > \| WezTerm 20240203-110809-5046fc22 ST` |
+| tmux | `DCS > \| tmux 3.4 ST` |
+| Contour | `DCS > \| contour(0.4.3.6456) ST` |
 
 ## Description
 
-Documentation coming soon.
+XTVERSION provides a straightforward way for applications to identify which terminal emulator (and version) they are running under. Unlike DA1 and DA2, which report VT-level compatibility codes, XTVERSION returns a human-readable name and version string.
+
+The request `CSI > q` (or equivalently `CSI > 0 q`) was introduced in XTerm patch 230. Despite the request being a CSI sequence, the response uses a DCS envelope (`DCS > | ... ST`), which is unusual among terminal query/response pairs.
+
+### Comparison with DA2
+
+DA2 (`CSI > c`) also provides terminal identification, but it uses numeric codes that require a lookup table to interpret. XTVERSION provides the terminal name directly as text, making it simpler for scripts and applications to parse.
+
+### Use cases
+
+- **Feature detection**: Identify the terminal to enable or disable features known to work (or not work) in specific terminals or versions.
+- **Bug workarounds**: Apply version-specific workarounds by parsing the version number from the response.
+- **Diagnostics**: Log or display the terminal identity for debugging purposes.
+
+### Caveats
+
+Not all terminals implement XTVERSION. Applications should use a timeout when waiting for the response, as terminals that do not recognize the sequence will simply not reply. Running inside a multiplexer like tmux may also affect the response -- tmux responds with its own identity rather than forwarding the query to the outer terminal.
+
+## Examples
+
+```bash
+# Query terminal version
+printf '\e[>q'
+
+# Query with explicit zero parameter
+printf '\e[>0q'
+
+# Read the response (in a script)
+# The response arrives as: ESC P > | <name>(<version>) ESC \
+```
 
 ## Specifications
 
@@ -27,3 +84,10 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [DA1 — Primary Device Attributes](/docs/csi/da1) — VT-level feature query
+- [DA2 — Secondary Device Attributes](/docs/csi/da2) — Numeric terminal identification
+- [DA3 — Tertiary Device Attributes](/docs/csi/da3) — Terminal unit ID
+- [XTGETTCAP — Get Termcap/Terminfo](/docs/dcs/xtgettcap) — Query individual terminal capabilities

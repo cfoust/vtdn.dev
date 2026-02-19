@@ -6,19 +6,49 @@ feature_id: "scp_rcp"
 data_file: "csi-sequences"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-CSI s / CSI u — Save/restore cursor (ANSI.SYS)
+**SCP** (Save Cursor Position) and **RCP** (Restore Cursor Position) are CSI sequences originating from ANSI.SYS that save and restore the cursor position.
 
 ## Syntax
 
 ```
-TODO: Add syntax for SCP/RCP
+CSI s         SCP — Save Cursor Position
+CSI u         RCP — Restore Cursor Position
 ```
+
+<FormalSyntax grammar={`
+SCP = 0x1b, "[", "s" ;
+RCP = 0x1b, "[", "u" ;
+`} />
 
 ## Description
 
-Documentation coming soon.
+- **SCP** (`CSI s`) — Saves the current cursor position (row and column).
+- **RCP** (`CSI u`) — Restores the cursor to the position previously saved by SCP.
+
+These sequences originated in MS-DOS ANSI.SYS and save only the cursor position — not character attributes, character sets, or other terminal state. This is in contrast to DECSC/DECRC (`ESC 7` / `ESC 8`), which saves a more complete snapshot of terminal state.
+
+### Conflict with DECSLRM
+
+`CSI s` is also used for DECSLRM (Set Left and Right Margins) when left/right margin mode (DECLRMM, mode 69) is enabled. When DECLRMM is set, `CSI s` with parameters sets the left and right margins rather than saving the cursor. The parameterless form `CSI s` (no arguments) can be ambiguous in this context, so applications needing both left/right margins and cursor save/restore should use DECSC/DECRC instead.
+
+:::note
+Because DECSC/DECRC saves more state and avoids the DECSLRM conflict, it is generally preferred over SCP/RCP. SCP/RCP remains widely supported for compatibility with ANSI.SYS-era software.
+:::
+
+## Examples
+
+```bash
+printf '\e[s'            # Save cursor position
+printf '\e[10;20H'       # Move cursor elsewhere
+printf 'Hello'
+printf '\e[u'            # Restore cursor to saved position
+```
 
 ## Specifications
 
@@ -27,3 +57,8 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [DECSC/DECRC — Save/Restore Cursor](/docs/c0-c1/decsc-decrc) — DEC version that saves more state
+- [DECSLRM — Set Left and Right Margins](/docs/csi/decslrm) — Shares the `CSI s` sequence

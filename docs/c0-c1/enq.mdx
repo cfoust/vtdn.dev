@@ -6,19 +6,39 @@ feature_id: "enq"
 data_file: "control-sequences"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-0x05 — Enquiry / answerback string
+**ENQ** (Enquiry) is a C0 control character that requests the terminal to send an answerback string. It was originally used in communication protocols to identify the remote device.
 
 ## Syntax
 
 ```
-TODO: Add syntax for ENQ
+ENQ       0x05
 ```
+
+### Response
+
+When the terminal receives ENQ, it transmits its configured answerback string back to the host. On DEC VT terminals, this string was user-configurable through the terminal's setup menu.
 
 ## Description
 
-Documentation coming soon.
+Per ECMA-48 §8.3.44, ENQ "is transmitted by a sender as a request for a response from a receiver."
+
+On DEC VT100 and later terminals, receiving ENQ causes the terminal to send a pre-configured answerback message. This was used to identify terminal types in multi-terminal environments and for simple challenge-response protocols.
+
+### Modern behavior
+
+Most modern terminal emulators respond to ENQ with an empty string or ignore it entirely, as the answerback mechanism poses a security risk: a malicious document could embed ENQ characters to trigger the terminal to "type" the answerback string into the shell, potentially executing commands.
+
+Some terminals (e.g., XTerm) allow configuring the answerback string but default to an empty response. The DA1 (Device Attributes) sequence is the preferred modern mechanism for terminal identification.
+
+:::warning
+Configuring a non-empty answerback string can be a security risk. Untrusted input displayed in the terminal could contain ENQ characters, causing the answerback string to be injected as keyboard input.
+:::
 
 ## Specifications
 
@@ -27,3 +47,7 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [DA1 — Primary Device Attributes](/docs/csi/da1) — Modern terminal identification mechanism

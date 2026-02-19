@@ -6,19 +6,60 @@ feature_id: "deccra"
 data_file: "csi-sequences"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-CSI $ v — Copy rectangular area
+**DECCRA** (Copy Rectangular Area) is a CSI sequence that copies a rectangular screen region to another location.
 
 ## Syntax
 
 ```
-TODO: Add syntax for DECCRA
+CSI Pts;Pls;Pbs;Prs;Pps;Ptd;Pld;Ppd $ v    DECCRA — Copy Rectangular Area
 ```
+
+<FormalSyntax grammar={`
+DECCRA = 0x1b, "[", Pts, ";", Pls, ";", Pbs, ";", Prs, ";",
+         Pps, ";", Ptd, ";", Pld, ";", Ppd, "$", "v" ;
+Pts = digit, { digit } ;                (* source top row *)
+Pls = digit, { digit } ;                (* source left column *)
+Pbs = digit, { digit } ;                (* source bottom row *)
+Prs = digit, { digit } ;                (* source right column *)
+Pps = digit, { digit } ;                (* source page, usually 1 *)
+Ptd = digit, { digit } ;                (* destination top row *)
+Pld = digit, { digit } ;                (* destination left column *)
+Ppd = digit, { digit } ;                (* destination page, usually 1 *)
+digit = "0" | "1" | "2" | "3" | "4"
+      | "5" | "6" | "7" | "8" | "9" ;
+`} />
+
+### Parameters
+
+| Parameter | Description |
+|-----------|-------------|
+| `Pts;Pls;Pbs;Prs` | Source rectangle (top, left, bottom, right) |
+| `Pps` | Source page (typically 1) |
+| `Ptd;Pld` | Destination top-left corner (row, column) |
+| `Ppd` | Destination page (typically 1) |
 
 ## Description
 
-Documentation coming soon.
+Per the VT510 manual, DECCRA copies the rectangular region defined by the source coordinates to the destination position. Both character content and attributes are copied. The cursor position is not changed.
+
+The source area is not modified. If the source and destination overlap, the result is as if the source were copied to a temporary buffer first.
+
+The page parameters (`Pps`, `Ppd`) are a legacy concept from multi-page DEC terminals. Modern terminals typically only have one page, so these are usually set to 1.
+
+Coordinates are 1-based and refer to absolute screen positions.
+
+## Examples
+
+```bash
+# Copy the rectangle (1,1)-(10,40) to position (15,1) on page 1
+printf '\e[1;1;10;40;1;15;1;1$v'
+```
 
 ## Specifications
 
@@ -27,3 +68,8 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [DECERA — Erase Rectangular Area](/docs/csi/decera) — Erase a rectangular region
+- [DECFRA — Fill Rectangular Area](/docs/csi/decfra) — Fill a rectangle with a character

@@ -6,19 +6,35 @@ feature_id: "decaln"
 data_file: "control-sequences"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-ESC #8 — Screen alignment test (fill with 'E')
+**DECALN** (DEC Screen Alignment Pattern) is a VT100 escape sequence that fills the entire screen with the character 'E'. It was originally intended for service personnel to test and adjust screen alignment on hardware terminals.
 
 ## Syntax
 
 ```
-TODO: Add syntax for DECALN
+ESC # 8       DECALN — Screen Alignment Pattern
 ```
 
 ## Description
 
-Documentation coming soon.
+Per the VT510 manual, DECALN fills the complete screen area with a test pattern (the letter 'E' in every cell). In addition to filling the screen, DECALN:
+
+- Resets the scrolling margins to the full screen (undoing any DECSTBM setting)
+- Moves the cursor to the home position (row 1, column 1)
+- Resets all character attributes to normal
+
+Although originally designed as a hardware diagnostic tool, DECALN is commonly used in terminal emulator test suites to verify screen dimensions and scrolling behavior.
+
+## Examples
+
+```bash
+printf '\e#8'    # Fill screen with 'E' characters
+```
 
 ## Specifications
 
@@ -27,3 +43,7 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [DECSTBM — Set Top and Bottom Margins](/docs/csi/decstbm) — Scroll region that DECALN resets

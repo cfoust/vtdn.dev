@@ -6,19 +6,58 @@ feature_id: "osc104"
 data_file: "osc-sequences"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-Reset color palette entry
+<StatusBadges status={{ experimental: true }} />
+
+**OSC 104** resets one or more color palette entries to their default values. It is the counterpart to OSC 4 (set color palette entry).
 
 ## Syntax
 
 ```
-TODO: Add syntax for OSC 104
+OSC 104 ; c ST       Reset color c to default
+OSC 104 ST           Reset all palette colors to defaults
 ```
+
+<FormalSyntax grammar={`
+OSC104       = 0x1b, "]", "104", [ ";", color-index, { ";", color-index } ], ( 0x07 | 0x1b, "\\\\" ) ;
+color-index  = digit, { digit } ;
+digit        = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+`} />
+
+### Parameters
+
+| Parameter | Description |
+|-----------|-------------|
+| `c` | Color index (0-255) to reset. Multiple indices may be separated by `;`. If omitted, all 256 palette colors are reset. |
 
 ## Description
 
-Documentation coming soon.
+OSC 104 restores color palette entries to the terminal's built-in defaults, undoing any changes made with OSC 4. This is useful for applications that temporarily modify palette colors and need to restore the original colors on exit.
+
+When called with no parameter, all 256 palette colors (indices 0-255) are reset to their defaults. When called with one or more color indices, only those specific entries are reset.
+
+Multiple color indices can be specified in a single sequence, separated by semicolons. For example, `OSC 104 ; 1 ; 2 ; 3 ST` resets colors 1, 2, and 3 to their defaults.
+
+The default palette varies by terminal but typically follows the standard 256-color scheme: 16 named colors (0-15), a 6x6x6 color cube (16-231), and a grayscale ramp (232-255).
+
+## Examples
+
+```bash
+# Reset color 1 (red) to its default
+printf '\e]104;1\e\\'
+
+# Reset colors 0-7 (standard colors) to defaults
+printf '\e]104;0;1;2;3;4;5;6;7\e\\'
+
+# Reset all palette colors to defaults
+printf '\e]104\e\\'
+
+# Using BEL as the string terminator
+printf '\e]104;1\a'
+```
 
 ## Specifications
 
@@ -27,3 +66,8 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [OSC 4 — Change Color Palette Entry](/docs/osc/osc4) — Set a palette color
+- [OSC 110/111/112 — Reset Foreground/Background/Cursor Color](/docs/osc/osc110-112) — Reset special colors

@@ -6,19 +6,57 @@ feature_id: "mode7_decawm"
 data_file: "decset-modes"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-Mode 7 — Auto-wrap at end of line
+**DECAWM** (Mode 7) is a DECSET/DECRST mode that controls whether characters written past the right margin automatically wrap to the beginning of the next line.
 
 ## Syntax
 
 ```
-TODO: Add syntax for DECAWM
+CSI ? 7 h    DECSET — Enable auto-wrap
+CSI ? 7 l    DECRST — Disable auto-wrap
 ```
+
+<FormalSyntax grammar={`
+DECSET-mode7 = 0x1b, "[", "?", "7", "h" ;
+DECRST-mode7 = 0x1b, "[", "?", "7", "l" ;
+`} />
 
 ## Description
 
-Documentation coming soon.
+Per the VT100 User Guide and VT510 Programmer Reference, DECAWM controls the behavior when a character is written to the last column of the current line.
+
+- **Set (auto-wrap on)** — When a character is received while the cursor is at the right margin, the cursor wraps to the first column of the next line. If the cursor is on the bottom line of the scrolling region, the screen scrolls up by one line. This is the default on most modern terminals.
+- **Reset (auto-wrap off)** — When a character is received while the cursor is at the right margin, subsequent characters overwrite the last column position. The cursor does not advance to the next line.
+
+### Deferred wrap (pending wrap state)
+
+Most terminals implement a "deferred" or "pending" wrap mechanism. When a character is printed in the last column, the cursor does not immediately move to the next line. Instead, the terminal enters a "pending wrap" state. The wrap occurs only when the next printable character is received. This allows the last column to be written without triggering an unwanted blank line.
+
+This subtle behavior means that after writing to the last column:
+- A cursor movement sequence (CUP, CUF, etc.) clears the pending wrap state without wrapping
+- The next printable character triggers the wrap and is placed in column 1 of the next line
+
+:::note
+DECAWM is saved and restored by DECSC/DECRC (`ESC 7` / `ESC 8`).
+:::
+
+## Examples
+
+```bash
+printf '\e[?7h'      # Enable auto-wrap (default on most terminals)
+printf '\e[?7l'      # Disable auto-wrap
+
+# With auto-wrap disabled, overwrite the last column repeatedly
+printf '\e[?7l'
+printf '\e[1;80H'    # Move to last column
+printf 'ABCDE'       # Only 'E' is visible in the last column
+printf '\e[?7h'      # Re-enable auto-wrap
+```
 
 ## Specifications
 
@@ -27,3 +65,8 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [Reverse Wrap — Mode 45](/docs/decset/mode45-reverse-wrap) — Wrapping in the reverse direction (backspace)
+- [DECSC/DECRC — Save/Restore Cursor](/docs/c0-c1/decsc-decrc) — Saves DECAWM state

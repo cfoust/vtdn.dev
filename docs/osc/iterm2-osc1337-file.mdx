@@ -6,19 +6,95 @@ feature_id: "iterm2_osc1337_file"
 data_file: "osc-sequences"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-Inline image display
+<StatusBadges status={{ experimental: true }} />
+
+**iTerm2 OSC 1337 File** displays inline images directly in the terminal. The image data is base64-encoded and transmitted as part of the escape sequence, along with optional parameters controlling the display size and behavior.
 
 ## Syntax
 
 ```
-TODO: Add syntax for iTerm2 OSC 1337 File
+OSC 1337 ; File=[params]:base64data ST
 ```
+
+<FormalSyntax grammar={`
+OSC1337-File = 0x1b, "]", "1337", ";", "File=", param-list, ":", data, ( 0x07 | 0x1b, "\\\\" ) ;
+param-list   = param, { ";", param } ;
+param        = key, "=", value ;
+key          = "name" | "size" | "width" | "height"
+             | "preserveAspectRatio" | "inline" ;
+value        = { printable-char } ;
+data         = base64-char, { base64-char } ;
+base64-char  = "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J"
+             | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T"
+             | "U" | "V" | "W" | "X" | "Y" | "Z"
+             | "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j"
+             | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t"
+             | "u" | "v" | "w" | "x" | "y" | "z"
+             | "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+             | "+" | "/" | "=" ;
+`} />
+
+### Parameters
+
+Parameters appear before the `:` separator as `key=value` pairs delimited by `;`.
+
+| Parameter | Required | Description |
+|-----------|----------|-------------|
+| `name` | No | Base64-encoded filename. Used for download and display purposes. |
+| `size` | No | File size in bytes. Allows the terminal to pre-allocate memory. |
+| `width` | No | Display width. Can be a number (cells), `Npx` (pixels), `N%` (percent of terminal width), or `auto`. |
+| `height` | No | Display height. Same format as width. |
+| `preserveAspectRatio` | No | `0` to stretch, `1` (default) to preserve aspect ratio. |
+| `inline` | No | `1` to display inline in the terminal, `0` (default) to download as a file. |
+
+### Size specifications
+
+Width and height accept several formats:
+
+| Format | Example | Description |
+|--------|---------|-------------|
+| Integer | `80` | Number of character cells |
+| Pixels | `320px` | Exact pixel dimensions |
+| Percent | `50%` | Percentage of terminal width/height |
+| `auto` | `auto` | Automatic sizing based on image dimensions |
 
 ## Description
 
-Documentation coming soon.
+The iTerm2 inline image protocol is one of the most widely adopted methods for displaying images in terminal emulators. When `inline=1` is set, the image is rendered directly in the terminal output at the cursor position. When `inline=0` (or omitted), the terminal treats the data as a file download.
+
+The image data after the `:` separator must be base64-encoded. Any image format supported by the terminal can be used (typically PNG, JPEG, GIF, and BMP). The terminal decodes the base64 data and renders the image.
+
+If neither `width` nor `height` is specified, the image is displayed at its natural size, scaled to fit within the terminal if necessary. When only one dimension is given and `preserveAspectRatio=1`, the other dimension is calculated automatically.
+
+:::note
+The base64-encoded data can be quite large for high-resolution images. Some terminals and multiplexers may have buffer size limits that truncate long escape sequences. For very large images, consider using the Kitty graphics protocol or Sixel graphics, which support chunked transmission.
+:::
+
+## Examples
+
+```bash
+# Display an inline PNG image
+printf '\e]1337;File=inline=1:'
+base64 < image.png
+printf '\a'
+
+# Display with specified width (50% of terminal)
+printf '\e]1337;File=inline=1;width=50%%:'
+base64 < image.png
+printf '\a'
+
+# Display with fixed cell dimensions
+printf '\e]1337;File=inline=1;width=40;height=20:'
+base64 < image.png
+printf '\a'
+
+# One-liner using a subshell
+printf '\e]1337;File=inline=1;width=auto;height=auto;preserveAspectRatio=1:%s\a' "$(base64 < image.png)"
+```
 
 ## Specifications
 
@@ -27,3 +103,7 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [iTerm2 OSC 1337 misc — Marks, User Variables, and Profile Switching](/docs/osc/iterm2-osc1337-misc) — Other iTerm2 proprietary sequences

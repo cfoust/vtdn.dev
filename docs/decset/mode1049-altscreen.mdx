@@ -6,19 +6,77 @@ feature_id: "mode1049_altscreen"
 data_file: "decset-modes"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-Mode 1049 — Alternate screen buffer with cursor save
+<StatusBadges status={{ experimental: true }} />
+
+**Alt Screen** (Mode 1049) is a DECSET/DECRST mode that switches to the alternate screen buffer with cursor save/restore, providing the standard mechanism for full-screen terminal applications.
 
 ## Syntax
 
 ```
-TODO: Add syntax for Alt screen
+CSI ? 1049 h    DECSET — Save cursor and switch to alternate screen
+CSI ? 1049 l    DECRST — Switch to normal screen and restore cursor
 ```
+
+<FormalSyntax grammar={`
+DECSET-mode1049 = 0x1b, "[", "?", "1", "0", "4", "9", "h" ;
+DECRST-mode1049 = 0x1b, "[", "?", "1", "0", "4", "9", "l" ;
+`} />
 
 ## Description
 
-Documentation coming soon.
+Mode 1049 is an XTerm extension that provides the most complete alternate screen buffer switching mechanism. It combines cursor save, screen buffer switch, and screen clearing into a single operation.
+
+- **Set** — Saves the cursor position (as if DECSC were performed), switches to the alternate screen buffer, and clears the alternate screen.
+- **Reset** — Switches back to the normal (main) screen buffer and restores the previously saved cursor position (as if DECRC were performed).
+
+### The alternate screen buffer
+
+The terminal maintains two independent screen buffers:
+
+- **Normal (main) screen** — The primary buffer with scrollback history. This is where the shell prompt and command output appear.
+- **Alternate screen** — A secondary buffer with no scrollback history. Full-screen applications use this buffer so they do not disturb the user's scrollback.
+
+When the alternate screen is active, all output goes to the alternate buffer. The normal screen's contents are preserved and restored when switching back.
+
+### Related modes
+
+Several DECSET modes deal with the alternate screen, each with slightly different behavior:
+
+| Mode | DECSET behavior | DECRST behavior |
+|------|----------------|-----------------|
+| **47**   | Switch to alt screen | Switch to normal screen |
+| **1047** | Switch to alt screen | Clear alt screen, then switch to normal |
+| **1049** | Save cursor, switch to alt screen, clear it | Switch to normal screen, restore cursor |
+
+Mode 1049 is the preferred mode because it handles cursor save/restore automatically and clears the alternate screen on entry, which is the behavior most full-screen applications expect.
+
+### Common uses
+
+Virtually all full-screen terminal applications use Mode 1049:
+- Text editors (vim, nano, emacs in terminal mode)
+- Pagers (less, most)
+- Terminal multiplexers (tmux, screen)
+- TUI frameworks (ncurses applications, Textual, Ratatui)
+
+Well-behaved applications reset Mode 1049 before exiting so the user's previous terminal content is restored.
+
+:::note
+The alternate screen buffer typically has no scrollback. Attempting to scroll while in the alternate screen usually has no effect unless the terminal or multiplexer provides special handling (see Mode 1007 for scroll wheel translation).
+:::
+
+## Examples
+
+```bash
+printf '\e[?1049h'   # Save cursor, switch to alt screen, clear it
+# ... full-screen application runs here ...
+printf '\e[?1049l'   # Switch back to normal screen, restore cursor
+
+# The user's previous scrollback and prompt are restored
+```
 
 ## Specifications
 
@@ -27,3 +85,8 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [Alt Scroll — Mode 1007](/docs/decset/mode1007-alt-scroll) — Scroll wheel translation on the alternate screen
+- [DECTCEM — Mode 25](/docs/decset/mode25-dectcem) — Show/hide cursor

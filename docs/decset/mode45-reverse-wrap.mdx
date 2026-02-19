@@ -6,19 +6,57 @@ feature_id: "mode45_reverse_wrap"
 data_file: "decset-modes"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-Mode 45 — BS wraps to previous line
+<StatusBadges status={{ experimental: true }} />
+
+**Reverse Wrap** (Mode 45) is a DECSET/DECRST mode that controls whether a backspace at the beginning of a line wraps the cursor to the end of the previous line.
 
 ## Syntax
 
 ```
-TODO: Add syntax for Reverse wrap
+CSI ? 45 h    DECSET — Enable reverse wraparound
+CSI ? 45 l    DECRST — Disable reverse wraparound
 ```
+
+<FormalSyntax grammar={`
+DECSET-mode45 = 0x1b, "[", "?", "4", "5", "h" ;
+DECRST-mode45 = 0x1b, "[", "?", "4", "5", "l" ;
+`} />
 
 ## Description
 
-Documentation coming soon.
+Mode 45 is an XTerm extension that enables reverse wraparound. When a backspace (BS, 0x08) is received while the cursor is at the first column, this mode controls whether the cursor wraps to the last column of the previous line.
+
+- **Set (reverse wrap on)** — A backspace at column 1 moves the cursor to the last column of the previous line. If the cursor is at the top-left corner of the screen (or scrolling region), the backspace has no effect.
+- **Reset (reverse wrap off)** — A backspace at column 1 has no effect; the cursor stays at column 1. This is the default.
+
+### Requirements
+
+Reverse wrap only occurs when **both** of the following conditions are met:
+
+1. Mode 45 (reverse wraparound) is enabled
+2. DECAWM (Mode 7, auto-wrap) is also enabled
+
+If auto-wrap is disabled, reverse wrap has no effect regardless of Mode 45.
+
+### Scope
+
+Reverse wrap only applies to the BS (backspace) control character. Cursor movement sequences like CUB (`CSI D`) do not wrap regardless of this mode; they stop at column 1.
+
+:::note
+XTerm also supports Mode 1045, which is a variant that interacts differently with the alternate screen buffer. Mode 45 is the more commonly implemented variant.
+:::
+
+## Examples
+
+```bash
+printf '\e[?7h'      # Enable auto-wrap (required for reverse wrap)
+printf '\e[?45h'     # Enable reverse wraparound
+printf '\e[?45l'     # Disable reverse wraparound
+```
 
 ## Specifications
 
@@ -27,3 +65,8 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [DECAWM — Auto-Wrap Mode](/docs/decset/mode7-decawm) — Required for reverse wrap to function
+- [BS — Backspace](/docs/c0-c1/bs) — The backspace control character affected by this mode

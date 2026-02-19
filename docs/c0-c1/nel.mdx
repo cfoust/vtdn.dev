@@ -6,19 +6,34 @@ feature_id: "nel"
 data_file: "control-sequences"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-ESC E — Next line, column 1 of next line
+**NEL** (Next Line) is a C1 control function that moves the cursor to the first position of the next line, effectively combining a carriage return and a line feed into a single operation.
 
 ## Syntax
 
 ```
-TODO: Add syntax for NEL
+ESC E         NEL — Next Line (7-bit)
+0x85          NEL — Next Line (8-bit C1)
 ```
 
 ## Description
 
-Documentation coming soon.
+Per ECMA-48 §8.3.86, NEL "causes the active presentation position to be moved to the line home position of the following line in the presentation component." In standard terminal usage, this means column 1 of the next line.
+
+If the cursor is at the bottom of the scrolling region (set by DECSTBM), the display scrolls up before the cursor moves to the first column of the (now blank) bottom line.
+
+NEL is functionally equivalent to CR+LF, but as a single C1 control it is atomic — there is no intermediate state where the cursor is at column 1 of the current line.
+
+## Examples
+
+```bash
+printf 'Line 1\eELine 2'    # "Line 1" then "Line 2" starting at column 1
+```
 
 ## Specifications
 
@@ -27,3 +42,9 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [CR — Carriage Return](/docs/c0-c1/cr) — Move to column 1 of current line
+- [LF — Line Feed](/docs/c0-c1/lf) — Move down one line
+- [IND — Index](/docs/c0-c1/ind) — Move down one line without carriage return

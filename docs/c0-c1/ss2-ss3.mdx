@@ -6,19 +6,41 @@ feature_id: "ss2_ss3"
 data_file: "control-sequences"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-ESC N / ESC O — Single shift G2/G3
+**SS2** (Single-Shift Two) and **SS3** (Single-Shift Three) are C1 control functions that temporarily invoke the G2 or G3 character set for the next graphic character only.
 
 ## Syntax
 
 ```
-TODO: Add syntax for SS2/SS3
+ESC N         SS2 — Single-shift G2 (7-bit)
+0x8E          SS2 — Single-shift G2 (8-bit C1)
+ESC O         SS3 — Single-shift G3 (7-bit)
+0x8F          SS3 — Single-shift G3 (8-bit C1)
 ```
 
 ## Description
 
-Documentation coming soon.
+Per ECMA-48 §8.3.141 and §8.3.142, SS2 and SS3 are used for code extension purposes, causing the meanings of the bit combinations following them to be changed. Their detailed use is defined in ECMA-35.
+
+Unlike the locking shifts (SO/SI, LS2, LS3), which change the active character set until explicitly changed back, single shifts affect only the very next graphic character:
+
+- **SS2** temporarily invokes G2 into GL for the next character, then GL reverts to its previous state.
+- **SS3** temporarily invokes G3 into GL for the next character, then GL reverts to its previous state.
+
+### SS3 and function keys
+
+In practice, SS3 is most commonly encountered as part of function key escape sequences in application mode. For example, when the cursor keys are in application mode (DECCKM set), the arrow keys send `SS3 A`, `SS3 B`, `SS3 C`, `SS3 D` — which in 7-bit form are `ESC O A`, `ESC O B`, etc.
+
+The keypad in application mode (DECKPAM) also sends SS3-prefixed sequences: `ESC O p` through `ESC O y` for digits 0-9.
+
+:::note
+Because `ESC O` is the 7-bit encoding of SS3, there can be ambiguity when a terminal receives `ESC O` — it could be the start of a function key sequence or an actual SS3 character set shift. In practice, modern terminals always interpret it in the function key context.
+:::
 
 ## Specifications
 
@@ -27,3 +49,9 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [SO/SI — Shift Out/In](/docs/c0-c1/so-si) — Locking shifts for G0/G1
+- [Locking Shifts](/docs/c0-c1/locking-shifts) — LS2, LS3, and right-hand locking shifts
+- [DECKPAM/DECKPNM — Application/Numeric Keypad](/docs/c0-c1/deckpam-deckpnm) — Keypad mode that uses SS3 sequences

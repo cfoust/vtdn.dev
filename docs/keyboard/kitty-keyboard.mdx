@@ -6,19 +6,126 @@ feature_id: "kitty_keyboard"
 data_file: "keyboard-input"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-Progressive enhancement
+<StatusBadges status={{ experimental: true }} />
+
+**Kitty keyboard protocol** is a progressive enhancement system for keyboard input in terminal emulators. It replaces the legacy, ambiguous keyboard encoding inherited from physical terminals with a well-defined, extensible scheme based on Unicode codepoints and CSI sequences.
 
 ## Syntax
 
 ```
-TODO: Add syntax for Kitty keyboard protocol
+CSI > flags u       Push current mode and enable flags (set keyboard mode)
+CSI < u             Pop keyboard mode (restore previous mode)
+CSI ? u             Query current keyboard mode flags
+CSI number ; modifiers u    Key event report
 ```
+
+<FormalSyntax grammar={`
+push-mode    = 0x1b, "[", ">", flags, "u" ;
+pop-mode     = 0x1b, "[", "<", [ number ], "u" ;
+query-mode   = 0x1b, "[", "?", "u" ;
+key-event    = 0x1b, "[", key-code, [ ":", shifted, [ ":", base ] ], [ ";", modifiers, [ ":", event-type ] ], [ ";", text ], "u" ;
+flags        = digit, { digit } ;                 (* bitmask: 1|2|4|8|16 *)
+key-code     = digit, { digit } ;                 (* Unicode codepoint *)
+shifted      = digit, { digit } ;                 (* shifted key codepoint *)
+base         = digit, { digit } ;                 (* base layout key codepoint *)
+modifiers    = digit, { digit } ;                 (* modifier bitmask + 1 *)
+event-type   = "1" | "2" | "3" ;                  (* 1=press, 2=repeat, 3=release *)
+text         = codepoint, { ":", codepoint } ;    (* associated text codepoints *)
+codepoint    = digit, { digit } ;
+digit        = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+number       = digit, { digit } ;
+`} />
+
+### Enhancement flags
+
+The `flags` parameter in the push sequence is a bitmask that selects which enhancements to activate. Multiple flags can be combined by ORing them together.
+
+| Flag | Value | Enhancement |
+|------|-------|-------------|
+| Disambiguate | `1` | Disambiguate escape codes for special keys |
+| Report event types | `2` | Report key press, repeat, and release events |
+| Report alternate keys | `4` | Report shifted key and base layout key |
+| All keys as escape codes | `8` | Report all key events as CSI u sequences |
+| Report associated text | `16` | Include generated text in key event reports |
+
+### Modifier encoding
+
+Modifiers are encoded as a bitmask with 1 added (following the xterm convention). The modifier value sent in key events is `1 + bitmask`.
+
+| Modifier | Bit value |
+|----------|-----------|
+| Shift | `1` |
+| Alt | `2` |
+| Ctrl | `4` |
+| Super | `8` |
+| Hyper | `16` |
+| Meta | `32` |
+| Caps Lock | `64` |
+| Num Lock | `128` |
 
 ## Description
 
-Documentation coming soon.
+Traditional terminal keyboard input suffers from fundamental ambiguities. For example, pressing Escape, Alt+[, and Ctrl+[ all produce the same byte (`0x1b`). The Enter key sends `0x0d`, which is indistinguishable from Ctrl+M. These ambiguities exist because terminal input encoding was designed for physical serial terminals in the 1970s and was never updated.
+
+The Kitty keyboard protocol solves this by introducing a stack-based mode system. Applications push a new keyboard mode with the desired enhancement flags onto a stack when they start, and pop it when they exit. This ensures clean restoration of the previous mode, even when multiple applications are nested (for example, running vim inside tmux inside a terminal).
+
+### Mode stack
+
+The protocol uses a push/pop model rather than a simple set/reset:
+
+- **Push** (`CSI > flags u`): Pushes the current mode onto the stack and activates the new flags. The terminal should support a stack depth of at least 8.
+- **Pop** (`CSI < u`): Pops the most recently pushed mode and restores it. An optional number parameter can pop multiple entries at once.
+- **Query** (`CSI ? u`): The terminal responds with `CSI ? flags u` indicating the currently active flags.
+
+### Key event encoding
+
+When the protocol is active, key events are reported as `CSI number ; modifiers u` where `number` is the Unicode codepoint of the key. For functional keys that do not have a Unicode codepoint, dedicated numbers from the Unicode Private Use Area are assigned.
+
+Some common functional key mappings:
+
+| Key | Codepoint |
+|-----|-----------|
+| Escape | `27` |
+| Enter | `13` |
+| Tab | `9` |
+| Backspace | `127` |
+| Insert | `57348` |
+| Delete | `57349` |
+| Home | `57350` |
+| End | `57351` |
+
+The key event format can carry additional information depending on which enhancement flags are active. At its most complete, the format is:
+
+```
+CSI key_code : shifted_key : base_key ; modifiers : event_type ; text u
+```
+
+## Examples
+
+```bash
+# Enable disambiguate mode (flag 1)
+printf '\e[>1u'
+
+# Enable disambiguate + report event types (flags 1|2 = 3)
+printf '\e[>3u'
+
+# Enable all enhancements (flags 1|2|4|8|16 = 31)
+printf '\e[>31u'
+
+# Pop (restore previous mode)
+printf '\e[<u'
+
+# Pop two levels from the stack
+printf '\e[<2u'
+
+# Query current mode
+printf '\e[?u'
+# Terminal responds: ESC [ ? flags u
+```
 
 ## Specifications
 
@@ -27,3 +134,11 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [Disambiguate](/docs/keyboard/kitty-kb-disambiguate) -- Flag 1: disambiguate escape codes
+- [Report Event Types](/docs/keyboard/kitty-kb-event-types) -- Flag 2: key press, repeat, and release events
+- [Report Alternate Keys](/docs/keyboard/kitty-kb-alternate-keys) -- Flag 4: shifted and base layout keys
+- [All Keys as Escape Codes](/docs/keyboard/kitty-kb-all-keys) -- Flag 8: all keys reported as CSI u
+- [Report Associated Text](/docs/keyboard/kitty-kb-associated-text) -- Flag 16: include generated text

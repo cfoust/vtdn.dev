@@ -6,19 +6,76 @@ feature_id: "osc8"
 data_file: "osc-sequences"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-Hyperlinks (clickable links)
+<StatusBadges status={{ experimental: true }} />
+
+**OSC 8** embeds clickable hyperlinks in terminal output, allowing text to link to URIs in much the same way HTML anchor tags work on the web.
 
 ## Syntax
 
 ```
-TODO: Add syntax for OSC 8
+OSC 8 ; params ; uri ST   Start hyperlink
+OSC 8 ; ; ST              End hyperlink
 ```
+
+<FormalSyntax grammar={`
+OSC8_start = 0x1b, "]", "8", ";", params, ";", uri, ( 0x07 | 0x1b, "\\\\" ) ;
+OSC8_end   = 0x1b, "]", "8", ";", ";", ( 0x07 | 0x1b, "\\\\" ) ;
+params     = [ param, { ":", param } ] ;
+param      = key, "=", value ;
+key        = character, { character } ;
+value      = character, { character } ;
+uri        = character, { character } ;
+`} />
+
+### Parameters
+
+| Parameter | Description | Default |
+|-----------|-------------|---------|
+| `params` | Key-value pairs separated by colons (e.g., `id=foo`) | (empty) |
+| `uri` | The target URI (e.g., `https://example.com`) | (required to start, empty to end) |
+
+The `id` parameter is the most commonly used. When multiple non-adjacent runs of text share the same `id` value, they are treated as a single logical hyperlink. This allows a long link to be split across wrapped lines and still highlight as one unit when hovered.
 
 ## Description
 
-Documentation coming soon.
+Per the "Hyperlinks in Terminals" specification, OSC 8 creates inline hyperlinks in terminal output. The sequence works in pairs: an opening sequence specifies the URI and begins the hyperlinked region, and a closing sequence (with empty params and URI) ends it. All text emitted between the two sequences becomes clickable.
+
+The hyperlink model is designed to be backward-compatible. Terminals that do not support OSC 8 simply display the text without the link, since the OSC sequences themselves produce no visible output.
+
+Key design points:
+
+- **URI schemes** — Any URI scheme is valid (`https:`, `http:`, `file:`, `mailto:`, `ssh:`, etc.)
+- **Hover behavior** — Most terminals underline the link text and show the URI in a tooltip or status bar on hover
+- **Click behavior** — Clicking typically opens the URI in the system's default handler
+- **Nesting** — Hyperlinks cannot be nested; opening a new link implicitly closes any active one
+- **Line wrapping** — The `id` parameter ensures that wrapped links remain a single hover/click target
+
+:::note
+The params field uses colons as delimiters between key-value pairs, not semicolons, to avoid ambiguity with the OSC parameter separator.
+:::
+
+## Examples
+
+```bash
+# Simple hyperlink
+printf '\e]8;;https://example.com\e\\Click here\e]8;;\e\\'
+
+# Hyperlink with id parameter for line-wrapping support
+printf '\e]8;id=mylink;https://example.com\e\\This is a long link that may wrap\e]8;;\e\\'
+
+# mailto link
+printf '\e]8;;mailto:user@example.com\e\\Email us\e]8;;\e\\'
+
+# File link
+printf '\e]8;;file:///home/user/document.pdf\e\\Open document\e]8;;\e\\'
+
+# Using BEL as terminator
+printf '\e]8;;https://example.com\aLink text\e]8;;\a'
+```
 
 ## Specifications
 
@@ -27,3 +84,7 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [OSC 0 — Set Icon Name and Window Title](/docs/osc/osc0) — Another common OSC sequence

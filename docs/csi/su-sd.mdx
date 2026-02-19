@@ -6,19 +6,54 @@ feature_id: "su_sd"
 data_file: "csi-sequences"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-CSI S/T — Scroll up/down
+**SU** (Scroll Up) and **SD** (Scroll Down) are CSI sequences that scroll the contents of the scrolling region without moving the cursor.
 
 ## Syntax
 
 ```
-TODO: Add syntax for SU/SD
+CSI Pn S      SU — Scroll Up
+CSI Pn T      SD — Scroll Down
 ```
+
+<FormalSyntax grammar={`
+SU = 0x1b, "[", [ Pn ], "S" ;
+SD = 0x1b, "[", [ Pn ], "T" ;
+Pn = digit, { digit } ;                 (* default: 1 *)
+digit = "0" | "1" | "2" | "3" | "4"
+      | "5" | "6" | "7" | "8" | "9" ;
+`} />
+
+### Parameters
+
+| Parameter | Description | Default |
+|-----------|-------------|---------|
+| `Pn` | Number of lines to scroll | 1 |
 
 ## Description
 
-Documentation coming soon.
+Per ECMA-48 §8.3.147 (SU) and §8.3.113 (SD):
+
+- **SU** (`CSI Pn S`) — Scrolls the content of the scrolling region up by `Pn` lines. New blank lines appear at the bottom of the scrolling region. Lines scrolled off the top may be added to the scrollback buffer.
+- **SD** (`CSI Pn T`) — Scrolls the content of the scrolling region down by `Pn` lines. New blank lines appear at the top of the scrolling region. Lines scrolled off the bottom are lost.
+
+The cursor position is **not** changed by either operation. Only the content within the scrolling region (set by DECSTBM) is affected.
+
+:::note
+`CSI T` with more than one parameter is interpreted as mouse tracking (Highlight Mouse Tracking) rather than SD on some terminals. The single-parameter form is safe.
+:::
+
+## Examples
+
+```bash
+printf '\e[5S'       # Scroll up 5 lines
+printf '\e[3T'       # Scroll down 3 lines
+```
 
 ## Specifications
 
@@ -27,3 +62,10 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [IND — Index](/docs/c0-c1/ind) — Scroll up one line (at bottom margin)
+- [RI — Reverse Index](/docs/c0-c1/ri) — Scroll down one line (at top margin)
+- [DECSTBM — Set Top and Bottom Margins](/docs/csi/decstbm) — Defines the scrolling region
+- [IL/DL — Insert/Delete Lines](/docs/csi/il-dl) — Insert/delete at cursor position

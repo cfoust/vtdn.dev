@@ -6,19 +6,64 @@ feature_id: "win_position_report"
 data_file: "window-manipulation"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-CSI 13 t — Window position (pixels)
+<StatusBadges status={{ experimental: true }} />
+
+**Window Position Report** is an XTerm window manipulation sequence that queries the pixel position of the terminal window on the screen.
 
 ## Syntax
 
 ```
-TODO: Add syntax for Position report
+CSI 13 t               Request window position
+CSI 13 ; 2 t           Request text area position
+CSI 3 ; x ; y t        Response: pixel position
 ```
+
+<FormalSyntax grammar={`
+(* Request — window position *)
+position_request      = 0x1b, "[", "1", "3", "t" ;
+
+(* Request — text area position *)
+text_area_pos_request = 0x1b, "[", "1", "3", ";", "2", "t" ;
+
+(* Response *)
+position_response     = 0x1b, "[", "3", ";", Pn, ";", Pn, "t" ;
+Pn                    = digit, { digit } ;
+digit                 = "0" | "1" | "2" | "3" | "4"
+                      | "5" | "6" | "7" | "8" | "9" ;
+`} />
+
+### Response
+
+| Field | Description |
+|-------|-------------|
+| `x` | Horizontal pixel position from the left edge of the screen |
+| `y` | Vertical pixel position from the top edge of the screen |
 
 ## Description
 
-Documentation coming soon.
+This sequence queries the terminal for the pixel position of the window on the screen. It is part of the XTerm `CSI Ps ; Ps ; Ps t` window manipulation family.
+
+- **`CSI 13 t`** — Requests the position of the terminal window. The terminal responds with `CSI 3 ; x ; y t` where `x` and `y` are the pixel coordinates of the top-left corner of the window.
+- **`CSI 13 ; 2 t`** — Requests the position of the text area (the region where characters are rendered, excluding window decorations). The terminal responds with the same `CSI 3 ; x ; y t` format, but with the coordinates of the text area's top-left corner.
+
+The coordinate system uses the screen's origin (0, 0) at the top-left corner, with `x` increasing to the right and `y` increasing downward. The response format matches the parameter format of the [Move Window](/docs/window/win-move) sequence (`CSI 3 ; x ; y t`).
+
+## Examples
+
+```bash
+# Query window position
+printf '\e[13t'
+
+# Query text area position
+printf '\e[13;2t'
+
+# Read the response
+printf '\e[13t'; read -st 1 -d t response; echo "$response"
+```
 
 ## Specifications
 
@@ -27,3 +72,9 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [Move Window](/docs/window/win-move) — Move window to a pixel position
+- [Window State Report](/docs/window/win-state-report) — Query whether the window is iconified
+- [Text Area Size (pixels)](/docs/window/win-text-area-pixels) — Query text area pixel dimensions

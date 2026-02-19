@@ -6,19 +6,60 @@ feature_id: "decsc_decrc"
 data_file: "control-sequences"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-ESC 7 / ESC 8 — Save/restore cursor
+**DECSC** (Save Cursor) and **DECRC** (Restore Cursor) are DEC VT100 escape sequences that save and restore the cursor position along with associated terminal state.
 
 ## Syntax
 
 ```
-TODO: Add syntax for DECSC/DECRC
+ESC 7         DECSC — Save cursor
+ESC 8         DECRC — Restore cursor
 ```
 
 ## Description
 
-Documentation coming soon.
+### DECSC — Save cursor (ESC 7)
+
+Per the VT510 manual, DECSC saves the following state:
+
+- Cursor position (row and column)
+- Character attributes (set by SGR)
+- Character sets designated in GL and GR (G0, G1, G2, G3)
+- Autowrap mode (DECAWM) state
+- Origin mode (DECOM) state
+- Selective erase attribute
+- Any pending single-shift (SS2/SS3) state
+
+### DECRC — Restore cursor (ESC 8)
+
+DECRC restores the state previously saved by DECSC. If DECSC has not been issued since the terminal was powered on or reset, DECRC applies these defaults:
+
+- Cursor moves to the home position (row 1, column 1)
+- Origin mode is reset
+- All character attributes are turned off
+- ASCII is mapped into GL, DEC Supplemental Graphic into GR
+
+### Save buffer
+
+The terminal maintains a single save buffer. Calling DECSC again overwrites the previously saved state. The main screen and alternate screen each have their own independent save buffer.
+
+:::note
+The ANSI equivalent is SCP/RCP (`CSI s` / `CSI u`), but DECSC/DECRC saves more state. Many applications prefer DECSC/DECRC for this reason.
+:::
+
+## Examples
+
+```bash
+printf '\e7'          # Save cursor position and state
+printf '\e[10;20H'    # Move cursor elsewhere
+printf 'Hello'        # Write some text
+printf '\e8'          # Restore cursor to saved position
+```
 
 ## Specifications
 
@@ -27,3 +68,7 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [SCP/RCP — Save/Restore Cursor Position](/docs/csi/scp-rcp) — ANSI cursor save (position only)

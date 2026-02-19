@@ -6,19 +6,40 @@ feature_id: "sgr_dim"
 data_file: "text-styling"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-SGR 2 — Faint
+**Dim** (SGR 2) is an SGR attribute that renders text with decreased intensity or a lighter appearance.
 
 ## Syntax
 
 ```
-TODO: Add syntax for Dim
+CSI 2 m     SGR 2 — Faint / decreased intensity
+CSI 22 m    SGR 22 — Normal intensity (reset bold and dim)
 ```
+
+<FormalSyntax grammar={`
+SGR-dim        = 0x1b, "[", "2", "m" ;
+SGR-normal-int = 0x1b, "[", "22", "m" ;
+`} />
 
 ## Description
 
-Documentation coming soon.
+Per ECMA-48 §8.3.117, SGR parameter 2 selects "faint, decreased intensity or second colour." Terminals typically render this by reducing the opacity or brightness of the foreground color.
+
+Dim is reset by SGR 22, which restores normal intensity. Note that SGR 22 also cancels bold (SGR 1). SGR 0 (reset all) also clears dim.
+
+Bold and dim are mutually exclusive on some terminals, while others allow both to be active simultaneously (with implementation-defined results).
+
+## Examples
+
+```bash
+printf '\e[2mDim text\e[22m Normal text\n'
+printf '\e[2;33mDim yellow\e[0m\n'
+```
 
 ## Specifications
 
@@ -27,3 +48,7 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [Bold — SGR 1](/docs/sgr/sgr-bold) — Increased intensity

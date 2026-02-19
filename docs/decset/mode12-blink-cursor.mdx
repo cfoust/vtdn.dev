@@ -6,19 +6,58 @@ feature_id: "mode12_blink_cursor"
 data_file: "decset-modes"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-Mode 12 — att610 blinking cursor
+<StatusBadges status={{ experimental: true }} />
+
+**Blink Cursor** (Mode 12) is a DECSET/DECRST mode that controls whether the text cursor blinks.
 
 ## Syntax
 
 ```
-TODO: Add syntax for Blink cursor
+CSI ? 12 h    DECSET — Enable cursor blinking
+CSI ? 12 l    DECRST — Disable cursor blinking (steady cursor)
 ```
+
+<FormalSyntax grammar={`
+DECSET-mode12 = 0x1b, "[", "?", "1", "2", "h" ;
+DECRST-mode12 = 0x1b, "[", "?", "1", "2", "l" ;
+`} />
 
 ## Description
 
-Documentation coming soon.
+Mode 12 originates from the AT&T 610 terminal (att610) and was adopted by XTerm as a way to toggle cursor blinking.
+
+- **Set** — The cursor blinks at a rate determined by the terminal.
+- **Reset** — The cursor is steady (does not blink). This is the default in many terminals.
+
+### Relationship to DECSCUSR
+
+Mode 12 provides a simple on/off toggle for cursor blinking. The DECSCUSR (Set Cursor Style) sequence `CSI Ps SP q` offers more fine-grained control, allowing the application to set both the cursor shape (block, underline, bar) and the blink state simultaneously.
+
+When both Mode 12 and DECSCUSR are used, the most recently issued command typically takes precedence, though this behavior varies across terminals.
+
+| DECSCUSR Value | Shape     | Blink   |
+|----------------|-----------|---------|
+| `0` or `1`     | Block     | Blink   |
+| `2`            | Block     | Steady  |
+| `3`            | Underline | Blink   |
+| `4`            | Underline | Steady  |
+| `5`            | Bar       | Blink   |
+| `6`            | Bar       | Steady  |
+
+:::note
+The blink rate is not standardized and varies between terminal emulators, typically ranging from 500ms to 1000ms per cycle.
+:::
+
+## Examples
+
+```bash
+printf '\e[?12h'     # Enable cursor blinking
+printf '\e[?12l'     # Disable cursor blinking (steady)
+```
 
 ## Specifications
 
@@ -27,3 +66,8 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [DECSCUSR — Set Cursor Style](/docs/csi/decscusr) — Fine-grained cursor shape and blink control
+- [DECTCEM — Text Cursor Enable Mode](/docs/decset/mode25-dectcem) — Show or hide the cursor entirely

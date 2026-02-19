@@ -6,19 +6,81 @@ feature_id: "osc22"
 data_file: "osc-sequences"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-Set mouse pointer cursor shape
+<StatusBadges status={{ experimental: true }} />
+
+**OSC 22** sets the shape of the mouse pointer cursor when it hovers over the terminal window. This allows terminal applications to provide visual feedback about interactive regions, similar to how web pages change the cursor to a hand pointer over clickable elements.
 
 ## Syntax
 
 ```
-TODO: Add syntax for OSC 22
+OSC 22 ; shape ST
+OSC 22 ; shape BEL
 ```
+
+<FormalSyntax grammar={`
+OSC22 = 0x1b, "]", "22", ";", shape, ( 0x07 | 0x1b, "\\\\" ) ;
+shape = letter, { letter | "-" } ;
+letter = "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j"
+       | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t"
+       | "u" | "v" | "w" | "x" | "y" | "z" ;
+`} />
+
+### Parameters
+
+| Parameter | Description | Default |
+|-----------|-------------|---------|
+| `shape` | The cursor shape name | (required) |
+
+Common cursor shape values follow CSS cursor naming conventions:
+
+| Shape | Description |
+|-------|-------------|
+| `default` | The platform default cursor (usually an arrow) |
+| `text` | Text selection cursor (I-beam) |
+| `pointer` | Hand/pointing cursor (indicates a link or clickable element) |
+| `crosshair` | Crosshair cursor (precision selection) |
+| `help` | Help cursor (arrow with question mark) |
+| `progress` | Busy cursor with background activity indicator |
+| `wait` | Busy/loading cursor (hourglass or spinner) |
+| `move` | Move/drag cursor (four-directional arrows) |
+| `not-allowed` | Prohibited action cursor (circle with slash) |
+| `grab` | Open hand cursor (before grabbing) |
+| `grabbing` | Closed hand cursor (while dragging) |
 
 ## Description
 
-Documentation coming soon.
+Per the XTerm control sequences documentation, OSC 22 changes the mouse pointer cursor shape. The shape name follows CSS cursor naming conventions, making the values familiar to web developers.
+
+This sequence enables TUI applications to provide richer mouse interaction feedback. For example, a terminal-based file manager could change the cursor to `pointer` when hovering over a clickable item, or a terminal drawing application could use `crosshair` for precision drawing mode.
+
+Setting the shape to `default` restores the standard cursor appearance. The cursor shape reverts to the default when the application exits or when the terminal is reset.
+
+:::note
+The set of supported cursor shapes varies between terminals. Most terminals support at least `default`, `text`, and `pointer`. Some terminals may accept X11 cursor font names in addition to CSS cursor names.
+:::
+
+## Examples
+
+```bash
+# Set cursor to pointer (hand)
+printf '\e]22;pointer\e\\'
+
+# Set cursor to crosshair
+printf '\e]22;crosshair\a'
+
+# Set cursor to text selection (I-beam)
+printf '\e]22;text\e\\'
+
+# Reset to default cursor
+printf '\e]22;default\e\\'
+
+# Set cursor to not-allowed (prohibition sign)
+printf '\e]22;not-allowed\a'
+```
 
 ## Specifications
 
@@ -27,3 +89,7 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [OSC 8 — Hyperlinks](/docs/osc/osc8) — Clickable links that often trigger a pointer cursor change automatically

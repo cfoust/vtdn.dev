@@ -6,19 +6,57 @@ feature_id: "ed"
 data_file: "csi-sequences"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-CSI J — Erase in display (0=below, 1=above, 2=all)
+**ED** (Erase in Display / Erase in Page) is a CSI sequence that erases part or all of the visible screen.
 
 ## Syntax
 
 ```
-TODO: Add syntax for ED
+CSI Ps J      ED — Erase in Display
 ```
+
+<FormalSyntax grammar={`
+ED = 0x1b, "[", [ Ps ], "J" ;
+Ps = "0" | "1" | "2" ;                  (* default: 0 *)
+`} />
+
+### Parameters
+
+| Value | Meaning |
+|-------|---------|
+| `0` | Erase from cursor to end of display (default) |
+| `1` | Erase from start of display to cursor |
+| `2` | Erase the entire display |
 
 ## Description
 
-Documentation coming soon.
+Per ECMA-48 §8.3.39, ED puts character positions into the erased state depending on the parameter value. "Erased state" means the positions are filled with the current background color (as set by SGR).
+
+- **`CSI 0 J`** or **`CSI J`** — Erases from the cursor position (inclusive) through the end of the screen. The cursor position does not change.
+- **`CSI 1 J`** — Erases from the beginning of the screen through the cursor position (inclusive). The cursor position does not change.
+- **`CSI 2 J`** — Erases the entire visible screen. The cursor position does not change. The scrollback buffer is **not** affected.
+
+:::note
+`CSI 2 J` clears the screen but does not move the cursor. To clear the screen and move home, use `CSI 2 J` followed by `CSI H`. This pair is what the `clear` command typically sends.
+:::
+
+### DECSED
+
+The selective erase variant `CSI ? Ps J` (DECSED) erases only characters that were **not** written with the "protected" attribute set by DECSCA. Most applications use the non-selective form.
+
+## Examples
+
+```bash
+printf '\e[J'        # Erase from cursor to end of screen
+printf '\e[1J'       # Erase from start of screen to cursor
+printf '\e[2J'       # Erase entire screen
+printf '\e[2J\e[H'   # Clear screen and move home
+```
 
 ## Specifications
 
@@ -27,3 +65,9 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [ED 3 — Erase Scrollback Buffer](/docs/csi/ed3) — XTerm extension to clear scrollback
+- [EL — Erase in Line](/docs/csi/el) — Erase part of the current line
+- [ECH — Erase Character](/docs/csi/ich-dch-ech) — Erase a specific number of characters

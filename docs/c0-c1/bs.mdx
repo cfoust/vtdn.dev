@@ -6,19 +6,38 @@ feature_id: "bs"
 data_file: "control-sequences"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-0x08 — Backspace, move cursor left
+**BS** (Backspace) is a C0 control character that moves the cursor one position to the left. It is one of the oldest control characters, present since the original ASCII standard.
 
 ## Syntax
 
 ```
-TODO: Add syntax for BS
+BS        0x08
 ```
 
 ## Description
 
-Documentation coming soon.
+Per ECMA-48 §8.3.5, BS "causes the active data position to be moved one character position in the data component in the direction opposite to that of the implicit movement."
+
+In standard terminal usage with left-to-right writing, this means the cursor moves one column to the left. The character at the cursor position is **not** erased — BS only moves the cursor. To delete a character, a terminal application typically sends `BS SP BS` (backspace, space, backspace) to overwrite the character with a space.
+
+If the cursor is already at the left margin (column 1), BS has no effect. BS does not wrap to the previous line.
+
+:::note
+In the context of a line discipline (e.g., canonical mode in Unix), the kernel's terminal driver typically interprets the erase character (often mapped to backspace) by sending `BS SP BS` to the terminal. The BS control character itself only moves the cursor.
+:::
+
+## Examples
+
+```bash
+printf 'ABC\b\b'    # Prints "ABC" then moves cursor back to 'B'
+printf 'AB\b \bA'   # Prints "AB", erases 'B', prints 'A' → "AA"
+```
 
 ## Specifications
 
@@ -27,3 +46,7 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [CUU/CUD/CUF/CUB — Cursor Movement](/docs/csi/cuu-cud-cuf-cub) — CSI-based cursor movement sequences

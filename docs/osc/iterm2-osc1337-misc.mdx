@@ -6,19 +6,103 @@ feature_id: "iterm2_osc1337_misc"
 data_file: "osc-sequences"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-Marks, user vars, profile switching
+<StatusBadges status={{ experimental: true }} />
+
+**iTerm2 OSC 1337** encompasses a collection of proprietary escape sequences used for shell integration, user-defined variables, profile switching, cell size reporting, and other iTerm2-specific features.
 
 ## Syntax
 
 ```
-TODO: Add syntax for iTerm2 OSC 1337
+OSC 1337 ; SetMark ST                            Set a mark at cursor
+OSC 1337 ; SetUserVar=name=base64value ST         Set a user variable
+OSC 1337 ; SetProfile=name ST                     Switch to named profile
+OSC 1337 ; ReportCellSize ST                      Query cell size
+OSC 1337 ; ReportCellSize=height;width ST         Cell size response
+OSC 1337 ; CurrentDir=path ST                     Report current directory
+OSC 1337 ; SetBadgeFormat=base64text ST           Set badge text
 ```
+
+<FormalSyntax grammar={`
+OSC1337-misc  = 0x1b, "]", "1337", ";", command, ( 0x07 | 0x1b, "\\\\" ) ;
+command       = set-mark | set-user-var | set-profile | report-cell-size
+              | current-dir | set-badge ;
+set-mark      = "SetMark" ;
+set-user-var  = "SetUserVar=", var-name, "=", base64-value ;
+set-profile   = "SetProfile=", profile-name ;
+report-cell-size = "ReportCellSize", [ "=", height, ";", width ] ;
+current-dir   = "CurrentDir=", path ;
+set-badge     = "SetBadgeFormat=", base64-value ;
+var-name      = printable-char, { printable-char } ;
+profile-name  = printable-char, { printable-char } ;
+path          = printable-char, { printable-char } ;
+base64-value  = base64-char, { base64-char } ;
+height        = digit, { digit }, [ ".", digit, { digit } ] ;
+width         = digit, { digit }, [ ".", digit, { digit } ] ;
+digit         = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+base64-char   = "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J"
+              | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T"
+              | "U" | "V" | "W" | "X" | "Y" | "Z"
+              | "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j"
+              | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t"
+              | "u" | "v" | "w" | "x" | "y" | "z"
+              | "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+              | "+" | "/" | "=" ;
+`} />
 
 ## Description
 
-Documentation coming soon.
+iTerm2 uses OSC 1337 as a namespace for a variety of proprietary extensions. Unlike the inline image protocol (which also uses OSC 1337 but has its own dedicated feature entry), these sequences cover terminal-shell integration and UI customization features.
+
+### SetMark
+
+`OSC 1337 ; SetMark ST` places a navigation mark at the current cursor position. Marks allow the user to jump between significant points in the scrollback buffer using iTerm2's mark navigation shortcuts (Cmd+Shift+Up/Down). This is commonly emitted by shell integration scripts before each prompt.
+
+### SetUserVar
+
+`OSC 1337 ; SetUserVar=name=base64value ST` sets a named user variable on the current session. The value must be base64-encoded. User variables can be read by iTerm2 scripts and triggers, and are useful for passing information from the shell to the terminal (for example, the current git branch or virtual environment name).
+
+### SetProfile
+
+`OSC 1337 ; SetProfile=name ST` switches the current session to the named iTerm2 profile. This allows applications to dynamically change the terminal's appearance (colors, font, transparency, etc.) by referencing pre-configured profiles.
+
+### ReportCellSize
+
+`OSC 1337 ; ReportCellSize ST` queries the terminal for the dimensions of a single character cell in points. The terminal responds with `OSC 1337 ; ReportCellSize=height;width ST` where both values are floating-point numbers in points. This is useful for applications that need to calculate precise image dimensions.
+
+### CurrentDir
+
+`OSC 1337 ; CurrentDir=path ST` reports the current working directory to iTerm2. This serves a similar purpose to OSC 7 but uses iTerm2's proprietary format. iTerm2 uses this information for features like the toolbelt's directory history, new tab/split pane working directory inheritance, and the "Open Quickly" dialog.
+
+### SetBadgeFormat
+
+`OSC 1337 ; SetBadgeFormat=base64text ST` sets the badge text displayed in the terminal session. The text is base64-encoded and can include iTerm2 interpolated string variables (e.g., `\(session.name)`). The badge appears as a large watermark in the terminal background.
+
+## Examples
+
+```bash
+# Set a mark at the current position
+printf '\e]1337;SetMark\a'
+
+# Set a user variable (value must be base64-encoded)
+printf '\e]1337;SetUserVar=%s=%s\a' "gitBranch" "$(echo -n 'main' | base64)"
+
+# Switch to a named profile
+printf '\e]1337;SetProfile=Dark Mode\a'
+
+# Query cell size
+printf '\e]1337;ReportCellSize\a'
+# Response: ESC ] 1337 ; ReportCellSize=17.50;8.00 ST
+
+# Report current directory
+printf '\e]1337;CurrentDir=%s\a' "$PWD"
+
+# Set badge text
+printf '\e]1337;SetBadgeFormat=%s\a' "$(echo -n 'Production' | base64)"
+```
 
 ## Specifications
 
@@ -27,3 +111,9 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [iTerm2 OSC 1337 File — Inline Image Display](/docs/osc/iterm2-osc1337-file) — Display images inline using OSC 1337
+- [OSC 7 — Current Working Directory](/docs/osc/osc7) — Standard working directory reporting
+- [OSC 133 — Shell Integration](/docs/osc/osc133) — FinalTerm semantic prompt markers

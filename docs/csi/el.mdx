@@ -6,19 +6,54 @@ feature_id: "el"
 data_file: "csi-sequences"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-CSI K — Erase in line
+**EL** (Erase in Line) is a CSI sequence that erases part or all of the current line.
 
 ## Syntax
 
 ```
-TODO: Add syntax for EL
+CSI Ps K      EL — Erase in Line
 ```
+
+<FormalSyntax grammar={`
+EL = 0x1b, "[", [ Ps ], "K" ;
+Ps = "0" | "1" | "2" ;                  (* default: 0 *)
+`} />
+
+### Parameters
+
+| Value | Meaning |
+|-------|---------|
+| `0` | Erase from cursor to end of line (default) |
+| `1` | Erase from start of line to cursor |
+| `2` | Erase the entire line |
 
 ## Description
 
-Documentation coming soon.
+Per ECMA-48 §8.3.41, EL puts character positions on the active line into the erased state depending on the parameter value. The cursor position does not change for any variant.
+
+- **`CSI 0 K`** or **`CSI K`** — Erases from the cursor position (inclusive) through the end of the line.
+- **`CSI 1 K`** — Erases from the beginning of the line through the cursor position (inclusive).
+- **`CSI 2 K`** — Erases the entire line.
+
+"Erased state" means the positions are filled with the current background color (as set by SGR).
+
+### DECSEL
+
+The selective erase variant `CSI ? Ps K` (DECSEL) erases only characters not written with the "protected" attribute. Most applications use the non-selective form.
+
+## Examples
+
+```bash
+printf '\e[K'        # Erase from cursor to end of line
+printf '\e[1K'       # Erase from start of line to cursor
+printf '\e[2K'       # Erase entire line
+```
 
 ## Specifications
 
@@ -27,3 +62,8 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [ED — Erase in Display](/docs/csi/ed) — Erase regions of the screen
+- [ECH — Erase Character](/docs/csi/ich-dch-ech) — Erase a specific number of characters

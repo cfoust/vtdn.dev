@@ -6,19 +6,55 @@ feature_id: "mode20_lnm"
 data_file: "decset-modes"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-ANSI Mode 20 — Newline mode (LF also does CR)
+**LNM** (Mode 20) is an ANSI mode that controls whether line feed characters (LF, VT, FF) also perform a carriage return, moving the cursor to the first column.
 
 ## Syntax
 
 ```
-TODO: Add syntax for LNM
+CSI 20 h    Set — Enable newline mode (LF implies CR)
+CSI 20 l    Reset — Disable newline mode (LF only moves down)
 ```
+
+<FormalSyntax grammar={`
+set-LNM   = 0x1b, "[", "2", "0", "h" ;
+reset-LNM = 0x1b, "[", "2", "0", "l" ;
+`} />
 
 ## Description
 
-Documentation coming soon.
+Per ECMA-48 §7.2.12, LNM (Line Feed/New Line Mode) controls the interpretation of the line feed function.
+
+- **Set (newline mode)** — When a LF (0x0A), VT (0x0B), or FF (0x0C) character is received, the cursor moves down one line **and** returns to the first column (as if a CR were also performed). Additionally, when the Return key is pressed, the terminal sends CR LF instead of just CR.
+- **Reset (line feed mode)** — LF, VT, and FF only move the cursor down one line without changing the column position. The Return key sends only CR. This is the default.
+
+:::note
+LNM is an **ANSI standard mode**, not a DEC private mode. It uses `CSI 20 h` / `CSI 20 l` (without the `?` prefix). This distinguishes it from DEC private modes which use the `CSI ?` prefix.
+:::
+
+### Bidirectional effect
+
+LNM affects both directions of communication:
+- **Host to terminal** — Controls whether received LF/VT/FF characters also imply CR
+- **Terminal to host** — Controls whether the Return key sends CR alone or CR+LF
+
+This bidirectional nature means that toggling LNM changes the behavior of both displayed output and keyboard input.
+
+:::caution
+LNM was removed from ECMA-48 in the 5th edition (1991) because it was considered a host responsibility rather than a terminal function. Despite this, it remains widely supported by terminal emulators for backward compatibility.
+:::
+
+## Examples
+
+```bash
+printf '\e[20h'      # Enable newline mode (LF implies CR)
+printf '\e[20l'      # Disable newline mode (LF only moves down)
+```
 
 ## Specifications
 
@@ -27,3 +63,9 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [LF — Line Feed](/docs/c0-c1/lf) — The line feed control character
+- [NEL — Next Line](/docs/c0-c1/nel) — Explicit next-line sequence (always does CR+LF)
+- [CR — Carriage Return](/docs/c0-c1/cr) — The carriage return control character

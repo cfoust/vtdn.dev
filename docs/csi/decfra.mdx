@@ -6,19 +6,55 @@ feature_id: "decfra"
 data_file: "csi-sequences"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-CSI $ x — Fill rectangular area
+**DECFRA** (Fill Rectangular Area) is a CSI sequence that fills a rectangular screen region with a specified character.
 
 ## Syntax
 
 ```
-TODO: Add syntax for DECFRA
+CSI Pc ; Pt ; Pl ; Pb ; Pr $ x    DECFRA — Fill Rectangular Area
 ```
+
+<FormalSyntax grammar={`
+DECFRA = 0x1b, "[", Pc, ";", Pt, ";", Pl, ";", Pb, ";", Pr, "$", "x" ;
+Pc = digit, { digit } ;                 (* character code to fill with *)
+Pt = digit, { digit } ;                 (* top row *)
+Pl = digit, { digit } ;                 (* left column *)
+Pb = digit, { digit } ;                 (* bottom row *)
+Pr = digit, { digit } ;                 (* right column *)
+digit = "0" | "1" | "2" | "3" | "4"
+      | "5" | "6" | "7" | "8" | "9" ;
+`} />
+
+### Parameters
+
+| Parameter | Description |
+|-----------|-------------|
+| `Pc` | Decimal character code to fill (e.g., 65 for 'A', 42 for '*') |
+| `Pt` | Top row of the rectangle |
+| `Pl` | Left column of the rectangle |
+| `Pb` | Bottom row of the rectangle |
+| `Pr` | Right column of the rectangle |
 
 ## Description
 
-Documentation coming soon.
+Per the VT510 manual, DECFRA fills the specified rectangular area with the character whose code is `Pc`. The current SGR attributes are applied to the filled characters. The cursor position is not changed.
+
+The `Pc` value must be a printable character code (32-126 for ASCII, or an appropriate value in the active character set). If `Pc` is not a printable character, the result is undefined.
+
+Coordinates are 1-based and refer to absolute screen positions.
+
+## Examples
+
+```bash
+printf '\e[42;1;1;24;80$x'    # Fill entire 80x24 screen with '*' (42)
+printf '\e[65;5;10;15;30$x'   # Fill rectangle (5,10)-(15,30) with 'A' (65)
+```
 
 ## Specifications
 
@@ -27,3 +63,8 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [DECERA — Erase Rectangular Area](/docs/csi/decera) — Erase (blank) a rectangular region
+- [DECCRA — Copy Rectangular Area](/docs/csi/deccra) — Copy a rectangle to another position

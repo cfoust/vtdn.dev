@@ -6,19 +6,52 @@ feature_id: "cht_cbt"
 data_file: "csi-sequences"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-CSI I / CSI Z — Cursor forward/backward tab
+**CHT** (Cursor Forward Tabulation) and **CBT** (Cursor Backward Tabulation) are CSI sequences that move the cursor forward or backward by a specified number of tab stops.
 
 ## Syntax
 
 ```
-TODO: Add syntax for CHT/CBT
+CSI Pn I      CHT — Cursor Forward Tabulation
+CSI Pn Z      CBT — Cursor Backward Tabulation
 ```
+
+<FormalSyntax grammar={`
+CHT = 0x1b, "[", [ Pn ], "I" ;
+CBT = 0x1b, "[", [ Pn ], "Z" ;
+Pn  = digit, { digit } ;                (* default: 1 *)
+digit = "0" | "1" | "2" | "3" | "4"
+      | "5" | "6" | "7" | "8" | "9" ;
+`} />
+
+### Parameters
+
+| Parameter | Description | Default |
+|-----------|-------------|---------|
+| `Pn` | Number of tab stops to advance/retreat | 1 |
 
 ## Description
 
-Documentation coming soon.
+Per ECMA-48 §8.3.10 (CHT) and §8.3.7 (CBT):
+
+- **CHT** (`CSI Pn I`) — Moves the cursor to the `Pn`-th following tab stop. This is equivalent to pressing HT (0x09) `Pn` times, but expressed as a single sequence.
+- **CBT** (`CSI Pn Z`) — Moves the cursor to the `Pn`-th preceding tab stop.
+
+Tab stops are set by HTS and cleared by TBC. The default tab stops are at every 8th column (1, 9, 17, 25, ...).
+
+If there are fewer remaining tab stops than requested, the cursor moves to the last (or first, for CBT) column of the line.
+
+## Examples
+
+```bash
+printf '\e[2I'       # Move forward 2 tab stops
+printf '\e[Z'        # Move backward 1 tab stop
+```
 
 ## Specifications
 
@@ -27,3 +60,9 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [HT — Horizontal Tab](/docs/c0-c1/ht) — Single tab stop advance
+- [HTS — Set Tab Stop](/docs/c0-c1/hts) — Set a tab stop at the current column
+- [TBC — Tabulation Clear](/docs/csi/tbc) — Clear tab stops

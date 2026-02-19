@@ -6,19 +6,85 @@ feature_id: "mode2048_in_band_resize"
 data_file: "decset-modes"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-Mode 2048 — Deterministic notifications
+<StatusBadges status={{ experimental: true }} />
+
+**In-Band Resize** (Mode 2048) is a DECSET/DECRST mode that causes the terminal to report size changes as escape sequences in the input stream, providing a deterministic alternative to the SIGWINCH signal.
 
 ## Syntax
 
 ```
-TODO: Add syntax for In-band resize
+CSI ? 2048 h    DECSET — Enable in-band resize notifications
+CSI ? 2048 l    DECRST — Disable in-band resize notifications
 ```
+
+<FormalSyntax grammar={`
+DECSET-mode2048 = 0x1b, "[", "?", "2", "0", "4", "8", "h" ;
+DECRST-mode2048 = 0x1b, "[", "?", "2", "0", "4", "8", "l" ;
+`} />
 
 ## Description
 
-Documentation coming soon.
+Mode 2048 provides a mechanism for the terminal to report resize events directly in the input stream, alongside regular keyboard and mouse input. This solves fundamental problems with the traditional SIGWINCH-based approach to terminal resize notification.
+
+- **Set** — The terminal sends a resize report in the input stream whenever the terminal dimensions change.
+- **Reset** — Resize events are not reported in-band. The application relies on SIGWINCH. This is the default.
+
+### Report format
+
+When the terminal is resized and Mode 2048 is enabled, the terminal sends:
+
+```
+CSI 8 ; rows ; cols t
+```
+
+Where:
+- `rows` is the new height in character rows
+- `cols` is the new width in character columns
+
+This is the same format as the DTTERM window manipulation response for "report terminal size in characters."
+
+### Problems with SIGWINCH
+
+The traditional Unix mechanism for resize notification is the SIGWINCH signal. While widely supported, it has several limitations:
+
+- **Not in-band** — SIGWINCH is delivered asynchronously and out-of-band relative to the input stream. The application cannot determine exactly where in its input processing the resize occurred.
+- **Lost through SSH** — When running over SSH, SIGWINCH must be forwarded by the SSH client. This introduces latency and can be unreliable, especially through multiple SSH hops.
+- **Lost through multiplexers** — Terminal multiplexers must translate outer resize events to inner pane resizes, and the signal path can be lossy.
+- **Race conditions** — If multiple resizes happen quickly, intermediate SIGWINCH signals may be coalesced, and the application may miss intermediate sizes. The application must query the terminal size separately using an `ioctl`, which may return a stale value.
+
+### Advantages of in-band resize
+
+- **Deterministic** — The resize notification arrives in sequence with other input, so the application knows exactly when in the input stream the resize occurred.
+- **Reliable through SSH and multiplexers** — The notification travels through the same data channel as regular terminal I/O, so it cannot be lost in translation.
+- **No race conditions** — Each resize produces a distinct notification with the exact new dimensions. No separate `ioctl` query is needed.
+
+### Typical usage
+
+Applications that enable Mode 2048 can process resize notifications in their main input loop alongside keyboard and mouse events, rather than needing a separate signal handler. This simplifies application architecture, especially in event-loop-based designs.
+
+:::note
+Applications should still handle SIGWINCH as a fallback for terminals that do not support Mode 2048. The two mechanisms can coexist safely.
+:::
+
+## Examples
+
+```bash
+printf '\e[?2048h'   # Enable in-band resize notifications
+
+# When the terminal is resized to 40 rows by 120 columns:
+#   \e[8;40;120t
+
+printf '\e[?2048l'   # Disable in-band resize notifications
+
+# Query Mode 2048 support via DECRPM:
+printf '\e[?2048$p'
+# Response: CSI ? 2048 ; Ps $ y
+#   Ps=1: set, Ps=2: reset, Ps=0: not recognized
+```
 
 ## Specifications
 
@@ -27,3 +93,8 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [Synchronized Output — Mode 2026](/docs/decset/mode2026-sync-output) — Tear-free rendering
+- [Alt Screen — Mode 1049](/docs/decset/mode1049-altscreen) — Alternate screen buffer

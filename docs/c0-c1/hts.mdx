@@ -6,19 +6,42 @@ feature_id: "hts"
 data_file: "control-sequences"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-ESC H — Set tab stop at current column
+**HTS** (Character Tabulation Set / Horizontal Tab Set) is a C1 control function that sets a tab stop at the current cursor column.
 
 ## Syntax
 
 ```
-TODO: Add syntax for HTS
+ESC H         HTS — Set tab stop (7-bit)
+0x88          HTS — Set tab stop (8-bit C1)
 ```
 
 ## Description
 
-Documentation coming soon.
+Per ECMA-48 §8.3.62, HTS "causes a character tabulation stop to be set at the active presentation position in the presentation component."
+
+After issuing HTS, the current column becomes a tab stop. Subsequent HT (0x09) characters will advance the cursor to this column when the cursor is to its left.
+
+Tab stops persist until explicitly cleared with TBC or until the terminal is reset. The default tab stops (every 8 columns) can be replaced by first clearing all stops with `CSI 3 g` (TBC) and then setting new ones with HTS at each desired position.
+
+:::note
+In 7-bit environments, HTS is sent as `ESC H`. Be careful not to confuse this with `CSI H` (CUP — Cursor Position), which moves the cursor to a specific row and column. The difference is the presence or absence of `[` after ESC.
+:::
+
+## Examples
+
+```bash
+# Set custom tab stops at columns 5, 15, and 30
+printf '\e[3g'              # Clear all tab stops
+printf '\e[5G\eH'           # Move to column 5, set tab stop
+printf '\e[15G\eH'          # Move to column 15, set tab stop
+printf '\e[30G\eH'          # Move to column 30, set tab stop
+```
 
 ## Specifications
 
@@ -27,3 +50,9 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [HT — Horizontal Tab](/docs/c0-c1/ht) — Advance to the next tab stop
+- [TBC — Tabulation Clear](/docs/csi/tbc) — Clear tab stops
+- [CHT/CBT — Cursor Tab Forward/Backward](/docs/csi/cht-cbt) — CSI-based tab movement

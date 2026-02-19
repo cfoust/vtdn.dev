@@ -6,19 +6,43 @@ feature_id: "sgr_hidden"
 data_file: "text-styling"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-SGR 8 — Invisible
+**Hidden** (SGR 8) is an SGR attribute that makes text invisible by rendering it in the same color as the background.
 
 ## Syntax
 
 ```
-TODO: Add syntax for Hidden
+CSI 8 m     SGR 8 — Hidden (concealed)
+CSI 28 m    SGR 28 — Not hidden (revealed)
 ```
+
+<FormalSyntax grammar={`
+SGR-hidden  = 0x1b, "[", "8", "m" ;
+SGR-visible = 0x1b, "[", "28", "m" ;
+`} />
 
 ## Description
 
-Documentation coming soon.
+Per ECMA-48 §8.3.117, SGR parameter 8 selects "concealed characters." The text is still present in the terminal buffer and can be selected/copied, but it is not visually displayed.
+
+Hidden is reset by SGR 28 or SGR 0.
+
+The typical implementation renders the text with the foreground color set to the background color, making it invisible. Some terminals may implement this differently or not support it at all.
+
+:::note
+Hidden text is not a security feature — the text remains in the terminal buffer and is typically accessible via copy/paste or screen scraping.
+:::
+
+## Examples
+
+```bash
+printf '\e[8mHidden text\e[28m Visible text\n'
+```
 
 ## Specifications
 
@@ -27,3 +51,7 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [Reverse video — SGR 7](/docs/sgr/sgr-reverse) — Swap foreground/background

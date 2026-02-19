@@ -6,19 +6,36 @@ feature_id: "ri"
 data_file: "control-sequences"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-ESC M — Reverse index, move cursor up
+**RI** (Reverse Index / Reverse Line Feed) is a C1 control function that moves the cursor up one line in the same column, scrolling the screen down if the cursor is at the top margin of the scrolling region.
 
 ## Syntax
 
 ```
-TODO: Add syntax for RI
+ESC M         RI — Reverse Index (7-bit)
+0x8D          RI — Reverse Index (8-bit C1)
 ```
 
 ## Description
 
-Documentation coming soon.
+Per ECMA-48 §8.3.104, RI "causes the active presentation position to be moved in the presentation component to the corresponding character position of the preceding line."
+
+If the cursor is at the top margin of the scrolling region (set by DECSTBM), the screen scrolls down: all lines within the scrolling region move down one position, the line at the bottom margin is lost, and a new blank line appears at the top margin.
+
+If the cursor is above the scrolling region or on the first line of the display, RI has no effect.
+
+RI is the inverse of IND (Index). Together they provide symmetric single-line scrolling within the scrolling region.
+
+## Examples
+
+```bash
+printf '\eM'     # Move cursor up one line (scroll down if at top margin)
+```
 
 ## Specifications
 
@@ -27,3 +44,9 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [IND — Index](/docs/c0-c1/ind) — Move cursor down one line (the inverse of RI)
+- [SU/SD — Scroll Up/Down](/docs/csi/su-sd) — Scroll by a specified number of lines
+- [DECSTBM — Set Top and Bottom Margins](/docs/csi/decstbm) — Defines the scrolling region

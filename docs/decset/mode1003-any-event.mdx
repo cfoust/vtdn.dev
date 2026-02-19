@@ -6,19 +6,70 @@ feature_id: "mode1003_any_event"
 data_file: "decset-modes"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-Mode 1003 — All motion tracking
+<StatusBadges status={{ experimental: true }} />
+
+**Any-Event Mouse Tracking** (Mode 1003) is a DECSET/DECRST mode that reports all mouse events, including motion with no buttons pressed.
 
 ## Syntax
 
 ```
-TODO: Add syntax for Any-event mouse
+CSI ? 1003 h    DECSET — Enable any-event mouse tracking
+CSI ? 1003 l    DECRST — Disable any-event mouse tracking
 ```
+
+<FormalSyntax grammar={`
+DECSET-mode1003 = 0x1b, "[", "?", "1", "0", "0", "3", "h" ;
+DECRST-mode1003 = 0x1b, "[", "?", "1", "0", "0", "3", "l" ;
+`} />
 
 ## Description
 
-Documentation coming soon.
+Mode 1003 is an XTerm extension that enables the most verbose level of mouse tracking. When enabled, the terminal reports every mouse event: button presses, releases, and all motion, including motion with no buttons held.
+
+- **Set** — The terminal reports all mouse events, including passive motion.
+- **Reset** — Mouse events are not reported. The terminal handles mouse events normally. This is the default.
+
+### Report format
+
+Any-event tracking uses the same report format as Modes 1000 and 1002:
+
+```
+CSI M Cb Cx Cy
+```
+
+Where:
+- `Cb` is the button/event byte: the button number plus modifier flags, plus 32
+- `Cx` is the column (x coordinate) plus 32
+- `Cy` is the row (y coordinate) plus 32
+
+For motion events with no button held, the report uses button value 3 (which normally means "release") with the motion flag (bit 5) set, resulting in `Cb - 32 = 35`.
+
+### Traffic considerations
+
+Mode 1003 generates a report for every cell the mouse cursor crosses, which can produce a substantial volume of input data. For a user moving the mouse across a large terminal, this can mean hundreds of reports per second. Applications should:
+
+- Process mouse events efficiently to avoid input buffer overflow
+- Consider Mode 1002 if only drag tracking is needed
+- Disable Mode 1003 promptly when no longer needed
+
+:::note
+Mode 1003 mutually excludes other mouse tracking modes. Enabling it implicitly disables Mode 1000 and Mode 1002.
+:::
+
+## Examples
+
+```bash
+printf '\e[?1003h'   # Enable any-event mouse tracking
+printf '\e[?1003l'   # Disable any-event mouse tracking
+
+# Combine with SGR encoding for large terminals:
+printf '\e[?1003h\e[?1006h'   # Enable any-event tracking + SGR encoding
+printf '\e[?1006l\e[?1003l'   # Disable both (reverse order)
+```
 
 ## Specifications
 
@@ -27,3 +78,10 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [Normal Mouse Tracking — Mode 1000](/docs/decset/mode1000-mouse-normal) — Press and release tracking only
+- [Button-Event Mouse Tracking — Mode 1002](/docs/decset/mode1002-button-event) — Motion while button is held
+- [SGR Mouse Encoding — Mode 1006](/docs/decset/mode1006-sgr-mouse) — Extended encoding without coordinate limits
+- [SGR-Pixel Mouse — Mode 1016](/docs/decset/mode1016-sgr-pixel) — Pixel-level mouse coordinates

@@ -6,19 +6,78 @@ feature_id: "mode1016_sgr_pixel"
 data_file: "decset-modes"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-Mode 1016 — Pixel coordinates
+<StatusBadges status={{ experimental: true }} />
+
+**SGR-Pixel Mouse** (Mode 1016) is a DECSET/DECRST mode that modifies SGR mouse encoding to report pixel coordinates instead of cell coordinates.
 
 ## Syntax
 
 ```
-TODO: Add syntax for SGR-Pixel mouse
+CSI ? 1016 h    DECSET — Enable SGR-Pixel mouse encoding
+CSI ? 1016 l    DECRST — Disable SGR-Pixel mouse encoding
 ```
+
+<FormalSyntax grammar={`
+DECSET-mode1016 = 0x1b, "[", "?", "1", "0", "1", "6", "h" ;
+DECRST-mode1016 = 0x1b, "[", "?", "1", "0", "1", "6", "l" ;
+`} />
 
 ## Description
 
-Documentation coming soon.
+Mode 1016 is an extension that builds on SGR mouse encoding (Mode 1006) by reporting mouse positions as pixel coordinates rather than cell (row/column) coordinates. This provides sub-cell precision for mouse events.
+
+- **Set** — Mouse events report pixel coordinates.
+- **Reset** — Mouse events report cell coordinates (standard SGR behavior). This is the default.
+
+### Report format
+
+The report format is identical to SGR mouse encoding, but the coordinate values represent pixels instead of cells:
+
+```
+CSI < Cb ; Px ; Py M    (button press or motion)
+CSI < Cb ; Px ; Py m    (button release)
+```
+
+Where:
+- `Cb` is the button number plus modifier flags (same encoding as Mode 1006)
+- `Px` is the x coordinate in pixels (1-based, measured from the left edge of the terminal)
+- `Py` is the y coordinate in pixels (1-based, measured from the top edge of the terminal)
+
+### Requirements
+
+Mode 1016 must be used in combination with:
+1. A mouse tracking mode (Mode 1000, 1002, or 1003) to enable mouse event reporting
+2. SGR encoding (Mode 1006), as Mode 1016 extends the SGR format
+
+### Use cases
+
+Pixel-level coordinates are valuable for:
+- **GUI-like interfaces** that need sub-cell positioning precision
+- **Image protocol interactions** where click targets are positioned at pixel boundaries, not cell boundaries
+- **Custom widget rendering** where elements may not align to the cell grid
+- **Sixel or Kitty graphics** where the application needs to know exactly which pixel was clicked
+
+### Converting between pixel and cell coordinates
+
+Applications can derive cell coordinates from pixel coordinates if they know the cell dimensions. The cell dimensions can be queried using the `CSI 14 t` (report window size in pixels) and `CSI 18 t` (report terminal size in characters) window operations.
+
+## Examples
+
+```bash
+# Enable mouse tracking with SGR-Pixel encoding:
+printf '\e[?1000h\e[?1006h\e[?1016h'
+
+# A click at pixel position (150, 80) produces:
+#   press:   \e[<0;150;80M
+#   release: \e[<0;150;80m
+
+# Disable (reverse order):
+printf '\e[?1016l\e[?1006l\e[?1000l'
+```
 
 ## Specifications
 
@@ -27,3 +86,9 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [SGR Mouse Encoding — Mode 1006](/docs/decset/mode1006-sgr-mouse) — Cell-based SGR encoding
+- [Normal Mouse Tracking — Mode 1000](/docs/decset/mode1000-mouse-normal) — Basic press/release tracking
+- [Any-Event Mouse Tracking — Mode 1003](/docs/decset/mode1003-any-event) — Reports all mouse motion

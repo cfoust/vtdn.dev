@@ -6,19 +6,60 @@ feature_id: "win_resize_chars"
 data_file: "window-manipulation"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-CSI 8;rows;cols t — Resize text area to characters
+<StatusBadges status={{ experimental: true }} />
+
+**Resize (chars)** is an XTerm window manipulation sequence that resizes the terminal window's text area to the specified number of rows and columns.
 
 ## Syntax
 
 ```
-TODO: Add syntax for Resize (chars)
+CSI 8 ; rows ; cols t     Resize text area to character dimensions
 ```
+
+<FormalSyntax grammar={`
+resize_chars = 0x1b, "[", "8", ";", Pn, ";", Pn, "t" ;
+Pn           = digit, { digit } ;
+digit        = "0" | "1" | "2" | "3" | "4"
+             | "5" | "6" | "7" | "8" | "9" ;
+`} />
+
+### Parameters
+
+| Parameter | Description | Default |
+|-----------|-------------|---------|
+| `rows` | Number of character rows in the text area | (unchanged) |
+| `cols` | Number of character columns in the text area | (unchanged) |
 
 ## Description
 
-Documentation coming soon.
+This sequence resizes the terminal window so that the text area contains exactly the specified number of rows and columns. It is part of the XTerm `CSI Ps ; Ps ; Ps t` window manipulation family.
+
+The resulting pixel size depends on the current cell dimensions. For example, resizing to 80 columns by 24 rows with a cell size of 8x16 pixels would produce a text area of 640x384 pixels. The total window size will be larger due to window decorations and padding.
+
+If a parameter is omitted or zero, that dimension should remain unchanged, though behavior varies between implementations. This is the preferred method for resizing a terminal to a standard size (e.g., 80x24 or 132x43) because it operates in the same units that applications use.
+
+The [Text Area Size (chars)](/docs/window/win-text-area-chars) report (`CSI 18 t`) can be used to query the current text area dimensions in characters after resizing.
+
+:::note
+Some terminal emulators disable this sequence by default for security reasons. Check your terminal's configuration for options to enable or disable window manipulation sequences.
+:::
+
+## Examples
+
+```bash
+# Resize to standard 80x24 terminal
+printf '\e[8;24;80t'
+
+# Resize to 132-column mode (DEC wide)
+printf '\e[8;43;132t'
+
+# Resize to 120 columns, 40 rows
+printf '\e[8;40;120t'
+```
 
 ## Specifications
 
@@ -27,3 +68,10 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [Resize (pixels)](/docs/window/win-resize-pixels) — Resize window in pixel dimensions
+- [Text Area Size (chars)](/docs/window/win-text-area-chars) — Query current text area character dimensions
+- [Text Area Size (pixels)](/docs/window/win-text-area-pixels) — Query current text area pixel dimensions
+- [Cell Size](/docs/window/win-cell-size) — Query individual cell pixel dimensions

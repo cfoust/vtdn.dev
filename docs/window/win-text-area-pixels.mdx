@@ -6,19 +6,66 @@ feature_id: "win_text_area_pixels"
 data_file: "window-manipulation"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-CSI 14 t — Text area size in pixels
+<StatusBadges status={{ experimental: true }} />
+
+**Text Area Size (pixels)** is an XTerm window manipulation sequence that queries the pixel dimensions of the terminal's text area.
 
 ## Syntax
 
 ```
-TODO: Add syntax for Text area (pixels)
+CSI 14 t                   Request text area size in pixels
+CSI 14 ; 2 t               Request window size in pixels
+CSI 4 ; height ; width t   Response: pixel dimensions
 ```
+
+<FormalSyntax grammar={`
+(* Request — text area size *)
+text_area_request = 0x1b, "[", "1", "4", "t" ;
+
+(* Request — window size *)
+window_size_request = 0x1b, "[", "1", "4", ";", "2", "t" ;
+
+(* Response *)
+size_response     = 0x1b, "[", "4", ";", Pn, ";", Pn, "t" ;
+Pn                = digit, { digit } ;
+digit             = "0" | "1" | "2" | "3" | "4"
+                  | "5" | "6" | "7" | "8" | "9" ;
+`} />
+
+### Response
+
+| Field | Description |
+|-------|-------------|
+| `height` | Height of the text area in pixels |
+| `width` | Width of the text area in pixels |
 
 ## Description
 
-Documentation coming soon.
+This sequence queries the terminal for the pixel size of the text area or the entire window. It is part of the XTerm `CSI Ps ; Ps ; Ps t` window manipulation family.
+
+- **`CSI 14 t`** — Requests the size of the text area (the region where characters are rendered, excluding window decorations, scroll bars, and padding). The terminal responds with `CSI 4 ; height ; width t`.
+- **`CSI 14 ; 2 t`** — Requests the size of the entire window, including decorations. The terminal responds with the same `CSI 4 ; height ; width t` format.
+
+The response format matches the parameter format of the [Resize (pixels)](/docs/window/win-resize-pixels) sequence (`CSI 4 ; height ; width t`). This symmetry means you can query the current size and later restore it using the same values.
+
+The text area pixel size, combined with the [Cell Size](/docs/window/win-cell-size) report, can be used to calculate the number of character rows and columns, which is equivalent to the [Text Area Size (chars)](/docs/window/win-text-area-chars) report.
+
+## Examples
+
+```bash
+# Query text area size in pixels
+printf '\e[14t'
+
+# Query window size in pixels (including decorations)
+printf '\e[14;2t'
+
+# Read the response
+printf '\e[14t'; read -st 1 -d t response; echo "$response"
+```
 
 ## Specifications
 
@@ -27,3 +74,10 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [Resize (pixels)](/docs/window/win-resize-pixels) — Resize to specific pixel dimensions
+- [Text Area Size (chars)](/docs/window/win-text-area-chars) — Query text area character dimensions
+- [Cell Size](/docs/window/win-cell-size) — Query individual cell pixel dimensions
+- [Window Position Report](/docs/window/win-position-report) — Query window position

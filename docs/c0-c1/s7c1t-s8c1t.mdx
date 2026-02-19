@@ -6,19 +6,42 @@ feature_id: "s7c1t_s8c1t"
 data_file: "control-sequences"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-ESC SP F/G — 7-bit/8-bit control output
+**S7C1T** and **S8C1T** are DEC VT-series sequences that control whether the terminal sends C1 control characters as 7-bit escape sequences or as single 8-bit bytes in its responses.
 
 ## Syntax
 
 ```
-TODO: Add syntax for S7C1T/S8C1T
+ESC SP F      S7C1T — Send C1 controls as 7-bit sequences
+ESC SP G      S8C1T — Send C1 controls as 8-bit single bytes
 ```
 
 ## Description
 
-Documentation coming soon.
+These sequences affect the format of the terminal's responses (e.g., to DA1, DSR, DECRQM queries), not how the terminal interprets input.
+
+### S7C1T — 7-bit mode (ESC SP F)
+
+Per the VT510 manual, S7C1T instructs the terminal to send C1 control characters in their 7-bit escape-sequence form. For example, CSI is sent as `ESC [` (two bytes: 0x1B 0x5B) rather than the single byte 0x9B.
+
+This is the default and most common mode. It is required for compatibility with UTF-8 environments, where bytes in the 0x80-0x9F range are part of multi-byte character sequences and cannot be interpreted as C1 controls.
+
+### S8C1T — 8-bit mode (ESC SP G)
+
+S8C1T instructs the terminal to send C1 control characters as single bytes in the 0x80-0x9F range. For example, CSI is sent as 0x9B (one byte) instead of `ESC [`.
+
+:::warning
+S8C1T is incompatible with UTF-8 encoding, since UTF-8 uses bytes 0x80-0xBF as continuation bytes. Virtually all modern terminals operate in UTF-8 mode and either ignore S8C1T or treat it as a no-op. This mode is only meaningful in legacy 8-bit character set environments (e.g., ISO 8859-x).
+:::
+
+### DA1 response detection
+
+Some applications send a DA1 query (`CSI c`) and examine whether the response begins with `ESC [` or 0x9B to detect whether the terminal is in 7-bit or 8-bit mode.
 
 ## Specifications
 

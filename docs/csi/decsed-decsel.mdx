@@ -6,19 +6,52 @@ feature_id: "decsed_decsel"
 data_file: "csi-sequences"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-CSI ? J/K — Selective erase (respects DECSCA)
+**DECSED** (Selective Erase in Display) and **DECSEL** (Selective Erase in Line) are DEC private-mode variants of ED and EL that only erase characters **not** marked as protected by DECSCA.
 
 ## Syntax
 
 ```
-TODO: Add syntax for DECSED/DECSEL
+CSI ? Ps J    DECSED — Selective Erase in Display
+CSI ? Ps K    DECSEL — Selective Erase in Line
 ```
+
+<FormalSyntax grammar={`
+DECSED = 0x1b, "[", "?", [ Ps ], "J" ;
+DECSEL = 0x1b, "[", "?", [ Ps ], "K" ;
+Ps     = "0" | "1" | "2" ;              (* default: 0 *)
+`} />
+
+### Parameters
+
+| Value | Meaning |
+|-------|---------|
+| `0` | From cursor to end (default) |
+| `1` | From beginning to cursor |
+| `2` | Entire display/line |
 
 ## Description
 
-Documentation coming soon.
+Per the VT510 manual, DECSED and DECSEL function identically to ED and EL respectively, but only erase characters that were written **without** the protected attribute. Characters marked as protected (by DECSCA — Select Character Protection Attribute) are left intact.
+
+The `?` prefix in the sequence distinguishes these from the standard ED (`CSI J`) and EL (`CSI K`).
+
+This feature is used in forms-oriented applications where certain fields (labels, borders) should remain on screen while user-editable areas can be selectively cleared.
+
+## Examples
+
+```bash
+printf '\e[1"q'      # DECSCA: mark subsequent chars as protected
+printf 'Label: '
+printf '\e[0"q'      # DECSCA: mark subsequent chars as erasable
+printf 'user input'
+printf '\e[?2J'      # DECSED: erase only unprotected characters
+```
 
 ## Specifications
 
@@ -27,3 +60,8 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [ED — Erase in Display](/docs/csi/ed) — Non-selective erase
+- [EL — Erase in Line](/docs/csi/el) — Non-selective line erase

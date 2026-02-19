@@ -134,7 +134,8 @@
         "spec_refs": [
           {
             "name": "ECMA-48",
-            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/"
+            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
+            "section": "§8.3.3"
           }
         ]
       }
@@ -268,7 +269,8 @@
         "spec_refs": [
           {
             "name": "ECMA-48",
-            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/"
+            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
+            "section": "§8.3.5"
           }
         ]
       }
@@ -402,7 +404,8 @@
         "spec_refs": [
           {
             "name": "ECMA-48",
-            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/"
+            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
+            "section": "§8.3.60"
           }
         ]
       }
@@ -536,7 +539,8 @@
         "spec_refs": [
           {
             "name": "ECMA-48",
-            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/"
+            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
+            "section": "§8.3.74"
           }
         ]
       }
@@ -670,7 +674,8 @@
         "spec_refs": [
           {
             "name": "ECMA-48",
-            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/"
+            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
+            "section": "§8.3.15"
           }
         ]
       }
@@ -813,7 +818,8 @@
         "spec_refs": [
           {
             "name": "ECMA-48",
-            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/"
+            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
+            "section": "§8.3.119, §8.3.126"
           }
         ]
       }
@@ -956,7 +962,8 @@
         "spec_refs": [
           {
             "name": "ECMA-48",
-            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/"
+            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
+            "section": "§8.3.44"
           }
         ]
       }
@@ -1091,6 +1098,10 @@
           {
             "name": "ECMA-48",
             "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/"
+          },
+          {
+            "name": "VT510 Reference",
+            "url": "https://vt100.net/docs/vt510-rm/IND.html"
           }
         ]
       }
@@ -1224,7 +1235,8 @@
         "spec_refs": [
           {
             "name": "ECMA-48",
-            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/"
+            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
+            "section": "§8.3.86"
           }
         ]
       }
@@ -1359,7 +1371,8 @@
         "spec_refs": [
           {
             "name": "ECMA-48",
-            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/"
+            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
+            "section": "§8.3.62"
           }
         ]
       }
@@ -1493,7 +1506,8 @@
         "spec_refs": [
           {
             "name": "ECMA-48",
-            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/"
+            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
+            "section": "§8.3.104"
           }
         ]
       }
@@ -1637,7 +1651,8 @@
         "spec_refs": [
           {
             "name": "ECMA-48",
-            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/"
+            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
+            "section": "§8.3.141, §8.3.142"
           }
         ]
       }
@@ -1906,6 +1921,11 @@
           {
             "name": "VT510 Reference",
             "url": "https://vt100.net/docs/vt510-rm/RIS.html"
+          },
+          {
+            "name": "ECMA-48",
+            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
+            "section": "§8.3.105"
           }
         ]
       }
@@ -2613,7 +2633,8 @@
         "spec_refs": [
           {
             "name": "ECMA-48",
-            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/"
+            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
+            "section": "§8.3.75–§8.3.81"
           }
         ]
       }

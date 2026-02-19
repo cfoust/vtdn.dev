@@ -6,19 +6,87 @@ feature_id: "osc9_4"
 data_file: "osc-sequences"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-Progress reporting
+<StatusBadges status={{ experimental: true }} />
+
+**OSC 9;4** reports task progress to the terminal, which can display it as a progress indicator in the taskbar, tab bar, or title bar. This enables build tools, package managers, and other long-running commands to provide visual progress feedback.
 
 ## Syntax
 
 ```
-TODO: Add syntax for OSC 9;4
+OSC 9 ; 4 ; st ; pr ST
+OSC 9 ; 4 ; st ; pr BEL
 ```
+
+<FormalSyntax grammar={`
+OSC9_4 = 0x1b, "]", "9", ";", "4", ";", state, ";", progress, ( 0x07 | 0x1b, "\\\\" ) ;
+state    = "0" | "1" | "2" | "3" | "4" ;
+progress = digit, { digit } ;
+digit    = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+`} />
+
+### Parameters
+
+| Parameter | Description | Default |
+|-----------|-------------|---------|
+| `st` | Progress state indicator | (required) |
+| `pr` | Progress percentage (0-100) | (required) |
+
+The `st` (state) parameter controls the visual style of the progress indicator:
+
+| State | Meaning | Description |
+|-------|---------|-------------|
+| `0` | Hidden | Remove/hide the progress indicator |
+| `1` | Default | Normal progress (typically green) |
+| `2` | Error | Error state (typically red) |
+| `3` | Indeterminate | Busy/spinner state with no specific percentage |
+| `4` | Warning | Warning state (typically yellow) |
 
 ## Description
 
-Documentation coming soon.
+Per the Windows Terminal documentation, OSC 9;4 is a sub-command of the ConEmu OSC 9 protocol that allows applications to report progress to the terminal. The terminal can then display this progress in its taskbar button (on Windows), tab bar, or other UI elements.
+
+This mechanism is particularly useful for:
+- **Build systems** reporting compilation progress
+- **Package managers** showing download/install progress
+- **File operations** like copying or compressing large files
+- **CI/CD tools** indicating pipeline stage progress
+
+The progress indicator is typically shown in the operating system's taskbar. On Windows, this appears as a progress bar overlay on the terminal's taskbar icon. On other platforms, the rendering depends on the terminal emulator's implementation.
+
+Setting the state to `0` (hidden) clears the progress indicator and returns the taskbar/tab to its normal appearance.
+
+## Examples
+
+```bash
+# Show 50% progress in default (green) state
+printf '\e]9;4;1;50\a'
+
+# Show completed progress
+printf '\e]9;4;1;100\a'
+
+# Show error state at 75%
+printf '\e]9;4;2;75\a'
+
+# Show indeterminate/busy state
+printf '\e]9;4;3;0\a'
+
+# Show warning at 30%
+printf '\e]9;4;4;30\a'
+
+# Clear the progress indicator
+printf '\e]9;4;0;0\a'
+
+# Simulate a progress bar for a loop
+for i in $(seq 1 100); do
+  printf '\e]9;4;1;%d\a' "$i"
+  sleep 0.05
+done
+printf '\e]9;4;0;0\a'
+```
 
 ## Specifications
 
@@ -27,3 +95,7 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [OSC 9 — Desktop Notification](/docs/osc/osc9) — The parent ConEmu notification protocol

@@ -6,19 +6,66 @@ feature_id: "osc777"
 data_file: "osc-sequences"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-urxvt-style notification
+<StatusBadges status={{ experimental: true }} />
+
+**OSC 777** sends a desktop notification using the format originally introduced by rxvt-unicode (urxvt). The sequence includes a command name, notification title, and notification body.
 
 ## Syntax
 
 ```
-TODO: Add syntax for OSC 777
+OSC 777 ; notify ; title ; body ST
 ```
+
+<FormalSyntax grammar={`
+OSC777 = 0x1b, "]", "777", ";", "notify", ";", title, ";", body, ( 0x07 | 0x1b, "\\\\" ) ;
+title  = { printable-char } ;
+body   = { printable-char } ;
+`} />
+
+### Parameters
+
+| Parameter | Description |
+|-----------|-------------|
+| `notify` | The command name (literal string `notify`). |
+| `title` | The notification title text. |
+| `body` | The notification body text. |
 
 ## Description
 
-Documentation coming soon.
+OSC 777 originated in rxvt-unicode (urxvt) as a general-purpose extension mechanism. The `notify` subcommand triggers a desktop notification with the specified title and body text. The notification is typically displayed using the system's native notification framework (e.g., D-Bus notifications on Linux, Notification Center on macOS).
+
+The general form of OSC 777 is `OSC 777 ; command ; args... ST`, where the command name determines the behavior. The `notify` command is by far the most widely adopted. Other urxvt-specific commands exist but are not commonly supported by other terminals.
+
+### Compared to other notification protocols
+
+| Protocol | Format | Features |
+|----------|--------|----------|
+| OSC 9 | `OSC 9 ; text ST` | Title only, no body |
+| OSC 777 | `OSC 777 ; notify ; title ; body ST` | Title and body |
+| OSC 99 (Kitty) | `OSC 99 ; key=value ST` | Rich: identifiers, callbacks, urgency, multi-part |
+
+OSC 777 offers a middle ground between the minimal OSC 9 (which has no body field) and the feature-rich Kitty OSC 99 protocol. For applications that need a simple title-and-body notification with reasonable terminal compatibility, OSC 777 is a practical choice.
+
+:::note
+Some terminals only display the notification when the terminal window is not focused, to avoid interrupting the user unnecessarily. Behavior may vary.
+:::
+
+## Examples
+
+```bash
+# Send a notification with title and body
+printf '\e]777;notify;Build Complete;Your project has finished compiling.\e\\'
+
+# Notify when a long-running command finishes
+sleep 60 && printf '\e]777;notify;Timer;60 seconds have elapsed.\e\\'
+
+# Using BEL as the string terminator
+printf '\e]777;notify;Alert;Something happened.\a'
+```
 
 ## Specifications
 
@@ -27,3 +74,8 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [OSC 9 — Desktop Notification](/docs/osc/osc9) — Simple notification (title only)
+- [Kitty OSC 99 — Desktop Notifications](/docs/osc/kitty-osc99) — Rich notification protocol

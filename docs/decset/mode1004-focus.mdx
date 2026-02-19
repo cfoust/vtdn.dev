@@ -6,19 +6,75 @@ feature_id: "mode1004_focus"
 data_file: "decset-modes"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-Mode 1004 — CSI I / CSI O
+<StatusBadges status={{ experimental: true }} />
+
+**Focus Events** (Mode 1004) is a DECSET/DECRST mode that causes the terminal to report when it gains or loses input focus.
 
 ## Syntax
 
 ```
-TODO: Add syntax for Focus events
+CSI ? 1004 h    DECSET — Enable focus event reporting
+CSI ? 1004 l    DECRST — Disable focus event reporting
 ```
+
+<FormalSyntax grammar={`
+DECSET-mode1004 = 0x1b, "[", "?", "1", "0", "0", "4", "h" ;
+DECRST-mode1004 = 0x1b, "[", "?", "1", "0", "0", "4", "l" ;
+`} />
 
 ## Description
 
-Documentation coming soon.
+Mode 1004 is an XTerm extension that enables focus event reporting. When enabled, the terminal sends an escape sequence to the application whenever the terminal window gains or loses focus.
+
+- **Set** — The terminal sends focus-in and focus-out events.
+- **Reset** — Focus changes are not reported. This is the default.
+
+### Report format
+
+When focus changes occur, the terminal sends:
+
+| Sequence | Meaning |
+|----------|---------|
+| `CSI I`  | Focus in (terminal gained focus) |
+| `CSI O`  | Focus out (terminal lost focus) |
+
+These are the literal bytes `ESC [ I` (hex `1b 5b 49`) and `ESC [ O` (hex `1b 5b 4f`).
+
+### Common uses
+
+Focus event reporting is useful for applications that need to:
+
+- Refresh their display when regaining focus (e.g., checking for file changes)
+- Pause background activity when the terminal is not in focus
+- Change cursor appearance or status bar indicators based on focus state
+- Implement "smart paste" behavior by detecting when the terminal regains focus after a clipboard operation
+
+### Interaction with multiplexers
+
+Terminal multiplexers like tmux and screen can synthesize focus events for individual panes. When the user switches between panes, the multiplexer sends focus-out to the old pane and focus-in to the new pane, even though the outer terminal window focus has not changed.
+
+:::note
+The `CSI O` focus-out sequence can conflict with SS3 (Single Shift 3) sequences if the application is not careful to distinguish them by context. Applications should only interpret `CSI O` as a focus event when Mode 1004 is enabled.
+:::
+
+## Examples
+
+```bash
+printf '\e[?1004h'   # Enable focus event reporting
+printf '\e[?1004l'   # Disable focus event reporting
+
+# In a shell script, read focus events:
+printf '\e[?1004h'
+while IFS= read -r -n1 char; do
+  # Parse incoming sequences for CSI I and CSI O
+  :
+done
+printf '\e[?1004l'
+```
 
 ## Specifications
 
@@ -27,3 +83,8 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [Normal Mouse Tracking — Mode 1000](/docs/decset/mode1000-mouse-normal) — Mouse event reporting
+- [Bracketed Paste — Mode 2004](/docs/decset/mode2004-bracketed-paste) — Another input-wrapping mode

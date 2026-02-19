@@ -6,19 +6,73 @@ feature_id: "mode2027_grapheme"
 data_file: "decset-modes"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-Mode 2027 — UAX #29
+<StatusBadges status={{ experimental: true }} />
+
+**Grapheme Clustering** (Mode 2027) is a DECSET/DECRST mode that switches the terminal from legacy `wcwidth`-based character width calculation to Unicode grapheme cluster segmentation as defined by UAX #29.
 
 ## Syntax
 
 ```
-TODO: Add syntax for Grapheme clustering
+CSI ? 2027 h    DECSET — Enable grapheme clustering
+CSI ? 2027 l    DECRST — Disable grapheme clustering (use legacy wcwidth)
 ```
+
+<FormalSyntax grammar={`
+DECSET-mode2027 = 0x1b, "[", "?", "2", "0", "2", "7", "h" ;
+DECRST-mode2027 = 0x1b, "[", "?", "2", "0", "2", "7", "l" ;
+`} />
 
 ## Description
 
-Documentation coming soon.
+Mode 2027 controls how the terminal determines the display width of characters and character sequences. This directly affects the rendering of emoji, combining characters, and other complex Unicode sequences.
+
+- **Set** — The terminal uses Unicode grapheme cluster segmentation (UAX #29) to determine character boundaries and widths. Multi-codepoint sequences that form a single grapheme cluster occupy the expected number of cells.
+- **Reset** — The terminal uses the legacy `wcwidth`/`wcswidth` approach, evaluating each codepoint individually. This is the default.
+
+### The problem with legacy width calculation
+
+The traditional `wcwidth` function assigns a width (1 or 2 cells) to each individual Unicode codepoint. This fails for modern Unicode in several ways:
+
+- **Emoji sequences** — A family emoji like `\U0001F468\u200D\U0001F469\u200D\U0001F467` (joined with Zero-Width Joiners) should display as a single glyph occupying 2 cells, but `wcwidth` counts each codepoint separately.
+- **Combining characters** — A base character followed by combining marks (e.g., `e\u0301` for "e with acute accent") should occupy 1 cell, but naive processing may allocate extra space.
+- **Flag sequences** — Regional indicator pairs (e.g., `\U0001F1FA\U0001F1F8` for a US flag) should be a single 2-cell glyph.
+- **Variation selectors** — `\u2764\uFE0F` (red heart with emoji presentation selector) should be 2 cells wide, not 1.
+
+### Grapheme cluster segmentation
+
+When Mode 2027 is enabled, the terminal applies UAX #29 rules to identify grapheme cluster boundaries, then determines the width of each cluster as a whole. This means:
+
+- Emoji ZWJ sequences are treated as single glyphs
+- Combining character sequences are properly grouped
+- Regional indicator pairs form single flag glyphs
+- Variation selectors modify the width of the preceding character
+
+### Application considerations
+
+Applications that enable Mode 2027 must also use grapheme-cluster-aware width calculations internally. If the application uses `wcwidth` while the terminal uses grapheme clustering (or vice versa), the cursor position will drift, causing display corruption.
+
+:::note
+Mode 2027 is a relatively recent proposal. Applications should query the terminal's support for this mode before enabling it, using DECRPM (Mode 2027 query) or checking the terminal's reported capabilities.
+:::
+
+## Examples
+
+```bash
+printf '\e[?2027h'   # Enable grapheme clustering
+printf '\e[?2027l'   # Disable grapheme clustering
+
+# With Mode 2027 enabled, this emoji sequence occupies 2 cells:
+printf '\U0001F468\u200D\U0001F469\u200D\U0001F467'
+
+# Query whether Mode 2027 is supported (DECRPM):
+printf '\e[?2027$p'
+# Response: CSI ? 2027 ; Ps $ y
+#   Ps=1: set, Ps=2: reset, Ps=0: not recognized
+```
 
 ## Specifications
 
@@ -27,3 +81,8 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [Color Scheme Reporting — Mode 2031](/docs/decset/mode2031-color-scheme) — Another modern terminal capability mode
+- [SGR Mouse Encoding — Mode 1006](/docs/decset/mode1006-sgr-mouse) — Extended encoding for modern terminals

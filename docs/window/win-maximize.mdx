@@ -6,19 +6,66 @@ feature_id: "win_maximize"
 data_file: "window-manipulation"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-CSI 9;Ps t — Maximize / restore window
+<StatusBadges status={{ experimental: true }} />
+
+**Maximize** is an XTerm window manipulation sequence that maximizes or restores the terminal window, with options for full, vertical-only, or horizontal-only maximization.
 
 ## Syntax
 
 ```
-TODO: Add syntax for Maximize
+CSI 9 ; Ps t     Maximize or restore window
 ```
+
+<FormalSyntax grammar={`
+maximize = 0x1b, "[", "9", ";", Ps, "t" ;
+Ps       = "0" | "1" | "2" | "3" ;
+`} />
+
+### Parameters
+
+| Value | Description |
+|-------|-------------|
+| `0` | Restore (un-maximize) the window |
+| `1` | Maximize the window (fill the screen) |
+| `2` | Maximize the window vertically (full height, keep current width) |
+| `3` | Maximize the window horizontally (full width, keep current height) |
 
 ## Description
 
-Documentation coming soon.
+This sequence controls the maximized state of the terminal window. It is part of the XTerm `CSI Ps ; Ps ; Ps t` window manipulation family.
+
+- **`CSI 9 ; 0 t`** — Restores the window to its size and position before it was maximized.
+- **`CSI 9 ; 1 t`** — Maximizes the window to fill the entire screen (or the work area, excluding taskbars and docks).
+- **`CSI 9 ; 2 t`** — Maximizes the window vertically only. The window expands to full screen height while retaining its current width and horizontal position.
+- **`CSI 9 ; 3 t`** — Maximizes the window horizontally only. The window expands to full screen width while retaining its current height and vertical position.
+
+The vertical and horizontal maximize modes can be combined by issuing both sequences in succession.
+
+This is distinct from [Fullscreen](/docs/window/win-fullscreen) mode, which removes window decorations and typically covers the entire display including taskbars.
+
+:::note
+Some terminal emulators disable these sequences by default for security reasons. Check your terminal's configuration for options to enable or disable window manipulation sequences. Partial maximization (vertical/horizontal only) may not be supported by all terminals.
+:::
+
+## Examples
+
+```bash
+# Maximize the window
+printf '\e[9;1t'
+
+# Restore the window
+printf '\e[9;0t'
+
+# Maximize vertically only
+printf '\e[9;2t'
+
+# Maximize horizontally only
+printf '\e[9;3t'
+```
 
 ## Specifications
 
@@ -27,3 +74,10 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [Fullscreen](/docs/window/win-fullscreen) — Enter or exit fullscreen mode
+- [Resize (chars)](/docs/window/win-resize-chars) — Resize to specific character dimensions
+- [Resize (pixels)](/docs/window/win-resize-pixels) — Resize to specific pixel dimensions
+- [Iconify](/docs/window/win-iconify) — Minimize or restore the window

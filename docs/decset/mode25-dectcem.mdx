@@ -6,19 +6,59 @@ feature_id: "mode25_dectcem"
 data_file: "decset-modes"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-Mode 25 — Show/hide text cursor
+**DECTCEM** (Mode 25) is a DECSET/DECRST mode that controls whether the text cursor is visible on screen.
 
 ## Syntax
 
 ```
-TODO: Add syntax for DECTCEM
+CSI ? 25 h    DECSET — Show cursor
+CSI ? 25 l    DECRST — Hide cursor
 ```
+
+<FormalSyntax grammar={`
+DECSET-mode25 = 0x1b, "[", "?", "2", "5", "h" ;
+DECRST-mode25 = 0x1b, "[", "?", "2", "5", "l" ;
+`} />
 
 ## Description
 
-Documentation coming soon.
+Per the VT220 Programmer Reference and VT510 Programmer Reference, DECTCEM (Text Cursor Enable Mode) controls the visibility of the text cursor.
+
+- **Set** — The cursor is visible. This is the default.
+- **Reset** — The cursor is hidden. The cursor position is still tracked internally and all positioning sequences continue to work; the cursor is simply not rendered on screen.
+
+### Common uses
+
+Hiding the cursor is one of the most commonly used DECSET modes. Applications hide the cursor to:
+
+- Prevent the cursor from flickering during screen updates
+- Create a cleaner visual display for status bars, menus, or animations
+- Avoid distracting cursor artifacts when drawing full-screen interfaces
+
+Well-behaved applications should always restore cursor visibility (DECSET mode 25) before exiting. Many terminal multiplexers and shell prompts reset this mode to ensure the cursor is visible.
+
+:::note
+DECTCEM only controls whether the cursor is drawn. It does not affect the cursor position, which continues to be tracked. Sequences like CUP and DSR/CPR still work correctly when the cursor is hidden.
+:::
+
+## Examples
+
+```bash
+printf '\e[?25l'     # Hide the cursor
+printf '\e[?25h'     # Show the cursor
+
+# Hide cursor during a screen update
+printf '\e[?25l'     # Hide cursor
+printf '\e[2J\e[H'   # Clear screen and move home
+# ... draw the interface ...
+printf '\e[?25h'     # Show cursor when done
+```
 
 ## Specifications
 
@@ -27,3 +67,8 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [DECSCUSR — Set Cursor Style](/docs/csi/decscusr) — Change cursor shape (block, underline, bar)
+- [Blink Cursor — Mode 12](/docs/decset/mode12-blink-cursor) — Toggle cursor blinking

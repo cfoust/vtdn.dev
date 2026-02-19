@@ -6,19 +6,75 @@ feature_id: "osc11"
 data_file: "osc-sequences"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-Set/query default background color
+<StatusBadges status={{ experimental: true }} />
+
+**OSC 11** sets or queries the terminal's default background color. This is the color displayed behind all text in the terminal window.
 
 ## Syntax
 
 ```
-TODO: Add syntax for OSC 11
+OSC 11 ; spec ST      Set default background color
+OSC 11 ; ? ST         Query current background color
 ```
+
+<FormalSyntax grammar={`
+OSC11_set   = 0x1b, "]", "11", ";", color_spec, ( 0x07 | 0x1b, "\\\\" ) ;
+OSC11_query = 0x1b, "]", "11", ";", "?", ( 0x07 | 0x1b, "\\\\" ) ;
+color_spec  = "rgb:", hex, "/", hex, "/", hex ;
+hex         = hex_digit, hex_digit, [ hex_digit, hex_digit ] ;
+hex_digit   = digit | "a" | "b" | "c" | "d" | "e" | "f"
+            | "A" | "B" | "C" | "D" | "E" | "F" ;
+digit       = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+`} />
+
+### Parameters
+
+| Parameter | Description | Default |
+|-----------|-------------|---------|
+| `spec` | Color specification in X11 format (e.g., `rgb:RR/GG/BB`) or `?` to query | (required) |
+
+### Response
+
+When queried with `?`, the terminal responds with the current background color:
+
+```
+OSC 11 ; rgb:RRRR/GGGG/BBBB ST
+```
+
+The response uses 16-bit color components (four hex digits per channel).
 
 ## Description
 
-Documentation coming soon.
+Per the XTerm control sequences documentation, OSC 11 controls the VT100 text background color. The color specification uses the same X11 color syntax as [OSC 4](/docs/osc/osc4) and [OSC 10](/docs/osc/osc10).
+
+The query form (`OSC 11 ; ?`) is one of the most widely used dynamic color queries. Applications such as Vim, Neovim, and tmux use it to detect the terminal's background color and determine whether a dark or light color scheme is in use. The luminance of the returned RGB value is compared against a threshold to decide the appropriate color palette for the application.
+
+Changes made with OSC 11 take effect immediately and affect the entire terminal background. This includes areas where no text has been written (the "empty" portions of the screen).
+
+:::note
+Some terminals allow the user to lock their background color, preventing OSC 11 from modifying it. The query form may still work in such cases.
+:::
+
+## Examples
+
+```bash
+# Set background to black
+printf '\e]11;rgb:00/00/00\e\\'
+
+# Set background to a dark blue
+printf '\e]11;rgb:1a/1b/2e\a'
+
+# Query current background color
+printf '\e]11;?\e\\'
+
+# Detect dark vs light mode by examining the response
+# Response will be like: \e]11;rgb:0000/0000/0000\e\\
+printf '\e]11;?\a'
+```
 
 ## Specifications
 
@@ -27,3 +83,9 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [OSC 10 — Set/Query Default Foreground Color](/docs/osc/osc10) — Sets or queries the default foreground (text) color
+- [OSC 12 — Set/Query Cursor Color](/docs/osc/osc12) — Sets or queries the cursor color
+- [OSC 4 — Change/Query Color Palette](/docs/osc/osc4) — Sets or queries indexed palette colors

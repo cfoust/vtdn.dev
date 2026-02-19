@@ -6,19 +6,57 @@ feature_id: "win_resize_pixels"
 data_file: "window-manipulation"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-CSI 4;h;w t — Resize window to pixels
+<StatusBadges status={{ experimental: true }} />
+
+**Resize (pixels)** is an XTerm window manipulation sequence that resizes the terminal window's text area to the specified pixel dimensions.
 
 ## Syntax
 
 ```
-TODO: Add syntax for Resize (pixels)
+CSI 4 ; height ; width t     Resize text area to pixel dimensions
 ```
+
+<FormalSyntax grammar={`
+resize_pixels = 0x1b, "[", "4", ";", Pn, ";", Pn, "t" ;
+Pn            = digit, { digit } ;
+digit         = "0" | "1" | "2" | "3" | "4"
+              | "5" | "6" | "7" | "8" | "9" ;
+`} />
+
+### Parameters
+
+| Parameter | Description | Default |
+|-----------|-------------|---------|
+| `height` | Height of the text area in pixels | (unchanged) |
+| `width` | Width of the text area in pixels | (unchanged) |
 
 ## Description
 
-Documentation coming soon.
+This sequence resizes the terminal window so that the text area (the region where characters are rendered, excluding window decorations such as title bars, scroll bars, and borders) occupies the specified pixel dimensions. It is part of the XTerm `CSI Ps ; Ps ; Ps t` window manipulation family.
+
+The total window size will be larger than the specified dimensions due to window decorations and padding. If a parameter is omitted or zero, that dimension should remain unchanged, though behavior varies between implementations.
+
+The resulting character grid size depends on the current cell dimensions. For example, resizing to 800x600 pixels with a cell size of 8x16 pixels would yield a 100-column by 37-row grid (with some remainder pixels as padding).
+
+The [Text Area Size (pixels)](/docs/window/win-text-area-pixels) report (`CSI 14 t`) can be used to query the current text area size in pixels after resizing.
+
+:::note
+Some terminal emulators disable this sequence by default for security reasons. Check your terminal's configuration for options to enable or disable window manipulation sequences.
+:::
+
+## Examples
+
+```bash
+# Resize text area to 800x600 pixels
+printf '\e[4;600;800t'
+
+# Resize text area to 1024x768 pixels
+printf '\e[4;768;1024t'
+```
 
 ## Specifications
 
@@ -27,3 +65,10 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [Resize (chars)](/docs/window/win-resize-chars) — Resize window in character dimensions
+- [Text Area Size (pixels)](/docs/window/win-text-area-pixels) — Query current text area pixel dimensions
+- [Cell Size](/docs/window/win-cell-size) — Query individual cell pixel dimensions
+- [Move Window](/docs/window/win-move) — Move window to a pixel position

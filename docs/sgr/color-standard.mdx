@@ -6,19 +6,83 @@ feature_id: "color_standard"
 data_file: "text-styling"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-SGR 30–37, 40–47, 90–97, 100–107 — 8+8 colors
+**Standard ANSI colors** use SGR parameters to set the foreground and background to one of 8 normal or 8 bright colors.
 
 ## Syntax
 
 ```
-TODO: Add syntax for Standard ANSI colors
+CSI 30-37 m       SGR — Set foreground to standard color
+CSI 39 m          SGR — Reset foreground to default
+CSI 40-47 m       SGR — Set background to standard color
+CSI 49 m          SGR — Reset background to default
+CSI 90-97 m       SGR — Set foreground to bright color
+CSI 100-107 m     SGR — Set background to bright color
 ```
+
+<FormalSyntax grammar={`
+SGR-fg-color      = 0x1b, "[", fg-code, "m" ;
+SGR-bg-color      = 0x1b, "[", bg-code, "m" ;
+SGR-fg-bright     = 0x1b, "[", fg-bright-code, "m" ;
+SGR-bg-bright     = 0x1b, "[", bg-bright-code, "m" ;
+SGR-fg-default    = 0x1b, "[", "39", "m" ;
+SGR-bg-default    = 0x1b, "[", "49", "m" ;
+fg-code           = "30" | "31" | "32" | "33" | "34" | "35" | "36" | "37" ;
+bg-code           = "40" | "41" | "42" | "43" | "44" | "45" | "46" | "47" ;
+fg-bright-code    = "90" | "91" | "92" | "93" | "94" | "95" | "96" | "97" ;
+bg-bright-code    = "100" | "101" | "102" | "103" | "104" | "105" | "106" | "107" ;
+`} />
+
+### Parameters
+
+**Foreground colors (30-37):**
+
+| Code | Color |
+|------|-------|
+| `30` | Black |
+| `31` | Red |
+| `32` | Green |
+| `33` | Yellow |
+| `34` | Blue |
+| `35` | Magenta |
+| `36` | Cyan |
+| `37` | White |
+| `39` | Default foreground |
+
+**Background colors (40-47):**
+
+| Code | Color |
+|------|-------|
+| `40`-`47` | Same colors as 30-37 |
+| `49` | Default background |
+
+**Bright colors (90-97, 100-107):**
+
+The bright/intense color variants. Codes 90-97 set bright foreground; 100-107 set bright background.
 
 ## Description
 
-Documentation coming soon.
+Per ECMA-48 §8.3.117, SGR parameters 30-37 set the foreground display color and 40-47 set the background color. ECMA-48 defines these as: black (30/40), red (31/41), green (32/42), yellow (33/43), blue (34/44), magenta (35/45), cyan (36/46), and white (37/47).
+
+The bright color ranges (90-97 for foreground, 100-107 for background) are not part of ECMA-48 but are a widely supported extension originally from AIXTerm. They provide access to the "bright" or "intense" versions of the 8 standard colors without requiring the bold attribute.
+
+SGR 39 and 49 reset the foreground and background to their default colors respectively. SGR 0 resets all colors and attributes.
+
+The actual RGB values for these colors are not standardized and vary between terminals. Most terminals allow users to customize them.
+
+## Examples
+
+```bash
+printf '\e[31mRed text\e[0m\n'
+printf '\e[32;43mGreen on yellow\e[0m\n'
+printf '\e[91mBright red text\e[0m\n'
+printf '\e[97;104mBright white on bright blue\e[0m\n'
+```
 
 ## Specifications
 
@@ -27,3 +91,8 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [256-color indexed](/docs/sgr/color-256) — Extended 256-color palette
+- [24-bit truecolor (semicolons)](/docs/sgr/truecolor-semicolon) — RGB color support

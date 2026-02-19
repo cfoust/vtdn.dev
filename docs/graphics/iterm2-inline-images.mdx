@@ -6,19 +6,114 @@ feature_id: "iterm2_inline_images"
 data_file: "graphics"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-OSC 1337 ; File=...
+<StatusBadges status={{ experimental: true }} />
+
+**iTerm2 inline images** is an image display protocol that transmits base64-encoded image data using an OSC 1337 sequence. It supports automatic format detection, flexible sizing in cells, pixels, or percentages, and aspect ratio preservation.
 
 ## Syntax
 
 ```
-TODO: Add syntax for iTerm2 inline images
+OSC 1337 ; File=[params] : base64-data ST      Display inline image
 ```
+
+<FormalSyntax grammar={`
+iterm2-image = 0x1b, "]", "1337", ";", "File=", params, ":", data, ( 0x07 | 0x1b, "\\\\" ) ;
+params       = param, { ";", param } ;
+param        = key, "=", value ;
+key          = "name" | "size" | "width" | "height" | "preserveAspectRatio" | "inline" ;
+value        = char, { char } ;
+data         = base64-char, { base64-char } ;
+base64-char  = "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J"
+             | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T"
+             | "U" | "V" | "W" | "X" | "Y" | "Z"
+             | "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j"
+             | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t"
+             | "u" | "v" | "w" | "x" | "y" | "z"
+             | "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+             | "+" | "/" | "=" ;
+char         = ? any printable ASCII character except ";" and ":" ? ;
+`} />
+
+### Parameters
+
+| Parameter | Description | Default |
+|-----------|-------------|---------|
+| `name` | Base64-encoded filename. Used for display purposes and to determine file type. | (empty) |
+| `size` | Size of the raw (pre-base64) file data in bytes. Optional but improves performance. | (auto) |
+| `width` | Display width. Accepts `N` (cells), `Npx` (pixels), or `N%` (percent of terminal width). `auto` uses the image's native size. | `auto` |
+| `height` | Display height. Accepts `N` (cells), `Npx` (pixels), or `N%` (percent of terminal height). `auto` uses the image's native size. | `auto` |
+| `preserveAspectRatio` | `0` to stretch the image to fill the specified dimensions; `1` to maintain the aspect ratio and fit within the bounds. | `1` |
+| `inline` | `1` to display the image inline at the cursor position. `0` to download the file (not displayed). | `0` |
+
+**Width/height dimension formats:**
+
+| Format | Example | Meaning |
+|--------|---------|---------|
+| `N` | `width=5` | N terminal character cells |
+| `Npx` | `width=200px` | N pixels |
+| `N%` | `width=50%` | N percent of the terminal's width or height |
+| `auto` | `width=auto` | Use the image's native dimension |
 
 ## Description
 
-Documentation coming soon.
+The iTerm2 inline image protocol provides a straightforward way to display images in the terminal. The entire image is sent as a single base64-encoded blob within an OSC sequence. The terminal auto-detects the image format (PNG, JPEG, GIF, BMP, TIFF, etc.) from the file data.
+
+### Inline vs. download mode
+
+The `inline` parameter controls whether the image is displayed in the terminal or treated as a file download:
+
+- **`inline=1`**: The image is rendered at the current cursor position. The cursor advances past the image after display.
+- **`inline=0`** (default): The file is saved/downloaded but not displayed. This mode is intended for file transfer, not image display. Most use cases want `inline=1`.
+
+### Sizing behavior
+
+When both `width` and `height` are set to `auto` (the default), the image is displayed at its native pixel size, occupying however many terminal cells that requires. When explicit dimensions are given, the terminal scales the image to fit.
+
+If `preserveAspectRatio=1` (the default), the image is scaled to fit within the bounding box defined by `width` and `height` while maintaining its proportions. If `preserveAspectRatio=0`, the image is stretched to exactly fill the specified dimensions.
+
+### Filename
+
+The `name` parameter is base64-encoded. It is primarily used for the download mode (`inline=0`) to suggest a filename, but terminals may also use it for tooltip display or format detection.
+
+:::note
+The entire image payload must be sent as a single OSC sequence. Unlike the Kitty graphics protocol, there is no chunked transfer mechanism. Very large images may exceed the terminal's maximum OSC string length, causing the sequence to be discarded.
+:::
+
+## Examples
+
+```bash
+# Display a PNG image inline, auto-sized
+printf '\e]1337;File=inline=1:'
+base64 < image.png | tr -d '\n'
+printf '\a'
+
+# Display an image at 80 columns wide, preserving aspect ratio
+printf '\e]1337;File=inline=1;width=80:'
+base64 < photo.jpg | tr -d '\n'
+printf '\a'
+
+# Display at 50% of terminal width
+printf '\e]1337;File=inline=1;width=50%%:'
+base64 < diagram.png | tr -d '\n'
+printf '\a'
+
+# Display at exactly 200x100 pixels, stretched
+printf '\e]1337;File=inline=1;width=200px;height=100px;preserveAspectRatio=0:'
+base64 < icon.png | tr -d '\n'
+printf '\a'
+
+# One-liner with printf (small image)
+printf '\e]1337;File=inline=1;width=10;height=5:%s\a' "$(base64 < small.png | tr -d '\n')"
+
+# Include a filename
+printf '\e]1337;File=name=%s;inline=1:%s\a' \
+  "$(echo -n 'photo.jpg' | base64)" \
+  "$(base64 < photo.jpg | tr -d '\n')"
+```
 
 ## Specifications
 
@@ -27,3 +122,8 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [Kitty graphics protocol](/docs/graphics/kitty-graphics) -- Modern graphics protocol with chunked transfers and image IDs
+- [Sixel graphics](/docs/graphics/sixel) -- Legacy bitmap graphics protocol

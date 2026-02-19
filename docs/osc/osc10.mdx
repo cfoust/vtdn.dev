@@ -6,19 +6,71 @@ feature_id: "osc10"
 data_file: "osc-sequences"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-Set/query default foreground color
+<StatusBadges status={{ experimental: true }} />
+
+**OSC 10** sets or queries the terminal's default foreground (text) color. This is the color used for text that has not been explicitly colored with SGR attributes.
 
 ## Syntax
 
 ```
-TODO: Add syntax for OSC 10
+OSC 10 ; spec ST      Set default foreground color
+OSC 10 ; ? ST         Query current foreground color
 ```
+
+<FormalSyntax grammar={`
+OSC10_set   = 0x1b, "]", "10", ";", color_spec, ( 0x07 | 0x1b, "\\\\" ) ;
+OSC10_query = 0x1b, "]", "10", ";", "?", ( 0x07 | 0x1b, "\\\\" ) ;
+color_spec  = "rgb:", hex, "/", hex, "/", hex ;
+hex         = hex_digit, hex_digit, [ hex_digit, hex_digit ] ;
+hex_digit   = digit | "a" | "b" | "c" | "d" | "e" | "f"
+            | "A" | "B" | "C" | "D" | "E" | "F" ;
+digit       = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+`} />
+
+### Parameters
+
+| Parameter | Description | Default |
+|-----------|-------------|---------|
+| `spec` | Color specification in X11 format (e.g., `rgb:RR/GG/BB`) or `?` to query | (required) |
+
+### Response
+
+When queried with `?`, the terminal responds with the current foreground color:
+
+```
+OSC 10 ; rgb:RRRR/GGGG/BBBB ST
+```
+
+The response uses 16-bit color components (four hex digits per channel).
 
 ## Description
 
-Documentation coming soon.
+Per the XTerm control sequences documentation, OSC 10 controls the VT100 text foreground color, also known as the "dynamic color" for the default foreground. The color specification uses the same X11 color syntax as [OSC 4](/docs/osc/osc4), most commonly `rgb:RR/GG/BB`.
+
+The query form (`OSC 10 ; ?`) is commonly used by applications to detect the terminal's current color scheme. By querying both OSC 10 (foreground) and [OSC 11](/docs/osc/osc11) (background), an application can determine whether the terminal is using a light or dark theme and adapt its output accordingly.
+
+Changes made with OSC 10 take effect immediately and affect all text rendered with the default foreground color. Text that has been explicitly colored with SGR sequences is not affected.
+
+## Examples
+
+```bash
+# Set foreground to white
+printf '\e]10;rgb:ff/ff/ff\e\\'
+
+# Set foreground to a light gray
+printf '\e]10;rgb:cc/cc/cc\a'
+
+# Query current foreground color
+printf '\e]10;?\e\\'
+
+# Detect dark/light theme by querying background color
+# (parse the response to determine brightness)
+printf '\e]10;?\a'
+```
 
 ## Specifications
 
@@ -27,3 +79,9 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [OSC 11 — Set/Query Default Background Color](/docs/osc/osc11) — Sets or queries the default background color
+- [OSC 12 — Set/Query Cursor Color](/docs/osc/osc12) — Sets or queries the cursor color
+- [OSC 4 — Change/Query Color Palette](/docs/osc/osc4) — Sets or queries indexed palette colors

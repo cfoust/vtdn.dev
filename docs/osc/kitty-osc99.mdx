@@ -6,19 +6,84 @@ feature_id: "kitty_osc99"
 data_file: "osc-sequences"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-Desktop notifications (rich)
+<StatusBadges status={{ experimental: true }} />
+
+**Kitty OSC 99** is a desktop notification protocol that supports rich notifications with titles, bodies, buttons, and other metadata. It supersedes simpler notification mechanisms like OSC 9 and OSC 777 by providing structured key-value parameters.
 
 ## Syntax
 
 ```
-TODO: Add syntax for Kitty OSC 99
+OSC 99 ; key=value ; key=value ST                Simple notification
+OSC 99 ; d=0 ; key=value ; key=value ST          Start of multi-part notification
+OSC 99 ; d=1 ; key=value ST                      Continuation payload
+OSC 99 ; d=2 ; key=value ST                      End of multi-part notification
 ```
+
+<FormalSyntax grammar={`
+OSC99       = 0x1b, "]", "99", ";", param, { ";", param }, ( 0x07 | 0x1b, "\\\\" ) ;
+param       = key, "=", value ;
+key         = letter, { letter | digit | "_" } ;
+value       = { printable-char } ;
+letter      = "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j"
+            | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t"
+            | "u" | "v" | "w" | "x" | "y" | "z"
+            | "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J"
+            | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T"
+            | "U" | "V" | "W" | "X" | "Y" | "Z" ;
+digit       = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+`} />
+
+### Parameters
+
+| Key | Description |
+|-----|-------------|
+| `d` | Delivery mode: absent or omitted for a complete notification; `0` to start a multi-part notification; `1` for continuation; `2` for the final part. |
+| `p` | Payload type: `title` or `body`. Determines which field the text in this part applies to. |
+| `i` | Notification identifier (string). Used to update or close an existing notification. |
+| `e` | Event handling: `0` (default) for no callback, `1` to report when the notification is activated or closed. |
+| `o` | Urgency/type: `always` to show even if the window is focused, `unfocused` (default) to show only when the terminal is not focused, `never` to suppress. |
+| `a` | Action: `focus` to focus the terminal window when the notification is activated. |
+| `f` | Flags for close behavior and other options. |
+
+### Payload
+
+The notification body text follows the last `;` separator. For simple notifications, it appears directly in the sequence. For multi-part notifications, the text is split across multiple OSC 99 sequences using the `d` parameter to indicate continuation.
 
 ## Description
 
-Documentation coming soon.
+The kitty notification protocol provides a structured way for terminal applications to send desktop notifications. It was designed to replace the ad-hoc OSC 9 and OSC 777 notification sequences with a more capable and well-defined protocol.
+
+Key features of the protocol:
+
+- **Multi-part payloads** -- Long notification bodies can be split across multiple escape sequences, avoiding terminal input buffer limits.
+- **Notification identifiers** -- Each notification can have an `i` identifier, allowing the application to update the notification text or close it programmatically.
+- **Event callbacks** -- When `e=1` is set, the terminal reports back to the application when the user interacts with or dismisses the notification.
+- **Focus control** -- The `o` parameter controls whether notifications appear when the terminal window is focused, preventing unnecessary interruptions.
+
+:::note
+While this protocol originated in kitty, other terminals may implement it as well. Applications seeking broad compatibility may want to detect the terminal type and fall back to OSC 9 or OSC 777 for terminals that do not support OSC 99.
+:::
+
+## Examples
+
+```bash
+# Simple notification with title and body
+printf '\e]99;i=1;p=title;Hello\e\\'
+printf '\e]99;i=1;p=body;This is the notification body\e\\'
+
+# Single-part notification (body only, shown as both title and body)
+printf '\e]99;;Build complete!\e\\'
+
+# Notification that only appears when terminal is unfocused
+printf '\e]99;o=unfocused;p=title;Background Task;p=body;Process finished\e\\'
+
+# Close a notification by identifier
+printf '\e]99;i=1;p=close\e\\'
+```
 
 ## Specifications
 
@@ -27,3 +92,8 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [OSC 9 — Desktop Notification](/docs/osc/osc9) — Simple notification (title only)
+- [OSC 777 — urxvt-style Notification](/docs/osc/osc777) — urxvt notification protocol

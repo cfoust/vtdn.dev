@@ -6,19 +6,51 @@ feature_id: "underline_curly"
 data_file: "text-styling"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-SGR 4:3 — Wavy underline
+<StatusBadges status={{ experimental: true }} />
+
+**Curly underline** (SGR 4:3) is an extended underline style that renders a wavy or curly line below the text.
 
 ## Syntax
 
 ```
-TODO: Add syntax for Curly underline
+CSI 4:3 m    SGR 4:3 — Curly/wavy underline
+CSI 24 m     SGR 24 — Not underlined
 ```
+
+<FormalSyntax grammar={`
+SGR-curly-underline = 0x1b, "[", "4:3", "m" ;
+SGR-not-underline   = 0x1b, "[", "24", "m" ;
+`} />
 
 ## Description
 
-Documentation coming soon.
+SGR 4:3 selects a curly (wavy) underline style using the sub-parameter syntax from ITU-T T.416. This extends the basic underline (SGR 4) with additional style variants.
+
+The sub-parameter values for SGR 4 are:
+
+| Sub-parameter | Style |
+|---------------|-------|
+| `4:0` | No underline |
+| `4:1` | Single straight underline (same as SGR 4) |
+| `4:2` | Double underline (same as SGR 21) |
+| `4:3` | Curly/wavy underline |
+| `4:4` | Dotted underline |
+| `4:5` | Dashed underline |
+
+Curly underlines are reset by SGR 24 or SGR 0.
+
+Curly underlines are commonly used by terminal applications to indicate spelling errors, diagnostics, or other inline annotations — similar to the "squiggly underline" in code editors. The underline color can be set independently using SGR 58.
+
+## Examples
+
+```bash
+printf '\e[4:3mCurly underlined text\e[24m Normal text\n'
+printf '\e[4:3;58;5;9mRed curly underline\e[0m\n'
+```
 
 ## Specifications
 
@@ -27,3 +59,10 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [Underline — SGR 4](/docs/sgr/sgr-underline) — Single straight underline
+- [Dotted underline — SGR 4:4](/docs/sgr/underline-dotted) — Dotted underline style
+- [Dashed underline — SGR 4:5](/docs/sgr/underline-dashed) — Dashed underline style
+- [Underline color (indexed)](/docs/sgr/underline-color-indexed) — Set underline color

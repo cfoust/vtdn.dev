@@ -6,19 +6,61 @@ feature_id: "color_256"
 data_file: "text-styling"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-SGR 38;5;n / 48;5;n
+<StatusBadges status={{ experimental: true }} />
+
+**256-color indexed** mode uses SGR 38;5 and 48;5 to set the foreground and background to any of 256 indexed colors.
 
 ## Syntax
 
 ```
-TODO: Add syntax for 256-color indexed
+CSI 38;5;n m    SGR — Set foreground to indexed color n
+CSI 48;5;n m    SGR — Set background to indexed color n
 ```
+
+<FormalSyntax grammar={`
+SGR-fg-256 = 0x1b, "[", "38", ";", "5", ";", n, "m" ;
+SGR-bg-256 = 0x1b, "[", "48", ";", "5", ";", n, "m" ;
+n          = digit, { digit } ;                    (* 0-255 *)
+digit      = "0" | "1" | "2" | "3" | "4"
+           | "5" | "6" | "7" | "8" | "9" ;
+`} />
+
+### Parameters
+
+| Parameter | Description |
+|-----------|-------------|
+| `n` | Color index (0-255) |
+
+The 256-color palette is divided into four ranges:
+
+| Range | Description |
+|-------|-------------|
+| 0-7 | Standard colors (same as SGR 30-37) |
+| 8-15 | Bright colors (same as SGR 90-97) |
+| 16-231 | 6x6x6 color cube (216 colors) |
+| 232-255 | Grayscale ramp (24 shades) |
 
 ## Description
 
-Documentation coming soon.
+The 256-color extension was introduced by XTerm. It uses ECMA-48's reserved SGR parameters 38 and 48 (intended for extended color in ISO 8613-6 / ITU-T T.416) with the sub-parameter `5` to indicate indexed color mode, followed by the color index.
+
+The 6x6x6 color cube (indices 16-231) maps to RGB values using the formula: index = 16 + 36r + 6g + b, where r, g, b are each in the range 0-5.
+
+The grayscale ramp (indices 232-255) provides 24 shades from dark gray to light gray, not including pure black (use index 0) or pure white (use index 15).
+
+Colors 0-15 are typically user-configurable and match the standard/bright ANSI colors. Colors 16-255 have fixed RGB values in most terminals.
+
+## Examples
+
+```bash
+printf '\e[38;5;196mBright red (index 196)\e[0m\n'
+printf '\e[48;5;21mBlue background (index 21)\e[0m\n'
+printf '\e[38;5;245mGray text (index 245)\e[0m\n'
+```
 
 ## Specifications
 
@@ -27,3 +69,8 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [Standard ANSI colors](/docs/sgr/color-standard) — 8+8 basic colors
+- [24-bit truecolor (semicolons)](/docs/sgr/truecolor-semicolon) — Full RGB color

@@ -6,19 +6,96 @@ feature_id: "osc133"
 data_file: "osc-sequences"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-Shell integration (FinalTerm semantic zones)
+<StatusBadges status={{ experimental: true }} />
+
+**OSC 133** marks semantic zones in the terminal output, enabling the terminal to distinguish between prompts, user input, and command output. Originally designed for the FinalTerm terminal emulator, this protocol has been adopted by VS Code's integrated terminal, kitty, WezTerm, and iTerm2.
 
 ## Syntax
 
 ```
-TODO: Add syntax for OSC 133
+OSC 133 ; A ST              Prompt start
+OSC 133 ; B ST              Command start (end of prompt / input begins)
+OSC 133 ; C ST              Output start (command is executing)
+OSC 133 ; D ; exitcode ST   Command finished with exit code
+OSC 133 ; D ST              Command finished (no exit code)
 ```
+
+<FormalSyntax grammar={`
+OSC133-A  = 0x1b, "]", "133", ";", "A", ( 0x07 | 0x1b, "\\\\" ) ;
+OSC133-B  = 0x1b, "]", "133", ";", "B", ( 0x07 | 0x1b, "\\\\" ) ;
+OSC133-C  = 0x1b, "]", "133", ";", "C", ( 0x07 | 0x1b, "\\\\" ) ;
+OSC133-D  = 0x1b, "]", "133", ";", "D", [ ";", exitcode ], ( 0x07 | 0x1b, "\\\\" ) ;
+exitcode  = [ "-" ], digit, { digit } ;
+digit     = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+`} />
+
+### Parameters
+
+The four zone markers define the boundaries of a command lifecycle:
+
+| Marker | Name | Description |
+|--------|------|-------------|
+| `A` | Prompt start | Marks the beginning of the shell prompt. |
+| `B` | Command start | Marks the end of the prompt and beginning of user input. Also sent when the user presses Enter (the command line is finalized). |
+| `C` | Output start | Marks the end of user input and beginning of command output. |
+| `D` | Command end | Marks the end of command output. Optionally followed by `;exitcode` to report the command's exit status. |
 
 ## Description
 
-Documentation coming soon.
+Shell integration via OSC 133 allows the terminal to understand the structure of an interactive shell session. A typical command cycle looks like:
+
+1. **`A`** -- Shell prints the prompt
+2. (prompt text appears)
+3. **`B`** -- User has typed a command and pressed Enter
+4. **`C`** -- Command begins executing, output follows
+5. (command output appears)
+6. **`D;0`** -- Command finished with exit code 0
+
+With this information, the terminal can provide features such as:
+
+- **Command navigation** -- Jump between prompts using keyboard shortcuts
+- **Output selection** -- Select the output of a specific command
+- **Exit code decoration** -- Show success/failure indicators on the prompt
+- **Scrollback marks** -- Mark each command in the scrollback for quick access
+- **Command-aware copy** -- Copy only a command's output, excluding the prompt
+
+### Shell configuration
+
+Shell integration requires the shell to emit these markers. Most implementations inject the markers through shell hooks:
+
+- **Bash**: Uses `PS0`, `PS1`, and `PROMPT_COMMAND` to emit markers at the appropriate points
+- **Zsh**: Uses `precmd` and `preexec` hooks
+- **Fish**: Uses `fish_prompt` and `fish_preexec`/`fish_postexec` events
+
+VS Code, kitty, WezTerm, and iTerm2 each provide their own shell integration scripts that set up these hooks automatically.
+
+### Additional parameters
+
+Some implementations extend the `A` marker with key-value parameters. For example, VS Code uses `OSC 133 ; A ; cl=m ST` to indicate a multi-line prompt. These extensions are terminal-specific and not part of the original FinalTerm specification.
+
+## Examples
+
+```bash
+# Minimal bash integration using PROMPT_COMMAND and PS0
+__prompt_command() {
+    local exit_code=$?
+    # Mark end of previous command
+    PS1='\[\e]133;D;'$exit_code'\a\]'
+    # Mark prompt start
+    PS1+='\[\e]133;A\a\]'
+    # Actual prompt content
+    PS1+='\u@\h:\w\$ '
+    # Mark command start (after prompt)
+    PS1+='\[\e]133;B\a\]'
+}
+PROMPT_COMMAND=__prompt_command
+# PS0 marks output start when a command is executed
+PS0='\e]133;C\a'
+```
 
 ## Specifications
 
@@ -27,3 +104,7 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [OSC 7 — Current Working Directory](/docs/osc/osc7) — Report the shell's working directory to the terminal

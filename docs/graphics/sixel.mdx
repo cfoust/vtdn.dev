@@ -6,19 +6,104 @@ feature_id: "sixel"
 data_file: "graphics"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-DCS P1;P2;P3 q ... ST
+**Sixel graphics** is a bitmap graphics protocol that encodes pixel data as sequences of printable ASCII characters, originally introduced in the DEC VT240 and VT340 terminals. The name "Sixel" refers to the encoding of six vertical pixels per character, forming a column of six bits.
 
 ## Syntax
 
 ```
-TODO: Add syntax for Sixel graphics
+DCS P1 ; P2 ; P3 q [sixel-data] ST      Sixel graphics
 ```
+
+<FormalSyntax grammar={`
+sixel          = 0x1b, "P", [ P1 ], ";", [ P2 ], ";", [ P3 ], "q",
+                 [ raster-attrs ], { sixel-line }, ( 0x1b, "\\\\" | 0x9c ) ;
+P1             = digit, { digit } ;                   (* pixel aspect ratio selector; default: 0 *)
+P2             = digit, { digit } ;                   (* background color mode: 0|1|2; default: 0 *)
+P3             = digit, { digit } ;                   (* horizontal grid size; default: 0 *)
+raster-attrs   = '"', Pan, ";", Pad, [ ";", Ph, ";", Pv ] ;
+Pan            = digit, { digit } ;                   (* pixel aspect numerator *)
+Pad            = digit, { digit } ;                   (* pixel aspect denominator *)
+Ph             = digit, { digit } ;                   (* horizontal extent in pixels *)
+Pv             = digit, { digit } ;                   (* vertical extent in pixels *)
+sixel-line     = { sixel-item }, ( "$" | "-" ) ;
+sixel-item     = color-intro | repeat-intro | sixel-char ;
+color-intro    = "#", Pc, ";", Pu, ";", Px, ";", Py, ";", Pz ;
+Pc             = digit, { digit } ;                   (* color register number *)
+Pu             = "1" | "2" ;                          (* 1=HLS, 2=RGB *)
+Px             = digit, { digit } ;                   (* hue or red *)
+Py             = digit, { digit } ;                   (* lightness or green *)
+Pz             = digit, { digit } ;                   (* saturation or blue *)
+repeat-intro   = "!", count, sixel-char ;
+count          = digit, { digit } ;
+sixel-char     = ? 0x3F to 0x7E ? ;                   (* ASCII 63-126; encodes 6 vertical pixels *)
+digit          = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+`} />
+
+### Parameters
+
+| Parameter | Description | Default |
+|-----------|-------------|---------|
+| `P1` | Pixel aspect ratio selector. `0` and `1` select a 2:1 aspect ratio (historical VT default); `2` selects 5:1; values 3-9 select other ratios. Modern terminals typically ignore this. | `0` |
+| `P2` | Background color mode. `0` or `2`: background pixels remain at their current color. `1`: background pixels are set to color register 0. | `0` |
+| `P3` | Horizontal grid size in decipoints. Typically ignored by modern terminals. | `0` |
+
+### Raster attributes
+
+The optional raster attributes command `"Pan;Pad;Ph;Pv` sets the pixel aspect ratio and declares the image dimensions before any sixel data is sent.
+
+| Parameter | Description |
+|-----------|-------------|
+| `Pan` | Pixel aspect ratio numerator |
+| `Pad` | Pixel aspect ratio denominator |
+| `Ph` | Horizontal extent (image width in pixels) |
+| `Pv` | Vertical extent (image height in pixels) |
+
+Declaring `Ph` and `Pv` allows the terminal to allocate the correct buffer size up front, improving rendering performance.
+
+### Color introduction
+
+The `#` command selects or defines a color register:
+
+- **`#Pc`** -- Select color register `Pc` for subsequent sixel data.
+- **`#Pc;Pu;Px;Py;Pz`** -- Define color register `Pc`. When `Pu=1`, the values are HLS (Hue 0-360, Lightness 0-100, Saturation 0-100). When `Pu=2`, the values are RGB (Red 0-100, Green 0-100, Blue 0-100).
 
 ## Description
 
-Documentation coming soon.
+Sixel data encodes a bitmap image as a series of printable ASCII characters. Each sixel character (ASCII 63 through 126) represents a column of 6 vertical pixels, where the low 6 bits of `(character - 63)` determine which of the 6 pixels are turned on. For example, the character `?` (0x3F) maps to `000000` (all off) and `~` (0x7E) maps to `111111` (all on).
+
+The image is drawn in horizontal bands called **scanlines**, each 6 pixels tall. Within a scanline, characters are drawn left to right. Special control characters navigate within the image:
+
+- **`$`** (Carriage Return) -- Moves the drawing position back to the left edge of the current scanline. This allows overprinting the same scanline with additional colors.
+- **`-`** (Line Feed) -- Moves the drawing position to the left edge and advances down to the next scanline (6 pixels lower).
+- **`!` count char** (Repeat) -- Repeats the sixel character `char` the specified number of times. For example, `!10~` draws 10 columns of 6 fully-lit pixels.
+
+The color model uses numbered **color registers** (typically 256 or more in modern terminals, though the VT340 supported 16). A typical sixel image interleaves color selection with drawing commands: select a color, draw pixels in that color, use `$` to return to the start, select another color, draw its pixels, and so on for each scanline.
+
+:::note
+The VT340 supported only 16 color registers with RGB or HLS definition. Modern terminals commonly support 256 or more registers, and some allow arbitrary numbers of colors.
+:::
+
+## Examples
+
+```bash
+# Minimal red square (2x6 pixels)
+printf '\ePq"1;1;2;6#0;2;100;0;0~~\e\\'
+
+# 10x6 red block using repeat compression
+printf '\ePq"1;1;10;6#0;2;100;0;0!10~\e\\'
+
+# Two-color pattern: red and blue on the same scanline
+printf '\ePq"1;1;4;6#0;2;100;0;0#1;2;0;0;100#0~~$#1??~~\e\\'
+
+# Using raster attributes to declare a 100x60 image
+printf '\ePq"1;1;100;60#0;2;100;0;0!100~-!100~-!100~-!100~-!100~-!100~-!100~-!100~-!100~-!100~\e\\'
+```
 
 ## Specifications
 
@@ -27,3 +112,8 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [Kitty graphics protocol](/docs/graphics/kitty-graphics) -- A modern alternative to Sixel with more features
+- [iTerm2 inline images](/docs/graphics/iterm2-inline-images) -- Another inline image protocol

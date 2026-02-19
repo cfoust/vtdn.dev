@@ -6,19 +6,42 @@ feature_id: "bel"
 data_file: "control-sequences"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-0x07 — Audible/visual bell
+**BEL** (Bell) is a C0 control character that signals the terminal to alert the user. Originally this triggered an audible tone on hardware terminals; modern terminal emulators typically support both audible and visual bell modes.
 
 ## Syntax
 
 ```
-TODO: Add syntax for BEL
+BEL       0x07
 ```
 
 ## Description
 
-Documentation coming soon.
+Per ECMA-48 §8.3.3, BEL "is used when there is a need to call for attention; it may control alarm or attention devices."
+
+The effect of BEL is implementation-defined. On the original DEC VT100 and VT510, it sounded a hardware bell tone (if enabled in the keyboard setup). Modern terminal emulators typically offer a choice between:
+
+- **Audible bell** — playing a system alert sound
+- **Visual bell** — briefly flashing the terminal window or titlebar
+- **No bell** — silently ignoring the character
+
+Most terminals also set an "urgent" or "attention" hint on the window when a bell fires in a background tab or unfocused window.
+
+### Use as OSC terminator
+
+BEL (0x07) is widely accepted as an alternative string terminator for OSC sequences in place of ST (0x9C or ESC \\). This convention originated in early XTerm (X11R4, December 1989) and has become a de facto standard across virtually all modern terminal emulators. Many programs prefer BEL as the OSC terminator because it is a single byte and avoids the ambiguity of the two-byte ESC \\ sequence inside certain contexts.
+
+## Examples
+
+```bash
+printf '\a'          # Ring the bell (POSIX shell)
+printf '\x07'        # Same, using hex escape
+```
 
 ## Specifications
 
@@ -27,3 +50,7 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [OSC 0 — Set Icon Name and Window Title](/docs/osc/osc0) — Uses BEL as a common string terminator

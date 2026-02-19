@@ -6,19 +6,40 @@ feature_id: "sgr_strikethrough"
 data_file: "text-styling"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-SGR 9
+**Strikethrough** (SGR 9) is an SGR attribute that renders text with a horizontal line through the middle.
 
 ## Syntax
 
 ```
-TODO: Add syntax for Strikethrough
+CSI 9 m     SGR 9 — Strikethrough (crossed out)
+CSI 29 m    SGR 29 — Not strikethrough
 ```
+
+<FormalSyntax grammar={`
+SGR-strikethrough     = 0x1b, "[", "9", "m" ;
+SGR-not-strikethrough = 0x1b, "[", "29", "m" ;
+`} />
 
 ## Description
 
-Documentation coming soon.
+Per ECMA-48 §8.3.117, SGR parameter 9 selects "crossed-out (characters still legible but marked as to be deleted)." A horizontal line is drawn through the center of each character.
+
+Strikethrough is reset by SGR 29 or SGR 0.
+
+Strikethrough was not supported on DEC VT terminals. It is widely supported by modern terminal emulators.
+
+## Examples
+
+```bash
+printf '\e[9mStrikethrough text\e[29m Normal text\n'
+printf '\e[9;31mRed strikethrough\e[0m\n'
+```
 
 ## Specifications
 
@@ -27,3 +48,8 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [Underline — SGR 4](/docs/sgr/sgr-underline) — Underlined text
+- [Overline — SGR 53](/docs/sgr/sgr-overline) — Line above text

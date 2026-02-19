@@ -6,19 +6,96 @@ feature_id: "decrqss"
 data_file: "dcs-sequences"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-DCS $ q — Request status string
+**DECRQSS** (Request Selection or Setting) is a DCS sequence that queries the current value of a terminal setting. The terminal responds with a DCS string containing the setting's current state, allowing applications to discover configuration without maintaining shadow state.
 
 ## Syntax
 
 ```
-TODO: Add syntax for DECRQSS
+DCS $ q Pt ST        DECRQSS request
+DCS Ps $ r Pt ST     DECRQSS response
 ```
+
+<FormalSyntax grammar={`
+(* Request *)
+DECRQSS-request  = 0x1b, "P", "$", "q", Pt, 0x1b, "\\\\" ;
+Pt = final-char, { final-char } ;    (* setting identifier *)
+
+(* Response *)
+DECRQSS-response = 0x1b, "P", Ps, "$", "r", Pt, 0x1b, "\\\\" ;
+Ps = "0" | "1" ;                     (* 0 = invalid request, 1 = valid *)
+Pt = final-char, { final-char } ;    (* current setting value *)
+final-char = ? any printable character ? ;
+`} />
+
+### Parameters
+
+| Parameter | Description |
+|-----------|-------------|
+| `Pt` (request) | The setting identifier to query (see table below) |
+| `Ps` (response) | `1` if the request is valid, `0` if the terminal does not recognize the setting |
+| `Pt` (response) | The current value of the requested setting, formatted as if it were the original control sequence |
+
+### Common setting identifiers
+
+| `Pt` value | Setting queried |
+|------------|----------------|
+| `m` | SGR — current graphic rendition attributes |
+| `r` | DECSTBM — top and bottom scrolling margins |
+| `s` | DECSLRM — left and right margins |
+| `SP q` | DECSCUSR — cursor style |
+| `" p` | DECSCL — conformance level |
+| `" q` | DECSCA — select character attributes (protection) |
+
+### Response
+
+The response embeds the current setting value as it would appear in the original control sequence. For example, querying SGR when bold and red are active returns the parameters `1;31` within the response:
+
+- Request: `DCS $ q m ST`
+- Response: `DCS 1 $ r 1;31 m ST` (bold + red foreground active)
+
+If the terminal does not support the queried setting, it responds with `Ps = 0`:
+
+- Response: `DCS 0 $ r ST`
 
 ## Description
 
-Documentation coming soon.
+DECRQSS was introduced on the VT320 as part of the DEC private control sequence repertoire. It provides a general mechanism for applications to interrogate the terminal's current state for a variety of settings.
+
+The host sends `DCS $ q Pt ST` where `Pt` identifies which setting to query. The terminal responds with `DCS Ps $ r Pt ST` where `Ps` indicates validity and `Pt` contains the current value of that setting. The response `Pt` is formatted exactly as the parameters of the original control sequence that would produce the current state -- this means a parser can extract the setting value using the same logic used to parse the setting command itself.
+
+### Typical usage
+
+DECRQSS is commonly used by applications that need to:
+
+- **Save and restore state**: Query current SGR attributes or cursor style before making changes, then restore them afterward.
+- **Feature detection**: Determine whether the terminal supports a particular setting by checking whether the response has `Ps = 1`.
+- **Margin discovery**: Query DECSTBM or DECSLRM to learn the current scrolling region dimensions.
+
+### Implementation notes
+
+Support varies significantly across terminals. Many implementations only handle a subset of setting identifiers -- most commonly SGR (`m`), DECSTBM (`r`), and DECSCUSR (`SP q`). Applications should be prepared for either an invalid response (`Ps = 0`) or no response at all from terminals that do not implement DECRQSS.
+
+## Examples
+
+```bash
+# Query current SGR attributes
+printf '\eP$qm\e\\'
+
+# Query current scrolling margins (DECSTBM)
+printf '\eP$qr\e\\'
+
+# Query cursor style (DECSCUSR)
+printf '\eP$q q\e\\'
+
+# Query conformance level (DECSCL)
+printf '\eP$q"p\e\\'
+```
 
 ## Specifications
 
@@ -27,3 +104,10 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [DECSTBM — Set Top and Bottom Margins](/docs/csi/decstbm) — A commonly queried setting
+- [DECSLRM — Set Left and Right Margins](/docs/csi/decslrm) — Left/right margin setting
+- [DECSCUSR — Set Cursor Style](/docs/csi/decscusr) — Cursor style setting
+- [DA1 — Primary Device Attributes](/docs/csi/da1) — Another device query mechanism

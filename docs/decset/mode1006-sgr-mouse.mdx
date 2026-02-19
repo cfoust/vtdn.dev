@@ -6,19 +6,103 @@ feature_id: "mode1006_sgr_mouse"
 data_file: "decset-modes"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-Mode 1006 — Decimal encoding, no coord limit
+<StatusBadges status={{ experimental: true }} />
+
+**SGR Mouse Encoding** (Mode 1006) is a DECSET/DECRST mode that switches mouse event reports to an extended format using decimal parameters, removing the 223-coordinate limit of the original X10 encoding.
 
 ## Syntax
 
 ```
-TODO: Add syntax for SGR mouse
+CSI ? 1006 h    DECSET — Enable SGR mouse encoding
+CSI ? 1006 l    DECRST — Disable SGR mouse encoding (use X10 encoding)
 ```
+
+<FormalSyntax grammar={`
+DECSET-mode1006 = 0x1b, "[", "?", "1", "0", "0", "6", "h" ;
+DECRST-mode1006 = 0x1b, "[", "?", "1", "0", "0", "6", "l" ;
+`} />
 
 ## Description
 
-Documentation coming soon.
+Mode 1006 is an XTerm extension that changes the encoding format used for mouse event reports. It does not enable mouse tracking on its own; it must be used in combination with a mouse tracking mode (Mode 1000, 1002, or 1003).
+
+- **Set** — Mouse events are reported using the SGR extended format.
+- **Reset** — Mouse events use the legacy X10 format (`CSI M Cb Cx Cy`). This is the default.
+
+### SGR report format
+
+When a mouse event occurs with SGR encoding enabled, the terminal sends:
+
+```
+CSI < Cb ; Cx ; Cy M    (button press or motion)
+CSI < Cb ; Cx ; Cy m    (button release)
+```
+
+Where:
+- `Cb` is the button number (0-based) plus modifier flags, as a decimal string
+- `Cx` is the column (1-based), as a decimal string
+- `Cy` is the row (1-based), as a decimal string
+
+The final character distinguishes press (`M`, uppercase) from release (`m`, lowercase).
+
+### Button encoding
+
+Button numbers in SGR encoding are 0-based:
+
+| Cb value | Meaning |
+|----------|---------|
+| `0`      | Left button |
+| `1`      | Middle button |
+| `2`      | Right button |
+| `32`     | Motion (added as flag) |
+| `64`     | Scroll wheel up |
+| `65`     | Scroll wheel down |
+
+Modifier flags are the same as in X10 encoding:
+
+| Bit  | Modifier |
+|------|----------|
+| `4`  | Shift    |
+| `8`  | Meta/Alt |
+| `16` | Control  |
+
+### Advantages over X10 encoding
+
+- **No coordinate limit** — Coordinates are decimal strings, so they can represent any value. The X10 encoding encodes coordinates as single bytes with a +32 offset, limiting them to 223.
+- **Distinct release events** — The lowercase `m` final byte clearly identifies release events and indicates which button was released. In X10 encoding, all releases report button 3 with no way to distinguish which button was released.
+- **1-based coordinates** — Coordinates are 1-based and directly correspond to terminal cell positions, avoiding the +32 offset.
+
+### Parsing
+
+A typical regex for parsing SGR mouse reports:
+
+```
+\e\[<(\d+);(\d+);(\d+)([Mm])
+```
+
+Group 1 is the button/flags, groups 2 and 3 are column and row, and group 4 indicates press (`M`) or release (`m`).
+
+## Examples
+
+```bash
+# Enable mouse tracking with SGR encoding:
+printf '\e[?1000h\e[?1006h'
+
+# A left-button click at column 10, row 5 produces:
+#   press:   \e[<0;10;5M
+#   release: \e[<0;10;5m
+
+# A Ctrl+click at column 300, row 100 produces:
+#   press:   \e[<16;300;100M
+#   release: \e[<16;300;100m
+
+# Disable:
+printf '\e[?1006l\e[?1000l'
+```
 
 ## Specifications
 
@@ -27,3 +111,10 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [Normal Mouse Tracking — Mode 1000](/docs/decset/mode1000-mouse-normal) — Basic press/release tracking
+- [Button-Event Mouse Tracking — Mode 1002](/docs/decset/mode1002-button-event) — Motion while button is held
+- [Any-Event Mouse Tracking — Mode 1003](/docs/decset/mode1003-any-event) — Reports all mouse motion
+- [SGR-Pixel Mouse — Mode 1016](/docs/decset/mode1016-sgr-pixel) — Pixel coordinates instead of cell coordinates

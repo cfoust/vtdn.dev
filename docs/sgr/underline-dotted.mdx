@@ -6,19 +6,39 @@ feature_id: "underline_dotted"
 data_file: "text-styling"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-SGR 4:4
+<StatusBadges status={{ experimental: true }} />
+
+**Dotted underline** (SGR 4:4) is an extended underline style that renders a dotted line below the text.
 
 ## Syntax
 
 ```
-TODO: Add syntax for Dotted underline
+CSI 4:4 m    SGR 4:4 — Dotted underline
+CSI 24 m     SGR 24 — Not underlined
 ```
+
+<FormalSyntax grammar={`
+SGR-dotted-underline = 0x1b, "[", "4:4", "m" ;
+SGR-not-underline    = 0x1b, "[", "24", "m" ;
+`} />
 
 ## Description
 
-Documentation coming soon.
+SGR 4:4 selects a dotted underline style using the sub-parameter syntax from the Kitty underline extension. The line below the text is rendered as a series of dots rather than a continuous line.
+
+Dotted underline is reset by SGR 24 or SGR 0.
+
+The underline color can be set independently using SGR 58.
+
+## Examples
+
+```bash
+printf '\e[4:4mDotted underlined text\e[24m Normal text\n'
+```
 
 ## Specifications
 
@@ -27,3 +47,9 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [Underline — SGR 4](/docs/sgr/sgr-underline) — Single straight underline
+- [Curly underline — SGR 4:3](/docs/sgr/underline-curly) — Wavy underline style
+- [Dashed underline — SGR 4:5](/docs/sgr/underline-dashed) — Dashed underline style

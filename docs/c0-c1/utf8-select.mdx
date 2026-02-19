@@ -6,19 +6,35 @@ feature_id: "utf8_select"
 data_file: "control-sequences"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-ESC % G — Select UTF-8 character set
+**UTF-8 select** sequences switch the terminal between UTF-8 and legacy byte-oriented character encoding. These sequences originate from ISO 2022 (ECMA-35) code-switching mechanisms.
 
 ## Syntax
 
 ```
-TODO: Add syntax for UTF-8 select
+ESC % G       Select UTF-8 encoding
+ESC % @       Return to ISO 8859-1 / default encoding
 ```
 
 ## Description
 
-Documentation coming soon.
+`ESC % G` instructs the terminal to interpret subsequent input as UTF-8 encoded text. `ESC % @` reverts to the default encoding, typically ISO 8859-1 (Latin-1).
+
+These sequences are defined in the ISO 2022 framework for announcing code structures. In ISO 2022 terms, `ESC % G` announces a "UTF-8 Level 1" coding system.
+
+### Modern relevance
+
+Virtually all modern terminal emulators default to UTF-8 mode and many ignore these sequences entirely, since UTF-8 is now the universal standard. The sequences are primarily relevant for:
+
+- Legacy applications that need to explicitly switch a terminal into UTF-8 mode
+- Terminal emulators that support multiple encodings and allow runtime switching
+
+XTerm is one of the few modern terminals that fully supports switching between UTF-8 and non-UTF-8 modes at runtime via these sequences.
 
 ## Specifications
 
@@ -27,3 +43,8 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [Locking Shifts](/docs/c0-c1/locking-shifts) — ISO 2022 character set invocation
+- [SO/SI — Shift Out/In](/docs/c0-c1/so-si) — Character set switching (pre-UTF-8 era)

@@ -6,19 +6,49 @@ feature_id: "ris"
 data_file: "control-sequences"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-ESC c — Full terminal reset
+**RIS** (Reset to Initial State) is an escape sequence that performs a complete terminal reset, restoring the terminal to its power-on default state.
 
 ## Syntax
 
 ```
-TODO: Add syntax for RIS
+ESC c         RIS — Reset to Initial State
 ```
 
 ## Description
 
-Documentation coming soon.
+Per ECMA-48 §8.3.105, RIS "causes a device to be reset to its initial state, i.e. the state it has after it is made operational."
+
+RIS is the most thorough reset available. On a typical terminal emulator, it performs all of the following:
+
+- Clears the screen and scrollback buffer
+- Moves the cursor to the home position (row 1, column 1)
+- Resets all character attributes (SGR) to normal
+- Resets all modes (DECOM, DECAWM, LNM, etc.) to their default states
+- Clears all tab stops and restores the default tab stops (every 8 columns)
+- Resets the scrolling region to the full screen
+- Resets character set designations to their defaults
+- Resets the saved cursor state (DECSC)
+- Switches to the main screen buffer if the alternate screen is active
+
+:::warning
+RIS is a heavy operation. For most purposes, the soft terminal reset `CSI ! p` (DECSTR) is preferred, as it resets modes and attributes without clearing the screen or scrollback.
+:::
+
+### The `reset` command
+
+The Unix `reset` command (typically part of ncurses) sends RIS along with other initialization sequences. It is commonly used to recover a terminal that has been left in a broken state (e.g., after a binary file has been accidentally `cat`'d).
+
+## Examples
+
+```bash
+printf '\ec'     # Full terminal reset
+```
 
 ## Specifications
 

@@ -6,19 +6,85 @@ feature_id: "decrqm"
 data_file: "csi-sequences"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-CSI ? Ps $ p — Request mode value
+**DECRQM** (Request Mode) is a CSI sequence that queries whether a specific terminal mode is set, reset, or unknown. There are two variants: one for ANSI modes and one for DEC private modes.
 
 ## Syntax
 
 ```
-TODO: Add syntax for DECRQM
+CSI Ps $ p         DECRQM — Request ANSI mode
+CSI ? Ps $ p       DECRQM — Request DEC private mode
+CSI Ps ; Pm $ y    DECRPM — ANSI mode report (response)
+CSI ? Ps ; Pm $ y  DECRPM — DEC private mode report (response)
 ```
+
+<FormalSyntax grammar={`
+(* ANSI mode request *)
+DECRQM-ansi     = 0x1b, "[", Ps, "$", "p" ;
+
+(* DEC private mode request *)
+DECRQM-dec      = 0x1b, "[", "?", Ps, "$", "p" ;
+
+(* ANSI mode response *)
+DECRPM-ansi     = 0x1b, "[", Ps, ";", Pm, "$", "y" ;
+
+(* DEC private mode response *)
+DECRPM-dec      = 0x1b, "[", "?", Ps, ";", Pm, "$", "y" ;
+
+Ps              = digit, { digit } ;               (* mode number *)
+Pm              = "0" | "1" | "2" | "3" | "4" ;    (* mode value *)
+digit           = "0" | "1" | "2" | "3" | "4"
+                | "5" | "6" | "7" | "8" | "9" ;
+`} />
+
+### Parameters (Request)
+
+| Parameter | Description |
+|-----------|-------------|
+| `Ps` | Mode number to query (e.g., 4 for IRM, 25 for DECTCEM, 1049 for alt screen) |
+
+### Response
+
+The terminal responds with DECRPM (Report Mode) containing the mode number and its current state:
+
+| `Pm` | Meaning |
+|------|---------|
+| `0` | Not recognized |
+| `1` | Set |
+| `2` | Reset |
+| `3` | Permanently set |
+| `4` | Permanently reset |
 
 ## Description
 
-Documentation coming soon.
+Per the VT510 manual, DECRQM allows the host to query whether a specific mode is currently set or reset without changing it. This is useful for applications that need to save and restore mode state, or that need to detect which modes a terminal supports.
+
+The `?` prefix distinguishes DEC private mode queries from ANSI mode queries. For example, `CSI 4 $ p` queries ANSI mode 4 (Insert/Replace Mode), while `CSI ? 25 $ p` queries DEC private mode 25 (DECTCEM cursor visibility).
+
+A response of `Pm = 0` (not recognized) indicates the terminal does not support that mode number. Values 3 and 4 (permanently set/reset) indicate modes that cannot be changed.
+
+DECRQM is particularly useful for feature detection. Applications can query modes like 2026 (synchronized output) or 2027 (grapheme clustering) to determine if the terminal supports them before enabling them.
+
+## Examples
+
+```bash
+# Query DEC private mode 25 (DECTCEM - cursor visibility)
+printf '\e[?25$p'
+# Response if set: ESC [ ? 25 ; 1 $ y
+
+# Query DEC private mode 2026 (synchronized output)
+printf '\e[?2026$p'
+# Response if not recognized: ESC [ ? 2026 ; 0 $ y
+
+# Query ANSI mode 4 (Insert/Replace Mode)
+printf '\e[4$p'
+# Response if reset: ESC [ 4 ; 2 $ y
+```
 
 ## Specifications
 
@@ -27,3 +93,7 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [DECTCEM — Cursor Visibility](/docs/decset/mode25-dectcem) — Example of a DEC private mode queryable via DECRQM

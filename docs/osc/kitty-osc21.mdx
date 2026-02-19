@@ -6,19 +6,92 @@ feature_id: "kitty_osc21"
 data_file: "osc-sequences"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-Color protocol (query/change by name)
+<StatusBadges status={{ experimental: true }} />
+
+**Kitty OSC 21** is a comprehensive color query and set protocol that uses named color keys. Unlike the traditional XTerm OSC 10-19 sequences which use numeric identifiers, this protocol addresses colors by descriptive names and supports querying and setting multiple colors in a single sequence.
 
 ## Syntax
 
 ```
-TODO: Add syntax for Kitty OSC 21
+OSC 21 ; key=value : key=value ST       Set colors
+OSC 21 ; key=? : key=? ST               Query colors
+OSC 21 ; key=value : key=? ST           Mixed set and query
 ```
+
+<FormalSyntax grammar={`
+OSC21       = 0x1b, "]", "21", ";", color-pair, { ":", color-pair }, ( 0x07 | 0x1b, "\\\\" ) ;
+color-pair  = color-key, "=", color-value ;
+color-key   = letter, { letter | digit | "_" } ;
+color-value = "?" | color-spec ;
+color-spec  = "#", hex-digit, hex-digit, hex-digit, hex-digit, hex-digit, hex-digit
+            | "rgb:", component, "/", component, "/", component ;
+component   = hex-digit, hex-digit, [ hex-digit, hex-digit ] ;
+hex-digit   = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+            | "a" | "b" | "c" | "d" | "e" | "f"
+            | "A" | "B" | "C" | "D" | "E" | "F" ;
+letter      = "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j"
+            | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t"
+            | "u" | "v" | "w" | "x" | "y" | "z"
+            | "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J"
+            | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T"
+            | "U" | "V" | "W" | "X" | "Y" | "Z" ;
+digit       = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+`} />
+
+### Parameters
+
+Key-value pairs are separated by colons (`:`). Each pair consists of a color name and either a color specification (to set) or `?` (to query).
+
+**Common color keys:**
+
+| Key | Description | XTerm equivalent |
+|-----|-------------|------------------|
+| `foreground` | Default text color | OSC 10 |
+| `background` | Default background color | OSC 11 |
+| `cursor` | Cursor color | OSC 12 |
+| `selection_foreground` | Selected text color | -- |
+| `selection_background` | Selection highlight color | -- |
+| `cursor_text_color` | Text color under cursor | -- |
+| `visual_bell_color` | Visual bell flash color | -- |
+
+### Response
+
+When querying, the terminal responds with the same OSC 21 format, replacing `?` with the current color value in `rgb:RR/GG/BB` notation.
 
 ## Description
 
-Documentation coming soon.
+The Kitty color protocol was designed to address limitations in the traditional XTerm color sequences (OSC 10-19). The key advantages are:
+
+- **Named keys** -- Colors are identified by human-readable names rather than numeric indices, making the protocol self-documenting and extensible.
+- **Batch operations** -- Multiple colors can be queried or set in a single sequence, reducing round trips.
+- **Additional colors** -- The protocol exposes colors that have no XTerm OSC equivalent, such as selection colors and visual bell color.
+- **Mixed operations** -- A single sequence can both set some colors and query others.
+
+Color values can be specified in `#RRGGBB` format or the X11 `rgb:RR/GG/BB` format. Responses always use the `rgb:` notation.
+
+:::note
+This protocol is currently specific to kitty. Applications that need broad terminal compatibility should fall back to the traditional OSC 10-12 sequences.
+:::
+
+## Examples
+
+```bash
+# Query the current foreground color
+printf '\e]21;foreground=?\e\\'
+
+# Set the background color
+printf '\e]21;background=#1e1e2e\e\\'
+
+# Query multiple colors at once
+printf '\e]21;foreground=?:background=?:cursor=?\e\\'
+
+# Set foreground and query background in one sequence
+printf '\e]21;foreground=#cdd6f4:background=?\e\\'
+```
 
 ## Specifications
 
@@ -27,3 +100,10 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [OSC 10 — Set/Query Foreground Color](/docs/osc/osc10) — Traditional foreground color control
+- [OSC 11 — Set/Query Background Color](/docs/osc/osc11) — Traditional background color control
+- [OSC 12 — Set/Query Cursor Color](/docs/osc/osc12) — Traditional cursor color control
+- [OSC 110/111/112 — Reset Foreground/Background/Cursor Color](/docs/osc/osc110-112) — Reset special colors

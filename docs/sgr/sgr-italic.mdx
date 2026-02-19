@@ -6,19 +6,40 @@ feature_id: "sgr_italic"
 data_file: "text-styling"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-SGR 3
+**Italic** (SGR 3) is an SGR attribute that renders text in an italic or oblique style.
 
 ## Syntax
 
 ```
-TODO: Add syntax for Italic
+CSI 3 m     SGR 3 — Italic
+CSI 23 m    SGR 23 — Not italic, not Fraktur
 ```
+
+<FormalSyntax grammar={`
+SGR-italic     = 0x1b, "[", "3", "m" ;
+SGR-not-italic = 0x1b, "[", "23", "m" ;
+`} />
 
 ## Description
 
-Documentation coming soon.
+Per ECMA-48 §8.3.117, SGR parameter 3 selects "italicized." Text is rendered using the italic variant of the current font, or an oblique (slanted) version if no true italic is available.
+
+Italic is reset by SGR 23 or SGR 0. Note that SGR 23 also cancels Fraktur (SGR 20), though Fraktur is rarely supported.
+
+Italic support requires the terminal's font to include an italic face. If the font lacks italics, some terminals synthesize an oblique style by slanting the glyphs.
+
+## Examples
+
+```bash
+printf '\e[3mItalic text\e[23m Normal text\n'
+printf '\e[1;3mBold italic\e[0m\n'
+```
 
 ## Specifications
 
@@ -27,3 +48,8 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [Bold — SGR 1](/docs/sgr/sgr-bold) — Increased intensity
+- [Underline — SGR 4](/docs/sgr/sgr-underline) — Underlined text

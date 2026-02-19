@@ -6,19 +6,72 @@ feature_id: "osc12"
 data_file: "osc-sequences"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-Set/query cursor color
+<StatusBadges status={{ experimental: true }} />
+
+**OSC 12** sets or queries the terminal's cursor color. This controls the color of the text cursor (caret) independently from the foreground and background colors.
 
 ## Syntax
 
 ```
-TODO: Add syntax for OSC 12
+OSC 12 ; spec ST      Set cursor color
+OSC 12 ; ? ST         Query current cursor color
 ```
+
+<FormalSyntax grammar={`
+OSC12_set   = 0x1b, "]", "12", ";", color_spec, ( 0x07 | 0x1b, "\\\\" ) ;
+OSC12_query = 0x1b, "]", "12", ";", "?", ( 0x07 | 0x1b, "\\\\" ) ;
+color_spec  = "rgb:", hex, "/", hex, "/", hex ;
+hex         = hex_digit, hex_digit, [ hex_digit, hex_digit ] ;
+hex_digit   = digit | "a" | "b" | "c" | "d" | "e" | "f"
+            | "A" | "B" | "C" | "D" | "E" | "F" ;
+digit       = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+`} />
+
+### Parameters
+
+| Parameter | Description | Default |
+|-----------|-------------|---------|
+| `spec` | Color specification in X11 format (e.g., `rgb:RR/GG/BB`) or `?` to query | (required) |
+
+### Response
+
+When queried with `?`, the terminal responds with the current cursor color:
+
+```
+OSC 12 ; rgb:RRRR/GGGG/BBBB ST
+```
+
+The response uses 16-bit color components (four hex digits per channel).
 
 ## Description
 
-Documentation coming soon.
+Per the XTerm control sequences documentation, OSC 12 controls the text cursor color. The color specification uses the same X11 color syntax as [OSC 4](/docs/osc/osc4), [OSC 10](/docs/osc/osc10), and [OSC 11](/docs/osc/osc11).
+
+The cursor color determines how the text cursor is rendered. For block cursors, this is the fill color. For bar and underline cursors, this is the stroke color. The exact rendering depends on the terminal's cursor style setting.
+
+This sequence is useful for applications that want to change the cursor appearance to indicate mode changes (e.g., different cursor colors for insert vs. normal mode in a vi-style editor) or to ensure the cursor is visible against a custom background color.
+
+## Examples
+
+```bash
+# Set cursor color to red
+printf '\e]12;rgb:ff/00/00\e\\'
+
+# Set cursor color to green
+printf '\e]12;rgb:00/ff/00\a'
+
+# Query current cursor color
+printf '\e]12;?\e\\'
+
+# Use different cursor colors for vi modes
+# (example: red for normal mode, green for insert mode)
+printf '\e]12;rgb:ff/00/00\a'  # normal mode
+printf '\e]12;rgb:00/ff/00\a'  # insert mode
+```
 
 ## Specifications
 
@@ -27,3 +80,9 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [OSC 10 — Set/Query Default Foreground Color](/docs/osc/osc10) — Sets or queries the default foreground color
+- [OSC 11 — Set/Query Default Background Color](/docs/osc/osc11) — Sets or queries the default background color
+- [OSC 4 — Change/Query Color Palette](/docs/osc/osc4) — Sets or queries indexed palette colors

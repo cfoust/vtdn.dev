@@ -6,19 +6,50 @@ feature_id: "cnl_cpl"
 data_file: "csi-sequences"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-CSI E/F — Cursor next/preceding line
+**CNL** (Cursor Next Line) and **CPL** (Cursor Preceding Line) are CSI sequences that move the cursor to the first column of a line relative to the current position.
 
 ## Syntax
 
 ```
-TODO: Add syntax for CNL/CPL
+CSI Pn E      CNL — Cursor Next Line
+CSI Pn F      CPL — Cursor Preceding Line
 ```
+
+<FormalSyntax grammar={`
+CNL = 0x1b, "[", [ Pn ], "E" ;
+CPL = 0x1b, "[", [ Pn ], "F" ;
+Pn  = digit, { digit } ;                (* default: 1 *)
+digit = "0" | "1" | "2" | "3" | "4"
+      | "5" | "6" | "7" | "8" | "9" ;
+`} />
+
+### Parameters
+
+| Parameter | Description | Default |
+|-----------|-------------|---------|
+| `Pn` | Number of lines to move | 1 |
 
 ## Description
 
-Documentation coming soon.
+Per ECMA-48 §8.3.12 (CNL) and §8.3.13 (CPL):
+
+- **CNL** (`CSI Pn E`) — Moves the cursor to the first character position of the `Pn`-th following line.
+- **CPL** (`CSI Pn F`) — Moves the cursor to the first character position of the `Pn`-th preceding line.
+
+These are equivalent to CUD/CUU followed by a move to column 1. The cursor does not scroll the display when it reaches the margin.
+
+## Examples
+
+```bash
+printf '\e[3E'       # Move to column 1 of 3rd line below
+printf '\e[2F'       # Move to column 1 of 2nd line above
+```
 
 ## Specifications
 
@@ -27,3 +58,8 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [CUU/CUD/CUF/CUB — Relative Cursor Movement](/docs/csi/cuu-cud-cuf-cub) — Move without changing column/row
+- [CHA/CUP — Absolute Cursor Positioning](/docs/csi/cha-cup) — Absolute positioning

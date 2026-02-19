@@ -6,19 +6,60 @@ feature_id: "osc9"
 data_file: "osc-sequences"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-Desktop notification (ConEmu/iTerm2)
+<StatusBadges status={{ experimental: true }} />
+
+**OSC 9** sends a desktop notification from the terminal to the operating system's notification system. Originally introduced by ConEmu, this sequence allows command-line applications to alert the user when a long-running task completes or when attention is needed.
 
 ## Syntax
 
 ```
-TODO: Add syntax for OSC 9
+OSC 9 ; text ST
+OSC 9 ; text BEL
 ```
+
+<FormalSyntax grammar={`
+OSC9 = 0x1b, "]", "9", ";", text, ( 0x07 | 0x1b, "\\\\" ) ;
+text = character, { character } ;
+`} />
+
+### Parameters
+
+| Parameter | Description | Default |
+|-----------|-------------|---------|
+| `text` | The notification message text to display | (required) |
 
 ## Description
 
-Documentation coming soon.
+Per the ConEmu ANSI codes documentation, OSC 9 triggers a system desktop notification containing the provided text. The notification typically appears as an OS-native notification balloon, toast, or banner depending on the platform.
+
+This is a simple fire-and-forget mechanism with no acknowledgment or response from the terminal. The notification is displayed immediately and follows the OS notification behavior (auto-dismiss, notification center, etc.).
+
+ConEmu extended OSC 9 with additional sub-commands using a semicolon-delimited format:
+- `OSC 9 ; 4 ; st ; pr ST` — Progress reporting (see [OSC 9;4](/docs/osc/osc9-4))
+- `OSC 9 ; 9 ; path ST` — Set working directory (ConEmu-specific)
+
+Some terminals (notably iTerm2 and Kitty) support OSC 9 for basic desktop notifications but may use different mechanisms for their native notification protocols.
+
+:::note
+Desktop notification support varies significantly across terminals. Some terminals require user opt-in for security reasons, as malicious terminal output could otherwise spam notifications.
+:::
+
+## Examples
+
+```bash
+# Send a simple notification
+printf '\e]9;Build complete!\a'
+
+# Notify after a long-running command
+make build && printf '\e]9;Build succeeded\a' || printf '\e]9;Build failed!\a'
+
+# Notification with ST terminator
+printf '\e]9;Task finished\e\\'
+```
 
 ## Specifications
 
@@ -27,3 +68,8 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [OSC 9;4 — Progress Reporting](/docs/osc/osc9-4) — Report task progress to the terminal's taskbar
+- [OSC 777 — Desktop Notification](/docs/osc/osc777) — An alternative notification protocol used by rxvt-unicode and others

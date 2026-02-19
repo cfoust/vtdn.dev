@@ -6,19 +6,51 @@ feature_id: "decdhl_decdwl"
 data_file: "control-sequences"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-ESC #3–6 — Double-height/width lines
+**DECDHL** (Double-Height Line) and **DECDWL** (Double-Width Line) are DEC VT100 escape sequences that control the height and width of individual lines on the display.
 
 ## Syntax
 
 ```
-TODO: Add syntax for DECDHL/DECDWL
+ESC # 3       DECDHL — Double-height line, top half
+ESC # 4       DECDHL — Double-height line, bottom half
+ESC # 5       DECSWL — Single-width, single-height line (reset)
+ESC # 6       DECDWL — Double-width, single-height line
 ```
 
 ## Description
 
-Documentation coming soon.
+These sequences are line attributes — they affect the entire line the cursor is on, not individual characters. Each line on the display independently has one of these attributes.
+
+### DECDHL — Double-height (ESC # 3 / ESC # 4)
+
+Double-height characters are created by applying ESC # 3 and ESC # 4 to two adjacent lines containing identical text. ESC # 3 renders the top half and ESC # 4 renders the bottom half. Both lines must contain the same characters at the same positions for the effect to display correctly.
+
+Double-height lines are also double-width: each character occupies two columns, so only half as many characters fit on the line compared to normal width.
+
+### DECDWL — Double-width (ESC # 6)
+
+Makes the current line double-width at single height. Each character takes up two cell widths, halving the number of characters that fit on the line. Per the VT510 manual, if the line was previously single-width, characters to the right of the screen center are lost.
+
+### DECSWL — Single-width (ESC # 5)
+
+Resets the current line to normal single-width, single-height rendering. This is the default attribute for all new lines.
+
+## Examples
+
+```bash
+# Create double-height text across two lines
+printf '\e#3Double Height\n'
+printf '\e#4Double Height\n'
+
+# Make current line double-width
+printf '\e#6Wide Line\n'
+```
 
 ## Specifications
 

@@ -6,19 +6,75 @@ feature_id: "osc52_write"
 data_file: "osc-sequences"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-Clipboard write (copy to clipboard)
+<StatusBadges status={{ experimental: true }} />
+
+**OSC 52 write** copies data to the system clipboard through the terminal. The application sends base64-encoded content along with a selection target, and the terminal places the decoded data onto the specified clipboard.
 
 ## Syntax
 
 ```
-TODO: Add syntax for OSC 52 write
+OSC 52 ; Pc ; Pd ST      Set clipboard contents
 ```
+
+<FormalSyntax grammar={`
+OSC52-write = 0x1b, "]", "52", ";", selection, ";", data, ( 0x07 | 0x1b, "\\\\" ) ;
+selection   = sel-char, { sel-char } ;
+sel-char    = "c" | "p" | "s" | "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" ;
+data        = base64-char, { base64-char } ;
+base64-char = "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J"
+            | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T"
+            | "U" | "V" | "W" | "X" | "Y" | "Z"
+            | "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j"
+            | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t"
+            | "u" | "v" | "w" | "x" | "y" | "z"
+            | "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+            | "+" | "/" | "=" ;
+`} />
+
+### Parameters
+
+| Parameter | Description |
+|-----------|-------------|
+| `Pc` | Clipboard selection target. Multiple characters may be combined. |
+| `Pd` | Base64-encoded data to place on the clipboard. |
+
+**Selection targets:**
+
+| Value | Meaning |
+|-------|---------|
+| `c` | System clipboard (most commonly used) |
+| `p` | Primary selection (X11) |
+| `s` | Secondary selection (X11) |
+| `0`-`7` | Cut buffers 0 through 7 (legacy X11) |
 
 ## Description
 
-Documentation coming soon.
+OSC 52 was introduced by XTerm to allow terminal applications to write to the system clipboard without requiring direct access to the display server. This is particularly valuable when working over SSH, inside tmux, or in other situations where the application does not have direct clipboard access.
+
+The data payload `Pd` must be base64-encoded. The terminal decodes the base64 content and places the resulting text on the clipboard specified by `Pc`. Most modern terminals only support the `c` (clipboard) and sometimes `p` (primary) selections; the cut buffer targets (`0`-`7`) and secondary selection (`s`) are rarely implemented.
+
+When multiple selection characters are given in `Pc`, the terminal should set the content on all specified clipboards. In practice, most terminals treat any value of `Pc` as the system clipboard.
+
+:::note
+Some terminals impose a size limit on OSC 52 payloads. XTerm limits the decoded content to 100,000 bytes by default (configurable via the `maxStringParse` resource). Other terminals may have different limits or no limit at all.
+:::
+
+## Examples
+
+```bash
+# Copy "Hello, world!" to the system clipboard
+printf '\e]52;c;%s\e\\' "$(echo -n 'Hello, world!' | base64)"
+
+# Copy text to both clipboard and primary selection
+printf '\e]52;cp;%s\e\\' "$(echo -n 'Hello' | base64)"
+
+# Using BEL as the string terminator
+printf '\e]52;c;%s\a' "$(echo -n 'Hello' | base64)"
+```
 
 ## Specifications
 
@@ -27,3 +83,7 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [OSC 52 read — Clipboard Read](/docs/osc/osc52-read) — Query clipboard contents via OSC 52

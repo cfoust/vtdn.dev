@@ -6,19 +6,61 @@ feature_id: "mode6_decom"
 data_file: "decset-modes"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-Mode 6 — Origin mode (relative to scroll region)
+**DECOM** (Mode 6) is a DECSET/DECRST mode that controls whether cursor positioning is relative to the scrolling region or absolute to the entire screen.
 
 ## Syntax
 
 ```
-TODO: Add syntax for DECOM
+CSI ? 6 h    DECSET — Enable origin mode (relative positioning)
+CSI ? 6 l    DECRST — Disable origin mode (absolute positioning)
 ```
+
+<FormalSyntax grammar={`
+DECSET-mode6 = 0x1b, "[", "?", "6", "h" ;
+DECRST-mode6 = 0x1b, "[", "?", "6", "l" ;
+`} />
 
 ## Description
 
-Documentation coming soon.
+Per the VT100 User Guide and VT510 Programmer Reference, DECOM controls the reference point for cursor positioning sequences such as CUP (`CSI H`) and HVP (`CSI f`).
+
+- **Set (origin mode)** — Cursor positioning is relative to the top of the scrolling region defined by DECSTBM. Row 1 refers to the first line of the scrolling region, and the cursor cannot move outside the region boundaries. The cursor is also confined within left/right margins if DECLRMM is enabled.
+- **Reset (absolute mode)** — Cursor positioning is relative to the top-left corner of the entire screen. Row 1 is the first line of the display regardless of any scrolling region. This is the default.
+
+### Side effects
+
+When DECOM is set or reset, the cursor moves to the home position. In origin mode, "home" is the top-left corner of the scrolling region. In absolute mode, "home" is row 1, column 1 of the screen.
+
+### Interaction with scrolling margins
+
+DECOM is designed to work with DECSTBM (Set Top and Bottom Margins) and DECLRMM/DECSLRM (Left and Right Margins). When origin mode is set:
+
+- CUP and HVP coordinates are offset by the margin origin
+- The cursor is confined within both the vertical scrolling region and horizontal margins
+- ED and EL still operate relative to the cursor position, not the margins
+
+:::note
+Applications that use scrolling regions typically enable DECOM so that their drawing coordinates are relative to the region, simplifying layout logic.
+:::
+
+## Examples
+
+```bash
+# Set a scrolling region (rows 5-20), then enable origin mode
+printf '\e[5;20r'    # DECSTBM: set scroll region to rows 5-20
+printf '\e[?6h'      # DECOM: enable origin mode
+printf '\e[1;1H'     # CUP: moves to row 5, column 1 (top of scroll region)
+
+# Disable origin mode
+printf '\e[?6l'      # DECOM: disable origin mode
+printf '\e[1;1H'     # CUP: moves to row 1, column 1 (top of screen)
+```
 
 ## Specifications
 
@@ -27,3 +69,10 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [DECSTBM — Set Top and Bottom Margins](/docs/csi/decstbm) — Defines the vertical scrolling region
+- [DECSLRM — Set Left and Right Margins](/docs/csi/decslrm) — Defines horizontal margins
+- [DECLRMM — Left and Right Margin Mode](/docs/decset/mode69-declrmm) — Enables horizontal margins
+- [CHA/CUP — Cursor Positioning](/docs/csi/cha-cup) — Affected by origin mode

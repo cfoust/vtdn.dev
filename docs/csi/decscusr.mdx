@@ -6,19 +6,55 @@ feature_id: "decscusr"
 data_file: "csi-sequences"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-CSI Ps SP q — Cursor style (block/underline/bar)
+**DECSCUSR** (Set Cursor Style) is a CSI sequence that changes the cursor's shape and blink state.
 
 ## Syntax
 
 ```
-TODO: Add syntax for DECSCUSR
+CSI Ps SP q    DECSCUSR — Set Cursor Style
 ```
+
+<FormalSyntax grammar={`
+DECSCUSR = 0x1b, "[", [ Ps ], " ", "q" ;
+Ps       = "0" | "1" | "2" | "3" | "4" | "5" | "6" ;   (* default: 0 *)
+`} />
+
+### Parameters
+
+| Value | Description |
+|-------|-------------|
+| `0` | Default cursor shape (typically blinking block) |
+| `1` | Blinking block |
+| `2` | Steady block |
+| `3` | Blinking underline |
+| `4` | Steady underline |
+| `5` | Blinking bar (I-beam) |
+| `6` | Steady bar (I-beam) |
 
 ## Description
 
-Documentation coming soon.
+Per the VT510 manual, DECSCUSR sets the style of the cursor. The original DEC specification only defined values 0-2 (block cursor, blinking or steady). XTerm extended this to include underline (3-4) and bar/I-beam (5-6) styles.
+
+The parameter `0` resets to the terminal's default cursor style. Values `1` and `0` often behave identically (blinking block), though this varies by terminal.
+
+Odd values select blinking cursors; even values select steady (non-blinking) cursors.
+
+The bar (I-beam) cursor styles (5-6) are a widely adopted extension originally from XTerm. Most modern terminals support all six styles, though the exact cursor dimensions and blink rate may vary.
+
+## Examples
+
+```bash
+printf '\e[2 q'    # Steady block cursor
+printf '\e[3 q'    # Blinking underline cursor
+printf '\e[5 q'    # Blinking bar (I-beam) cursor
+printf '\e[0 q'    # Reset to default cursor style
+```
 
 ## Specifications
 
@@ -27,3 +63,7 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [DECTCEM — Show/Hide Cursor](/docs/decset/mode25-dectcem) — Toggle cursor visibility

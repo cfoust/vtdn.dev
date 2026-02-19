@@ -6,19 +6,50 @@ feature_id: "win_raise_lower"
 data_file: "window-manipulation"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-CSI 5/6 t — Raise / lower window
+<StatusBadges status={{ experimental: true }} />
+
+**Raise** and **Lower** are XTerm window manipulation sequences that change the terminal window's position in the window stacking order.
 
 ## Syntax
 
 ```
-TODO: Add syntax for Raise/lower
+CSI 5 t     Raise window to front of stack
+CSI 6 t     Lower window to back of stack
 ```
+
+<FormalSyntax grammar={`
+raise_window = 0x1b, "[", "5", "t" ;
+lower_window = 0x1b, "[", "6", "t" ;
+`} />
 
 ## Description
 
-Documentation coming soon.
+These sequences control the stacking order (z-order) of the terminal window relative to other windows on the desktop. They are part of the XTerm `CSI Ps ; Ps ; Ps t` window manipulation family.
+
+- **`CSI 5 t`** — Raises the terminal window to the front of the window stack. The window becomes the topmost window, appearing above all other windows. This does not change the keyboard focus.
+- **`CSI 6 t`** — Lowers the terminal window to the back of the window stack. The window is sent behind all other windows on the desktop.
+
+Unlike [Iconify](/docs/window/win-iconify), these sequences do not minimize or restore the window. They only change the stacking order while keeping the window at its current size and position.
+
+On systems with tiling window managers or compositing environments, the behavior of these sequences may differ from traditional stacking window managers.
+
+:::note
+Some terminal emulators disable these sequences by default for security reasons, as a malicious application could obscure the user's terminal or bring it into focus unexpectedly. Check your terminal's configuration for options to enable or disable window manipulation sequences.
+:::
+
+## Examples
+
+```bash
+# Raise window to front
+printf '\e[5t'
+
+# Lower window to back
+printf '\e[6t'
+```
 
 ## Specifications
 
@@ -27,3 +58,8 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [Iconify](/docs/window/win-iconify) — Minimize or restore the window
+- [Window State Report](/docs/window/win-state-report) — Query whether the window is iconified

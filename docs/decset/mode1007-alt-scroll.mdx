@@ -6,19 +6,66 @@ feature_id: "mode1007_alt_scroll"
 data_file: "decset-modes"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-Mode 1007 — Wheel sends arrows in alt screen
+<StatusBadges status={{ experimental: true }} />
+
+**Alt Scroll** (Mode 1007) is a DECSET/DECRST mode that translates scroll wheel events into cursor key sequences when the alternate screen buffer is active and mouse reporting is disabled.
 
 ## Syntax
 
 ```
-TODO: Add syntax for Alt scroll
+CSI ? 1007 h    DECSET — Enable alternate scroll mode
+CSI ? 1007 l    DECRST — Disable alternate scroll mode
 ```
+
+<FormalSyntax grammar={`
+DECSET-mode1007 = 0x1b, "[", "?", "1", "0", "0", "7", "h" ;
+DECRST-mode1007 = 0x1b, "[", "?", "1", "0", "0", "7", "l" ;
+`} />
 
 ## Description
 
-Documentation coming soon.
+Mode 1007 is an XTerm extension that provides a convenient way to scroll through content in applications that use the alternate screen buffer (such as `less`, `man`, or `vi`) but do not enable mouse reporting.
+
+- **Set** — When the alternate screen is active and no mouse tracking mode is enabled, scroll wheel up/down events are translated into cursor up/down key sequences.
+- **Reset** — Scroll wheel events on the alternate screen are handled normally by the terminal (typically ignored if mouse reporting is off). This is the default.
+
+### Behavior
+
+When all of the following conditions are met:
+1. Mode 1007 is enabled
+2. The alternate screen buffer is active (Mode 1049 or Mode 47)
+3. No mouse tracking mode is enabled (Modes 1000, 1002, 1003 are all reset)
+
+Then scroll wheel events are translated as follows:
+
+| Scroll event | Translated to |
+|-------------|---------------|
+| Wheel up    | Cursor Up key (repeated) |
+| Wheel down  | Cursor Down key (repeated) |
+
+The number of cursor key repetitions per scroll step is typically configurable in the terminal emulator's settings.
+
+### Common uses
+
+This mode is particularly useful for applications like `less` and `man` that navigate with cursor keys but do not implement mouse reporting. Without Mode 1007, scroll wheel events on the alternate screen have no effect since there is no scrollback buffer to scroll through.
+
+Many terminal emulators enable this behavior by default or provide a configuration option for it, independent of Mode 1007.
+
+## Examples
+
+```bash
+printf '\e[?1007h'   # Enable alternate scroll mode
+printf '\e[?1007l'   # Disable alternate scroll mode
+
+# Typical usage: enable before launching an alternate-screen application
+printf '\e[?1007h'
+less /var/log/syslog
+printf '\e[?1007l'
+```
 
 ## Specifications
 
@@ -27,3 +74,8 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [Alt Screen — Mode 1049](/docs/decset/mode1049-altscreen) — Alternate screen buffer
+- [Normal Mouse Tracking — Mode 1000](/docs/decset/mode1000-mouse-normal) — Mouse event reporting

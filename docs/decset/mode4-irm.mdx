@@ -6,19 +6,50 @@ feature_id: "mode4_irm"
 data_file: "decset-modes"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-ANSI Mode 4 — Insert/replace mode
+**IRM** (Mode 4) is a DECSET/DECRST mode that controls whether newly typed characters insert at the cursor position (shifting existing characters to the right) or replace the character under the cursor.
 
 ## Syntax
 
 ```
-TODO: Add syntax for IRM
+CSI ? 4 h    DECSET — Enable insert mode
+CSI ? 4 l    DECRST — Disable insert mode (replace mode)
 ```
+
+<FormalSyntax grammar={`
+DECSET-mode4 = 0x1b, "[", "?", "4", "h" ;
+DECRST-mode4 = 0x1b, "[", "?", "4", "l" ;
+`} />
 
 ## Description
 
-Documentation coming soon.
+Per ECMA-48 §7.2.10, IRM (Insertion Replacement Mode) controls the effect of a received character on the active presentation position.
+
+- **Set (insert mode)** — Characters received at the cursor position are inserted. Existing characters from the cursor to the right margin shift right by one position. The character at the right margin is lost (it scrolls off the edge). The cursor advances one position to the right.
+- **Reset (replace mode)** — Characters received at the cursor position overwrite the character currently at that position. The cursor advances one position to the right. This is the default.
+
+:::note
+IRM is defined as an ANSI standard mode in ECMA-48 and is technically set with `CSI 4 h` / `CSI 4 l` (without the `?` prefix). However, many terminal emulators accept the private mode form `CSI ? 4 h` / `CSI ? 4 l` as well. The ANSI form is more correct per the standard.
+:::
+
+### Interaction with other features
+
+- In insert mode, the ICH (Insert Character) sequence `CSI Pn @` inserts blank characters, which is distinct from IRM where printable characters are inserted.
+- Insert mode does not affect characters written via escape sequences; only printable characters received at the cursor position are subject to insertion behavior.
+
+## Examples
+
+```bash
+printf '\e[4h'       # Enable insert mode (ANSI form)
+printf '\e[4l'       # Disable insert mode / enable replace mode (ANSI form)
+printf '\e[?4h'      # Enable insert mode (private mode form)
+printf '\e[?4l'      # Disable insert mode (private mode form)
+```
 
 ## Specifications
 
@@ -27,3 +58,7 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [ICH/DCH/ECH — Insert, Delete, Erase Characters](/docs/csi/ich-dch-ech) — Explicit insert/delete character operations

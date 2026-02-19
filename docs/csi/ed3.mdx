@@ -6,19 +6,38 @@ feature_id: "ed3"
 data_file: "csi-sequences"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-CSI 3 J — Erase scrollback buffer
+<StatusBadges status={{ experimental: true }} />
+
+**ED 3** is an XTerm extension to the standard ED (Erase in Display) sequence that clears the scrollback buffer.
 
 ## Syntax
 
 ```
-TODO: Add syntax for ED 3
+CSI 3 J       ED 3 — Erase scrollback buffer
 ```
+
+<FormalSyntax grammar={`
+ED3 = 0x1b, "[", "3", "J" ;
+`} />
 
 ## Description
 
-Documentation coming soon.
+`CSI 3 J` erases the scrollback (history) buffer while leaving the visible screen contents intact. This is an extension beyond the standard ECMA-48 ED values of 0, 1, and 2.
+
+Some terminals combine the effects: `CSI 3 J` clears only the scrollback, while `CSI 2 J` followed by `CSI 3 J` clears both the visible screen and the scrollback. Other implementations have `CSI 3 J` clear everything (both visible and scrollback).
+
+This sequence is commonly used by the `clear -x` and `clear` commands (with appropriate terminfo entries) to reset the terminal's scroll history, for example to prevent sensitive information from remaining accessible by scrolling up.
+
+## Examples
+
+```bash
+printf '\e[3J'             # Clear scrollback buffer
+printf '\e[2J\e[3J\e[H'   # Clear screen + scrollback + home
+```
 
 ## Specifications
 
@@ -27,3 +46,7 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [ED — Erase in Display](/docs/csi/ed) — Standard erase operations (Ps = 0, 1, 2)

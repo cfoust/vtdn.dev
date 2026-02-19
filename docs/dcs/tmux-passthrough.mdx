@@ -6,19 +6,95 @@ feature_id: "tmux_passthrough"
 data_file: "dcs-sequences"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-DCS tmux; ... ST
+<StatusBadges status={{ experimental: true }} />
+
+**tmux DCS passthrough** is a mechanism that allows applications running inside tmux to send escape sequences directly to the outer terminal emulator. The inner sequence is wrapped in a DCS envelope that tmux intercepts and forwards, bypassing tmux's own terminal emulation layer.
 
 ## Syntax
 
 ```
-TODO: Add syntax for tmux passthrough
+DCS tmux ; escaped-sequence ST    tmux passthrough
 ```
+
+<FormalSyntax grammar={`
+TMUX-PASSTHROUGH = 0x1b, "P", "tmux;", escaped-sequence, 0x1b, "\\\\" ;
+
+escaped-sequence = { escaped-char } ;
+escaped-char = non-esc-char
+             | 0x1b, 0x1b ;              (* ESC is doubled to escape it *)
+non-esc-char = ? any byte except 0x1b ? ;
+`} />
+
+### Parameters
+
+The `escaped-sequence` is the raw escape sequence intended for the outer terminal, with every occurrence of ESC (0x1B) doubled to `ESC ESC`. The sequence terminator `ST` (ESC `\`) ends the passthrough wrapper.
 
 ## Description
 
-Documentation coming soon.
+Terminal multiplexers like tmux sit between the application and the real terminal, interpreting and filtering escape sequences. This means that advanced sequences -- such as graphics protocols, clipboard operations, or terminal queries -- may be consumed or rejected by tmux rather than reaching the outer terminal.
+
+The tmux DCS passthrough solves this by providing an explicit forwarding mechanism. When tmux encounters a DCS sequence beginning with `tmux;`, it extracts the inner sequence, un-doubles any escaped ESC bytes, and writes the result directly to the outer terminal.
+
+### Requirements
+
+- **tmux 3.3 or later**: The passthrough feature was introduced in tmux 3.3.
+- **`allow-passthrough` option**: Passthrough is disabled by default for security. It must be explicitly enabled:
+
+```bash
+# In tmux.conf or at the tmux prompt:
+set -g allow-passthrough on
+
+# Or per-pane:
+set -p allow-passthrough on
+```
+
+In tmux 3.3a+, the option also accepts `all` to allow passthrough from all panes, not just the active one.
+
+### ESC doubling
+
+Any ESC byte (0x1B) within the inner sequence must be doubled. This prevents tmux from interpreting an embedded `ST` (ESC `\`) as the end of the DCS wrapper prematurely. When tmux processes the passthrough, it reduces each `ESC ESC` pair back to a single `ESC`.
+
+For example, to pass through `ESC ] 52 ; c ; dGVzdA== BEL` (an OSC 52 clipboard write), the ESC at the beginning must be doubled:
+
+```
+DCS tmux ; ESC ESC ] 52 ; c ; dGVzdA== BEL ST
+```
+
+### Common use cases
+
+- **Sixel graphics**: Render images in the outer terminal while running inside tmux.
+- **Clipboard operations**: Send OSC 52 clipboard sequences to the real terminal.
+- **Terminal queries**: Forward XTVERSION, DA1, or other query sequences and receive responses from the outer terminal.
+- **Kitty graphics protocol**: Send kitty graphics commands through tmux to a compatible outer terminal.
+
+### Security considerations
+
+Passthrough grants applications direct access to the outer terminal, bypassing tmux's filtering. This can be a security concern in shared or multi-user environments, which is why it is disabled by default. The `allow-passthrough` option should only be enabled when you trust the applications running inside tmux.
+
+## Examples
+
+```bash
+# Enable passthrough in tmux
+tmux set -g allow-passthrough on
+
+# Send OSC 52 clipboard write through tmux
+# Inner sequence: ESC]52;c;dGVzdA==BEL
+# ESC (0x1b) must be doubled
+printf '\ePtmux;\e\e]52;c;dGVzdA==\x07\e\\'
+
+# Send XTVERSION query through tmux
+# Inner sequence: ESC[>0q
+printf '\ePtmux;\e\e[>0q\e\\'
+
+# Send a Sixel image through tmux
+# Inner sequence: ESC P q <sixel-data> ESC \
+# Both ESCs in the inner DCS must be doubled
+printf '\ePtmux;\e\ePq#1;2;100;0;0#1~\e\e\\\e\\'
+```
 
 ## Specifications
 
@@ -27,3 +103,9 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [Sixel graphics](/docs/dcs/sixel) — Graphics protocol commonly used with passthrough
+- [XTVERSION — Terminal Version](/docs/dcs/xtversion) — Query often forwarded through passthrough
+- [DECRQSS — Request Selection or Setting](/docs/dcs/decrqss) — Another DCS query sequence

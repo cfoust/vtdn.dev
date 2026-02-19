@@ -6,19 +6,64 @@ feature_id: "da2"
 data_file: "csi-sequences"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-CSI > c — Secondary device attributes
+**DA2** (Secondary Device Attributes) is a CSI sequence that queries the terminal for its type and firmware version.
 
 ## Syntax
 
 ```
-TODO: Add syntax for DA2
+CSI > c           DA2 request (query)
+CSI > Pp ; Pv ; Pc c   DA2 response
 ```
+
+<FormalSyntax grammar={`
+(* Request *)
+DA2-request  = 0x1b, "[", ">", [ "0" ], "c" ;
+
+(* Response *)
+DA2-response = 0x1b, "[", ">", Pp, ";", Pv, ";", Pc, "c" ;
+Pp = digit, { digit } ;                 (* terminal type *)
+Pv = digit, { digit } ;                 (* firmware version *)
+Pc = digit, { digit } ;                 (* ROM cartridge / always 0 *)
+digit = "0" | "1" | "2" | "3" | "4"
+      | "5" | "6" | "7" | "8" | "9" ;
+`} />
 
 ## Description
 
-Documentation coming soon.
+Per the VT510 manual, the host sends `CSI > c` (or `CSI > 0 c`) to request secondary device attributes. The response contains three values:
+
+- **`Pp`** — Terminal type identifier
+- **`Pv`** — Firmware/software version number
+- **`Pc`** — ROM cartridge registration number (always 0 on modern terminals)
+
+### Common terminal type identifiers
+
+| Value | Terminal |
+|-------|---------|
+| `0` | VT100 |
+| `1` | VT220 |
+| `2` | VT240 / VT241 |
+| `41` | XTerm (commonly used) |
+| `65` | VT510 / VT520 |
+
+Modern terminal emulators report different values. For example, XTerm reports `41` for `Pp` and its patch level for `Pv`. Some terminals (e.g., iTerm2, kitty) use unique identifiers.
+
+:::note
+DA2 is commonly used for terminal identification in conjunction with DA1. However, relying on DA2 for feature detection is fragile since terminals may report any values they choose. The XTVERSION query or DECRQM are more reliable for specific feature detection.
+:::
+
+## Examples
+
+```bash
+printf '\e[>c'
+# Typical XTerm response: ESC[>41;351;0c
+```
 
 ## Specifications
 
@@ -27,3 +72,8 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [DA1 — Primary Device Attributes](/docs/csi/da1) — Terminal class and features
+- [DA3 — Tertiary Device Attributes](/docs/csi/da3) — Terminal unit ID

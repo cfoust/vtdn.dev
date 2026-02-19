@@ -6,19 +6,78 @@ feature_id: "xtpushcolors"
 data_file: "csi-sequences"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-CSI # p/q — Color palette stack
+<StatusBadges status={{ experimental: true }} />
+
+**XTPUSHCOLORS** and **XTPOPCOLORS** are XTerm extensions that save and restore the terminal's color palette using a stack.
 
 ## Syntax
 
 ```
-TODO: Add syntax for XTPUSHCOLORS/XTPOPCOLORS
+CSI # p          XTPUSHCOLORS — Push color palette onto stack
+CSI Ps # q       XTPOPCOLORS — Pop color palette from stack
+CSI # R          XTREPORTCOLORS — Report palette stack depth
 ```
+
+<FormalSyntax grammar={`
+(* Push current palette onto stack *)
+XTPUSHCOLORS   = 0x1b, "[", "#", "p" ;
+
+(* Pop palette from stack *)
+XTPOPCOLORS    = 0x1b, "[", [ Ps ], "#", "q" ;
+
+(* Report current stack depth *)
+XTREPORTCOLORS = 0x1b, "[", "#", "R" ;
+
+(* Report response *)
+XTREPORTCOLORS-response = 0x1b, "[", Pn, "#", "Q" ;
+
+Ps             = digit, { digit } ;                (* stack entry to restore, default: pop top *)
+Pn             = digit, { digit } ;                (* current stack depth *)
+digit          = "0" | "1" | "2" | "3" | "4"
+               | "5" | "6" | "7" | "8" | "9" ;
+`} />
+
+### Parameters
+
+| Sequence | Parameter | Description |
+|----------|-----------|-------------|
+| `XTPOPCOLORS` | `Ps` | Stack entry index to restore (default: pop the most recent entry) |
+
+### Response (XTREPORTCOLORS)
+
+The terminal responds with `CSI Pn # Q` where `Pn` is the number of entries currently on the palette stack.
 
 ## Description
 
-Documentation coming soon.
+Per XTerm documentation, XTPUSHCOLORS saves the current color palette (all 256 indexed colors plus the dynamic colors like foreground, background, and cursor color) onto an internal stack. XTPOPCOLORS restores a previously saved palette.
+
+The stack has a limited depth (typically 10 entries in XTerm). Pushing beyond the limit silently fails.
+
+XTPOPCOLORS with no parameter pops the most recent entry, removing it from the stack. With a parameter `Ps`, it restores that specific stack entry without removing any entries.
+
+XTREPORTCOLORS queries the current depth of the palette stack, allowing applications to check whether saves are available before popping.
+
+These sequences are useful for applications that temporarily modify the terminal's color palette (such as theming or color scheme previews) and want to cleanly restore the original colors on exit.
+
+## Examples
+
+```bash
+# Save current color palette
+printf '\e[#p'
+
+# Modify some colors (e.g., set color 1 to bright red via OSC 4)
+printf '\e]4;1;rgb:ff/00/00\e\\'
+
+# Restore original color palette
+printf '\e[#q'
+
+# Query stack depth (response: ESC [ Pn # Q)
+printf '\e[#R'
+```
 
 ## Specifications
 
@@ -27,3 +86,8 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [OSC 4 — Set/Query Color Palette](/docs/osc/osc4) — Modify individual palette colors
+- [OSC 104 — Reset Colors](/docs/osc/osc104) — Reset palette colors to defaults

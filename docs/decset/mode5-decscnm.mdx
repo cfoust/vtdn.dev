@@ -6,19 +6,52 @@ feature_id: "mode5_decscnm"
 data_file: "decset-modes"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-Mode 5 — Reverse video (light background)
+**DECSCNM** (Mode 5) is a DECSET/DECRST mode that swaps the foreground and background colors of the entire screen, producing a reverse-video (light background) display.
 
 ## Syntax
 
 ```
-TODO: Add syntax for DECSCNM
+CSI ? 5 h    DECSET — Enable reverse video (light background)
+CSI ? 5 l    DECRST — Disable reverse video (normal, dark background)
 ```
+
+<FormalSyntax grammar={`
+DECSET-mode5 = 0x1b, "[", "?", "5", "h" ;
+DECRST-mode5 = 0x1b, "[", "?", "5", "l" ;
+`} />
 
 ## Description
 
-Documentation coming soon.
+Per the VT100 User Guide and VT510 Programmer Reference, DECSCNM (Screen Mode) controls the visual polarity of the display.
+
+- **Set (reverse video)** — The screen displays dark characters on a light background. The foreground and background colors are swapped for the entire display.
+- **Reset (normal video)** — The screen displays light characters on a dark background. This is the default.
+
+DECSCNM swaps the default foreground and background colors globally. Characters that have already been written with explicit SGR color attributes may appear differently depending on the terminal implementation; some terminals swap all colors, while others only swap the default pair.
+
+:::note
+On the original VT100 hardware, this mode literally controlled whether the phosphor was illuminated for the foreground or the background, giving the appearance of "white paper" vs "green screen." In modern terminals, the effect is achieved by swapping the configured foreground and background palette entries.
+:::
+
+### Visual flash
+
+DECSCNM can be toggled rapidly to produce a visible "flash" effect, which is how some terminals implement the visual bell (BEL when the audible bell is disabled).
+
+## Examples
+
+```bash
+printf '\e[?5h'      # Enable reverse video (light background)
+printf '\e[?5l'      # Disable reverse video (dark background)
+
+# Visual flash effect (toggle reverse video briefly)
+printf '\e[?5h' && sleep 0.1 && printf '\e[?5l'
+```
 
 ## Specifications
 
@@ -27,3 +60,7 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [Reverse video — SGR 7](/docs/sgr/sgr-reverse) — Per-character reverse video attribute

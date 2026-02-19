@@ -6,19 +6,37 @@ feature_id: "ht"
 data_file: "control-sequences"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-0x09 — Horizontal tab
+**HT** (Character Tabulation / Horizontal Tab) is a C0 control character that advances the cursor to the next tab stop.
 
 ## Syntax
 
 ```
-TODO: Add syntax for HT
+HT        0x09
 ```
 
 ## Description
 
-Documentation coming soon.
+Per ECMA-48 §8.3.60, HT "causes the active presentation position to be moved to the following character tabulation stop in the presentation component."
+
+By default, tab stops are set every 8 columns (columns 1, 9, 17, 25, ...). Tab stops can be modified using HTS (set a tab stop at the current column), TBC (clear tab stops), or the DECST8C sequence.
+
+If there are no more tab stops between the cursor and the right margin, behavior varies by terminal. Most terminals move the cursor to the last column of the line.
+
+HT does not erase characters between the current cursor position and the destination tab stop. The intervening cells are typically filled with spaces in the display, but the cursor simply jumps to the next stop position.
+
+## Examples
+
+```bash
+printf 'A\tB\tC'     # Print A, B, C separated by tab stops
+printf '\e[3g'        # Clear all tab stops (TBC)
+printf '\eH'          # Set a tab stop at the current column (HTS)
+```
 
 ## Specifications
 
@@ -27,3 +45,9 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [HTS — Set Tab Stop](/docs/c0-c1/hts) — Set a tab stop at the current column
+- [CHT/CBT — Cursor Tab Forward/Backward](/docs/csi/cht-cbt) — CSI sequences for tabulation
+- [TBC — Tabulation Clear](/docs/csi/tbc) — Clear tab stops

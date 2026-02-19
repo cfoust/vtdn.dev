@@ -6,19 +6,47 @@ feature_id: "deckpam_deckpnm"
 data_file: "control-sequences"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-ESC = / ESC > — Application/numeric keypad
+**DECKPAM** (Keypad Application Mode) and **DECKPNM** (Keypad Numeric Mode) are DEC VT100 escape sequences that control what the numeric keypad transmits when keys are pressed.
 
 ## Syntax
 
 ```
-TODO: Add syntax for DECKPAM/DECKPNM
+ESC =         DECKPAM — Enter application keypad mode
+ESC >         DECKPNM — Enter numeric keypad mode
 ```
 
 ## Description
 
-Documentation coming soon.
+### DECKPAM — Application mode (ESC =)
+
+Per the VT510 manual, DECKPAM causes the numeric keypad to send application-specific escape sequences instead of the characters printed on the keys. In this mode, each keypad key generates a unique SS3-prefixed sequence (e.g., `ESC O p` for key 0, `ESC O q` for key 1, etc.).
+
+This mode is commonly used by full-screen applications like text editors (e.g., vi, Emacs) and TUI libraries (e.g., ncurses) that need to distinguish keypad input from regular number input.
+
+### DECKPNM — Numeric mode (ESC >)
+
+DECKPNM restores the keypad to its default numeric mode, where keys send the literal characters printed on them: digits 0-9, period (.), comma (,), and minus (-).
+
+### Default behavior
+
+The terminal defaults to numeric keypad mode on power-up and after a reset. The setting is not saved to non-volatile memory.
+
+:::note
+DECKPAM/DECKPNM function identically to the DECNKM mode (DECSET/DECRST mode 66) on the VT510. Most modern terminal emulators support both mechanisms.
+:::
+
+## Examples
+
+```bash
+printf '\e='     # Enable application keypad mode
+printf '\e>'     # Return to numeric keypad mode
+```
 
 ## Specifications
 

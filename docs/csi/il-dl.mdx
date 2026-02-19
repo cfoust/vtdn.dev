@@ -6,19 +6,53 @@ feature_id: "il_dl"
 data_file: "csi-sequences"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-CSI L/M — Insert/delete lines
+**IL** (Insert Line) and **DL** (Delete Line) are CSI sequences that insert or delete lines at the cursor's current row within the scrolling region.
 
 ## Syntax
 
 ```
-TODO: Add syntax for IL/DL
+CSI Pn L      IL — Insert Line
+CSI Pn M      DL — Delete Line
 ```
+
+<FormalSyntax grammar={`
+IL = 0x1b, "[", [ Pn ], "L" ;
+DL = 0x1b, "[", [ Pn ], "M" ;
+Pn = digit, { digit } ;                 (* default: 1 *)
+digit = "0" | "1" | "2" | "3" | "4"
+      | "5" | "6" | "7" | "8" | "9" ;
+`} />
+
+### Parameters
+
+| Parameter | Description | Default |
+|-----------|-------------|---------|
+| `Pn` | Number of lines to insert or delete | 1 |
 
 ## Description
 
-Documentation coming soon.
+### IL — Insert Line (CSI Pn L)
+
+Per ECMA-48 §8.3.67, IL inserts `Pn` blank lines at the cursor's row. The current line and the lines below it within the scrolling region are shifted down. Lines pushed past the bottom margin of the scrolling region are lost. The cursor moves to column 1 of the current row.
+
+### DL — Delete Line (CSI Pn M)
+
+Per ECMA-48 §8.3.32, DL removes `Pn` lines starting at the cursor's row. Lines below the deleted range within the scrolling region are shifted up, and blank lines are added at the bottom margin. The cursor moves to column 1 of the current row.
+
+Both operations are confined to the scrolling region set by DECSTBM. Lines outside the scrolling region are not affected.
+
+## Examples
+
+```bash
+printf '\e[2L'       # Insert 2 blank lines at cursor row
+printf '\e[3M'       # Delete 3 lines starting at cursor row
+```
 
 ## Specifications
 
@@ -27,3 +61,9 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [ICH/DCH/ECH — Insert/Delete/Erase Characters](/docs/csi/ich-dch-ech) — Character-level operations
+- [DECSTBM — Set Top and Bottom Margins](/docs/csi/decstbm) — Defines the scrolling region
+- [SU/SD — Scroll Up/Down](/docs/csi/su-sd) — Scroll without moving the cursor

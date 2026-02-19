@@ -6,19 +6,72 @@ feature_id: "da1"
 data_file: "csi-sequences"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-CSI c — Primary device attributes
+**DA1** (Primary Device Attributes) is a CSI sequence that queries the terminal for its identity and supported features. The terminal responds with a list of attribute codes.
 
 ## Syntax
 
 ```
-TODO: Add syntax for DA1
+CSI c         DA1 request (query)
+CSI ? Pp ; ... c   DA1 response
 ```
+
+<FormalSyntax grammar={`
+(* Request *)
+DA1-request  = 0x1b, "[", [ "0" ], "c" ;
+
+(* Response *)
+DA1-response = 0x1b, "[", "?", Pp, { ";", Ps }, "c" ;
+Pp = digit, { digit } ;                 (* terminal type *)
+Ps = digit, { digit } ;                 (* feature code *)
+digit = "0" | "1" | "2" | "3" | "4"
+      | "5" | "6" | "7" | "8" | "9" ;
+`} />
 
 ## Description
 
-Documentation coming soon.
+Per the VT510 manual, the host sends `CSI c` (or `CSI 0 c`) to request the terminal's primary device attributes. The terminal responds with `CSI ? Pp ; Ps ; ... c` where `Pp` identifies the terminal type and the `Ps` values indicate supported features.
+
+### Common response types
+
+The leading `Pp` value identifies the terminal class:
+
+| Value | Terminal type |
+|-------|-------------|
+| `1` | VT100 |
+| `6` | VT102 |
+| `62` | VT220 |
+| `63` | VT320 |
+| `64` | VT420 |
+| `65` | VT510/VT520 |
+
+### Feature codes
+
+Common `Ps` feature attribute values include:
+
+| Code | Feature |
+|------|---------|
+| `1` | 132 columns |
+| `4` | Sixel graphics |
+| `6` | Selective erase |
+| `9` | National Replacement Character sets |
+| `15` | Technical character set |
+| `22` | ANSI color (VT525) |
+
+Most modern terminal emulators respond as a VT220 (`?62`) or higher with various feature flags. The exact response varies by terminal and is a common method for feature detection.
+
+## Examples
+
+```bash
+# Send DA1 query and read response
+printf '\e[c'
+# Typical XTerm response: ESC[?62;4;6;22c
+```
 
 ## Specifications
 
@@ -27,3 +80,9 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [DA2 — Secondary Device Attributes](/docs/csi/da2) — Terminal version information
+- [DA3 — Tertiary Device Attributes](/docs/csi/da3) — Terminal unit ID
+- [DSR/CPR — Device Status Report](/docs/csi/dsr-cpr) — Query device status

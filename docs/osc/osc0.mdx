@@ -6,19 +6,56 @@ feature_id: "osc0"
 data_file: "osc-sequences"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-Set icon name and window title
+<StatusBadges status={{ experimental: true }} />
+
+**OSC 0** sets both the icon name and the window title of the terminal. It is the most commonly used title-setting sequence, emitted by default in many shell prompt configurations.
 
 ## Syntax
 
 ```
-TODO: Add syntax for OSC 0
+OSC 0 ; Pt BEL
+OSC 0 ; Pt ST
 ```
+
+<FormalSyntax grammar={`
+OSC0 = 0x1b, "]", "0", ";", text, ( 0x07 | 0x1b, "\\\\" ) ;
+text = character, { character } ;
+`} />
+
+### Parameters
+
+| Parameter | Description | Default |
+|-----------|-------------|---------|
+| `Pt` | The text string to use as both the icon name and window title | (none) |
 
 ## Description
 
-Documentation coming soon.
+Per the XTerm control sequences documentation, OSC 0 sets both the icon name and the window title to the string `Pt`. The icon name historically referred to the label displayed when a window was iconified (minimized) in X11 window managers. In modern desktop environments, the icon name is largely vestigial, and most terminals treat OSC 0 as functionally equivalent to setting the window title alone.
+
+The text parameter `Pt` is a free-form string. It is terminated by either BEL (0x07) or ST (String Terminator, ESC \). BEL is more commonly used in practice because it is a single byte and avoids potential parsing issues.
+
+Many shell configurations emit OSC 0 from the prompt to display the current working directory or running command in the terminal's title bar. For example, Bash's default `PROMPT_COMMAND` often includes an OSC 0 sequence.
+
+:::note
+OSC 0 sets both the icon name and window title simultaneously. Use [OSC 1](/docs/osc/osc0) to set only the icon name, or [OSC 2](/docs/osc/osc2) to set only the window title.
+:::
+
+## Examples
+
+```bash
+# Set window title to "My Terminal"
+printf '\e]0;My Terminal\a'
+
+# Set window title using ST terminator
+printf '\e]0;My Terminal\e\\'
+
+# Set title to current directory (common in shell prompts)
+printf '\e]0;%s\a' "$PWD"
+```
 
 ## Specifications
 
@@ -27,3 +64,8 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [OSC 2 — Set Window Title](/docs/osc/osc2) — Sets only the window title without affecting the icon name
+- [BEL](/docs/c0-c1/bel) — The bell character commonly used as OSC string terminator

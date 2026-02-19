@@ -6,19 +6,54 @@ feature_id: "truecolor_semicolon"
 data_file: "text-styling"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-SGR 38;2;r;g;b
+<StatusBadges status={{ experimental: true }} />
+
+**24-bit truecolor (semicolons)** uses SGR 38;2 and 48;2 with semicolon-separated RGB values to set foreground and background to any of 16.7 million colors.
 
 ## Syntax
 
 ```
-TODO: Add syntax for 24-bit truecolor (semicolons)
+CSI 38;2;r;g;b m    SGR — Set foreground to RGB color
+CSI 48;2;r;g;b m    SGR — Set background to RGB color
 ```
+
+<FormalSyntax grammar={`
+SGR-fg-rgb = 0x1b, "[", "38", ";", "2", ";", r, ";", g, ";", b, "m" ;
+SGR-bg-rgb = 0x1b, "[", "48", ";", "2", ";", r, ";", g, ";", b, "m" ;
+r          = digit, { digit } ;                    (* red: 0-255 *)
+g          = digit, { digit } ;                    (* green: 0-255 *)
+b          = digit, { digit } ;                    (* blue: 0-255 *)
+digit      = "0" | "1" | "2" | "3" | "4"
+           | "5" | "6" | "7" | "8" | "9" ;
+`} />
+
+### Parameters
+
+| Parameter | Description |
+|-----------|-------------|
+| `r` | Red component (0-255) |
+| `g` | Green component (0-255) |
+| `b` | Blue component (0-255) |
 
 ## Description
 
-Documentation coming soon.
+The semicolon-separated truecolor syntax is the most widely supported form of 24-bit RGB color in terminals. It extends the ECMA-48 SGR 38/48 color mechanism with `2` as the color space indicator, followed by the red, green, and blue components.
+
+This syntax deviates from the ITU-T T.416 standard, which specifies colons as sub-parameter separators (see the colon variant). However, the semicolon form was adopted first by terminal emulators and has broader support.
+
+Colors set via RGB are not affected by palette changes and always represent the exact specified color.
+
+## Examples
+
+```bash
+printf '\e[38;2;255;100;0mOrange text\e[0m\n'
+printf '\e[48;2;0;0;128mNavy background\e[0m\n'
+printf '\e[38;2;255;255;255;48;2;0;0;0mWhite on black\e[0m\n'
+```
 
 ## Specifications
 
@@ -27,3 +62,9 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [24-bit truecolor (colons)](/docs/sgr/truecolor-colon) — T.416-conformant colon syntax
+- [256-color indexed](/docs/sgr/color-256) — 256-color palette
+- [Standard ANSI colors](/docs/sgr/color-standard) — 8+8 basic colors

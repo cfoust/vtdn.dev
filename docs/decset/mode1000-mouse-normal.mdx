@@ -6,19 +6,85 @@ feature_id: "mode1000_mouse_normal"
 data_file: "decset-modes"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-Mode 1000 — Press + release tracking
+<StatusBadges status={{ experimental: true }} />
+
+**Normal Mouse Tracking** (Mode 1000) is a DECSET/DECRST mode that enables reporting of mouse button press and release events to the application.
 
 ## Syntax
 
 ```
-TODO: Add syntax for Normal mouse
+CSI ? 1000 h    DECSET — Enable normal mouse tracking
+CSI ? 1000 l    DECRST — Disable normal mouse tracking
 ```
+
+<FormalSyntax grammar={`
+DECSET-mode1000 = 0x1b, "[", "?", "1", "0", "0", "0", "h" ;
+DECRST-mode1000 = 0x1b, "[", "?", "1", "0", "0", "0", "l" ;
+`} />
 
 ## Description
 
-Documentation coming soon.
+Mode 1000 is an XTerm extension that enables basic mouse event reporting. When enabled, the terminal sends escape sequences to the application whenever a mouse button is pressed or released within the terminal window.
+
+- **Set** — The terminal reports mouse button press and release events.
+- **Reset** — Mouse events are not reported. The terminal handles mouse events normally (e.g., for text selection). This is the default.
+
+### Report format (X10 encoding)
+
+When a mouse event occurs, the terminal sends:
+
+```
+CSI M Cb Cx Cy
+```
+
+Where:
+- `Cb` is the button byte: the button number plus modifier flags, plus 32
+- `Cx` is the column (x coordinate) plus 32
+- `Cy` is the row (y coordinate) plus 32
+
+The 32 offset ensures all values are printable ASCII characters (space and above).
+
+### Button encoding
+
+| Value (Cb - 32) | Meaning |
+|------------------|---------|
+| `0`              | Left button press |
+| `1`              | Middle button press |
+| `2`              | Right button press |
+| `3`              | Button release (any button) |
+| `64`             | Scroll wheel up |
+| `65`             | Scroll wheel down |
+
+Modifier keys are encoded as additional bit flags:
+
+| Bit  | Modifier |
+|------|----------|
+| `4`  | Shift    |
+| `8`  | Meta/Alt |
+| `16` | Control  |
+
+### Limitations
+
+The X10/normal encoding has a fundamental limitation: because coordinates are encoded as single bytes with a +32 offset, the maximum reportable position is column/row 223 (255 - 32). For terminals wider or taller than 223, the SGR mouse encoding (Mode 1006) should be used instead.
+
+:::note
+Mode 1000 reports press and release events but does **not** report mouse motion. For motion tracking, use Mode 1002 (button-event tracking) or Mode 1003 (any-event tracking).
+:::
+
+## Examples
+
+```bash
+printf '\e[?1000h'   # Enable normal mouse tracking
+printf '\e[?1000l'   # Disable normal mouse tracking
+
+# Typically combined with SGR encoding for better compatibility:
+printf '\e[?1000h\e[?1006h'   # Enable mouse tracking with SGR encoding
+printf '\e[?1006l\e[?1000l'   # Disable both (reverse order)
+```
 
 ## Specifications
 
@@ -27,3 +93,10 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [Button-Event Mouse Tracking — Mode 1002](/docs/decset/mode1002-button-event) — Adds motion-while-pressed reporting
+- [Any-Event Mouse Tracking — Mode 1003](/docs/decset/mode1003-any-event) — Reports all mouse motion
+- [SGR Mouse Encoding — Mode 1006](/docs/decset/mode1006-sgr-mouse) — Extended encoding without coordinate limits
+- [SGR-Pixel Mouse — Mode 1016](/docs/decset/mode1016-sgr-pixel) — Pixel-level mouse coordinates

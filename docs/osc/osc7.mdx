@@ -6,19 +6,66 @@ feature_id: "osc7"
 data_file: "osc-sequences"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-Current working directory reporting
+<StatusBadges status={{ experimental: true }} />
+
+**OSC 7** reports the current working directory of the shell to the terminal emulator. This enables smart features such as opening new tabs or splits in the same directory, and displaying the working directory in the tab title.
 
 ## Syntax
 
 ```
-TODO: Add syntax for OSC 7
+OSC 7 ; file://hostname/path ST
+OSC 7 ; file://hostname/path BEL
 ```
+
+<FormalSyntax grammar={`
+OSC7 = 0x1b, "]", "7", ";", uri, ( 0x07 | 0x1b, "\\\\" ) ;
+uri  = "file://", hostname, path ;
+hostname = { character } ;
+path     = "/", { character } ;
+`} />
+
+### Parameters
+
+| Parameter | Description | Default |
+|-----------|-------------|---------|
+| `hostname` | The hostname of the machine (can be empty) | (empty) |
+| `path` | The percent-encoded absolute path of the current working directory | (required) |
 
 ## Description
 
-Documentation coming soon.
+OSC 7 is a shell integration protocol that allows the shell to communicate its current working directory to the terminal. The terminal can then use this information to provide enhanced user experience features.
+
+The URI follows the `file://` scheme. The hostname component identifies the machine (relevant for remote sessions), and the path component is an absolute filesystem path. Special characters in the path (spaces, non-ASCII characters) should be percent-encoded per RFC 3986.
+
+This sequence is typically emitted from the shell's prompt hook. Common use cases enabled by OSC 7 include:
+
+- **New tab/split in same directory** — The terminal opens new sessions in the reported working directory instead of the default home directory
+- **Tab title display** — The terminal can show the current directory name in the tab bar
+- **File path resolution** — Clicking on relative paths in terminal output can resolve against the known working directory
+
+OSC 7 was popularized by the VTE (GNOME Terminal) project and has been adopted by many modern terminal emulators. It is not part of the original XTerm specification.
+
+## Examples
+
+```bash
+# Report CWD from a shell prompt hook
+printf '\e]7;file://%s%s\a' "$HOSTNAME" "$PWD"
+
+# Bash: add to PROMPT_COMMAND
+PROMPT_COMMAND='printf "\e]7;file://%s%s\a" "$HOSTNAME" "$PWD"'
+
+# Zsh: add to precmd hook
+precmd() {
+  printf '\e]7;file://%s%s\a' "$HOST" "$PWD"
+}
+
+# With percent-encoding for paths containing spaces
+printf '\e]7;file://localhost/home/user/my%%20project\a'
+```
 
 ## Specifications
 
@@ -27,3 +74,8 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [OSC 0 — Set Icon Name and Window Title](/docs/osc/osc0) — An alternative way to display directory info in the title bar
+- [OSC 133 — Shell Integration](/docs/osc/osc133) — FinalTerm semantic zones for richer shell integration

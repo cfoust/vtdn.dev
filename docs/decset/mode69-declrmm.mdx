@@ -6,19 +6,59 @@ feature_id: "mode69_declrmm"
 data_file: "decset-modes"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-Mode 69 — Left/right margin mode
+**DECLRMM** (Mode 69) is a DECSET/DECRST mode that enables or disables left and right margins, allowing DECSLRM to define a horizontal scrolling region.
 
 ## Syntax
 
 ```
-TODO: Add syntax for DECLRMM
+CSI ? 69 h    DECSET — Enable left/right margin mode
+CSI ? 69 l    DECRST — Disable left/right margin mode
 ```
+
+<FormalSyntax grammar={`
+DECSET-mode69 = 0x1b, "[", "?", "6", "9", "h" ;
+DECRST-mode69 = 0x1b, "[", "?", "6", "9", "l" ;
+`} />
 
 ## Description
 
-Documentation coming soon.
+Per the VT420 and VT510 Programmer Reference manuals, DECLRMM (Left Right Margin Mode) controls whether the terminal recognizes left and right margins set by DECSLRM.
+
+- **Set** — Left and right margins are enabled. DECSLRM (`CSI Pl ; Pr s`) can be used to define the left and right margin columns. Printing, scrolling, and cursor movement are constrained within these margins.
+- **Reset** — Left and right margins are disabled. The left margin is fixed at column 1 and the right margin is fixed at the last column. This is the default.
+
+### Side effects
+
+When DECLRMM is reset, any previously set left and right margins are cleared. The margins revert to the full width of the screen.
+
+### Interaction with other features
+
+When left/right margins are active:
+
+- **Printing** — Characters that reach the right margin wrap to the left margin of the next line (if DECAWM is set), rather than to column 1.
+- **Scrolling** — IL, DL, SU, SD, and other scroll operations only affect the region within the left and right margins.
+- **Cursor movement** — CUB stops at the left margin; CUF stops at the right margin. CUP coordinates are relative to the margins when DECOM is set.
+- **Erasure** — EL erases within the full line width, but ICH, DCH, and ECH operate within the margins.
+
+:::note
+DECLRMM must be enabled before DECSLRM can set margins. If DECLRMM is off, the `CSI Pl ; Pr s` sequence is interpreted as SCP (Save Cursor Position) instead. This ambiguity between DECSLRM and SCP is a well-known source of compatibility issues.
+:::
+
+## Examples
+
+```bash
+printf '\e[?69h'         # Enable left/right margin mode
+printf '\e[10;70s'       # Set left margin to column 10, right margin to column 70
+# Text and scrolling are now confined to columns 10-70
+
+printf '\e[?69l'         # Disable left/right margin mode (margins cleared)
+```
 
 ## Specifications
 
@@ -27,3 +67,9 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [DECSLRM — Set Left and Right Margins](/docs/csi/decslrm) — Sets the actual margin columns
+- [DECSTBM — Set Top and Bottom Margins](/docs/csi/decstbm) — Vertical scrolling margins
+- [DECOM — Origin Mode](/docs/decset/mode6-decom) — Cursor positioning relative to margins

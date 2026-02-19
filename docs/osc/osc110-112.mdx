@@ -6,19 +6,64 @@ feature_id: "osc110_112"
 data_file: "osc-sequences"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-Reset foreground/background/cursor color
+<StatusBadges status={{ experimental: true }} />
+
+**OSC 110**, **OSC 111**, and **OSC 112** reset the terminal's default foreground color, background color, and cursor color to their configured defaults. They are the counterparts to OSC 10, OSC 11, and OSC 12 respectively.
 
 ## Syntax
 
 ```
-TODO: Add syntax for OSC 110/111/112
+OSC 110 ST       Reset default foreground color
+OSC 111 ST       Reset default background color
+OSC 112 ST       Reset cursor color
 ```
+
+<FormalSyntax grammar={`
+OSC110 = 0x1b, "]", "110", ( 0x07 | 0x1b, "\\\\" ) ;
+OSC111 = 0x1b, "]", "111", ( 0x07 | 0x1b, "\\\\" ) ;
+OSC112 = 0x1b, "]", "112", ( 0x07 | 0x1b, "\\\\" ) ;
+`} />
 
 ## Description
 
-Documentation coming soon.
+These sequences undo color changes made by their corresponding OSC set/query sequences:
+
+| Sequence | Resets | Counterpart |
+|----------|--------|-------------|
+| OSC 110 | Default foreground (text) color | OSC 10 |
+| OSC 111 | Default background color | OSC 11 |
+| OSC 112 | Cursor color | OSC 12 |
+
+Each reset sequence takes no parameters. The color reverts to whatever the terminal's configuration specifies as the default. This is the color that was in effect before any OSC 10/11/12 sequences were processed.
+
+These sequences are particularly useful for applications that temporarily change the terminal's appearance (for example, to implement a dark/light theme toggle) and need to restore the original colors when the application exits.
+
+:::note
+There are additional reset sequences in the same range: OSC 113 resets the mouse foreground color, OSC 114 resets the mouse background color, OSC 115 resets the Tektronix foreground, OSC 116 resets the Tektronix background, and OSC 117 resets the highlight color. However, support for these is rare outside of XTerm.
+:::
+
+## Examples
+
+```bash
+# Change foreground to red, then reset it
+printf '\e]10;#ff0000\e\\'
+printf '\e]110\e\\'
+
+# Change background to blue, then reset it
+printf '\e]11;#0000ff\e\\'
+printf '\e]111\e\\'
+
+# Change cursor color to green, then reset it
+printf '\e]12;#00ff00\e\\'
+printf '\e]112\e\\'
+
+# Reset all three at once
+printf '\e]110\e\\' && printf '\e]111\e\\' && printf '\e]112\e\\'
+```
 
 ## Specifications
 
@@ -27,3 +72,10 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [OSC 10 — Set/Query Foreground Color](/docs/osc/osc10) — Set default foreground color
+- [OSC 11 — Set/Query Background Color](/docs/osc/osc11) — Set default background color
+- [OSC 12 — Set/Query Cursor Color](/docs/osc/osc12) — Set cursor color
+- [OSC 104 — Reset Color Palette Entry](/docs/osc/osc104) — Reset indexed palette colors

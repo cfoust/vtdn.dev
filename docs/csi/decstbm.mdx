@@ -6,19 +6,59 @@ feature_id: "decstbm"
 data_file: "csi-sequences"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-CSI r — Set top and bottom margins
+**DECSTBM** (Set Top and Bottom Margins) is a CSI sequence that defines the vertical scrolling region. Operations such as IND, RI, SU, SD, IL, and DL are confined to the lines within these margins.
 
 ## Syntax
 
 ```
-TODO: Add syntax for DECSTBM
+CSI Pt ; Pb r     DECSTBM — Set Top and Bottom Margins
 ```
+
+<FormalSyntax grammar={`
+DECSTBM = 0x1b, "[", [ Pt, [ ";", Pb ] ], "r" ;
+Pt = digit, { digit } ;                 (* top margin, default: 1 *)
+Pb = digit, { digit } ;                 (* bottom margin, default: screen height *)
+digit = "0" | "1" | "2" | "3" | "4"
+      | "5" | "6" | "7" | "8" | "9" ;
+`} />
+
+### Parameters
+
+| Parameter | Description | Default |
+|-----------|-------------|---------|
+| `Pt` | Top margin (first scrolling line) | 1 |
+| `Pb` | Bottom margin (last scrolling line) | Screen height |
 
 ## Description
 
-Documentation coming soon.
+Per the VT510 manual, DECSTBM defines the top and bottom lines of the scrolling region. `Pt` must be less than `Pb`, and both must be within the screen dimensions. `CSI r` with no parameters resets the margins to the full screen.
+
+After setting margins:
+
+- The cursor moves to the home position. If DECOM (Origin Mode) is set, home is the top-left of the scrolling region; otherwise, it is row 1, column 1 of the screen.
+- Scrolling operations (IND, RI, SU, SD, LF at bottom margin) are confined to the margin area.
+- IL and DL operate within the scrolling region.
+- CUP and other absolute positioning commands are **not** affected by the margins (unless DECOM is set).
+
+### Common uses
+
+DECSTBM is fundamental to full-screen TUI applications. For example:
+
+- **Status bars**: Set margins to exclude the top or bottom line, then write the status bar outside the scrolling region.
+- **Split views**: Create multiple independent scrolling areas by switching margins programmatically.
+
+## Examples
+
+```bash
+printf '\e[5;20r'    # Set scrolling region to lines 5-20
+printf '\e[r'        # Reset scrolling region to full screen
+```
 
 ## Specifications
 
@@ -27,3 +67,11 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [DECSLRM — Set Left and Right Margins](/docs/csi/decslrm) — Horizontal margin support
+- [IND — Index](/docs/c0-c1/ind) — Scroll up within margins
+- [RI — Reverse Index](/docs/c0-c1/ri) — Scroll down within margins
+- [SU/SD — Scroll Up/Down](/docs/csi/su-sd) — Multi-line scroll
+- [DECOM — Origin Mode](/docs/decset/mode6-decom) — Constrains cursor to scrolling region

@@ -6,19 +6,79 @@ feature_id: "kitty_graphics_unicode"
 data_file: "graphics"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-U+10EEEE
+<StatusBadges status={{ experimental: true }} />
+
+**Kitty graphics: Unicode placeholders** is an extension to the Kitty graphics protocol that allows applications to place images at specific cell positions by emitting a special Unicode character (U+10EEEE) into the terminal's text grid. The terminal replaces these placeholder characters with the corresponding region of a previously transmitted image.
 
 ## Syntax
 
 ```
-TODO: Add syntax for Kitty graphics: Unicode placeholders
+U+10EEEE [+ diacritics]      Unicode placeholder character
 ```
+
+<FormalSyntax grammar={`
+placeholder     = 0x10EEEE, [ row-diacritic ], [ col-diacritic ] ;
+row-diacritic   = ? U+0305 to U+0CF4 ? ;        (* diacritic encoding the row index *)
+col-diacritic   = ? U+0305 to U+0CF4 ? ;        (* diacritic encoding the column index *)
+`} />
+
+### Parameters
+
+Placeholder characters use **combining diacritical marks** to encode positioning information. Each diacritic maps to a numeric index representing the row or column of the image tile that should be rendered in that cell.
+
+| Component | Description |
+|-----------|-------------|
+| U+10EEEE | The placeholder base character (Private Use Area, Plane 16) |
+| Row diacritic | Combining character encoding the image row index (0-based) |
+| Column diacritic | Combining character encoding the image column index (0-based) |
+
+The diacritic-to-index mapping uses a predefined table of combining Unicode characters starting from U+0305. The first diacritic (U+0305) represents index 0, the next represents index 1, and so on.
+
+The image ID is communicated by setting the **foreground color** of the placeholder cell to the image ID value. The placement ID can be specified through additional attributes.
 
 ## Description
 
-Documentation coming soon.
+Standard Kitty graphics commands display images at the current cursor position or at absolute coordinates, which works well for full-screen applications but creates problems for text-mode programs that rely on the terminal's text reflow, scrolling, and cursor movement. Unicode placeholders solve this by embedding image references directly into the text stream.
+
+When the terminal encounters U+10EEEE in its text grid, it looks up the associated image ID (encoded in the cell's foreground color) and renders the appropriate tile of that image in place of the character. The row and column diacritics tell the terminal which portion of the image to show in each cell.
+
+### How it works
+
+1. **Transmit the image** using the standard Kitty graphics protocol (`a=t` or `a=T`), assigning it an image ID.
+2. **Emit placeholder characters** into the terminal at the desired cell positions. Set the foreground color to the image ID, and use diacritics to specify which tile of the image each cell should display.
+3. The terminal **replaces** the placeholder characters with the corresponding image regions during rendering.
+
+This approach preserves the text-grid semantics that terminal applications depend on. Placeholders reflow with surrounding text when the terminal is resized, scroll naturally with the screen buffer, and can be overwritten like any other character.
+
+### Advantages over direct placement
+
+- Works correctly with text reflow and line wrapping
+- Scrolls naturally with the terminal's scrollback buffer
+- Compatible with screen readers (the placeholder character can be given alternative text)
+- Enables image display in applications that write to the screen through a text-based interface (e.g., TUI frameworks)
+
+:::note
+Unicode placeholders require the image to be transmitted first via the Kitty graphics protocol. The placeholder character alone does not contain any image data -- it only references a previously uploaded image by ID.
+:::
+
+## Examples
+
+```bash
+# Step 1: Transmit a 2-cell-wide, 1-cell-tall image with ID 42
+printf '\e_Ga=t,i=42,f=100;iVBORw0KGgoAAAANSUhEUg...\e\\'
+
+# Step 2: Place the image using Unicode placeholders
+# Set foreground color to image ID 42 via SGR 38;5;42,
+# then emit U+10EEEE with row=0,col=0 diacritic and row=0,col=1 diacritic
+printf '\e[38;5;42m\U0010EEEE\u0305\u0305\U0010EEEE\u0305\u0306\e[39m'
+
+# Step 3: Display the placement
+printf '\e_Ga=p,i=42,U=1\e\\'
+```
 
 ## Specifications
 
@@ -27,3 +87,8 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [Kitty graphics protocol](/docs/graphics/kitty-graphics) -- Base protocol for transmitting and displaying images
+- [Kitty graphics: animation](/docs/graphics/kitty-graphics-animation) -- Frame-based animation extension

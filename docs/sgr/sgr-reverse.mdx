@@ -6,19 +6,42 @@ feature_id: "sgr_reverse"
 data_file: "text-styling"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-SGR 7 — Inverse video
+**Reverse video** (SGR 7) is an SGR attribute that swaps the foreground and background colors of the text.
 
 ## Syntax
 
 ```
-TODO: Add syntax for Reverse video
+CSI 7 m     SGR 7 — Reverse video (negative image)
+CSI 27 m    SGR 27 — Not reversed (positive image)
 ```
+
+<FormalSyntax grammar={`
+SGR-reverse     = 0x1b, "[", "7", "m" ;
+SGR-not-reverse = 0x1b, "[", "27", "m" ;
+`} />
 
 ## Description
 
-Documentation coming soon.
+Per ECMA-48 §8.3.117, SGR parameter 7 selects "negative image." The foreground and background colors are exchanged so that text appears in the background color on a foreground-colored background.
+
+Reverse is reset by SGR 27 or SGR 0.
+
+Reverse video applies after all other color attributes have been resolved. If the foreground is explicitly set to red and the background to white, reverse video will display white text on a red background.
+
+Reverse video is supported by virtually all terminals and has been available since the VT100.
+
+## Examples
+
+```bash
+printf '\e[7mReversed\e[27m Normal\n'
+printf '\e[31;7mReverse red (red background, default fg)\e[0m\n'
+```
 
 ## Specifications
 
@@ -27,3 +50,7 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [DECSCNM — Screen Reverse Video](/docs/decset/mode5-decscnm) — Reverse the entire screen

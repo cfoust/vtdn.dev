@@ -6,19 +6,52 @@ feature_id: "decera"
 data_file: "csi-sequences"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-CSI $ z — Erase rectangular area
+**DECERA** (Erase Rectangular Area) is a CSI sequence that fills a rectangular screen region with blank characters.
 
 ## Syntax
 
 ```
-TODO: Add syntax for DECERA
+CSI Pt ; Pl ; Pb ; Pr $ z    DECERA — Erase Rectangular Area
 ```
+
+<FormalSyntax grammar={`
+DECERA = 0x1b, "[", Pt, ";", Pl, ";", Pb, ";", Pr, "$", "z" ;
+Pt = digit, { digit } ;                 (* top row *)
+Pl = digit, { digit } ;                 (* left column *)
+Pb = digit, { digit } ;                 (* bottom row *)
+Pr = digit, { digit } ;                 (* right column *)
+digit = "0" | "1" | "2" | "3" | "4"
+      | "5" | "6" | "7" | "8" | "9" ;
+`} />
+
+### Parameters
+
+| Parameter | Description |
+|-----------|-------------|
+| `Pt` | Top row of the rectangle |
+| `Pl` | Left column of the rectangle |
+| `Pb` | Bottom row of the rectangle |
+| `Pr` | Right column of the rectangle |
 
 ## Description
 
-Documentation coming soon.
+Per the VT510 manual, DECERA fills the specified rectangular area with blank (space) characters using the current SGR attributes. The cursor position is not changed.
+
+Coordinates are 1-based and refer to absolute screen positions (not affected by DECOM). If coordinates exceed the screen dimensions, they are clamped.
+
+DECERA differs from ED in that it operates on an arbitrary rectangle rather than line-oriented regions. This is part of the VT400-series rectangular area operations (along with DECFRA and DECCRA).
+
+## Examples
+
+```bash
+printf '\e[5;10;15;30$z'   # Erase rectangle from (5,10) to (15,30)
+```
 
 ## Specifications
 
@@ -27,3 +60,9 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [DECFRA — Fill Rectangular Area](/docs/csi/decfra) — Fill a rectangle with a specific character
+- [DECCRA — Copy Rectangular Area](/docs/csi/deccra) — Copy a rectangle to another position
+- [ED — Erase in Display](/docs/csi/ed) — Line-oriented erase

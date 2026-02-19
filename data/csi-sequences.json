@@ -3041,6 +3041,11 @@
           {
             "name": "VT510 Reference",
             "url": "https://vt100.net/docs/vt510-rm/DSR-CPR.html"
+          },
+          {
+            "name": "ECMA-48",
+            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
+            "section": "§8.3.35 (DSR), §8.3.14 (CPR)"
           }
         ]
       }

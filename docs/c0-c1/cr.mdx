@@ -6,19 +6,40 @@ feature_id: "cr"
 data_file: "control-sequences"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-0x0D — Carriage return
+**CR** (Carriage Return) is a C0 control character that moves the cursor to the beginning of the current line without advancing to the next line.
 
 ## Syntax
 
 ```
-TODO: Add syntax for CR
+CR        0x0D
 ```
 
 ## Description
 
-Documentation coming soon.
+Per ECMA-48 §8.3.15, CR causes the active presentation position to be moved to the line home position of the same line. In standard terminal usage, this means column 1 of the current line.
+
+CR does not erase any characters on the line. Any subsequent output will overwrite existing characters starting from the beginning of the line.
+
+### Interaction with LF
+
+In Unix systems, the newline character LF (0x0A) is the standard line terminator. The terminal driver's `onlcr` setting (on by default) typically translates output LF to CR+LF so that the cursor returns to column 1 when advancing to the next line. When the terminal is in raw mode, LF alone moves down without returning to column 1.
+
+### LNM mode
+
+When the Line Feed/New Line Mode (LNM, DECSET mode 20) is set, a received CR causes both a carriage return and a line feed, effectively acting as a "new line" operation.
+
+## Examples
+
+```bash
+printf 'Hello\rWorld'   # Overwrites "Hello" with "World"
+printf 'ABCDEF\rXY'     # Displays "XYCDEF"
+```
 
 ## Specifications
 
@@ -27,3 +48,9 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [LF — Line Feed](/docs/c0-c1/lf) — Often paired with CR for line advancement
+- [NEL — Next Line](/docs/c0-c1/nel) — Combined CR+LF as a single C1 control
+- [LNM — Line Feed/New Line Mode](/docs/decset/mode20-lnm) — Mode that alters CR/LF behavior

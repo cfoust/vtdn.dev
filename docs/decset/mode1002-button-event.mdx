@@ -6,19 +6,78 @@ feature_id: "mode1002_button_event"
 data_file: "decset-modes"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-Mode 1002 — Motion while held tracking
+<StatusBadges status={{ experimental: true }} />
+
+**Button-Event Mouse Tracking** (Mode 1002) is a DECSET/DECRST mode that extends normal mouse tracking (Mode 1000) by also reporting mouse motion events while a button is held down.
 
 ## Syntax
 
 ```
-TODO: Add syntax for Button-event mouse
+CSI ? 1002 h    DECSET — Enable button-event mouse tracking
+CSI ? 1002 l    DECRST — Disable button-event mouse tracking
 ```
+
+<FormalSyntax grammar={`
+DECSET-mode1002 = 0x1b, "[", "?", "1", "0", "0", "2", "h" ;
+DECRST-mode1002 = 0x1b, "[", "?", "1", "0", "0", "2", "l" ;
+`} />
 
 ## Description
 
-Documentation coming soon.
+Mode 1002 is an XTerm extension that enables button-event tracking, also known as "drag tracking." When enabled, the terminal reports all events that Mode 1000 reports (button press and release), and additionally reports mouse motion events whenever a button is held down.
+
+- **Set** — The terminal reports mouse button press, release, and motion-while-pressed events.
+- **Reset** — Mouse events are not reported. The terminal handles mouse events normally. This is the default.
+
+### Report format
+
+Button-event tracking uses the same report format as Mode 1000:
+
+```
+CSI M Cb Cx Cy
+```
+
+Where:
+- `Cb` is the button/event byte: the button number plus modifier flags, plus 32
+- `Cx` is the column (x coordinate) plus 32
+- `Cy` is the row (y coordinate) plus 32
+
+For motion events, bit 5 (value 32) is added to `Cb` to distinguish them from press events. The low bits still indicate which button is being held.
+
+| Value (Cb - 32) | Meaning |
+|------------------|---------|
+| `32`             | Motion with left button held |
+| `33`             | Motion with middle button held |
+| `34`             | Motion with right button held |
+
+### Difference from Mode 1000 and Mode 1003
+
+Mode 1002 sits between Mode 1000 and Mode 1003 in terms of verbosity:
+
+- **Mode 1000** reports only press and release events.
+- **Mode 1002** adds motion events, but only while a button is held down (i.e., during a drag operation).
+- **Mode 1003** reports all motion events regardless of button state, generating significantly more traffic.
+
+Mode 1002 is the most practical choice for applications that need drag support without the overhead of tracking every mouse movement.
+
+:::note
+Mode 1002 mutually excludes other mouse tracking modes. Enabling it implicitly disables Mode 1000 and Mode 1003.
+:::
+
+## Examples
+
+```bash
+printf '\e[?1002h'   # Enable button-event mouse tracking
+printf '\e[?1002l'   # Disable button-event mouse tracking
+
+# Combine with SGR encoding for coordinates beyond 223:
+printf '\e[?1002h\e[?1006h'   # Enable button-event tracking + SGR encoding
+printf '\e[?1006l\e[?1002l'   # Disable both (reverse order)
+```
 
 ## Specifications
 
@@ -27,3 +86,10 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [Normal Mouse Tracking — Mode 1000](/docs/decset/mode1000-mouse-normal) — Press and release tracking only
+- [Any-Event Mouse Tracking — Mode 1003](/docs/decset/mode1003-any-event) — Reports all mouse motion
+- [SGR Mouse Encoding — Mode 1006](/docs/decset/mode1006-sgr-mouse) — Extended encoding without coordinate limits
+- [SGR-Pixel Mouse — Mode 1016](/docs/decset/mode1016-sgr-pixel) — Pixel-level mouse coordinates

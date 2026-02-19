@@ -6,19 +6,50 @@ feature_id: "win_iconify"
 data_file: "window-manipulation"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-CSI 1/2 t — De-iconify / iconify window
+<StatusBadges status={{ experimental: true }} />
+
+**Iconify** and **De-iconify** are XTerm window manipulation sequences that minimize (iconify) or restore (de-iconify) the terminal window.
 
 ## Syntax
 
 ```
-TODO: Add syntax for Iconify
+CSI 1 t     De-iconify (restore/raise) window
+CSI 2 t     Iconify (minimize) window
 ```
+
+<FormalSyntax grammar={`
+de_iconify = 0x1b, "[", "1", "t" ;
+iconify    = 0x1b, "[", "2", "t" ;
+`} />
 
 ## Description
 
-Documentation coming soon.
+These sequences control the iconified (minimized) state of the terminal window. They are part of the XTerm `CSI Ps ; Ps ; Ps t` window manipulation family.
+
+- **`CSI 1 t`** — De-iconifies the window. If the window is currently minimized, it is restored to its previous size and position and raised to the front of the window stack.
+- **`CSI 2 t`** — Iconifies the window. The window is minimized to the taskbar or dock, removing it from the visible desktop.
+
+These operations map directly to the corresponding window manager actions. On systems without a traditional window manager (such as tiling window managers or terminal multiplexers), these sequences may be ignored or have no visible effect.
+
+The [Window State Report](/docs/window/win-state-report) (`CSI 11 t`) can be used to query the current iconified state of the window.
+
+:::note
+Some terminal emulators disable these sequences by default for security reasons, as a malicious application could minimize a user's terminal unexpectedly. Check your terminal's configuration for options to enable or disable window manipulation sequences.
+:::
+
+## Examples
+
+```bash
+# Minimize the terminal window
+printf '\e[2t'
+
+# Restore the terminal window
+printf '\e[1t'
+```
 
 ## Specifications
 
@@ -27,3 +58,8 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [Window State Report](/docs/window/win-state-report) — Query whether the window is iconified
+- [Raise/Lower](/docs/window/win-raise-lower) — Change window stacking order without changing iconified state

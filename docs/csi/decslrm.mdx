@@ -6,19 +6,59 @@ feature_id: "decslrm"
 data_file: "csi-sequences"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-CSI s — Set left and right margins (requires Mode 69)
+**DECSLRM** (Set Left and Right Margins) is a CSI sequence that defines horizontal scrolling margins. It is only active when left/right margin mode (DECLRMM, mode 69) is enabled.
 
 ## Syntax
 
 ```
-TODO: Add syntax for DECSLRM
+CSI Pl ; Pr s     DECSLRM — Set Left and Right Margins
 ```
+
+<FormalSyntax grammar={`
+DECSLRM = 0x1b, "[", [ Pl, [ ";", Pr ] ], "s" ;
+Pl = digit, { digit } ;                 (* left margin, default: 1 *)
+Pr = digit, { digit } ;                 (* right margin, default: screen width *)
+digit = "0" | "1" | "2" | "3" | "4"
+      | "5" | "6" | "7" | "8" | "9" ;
+`} />
+
+### Parameters
+
+| Parameter | Description | Default |
+|-----------|-------------|---------|
+| `Pl` | Left margin column | 1 |
+| `Pr` | Right margin column | Screen width |
 
 ## Description
 
-Documentation coming soon.
+Per the VT510 manual, DECSLRM sets the left and right margins of the scrolling region. `Pl` must be less than `Pr`. The sequence is only recognized when DECLRMM (mode 69) has been enabled via `CSI ? 69 h`.
+
+When left/right margins are active, the following operations are confined horizontally:
+
+- Character insertion and deletion (ICH, DCH)
+- Erase operations respect the margins
+- Cursor wrapping at end of line wraps within the margin area
+- Scrolling operations are confined to the rectangular region defined by both vertical (DECSTBM) and horizontal (DECSLRM) margins
+
+`CSI s` with no parameters resets the left and right margins to the full screen width.
+
+### Conflict with SCP
+
+`CSI s` is also used for SCP (Save Cursor Position). When DECLRMM (mode 69) is enabled, `CSI s` with parameters is interpreted as DECSLRM. Applications that need both left/right margins and cursor save should use DECSC/DECRC (`ESC 7` / `ESC 8`) instead of SCP/RCP.
+
+## Examples
+
+```bash
+printf '\e[?69h'         # Enable left/right margin mode
+printf '\e[5;40s'        # Set left margin to 5, right margin to 40
+printf '\e[?69l'         # Disable left/right margin mode
+```
 
 ## Specifications
 
@@ -27,3 +67,8 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [DECSTBM — Set Top and Bottom Margins](/docs/csi/decstbm) — Vertical scrolling margins
+- [SCP/RCP — Save/Restore Cursor](/docs/csi/scp-rcp) — Shares the `CSI s` sequence

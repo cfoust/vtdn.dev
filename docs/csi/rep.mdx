@@ -6,19 +6,47 @@ feature_id: "rep"
 data_file: "csi-sequences"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-CSI b — Repeat preceding graphic character
+**REP** (Repeat) is a CSI sequence that repeats the preceding graphic character a specified number of times.
 
 ## Syntax
 
 ```
-TODO: Add syntax for REP
+CSI Pn b      REP — Repeat preceding character
 ```
+
+<FormalSyntax grammar={`
+REP = 0x1b, "[", [ Pn ], "b" ;
+Pn  = digit, { digit } ;                (* default: 1 *)
+digit = "0" | "1" | "2" | "3" | "4"
+      | "5" | "6" | "7" | "8" | "9" ;
+`} />
+
+### Parameters
+
+| Parameter | Description | Default |
+|-----------|-------------|---------|
+| `Pn` | Number of times to repeat | 1 |
 
 ## Description
 
-Documentation coming soon.
+Per ECMA-48 §8.3.103, REP causes the preceding graphic character (including SPACE) to be repeated `Pn` times. The character is printed at the current cursor position and the cursor advances normally as if the character had been typed that many times.
+
+If the preceding data-stream element is a control function rather than a graphic character, the effect of REP is not defined by the standard. In practice, most terminals ignore REP in that case.
+
+REP is useful for run-length compression of repeated characters in the output stream, reducing bandwidth when sending large blocks of identical characters (e.g., filling a line with dashes or spaces).
+
+## Examples
+
+```bash
+printf 'A\e[4b'     # Print "A" then repeat it 4 times → "AAAAA"
+printf '-\e[79b'     # Print 80 dashes (1 + 79 repeats)
+```
 
 ## Specifications
 

@@ -6,19 +6,49 @@ feature_id: "locking_shifts"
 data_file: "control-sequences"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-LS2, LS3, LS1R, LS2R, LS3R
+The **locking shifts** are escape sequences that invoke character sets G1, G2, or G3 into the GL (left) or GR (right) half of the code table. Unlike single shifts (SS2/SS3), locking shifts remain in effect until another shift is performed.
 
 ## Syntax
 
 ```
-TODO: Add syntax for Locking shifts
+ESC n         LS2  — Locking-shift G2 into GL
+ESC o         LS3  — Locking-shift G3 into GL
+ESC ~         LS1R — Locking-shift G1 into GR
+ESC }         LS2R — Locking-shift G2 into GR
+ESC |         LS3R — Locking-shift G3 into GR
 ```
+
+The GL shifts LS0 and LS1 are the 8-bit equivalents of SI and SO respectively — see [SO/SI](/docs/c0-c1/so-si).
 
 ## Description
 
-Documentation coming soon.
+Per ECMA-48 §8.3.75–§8.3.81, the locking shift functions are used for code extension purposes. Their detailed semantics are defined in ECMA-35.
+
+In the VT100/VT220 character set architecture:
+
+- **GL** (Graphic Left, 0x20-0x7F) and **GR** (Graphic Right, 0xA0-0xFF) are the two active code areas for graphic characters.
+- Four character sets — **G0**, **G1**, **G2**, **G3** — can be designated via escape sequences (e.g., `ESC ( B` for ASCII into G0).
+- The locking shifts control which of G0–G3 is invoked into GL or GR.
+
+| Shift | Invokes | Into |
+|-------|---------|------|
+| LS0 / SI | G0 | GL |
+| LS1 / SO | G1 | GL |
+| LS2 | G2 | GL |
+| LS3 | G3 | GL |
+| LS1R | G1 | GR |
+| LS2R | G2 | GR |
+| LS3R | G3 | GR |
+
+### Practical relevance
+
+Locking shifts beyond LS0/LS1 (SI/SO) are rarely used in modern terminals. UTF-8 has largely supplanted the ISO 2022 character set switching mechanism. Most modern terminal emulators support these sequences for compatibility but they see little practical use outside of legacy applications.
 
 ## Specifications
 
@@ -27,3 +57,8 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [SO/SI — Shift Out/In](/docs/c0-c1/so-si) — G0/G1 locking shifts (the most commonly used pair)
+- [SS2/SS3 — Single Shifts](/docs/c0-c1/ss2-ss3) — Temporary G2/G3 invocation for one character

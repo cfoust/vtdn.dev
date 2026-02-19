@@ -6,19 +6,47 @@ feature_id: "tbc"
 data_file: "csi-sequences"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-CSI g — Tab clear
+**TBC** (Tabulation Clear) is a CSI sequence that clears one or more tab stops.
 
 ## Syntax
 
 ```
-TODO: Add syntax for TBC
+CSI Ps g      TBC — Tabulation Clear
 ```
+
+<FormalSyntax grammar={`
+TBC = 0x1b, "[", [ Ps ], "g" ;
+Ps  = "0" | "3" ;                       (* default: 0 *)
+`} />
+
+### Parameters
+
+| Value | Meaning |
+|-------|---------|
+| `0` | Clear the tab stop at the current column (default) |
+| `3` | Clear all tab stops |
 
 ## Description
 
-Documentation coming soon.
+Per ECMA-48 §8.3.154, TBC clears tabulation stops depending on the parameter value. The full standard defines values 0-5, but terminal emulators commonly support only two:
+
+- **`CSI 0 g`** or **`CSI g`** — Clears the tab stop at the current cursor column.
+- **`CSI 3 g`** — Clears all character tab stops.
+
+After clearing all tab stops, HT (0x09) will have no effect until new stops are set with HTS.
+
+## Examples
+
+```bash
+printf '\e[g'        # Clear tab stop at current column
+printf '\e[3g'       # Clear all tab stops
+```
 
 ## Specifications
 
@@ -27,3 +55,9 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [HTS — Set Tab Stop](/docs/c0-c1/hts) — Set a tab stop at the current column
+- [HT — Horizontal Tab](/docs/c0-c1/ht) — Advance to the next tab stop
+- [CHT/CBT — Cursor Tab Forward/Backward](/docs/csi/cht-cbt) — Move by multiple tab stops

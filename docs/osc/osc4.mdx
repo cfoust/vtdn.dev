@@ -6,19 +6,82 @@ feature_id: "osc4"
 data_file: "osc-sequences"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-Change/query color palette entry
+<StatusBadges status={{ experimental: true }} />
+
+**OSC 4** changes or queries entries in the terminal's 256-color palette. It allows applications to dynamically redefine any of the 256 indexed colors at runtime, or to query the current color value assigned to a given index.
 
 ## Syntax
 
 ```
-TODO: Add syntax for OSC 4
+OSC 4 ; c ; spec ST      Set color index c to spec
+OSC 4 ; c ; ? ST         Query current color at index c
 ```
+
+<FormalSyntax grammar={`
+OSC4_set   = 0x1b, "]", "4", ";", index, ";", color_spec, ( 0x07 | 0x1b, "\\\\" ) ;
+OSC4_query = 0x1b, "]", "4", ";", index, ";", "?", ( 0x07 | 0x1b, "\\\\" ) ;
+index      = digit, { digit } ;
+color_spec = "rgb:", hex, "/", hex, "/", hex ;
+hex        = hex_digit, hex_digit, [ hex_digit, hex_digit ] ;
+digit      = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+hex_digit  = digit | "a" | "b" | "c" | "d" | "e" | "f"
+           | "A" | "B" | "C" | "D" | "E" | "F" ;
+`} />
+
+### Parameters
+
+| Parameter | Description | Default |
+|-----------|-------------|---------|
+| `c` | Color palette index (0-255) | (required) |
+| `spec` | Color specification in X11 format (e.g., `rgb:RR/GG/BB`) or `?` to query | (required) |
+
+### Response
+
+When queried with `?`, the terminal responds with the current color value in the format:
+
+```
+OSC 4 ; c ; rgb:RRRR/GGGG/BBBB ST
+```
+
+The response uses 16-bit color components (four hex digits per channel), regardless of the terminal's internal color precision.
 
 ## Description
 
-Documentation coming soon.
+Per the XTerm control sequences documentation, OSC 4 allows dynamic modification of the terminal's color palette. The color specification uses X11 color syntax, most commonly `rgb:RR/GG/BB` where each component is a hexadecimal value. Some terminals also accept `rgb:RRRR/GGGG/BBBB` (16-bit components) or X11 color names.
+
+Multiple color assignments can be chained in a single sequence by providing additional index/spec pairs separated by semicolons:
+
+```
+OSC 4 ; c1 ; spec1 ; c2 ; spec2 ST
+```
+
+The 256-color palette is organized as:
+- **0-7**: Standard colors (black, red, green, yellow, blue, magenta, cyan, white)
+- **8-15**: Bright/high-intensity variants
+- **16-231**: 6x6x6 color cube
+- **232-255**: Grayscale ramp
+
+Changes made with OSC 4 affect only the current terminal session and are not persisted. Use [OSC 104](/docs/osc/osc104) to reset palette entries to their default values.
+
+## Examples
+
+```bash
+# Set color index 1 (red) to a bright orange
+printf '\e]4;1;rgb:ff/80/00\e\\'
+
+# Query the current value of color index 0 (black)
+printf '\e]4;0;?\e\\'
+
+# Set multiple colors in a single sequence
+printf '\e]4;0;rgb:00/00/00;1;rgb:cc/00/00;2;rgb:00/cc/00\e\\'
+
+# Set color 196 to pure red
+printf '\e]4;196;rgb:ff/00/00\a'
+```
 
 ## Specifications
 
@@ -27,3 +90,9 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [OSC 104 — Reset Color Palette](/docs/osc/osc104) — Resets palette entries to their default values
+- [OSC 10 — Set Default Foreground Color](/docs/osc/osc10) — Sets the default foreground (text) color
+- [OSC 11 — Set Default Background Color](/docs/osc/osc11) — Sets the default background color

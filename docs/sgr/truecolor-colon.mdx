@@ -6,19 +6,55 @@ feature_id: "truecolor_colon"
 data_file: "text-styling"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-SGR 38:2::r:g:b — T.416 standard
+**24-bit truecolor (colons)** uses the ITU-T T.416 sub-parameter syntax with colons to set foreground and background to an RGB color.
 
 ## Syntax
 
 ```
-TODO: Add syntax for 24-bit truecolor (colons)
+CSI 38:2::r:g:b m    SGR — Set foreground to RGB color
+CSI 48:2::r:g:b m    SGR — Set background to RGB color
 ```
+
+<FormalSyntax grammar={`
+SGR-fg-rgb-colon = 0x1b, "[", "38:2::", r, ":", g, ":", b, "m" ;
+SGR-bg-rgb-colon = 0x1b, "[", "48:2::", r, ":", g, ":", b, "m" ;
+r                = digit, { digit } ;              (* red: 0-255 *)
+g                = digit, { digit } ;              (* green: 0-255 *)
+b                = digit, { digit } ;              (* blue: 0-255 *)
+digit            = "0" | "1" | "2" | "3" | "4"
+                 | "5" | "6" | "7" | "8" | "9" ;
+`} />
+
+### Parameters
+
+| Parameter | Description |
+|-----------|-------------|
+| `r` | Red component (0-255) |
+| `g` | Green component (0-255) |
+| `b` | Blue component (0-255) |
 
 ## Description
 
-Documentation coming soon.
+Per ITU-T T.416 (ISO 8613-6), the colon-separated form is the standard way to specify extended colors in SGR. The full format is `38:2:colorspace:r:g:b` where the color space ID (between `2` and `r`) is typically omitted (empty, defaulting to implementation-defined).
+
+The double colon in `38:2::r:g:b` represents the omitted color space parameter. Some terminals also accept `38:2:r:g:b` (with a single colon, treating the color space as absent rather than empty).
+
+The colon syntax is technically more correct than the semicolon variant (`38;2;r;g;b`) because colons separate sub-parameters within a single SGR parameter, while semicolons separate distinct SGR parameters. This matters when combining multiple SGR attributes in one sequence.
+
+Support for the colon form is less universal than the semicolon form, but is growing. Applications that need maximum compatibility should prefer the semicolon syntax.
+
+## Examples
+
+```bash
+printf '\e[38:2::255:100:0mOrange text\e[0m\n'
+printf '\e[48:2::0:0:128mNavy background\e[0m\n'
+```
 
 ## Specifications
 
@@ -27,3 +63,8 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [24-bit truecolor (semicolons)](/docs/sgr/truecolor-semicolon) — Widely supported semicolon syntax
+- [256-color indexed](/docs/sgr/color-256) — 256-color palette

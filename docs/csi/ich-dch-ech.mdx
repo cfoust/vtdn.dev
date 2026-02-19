@@ -6,19 +6,64 @@ feature_id: "ich_dch_ech"
 data_file: "csi-sequences"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-CSI @/P/X — Insert/delete/erase characters
+**ICH** (Insert Character), **DCH** (Delete Character), and **ECH** (Erase Character) are CSI sequences that insert, delete, or erase characters at the cursor position within the current line.
 
 ## Syntax
 
 ```
-TODO: Add syntax for ICH/DCH/ECH
+CSI Pn @      ICH — Insert Character
+CSI Pn P      DCH — Delete Character
+CSI Pn X      ECH — Erase Character
 ```
+
+<FormalSyntax grammar={`
+ICH = 0x1b, "[", [ Pn ], "@" ;
+DCH = 0x1b, "[", [ Pn ], "P" ;
+ECH = 0x1b, "[", [ Pn ], "X" ;
+Pn  = digit, { digit } ;                (* default: 1 *)
+digit = "0" | "1" | "2" | "3" | "4"
+      | "5" | "6" | "7" | "8" | "9" ;
+`} />
+
+### Parameters
+
+| Parameter | Description | Default |
+|-----------|-------------|---------|
+| `Pn` | Number of characters to insert/delete/erase | 1 |
 
 ## Description
 
-Documentation coming soon.
+These three operations affect characters on the current line only. They do not cross line boundaries.
+
+### ICH — Insert Character (CSI Pn @)
+
+Per ECMA-48 §8.3.64, ICH inserts `Pn` blank characters at the cursor position. Existing characters from the cursor rightward are shifted to the right; characters pushed past the right margin are lost. The cursor position does not change.
+
+### DCH — Delete Character (CSI Pn P)
+
+Per ECMA-48 §8.3.26, DCH removes `Pn` characters starting at the cursor position. Characters to the right are shifted left to fill the gap, and blank characters are inserted at the right end of the line.
+
+### ECH — Erase Character (CSI Pn X)
+
+Per ECMA-48 §8.3.38, ECH replaces `Pn` characters starting at the cursor position with blank (erased) characters. Unlike DCH, no shifting occurs — surrounding characters are not moved. The cursor position does not change.
+
+:::note
+The key distinction: ICH and DCH **shift** characters on the line (insert/delete semantics), while ECH **overwrites** characters in place (erase semantics).
+:::
+
+## Examples
+
+```bash
+printf '\e[2@'       # Insert 2 blank characters at cursor
+printf '\e[3P'       # Delete 3 characters at cursor
+printf '\e[5X'       # Erase 5 characters at cursor (no shift)
+```
 
 ## Specifications
 
@@ -27,3 +72,9 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [IL/DL — Insert/Delete Lines](/docs/csi/il-dl) — Line-level insert/delete
+- [ED — Erase in Display](/docs/csi/ed) — Erase regions of the screen
+- [EL — Erase in Line](/docs/csi/el) — Erase part of the current line

@@ -6,19 +6,67 @@ feature_id: "cha_cup"
 data_file: "csi-sequences"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-CSI G / CSI H — Absolute cursor positioning
+**CHA** (Cursor Character Absolute) and **CUP** (Cursor Position) are CSI sequences for absolute cursor positioning. CHA sets the column, while CUP sets both the row and column.
 
 ## Syntax
 
 ```
-TODO: Add syntax for CHA/CUP
+CSI Pn G          CHA — Cursor Character Absolute (set column)
+CSI Pn1 ; Pn2 H   CUP — Cursor Position (set row and column)
 ```
+
+<FormalSyntax grammar={`
+CHA = 0x1b, "[", [ Pn ], "G" ;
+CUP = 0x1b, "[", [ Pn1, [ ";", Pn2 ] ], "H" ;
+Pn  = digit, { digit } ;                (* default: 1 *)
+Pn1 = digit, { digit } ;                (* row, default: 1 *)
+Pn2 = digit, { digit } ;                (* column, default: 1 *)
+digit = "0" | "1" | "2" | "3" | "4"
+      | "5" | "6" | "7" | "8" | "9" ;
+`} />
+
+### Parameters
+
+**CHA:**
+
+| Parameter | Description | Default |
+|-----------|-------------|---------|
+| `Pn` | Column number | 1 |
+
+**CUP:**
+
+| Parameter | Description | Default |
+|-----------|-------------|---------|
+| `Pn1` | Row number | 1 |
+| `Pn2` | Column number | 1 |
 
 ## Description
 
-Documentation coming soon.
+Per ECMA-48 §8.3.9 (CHA) and §8.3.21 (CUP):
+
+- **CHA** (`CSI Pn G`) — Moves the cursor to column `Pn` of the current line. The row does not change.
+- **CUP** (`CSI Pn1;Pn2 H`) — Moves the cursor to row `Pn1`, column `Pn2`. `CSI H` with no parameters moves to the home position (row 1, column 1).
+
+Positions are 1-based. Values exceeding the screen dimensions are clamped to the maximum row or column.
+
+### Interaction with DECOM
+
+When Origin Mode (DECOM) is set, CUP coordinates are relative to the top margin of the scrolling region rather than to the top of the screen, and the cursor is constrained within the scrolling region. When DECOM is reset (the default), coordinates are absolute from the top-left of the screen.
+
+## Examples
+
+```bash
+printf '\e[1;1H'     # Move to top-left corner (home)
+printf '\e[H'        # Same — move to home (defaults)
+printf '\e[10;20H'   # Move to row 10, column 20
+printf '\e[5G'       # Move to column 5 on current line
+```
 
 ## Specifications
 
@@ -27,3 +75,9 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [VPA/HPA — Vertical/Horizontal Position Absolute](/docs/csi/vpa-hpa) — Single-axis absolute positioning
+- [CUU/CUD/CUF/CUB — Relative Cursor Movement](/docs/csi/cuu-cud-cuf-cub) — Relative movement
+- [DECOM — Origin Mode](/docs/decset/mode6-decom) — Affects CUP coordinate interpretation

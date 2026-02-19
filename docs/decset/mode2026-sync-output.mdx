@@ -6,19 +6,79 @@ feature_id: "mode2026_sync_output"
 data_file: "decset-modes"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-Mode 2026 — Tear-free rendering
+<StatusBadges status={{ experimental: true }} />
+
+**Synchronized Output** (Mode 2026) is a DECSET/DECRST mode that allows applications to bracket a batch of output so the terminal can render it atomically, preventing partial-frame artifacts (tearing).
 
 ## Syntax
 
 ```
-TODO: Add syntax for Synchronized output
+CSI ? 2026 h    DECSET — Begin synchronized update
+CSI ? 2026 l    DECRST — End synchronized update
 ```
+
+<FormalSyntax grammar={`
+DECSET-mode2026 = 0x1b, "[", "?", "2", "0", "2", "6", "h" ;
+DECRST-mode2026 = 0x1b, "[", "?", "2", "0", "2", "6", "l" ;
+`} />
 
 ## Description
 
-Documentation coming soon.
+Mode 2026 provides a mechanism for tear-free rendering in terminal applications. By bracketing output between a begin and end marker, the application signals that all output in between should be presented to the user as a single atomic update.
+
+- **Set (begin)** — The terminal begins buffering output instead of rendering it immediately.
+- **Reset (end)** — The terminal renders all buffered output at once, producing a single, complete frame.
+
+### The tearing problem
+
+Without synchronized output, terminal emulators typically render output as it arrives. When an application performs a complex screen update (clearing regions, repositioning the cursor, writing new content), the user may briefly see intermediate states where parts of the old and new content are visible simultaneously. This is known as "tearing" or "flicker."
+
+### How it works
+
+1. The application sends `CSI ? 2026 h` to begin the synchronized update
+2. The application sends all the escape sequences and text needed to draw the new frame
+3. The application sends `CSI ? 2026 l` to end the synchronized update
+4. The terminal renders the entire buffered output at once
+
+### Timeout behavior
+
+Terminals typically implement a safety timeout (commonly around 1 second) to prevent indefinite buffering if the end marker is never received. If the timeout expires, the terminal renders whatever has been buffered so far and exits synchronized mode.
+
+### Advantages over alternatives
+
+Before Mode 2026, applications used various workarounds to reduce tearing:
+- **Hidden cursor** — Hiding the cursor during updates reduces visual artifacts but doesn't prevent partial content from being shown
+- **Double buffering** — Some terminal frameworks maintain their own off-screen buffer and compute minimal diffs, but this adds complexity
+- **Rate limiting** — Throttling output reduces tearing at the cost of responsiveness
+
+Mode 2026 is the cleanest solution because it gives the terminal explicit knowledge of frame boundaries.
+
+:::note
+Mode 2026 can be nested in some implementations, but applications should avoid relying on nesting behavior. A single begin/end pair per frame update is the expected pattern.
+:::
+
+## Examples
+
+```bash
+# Perform a tear-free screen update:
+printf '\e[?2026h'        # Begin synchronized update
+printf '\e[2J\e[H'        # Clear screen, move home
+printf 'Line 1\n'
+printf 'Line 2\n'
+printf 'Line 3\n'
+printf '\e[?2026l'        # End — terminal renders everything at once
+
+# In a render loop (pseudocode):
+# while true:
+#     printf '\e[?2026h'
+#     draw_frame()
+#     printf '\e[?2026l'
+#     sleep(1/60)
+```
 
 ## Specifications
 
@@ -27,3 +87,8 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [DECTCEM — Mode 25](/docs/decset/mode25-dectcem) — Hiding the cursor to reduce flicker
+- [Alt Screen — Mode 1049](/docs/decset/mode1049-altscreen) — Alternate screen buffer for full-screen apps

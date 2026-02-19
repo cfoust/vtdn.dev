@@ -6,19 +6,52 @@ feature_id: "so_si"
 data_file: "control-sequences"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-0x0E/0x0F — Shift out/in (G1/G0 invocation)
+**SO** (Shift Out) and **SI** (Shift In) are C0 control characters used for character set switching. SO invokes the G1 character set into GL, while SI restores the G0 character set.
 
 ## Syntax
 
 ```
-TODO: Add syntax for SO/SI
+SO        0x0E      Shift Out — invoke G1 into GL
+SI        0x0F      Shift In — invoke G0 into GL
 ```
 
 ## Description
 
-Documentation coming soon.
+Per ECMA-48 §8.3.126 and §8.3.119, SO and SI are used for code extension purposes, causing "the meanings of the bit combinations following it in the data stream to be changed." Their use is defined in ECMA-35.
+
+In the VT100 character set architecture, four character sets (G0, G1, G2, G3) can be designated via escape sequences, and two of them can be active at once — one invoked into GL (the left half, 0x20-0x7F) and one into GR (the right half, 0xA0-0xFF).
+
+- **SO** (0x0E) invokes G1 into GL. Subsequent graphic characters in the 0x20-0x7F range are interpreted according to the G1 character set.
+- **SI** (0x0F) invokes G0 into GL, restoring the default mapping.
+
+By default, G0 is ASCII and G1 is the DEC Special Graphics character set (line-drawing characters).
+
+### Common use
+
+The most common use of SO/SI is to enable line-drawing characters for drawing boxes and borders in TUI applications. A program sends SO to switch to the line-drawing set, outputs the box characters, then sends SI to return to ASCII.
+
+:::note
+In 8-bit environments, SO and SI are known as LS1 (Locking-Shift One) and LS0 (Locking-Shift Zero), respectively. They are functionally identical.
+:::
+
+## Examples
+
+```bash
+# Draw a simple box using DEC line-drawing characters
+printf '\e(B'        # Designate ASCII into G0
+printf '\e)0'        # Designate DEC Special Graphics into G1
+printf '\x0e'        # SO — switch to G1 (line drawing)
+printf 'lqqk\n'      # ┌──┐
+printf 'x  x\n'      # │  │
+printf 'mqqj\n'      # └──┘
+printf '\x0f'        # SI — switch back to G0 (ASCII)
+```
 
 ## Specifications
 
@@ -27,3 +60,8 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [SS2/SS3 — Single Shifts](/docs/c0-c1/ss2-ss3) — Temporarily invoke G2/G3 for one character
+- [Locking Shifts](/docs/c0-c1/locking-shifts) — LS2, LS3, and right-hand locking shifts

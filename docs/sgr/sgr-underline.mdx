@@ -6,19 +6,42 @@ feature_id: "sgr_underline"
 data_file: "text-styling"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-SGR 4
+**Underline** (SGR 4) is an SGR attribute that renders text with an underline below the baseline.
 
 ## Syntax
 
 ```
-TODO: Add syntax for Underline
+CSI 4 m     SGR 4 — Single underline
+CSI 24 m    SGR 24 — Not underlined
 ```
+
+<FormalSyntax grammar={`
+SGR-underline     = 0x1b, "[", "4", "m" ;
+SGR-not-underline = 0x1b, "[", "24", "m" ;
+`} />
 
 ## Description
 
-Documentation coming soon.
+Per ECMA-48 §8.3.117, SGR parameter 4 selects "singly underlined." A line is drawn below the text baseline.
+
+Underline is reset by SGR 24 or SGR 0. SGR 24 cancels all underline variants (single, double, curly, dotted, dashed).
+
+Some terminals support extended underline styles using the sub-parameter syntax `SGR 4:n` where `n` specifies the style. This is based on ITU-T T.416 and the Kitty underline extension. The basic `SGR 4` (equivalent to `SGR 4:1`) selects a single straight underline.
+
+The underline color defaults to the foreground color but can be overridden with SGR 58 (underline color).
+
+## Examples
+
+```bash
+printf '\e[4mUnderlined text\e[24m Normal text\n'
+printf '\e[4;31mRed underlined text\e[0m\n'
+```
 
 ## Specifications
 
@@ -27,3 +50,9 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [Double underline — SGR 21](/docs/sgr/sgr-double-underline) — Double underline
+- [Curly underline — SGR 4:3](/docs/sgr/underline-curly) — Wavy/curly underline
+- [Underline color (indexed)](/docs/sgr/underline-color-indexed) — Set underline color

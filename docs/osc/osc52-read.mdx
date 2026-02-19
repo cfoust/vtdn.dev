@@ -6,19 +6,86 @@ feature_id: "osc52_read"
 data_file: "osc-sequences"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-Clipboard read (paste from clipboard)
+<StatusBadges status={{ experimental: true }} />
+
+**OSC 52 read** queries the terminal for the contents of the system clipboard. The application sends a query with `?` as the data parameter, and the terminal responds with the base64-encoded clipboard contents.
 
 ## Syntax
 
 ```
-TODO: Add syntax for OSC 52 read
+OSC 52 ; Pc ; ? ST            Query clipboard contents
+OSC 52 ; Pc ; Pd ST           Response with clipboard data
 ```
+
+<FormalSyntax grammar={`
+(* Request *)
+OSC52-query    = 0x1b, "]", "52", ";", selection, ";", "?", ( 0x07 | 0x1b, "\\\\" ) ;
+
+(* Response *)
+OSC52-response = 0x1b, "]", "52", ";", selection, ";", data, ( 0x07 | 0x1b, "\\\\" ) ;
+
+selection      = sel-char, { sel-char } ;
+sel-char       = "c" | "p" | "s" | "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" ;
+data           = base64-char, { base64-char } ;
+base64-char    = "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J"
+               | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T"
+               | "U" | "V" | "W" | "X" | "Y" | "Z"
+               | "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j"
+               | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t"
+               | "u" | "v" | "w" | "x" | "y" | "z"
+               | "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+               | "+" | "/" | "=" ;
+`} />
+
+### Parameters
+
+| Parameter | Description |
+|-----------|-------------|
+| `Pc` | Clipboard selection target to query. |
+| `?` | Query indicator (sent in request). |
+| `Pd` | Base64-encoded clipboard content (returned in response). |
+
+**Selection targets:**
+
+| Value | Meaning |
+|-------|---------|
+| `c` | System clipboard |
+| `p` | Primary selection (X11) |
+| `s` | Secondary selection (X11) |
+| `0`-`7` | Cut buffers 0 through 7 (legacy X11) |
+
+### Response
+
+The terminal responds with `OSC 52 ; Pc ; Pd ST` where `Pd` is the base64-encoded contents of the requested clipboard. If the clipboard is empty or the operation is denied, the terminal may respond with an empty data field or not respond at all.
 
 ## Description
 
-Documentation coming soon.
+OSC 52 read allows a terminal application to retrieve clipboard contents from the host system. When the terminal receives a query (`?` as the data parameter), it reads the specified clipboard, base64-encodes the content, and sends it back as an OSC 52 response.
+
+:::caution[Security considerations]
+Many terminals disable OSC 52 read by default or require explicit opt-in from the user. Allowing arbitrary programs to read the clipboard is a significant security risk, as the clipboard may contain sensitive data such as passwords. A malicious program running in the terminal could silently exfiltrate clipboard contents.
+
+Terminals that support OSC 52 read typically provide configuration options to control this behavior. XTerm requires the `allowWindowOps` resource or the `selectToClipboard` resource to be enabled.
+:::
+
+Even among terminals that support OSC 52 write, clipboard read support is significantly less common. Some terminals respond with an empty payload to deny the request without revealing that the feature is unsupported.
+
+## Examples
+
+```bash
+# Query the system clipboard
+printf '\e]52;c;?\e\\'
+
+# Query the primary selection
+printf '\e]52;p;?\e\\'
+
+# Read and decode the clipboard response (requires parsing terminal input)
+# The response will be: ESC ] 52 ; c ; <base64-data> ST
+```
 
 ## Specifications
 
@@ -27,3 +94,7 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [OSC 52 write — Clipboard Write](/docs/osc/osc52-write) — Set clipboard contents via OSC 52

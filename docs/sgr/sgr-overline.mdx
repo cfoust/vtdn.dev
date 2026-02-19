@@ -6,19 +6,39 @@ feature_id: "sgr_overline"
 data_file: "text-styling"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-SGR 53
+**Overline** (SGR 53) is an SGR attribute that renders text with a line above the characters.
 
 ## Syntax
 
 ```
-TODO: Add syntax for Overline
+CSI 53 m    SGR 53 — Overlined
+CSI 55 m    SGR 55 — Not overlined
 ```
+
+<FormalSyntax grammar={`
+SGR-overline     = 0x1b, "[", "53", "m" ;
+SGR-not-overline = 0x1b, "[", "55", "m" ;
+`} />
 
 ## Description
 
-Documentation coming soon.
+Per ECMA-48 §8.3.117, SGR parameter 53 selects "overlined." A horizontal line is drawn above the text.
+
+Overline is reset by SGR 55 or SGR 0.
+
+Overline is less commonly supported than underline or strikethrough. It was defined in ECMA-48 but was not implemented on DEC VT terminals.
+
+## Examples
+
+```bash
+printf '\e[53mOverlined text\e[55m Normal text\n'
+```
 
 ## Specifications
 
@@ -27,3 +47,8 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [Underline — SGR 4](/docs/sgr/sgr-underline) — Line below text
+- [Strikethrough — SGR 9](/docs/sgr/sgr-strikethrough) — Line through text

@@ -6,19 +6,50 @@ feature_id: "da3"
 data_file: "csi-sequences"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-CSI = c — Tertiary device attributes
+**DA3** (Tertiary Device Attributes) is a CSI sequence that queries the terminal for its unit identification string.
 
 ## Syntax
 
 ```
-TODO: Add syntax for DA3
+CSI = c           DA3 request (query)
+DCS ! | Pu ST     DA3 response
 ```
+
+<FormalSyntax grammar={`
+(* Request *)
+DA3-request  = 0x1b, "[", "=", [ "0" ], "c" ;
+
+(* Response *)
+DA3-response = 0x1b, "P", "!", "|", unit-id, 0x1b, "\" ;
+unit-id      = hex-char, { hex-char } ;
+hex-char     = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7"
+             | "8" | "9" | "A" | "B" | "C" | "D" | "E" | "F" ;
+`} />
 
 ## Description
 
-Documentation coming soon.
+Per the VT510 manual, the host sends `CSI = c` to request tertiary device attributes. The terminal responds with a DCS (Device Control String) containing a unit identification code as hexadecimal characters.
+
+On DEC hardware terminals, the unit ID was a unique factory-assigned identifier for each physical terminal. On modern terminal emulators, the response varies:
+
+- XTerm responds with `DCS ! | 0 0 0 0 0 0 0 0 ST` (eight zero characters)
+- Some terminals respond with a hex-encoded identifier string
+- Many terminals do not implement DA3 at all
+
+DA3 is the least commonly supported of the three Device Attributes queries and has limited practical use in modern environments.
+
+## Examples
+
+```bash
+printf '\e[=c'
+# Typical XTerm response: ESC P ! | 00000000 ESC \
+```
 
 ## Specifications
 
@@ -27,3 +58,8 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [DA1 — Primary Device Attributes](/docs/csi/da1) — Terminal class and features
+- [DA2 — Secondary Device Attributes](/docs/csi/da2) — Terminal type and version

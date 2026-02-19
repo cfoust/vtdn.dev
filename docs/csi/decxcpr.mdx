@@ -6,19 +6,64 @@ feature_id: "decxcpr"
 data_file: "csi-sequences"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-CSI ? 6n — Extended cursor position report
+**DECXCPR** (Extended Cursor Position Report) is a DEC private variant of CPR that includes the current page number in the response.
 
 ## Syntax
 
 ```
-TODO: Add syntax for DECXCPR
+CSI ? 6 n              DECXCPR request
+CSI ? Pr ; Pc ; Pp R   DECXCPR response
 ```
+
+<FormalSyntax grammar={`
+(* Request *)
+DECXCPR-request  = 0x1b, "[", "?", "6", "n" ;
+
+(* Response *)
+DECXCPR-response = 0x1b, "[", "?", Pr, ";", Pc, ";", Pp, "R" ;
+Pr               = digit, { digit } ;              (* row *)
+Pc               = digit, { digit } ;              (* column *)
+Pp               = digit, { digit } ;              (* page, usually 1 *)
+digit            = "0" | "1" | "2" | "3" | "4"
+                 | "5" | "6" | "7" | "8" | "9" ;
+`} />
+
+### Response
+
+The terminal responds with `CSI ? Pr ; Pc ; Pp R` where:
+
+| Parameter | Description |
+|-----------|-------------|
+| `Pr` | Current cursor row (1-based) |
+| `Pc` | Current cursor column (1-based) |
+| `Pp` | Current page number (typically 1) |
 
 ## Description
 
-Documentation coming soon.
+Per the VT510 manual, DECXCPR is the DEC private version of the standard cursor position report. It is requested via `CSI ? 6 n` (a private-mode DSR) and differs from the standard CPR in two ways:
+
+1. The response includes a `?` prefix: `CSI ? Pr ; Pc ; Pp R`
+2. The response includes a third parameter for the page number
+
+The page number parameter (`Pp`) is a legacy concept from multi-page DEC terminals. Modern terminals typically report page 1.
+
+Since the response includes the `?` prefix, applications can distinguish DECXCPR responses from standard CPR responses. This is useful when both queries may be in flight.
+
+DECXCPR was introduced on the VT330 and later terminals. XTerm supports it when the terminal ID is set to 330 or higher.
+
+## Examples
+
+```bash
+# Request extended cursor position report
+printf '\e[?6n'
+# Response: ESC [ ? Pr ; Pc ; 1 R
+```
 
 ## Specifications
 
@@ -27,3 +72,8 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [DSR/CPR — Device Status Report](/docs/csi/dsr-cpr) — Standard cursor position report
+- [CUP — Cursor Position](/docs/csi/cha-cup) — Set cursor position

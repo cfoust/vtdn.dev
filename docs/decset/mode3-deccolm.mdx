@@ -6,19 +6,56 @@ feature_id: "mode3_deccolm"
 data_file: "decset-modes"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-Mode 3 — 132/80 column switching
+**DECCOLM** (Mode 3) is a DECSET/DECRST mode that switches the terminal between 132-column and 80-column display widths.
 
 ## Syntax
 
 ```
-TODO: Add syntax for DECCOLM
+CSI ? 3 h    DECSET — Switch to 132 columns
+CSI ? 3 l    DECRST — Switch to 80 columns
 ```
+
+<FormalSyntax grammar={`
+DECSET-mode3 = 0x1b, "[", "?", "3", "h" ;
+DECRST-mode3 = 0x1b, "[", "?", "3", "l" ;
+`} />
 
 ## Description
 
-Documentation coming soon.
+Per the VT100 User Guide and VT510 Programmer Reference, DECCOLM controls the number of columns displayed on the screen.
+
+- **Set** — The terminal switches to 132 columns per line.
+- **Reset** — The terminal switches to 80 columns per line. This is the default.
+
+### Side effects
+
+Toggling DECCOLM has significant side effects:
+
+- The screen is cleared (equivalent to ED 2)
+- The cursor moves to the home position (row 1, column 1)
+- The scrolling margins (DECSTBM) are reset to the full screen
+- If DECOM (origin mode) is set, the cursor moves to the home position within the scrolling region
+
+These side effects occur on both set and reset transitions, making DECCOLM a common way to perform a "soft reset" of the display in legacy applications.
+
+:::note
+Many modern terminal emulators allow the window to be resized freely and may ignore or restrict DECCOLM. XTerm requires the `allowColumnMode` resource to be enabled for DECCOLM to function. In terminals that support it, the actual column count may be adjusted by resizing the window rather than changing the font.
+:::
+
+## Examples
+
+```bash
+printf '\e[?3h'      # Switch to 132-column mode
+printf '\e[?3l'      # Switch to 80-column mode
+
+# Note: both commands clear the screen as a side effect
+```
 
 ## Specifications
 
@@ -27,3 +64,8 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [DECSTBM — Set Top and Bottom Margins](/docs/csi/decstbm) — Scrolling margins reset by DECCOLM
+- [DECOM — Origin Mode](/docs/decset/mode6-decom) — Interacts with DECCOLM when toggling

@@ -6,19 +6,59 @@ feature_id: "win_fullscreen"
 data_file: "window-manipulation"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-CSI 10;Ps t — Enter/exit/toggle fullscreen
+<StatusBadges status={{ experimental: true }} />
+
+**Fullscreen** is an XTerm window manipulation sequence that enters, exits, or toggles fullscreen mode for the terminal window.
 
 ## Syntax
 
 ```
-TODO: Add syntax for Fullscreen
+CSI 10 ; Ps t     Enter, exit, or toggle fullscreen
 ```
+
+<FormalSyntax grammar={`
+fullscreen = 0x1b, "[", "1", "0", ";", Ps, "t" ;
+Ps         = "0" | "1" | "2" ;
+`} />
+
+### Parameters
+
+| Value | Description |
+|-------|-------------|
+| `0` | Exit fullscreen (restore to windowed mode) |
+| `1` | Enter fullscreen |
+| `2` | Toggle fullscreen |
 
 ## Description
 
-Documentation coming soon.
+This sequence controls the fullscreen state of the terminal window. It is part of the XTerm `CSI Ps ; Ps ; Ps t` window manipulation family.
+
+- **`CSI 10 ; 0 t`** — Exits fullscreen mode. The window is restored to its previous windowed size and position, with window decorations visible.
+- **`CSI 10 ; 1 t`** — Enters fullscreen mode. The window expands to cover the entire screen, and window decorations (title bar, borders) are hidden.
+- **`CSI 10 ; 2 t`** — Toggles fullscreen mode. If the window is currently in fullscreen, it exits fullscreen; if windowed, it enters fullscreen.
+
+Fullscreen mode differs from [Maximize](/docs/window/win-maximize) in that fullscreen typically removes all window decorations and may cover system UI elements such as taskbars and docks. Maximize mode retains decorations and respects the work area.
+
+:::note
+Some terminal emulators disable these sequences by default for security reasons. Check your terminal's configuration for options to enable or disable window manipulation sequences.
+:::
+
+## Examples
+
+```bash
+# Enter fullscreen
+printf '\e[10;1t'
+
+# Exit fullscreen
+printf '\e[10;0t'
+
+# Toggle fullscreen
+printf '\e[10;2t'
+```
 
 ## Specifications
 
@@ -27,3 +67,9 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [Maximize](/docs/window/win-maximize) — Maximize the window while retaining decorations
+- [Iconify](/docs/window/win-iconify) — Minimize or restore the window
+- [Resize (chars)](/docs/window/win-resize-chars) — Resize to specific character dimensions

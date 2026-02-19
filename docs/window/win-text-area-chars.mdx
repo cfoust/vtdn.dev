@@ -6,19 +6,58 @@ feature_id: "win_text_area_chars"
 data_file: "window-manipulation"
 ---
 
-<StatusBadges status={{ standard_track: true }} />
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
 
-CSI 18 t — Text area size in characters
+<StatusBadges status={{ experimental: true }} />
+
+**Text Area Size (chars)** is an XTerm window manipulation sequence that queries the character dimensions (rows and columns) of the terminal's text area.
 
 ## Syntax
 
 ```
-TODO: Add syntax for Text area (chars)
+CSI 18 t                     Request text area size in characters
+CSI 8 ; rows ; cols t        Response: character dimensions
 ```
+
+<FormalSyntax grammar={`
+(* Request *)
+text_area_chars_request  = 0x1b, "[", "1", "8", "t" ;
+
+(* Response *)
+text_area_chars_response = 0x1b, "[", "8", ";", Pn, ";", Pn, "t" ;
+Pn                       = digit, { digit } ;
+digit                    = "0" | "1" | "2" | "3" | "4"
+                         | "5" | "6" | "7" | "8" | "9" ;
+`} />
+
+### Response
+
+| Field | Description |
+|-------|-------------|
+| `rows` | Number of character rows in the text area |
+| `cols` | Number of character columns in the text area |
 
 ## Description
 
-Documentation coming soon.
+This sequence queries the terminal for the size of the text area measured in characters (rows and columns). It is part of the XTerm `CSI Ps ; Ps ; Ps t` window manipulation family.
+
+When the terminal receives `CSI 18 t`, it responds with `CSI 8 ; rows ; cols t` where `rows` is the number of character rows and `cols` is the number of character columns in the text area. The response format matches the parameter format of the [Resize (chars)](/docs/window/win-resize-chars) sequence (`CSI 8 ; rows ; cols t`).
+
+This report provides the same information as the `TIOCGWINSZ` ioctl or the `COLUMNS` and `LINES` environment variables, but it works over any transport (including serial connections and SSH tunnels) without requiring out-of-band signaling.
+
+Applications may prefer this over the [Text Area Size (pixels)](/docs/window/win-text-area-pixels) report when they only need character dimensions and do not perform pixel-level operations.
+
+## Examples
+
+```bash
+# Query text area size in characters
+printf '\e[18t'
+
+# Read the response
+printf '\e[18t'; read -st 1 -d t response; echo "$response"
+```
 
 ## Specifications
 
@@ -27,3 +66,10 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [Resize (chars)](/docs/window/win-resize-chars) — Resize to specific character dimensions
+- [Text Area Size (pixels)](/docs/window/win-text-area-pixels) — Query text area pixel dimensions
+- [Cell Size](/docs/window/win-cell-size) — Query individual cell pixel dimensions
+- [DSR/CPR — Device Status Report](/docs/csi/dsr-cpr) — Query cursor position

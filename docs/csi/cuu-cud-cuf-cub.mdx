@@ -6,19 +6,63 @@ feature_id: "cuu_cud_cuf_cub"
 data_file: "csi-sequences"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-CSI A/B/C/D — Cursor up/down/forward/back
+**CUU**, **CUD**, **CUF**, and **CUB** are CSI sequences that move the cursor by a relative number of positions in a single direction.
 
 ## Syntax
 
 ```
-TODO: Add syntax for CUU/CUD/CUF/CUB
+CSI Pn A      CUU — Cursor Up
+CSI Pn B      CUD — Cursor Down
+CSI Pn C      CUF — Cursor Forward (Right)
+CSI Pn D      CUB — Cursor Back (Left)
 ```
+
+<FormalSyntax grammar={`
+CUU = 0x1b, "[", [ Pn ], "A" ;
+CUD = 0x1b, "[", [ Pn ], "B" ;
+CUF = 0x1b, "[", [ Pn ], "C" ;
+CUB = 0x1b, "[", [ Pn ], "D" ;
+Pn  = digit, { digit } ;                (* default: 1 *)
+digit = "0" | "1" | "2" | "3" | "4"
+      | "5" | "6" | "7" | "8" | "9" ;
+`} />
+
+### Parameters
+
+| Parameter | Description | Default |
+|-----------|-------------|---------|
+| `Pn` | Number of positions to move | 1 |
 
 ## Description
 
-Documentation coming soon.
+Per ECMA-48 §8.3.22 (CUU), §8.3.19 (CUD), §8.3.20 (CUF), §8.3.18 (CUB), these sequences move the active presentation position by `Pn` positions in the specified direction.
+
+- **CUU** (`CSI Pn A`) — Moves the cursor up by `Pn` lines. The cursor stops at the top margin of the scrolling region; it does **not** scroll the display.
+- **CUD** (`CSI Pn B`) — Moves the cursor down by `Pn` lines. The cursor stops at the bottom margin; it does **not** scroll.
+- **CUF** (`CSI Pn C`) — Moves the cursor right by `Pn` columns. The cursor stops at the right margin; it does not wrap.
+- **CUB** (`CSI Pn D`) — Moves the cursor left by `Pn` columns. The cursor stops at the left margin (column 1); it does not wrap.
+
+If `Pn` is 0, it is treated as 1 by most terminals (the spec says the default is 1, and a value of 0 is commonly treated the same way). The cursor column (for CUU/CUD) or row (for CUF/CUB) is not changed.
+
+:::note
+These sequences never cause scrolling. Use IND/RI or SU/SD for scroll operations.
+:::
+
+## Examples
+
+```bash
+printf '\e[5A'       # Move up 5 lines
+printf '\e[3B'       # Move down 3 lines
+printf '\e[10C'      # Move right 10 columns
+printf '\e[2D'       # Move left 2 columns
+printf '\e[A'        # Move up 1 line (default)
+```
 
 ## Specifications
 
@@ -27,3 +71,9 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [CNL/CPL — Cursor Next/Preceding Line](/docs/csi/cnl-cpl) — Move to beginning of relative line
+- [CHA/CUP — Absolute Cursor Positioning](/docs/csi/cha-cup) — Move to absolute position
+- [VPA/HPA — Vertical/Horizontal Position Absolute](/docs/csi/vpa-hpa) — Single-axis absolute positioning

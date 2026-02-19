@@ -6,19 +6,40 @@ feature_id: "sgr_double_underline"
 data_file: "text-styling"
 ---
 
+:::warning[AI-Generated Content]
+This page was generated with the assistance of AI and may contain inaccuracies. It is intended as a starting point and should be verified against the linked specifications.
+:::
+
 <StatusBadges status={{ standard_track: true }} />
 
-SGR 21
+**Double underline** (SGR 21) is an SGR attribute that renders text with two underlines below the baseline.
 
 ## Syntax
 
 ```
-TODO: Add syntax for Double underline
+CSI 21 m    SGR 21 — Double underline
+CSI 24 m    SGR 24 — Not underlined
 ```
+
+<FormalSyntax grammar={`
+SGR-double-underline = 0x1b, "[", "21", "m" ;
+SGR-not-underline    = 0x1b, "[", "24", "m" ;
+`} />
 
 ## Description
 
-Documentation coming soon.
+Per ECMA-48 §8.3.117, SGR parameter 21 selects "doubly underlined." Two parallel lines are drawn below the text baseline.
+
+Double underline is reset by SGR 24 (which cancels all underline variants) or SGR 0.
+
+SGR 21 can also be expressed as `SGR 4:2` in the sub-parameter syntax defined by ITU-T T.416. Some terminals support one form but not the other.
+
+## Examples
+
+```bash
+printf '\e[21mDouble underlined\e[24m Normal\n'
+printf '\e[4:2mAlternate syntax\e[24m\n'
+```
 
 ## Specifications
 
@@ -27,3 +48,8 @@ Documentation coming soon.
 ## Terminal support
 
 <FeatureCompatTable />
+
+## See also
+
+- [Underline — SGR 4](/docs/sgr/sgr-underline) — Single underline
+- [Curly underline — SGR 4:3](/docs/sgr/underline-curly) — Wavy underline style

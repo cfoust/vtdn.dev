@@ -22,6 +22,10 @@ ESC H         HTS — Set tab stop (7-bit)
 0x88          HTS — Set tab stop (8-bit C1)
 ```
 
+<FormalSyntax grammar={`
+HTS = ( 0x1b, "H" ) | 0x88 ;
+`} />
+
 ## Description
 
 Per ECMA-48 §8.3.62, HTS "causes a character tabulation stop to be set at the active presentation position in the presentation component."

@@ -22,6 +22,11 @@ SO        0x0E      Shift Out — invoke G1 into GL
 SI        0x0F      Shift In — invoke G0 into GL
 ```
 
+<FormalSyntax grammar={`
+SO = 0x0e ;
+SI = 0x0f ;
+`} />
+
 ## Description
 
 Per ECMA-48 §8.3.126 and §8.3.119, SO and SI are used for code extension purposes, causing "the meanings of the bit combinations following it in the data stream to be changed." Their use is defined in ECMA-35.

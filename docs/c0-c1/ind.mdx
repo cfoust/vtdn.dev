@@ -22,6 +22,10 @@ ESC D         IND — Index (7-bit)
 0x84          IND — Index (8-bit C1)
 ```
 
+<FormalSyntax grammar={`
+IND = ( 0x1b, "D" ) | 0x84 ;
+`} />
+
 ## Description
 
 Per the VT510 manual, IND moves the cursor down one line in the same column position. If the cursor is at the bottom margin of the scrolling region (set by DECSTBM), the screen scrolls up: the line at the top margin is lost, all lines move up one position, and a new blank line appears at the bottom margin.

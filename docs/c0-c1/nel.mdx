@@ -22,6 +22,10 @@ ESC E         NEL — Next Line (7-bit)
 0x85          NEL — Next Line (8-bit C1)
 ```
 
+<FormalSyntax grammar={`
+NEL = ( 0x1b, "E" ) | 0x85 ;
+`} />
+
 ## Description
 
 Per ECMA-48 §8.3.86, NEL "causes the active presentation position to be moved to the line home position of the following line in the presentation component." In standard terminal usage, this means column 1 of the next line.

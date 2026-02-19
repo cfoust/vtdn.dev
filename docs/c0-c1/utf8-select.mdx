@@ -22,6 +22,11 @@ ESC % G       Select UTF-8 encoding
 ESC % @       Return to ISO 8859-1 / default encoding
 ```
 
+<FormalSyntax grammar={`
+UTF8_ON  = 0x1b, "%", "G" ;
+UTF8_OFF = 0x1b, "%", "@" ;
+`} />
+
 ## Description
 
 `ESC % G` instructs the terminal to interpret subsequent input as UTF-8 encoded text. `ESC % @` reverts to the default encoding, typically ISO 8859-1 (Latin-1).

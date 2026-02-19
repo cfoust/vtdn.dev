@@ -22,6 +22,11 @@ ESC SP F      S7C1T — Send C1 controls as 7-bit sequences
 ESC SP G      S8C1T — Send C1 controls as 8-bit single bytes
 ```
 
+<FormalSyntax grammar={`
+S7C1T = 0x1b, " ", "F" ;
+S8C1T = 0x1b, " ", "G" ;
+`} />
+
 ## Description
 
 These sequences affect the format of the terminal's responses (e.g., to DA1, DSR, DECRQM queries), not how the terminal interprets input.

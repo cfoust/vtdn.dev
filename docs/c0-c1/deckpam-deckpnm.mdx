@@ -22,6 +22,11 @@ ESC =         DECKPAM — Enter application keypad mode
 ESC >         DECKPNM — Enter numeric keypad mode
 ```
 
+<FormalSyntax grammar={`
+DECKPAM = 0x1b, "=" ;
+DECKPNM = 0x1b, ">" ;
+`} />
+
 ## Description
 
 ### DECKPAM — Application mode (ESC =)

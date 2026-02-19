@@ -25,6 +25,14 @@ ESC }         LS2R — Locking-shift G2 into GR
 ESC |         LS3R — Locking-shift G3 into GR
 ```
 
+<FormalSyntax grammar={`
+LS2  = 0x1b, "n" ;
+LS3  = 0x1b, "o" ;
+LS1R = 0x1b, "~" ;
+LS2R = 0x1b, "}" ;
+LS3R = 0x1b, "|" ;
+`} />
+
 The GL shifts LS0 and LS1 are the 8-bit equivalents of SI and SO respectively — see [SO/SI](/docs/c0-c1/so-si).
 
 ## Description

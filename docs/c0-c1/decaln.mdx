@@ -21,6 +21,10 @@ This page was generated with the assistance of AI and may contain inaccuracies. 
 ESC # 8       DECALN — Screen Alignment Pattern
 ```
 
+<FormalSyntax grammar={`
+DECALN = 0x1b, "#", "8" ;
+`} />
+
 ## Description
 
 Per the VT510 manual, DECALN fills the complete screen area with a test pattern (the letter 'E' in every cell). In addition to filling the screen, DECALN:

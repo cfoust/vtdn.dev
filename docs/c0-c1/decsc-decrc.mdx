@@ -22,6 +22,11 @@ ESC 7         DECSC — Save cursor
 ESC 8         DECRC — Restore cursor
 ```
 
+<FormalSyntax grammar={`
+DECSC = 0x1b, "7" ;
+DECRC = 0x1b, "8" ;
+`} />
+
 ## Description
 
 ### DECSC — Save cursor (ESC 7)

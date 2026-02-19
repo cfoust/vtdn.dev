@@ -22,6 +22,10 @@ ESC M         RI — Reverse Index (7-bit)
 0x8D          RI — Reverse Index (8-bit C1)
 ```
 
+<FormalSyntax grammar={`
+RI = ( 0x1b, "M" ) | 0x8d ;
+`} />
+
 ## Description
 
 Per ECMA-48 §8.3.104, RI "causes the active presentation position to be moved in the presentation component to the corresponding character position of the preceding line."

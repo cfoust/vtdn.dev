@@ -24,6 +24,11 @@ ESC O         SS3 — Single-shift G3 (7-bit)
 0x8F          SS3 — Single-shift G3 (8-bit C1)
 ```
 
+<FormalSyntax grammar={`
+SS2 = ( 0x1b, "N" ) | 0x8e ;
+SS3 = ( 0x1b, "O" ) | 0x8f ;
+`} />
+
 ## Description
 
 Per ECMA-48 §8.3.141 and §8.3.142, SS2 and SS3 are used for code extension purposes, causing the meanings of the bit combinations following them to be changed. Their detailed use is defined in ECMA-35.

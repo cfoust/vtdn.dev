@@ -24,6 +24,13 @@ ESC # 5       DECSWL — Single-width, single-height line (reset)
 ESC # 6       DECDWL — Double-width, single-height line
 ```
 
+<FormalSyntax grammar={`
+DECDHL_TOP = 0x1b, "#", "3" ;            (* top half *)
+DECDHL_BOT = 0x1b, "#", "4" ;            (* bottom half *)
+DECSWL     = 0x1b, "#", "5" ;
+DECDWL     = 0x1b, "#", "6" ;
+`} />
+
 ## Description
 
 These sequences are line attributes — they affect the entire line the cursor is on, not individual characters. Each line on the display independently has one of these attributes.

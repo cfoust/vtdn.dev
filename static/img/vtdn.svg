@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   class="logo__image"
+   width="83"
+   height="24"
+   viewBox="0 0 83 24"
+   role="img"
+   version="1.1"
+   id="svg3"
+   sodipodi:docname="vtdn.svg"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs3" />
+  <sodipodi:namedview
+     id="namedview3"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showguides="true"
+     inkscape:zoom="8.9520105"
+     inkscape:cx="39.935163"
+     inkscape:cy="2.5692552"
+     inkscape:window-width="1102"
+     inkscape:window-height="891"
+     inkscape:window-x="0"
+     inkscape:window-y="37"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg3">
+    <sodipodi:guide
+       position="53.616061,6.8235973"
+       orientation="0,-1"
+       id="guide3"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="29.455562,17.581667"
+       orientation="1,0"
+       id="guide4"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="67.163267,10.131817"
+       orientation="1,0"
+       id="guide5"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="24.183361,25.260744"
+       orientation="1,0"
+       id="guide6"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
+  <title
+     id="title1">MDN</title>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.3333px;font-family:CozetteVector;-inkscape-font-specification:CozetteVector;writing-mode:lr-tb;direction:ltr;fill:currentColor"
+     x="28.194818"
+     y="16.962736"
+     id="text5"><tspan
+       sodipodi:role="line"
+       id="tspan5"
+       x="28.194818"
+       y="16.962736"
+       style="font-size:19.3333px">vtdn</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.3333px;font-family:CozetteVector;-inkscape-font-specification:CozetteVector;writing-mode:lr-tb;direction:ltr;fill:currentColor"
+     x="70.945496"
+     y="9.9713383"
+     id="text6"><tspan
+       sodipodi:role="line"
+       id="tspan6"></tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.3333px;font-family:CozetteVector;-inkscape-font-specification:CozetteVector;writing-mode:lr-tb;direction:ltr;fill:currentColor"
+     x="69.226303"
+     y="16.962736"
+     id="text7"><tspan
+       sodipodi:role="line"
+       id="tspan7"
+       x="69.226303"
+       y="16.962736"
+       style="fill:currentColor">▒</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:32px;font-family:CozetteVector;-inkscape-font-specification:CozetteVector;writing-mode:lr-tb;direction:ltr;fill:currentColor"
+     x="3.3512025"
+     y="22.67647"
+     id="text8"><tspan
+       sodipodi:role="line"
+       id="tspan8"
+       x="3.3512025"
+       y="22.67647"
+       style="font-size:32px">V</tspan></text>
+</svg>

@@ -5,7 +5,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'vtdn.dev',
   tagline: 'Terminal Emulator Standards Reference',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon.png',
   url: 'https://vtdn.dev',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -53,18 +53,16 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'vtdn.dev',
+      logo: {
+        alt: 'vtdn logo',
+        src: 'img/vtdn.svg',
+      },
       items: [
         {
           type: 'docSidebar',
           sidebarId: 'standardsSidebar',
           position: 'left',
           label: 'Documentation',
-        },
-        {
-          to: '/',
-          label: 'Compatibility Matrix',
-          position: 'left',
         },
         {
           href: 'https://github.com/cfoust/vtdn.dev',

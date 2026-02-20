@@ -6,6 +6,7 @@ import {
   terminalIds,
   buildGroupHeaders,
   classifySupport,
+  multiplexerIds,
   getFeature,
   type SupportEntry,
 } from '../../lib/compatData';
@@ -73,7 +74,9 @@ export default function FeatureCompatTable({
           return (
             <React.Fragment key={group.label || 'ungrouped'}>
               {group.label && (
-                <tr className={styles.groupRow}>
+                <tr
+                  className={styles.groupRow}
+                  {...(group.label === 'Multiplexers' ? {'data-multiplexer': ''} : {})}>
                   <td colSpan={4} className={styles.groupCell}>
                     {group.label}
                   </td>
@@ -83,7 +86,7 @@ export default function FeatureCompatTable({
                 const entry: SupportEntry = support[termId] || {version_added: null};
                 const kind = classifySupport(entry);
                 return (
-                  <tr key={termId}>
+                  <tr key={termId} {...(multiplexerIds.has(termId) ? {'data-multiplexer': ''} : {})}>
                     <td>
                       <a
                         href={(terminals[termId] as any).website}

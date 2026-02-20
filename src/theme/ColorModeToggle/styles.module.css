@@ -1,0 +1,119 @@
+.wrapper {
+  position: relative;
+}
+
+.toggleButton {
+  -webkit-tap-highlight-color: transparent;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 2rem;
+  padding: 0 0.25rem 0 0.5rem;
+  border-radius: var(--ifm-global-radius);
+  transition: background var(--ifm-transition-fast);
+  gap: 0.15rem;
+}
+
+.toggleButton:hover {
+  background: var(--ifm-color-emphasis-200);
+}
+
+.toggleIcon {
+  display: none;
+}
+
+[data-theme-choice='system'] .systemToggleIcon,
+[data-theme-choice='light'] .lightToggleIcon,
+[data-theme-choice='dark'] .darkToggleIcon {
+  display: initial;
+}
+
+.toggleButtonDisabled {
+  cursor: not-allowed;
+}
+
+.caret {
+  font-size: 0.7rem;
+  opacity: 0.6;
+  line-height: 1;
+}
+
+.dropdown {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 0.25rem);
+  min-width: 200px;
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-table-border-color);
+  border-radius: var(--ifm-global-radius);
+  box-shadow: var(--ifm-global-shadow-lw);
+  padding: 0.35rem 0;
+  z-index: 100;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.4rem 0.75rem;
+  border: none;
+  background: none;
+  font-size: 0.85rem;
+  color: var(--ifm-font-color-base);
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+}
+
+.option:hover {
+  background: var(--ifm-color-emphasis-100);
+}
+
+.optionActive {
+  font-weight: 600;
+}
+
+.radio,
+.checkbox {
+  font-size: 0.75rem;
+  width: 1rem;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.separator {
+  border-top: 1px solid var(--ifm-table-border-color);
+  margin: 0.25rem 0;
+}
+
+.kovidRow {
+  display: flex;
+  align-items: center;
+}
+
+.kovidOption {
+  flex: 1;
+}
+
+.helpLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+  border-radius: 50%;
+  background: var(--ifm-color-emphasis-200);
+  color: var(--ifm-font-color-base);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.helpLink:hover {
+  background: var(--ifm-color-emphasis-300);
+  color: var(--ifm-font-color-base);
+  text-decoration: none;
+}

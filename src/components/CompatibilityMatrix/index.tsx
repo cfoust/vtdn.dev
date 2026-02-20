@@ -8,6 +8,7 @@ import {
   buildGroupHeaders,
   classifySupport,
   isSupported,
+  multiplexerIds,
   type SupportEntry,
 } from '../../lib/compatData';
 
@@ -53,12 +54,13 @@ for (const category of categories) {
   }
 }
 
-function SupportCell({support}: {support: SupportEntry}) {
+function SupportCell({support, isMultiplexer}: {support: SupportEntry; isMultiplexer?: boolean}) {
   const {version_added, partial_implementation, notes} = support;
+  const mux = isMultiplexer ? {'data-multiplexer': ''} : {};
 
   if (partial_implementation) {
     return (
-      <td className={styles.partial} title={notes}>
+      <td className={styles.partial} title={notes} {...mux}>
         ~
       </td>
     );
@@ -66,7 +68,7 @@ function SupportCell({support}: {support: SupportEntry}) {
 
   if (version_added === true || typeof version_added === 'string') {
     return (
-      <td className={notes ? styles.yesNotes : styles.yes} title={notes}>
+      <td className={notes ? styles.yesNotes : styles.yes} title={notes} {...mux}>
         &#x2713;
       </td>
     );
@@ -74,14 +76,14 @@ function SupportCell({support}: {support: SupportEntry}) {
 
   if (version_added === false) {
     return (
-      <td className={styles.no}>
+      <td className={styles.no} {...mux}>
         &#x2717;
       </td>
     );
   }
 
   return (
-    <td className={styles.unknown}>
+    <td className={styles.unknown} {...mux}>
       ?
     </td>
   );
@@ -175,7 +177,11 @@ export default function CompatibilityMatrix(): React.ReactElement {
                 <th className={styles.featureHeader} colSpan={2} />
                 {groupHeaders.map((h, i) =>
                   h.label ? (
-                    <th key={i} colSpan={h.span} className={styles.groupHeader}>
+                    <th
+                      key={i}
+                      colSpan={h.span}
+                      className={styles.groupHeader}
+                      {...(h.label === 'Multiplexers' ? {'data-multiplexer': ''} : {})}>
                       {h.label}
                     </th>
                   ) : (
@@ -190,7 +196,10 @@ export default function CompatibilityMatrix(): React.ReactElement {
               <th className={`${styles.featureHeader} ${styles.featureHeaderNames}`}>Feature</th>
               <th className={`${styles.countHeader} ${styles.featureHeaderNames}`}></th>
               {terminalIds.map((id) => (
-                <th key={id} className={styles.terminalHeader}>
+                <th
+                  key={id}
+                  className={styles.terminalHeader}
+                  {...(multiplexerIds.has(id) ? {'data-multiplexer': ''} : {})}>
                   <a
                     href={terminals[id].website}
                     target="_blank"
@@ -207,7 +216,10 @@ export default function CompatibilityMatrix(): React.ReactElement {
               <td className={styles.featureCell}>Features supported</td>
               <td className={styles.countCell}></td>
               {terminalIds.map((id) => (
-                <td key={id} className={styles.summaryCell}>
+                <td
+                  key={id}
+                  className={styles.summaryCell}
+                  {...(multiplexerIds.has(id) ? {'data-multiplexer': ''} : {})}>
                   {terminalCounts[id]}
                 </td>
               ))}
@@ -241,6 +253,7 @@ export default function CompatibilityMatrix(): React.ReactElement {
                           <SupportCell
                             key={termId}
                             support={compat.support[termId]}
+                            isMultiplexer={multiplexerIds.has(termId)}
                           />
                         ))}
                       </tr>

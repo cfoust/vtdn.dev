@@ -105,6 +105,10 @@ export function buildGroupHeaders(): GroupHeader[] {
   return headers;
 }
 
+export const multiplexerIds = new Set(
+  terminalIds.filter((id) => (terminals[id] as any).group === 'Multiplexers'),
+);
+
 export function getFeature(dataFileKey: string, featureId: string): FeatureEntry | undefined {
   const category = dataFiles[dataFileKey];
   if (!category) return undefined;

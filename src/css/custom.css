@@ -18,3 +18,48 @@
   --ifm-color-primary-lighter: #bbd0fe;
   --ifm-color-primary-lightest: #eaf0ff;
 }
+
+/* Kovid Goyal Mode: cross out multiplexer cells in red */
+html[data-kovid-mode] td[data-multiplexer],
+html[data-kovid-mode] tr[data-multiplexer] td {
+  position: relative;
+}
+
+html[data-kovid-mode] td[data-multiplexer]::before,
+html[data-kovid-mode] th[data-multiplexer]::before,
+html[data-kovid-mode] tr[data-multiplexer] td::before,
+html[data-kovid-mode] td[data-multiplexer]::after,
+html[data-kovid-mode] th[data-multiplexer]::after,
+html[data-kovid-mode] tr[data-multiplexer] td::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+html[data-kovid-mode] td[data-multiplexer]::before,
+html[data-kovid-mode] th[data-multiplexer]::before,
+html[data-kovid-mode] tr[data-multiplexer] td::before {
+  background: linear-gradient(
+    to top right,
+    transparent calc(50% - 1px),
+    red calc(50% - 1px),
+    red calc(50% + 1px),
+    transparent calc(50% + 1px)
+  );
+}
+
+html[data-kovid-mode] td[data-multiplexer]::after,
+html[data-kovid-mode] th[data-multiplexer]::after,
+html[data-kovid-mode] tr[data-multiplexer] td::after {
+  background: linear-gradient(
+    to bottom right,
+    transparent calc(50% - 1px),
+    red calc(50% - 1px),
+    red calc(50% + 1px),
+    transparent calc(50% + 1px)
+  );
+}

@@ -1,5 +1,6 @@
 import terminals from '../../data/terminals.json';
-import controlSequences from '../../data/control-sequences.json';
+import c0Controls from '../../data/c0-controls.json';
+import escapeSequences from '../../data/escape-sequences.json';
 import csiSequences from '../../data/csi-sequences.json';
 import textStyling from '../../data/text-styling.json';
 import oscSequences from '../../data/osc-sequences.json';
@@ -42,7 +43,8 @@ export type CategoryData = {
 export { terminals };
 
 export const dataFiles: Record<string, CategoryData> = {
-  'control-sequences': controlSequences.control_sequences as unknown as CategoryData,
+  'c0-controls': c0Controls.c0_controls as unknown as CategoryData,
+  'escape-sequences': escapeSequences.escape_sequences as unknown as CategoryData,
   'csi-sequences': csiSequences.csi_sequences as unknown as CategoryData,
   'text-styling': textStyling.text_styling as unknown as CategoryData,
   'osc-sequences': oscSequences.osc_sequences as unknown as CategoryData,

@@ -43,7 +43,8 @@ writeFileSync(terminalsPath, JSON.stringify(terminals, null, 2) + "\n");
 console.log(`Added '${id}' to terminals.json`);
 
 const dataFiles = [
-  "control-sequences.json",
+  "c0-controls.json",
+  "escape-sequences.json",
   "csi-sequences.json",
   "text-styling.json",
   "osc-sequences.json",

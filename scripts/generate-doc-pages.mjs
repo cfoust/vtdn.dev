@@ -17,7 +17,8 @@ const categoryFilter = args.includes('--category')
 
 // Maps data file basenames to docs directory names
 const DATA_TO_DIR = {
-  'control-sequences': 'c0-c1',
+  'c0-controls': 'c0-c1',
+  'escape-sequences': 'c0-c1',
   'csi-sequences': 'csi',
   'text-styling': 'sgr',
   'osc-sequences': 'osc',
@@ -30,7 +31,8 @@ const DATA_TO_DIR = {
 
 // Maps data file basenames to their top-level JSON key
 const DATA_TO_KEY = {
-  'control-sequences': 'control_sequences',
+  'c0-controls': 'c0_controls',
+  'escape-sequences': 'escape_sequences',
   'csi-sequences': 'csi_sequences',
   'text-styling': 'text_styling',
   'osc-sequences': 'osc_sequences',

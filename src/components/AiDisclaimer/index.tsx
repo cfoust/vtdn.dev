@@ -4,7 +4,7 @@ import Admonition from '@theme/Admonition';
 
 const REPO = 'cfoust/vtdn.dev';
 
-export default function AiDisclaimer(): JSX.Element {
+export default function AiDisclaimer(): React.JSX.Element {
   const {metadata} = useDoc();
   const pageUrl = `https://vtdn.dev${metadata.permalink}`;
   const reportUrl =

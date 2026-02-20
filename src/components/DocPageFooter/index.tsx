@@ -4,7 +4,7 @@ import styles from './styles.module.css';
 
 const REPO = 'cfoust/vtdn.dev';
 
-export default function DocPageFooter(): JSX.Element | null {
+export default function DocPageFooter(): React.JSX.Element | null {
   const {metadata} = useDoc();
   const {editUrl} = metadata;
 

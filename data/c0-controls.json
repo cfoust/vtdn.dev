@@ -1,0 +1,972 @@
+{
+  "c0_controls": {
+    "__meta": {
+      "category": "C0 Control Codes"
+    },
+    "enq": {
+      "__compat": {
+        "title": "ENQ",
+        "description": "0x05 — Enquiry / answerback string",
+        "doc_path": "/docs/c0-c1/enq",
+        "support": {
+          "vt100": {
+            "version_added": true
+          },
+          "xterm": {
+            "version_added": true,
+            "notes": "Implemented in charproc.c:3674. Returns answerback string",
+            "last_scanned": "2026-02-17"
+          },
+          "ghostty": {
+            "version_added": "v1.0.0",
+            "notes": "Handled in stream.zig:766 as C0.ENQ (0x05)",
+            "last_scanned": "2026-02-17"
+          },
+          "kitty": {
+            "version_added": false,
+            "last_scanned": "2026-02-17"
+          },
+          "wezterm": {
+            "version_added": true,
+            "notes": "Handled in performer.rs:473 via ControlCode::Enquiry, responds with configurable answerback string",
+            "last_scanned": "2026-02-17"
+          },
+          "foot": {
+            "version_added": false,
+            "notes": "No implementation found in action_execute()",
+            "last_scanned": "2026-02-17"
+          },
+          "alacritty": {
+            "version_added": false,
+            "notes": "No evidence of ENQ/answerback implementation found",
+            "last_scanned": "2026-02-17"
+          },
+          "iterm2": {
+            "version_added": true,
+            "last_scanned": "2026-02-17"
+          },
+          "vte": {
+            "version_added": false,
+            "notes": "Recognized but no-op for security reasons",
+            "last_scanned": "2026-02-17"
+          },
+          "windows_terminal": {
+            "version_added": true,
+            "notes": "Handled via EnquireAnswerback() dispatch in OutputStateMachineEngine.cpp:53-54",
+            "last_scanned": "2026-02-17"
+          },
+          "konsole": {
+            "version_added": true,
+            "notes": "Calls reportAnswerBack()",
+            "last_scanned": "2026-02-17"
+          },
+          "mintty": {
+            "version_added": true,
+            "notes": "Handled in do_ctrl() at src/termout.c:1709-1714, sends answerback string",
+            "last_scanned": "2026-02-17"
+          },
+          "xterm_js": {
+            "version_added": false,
+            "notes": "Not implemented, no handler registered",
+            "last_scanned": "2026-02-17"
+          },
+          "cy": {
+            "version_added": false,
+            "notes": "No handler for 0x05",
+            "last_scanned": "2026-02-17"
+          },
+          "tmux": {
+            "version_added": false,
+            "notes": "ENQ (0x05) is ignored, in range 0x00-0x06 with NULL handler",
+            "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "AnswerBackMessage configurable in profiles (Terminal.cpp:370)",
+            "last_scanned": "2026-02-17"
+          },
+          "putty": {
+            "version_added": "0.45",
+            "notes": "Sends configurable answerback string",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": false,
+            "notes": "ENQ (0x05) not handled; no answerback functionality found",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": false,
+            "notes": "No ENQ/answerback implementation found",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "notes": "Not implemented",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": false,
+            "notes": "ENQ (0x05) is not handled as answerback; only used in OSC strings",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "rxvt-unicode-1.2",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "notes": "Explicitly ignored (st.c:2246)",
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": false,
+            "notes": "Control code defined but not handled in execute()",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          }
+        },
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
+        },
+        "spec_refs": [
+          {
+            "name": "ECMA-48",
+            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
+            "section": "§8.3.44"
+          }
+        ]
+      }
+    },
+    "bel": {
+      "__compat": {
+        "title": "BEL",
+        "description": "0x07 — Audible/visual bell",
+        "doc_path": "/docs/c0-c1/bel",
+        "support": {
+          "vt100": {
+            "version_added": true
+          },
+          "xterm": {
+            "version_added": true,
+            "notes": "Implemented in charproc.c:3685. Visual/audible bell via Bell() function",
+            "last_scanned": "2026-02-17"
+          },
+          "ghostty": {
+            "version_added": "v1.0.0",
+            "notes": "Handled in stream.zig:767 as C0.BEL (0x07)",
+            "last_scanned": "2026-02-17"
+          },
+          "kitty": {
+            "version_added": true,
+            "last_scanned": "2026-02-17"
+          },
+          "wezterm": {
+            "version_added": true,
+            "notes": "Handled in performer.rs:451 via ControlCode::Bell, triggers Alert::Bell",
+            "last_scanned": "2026-02-17"
+          },
+          "foot": {
+            "version_added": true,
+            "notes": "Implemented in vt.c:131-133, calls term_bell()",
+            "last_scanned": "2026-02-17"
+          },
+          "alacritty": {
+            "version_added": true,
+            "notes": "Handler bell() at term/mod.rs:1437 sends Event::Bell",
+            "last_scanned": "2026-02-17"
+          },
+          "iterm2": {
+            "version_added": true,
+            "last_scanned": "2026-02-17"
+          },
+          "vte": {
+            "version_added": true,
+            "last_scanned": "2026-02-17"
+          },
+          "windows_terminal": {
+            "version_added": true,
+            "notes": "Handled via WarningBell() dispatch method in OutputStateMachineEngine.cpp:56-57",
+            "last_scanned": "2026-02-17"
+          },
+          "konsole": {
+            "version_added": true,
+            "notes": "Emits bell signal",
+            "last_scanned": "2026-02-17"
+          },
+          "mintty": {
+            "version_added": true,
+            "notes": "Handled in do_ctrl() at src/termout.c:1689",
+            "last_scanned": "2026-02-17"
+          },
+          "xterm_js": {
+            "version_added": "2.3.0",
+            "last_scanned": "2026-02-17"
+          },
+          "cy": {
+            "version_added": "v0.1.0",
+            "notes": "Handler present but no actual bell output",
+            "last_scanned": "2026-02-17"
+          },
+          "tmux": {
+            "version_added": "0.8",
+            "notes": "Triggers window bell alert via alerts_queue()",
+            "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "Handled via WhenBell callback, audible bell implemented in Terminal.cpp:991",
+            "last_scanned": "2026-02-17"
+          },
+          "putty": {
+            "version_added": "0.45",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "notes": "Implemented in executeControlCode; calls Terminal::bell()",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-0_2_1",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "notes": "Implemented in Special() function at src/ansi.c:691",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "rxvt-unicode-1.2",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.6",
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.24.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.28",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
+            "last_scanned": "2026-02-18"
+          }
+        },
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
+        },
+        "spec_refs": [
+          {
+            "name": "ECMA-48",
+            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
+            "section": "§8.3.3"
+          }
+        ]
+      }
+    },
+    "bs": {
+      "__compat": {
+        "title": "BS",
+        "description": "0x08 — Backspace, move cursor left",
+        "doc_path": "/docs/c0-c1/bs",
+        "support": {
+          "vt100": {
+            "version_added": true
+          },
+          "xterm": {
+            "version_added": true,
+            "notes": "Implemented in charproc.c:3701. Moves cursor left via CursorBack()",
+            "last_scanned": "2026-02-17"
+          },
+          "ghostty": {
+            "version_added": "v1.0.0",
+            "notes": "Handled in stream.zig:768 as C0.BS (0x08)",
+            "last_scanned": "2026-02-17"
+          },
+          "kitty": {
+            "version_added": true,
+            "last_scanned": "2026-02-17"
+          },
+          "wezterm": {
+            "version_added": true,
+            "notes": "Handled in performer.rs:414 via ControlCode::Backspace, implements reverse-wraparound mode",
+            "last_scanned": "2026-02-17"
+          },
+          "foot": {
+            "version_added": true,
+            "notes": "Implemented in vt.c:136-166 with reverse wrap support",
+            "last_scanned": "2026-02-17"
+          },
+          "alacritty": {
+            "version_added": true,
+            "notes": "Handler backspace() at term/mod.rs:1398",
+            "last_scanned": "2026-02-17"
+          },
+          "iterm2": {
+            "version_added": true,
+            "last_scanned": "2026-02-17"
+          },
+          "vte": {
+            "version_added": true,
+            "last_scanned": "2026-02-17"
+          },
+          "windows_terminal": {
+            "version_added": true,
+            "notes": "Handled via CursorBackward(1) dispatch in OutputStateMachineEngine.cpp:59-60",
+            "last_scanned": "2026-02-17"
+          },
+          "konsole": {
+            "version_added": true,
+            "last_scanned": "2026-02-17"
+          },
+          "mintty": {
+            "version_added": true,
+            "notes": "Handled in do_ctrl() at src/termout.c:1691",
+            "last_scanned": "2026-02-17"
+          },
+          "xterm_js": {
+            "version_added": "2.3.0",
+            "last_scanned": "2026-02-17"
+          },
+          "cy": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-17"
+          },
+          "tmux": {
+            "version_added": "0.8",
+            "notes": "Implemented via screen_write_backspace()",
+            "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "Basic C0 control, handled in TerminalCtrl library",
+            "last_scanned": "2026-02-17"
+          },
+          "putty": {
+            "version_added": "0.45",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "notes": "Implemented in executeControlCode; calls backspace()",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-0_2_1",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "notes": "Implemented in Special() function at src/ansi.c:678",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "rxvt-unicode-1.2",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.6",
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.5.0-beta",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.28",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
+            "last_scanned": "2026-02-18"
+          }
+        },
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
+        },
+        "spec_refs": [
+          {
+            "name": "ECMA-48",
+            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
+            "section": "§8.3.5"
+          }
+        ]
+      }
+    },
+    "ht": {
+      "__compat": {
+        "title": "HT",
+        "description": "0x09 — Horizontal tab",
+        "doc_path": "/docs/c0-c1/ht",
+        "support": {
+          "vt100": {
+            "version_added": true
+          },
+          "xterm": {
+            "version_added": true,
+            "notes": "Implemented in charproc.c:3763. Horizontal tab via TabToNextStop()",
+            "last_scanned": "2026-02-17"
+          },
+          "ghostty": {
+            "version_added": "v1.0.0",
+            "notes": "Handled in stream.zig:769 as C0.HT (0x09)",
+            "last_scanned": "2026-02-17"
+          },
+          "kitty": {
+            "version_added": true,
+            "last_scanned": "2026-02-17"
+          },
+          "wezterm": {
+            "version_added": true,
+            "notes": "Handled in performer.rs:447 via ControlCode::HorizontalTab, calls c0_horizontal_tab()",
+            "last_scanned": "2026-02-17"
+          },
+          "foot": {
+            "version_added": true,
+            "notes": "Implemented in vt.c:169-224",
+            "last_scanned": "2026-02-17"
+          },
+          "alacritty": {
+            "version_added": true,
+            "notes": "Handler put_tab() at term/mod.rs:1366, respects tab stops",
+            "last_scanned": "2026-02-17"
+          },
+          "iterm2": {
+            "version_added": true,
+            "last_scanned": "2026-02-17"
+          },
+          "vte": {
+            "version_added": true,
+            "last_scanned": "2026-02-17"
+          },
+          "windows_terminal": {
+            "version_added": true,
+            "notes": "Handled via ForwardTab(1) dispatch in OutputStateMachineEngine.cpp:62-63",
+            "last_scanned": "2026-02-17"
+          },
+          "konsole": {
+            "version_added": true,
+            "last_scanned": "2026-02-17"
+          },
+          "mintty": {
+            "version_added": true,
+            "notes": "Handled in do_ctrl() at src/termout.c:1693",
+            "last_scanned": "2026-02-17"
+          },
+          "xterm_js": {
+            "version_added": "2.3.0",
+            "last_scanned": "2026-02-17"
+          },
+          "cy": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-17"
+          },
+          "tmux": {
+            "version_added": "0.8",
+            "notes": "Moves cursor to next tab stop, respects tab array",
+            "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "Tab stops referenced in termios config (Terminal.cpp:78-91)",
+            "last_scanned": "2026-02-17"
+          },
+          "putty": {
+            "version_added": "0.45",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "notes": "Implemented in executeControlCode; calls moveCursorToNextTab()",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-0_2_1",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "notes": "Implemented in Special() function at src/ansi.c:694",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "rxvt-unicode-1.2",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.6",
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.5.0-beta",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.28",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
+            "last_scanned": "2026-02-18"
+          }
+        },
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
+        },
+        "spec_refs": [
+          {
+            "name": "ECMA-48",
+            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
+            "section": "§8.3.60"
+          }
+        ]
+      }
+    },
+    "lf": {
+      "__compat": {
+        "title": "LF",
+        "description": "0x0A — Line feed",
+        "doc_path": "/docs/c0-c1/lf",
+        "support": {
+          "vt100": {
+            "version_added": true
+          },
+          "xterm": {
+            "version_added": true,
+            "notes": "Implemented in charproc.c:3732 as CASE_VMOT. Handles LF, VT, and FF",
+            "last_scanned": "2026-02-17"
+          },
+          "ghostty": {
+            "version_added": "v1.0.0",
+            "notes": "LF, VT, and FF all trigger linefeed in stream.zig:770",
+            "last_scanned": "2026-02-17"
+          },
+          "kitty": {
+            "version_added": true,
+            "last_scanned": "2026-02-17"
+          },
+          "wezterm": {
+            "version_added": true,
+            "notes": "Handled in performer.rs:380 via ControlCode::LineFeed, also handles VerticalTab and FormFeed identically",
+            "last_scanned": "2026-02-17"
+          },
+          "foot": {
+            "version_added": true,
+            "notes": "Implemented in vt.c:227-234, also handles VT and FF",
+            "last_scanned": "2026-02-17"
+          },
+          "alacritty": {
+            "version_added": true,
+            "notes": "Handler linefeed() at term/mod.rs:1423",
+            "last_scanned": "2026-02-17"
+          },
+          "iterm2": {
+            "version_added": true,
+            "last_scanned": "2026-02-17"
+          },
+          "vte": {
+            "version_added": true,
+            "last_scanned": "2026-02-17"
+          },
+          "windows_terminal": {
+            "version_added": true,
+            "notes": "LF, FF, and VT are identical in function (OutputStateMachineEngine.cpp:68-72)",
+            "last_scanned": "2026-02-17"
+          },
+          "konsole": {
+            "version_added": true,
+            "last_scanned": "2026-02-17"
+          },
+          "mintty": {
+            "version_added": true,
+            "notes": "Handled in do_ctrl() at src/termout.c:1705-1708",
+            "last_scanned": "2026-02-17"
+          },
+          "xterm_js": {
+            "version_added": "2.3.0",
+            "last_scanned": "2026-02-17"
+          },
+          "cy": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-17"
+          },
+          "tmux": {
+            "version_added": "0.8",
+            "notes": "Also handles VT and FF; respects CRLF mode",
+            "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "Basic C0 control, handled in TerminalCtrl library",
+            "last_scanned": "2026-02-17"
+          },
+          "putty": {
+            "version_added": "0.45",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "notes": "Implemented in executeControlCode; calls linefeed()",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-0_2_1",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "notes": "Implemented in Special() function at src/ansi.c:684-689",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "rxvt-unicode-1.2",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.6",
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.5.0-beta",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.28",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
+            "last_scanned": "2026-02-18"
+          }
+        },
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
+        },
+        "spec_refs": [
+          {
+            "name": "ECMA-48",
+            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
+            "section": "§8.3.74"
+          }
+        ]
+      }
+    },
+    "cr": {
+      "__compat": {
+        "title": "CR",
+        "description": "0x0D — Carriage return",
+        "doc_path": "/docs/c0-c1/cr",
+        "support": {
+          "vt100": {
+            "version_added": true
+          },
+          "xterm": {
+            "version_added": true,
+            "notes": "Implemented in charproc.c:3706 via CarriageReturn()",
+            "last_scanned": "2026-02-17"
+          },
+          "ghostty": {
+            "version_added": "v1.0.0",
+            "notes": "Handled in stream.zig:771 as C0.CR (0x0D)",
+            "last_scanned": "2026-02-17"
+          },
+          "kitty": {
+            "version_added": true,
+            "last_scanned": "2026-02-17"
+          },
+          "wezterm": {
+            "version_added": true,
+            "notes": "Handled in performer.rs:402 via ControlCode::CarriageReturn, respects left/right margins",
+            "last_scanned": "2026-02-17"
+          },
+          "foot": {
+            "version_added": true,
+            "notes": "Implemented in vt.c:236-238",
+            "last_scanned": "2026-02-17"
+          },
+          "alacritty": {
+            "version_added": true,
+            "notes": "Handler carriage_return() at term/mod.rs:1412",
+            "last_scanned": "2026-02-17"
+          },
+          "iterm2": {
+            "version_added": true,
+            "last_scanned": "2026-02-17"
+          },
+          "vte": {
+            "version_added": true,
+            "last_scanned": "2026-02-17"
+          },
+          "windows_terminal": {
+            "version_added": true,
+            "notes": "Handled via CarriageReturn() dispatch in OutputStateMachineEngine.cpp:65-66",
+            "last_scanned": "2026-02-17"
+          },
+          "konsole": {
+            "version_added": true,
+            "last_scanned": "2026-02-17"
+          },
+          "mintty": {
+            "version_added": true,
+            "notes": "Handled in do_ctrl() at src/termout.c:1703",
+            "last_scanned": "2026-02-17"
+          },
+          "xterm_js": {
+            "version_added": "2.3.0",
+            "last_scanned": "2026-02-17"
+          },
+          "cy": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-17"
+          },
+          "tmux": {
+            "version_added": "0.8",
+            "notes": "Implemented via screen_write_carriagereturn()",
+            "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "Basic C0 control, handled in TerminalCtrl library",
+            "last_scanned": "2026-02-17"
+          },
+          "putty": {
+            "version_added": "0.45",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.1.0",
+            "notes": "Implemented in executeControlCode; calls moveCursorToBeginOfLine()",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-0_2_1",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "notes": "Implemented in Special() function at src/ansi.c:681",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "rxvt-unicode-1.2",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.6",
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.5.0-beta",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.28",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
+            "last_scanned": "2026-02-18"
+          }
+        },
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
+        },
+        "spec_refs": [
+          {
+            "name": "ECMA-48",
+            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
+            "section": "§8.3.15"
+          }
+        ]
+      }
+    },
+    "so_si": {
+      "__compat": {
+        "title": "SO/SI",
+        "description": "0x0E/0x0F — Shift out/in (G1/G0 invocation)",
+        "doc_path": "/docs/c0-c1/so-si",
+        "support": {
+          "vt100": {
+            "version_added": true
+          },
+          "xterm": {
+            "version_added": true,
+            "notes": "Implemented in charproc.c:3768-3780. SO/SI switch curgl between G0/G1",
+            "last_scanned": "2026-02-17"
+          },
+          "ghostty": {
+            "version_added": "v1.0.0",
+            "notes": "SO/SI handled in stream.zig:772-773, invoke G1/G0 charsets",
+            "last_scanned": "2026-02-17"
+          },
+          "kitty": {
+            "version_added": true,
+            "last_scanned": "2026-02-17"
+          },
+          "wezterm": {
+            "version_added": true,
+            "notes": "Handled in performer.rs:466-470 via ControlCode::ShiftOut/ShiftIn, controls G0/G1 charset selection for DEC line drawing",
+            "last_scanned": "2026-02-17"
+          },
+          "foot": {
+            "version_added": true,
+            "notes": "Implemented in vt.c:241-255, selects G0/G1 character sets",
+            "last_scanned": "2026-02-17"
+          },
+          "alacritty": {
+            "version_added": true,
+            "partial_implementation": true,
+            "notes": "Charset switching supported via configure_charset/set_active_charset, but only charsets B and 0 supported per escape_support.md",
+            "last_scanned": "2026-02-17"
+          },
+          "iterm2": {
+            "version_added": true,
+            "last_scanned": "2026-02-17"
+          },
+          "vte": {
+            "version_added": true,
+            "partial_implementation": true,
+            "notes": "Implemented as LS1/LS0. Only G1 character set mapping is functional",
+            "last_scanned": "2026-02-17"
+          },
+          "windows_terminal": {
+            "version_added": true,
+            "notes": "SI (0x0F) calls LockingShift(0), SO (0x0E) calls LockingShift(1) in OutputStateMachineEngine.cpp:74-78",
+            "last_scanned": "2026-02-17"
+          },
+          "konsole": {
+            "version_added": true,
+            "notes": "G1/G0 charset invocation",
+            "last_scanned": "2026-02-17"
+          },
+          "mintty": {
+            "version_added": true,
+            "notes": "SO (Shift Out/LS1) at src/termout.c:1715, SI (Shift In/LS0) at src/termout.c:1720",
+            "last_scanned": "2026-02-17"
+          },
+          "xterm_js": {
+            "version_added": "2.3.0",
+            "last_scanned": "2026-02-17"
+          },
+          "cy": {
+            "version_added": false,
+            "notes": "Not handled in Execute function",
+            "last_scanned": "2026-02-17"
+          },
+          "tmux": {
+            "version_added": "0.8",
+            "notes": "Charset shift implementation for G0/G1 ACS",
+            "last_scanned": "2026-02-17"
+          },
+          "bobcat": {
+            "version_added": "0.9.0",
+            "notes": "Character set handling in TerminalCtrl, UTF-8 mode configurable",
+            "last_scanned": "2026-02-17"
+          },
+          "putty": {
+            "version_added": "0.45",
+            "notes": "Implemented as LS1/LS0 for G1/G0 charset selection",
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": "v0.3.10",
+            "notes": "SO (0x0E) and SI (0x0F) implemented as LS1/LS0; invokes G1/G0 charset into GL",
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": "rel-0_2_1",
+            "notes": "SO/SI handled natively; ISO-2022 encodings delegated to mef library",
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": "v0.1.0",
+            "last_scanned": "2026-02-18"
+          },
+          "screen": {
+            "version_added": "v.4.2.0",
+            "notes": "SO/SI (Shift Out/In) implemented in Special() at src/ansi.c:697-702",
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": "rxvt-unicode-1.2",
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": "0.5",
+            "notes": "Charset switching added in 0.5, control codes in 0.6",
+            "last_scanned": "2026-02-18"
+          },
+          "zellij": {
+            "version_added": "v0.7.0",
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": "v0.0.28",
+            "notes": "Shifts between G0 and G1 character sets",
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": "v0.0.15",
+            "last_scanned": "2026-02-18"
+          }
+        },
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
+        },
+        "spec_refs": [
+          {
+            "name": "ECMA-48",
+            "url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
+            "section": "§8.3.119, §8.3.126"
+          }
+        ]
+      }
+    }
+  }
+}

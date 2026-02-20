@@ -6,7 +6,7 @@ import DocPageFooter from '@site/src/components/DocPageFooter';
 
 type Props = WrapperProps<typeof LayoutType>;
 
-export default function LayoutWrapper(props: Props): JSX.Element {
+export default function LayoutWrapper(props: Props): React.JSX.Element {
   return (
     <>
       <Layout {...props} />

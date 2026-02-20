@@ -1,9 +1,22 @@
 ---
 title: About
 description: The purpose of this site
-hide_table_of_contents: true
 ---
 
-I spend a lot of time in the terminal, both for my everyday work and for my personal projects. For a long time I've envied the web development community, which has a powerful resource in [MDN](https://developer.mozilla.org/en-US/). People who work on terminal emulators or CLI programs are not so lucky: we must either rely on libraries or spend time trawling and cross-referencing ancient specficiations.
+# About
 
-Even w
+I spend a lot of time in the terminal, both for everyday work and personal projects. For a long time I've envied the web development community, which has a powerful resource in [MDN](https://developer.mozilla.org/en-US/). People who work on terminal emulators or CLI programs are not so lucky: we must either rely on libraries or spend time trawling and cross-referencing ancient specifications, the xterm source code, and one-off GitHub Gists.
+
+In the process, one quickly realizes that there is no authoritative list of capabilities that terminals support. In recent years terminal emulator authors have also devised new protocols that add modern features, such as rendering images, that have mixed levels of support.
+
+I wanted to build a resource that consolidates all of the bells and whistles (in some cases, [literally](/docs/c0-c1/bel)) that modern terminal emulators support and that application developers can therefore rely on to create modern terminal interfaces.
+
+Hence VTDN (Virtual Terminal Development Network). This site is still in its infancy. The feature list on the homepage is probably not complete, though I made an effort to collect as many as I could.
+
+I want to emphasize that the number of features a terminal emulator supports _is not a statement of quality._ Many factors go into a user's choice of terminal emulator. Support for obscure VT features is not usually among them. Modern terminal applications only use a hefty subset of the features listed.
+
+Feature scans are conducted using [Claude Code](https://github.com/cfoust/vtdn.dev/blob/main/scripts/scan-terminal.mjs). I have found it to be generally accurate. Terminal emulators do not change as quickly as browsers, so I am as yet uncertain about the scanning frequency for features. Contributions are welcome.
+
+# Contact
+
+If you have any questions, comments, or feedback, please direct them to me, Caleb Foust, via [email](mailto:cfoust@sqweebloid.com?subject=VTDN).

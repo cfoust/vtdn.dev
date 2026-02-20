@@ -7,7 +7,7 @@ export default function Home(): React.ReactElement {
   return (
     <Layout
       noFooter
-      title="Compatibility Matrix"
+      title="Home"
       description="Terminal emulator standards compatibility reference">
       <main className={styles.main}>
         <CompatibilityMatrix />

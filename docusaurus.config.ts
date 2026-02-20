@@ -3,7 +3,7 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'vtdn.dev',
+  title: 'vtdn▒',
   tagline: 'Terminal Emulator Standards Reference',
   favicon: 'img/favicon.png',
   url: 'https://vtdn.dev',
@@ -78,7 +78,7 @@ const config: Config = {
     },
     footer: {
       style: 'dark',
-      copyright: `Copyright © ${new Date().getFullYear()} vtdn.dev`,
+      copyright: `Copyright © ${new Date().getFullYear()} vtdn▒`,
     },
     prism: {
       theme: prismThemes.github,

@@ -9,6 +9,10 @@
   --ifm-code-font-size: 95%;
 }
 
+[data-theme='dark'] .navbar__logo {
+  filter: invert(1);
+}
+
 [data-theme='dark'] {
   --ifm-color-primary: #8da9fc;
   --ifm-color-primary-dark: #6e8efb;

@@ -65,6 +65,11 @@ const config: Config = {
           label: 'Documentation',
         },
         {
+          to: '/about',
+          label: 'About',
+          position: 'right',
+        },
+        {
           href: 'https://github.com/cfoust/vtdn.dev',
           label: 'GitHub',
           position: 'right',

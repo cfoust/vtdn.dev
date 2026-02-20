@@ -7,7 +7,7 @@
       "__compat": {
         "title": "IND",
         "description": "ESC D — Index, move cursor down one line",
-        "doc_path": "/docs/c0-c1/ind",
+        "doc_path": "/docs/esc/ind",
         "support": {
           "vt100": {
             "version_added": true
@@ -145,7 +145,7 @@
       "__compat": {
         "title": "NEL",
         "description": "ESC E — Next line, column 1 of next line",
-        "doc_path": "/docs/c0-c1/nel",
+        "doc_path": "/docs/esc/nel",
         "support": {
           "vt100": {
             "version_added": true
@@ -280,7 +280,7 @@
       "__compat": {
         "title": "HTS",
         "description": "ESC H — Set tab stop at current column",
-        "doc_path": "/docs/c0-c1/hts",
+        "doc_path": "/docs/esc/hts",
         "support": {
           "vt100": {
             "version_added": true
@@ -416,7 +416,7 @@
       "__compat": {
         "title": "RI",
         "description": "ESC M — Reverse index, move cursor up",
-        "doc_path": "/docs/c0-c1/ri",
+        "doc_path": "/docs/esc/ri",
         "support": {
           "vt100": {
             "version_added": true
@@ -551,7 +551,7 @@
       "__compat": {
         "title": "SS2/SS3",
         "description": "ESC N / ESC O — Single shift G2/G3",
-        "doc_path": "/docs/c0-c1/ss2-ss3",
+        "doc_path": "/docs/esc/ss2-ss3",
         "support": {
           "vt100": {
             "version_added": false
@@ -696,7 +696,7 @@
       "__compat": {
         "title": "DECSC/DECRC",
         "description": "ESC 7 / ESC 8 — Save/restore cursor",
-        "doc_path": "/docs/c0-c1/decsc-decrc",
+        "doc_path": "/docs/esc/decsc-decrc",
         "support": {
           "vt100": {
             "version_added": true
@@ -830,7 +830,7 @@
       "__compat": {
         "title": "RIS",
         "description": "ESC c — Full terminal reset",
-        "doc_path": "/docs/c0-c1/ris",
+        "doc_path": "/docs/esc/ris",
         "support": {
           "vt100": {
             "version_added": true
@@ -969,7 +969,7 @@
       "__compat": {
         "title": "DECKPAM/DECKPNM",
         "description": "ESC = / ESC > — Application/numeric keypad",
-        "doc_path": "/docs/c0-c1/deckpam-deckpnm",
+        "doc_path": "/docs/esc/deckpam-deckpnm",
         "support": {
           "vt100": {
             "version_added": true
@@ -1103,7 +1103,7 @@
       "__compat": {
         "title": "DECDHL/DECDWL",
         "description": "ESC #3–6 — Double-height/width lines",
-        "doc_path": "/docs/c0-c1/decdhl-decdwl",
+        "doc_path": "/docs/esc/decdhl-decdwl",
         "support": {
           "vt100": {
             "version_added": true
@@ -1246,7 +1246,7 @@
       "__compat": {
         "title": "DECALN",
         "description": "ESC #8 — Screen alignment test (fill with 'E')",
-        "doc_path": "/docs/c0-c1/decaln",
+        "doc_path": "/docs/esc/decaln",
         "support": {
           "vt100": {
             "version_added": true
@@ -1382,7 +1382,7 @@
       "__compat": {
         "title": "S7C1T/S8C1T",
         "description": "ESC SP F/G — 7-bit/8-bit control output",
-        "doc_path": "/docs/c0-c1/s7c1t-s8c1t",
+        "doc_path": "/docs/esc/s7c1t-s8c1t",
         "support": {
           "vt100": {
             "version_added": false
@@ -1526,7 +1526,7 @@
       "__compat": {
         "title": "Locking shifts",
         "description": "LS2, LS3, LS1R, LS2R, LS3R",
-        "doc_path": "/docs/c0-c1/locking-shifts",
+        "doc_path": "/docs/esc/locking-shifts",
         "support": {
           "vt100": {
             "version_added": false
@@ -1678,7 +1678,7 @@
       "__compat": {
         "title": "UTF-8 select",
         "description": "ESC % G — Select UTF-8 character set",
-        "doc_path": "/docs/c0-c1/utf8-select",
+        "doc_path": "/docs/esc/utf8-select",
         "support": {
           "vt100": {
             "version_added": false

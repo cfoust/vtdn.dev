@@ -1,6 +1,6 @@
 {
   "label": "DECSET/DECRST Modes",
-  "position": 6,
+  "position": 7,
   "link": {
     "type": "generated-index",
     "description": "DEC private mode set/reset sequences."

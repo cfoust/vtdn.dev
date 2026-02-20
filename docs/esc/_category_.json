@@ -1,0 +1,8 @@
+{
+  "label": "ESC Sequences",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Escape sequences initiated by the ESC character."
+  }
+}

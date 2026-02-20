@@ -1,8 +1,8 @@
 {
-  "label": "C0/C1 Controls",
+  "label": "C0 Control Codes",
   "position": 1,
   "link": {
     "type": "generated-index",
-    "description": "C0 and C1 control characters and ESC sequences."
+    "description": "C0 control characters."
   }
 }

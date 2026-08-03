@@ -1,0 +1,87 @@
+---
+sidebar_position: 25
+title: "Text selection tracking"
+sidebar_label: "Text selection tracking"
+description: "Mode 2030 — Forwarding user text selections to host app"
+feature_id: "mode2030_text_selection"
+data_file: "decset-modes"
+---
+
+<AiDisclaimer />
+
+<StatusBadges status={{ experimental: true }} />
+
+**Text Selection Tracking** (Mode 2030) is a DECSET/DECRST mode that allows terminal emulators to report user-initiated text selections (e.g. mouse drag selections) directly to the foreground application.
+
+## Syntax
+
+```
+CSI ? 2030 h    DECSET — Enable text selection tracking
+CSI ? 2030 l    DECRST — Disable text selection tracking
+```
+
+<FormalSyntax grammar={`
+DECSET-mode2030 = 0x1b, "[", "?", "2", "0", "3", "0", "h" ;
+DECRST-mode2030 = 0x1b, "[", "?", "2", "0", "3", "0", "l" ;
+`} />
+
+## Description
+
+Text Selection Tracking works in tandem with Passive Mouse Tracking (Mode 2029) or standalone to address the needs of primary-screen applications (like shell command lines).
+
+With Mode 2030, the terminal performs native text selection and rendering as usual, but forwards the coordinates of selected text ranges within the cursor addressable area to the application. This allows applications to track user selection bounds and react to actions (such as deleting selected text when the user presses `DELETE` or performing custom actions).
+
+- **Set** — Enables text selection tracking (`CSI ? 2030 h`).
+- **Reset** — Disables text selection tracking (`CSI ? 2030 l`). Both soft reset (`DECSTR`) and hard reset (`RIS`) restore Mode 2030 to its reset state.
+
+### Feature and mode detection
+
+Use `DECRQM` (`CSI ? 2030 $ p`) to detect support. Text selection tracking is supported if the terminal responds with state `1` (set) or `2` (reset).
+
+### Event Report Syntax
+
+When text selection changes within the cursor addressable screen area, the terminal sends a report to the application:
+
+```
+CSI > SelectionMode ; StartLine ; StartColumn ; EndLine ; EndColumn M
+```
+
+| SelectionMode | Name | Description |
+|---|---|---|
+| `1` | Linear selection | Single-word or multi-line linear selection. For single-line selection, `StartLine` equals `EndLine`. For multi-line selection, `StartColumn` marks the start on `StartLine`, and `EndColumn` marks the end on `EndLine`. |
+| `2` | Full line selection | Complete lines are selected. `StartColumn` is always `1`, and `EndColumn` is set to the total screen width. |
+| `3` | Rectangular selection | Block selection where `StartLine` and `StartColumn` mark top-left corner, and `EndLine` and `EndColumn` mark bottom-right corner (inclusive). |
+
+:::note
+Lines outside the cursor-addressable area (such as scrollback history lines) are excluded from reported selection ranges.
+:::
+
+## Examples
+
+```bash
+# Enable text selection tracking:
+printf '\e[?2030h'
+
+# Query mode support via DECRQM:
+printf '\e[?2030$p'
+
+# Example terminal report received when user selects text from line 2 col 5 to line 2 col 15:
+# CSI > 1 ; 2 ; 5 ; 2 ; 15 M
+
+# Disable text selection tracking:
+printf '\e[?2030l'
+```
+
+## Specifications
+
+<SpecificationsTable />
+
+## Terminal support
+
+<FeatureCompatTable />
+
+## See also
+
+- [Text Selection Tracking Specification](https://github.com/contour-terminal/vt-extensions/blob/master/text-selection-tracking.md) — Original specification on GitHub
+- [Passive Mouse Tracking — Mode 2029](/docs/decset/mode2029-passive-mouse) — Receiving mouse events without losing native selection capability
+- [SGR Mouse Encoding — Mode 1006](/docs/decset/mode1006-sgr-mouse) — Modern mouse event encoding format

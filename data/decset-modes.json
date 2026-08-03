@@ -2833,6 +2833,254 @@
         ]
       }
     },
+    "mode2029_passive_mouse": {
+      "__compat": {
+        "title": "Passive mouse tracking",
+        "description": "Mode 2029 — Mouse tracking while retaining user text selection",
+        "doc_path": "/docs/decset/mode2029-passive-mouse",
+        "support": {
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": false,
+            "last_scanned": "2026-02-17"
+          },
+          "ghostty": {
+            "version_added": false,
+            "last_scanned": "2026-02-17"
+          },
+          "kitty": {
+            "version_added": false,
+            "last_scanned": "2026-02-17"
+          },
+          "wezterm": {
+            "version_added": false,
+            "last_scanned": "2026-02-17"
+          },
+          "foot": {
+            "version_added": false,
+            "last_scanned": "2026-02-17"
+          },
+          "alacritty": {
+            "version_added": false,
+            "last_scanned": "2026-02-17"
+          },
+          "iterm2": {
+            "version_added": false,
+            "last_scanned": "2026-02-17"
+          },
+          "vte": {
+            "version_added": false,
+            "last_scanned": "2026-02-17"
+          },
+          "windows_terminal": {
+            "version_added": false,
+            "last_scanned": "2026-02-17"
+          },
+          "konsole": {
+            "version_added": false,
+            "last_scanned": "2026-02-17"
+          },
+          "mintty": {
+            "version_added": false,
+            "last_scanned": "2026-02-17"
+          },
+          "xterm_js": {
+            "version_added": false,
+            "last_scanned": "2026-02-17"
+          },
+          "putty": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": true,
+            "notes": "Supported via Contour PR #882",
+            "last_scanned": "2026-02-18"
+          },
+          "bobcat": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "tmux": {
+            "version_added": false,
+            "last_scanned": "2026-02-17"
+          },
+          "screen": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "cy": {
+            "version_added": false,
+            "last_scanned": "2026-02-17"
+          },
+          "zellij": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          }
+        },
+        "status": {
+          "experimental": true,
+          "standard_track": false,
+          "deprecated": false
+        },
+        "spec_refs": [
+          {
+            "name": "Passive Mouse Tracking Specification",
+            "url": "https://github.com/contour-terminal/vt-extensions/blob/master/passive-mouse-tracking.md"
+          }
+        ]
+      }
+    },
+    "mode2030_text_selection": {
+      "__compat": {
+        "title": "Text selection tracking",
+        "description": "Mode 2030 — Forwarding user text selections to host app",
+        "doc_path": "/docs/decset/mode2030-text-selection",
+        "support": {
+          "vt100": {
+            "version_added": false
+          },
+          "xterm": {
+            "version_added": false,
+            "last_scanned": "2026-02-17"
+          },
+          "ghostty": {
+            "version_added": false,
+            "last_scanned": "2026-02-17"
+          },
+          "kitty": {
+            "version_added": false,
+            "last_scanned": "2026-02-17"
+          },
+          "wezterm": {
+            "version_added": false,
+            "last_scanned": "2026-02-17"
+          },
+          "foot": {
+            "version_added": false,
+            "last_scanned": "2026-02-17"
+          },
+          "alacritty": {
+            "version_added": false,
+            "last_scanned": "2026-02-17"
+          },
+          "iterm2": {
+            "version_added": false,
+            "last_scanned": "2026-02-17"
+          },
+          "vte": {
+            "version_added": false,
+            "last_scanned": "2026-02-17"
+          },
+          "windows_terminal": {
+            "version_added": false,
+            "last_scanned": "2026-02-17"
+          },
+          "konsole": {
+            "version_added": false,
+            "last_scanned": "2026-02-17"
+          },
+          "mintty": {
+            "version_added": false,
+            "last_scanned": "2026-02-17"
+          },
+          "xterm_js": {
+            "version_added": false,
+            "last_scanned": "2026-02-17"
+          },
+          "putty": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rxvt_unicode": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "st": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "contour": {
+            "version_added": true,
+            "notes": "Supported via Contour PR #882",
+            "last_scanned": "2026-02-18"
+          },
+          "bobcat": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "mlterm": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "terminology": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "rio": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "tmux": {
+            "version_added": false,
+            "last_scanned": "2026-02-17"
+          },
+          "screen": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "cy": {
+            "version_added": false,
+            "last_scanned": "2026-02-17"
+          },
+          "zellij": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          },
+          "tuios": {
+            "version_added": false,
+            "last_scanned": "2026-02-18"
+          }
+        },
+        "status": {
+          "experimental": true,
+          "standard_track": false,
+          "deprecated": false
+        },
+        "spec_refs": [
+          {
+            "name": "Text Selection Tracking Specification",
+            "url": "https://github.com/contour-terminal/vt-extensions/blob/master/text-selection-tracking.md"
+          }
+        ]
+      }
+    },
     "mode2031_color_scheme": {
       "__compat": {
         "title": "Color scheme reporting",

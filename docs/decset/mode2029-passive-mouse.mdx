@@ -1,0 +1,92 @@
+---
+sidebar_position: 24
+title: "Passive mouse tracking"
+sidebar_label: "Passive mouse tracking"
+description: "Mode 2029 — Mouse tracking while retaining user text selection"
+feature_id: "mode2029_passive_mouse"
+data_file: "decset-modes"
+---
+
+<AiDisclaimer />
+
+<StatusBadges status={{ experimental: true }} />
+
+**Passive Mouse Tracking** (Mode 2029) is a DECSET/DECRST mode that allows primary-screen terminal applications (such as shells) to receive mouse press, release, and movement events while allowing the user to select text or scroll with the mouse wheel as normal.
+
+## Syntax
+
+```
+CSI ? 2029 h    DECSET — Enable passive mouse tracking
+CSI ? 2029 l    DECRST — Disable passive mouse tracking
+```
+
+<FormalSyntax grammar={`
+DECSET-mode2029 = 0x1b, "[", "?", "2", "0", "2", "9", "h" ;
+DECRST-mode2029 = 0x1b, "[", "?", "2", "0", "2", "9", "l" ;
+`} />
+
+## Description
+
+Traditional mouse tracking modes in terminal emulators capture all mouse interactions, which prevents the terminal from performing local text selection and scrolling. Because of this, primary-screen applications (like shell command lines) rarely enable mouse tracking.
+
+Passive Mouse Tracking solves this by allowing applications to receive mouse events without overriding default terminal features like mouse text selection and viewport scrolling.
+
+- **Set** — Enables passive mouse tracking. Sending `CSI ? 2029 h` implicitly activates DEC mode `?1006` (SGR mouse encoding) and `?1002` (Button click event tracking). To also receive mouse motion events, applications can send `CSI ? 2029 ; 1003 h`.
+- **Reset** — Disables passive mouse tracking (`CSI ? 2029 l`) and also disables all mouse event modes and mouse event encoding modes in a single sequence.
+
+### Feature and mode detection
+
+Use `DECRQM` (`CSI ? 2029 $ p`) to detect if passive mouse tracking is supported. It is considered supported if the terminal replies with state `1` (set) or `2` (reset).
+
+### Syntax of received events
+
+Passive mouse tracking exclusively uses SGR mouse transport encoding (`?1006`). The reported events use standard SGR mouse report format:
+
+- **Mouse Press / Move:** `CSI ? BUTTON_AND_MODIFIER_MASK ; COLUMN ; LINE M`
+- **Mouse Release:** `CSI ? BUTTON_AND_MODIFIER_MASK ; COLUMN ; LINE m`
+
+Where `BUTTON_AND_MODIFIER_MASK`, `COLUMN`, and `LINE` use the same bitwise layout and 1-based coordinate system as SGR mouse mode (`?1006`).
+
+### Semantics & Constraints
+
+- **Main page only**: Applications receive mouse events for the active grid page, not for the scrollback buffer.
+- **Strict SGR encoding**: Passive mouse tracking mode only works with SGR transport mode (`?1006`). Attempts to select other transport encodings while Mode 2029 is enabled are ignored.
+- **Alternate scroll override**: While Mode 2029 is active, Mode 2007 (Alternate Scroll) is inactive (mouse wheel events are not converted to arrow keys).
+- **Implicit cleanup**: Disabling other mouse modes also implicitly disables passive mouse tracking to prevent mouse tracking states from accidentally leaking into child processes.
+
+### Implementation Notes
+
+- **Mouse Coordinates**: Top-left is reported as (1, 1). If the viewport is scrolled, coordinates reported to primary screen applications are mapped relative to the visible grid area.
+- **Preventing Leakage to Child Processes**: Shells should disable mouse tracking (`CSI ? 2029 l`) before launching child processes.
+
+## Examples
+
+```bash
+# Enable passive mouse tracking (button clicks + SGR encoding):
+printf '\e[?2029h'
+
+# Enable passive mouse tracking with mouse motion reporting:
+printf '\e[?2029;1003h'
+
+# Query support via DECRQM:
+printf '\e[?2029$p'
+# Terminal response (if supported): CSI ? 2029 ; 1$y (set) or CSI ? 2029 ; 2$y (reset)
+
+# Disable passive mouse tracking and all mouse modes:
+printf '\e[?2029l'
+```
+
+## Specifications
+
+<SpecificationsTable />
+
+## Terminal support
+
+<FeatureCompatTable />
+
+## See also
+
+- [Passive Mouse Tracking Specification](https://github.com/contour-terminal/vt-extensions/blob/master/passive-mouse-tracking.md) — Original specification on GitHub
+- [SGR Mouse Encoding — Mode 1006](/docs/decset/mode1006-sgr-mouse) — Extended SGR mouse event format
+- [Text Selection Tracking — Mode 2030](/docs/decset/mode2030-text-selection) — Forwarding user text selection ranges to host applications
+- [Button Event Mouse Tracking — Mode 1002](/docs/decset/mode1002-button-event) — Tracking mouse press, release, and drag events

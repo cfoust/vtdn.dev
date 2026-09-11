@@ -1138,10 +1138,9 @@
             "last_scanned": "2026-02-17"
           },
           "iterm2": {
-            "version_added": true,
-            "partial_implementation": true,
-            "notes": "Sequences recognized but ignored (no-op)",
-            "last_scanned": "2026-02-17"
+            "version_added": "3.7.0",
+            "notes": "Sequences recognized but ignored (no-op) in earlier versions",
+            "last_scanned": "2026-09-11"
           },
           "vte": {
             "version_added": false,

@@ -904,8 +904,8 @@
             "last_scanned": "2026-02-17"
           },
           "tmux": {
-            "version_added": false,
-            "notes": "Progress reporting not implemented",
+            "version_added": "3.7",
+            "notes": "Exposes pane_pb_state and pane_pb_progress and forwards the active pane's progress to supported terminals",
             "last_scanned": "2026-02-17"
           },
           "bobcat": {
